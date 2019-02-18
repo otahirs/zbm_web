@@ -360,7 +360,10 @@ class AdminPlugin extends Plugin
         }
 
         // Make local copy of POST.
-        $post = !empty($_POST) ? $_POST : [];
+        $post = $this->grav['uri']->post();
+
+        // Initialize Page Types
+        Pages::types();
 
         // Handle tasks.
         $this->admin->task = $task = !empty($post['task']) ? $post['task'] : $this->uri->param('task');
@@ -384,7 +387,17 @@ class AdminPlugin extends Plugin
             $page = new Page;
             $page->expires(0);
 
-            // First look in the pages provided by the Admin plugin itself
+            if ($this->grav['user']->authorize('admin.login')) {
+                $event = new Event(['page' => $page]);
+                $event = $this->grav->fireEvent('onAdminPage', $event);
+                $page = $event['page'];
+
+                if ($page->slug()) {
+                    return $page;
+                }
+            }
+
+            // Look in the pages provided by the Admin plugin itself
             if (file_exists(__DIR__ . "/pages/admin/{$self->template}.md")) {
                 $page->init(new \SplFileInfo(__DIR__ . "/pages/admin/{$self->template}.md"));
                 $page->slug(basename($self->template));
@@ -849,6 +862,7 @@ class AdminPlugin extends Plugin
             'admin.statistics'    => 'boolean',
             'admin.plugins'       => 'boolean',
             'admin.themes'        => 'boolean',
+            'admin.tools'         => 'boolean',
             'admin.users'         => 'boolean',
         ];
         $admin->addPermissions($permissions);

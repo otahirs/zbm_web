@@ -7,6 +7,8 @@
  */
 namespace Grav\Plugin;
 
+use Grav\Common\Data\Data;
+use Grav\Common\Debugger;
 use Grav\Common\Grav;
 use Grav\Common\Language\Language;
 use Grav\Common\Page\Page;
@@ -242,7 +244,6 @@ class LoginPlugin extends Plugin
         }
 
         $this->grav['session']->redirect_after_login = $redirect;
-	$this->grav['debugger']->addMessage($redirect);
     }
 
     /**
@@ -331,7 +332,6 @@ class LoginPlugin extends Plugin
         if (!$page) {
             $page = new Page;
             $page->init(new \SplFileInfo(__DIR__ . '/pages/register.md'));
-            $page->template('form');
             $page->slug(basename($route));
 
             $pages->addPage($page, $route);
@@ -355,6 +355,9 @@ class LoginPlugin extends Plugin
         $token = $uri->param('token');
         $user = User::load($username);
 
+        $redirect_route = $this->config->get('plugins.login.user_registration.redirect_after_activation');
+        $redirect_code = null;
+
         if (empty($user->activation_token)) {
             $message = $this->grav['language']->translate('PLUGIN_LOGIN.INVALID_REQUEST');
             $messages->add($message, 'error');
@@ -366,12 +369,16 @@ class LoginPlugin extends Plugin
                     $message = $this->grav['language']->translate('PLUGIN_LOGIN.ACTIVATION_LINK_EXPIRED');
                     $messages->add($message, 'error');
                 } else {
-                    $user['state'] = 'enabled';
+                    if ($this->config->get('plugins.login.user_registration.options.manually_enable', false)) {
+                        $message = $this->grav['language']->translate('PLUGIN_LOGIN.USER_ACTIVATED_SUCCESSFULLY_NOT_ENABLED');
+                    } else {
+                        $user['state'] = 'enabled';
+                        $message = $this->grav['language']->translate('PLUGIN_LOGIN.USER_ACTIVATED_SUCCESSFULLY');
+                    }
+
+                    $messages->add($message, 'info');
                     unset($user['activation_token']);
                     $user->save();
-
-                    $message = $this->grav['language']->translate('PLUGIN_LOGIN.USER_ACTIVATED_SUCCESSFULLY');
-                    $messages->add($message, 'info');
 
                     if ($this->config->get('plugins.login.user_registration.options.send_welcome_email', false)) {
                         $this->login->sendWelcomeEmail($user);
@@ -381,7 +388,18 @@ class LoginPlugin extends Plugin
                     }
 
                     if ($this->config->get('plugins.login.user_registration.options.login_after_registration', false)) {
-                        $this->login->login(['username' => $username], ['after_registration' => true]);
+                        $loginEvent = $this->login->login(['username' => $username], ['after_registration' => true, 'return_event' => true]);
+
+                        // If there's no activation redirect, get one from login.
+                        if (!$redirect_route) {
+                            $message = $loginEvent->getMessage();
+                            if ($message) {
+                                $messages->add($message, $loginEvent->getMessageType());
+                            }
+
+                            $redirect_route = $loginEvent->getRedirect();
+                            $redirect_code = $loginEvent->getRedirectCode();
+                        }
                     }
                 }
             } else {
@@ -390,8 +408,7 @@ class LoginPlugin extends Plugin
             }
         }
 
-        $redirect_route = $this->config->get('plugins.login.user_registration.redirect_after_activation', '/');
-        $this->grav->redirect($redirect_route);
+        $this->grav->redirectLangSafe($redirect_route ?: '/', $redirect_code);
     }
 
     /**
@@ -431,7 +448,6 @@ class LoginPlugin extends Plugin
         if (!$page) {
             $page = new Page;
             $page->init(new \SplFileInfo(__DIR__ . '/pages/unauthorized.md'));
-            $page->template('default');
             $page->slug(basename($route));
 
             $pages->addPage($page, $route);
@@ -522,7 +538,7 @@ class LoginPlugin extends Plugin
 
         // User is not logged in; redirect to login page.
         if ($this->redirect_to_login && $this->route && !$authorized) {
-            $this->grav->redirect($this->route, 302);
+            $this->grav->redirectLangSafe($this->route, 302);
         }
 
         /** @var Twig $twig */
@@ -638,8 +654,14 @@ class LoginPlugin extends Plugin
             throw new \RuntimeException($language->translate('PLUGIN_LOGIN.USER_REGISTRATION_DISABLED'));
         }
 
+        $form->validate();
+        $form->filter();
+
+        /** @var Data $form_data */
+        $form_data = $form->getData();
+
         // Check for existing username
-        $username = $form->value('username');
+        $username = $form_data->get('username');
         $existing_username = User::find($username,['username']);
         if ($existing_username->exists()) {
             $this->grav->fireEvent('onFormValidationError', new Event([
@@ -654,7 +676,7 @@ class LoginPlugin extends Plugin
         }
 
         // Check for existing email
-        $email    = $form->value('email');
+        $email    = $form_data->get('email');
         $existing_email = User::find($email,['email']);
         if ($existing_email->exists()) {
             $this->grav->fireEvent('onFormValidationError', new Event([
@@ -676,7 +698,7 @@ class LoginPlugin extends Plugin
         if ($this->config->get('plugins.login.user_registration.options.validate_password1_and_password2',
             false)
         ) {
-            if ($form->value('password1') !== $form->value('password2')) {
+            if ($form_data->get('password1') !== $form_data->get('password2')) {
                 $this->grav->fireEvent('onFormValidationError', new Event([
                     'form'    => $form,
                     'message' => $language->translate('PLUGIN_LOGIN.PASSWORDS_DO_NOT_MATCH')
@@ -685,7 +707,7 @@ class LoginPlugin extends Plugin
 
                 return;
             }
-            $data['password'] = $form->value('password1');
+            $data['password'] = $form_data->get('password1');
         }
 
         $fields = (array)$this->config->get('plugins.login.user_registration.fields', []);
@@ -707,8 +729,8 @@ class LoginPlugin extends Plugin
                 }
             }
 
-            if (!isset($data[$field]) && $form->value($field)) {
-                $data[$field] = $form->value($field);
+            if (!isset($data[$field]) && $form_data->get($field)) {
+                $data[$field] = $form_data->get($field);
             }
         }
 
@@ -717,9 +739,10 @@ class LoginPlugin extends Plugin
         } else {
             $data['state'] = 'enabled';
         }
-
-        $this->grav->fireEvent('onUserLoginRegisterData', new Event(['data' => &$data]));
-        $user = $this->login->register($data);
+        $data_object = (object) $data;
+        $this->grav->fireEvent('onUserLoginRegisterData', new Event(['data' => &$data_object]));
+        $user = $this->login->register((array)$data_object);
+        $this->grav->fireEvent('onUserLoginRegisteredUser', new Event(['user' => &$user]));
 
         $fullname = $user->fullname ?: $user->username;
 
@@ -740,13 +763,26 @@ class LoginPlugin extends Plugin
 
         $this->grav->fireEvent('onUserLoginRegistered', new Event(['user' => $user]));
 
+        $redirect = $this->config->get('plugins.login.user_registration.redirect_after_registration');
+        $redirect_code = null;
+
         if (isset($data['state']) && $data['state'] === 'enabled' && $this->config->get('plugins.login.user_registration.options.login_after_registration', false)) {
-            $this->login->login(['username' => $username], ['after_registration' => true], ['user' => $user]);
+            $loginEvent = $this->login->login(['username' => $username], ['after_registration' => true], ['user' => $user, 'return_event' => true]);
+
+            // If there's no registration redirect, get one from login.
+            if (!$redirect) {
+                $message = $loginEvent->getMessage();
+                if ($message) {
+                    $messages->add($message, $loginEvent->getMessageType());
+                }
+
+                $redirect = $loginEvent->getRedirect();
+                $redirect_code = $loginEvent->getRedirectCode();
+            }
         }
 
-        $redirect = $this->config->get('plugins.login.user_registration.redirect_after_registration', false);
         if ($redirect) {
-            $this->grav->redirect($redirect);
+            $this->grav->redirectLangSafe($redirect, $redirect_code);
         }
     }
 
@@ -763,6 +799,12 @@ class LoginPlugin extends Plugin
         $user     = $this->grav['user'];
         $language = $this->grav['language'];
 
+        $form->validate();
+        $form->filter();
+
+        /** @var Data $form_data */
+        $form_data = $form->getData();
+
         // Don't save if user doesn't exist
         if (!$user->exists()) {
             $this->grav->fireEvent('onFormValidationError', new Event([
@@ -774,7 +816,7 @@ class LoginPlugin extends Plugin
         }
 
         // Stop overloading of username
-        $username = $form->value('username');
+        $username = $form->data('username');
         if (isset($username)) {
             $this->grav->fireEvent('onFormValidationError', new Event([
                 'form'    => $form,
@@ -788,7 +830,7 @@ class LoginPlugin extends Plugin
         }
 
         // Check for existing email
-        $email    = $form->value('email');
+        $email    = $form->data('email');
         $existing_email = User::find($email,['email']);
         if ($user->username != $existing_email->username && $existing_email->exists()) {
             $this->grav->fireEvent('onFormValidationError', new Event([
@@ -802,7 +844,15 @@ class LoginPlugin extends Plugin
             return;
         }
 
-        $user->merge($form->getData()->toArray());
+        $fields = (array)$this->config->get('plugins.login.user_registration.fields', []);
+
+        $data = [];
+        foreach ($fields as $field) {
+            if (!isset($data[$field]) && $form_data->get($field)) {
+                $data[$field] = $form_data->get($field);
+            }
+        }
+        $user->merge($data);
 
         try {
             $user->save();
@@ -866,17 +916,24 @@ class LoginPlugin extends Plugin
 
         // Only use remember me if user isn't set and feature is enabled.
         if ($this->grav['config']->get('plugins.login.rememberme.enabled') && !$event->getUser()->exists()) {
+            /** @var Debugger $debugger */
+            $debugger = $this->grav['debugger'];
+
             /** @var RememberMe $rememberMe */
             $rememberMe = $this->grav['login']->rememberMe();
             $username = $rememberMe->login();
 
             if ($rememberMe->loginTokenWasInvalid()) {
                 // Token was invalid. We will display error page as this was likely an attack.
+                $debugger->addMessage('Remember Me: Stolen token!');
+
                 throw new \RuntimeException($this->grav['language']->translate('PLUGIN_LOGIN.REMEMBER_ME_STOLEN_COOKIE'), 403);
             }
 
             if ($username === false) {
                 // User has not been remembered, there is no point of continuing.
+                $debugger->addMessage('Remember Me: No token matched.');
+
                 $event->setStatus($event::AUTHENTICATION_FAILURE);
                 $event->stopPropagation();
 
@@ -884,8 +941,25 @@ class LoginPlugin extends Plugin
             }
 
             // Allow remember me to work with different login methods.
+            $user = User::load($username, false);
             $event->setCredential('username', $username);
-            $event->setUser(User::load($username, false));
+            $event->setUser($user);
+
+            if (!$user->exists()) {
+                $debugger->addMessage('Remember Me: User does not exist');
+
+                $event->setStatus($event::AUTHENTICATION_FAILURE);
+                $event->stopPropagation();
+
+                return;
+            }
+
+            $debugger->addMessage('Remember Me: Authenticated!');
+
+            $event->setStatus($event::AUTHENTICATION_SUCCESS);
+            $event->stopPropagation();
+
+            return;
         }
     }
 
@@ -968,9 +1042,6 @@ class LoginPlugin extends Plugin
             $username = $event->getUser()->get('username');
             if ($event->getCredential('rememberme')) {
                 $login->rememberMe()->createCookie($username);
-            } else {
-                $login->rememberMe()->getStorage()->cleanAllTriplets($username);
-                $login->rememberMe()->clearCookie();
             }
         }
     }

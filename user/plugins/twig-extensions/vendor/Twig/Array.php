@@ -7,7 +7,9 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- *
+ */
+
+/**
  * @author Ricard Clau <ricard.clau@gmail.com>
  */
 class Twig_Extensions_Extension_Array extends Twig_Extension
@@ -40,24 +42,15 @@ class Twig_Extensions_Extension_Array extends Twig_Extension
  *
  * @return array
  */
-function twig_shuffle_filter($array, $associative = false)
+function twig_shuffle_filter($array)
 {
     if ($array instanceof Traversable) {
         $array = iterator_to_array($array, false);
     }
 
-    if($associative) {
-        $keys = array_keys($array);
-        shuffle($keys);
-
-        foreach($keys as $key) {
-            $new[$key] = $array[$key];
-        }
-        $array = $new;
-    }
-    else {
-        shuffle($array);
-    }
+    shuffle($array);
 
     return $array;
 }
+
+class_alias('Twig_Extensions_Extension_Array', 'Twig\Extensions\ArrayExtension', false);

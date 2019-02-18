@@ -2,11 +2,11 @@
 namespace Grav\Plugin\Admin;
 
 use Grav\Common\Config\Config;
-use Grav\Common\Data\Data;
 use Grav\Common\Filesystem\Folder;
 use Grav\Common\Grav;
 use Grav\Common\Media\Interfaces\MediaInterface;
 use Grav\Common\Page\Media;
+use Grav\Common\Uri;
 use Grav\Common\Utils;
 use Grav\Common\Plugin;
 use Grav\Common\Theme;
@@ -202,6 +202,29 @@ class AdminBaseController
     }
 
     /**
+     * Sends JSON response and terminates the call.
+     *
+     * @param array $response
+     * @param int $code
+     * @return bool
+     */
+    protected function sendJsonResponse(array $response, $code = 200)
+    {
+        // Make sure nothing extra gets written to the response.
+        while (ob_get_level()) {
+            ob_end_clean();
+        }
+
+        // JSON response.
+        http_response_code($code);
+        header('Content-Type: application/json');
+        header('Cache-Control: no-cache, no-store, must-revalidate');
+
+        echo json_encode($response);
+        exit();
+    }
+
+    /**
      * Handles ajax upload for files.
      * Stores in a flash object the temporary file and deals with potential file errors.
      *
@@ -227,10 +250,10 @@ class AdminBaseController
 
         $upload = $this->normalizeFiles($_FILES['data'], $settings->name);
 
-        $filename = trim($upload->file->name);
+        $filename = $upload->file->name;
 
         // Handle bad filenames.
-        if (strtr($filename, "\t\n\r\0\x0b", '_____') !== $filename || rtrim($filename, '. ') !== $filename || preg_match('|\.php|', $filename)) {
+        if (!Utils::checkFilename($filename)) {
             $this->admin->json_response = [
                 'status'  => 'error',
                 'message' => sprintf($this->admin->translate('PLUGIN_ADMIN.FILEUPLOAD_UNABLE_TO_UPLOAD', null),
@@ -287,6 +310,9 @@ class AdminBaseController
         $accepted = false;
         $errors   = [];
 
+        // Do not trust mimetype sent by the browser
+        $mime = Utils::getMimeByFilename($upload->file->name);
+
         foreach ((array)$settings->accept as $type) {
             // Force acceptance of any file when star notation
             if ($type === '*') {
@@ -295,15 +321,24 @@ class AdminBaseController
             }
 
             $isMime = strstr($type, '/');
-            $find   = str_replace('*', '.*', $type);
+            $find   = str_replace(['.', '*'], ['\.', '.*'], $type);
 
-            $match = preg_match('#' . $find . '$#', $isMime ? $upload->file->type : $upload->file->name);
-            if (!$match) {
-                $message  = $isMime ? 'The MIME type "' . $upload->file->type . '"' : 'The File Extension';
-                $errors[] = $message . ' for the file "' . $upload->file->name . '" is not an accepted.';
-                $accepted |= false;
+            if ($isMime) {
+                $match = preg_match('#' . $find . '$#', $mime);
+                if (!$match) {
+                    $errors[] = 'The MIME type "' . $mime . '" for the file "' . $upload->file->name . '" is not an accepted.';
+                } else {
+                    $accepted = true;
+                    break;
+                }
             } else {
-                $accepted |= true;
+                $match = preg_match('#' . $find . '$#', $upload->file->name);
+                if (!$match) {
+                    $errors[] = 'The File Extension for the file "' . $upload->file->name . '" is not an accepted.';
+                } else {
+                    $accepted = true;
+                    break;
+                }
             }
         }
 
@@ -368,7 +403,7 @@ class AdminBaseController
 
         // Generate random name if required
         if ($settings->random_name) { // TODO: document
-            $extension          = pathinfo($upload->file->name)['extension'];
+            $extension          = pathinfo($upload->file->name, PATHINFO_EXTENSION);
             $upload->file->name = Utils::generateRandomString(15) . '.' . $extension;
         }
 
@@ -868,17 +903,56 @@ class AdminBaseController
      */
     protected function taskRemoveFileFromBlueprint()
     {
+        /** @var Uri $uri */
         $uri       = $this->grav['uri'];
         $blueprint = base64_decode($uri->param('blueprint'));
         $path      = base64_decode($uri->param('path'));
+        $filename  = basename(isset($this->post['filename']) ? $this->post['filename'] : $path);
         $proute    = base64_decode($uri->param('proute'));
         $type      = $uri->param('type');
         $field     = $uri->param('field');
 
-        $this->taskRemoveMedia();
+        // Get Blueprint
+        if ($type === 'pages' || strpos($blueprint, 'pages/') === 0) {
+            $page = $this->admin->page(true, $proute);
+            if (!$page) {
+                $this->admin->json_response = [
+                    'status'  => 'error',
+                    'message' => 'Page not found'
+                ];
 
-        if ($type === 'pages') {
-            $page      = $this->admin->page(true, $proute);
+                return false;
+            }
+            $blueprints = $page->blueprints();
+            $path = Folder::getRelativePath($page->path());
+            $settings = (object)$blueprints->schema()->getProperty($field);
+        } else {
+            $page = null;
+            $settings = (object)$this->admin->blueprints($blueprint)->schema()->getProperty($field);
+        }
+
+        // Get destination
+        if ($this->grav['locator']->isStream($settings->destination)) {
+            $destination = $this->grav['locator']->findResource($settings->destination, false, true);
+        } else {
+            $destination = Folder::getRelativePath(rtrim($settings->destination, '/'));
+            $destination = $this->admin->getPagePathFromToken($destination, $page);
+        }
+
+        // Not in path
+        if (!Utils::startsWith($path, $destination)) {
+            $this->admin->json_response = [
+                'status'  => 'error',
+                'message' => 'Path not valid for this data type'
+            ];
+
+            return false;
+        }
+
+        // Only remove files from correct destination...
+        $this->taskRemoveMedia($destination . '/' . $filename);
+
+        if ($page) {
             $keys      = explode('.', preg_replace('/^header./', '', $field));
             $header    = (array)$page->header();
             $data_path = implode('.', $keys);
@@ -892,9 +966,11 @@ class AdminBaseController
 
             $page->save();
         } else {
+
             $blueprint_prefix = $type === 'config' ? '' : $type . '.';
             $blueprint_name   = str_replace(['config/', '/blueprints'], '', $blueprint);
             $blueprint_field  = $blueprint_prefix . $blueprint_name . '.' . $field;
+
             $files            = $this->grav['config']->get($blueprint_field);
 
             if ($files) {
@@ -935,15 +1011,17 @@ class AdminBaseController
      *
      * @return bool True if the action was performed
      */
-    public function taskRemoveMedia()
+    public function taskRemoveMedia($filename = null)
     {
         if (!$this->canEditMedia()) {
             return false;
         }
 
-        $filename = base64_decode($this->grav['uri']->param('route'));
-        if (!$filename) {
-            $filename = base64_decode($this->route);
+        if (is_null($filename)) {
+            $filename = base64_decode($this->grav['uri']->param('route'));
+            if (!$filename) {
+                $filename = base64_decode($this->route);
+            }
         }
 
         $file                  = File::instance($filename);

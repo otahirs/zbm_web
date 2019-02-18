@@ -121,6 +121,8 @@ if (!class_exists('\\TwelveTone\\Common\\DependencyUtil')) {
                             }
                         }
                         $realVersion = $found->blueprints()->version;
+                        // bug fix for beta versions
+                        $realVersion = preg_replace('-beta.*$','', $realVersion);
                         if (!version_compare($realVersion, $version, $compare)) {
                             $msg = "Missing dependency: '$name' $version";
                             $msg .= ' actual ' . $realVersion;

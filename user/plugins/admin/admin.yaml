@@ -20,6 +20,7 @@ widgets:
   dashboard-pages: true
 pages:
   show_parents: both
+  show_modular: true
 session:
   timeout: 1800
 warnings:

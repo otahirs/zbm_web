@@ -1,3 +1,9 @@
+# v0.1.10
+##  010/10/2018
+
+1. [](#bugfix)
+    * Add beta version in dependency util
+    
 # v0.1.9
 ##  06/22/2018
 

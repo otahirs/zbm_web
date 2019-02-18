@@ -34,13 +34,13 @@ define('MYPEAR_ERROR_EXCEPTION', 32);
 /**#@-*/
 
 if (substr(PHP_OS, 0, 3) == 'WIN') {
-    define('OS_WINDOWS', true);
-    define('OS_UNIX',    false);
-    define('MYPEAR_OS',    'Windows');
+    define('MYPEAR_OS_WINDOWS', true);
+    define('MYPEAR_OS_UNIX', false);
+    define('MYPEAR_OS', 'Windows');
 } else {
-    define('OS_WINDOWS', false);
-    define('OS_UNIX',    true);
-    define('MYPEAR_OS',    'Unix'); // blatant assumption
+    define('MYPEAR_OS_WINDOWS', false);
+    define('MYPEAR_OS_UNIX', true);
+    define('MYPEAR_OS', 'Unix'); // blatant assumption
 }
 
 $GLOBALS['_MYPEAR_default_error_mode']     = MYPEAR_ERROR_RETURN;
@@ -752,7 +752,7 @@ class MYPEAR
             return false;
         }
 
-        if (OS_WINDOWS) {
+        if (MYPEAR_OS_WINDOWS) {
             $suffix = '.dll';
         } elseif (PHP_OS == 'HP-UX') {
             $suffix = '.sl';

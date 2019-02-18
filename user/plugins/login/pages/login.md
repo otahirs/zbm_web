@@ -1,6 +1,5 @@
 ---
-title: Přihlašení
-slug: login
+title: Login
 
 login_redirect_here: false
 
@@ -22,7 +21,7 @@ forms:
           id: password
           placeholder: Password
           label: PLUGIN_LOGIN.PASSWORD
-
+  
   login-twofa:
     action:
     method: post
@@ -36,8 +35,8 @@ forms:
           type: text
           id: twofa-code
           autofocus: true
-          placeholder: PLUGIN_LOGIN.2FA_CODE_INPUT
+          placeholder: PLUGIN_LOGIN.2FA_CODE_INPUT 
 ---
 
-# Přihlašte se
+# User Login
 

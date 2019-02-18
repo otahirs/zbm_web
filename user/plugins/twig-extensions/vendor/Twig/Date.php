@@ -9,6 +9,7 @@
  * file that was distributed with this source code.
  */
 use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Component\Translation\IdentityTranslator;
 
 /**
  * @author Robin van der Vleuten <robinvdvleuten@gmail.com>
@@ -31,6 +32,11 @@ class Twig_Extensions_Extension_Date extends Twig_Extension
 
     public function __construct(TranslatorInterface $translator = null)
     {
+        // Ignore the IdentityTranslator, otherwise the parameters won't be replaced properly
+        if ($translator instanceof IdentityTranslator) {
+            $translator = null;
+        }
+
         $this->translator = $translator;
     }
 
@@ -47,11 +53,11 @@ class Twig_Extensions_Extension_Date extends Twig_Extension
     /**
      * Filter for converting dates to a time ago string like Facebook and Twitter has.
      *
-     * @param Twig_Environment $env  A Twig_Environment instance.
-     * @param string|DateTime  $date A string or DateTime object to convert.
+     * @param Twig_Environment $env  a Twig_Environment instance
+     * @param string|DateTime  $date a string or DateTime object to convert
      * @param string|DateTime  $now  A string or DateTime object to compare with. If none given, the current time will be used.
      *
-     * @return string The converted time.
+     * @return string the converted time
      */
     public function diff(Twig_Environment $env, $date, $now = null)
     {
@@ -97,3 +103,5 @@ class Twig_Extensions_Extension_Date extends Twig_Extension
         return 'date';
     }
 }
+
+class_alias('Twig_Extensions_Extension_Date', 'Twig\Extensions\DateExtension', false);

@@ -1413,7 +1413,7 @@ class PhpTwigExtension extends \Twig_Extension
                   }
                 }
                 // normalize GPS
-                if(isset($_POST["GPS"])){
+                if(isset($_POST["GPS"]) && trim($_POST["GPS"]) != ""){
                     $gps = $this->normalize_GPS($_POST["GPS"]);
                     if($gps){
                         $parsed_file["GPS"] = $gps;

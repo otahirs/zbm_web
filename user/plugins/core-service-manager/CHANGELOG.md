@@ -1,3 +1,39 @@
+# v1.0.16
+##  2/09/2019
+
+1. [](#bugfix)
+    * Register asset 'modal.js'. Fixes 'Modal is not defined'
+    
+# v1.0.15
+##  12/11/2018
+
+1. [](#bugfix)
+    * Avoid conflict with PEAR module constants
+    
+# v1.0.14
+##  12/11/2018
+
+1. [](#bugfix)
+    * Check for defined constants
+    
+# v1.0.13
+##  11/26/2018
+
+1. [](#feature)
+    * Prepare for admin v1.9.x
+
+# v1.0.12
+##  10/10/2018
+
+1. [](#bugfix)
+    * Ensure order is numeric when adding javascript asset
+
+# v1.0.11
+##  10/10/2018
+
+1. [](#bugfix)
+    * Add beta version in dependency util
+    
 # v1.0.10
 ##  05/31/2018
 

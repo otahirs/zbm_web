@@ -1,6 +1,6 @@
 ---
 title: 'Soustředění Slovinsko'
-date: '2018-11-07'
+date: '2019-02-18'
 id: 'P20190306_71910'
 start: '2019-03-06'
 end: '2019-03-10'
@@ -27,5 +27,10 @@ trainingCamp:
 template: soustredeni
 taxonomy:
     skupina:
+        - zaci2
+        - dorost
+    rankings:
 note: ''
 ---
+
+
