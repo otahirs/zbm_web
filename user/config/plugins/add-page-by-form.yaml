@@ -1,0 +1,7 @@
+enabled: false
+date_display_format: 'd-m-Y g:ia'
+default_title: 'My New Page'
+default_content: .
+overwrite_mode: false
+include_username: true
+auto_taxonomy_types: false

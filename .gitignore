@@ -1,0 +1,18 @@
+# Grav Root and Unused
+/*.*
+!.gitignore
+/assets
+/backup
+/bin
+/cache
+/images
+/logs
+/system
+/downloads
+/core
+user/*.*
+user/accounts/*
+user/config/*.*
+/vendor
+/webserver-configs
+.revs/
