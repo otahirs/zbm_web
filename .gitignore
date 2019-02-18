@@ -13,6 +13,7 @@
 user/*.*
 user/accounts/*
 user/config/*.*
+!user/config/groups.yaml
 /vendor
 /webserver-configs
 .revs/
