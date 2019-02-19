@@ -1,6 +1,7 @@
 
 redekční sytém [Grav](https://github.com/getgrav/grav), stejně tak jako veškerá má práce na stránkách je volně dostupná pod licencí MIT
 
+<hr>
 
 The MIT License (MIT)
 
