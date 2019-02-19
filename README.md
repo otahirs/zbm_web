@@ -1,12 +1,13 @@
 
 Redekční sytém [Grav](https://github.com/getgrav/grav), stejně tak jako veškerá má práce na stránkách je volně dostupná pod licencí MIT.  
-Jako základní šablona bylo použito téma Editorial dostupné z [HTML5UP](https://html5up.net]) dle Creative Commons Attribution 3.0 License.
+Jako základní šablona bylo použito šablona Editorial dostupná z [HTML5UP](https://html5up.net]) dle Creative Commons Attribution 3.0 License, tuto šablonu editorial pro Grav upravil Jeremy Gonyea a vydal též pod licencí MIT.
 
 <hr>
 
 The MIT License (MIT)
 
 Copyright (c) 2018 Grav  
+Copyright (c) 2017 Jeremy Gonyea  
 Copyright (c) 2019 Otakar Hirš
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
