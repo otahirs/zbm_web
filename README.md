@@ -1,5 +1,6 @@
 
-redekční sytém [Grav](https://github.com/getgrav/grav), stejně tak jako veškerá má práce na stránkách je volně dostupná pod licencí MIT
+Redekční sytém [Grav](https://github.com/getgrav/grav), stejně tak jako veškerá má práce na stránkách je volně dostupná pod licencí MIT.  
+Jako základní šablona bylo použito téma Editorial dostupné z [HTML5UP](https://html5up.net]) dle Creative Commons Attribution 3.0 License.
 
 <hr>
 
