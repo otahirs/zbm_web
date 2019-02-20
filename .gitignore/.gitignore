@@ -1,0 +1,7 @@
+/*
+!.gitignore
+!/pages
+!/themes
+!/plugins
+!/config/groups.yaml
+.revs/
