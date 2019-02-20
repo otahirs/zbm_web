@@ -4,4 +4,4 @@
 !/themes
 !/plugins
 !/config/groups.yaml
-.revs/
+**/.revs
