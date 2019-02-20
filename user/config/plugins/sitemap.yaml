@@ -1,7 +1,0 @@
-enabled: true
-route: /sitemap
-changefreq: daily
-priority: 1
-ignores:
-  - /trenerska-zona
-  - /php
