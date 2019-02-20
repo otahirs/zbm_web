@@ -1,8 +1,0 @@
-extends@:
-  type: user/account
-  context: blueprints://
-
-form:
-  fields:
-    security:
-      unset-security@: true
