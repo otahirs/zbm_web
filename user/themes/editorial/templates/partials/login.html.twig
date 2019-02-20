@@ -1,0 +1,49 @@
+
+
+
+
+
+<section class="alt">
+  {% if config.plugins.login.enabled and grav.user.authorize('site.login') %}
+    <header class="major">
+            <h2>Autentizovaná zóna</h2>
+    </header>
+  {% endif %}
+ <nav id="menu">
+<ul>
+     {% if config.plugins.login.enabled and grav.user.authorize('site.login') %}
+    <li><i class="fa fa-lock"></i> {% include 'partials/login-status.html.twig' %}</li>
+  {% else %}
+      <a href="{{base_url}}/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Přihlásit se</a></li>
+  {% endif %}
+
+          {% if (grav.user.username) %}
+
+                <a href="{{ page.url }}">  {# URL #}
+                {% if page.header.icon %}
+                    <i class="fa fa-{{ page.header.icon }}"></i>
+                {% endif %}
+                {{ XXX }} {# jmeno v menu #}
+                </a>
+                {% if (authorize(['site.login','site.plan'])) %}
+                <li>
+                  <a href="{{base_url}}/auth/plan"> Týdenní plán </a>
+                </li>
+                {% endif %}
+		{% if (authorize(['site.login','site.edit-event'])) %}
+                <li>
+                  <a href="{{base_url}}/auth/upravit-eventy"> Upravit Eventy </a>
+                </li>
+                {% endif %}
+                {% if (authorize(['site.login','site.nahrat-program'])) %}
+                <li>
+                  <a href="{{base_url}}/auth/nahrat-program"> Nahrát program </a>
+                </li>
+                {% endif %}
+          {% endif %}
+
+
+
+</ul>
+ </nav>
+</section>
