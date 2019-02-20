@@ -1,0 +1,18 @@
+name: Calendar
+version: 1.0.15
+description: "Upravený plugin 'Events' pro potřeby zobrazení kalendáře"
+icon: calendar
+author:
+  name: Kaleb Heitzman, upravil Ota
+  email: kalebheitzman@gmail.com
+  url: http://kheitzman.com
+homepage: http://github.com/kalebheitzman/grav-plugin-events
+demo: http://grav.brandr.co/calendar
+keywords: events, plugin
+bugs: https://github.com/kalebheitzman/grav-plugin-events/issues
+license: MIT
+
+dependencies:
+  - datetools
+
+
