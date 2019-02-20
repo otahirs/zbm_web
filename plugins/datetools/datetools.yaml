@@ -1,0 +1,6 @@
+dateFormat: 
+  default: "m/d/Y g:ia"     # 01/01/2015, 12:00am 
+  long: "l, F j, g:ia"      # Thursday, January 1, 12:00am
+  medium: "F j, g:ia"       # January 1, 12:00am
+  short: "m/d/y"            # 01/01/2015
+enabled: true
