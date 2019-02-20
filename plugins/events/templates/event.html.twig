@@ -1,0 +1,23 @@
+{% embed 'partials/base.html.twig' %}
+
+{% block content %}
+
+<div class="event-container">
+
+	<section class="event-listing">
+
+		{% if config.plugins.breadcrumbs.enabled %}
+			{% include 'partials/breadcrumbs.html.twig' %}
+		{% endif %}
+
+		{% include 'partials/event_item.html.twig' with {'event':page.parent, 'truncate':false, 'single':true} %}
+
+	</section>
+
+	{% include 'partials/events_sidebar.html.twig' with {'page':page.parent} %}
+
+</div>
+
+{% endblock %}
+
+{% endembed %}
