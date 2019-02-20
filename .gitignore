@@ -1,19 +1,7 @@
-# Grav Root and Unused
-/*.*
+/*
 !.gitignore
-/assets
-/backup
-/bin
-/cache
-/images
-/logs
-/system
-/downloads
-/core
-user/*.*
-user/accounts/*
-user/config/*.*
-!user/config/groups.yaml
-/vendor
-/webserver-configs
+!/pages
+!/themes
+!/plugins
+!/config/groups.yaml
 .revs/
