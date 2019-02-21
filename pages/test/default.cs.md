@@ -6,8 +6,5 @@ process:
     markdown: false
 ---
 
-{{ base_url }}
-{{ home_url }}
-{#
-{{phpShiftPlan("./user/pages/auth/plan/default--plan-header.cs.md", "./user/pages/auth/plan-next/default--plan-header.cs.md")}}
-#}
+{{phpTest()}}
+{{page.path}}

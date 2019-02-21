@@ -1,5 +1,7 @@
 <?php
 namespace Grav\Plugin;
+use Symfony\Component\Yaml\Yaml as Yaml;
+use Grav\Common\Cache as Cache;
 class PhpTwigExtension extends \Twig_Extension
 {
     public function getName()
@@ -22,6 +24,7 @@ class PhpTwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('phpSavePlan', [$this, 'savePlan']),
             new \Twig_SimpleFunction('phpSavePlanTemplate', [$this, 'savePlanTemplate']),   
             new \Twig_SimpleFunction('phpLoginRedirect', [$this, 'LoginRedirect']),
+            new \Twig_SimpleFunction('phpTest', [$this, 'Test']),      
             new \Twig_SimpleFunction('phpShiftPlan', [$this, 'ShiftPlan']),        
         
         ];
@@ -775,7 +778,7 @@ class PhpTwigExtension extends \Twig_Extension
                 elseif( $_POST["POST_type"] == "deleteNews" ){
                     $year = substr($_POST["id"], 0 , 4);
                     $this->rrmdir("./user/pages/databaze/".$year."/novinky/novinka_". $_POST['id'] . "/");
-                    \Grav\Common\Cache::clearCache('cache-only');
+                    Cache::clearCache('cache-only'); // grav sám uvolní cache pri změne souboru, ne však při jeho smazání
                 }
             }
         }
@@ -836,15 +839,13 @@ class PhpTwigExtension extends \Twig_Extension
         $txt_file    = file_get_contents($path_to_file); //nacte soubor
         $rows        = explode("\n", $txt_file); //rozdeli na radky
         array_shift($rows); //odstrani prvni radek souboru obsahujici "---"
-        $parsed = "---" . PHP_EOL ;
-
+        $parsed = "";
         foreach($rows as $row){   //prochazi vsechny radky
             if(trim($row) == "---"){
                 break;
             }
             $parsed .= $row . PHP_EOL;
         }
-        $parsed .= "---" . PHP_EOL;
         return $parsed;
     }
 
@@ -939,7 +940,6 @@ class PhpTwigExtension extends \Twig_Extension
                     "access:" . PHP_EOL .
                     "    site:" . PHP_EOL .
                     "        plan: true" . PHP_EOL .
-                    "edited: True" . PHP_EOL .
                     "planTemplate: " . $_POST["template"] . PHP_EOL .
                     "plan:" . PHP_EOL;
             if(isset($_POST['data'])){
@@ -952,37 +952,71 @@ class PhpTwigExtension extends \Twig_Extension
         }
     }
 
+    function getPlanFromTemplate($template){
+        if($template == "None"){
+            return;
+        }
+        // https://symfony.com/doc/current/components/yaml.html 
+
+        $templates_path = "./user/pages/auth/plan-templates/default--plan-header.cs.md";
+        $yaml = $this->parse_file_frontmatter_only($templates_path);
+
+        // returns parsed frontmatter in yaml as an array
+        $parsed = Yaml::parse($yaml);
+
+        // get only template that is needed
+        $parsed = $parsed[$template];
+
+        // fix to include "plan:"
+        $array["plan"] = $parsed;
+
+        // retun plan in Yaml format as a sting
+        return Yaml::dump($array, 5); 
+    }
+
     // nacist sablonu
     function savePlanTemplate(){
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $data = "---" . PHP_EOL .
-                    "process:". PHP_EOL .
-                    "    twig: true" . PHP_EOL .
-                    "    markdown: false" . PHP_EOL .
-                    "access:" . PHP_EOL .
-                    "    site:" . PHP_EOL .
-                    "        plan: true" . PHP_EOL .
-                    "edited: False" . PHP_EOL .
-                    "planTemplate: " . $_POST["template"] . PHP_EOL .
-                    "plan:" . PHP_EOL .
-                    "---" . PHP_EOL;
-            $data .= $this->parse_file_content_only($_POST["filePath"]);
 
-            $this->file_force_contents($_POST["filePath"], $data);
-        }
+        $page_path = $_POST["filePath"];
+        $templates_path = str_replace(array('/plan/', '/plan-next/'), '/plan-templates/', $page_path);
+        // get last used teamplates
+        $template = $_POST["template"];
+
+        // get plan from templates page
+        $yaml_plan = $this->getPlanFromTemplate($template);
+
+        // build page
+        $data = "---" . PHP_EOL .
+                "process:". PHP_EOL .
+                "    twig: true" . PHP_EOL .
+                "    markdown: false" . PHP_EOL .
+                "access:" . PHP_EOL .
+                "    site:" . PHP_EOL .
+                "        plan: true" . PHP_EOL .
+                "planTemplate: " . $template . PHP_EOL .
+                $yaml_plan .
+                "---" . PHP_EOL;
+        $data .= $this->parse_file_content_only($page_path);
+
+        // save page
+        $this->file_force_contents($page_path, $data);
     }
 
     // nastavi "pristi tyden" jako "tento tyden" a do "pristi tyden" nacte predchozi pouzitou sablonu - potreba CRON/ task scheduler 
     public function ShiftPlan($plan_path, $plan_next_path){
 
             // update this week
-            $data = "";
+            $data = "---". PHP_EOL;
             $data .= $this->parse_file_frontmatter_only($plan_next_path);
+            $data .= "---". PHP_EOL;
             $data .= $this->parse_file_content_only($plan_path);
 
             $this->file_force_contents($plan_path, $data);
 
             // load template for next week
+            $template = $this->get_template($plan_next_path);
+            $yaml_plan = $this->getPlanFromTemplate($template);
+
             $data = "---" . PHP_EOL .
                     "process:". PHP_EOL .
                     "    twig: true" . PHP_EOL .
@@ -990,9 +1024,8 @@ class PhpTwigExtension extends \Twig_Extension
                     "access:" . PHP_EOL .
                     "    site:" . PHP_EOL .
                     "        plan: true" . PHP_EOL .
-                    "edited: False" . PHP_EOL .
-                    "planTemplate: " . $this->get_template($plan_next_path) . PHP_EOL .
-                    "plan:" . PHP_EOL .
+                    "planTemplate: " . $template . PHP_EOL .
+                    $yaml_plan .
                     "---" . PHP_EOL;
             $data .= $this->parse_file_content_only($plan_next_path);
 
@@ -1591,6 +1624,31 @@ class PhpTwigExtension extends \Twig_Extension
                 }
             }
         }
+    }
+    public function Test(){
+           /* $page_path = "./user/pages/auth/plan/default--plan-header.cs.md";
+            $templates_path = str_replace(array('/plan/', '/plan-next/'), '/plan-templates/', $page_path);
+            $template = $this->get_template($page_path);
+
+            // get yaml plan from templates page's frontmatter
+            $yaml = $this->parse_file_frontmatter_only($templates_path);
+            $parsed = Yaml::parse($yaml);
+            $array["plan"] = $parsed[$template];
+            $yaml_plan = Yaml::dump($array, 5);
+
+            // build page
+            $data = "---" . PHP_EOL .
+                    "process:". PHP_EOL .
+                    "    twig: true" . PHP_EOL .
+                    "    markdown: false" . PHP_EOL .
+                    "access:" . PHP_EOL .
+                    "    site:" . PHP_EOL .
+                    "        plan: true" . PHP_EOL .
+                    "planTemplate: " . $template . PHP_EOL .
+                    $yaml_plan .
+                    "---" . PHP_EOL; */
+            $data = $this->getPlanFromTemplate("winter");
+            echo($data);
     }
 
 

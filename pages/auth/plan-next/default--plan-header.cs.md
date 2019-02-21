@@ -5,9 +5,92 @@ process:
 access:
     site:
         plan: true
-edited: False
 planTemplate: winter
 plan:
+    monday:
+        1:
+            name: 'kopce (světlo s sebou)'
+            place: 'Hala Rosnička'
+            meetup: '16:30'
+            group:
+                - dorost
+    tuesday:
+        1:
+            name: 'běžecké posilování'
+            place: 'ZŠ Kotlářská'
+            meetup: '16:15'
+            group:
+                - zaci1
+                - zaci2
+        2:
+            name: 'běžecké posilování'
+            place: 'ZŠ Kotlářská'
+            meetup: '20:00'
+            group:
+                - dorost
+    wednesday:
+        1:
+            name: 'výprava za OB'
+            place: 'ZŠ Milénova'
+            meetup: '16:00'
+            group:
+                - zabicky
+        2:
+            name: 'hry + mapa'
+            place: 'ZŠ Milénova'
+            meetup: '16:00'
+            group:
+                - pulci1
+                - pulci2
+        3:
+            name: 'běžecký trénink'
+            place: 'ZŠ Milénova'
+            meetup: '16:00'
+            group:
+                - zaci1
+                - zaci2
+        4:
+            name: intervaly
+            place: 'ZŠ Milénova'
+            meetup: '16:30'
+            group:
+                - dorost
+    thursday:
+        1:
+            name: tělocvična
+            place: 'ZŠ Kotlářská'
+            meetup: '16:00'
+            group:
+                - pulci1
+                - pulci2
+        2:
+            name: tělocvična
+            place: 'ZŠ Kotlářská'
+            meetup: '16:30'
+            group:
+                - zaci1
+                - zaci2
+        3:
+            name: 'kompenzační cvičení'
+            place: 'ZŠ Kotlářská'
+            meetup: '17:30'
+            group:
+                - dorost
+        4:
+            name: volejbal
+            place: 'ZŠ Kotlářská'
+            meetup: '19:30'
+            group:
+                - dorost
+    friday:
+        1:
+            name: 'florbal, basket'
+            place: 'ZŠ Kotlářská'
+            meetup: '18:00'
+            group:
+                - dorost
+    saturday: null
+    sunday: null
 ---
 {# ************************************************************#}
 {# rozdíl mezi /plan-next and /plan je jen -  "loop.index + 7" #}
@@ -16,12 +99,7 @@ plan:
         {% set plan_collection = page.collection({'items':'@root.descendants','order': {'by': 'default', 'dir': 'asc'}}).ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']) %}
         
         {# ziska array s pravidelnymi treninky #}
-        {% if page.header.edited or page.header.planTemplate == "None" %}
         {% set pravidelne_treninky = page.header.plan %}
-        {% else %}
-        {% set pravidelne_treninky_site = page.find('/auth/plan-templates') %}
-        {% set pravidelne_treninky =  attribute(attribute(pravidelne_treninky_site, "header"), page.header.planTemplate) %}
-        {% endif %}
         
         <table class="plan">
             {# inicializace pole urcujiciho den v tydnu #}
@@ -425,6 +503,13 @@ window.addEventListener('load', function() {
     }
 });
 </script>
+
+
+
+
+
+
+
 
 
 
