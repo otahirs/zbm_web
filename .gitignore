@@ -5,3 +5,4 @@
 !/plugins
 !/config/groups.yaml
 **/.revs
+/plugins/git-sync
