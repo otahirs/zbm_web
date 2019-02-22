@@ -12,4 +12,4 @@ jak se zpomali nahravani stranek s velikosti... A jak si to poradi s pekelne dlo
 
 Vsechny fotky ze Spindu jsou [tady](https://www.zonerama.com/TomasBubela/Album/5109183?fbclid=IwAR3vHEvyLep45FVpYtJEVid_Ecfn75gOerdkUl5d5ys9iF9Fkf491UY-l10).
 
-**edit ota: právě jsi zpomalil nahrávání stránky jen o 87Kb, jedná se pouze o komprimovaný náhled obrázku :)**
+*edit ota: právě jsi zpomalil nahrávání stránky jen o 87Kb, jedná se pouze o komprimovaný náhled obrázku :)*
