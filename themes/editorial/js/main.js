@@ -19,9 +19,9 @@
 
 	$(function() {
 		//together with css prevents content flickering over menu on page load
-		window.onload = function(){
-			document.getElementById("main").style.opacity = 1;
-		};
+		//window.onload = function(){
+		//	document.getElementById("main").style.opacity = 1;
+		//};
 		// vars
 		var	$window = $(window),
 			$head = $('head'),
