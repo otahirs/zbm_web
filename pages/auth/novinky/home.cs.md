@@ -1,5 +1,5 @@
 ---
-title: Novinky
+title: 'Upravit Novinky'
 process:
     twig: true
     markdown: false
@@ -15,11 +15,11 @@ content:
   
     <div id="novinky" class="pure-u-1 pure-u-sm-15-24"> <!-- plan + novinky vlevo -->
 
-      {% if (authorize(['site.novinky'])) %}
+    {# {% if (authorize(['site.novinky'])) %} #} 
         <h2>         
             <span id="addNewsButton" style="cursor: pointer; padding: 5px 10px; border: grey dashed 2px;">Přidat novinku <i class="fa fa-plus-square-o" aria-hidden="true"></i></span>    
         </h2>
-      {% endif %}
+     {# {% endif %} #} 
 
       {% set news_collection = page.collection().ofType('novinka').order('p.header.id','asc') %}
 
@@ -29,11 +29,11 @@ content:
           <article id="{{ p.header.id }}">
             <h4 class="news--header">
                 <span class="newsDate">{{p.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }} </span> &nbsp; &nbsp; <span class="newsTitle"> {{ p.header.title }} </span>
-              {% if (authorize(['site.novinky'])) %}
+            {#  {% if (authorize(['site.novinky'])) %} #} 
           			&nbsp;
                 {# otevrit modal #}
                 <span class="edit-news" style="cursor: pointer;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-        		  {% endif %}
+        	{#	  {% endif %}#} 
             </h4>
             <div class="pure-g newsPictures">
                 {% for img in p.header.pictures %}
@@ -48,7 +48,7 @@ content:
                     <a href="{{base_url_absolute}}/databaze/{{p.header.date|slice(0,4)}}/novinky/novinka_{{p.header.id}}/img/{{img.name}}" target="_blank" title="Zobrazit originální obrázek">
                       <picture>
                         {# časem WebP #}
-                        <img class="pure-img" src="user/pages/databaze/{{p.header.date|slice(0,4)}}/novinky/novinka_{{p.header.id}}/img/preview_{{img.name}}" alt="Zde by měl být obrázek">
+                        <img class="pure-img" src="{{base_url_absolute}}/databaze/{{p.header.date|slice(0,4)}}/novinky/novinka_{{p.header.id}}/img/preview_{{img.name}}" alt="Zde by měl být obrázek">
                       </picture>
                     </a>
                   </div>
@@ -90,9 +90,9 @@ content:
             <h4>
               {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' '~ p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
                   |&nbsp;&nbsp;{{ p.header.title ~' '~ p.header.event.location }} 
-              {% if (authorize(['site.blizise'])) %}
+            {#  {% if (authorize(['site.blizise'])) %} #}
                 &nbsp; <span class="editBliziSeButton" style="cursor: pointer;"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-              {% endif %}
+            {#  {% endif %} #}
               <br>{% if p.header.eventTypeDescription is not empty %}<em style="font-weight:normal;">{{p.header.eventTypeDescription}}</em>{% endif %}
             </h4>
             <section data-id="{{p.header.id}}" data-template="{{p.header.template}}">
@@ -121,7 +121,7 @@ ostatni data z formulare a odeslana dropzone.js prikazem "myDropzone.processQueu
 2. pokud je formular odesilan bez novych obrazku je odeslan klasicky 
 #######################################}
 
-{% if (authorize(['site.novinky'])) %} {# kod mezi "if" a "endif" se zobrazi jen pro uzivatele autorizovane skupiny #}
+{# {% if (authorize(['site.novinky'])) %} #} {# kod mezi "if" a "endif" se zobrazi jen pro uzivatele autorizovane skupiny #}
 {####### News modal PHP a HTML ########}
 <div id="NewsModal" class="news--modal">
   {# Modal content #}
@@ -396,12 +396,12 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
 
 </script>
 
-{% endif %}
+{# {% endif %} #}
 
 {#######################################
 ############ Edit blizise ##############
 ########################################}
-{% if (authorize(['site.blizise'])) %} {# kod mezi if se zobrazi jen pro uzivatele autorizovane skupiny #}
+{# {% if (authorize(['site.blizise'])) %} #} {# kod mezi if se zobrazi jen pro uzivatele autorizovane skupiny #}
   <script>
     /* inicializace prekladace z HTML zpet na markdown "Turndown"*/
     const editBliziSe_turndownService = new TurndownService({
@@ -419,9 +419,16 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
                             '<input name="id" type="hidden" value="'+ content.getAttribute("data-id") +'">' +
                             '<input name="template" type="hidden" value="'+ content.getAttribute("data-template") +'">' +
                             '<textarea name="content"></textarea>' +
-                            '<button class="saveBlizise special" type="submit" style="margin-right:5px; margin-top: 1em">Uložit</button>' +
-                            '<button class="regenerateBliziSe" type="button" margin-top: 1em"><i class="fa fa-refresh" aria-hidden="true"></i></button>' +
-                            '<button class="editBliziSeCancel" style="margin-top: 1em">Zrušit</button>' +
+                            '<button class="saveBlizise special fit" type="submit" style="margin-top: 1em">Uložit</button>' +
+                            '<div class="pure-g">' +
+                            '<div class="pure-u-18-24">' +
+                            '<button class="editBliziSeCancel fit small" type="button">Zrušit</button>' +
+                            '</div>' +
+                            '<div class="pure-u-1-24">&nbsp;</div>'+
+                            '<div class="pure-u-5-24">' +
+                            '<button class="regenerateBliziSe fit small" type="button" title="Znovu vygenerovat obsah"><i class="fa fa-refresh" aria-hidden="true"></i></button>' +
+                            '</div>' +
+                            '</div>' +
                             '</form>';
 
       var editBliziSe_simplemde = new SimpleMDE({ element: content.querySelector("textarea"), //misto textarea nacte markdown editor
@@ -478,4 +485,4 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
       })
   });
   </script>
-{% endif %}
+{# {% endif %} #}
