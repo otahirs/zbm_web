@@ -25,6 +25,11 @@
                 {% endif %}
                 {{ XXX }} {# jmeno v menu #}
                 </a>
+		{% if (authorize(['site.login','site.novinky'])) %}
+                <li>
+                  <a href="{{base_url}}/auth/novinky">Novinky <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                </li>
+                {% endif %}
                 {% if (authorize(['site.login','site.plan'])) %}
                 <li>
                   <a href="{{base_url}}/auth/plan"> Týdenní plán </a>
@@ -33,6 +38,11 @@
 		{% if (authorize(['site.login','site.edit-event'])) %}
                 <li>
                   <a href="{{base_url}}/auth/upravit-eventy"> Upravit Eventy </a>
+                </li>
+                {% endif %}
+		{% if (authorize(['site.login','site.polaris'])) %}
+                <li>
+                  <a href="{{base_url}}/auth/polaris">Polaris</a>
                 </li>
                 {% endif %}
                 {% if (authorize(['site.login','site.nahrat-program'])) %}
