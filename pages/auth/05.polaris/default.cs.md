@@ -107,39 +107,6 @@ polaris:
               }
           });
       });
-
-    $( document ).ready(function() {
-        
-        $(".polaris--delete").click( function(e){
-            e.stopPropagation();
-            if (confirm("Odstranit Polaris?") == true) {
-                var deleteDiv = this.parentElement.parentElement;
-                var deletePolarisForm = new FormData();
-                deletePolarisForm.append("path", "{{page.path ~"/"}}" );
-                deletePolarisForm.append("template", "{{page.template}}" );
-                deletePolarisForm.append("year", this.getAttribute("data-year") );
-                deletePolarisForm.append("cislo", this.getAttribute("data-cislo") );
-                deletePolarisForm.append("pdf", this.getAttribute("data-pdf") );
-                deletePolarisForm.append("POST_type", "deletePolaris" );
-                $.ajax({
-                    url: "/php/deletepolaris",
-                    type: "POST",
-                    data: deletePolarisForm,
-                    processData: false,
-                    contentType: false,
-                    success: function (){
-                        $(deleteDiv).fadeOut(1000);      
-                    },
-                    error: function (xhr, desc, err){
-                        console.log(err);
-                        console.log(desc);
-                        console.log(xhr);
-                    }
-                });
-            }
-        })
-
-    });
 </script>
 {% endif %}
 
@@ -152,8 +119,8 @@ polaris:
             <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4 pure-u-lg-1-5 pure-u-xl-1-6"> 
                 <div class="polaris--outerDiv">
                     <div class="polaris--innerDiv">
-                        <a href="{{page.url()}}/{{rok}}/{{pdf}}" target="_blank">
-                            <img class="pure-img" src="{{page.url()}}/{{rok}}/{{pdf}}.jpg">
+                        <a href="{{base_url_absolute}}/auth/polaris/{{rok}}/{{pdf}}" target="_blank">
+                            <img class="pure-img" src="{{base_url_absolute}}/auth/polaris/{{rok}}/{{pdf}}.jpg">
                             <div class="polaris--title"> 
                                 {{pdf[13:2]}}
                             </div>
@@ -172,4 +139,38 @@ polaris:
     <hr>
 {% endfor %}
 
+{% if (authorize(['site.polaris'])) %}
+<script>
+    $(".polaris--delete").click( function(e){
+        e.stopPropagation();
+        if (confirm("Odstranit Polaris?") == true) {
+            var deleteDiv = this.parentElement.parentElement;
+            var deletePolarisForm = new FormData();
+            deletePolarisForm.append("path", "{{page.path ~"/"}}" );
+            deletePolarisForm.append("template", "{{page.template}}" );
+            deletePolarisForm.append("year", this.getAttribute("data-year") );
+            deletePolarisForm.append("cislo", this.getAttribute("data-cislo") );
+            deletePolarisForm.append("pdf", this.getAttribute("data-pdf") );
+            deletePolarisForm.append("POST_type", "deletePolaris" );
+            $.ajax({
+                url: "/php/deletepolaris",
+                type: "POST",
+                data: deletePolarisForm,
+                processData: false,
+                contentType: false,
+                success: function (){
+                    $(deleteDiv).fadeOut(1000);      
+                },
+                error: function (xhr, desc, err){
+                    console.log(err);
+                    console.log(desc);
+                    console.log(xhr);
+                }
+            });
+        }
+        
+
+    })
+</script>
+{% endif %}
 
