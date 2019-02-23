@@ -1,13 +1,42 @@
+# Nové webovky
+**Veškeré připomínky, návrhy a nalezené chyby pište zde do _Issues_ nebo na otakar.hirs@gmail.com**  
 
-Redekční sytém [Grav](https://github.com/getgrav/grav), stejně tak jako veškerá má práce na stránkách je volně dostupná pod licencí MIT.
-<hr>
+Základní myšlenka nových stránek je maximálně zjednodušit jejich správu. Po prvotním načtení dat s akcemi se co nejvíce obsahu zautovatizovaně generuje. Informace k událostem lze přes formulář jednoduše změnit a tyto změny se všude aplikují. Na hlavní stráce se kromě novinek zobrazuje vpravo sloupec s blížícími se událostmi. Každá skupina má svou stránku s aktuálními informacemi pod správou trenérů.
 
-The MIT License (MIT)
+Na současný stav se můžete podívat na [new.zbmob.cz](https://new.zbmob.cz), [zabiny.club](https://zabiny.club) nebo [zabiny.team](https://zabiny.team)  
 
-Copyright (c) 2019 Otakar Hirš
+![náhled](https://zabiny.club/zabiny.png)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+## Hotovo
+- [x] hlavní stránka již nestahuje 70 MB dat
+- [x] přidávání a úprava novinek, včetně obrázků s komprimovaným náhledem
+- [x] generování stránek událostí z načtených dat
+- [x] editovatelné informace k blížícím se událostem
+- [x] správa plánu na tento týden včetně možnosti použití šablon
+- [x] polaris
+- [x] základní optimalizace
+## Co je nutné dodělat než to půjde do světa
+- [ ] stránky pro jednotlivé skupiny
+- [ ] ob postupy / 3Drun
+- [ ] mapová teorie
+- [ ] program - filtr dle data
+## Toto počká, ale časem chceme dodělat
+- [ ] design
+- [ ] Konce termínů přihlášek
+- [ ] překlad do AJ
+- [ ] vyhledávání
+- [ ] U všech php requestů - error handling 
+- [ ] Log, kdo a kdy nahrával, upravoval soubory 
+- [ ] světový mír
+- [ ] Kompletní dokumentace ke stránkám 
+- [ ] Kalendář (+ možnost filtrovat kalendář podle skupin (ideálně odkaz ze skupin))
+- [ ] skupiny nejsou podmenu ale cookie si pamatuje poslední navštívenou
+- [ ] 5100 koťátek
+- [ ] treninkovy plan součástí “plán na tento týden”
+- [ ] integrace Stravy
+- [ ] Automodul
+- [ ] Archiv - staré soubory novinek a akcí přesunout do archivu
+- [ ] naučit se PHP a saubermachen ten bordel
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
