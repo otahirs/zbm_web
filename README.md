@@ -30,6 +30,7 @@ Na současný stav se můžete podívat na [new.zbmob.cz](https://new.zbmob.cz),
 - [ ] Kompletní dokumentace ke stránkám 
 - [ ] Kalendář (+ možnost filtrovat kalendář podle skupin (ideálně odkaz ze skupin))
 - [ ] skupiny nejsou podmenu ale cookie si pamatuje poslední navštívenou
+- [ ] unifikovat všechny css do sass
 - [ ] treninkovy plan součástí “plán na tento týden”
 - [ ] integrace Stravy
 - [ ] Automodul
