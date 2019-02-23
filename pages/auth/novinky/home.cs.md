@@ -251,16 +251,16 @@ $(".edit-news").click(function(){
     newsDropzone.innerHTML = '<div class="loader">Odesílám</div>';
   }
 
-  function showError(){
+  function showError(xhr, desc, err){
     News_ModalContent.innerHTML = '<div class="ajaxError">' +
                                   '<div class="ajaxErrorText" >Něco se pokazilo..</div><hr><br>' +
                                   '<button class="ajaxErrorButton"  type="button" onclick="window.location.replace(location.href)"><i class="fafa-refresh" aria-hidden="true"></i>&nbsp;Obnovit stránku</button><br><br>' +
                                   '<div class="ajaxErrorNote">Zkontrolujte <i>console.log</i> nebo kontaktujte správce stránek.</div>' +
                                   '</div>';
-    console.log(file);
-    console.log(errorMessage);
+    console.log(err);
+    console.log(desc);
     console.log(xhr);
-    
+    console.log(xhr.responseText);
   }
 
   function appendForm(formData){
@@ -316,7 +316,7 @@ $(".edit-news").click(function(){
                           {  window.location.replace(location.href);
                           },
                           error: function (xhr, desc, err){
-                            showError();
+                            showError(xhr, desc, err);
                           }
                       });
                 }
@@ -358,7 +358,7 @@ $(".edit-news").click(function(){
                         News_responseText.innerHTML = "<br>" . xhr.responseText;
                       }
                       else{
-                        showError();
+                        showError(xhr, errorMessage, file); 
                       }
                     });
         
@@ -385,7 +385,7 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
                 window.location.replace(location.href);
               },
               error: function (xhr, desc, err){
-                showError();
+                showError(xhr, desc, err);
                  }
           });
 
