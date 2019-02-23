@@ -27,16 +27,14 @@ Na současný stav se můžete podívat na [new.zbmob.cz](https://new.zbmob.cz),
 - [ ] vyhledávání
 - [ ] U všech php requestů - error handling 
 - [ ] Log, kdo a kdy nahrával, upravoval soubory 
-- [ ] světový mír
 - [ ] Kompletní dokumentace ke stránkám 
 - [ ] Kalendář (+ možnost filtrovat kalendář podle skupin (ideálně odkaz ze skupin))
 - [ ] skupiny nejsou podmenu ale cookie si pamatuje poslední navštívenou
-- [ ] 5100 koťátek
 - [ ] treninkovy plan součástí “plán na tento týden”
 - [ ] integrace Stravy
 - [ ] Automodul
 - [ ] Archiv - staré soubory novinek a akcí přesunout do archivu
-- [ ] naučit se PHP a saubermachen ten bordel
+
 
 
 
