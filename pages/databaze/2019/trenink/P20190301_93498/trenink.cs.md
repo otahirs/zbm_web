@@ -1,6 +1,6 @@
 ---
 title: 'noční mapový trénink'
-date: '2018-11-07'
+date: '2019-02-23'
 id: 'P20190301_93498'
 start: '2019-03-01'
 end: '2019-03-01'
@@ -29,7 +29,7 @@ taxonomy:
     skupina:
         - zaci2
         - dorost
+    rankings:
 note: ''
 ---
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
-* **mapa**: {{page.header.map}}
+*   **sraz**: 17:30 u konečné tramvaje číslo 1 v Řečkovicích. Doprava tramavjí 1 na konečnou zastávku Řečkovice.
