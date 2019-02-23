@@ -51,13 +51,6 @@ content:
         {% endif %}
       {% endfor %}
     
-    <script>
-    $(".newsPictures").each(function(){
-            if(this.children.length == 0){
-              this.remove();
-            }
-        });
-    </script>
    </div> <!-- plan + novinky -->
 
 
