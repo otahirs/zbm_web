@@ -13,7 +13,8 @@
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 
     {% block stylesheets %}
-        {% do assets.addCss('theme://css/pure-min.css', 101) %}
+        {% do assets.addCss('theme://css/pure-base-min.css', 101) %}
+	{% do assets.addCss('theme://css/pure-grids-min.css', 100) %}
         {% do assets.addCss('theme://css/pure-grids-responsive-min.css', 97) %}
         {% do assets.addCss('theme://css/font-awesome.min.css', 99) %}
         {% do assets.addCss('theme://css/main.css', 2) %}
