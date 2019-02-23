@@ -26,14 +26,13 @@
     {{ assets.css() }}
 
     {% block javascripts %}
-	{% do assets.addJs('theme://js/webfont.js', 200) %}
         {% do assets.addJs('jquery', 100) %}
         {% do assets.addJs('theme://js/skel.min.js', 99) %}
         {% do assets.addJs('theme://js/util.js', 98) %}
         {% do assets.addJs('theme://js/list.min.js', 82) %}
         {% do assets.addJs('theme://js/dropzone.js', 81) %}
         {% do assets.addJs('theme://js/turndown.js', 70) %}
-        {% do assets.addJs('theme://js/main.js', 97) %}
+        {% do assets.addJs('theme://js/main.js', 1) %}
         {% do assets.addJs('theme://js/jquery.touchSwipe.min.js', 99) %}
 	{% do assets.addJs('theme://js/simplemde.min.js', 90) %}
     {% endblock %}
