@@ -778,8 +778,8 @@ class PhpTwigExtension extends \Twig_Extension
                 elseif( $_POST["POST_type"] == "deleteNews" ){
                     $year = substr($_POST["id"], 0 , 4);
                     $this->rrmdir("./user/pages/databaze/".$year."/novinky/novinka_". $_POST['id'] . "/");
-                    Cache::clearCache('cache-only'); // grav sám uvolní cache pri změne souboru, ne však při jeho smazání
                 }
+                Cache::clearCache('all');
             }
         }
     }
@@ -805,7 +805,7 @@ class PhpTwigExtension extends \Twig_Extension
                     }
 
                     $this->array_to_file($parsed_file, $template, $path);
-
+                    Cache::clearCache('all');
                     //echo"<script type='text/javascript'>window.location.replace(location.href);</script>";
                 }
             }
@@ -923,6 +923,7 @@ class PhpTwigExtension extends \Twig_Extension
                     $data .= $this->parse_file_content_only($_POST["filePath"]);
 
                     $this->file_force_contents($_POST["filePath"], $data);
+                    Cache::clearCache('all');
                 }
             }
         }
@@ -949,6 +950,7 @@ class PhpTwigExtension extends \Twig_Extension
             $data .= $this->parse_file_content_only($_POST["filePath"]);
 
             $this->file_force_contents($_POST["filePath"], $data);
+            Cache::clearCache('all');
         }
     }
 
@@ -976,35 +978,36 @@ class PhpTwigExtension extends \Twig_Extension
 
     // nacist sablonu
     function savePlanTemplate(){
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $page_path = $_POST["filePath"];
+            $templates_path = str_replace(array('/plan/', '/plan-next/'), '/plan-templates/', $page_path);
+            // get last used teamplates
+            $template = $_POST["template"];
 
-        $page_path = $_POST["filePath"];
-        $templates_path = str_replace(array('/plan/', '/plan-next/'), '/plan-templates/', $page_path);
-        // get last used teamplates
-        $template = $_POST["template"];
+            // get plan from templates page
+            $yaml_plan = $this->getPlanFromTemplate($template);
 
-        // get plan from templates page
-        $yaml_plan = $this->getPlanFromTemplate($template);
+            // build page
+            $data = "---" . PHP_EOL .
+                    "process:". PHP_EOL .
+                    "    twig: true" . PHP_EOL .
+                    "    markdown: false" . PHP_EOL .
+                    "access:" . PHP_EOL .
+                    "    site:" . PHP_EOL .
+                    "        plan: true" . PHP_EOL .
+                    "planTemplate: " . $template . PHP_EOL .
+                    $yaml_plan .
+                    "---" . PHP_EOL;
+            $data .= $this->parse_file_content_only($page_path);
 
-        // build page
-        $data = "---" . PHP_EOL .
-                "process:". PHP_EOL .
-                "    twig: true" . PHP_EOL .
-                "    markdown: false" . PHP_EOL .
-                "access:" . PHP_EOL .
-                "    site:" . PHP_EOL .
-                "        plan: true" . PHP_EOL .
-                "planTemplate: " . $template . PHP_EOL .
-                $yaml_plan .
-                "---" . PHP_EOL;
-        $data .= $this->parse_file_content_only($page_path);
-
-        // save page
-        $this->file_force_contents($page_path, $data);
+            // save page
+            $this->file_force_contents($page_path, $data);
+            Cache::clearCache('all');
+        }
     }
 
     // nastavi "pristi tyden" jako "tento tyden" a do "pristi tyden" nacte predchozi pouzitou sablonu - potreba CRON/ task scheduler 
-    public function ShiftPlan($plan_path, $plan_next_path){
-
+    function ShiftPlan($plan_path, $plan_next_path){
             // update this week
             $data = "---". PHP_EOL;
             $data .= $this->parse_file_frontmatter_only($plan_next_path);
@@ -1030,6 +1033,7 @@ class PhpTwigExtension extends \Twig_Extension
             $data .= $this->parse_file_content_only($plan_next_path);
 
             $this->file_force_contents($plan_next_path, $data);
+            Cache::clearCache('all');
         
     }
 
@@ -1092,6 +1096,7 @@ class PhpTwigExtension extends \Twig_Extension
                         else{
                             $this->array_to_file($csv_event, $template, $path);
                         }
+                        Cache::clearCache('all');
                     }
                 }
             }
@@ -1462,6 +1467,7 @@ class PhpTwigExtension extends \Twig_Extension
                 //print_r($parsed_file);
 
                 $this->array_to_file($parsed_file, $template, $path);
+                Cache::clearCache('all');
 
                 //echo"<script type='text/javascript'>window.location.replace(location.href);</script>";
             }
@@ -1585,7 +1591,7 @@ class PhpTwigExtension extends \Twig_Extension
                     }
                     // zapise do souboru
                     file_put_contents($_POST['path'].$_POST['template'].".cs.md", $content);
-
+                    Cache::clearCache('all');
                 }
             }
         }
@@ -1621,6 +1627,7 @@ class PhpTwigExtension extends \Twig_Extension
                       unlink($pdfPath.".jpg");
                     }
                     file_put_contents($_POST['path'].$_POST['template'].".cs.md", $content);
+                    Cache::clearCache('all');
                 }
             }
         }
@@ -1647,8 +1654,8 @@ class PhpTwigExtension extends \Twig_Extension
                     "planTemplate: " . $template . PHP_EOL .
                     $yaml_plan .
                     "---" . PHP_EOL; */
-            $data = $this->getPlanFromTemplate("winter");
-            echo($data);
+            //$data = $this->getPlanFromTemplate("winter");
+            //echo($data);
     }
 
 
