@@ -17,7 +17,7 @@
 	{% do assets.addCss('theme://css/pure-grids-min.css', 100) %}
         {% do assets.addCss('theme://css/pure-grids-responsive-min.css', 97) %}
         {% do assets.addCss('theme://css/font-awesome.min.css', 99) %}
-        {% do assets.addCss('theme://css/main.css', 2) %}
+        {% do assets.addCss('theme://css/main.css', 200) %}
         {% do assets.addCss('theme://css/custom.css', 1) %}
 	{% do assets.addCss('theme://css/simplemde.min.css', 96) %}
 	{% do assets.addCss('theme://css/dropzone.css', 81) %}
@@ -26,6 +26,7 @@
     {{ assets.css() }}
 
     {% block javascripts %}
+	{% do assets.addJs('theme://js/webfont.js', 200) %}
         {% do assets.addJs('jquery', 100) %}
         {% do assets.addJs('theme://js/skel.min.js', 99) %}
         {% do assets.addJs('theme://js/util.js', 98) %}
