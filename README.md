@@ -1,5 +1,5 @@
 # Nové webovky
-**Veškeré připomínky, návrhy a nalezené chyby pište zde do _Issues_ nebo na otakar.hirs@gmail.com**  
+**Veškeré připomínky, návrhy a nalezené chyby pište zde do _Issues_**  
 
 Základní myšlenka nových stránek je maximálně zjednodušit jejich správu. Po prvotním načtení dat s akcemi se co nejvíce obsahu zautovatizovaně generuje. Informace k událostem lze přes formulář jednoduše změnit a tyto změny se všude aplikují. Na hlavní stráce se kromě novinek zobrazuje vpravo sloupec s blížícími se událostmi. Každá skupina má svou stránku s aktuálními informacemi pod správou trenérů.
 
