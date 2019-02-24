@@ -3,7 +3,10 @@ title: 'Upravit Novinky'
 process:
     twig: true
     markdown: false
-visible: true
+access:
+    site:
+        login: true
+never_cache_twig: true
 content:
     items: '@root.descendants'
     order:
