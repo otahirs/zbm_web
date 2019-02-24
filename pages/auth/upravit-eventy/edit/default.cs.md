@@ -1,6 +1,7 @@
 ---
 title: Upravit
 date: '2018-10-24'
+never_cache_twig: true
 process:
     twig: true
     markdown: false

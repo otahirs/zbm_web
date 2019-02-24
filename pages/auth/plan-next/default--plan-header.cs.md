@@ -2,6 +2,7 @@
 process:
     twig: true
     markdown: false
+never_cache_twig: true
 access:
     site:
         plan: true
@@ -92,6 +93,7 @@ plan:
     saturday: null
     sunday: null
 ---
+
 {# ************************************************************#}
 {# rozdíl mezi /plan-next and /plan je jen -  "loop.index + 7" #}
 {# ************************************************************#}
@@ -111,7 +113,7 @@ plan:
             {# cyklus pro 7 dni prochazejici pole "CZweek", aktualni promenou zastupuje "den" #}
             {% for day_num,den in CZweek %}
                 {# "datum_dne_v_tydnu" drzi datum dnu v aktualnim tydnu #}
-                {% set datum_dne_v_tydnu = strtotime([strtotime("last Sunday")|date('Y-m-d'), " +", loop.index, " day"]|join)|date('Y-m-d') %} {#kvuli chybe ve 'strtotime' nelze zadat jen 'last Sunday + day'#}
+                {% set datum_dne_v_tydnu = strtotime([strtotime("last Sunday")|date('Y-m-d'), " +", loop.index + 7, " day"]|join)|date('Y-m-d') %} {#kvuli chybe ve 'strtotime' nelze zadat jen 'last Sunday + day'#}
                 {#cyklus prochazejici vsechny soubory v databazi#}
                 {% for p in plan_collection %}
                     {# pokud je mezi start a end datum_dne_v_tydnu, zobrazi se v tabulce#}
