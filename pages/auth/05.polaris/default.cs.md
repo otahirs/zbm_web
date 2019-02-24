@@ -3,6 +3,9 @@ title: Polaris
 process:
     twig: true
     markdown: false
+access:
+    site:
+        polaris: true
 polaris:
     2018:
         p07: Polaris_2018_07.pdf
@@ -21,7 +24,6 @@ polaris:
         p01: Polaris_2017_01.pdf
 ---
 
-{% if (authorize(['site.polaris'])) %}
 <form id="polarisForm" class="pure-form pure-form-aligned" enctype="multipart/form-data" method="post">
 <div class="pure-g">
         <div class="pure-u-1">
@@ -108,7 +110,7 @@ polaris:
           });
       });
 </script>
-{% endif %}
+
 
 
 {% for rok, year in page.header.polaris %}
@@ -139,7 +141,7 @@ polaris:
     <hr>
 {% endfor %}
 
-{% if (authorize(['site.polaris'])) %}
+
 <script>
     $(".polaris--delete").click( function(e){
         e.stopPropagation();
@@ -172,5 +174,5 @@ polaris:
 
     })
 </script>
-{% endif %}
+
 
