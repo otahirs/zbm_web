@@ -10,20 +10,6 @@ content:
 
 {% set collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']) %}
 <div id="filtr_program">
-
-  {#hledani a reset#}
-<div class="pure-g">
-  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-8">
-    <input type="text" class="search" placeholder="Hledat.." />
-  </div>
-  <div class="pure-u-1-4 pure-u-md-5-24 pure-u-lg-4-24">
-  </div>
-  <div class="pure-u-1-24">
-    <button id="reset_btn"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-  </div>
-</div>
-
-<hr>
 {#filtr skupin#}
 <div class="pure-g">
   <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-8" style="display: none">
@@ -74,15 +60,26 @@ content:
 <label for="type-S" class="pure-radio">Soustředění</label>
 </div>
 </div>
-
-
+<hr>
+ {#hledani a reset#}
+<div class="pure-g">
+  <div class="pure-u-1-2">
+    <input type="text" class="search" placeholder="Hledat.." />
+    <button id="reset_btn" style="height:2.75em"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+  </div>
+  <div class="pure-u-1-2">
+    <input data-toggle="datepicker" type="button"  value='filtr datum' style="height: 2.75em;font-size: 1em;line-height: 2.9em;">
+  </div>
+</div>
+<br>
 {#tabulka#}
 
   <table class="program">
   <tbody class="list">
     {# eventy starsi nez DNES#}
+    
   {% for p in collection %}
-    {% if  (  p.header.end|date('Y-m-d') >= strtotime("today -5 day")|date('Y-m-d') and p.header.start|date('Y-m-d') < strtotime("today")|date('Y-m-d') )%}
+  
       <tr >
           <td class="datum">
             {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
@@ -122,57 +119,32 @@ content:
           <td class="type" style="display: none !important;"> 
               {{ p.header.template }}
           </td>
+          <td class="startMonth" style="display: none !important;"> 
+              {{ p.header.start | date('m/Y') }}
+          </td>     
+          <td class="endMonth" style="display: none !important;"> 
+              {{ p.header.end| date('m/Y') }}
+          </td>
+          <td class="start" style="display: none !important;">{{ p.header.start | date('U') }}</td>
+          <td class="end" style="display: none !important;"> 
+              {{ p.header.end | date('U') }}
+          </td>
       </tr>
-      {% endif %}
   {% endfor %}
   {# oddelovaci cara #}
-  <tr  style="display: !important;"><td colspan="100" style="padding: 0px;margin:0px;border:4px grey solid"></td></tr>
+    <tr style="background-color: #d3e2f0; color: #d3e2f0">
+          <td class="datum"></td>
+          <td class="den"></td>
+          <td class="nazev"></td>
+          <td class="misto"></td>
+          <td class="skupina"  style="display: none !important;"></td>
+          <td class="type" style="display: none !important;"></td>
+          <td class="startMonth" style="display: none !important;">{{ "now"| date('m/Y') }}</td>     
+          <td class="endMonth" style="display: none !important;">{{ "now"| date('m/Y') }}</td>
+          <td class="start" style="display: none !important;">{{ "now"|date("U") }}</td>
+          <td class="end" style="display: none !important;">{{ "now"|date("U") }}</td>
+      </tr>
 
-{# eventy mladsi nez DNES#}
-      {% for p in collection %}
-        {% if p.header.start|date('Y-m-d') >= strtotime("today")|date('Y-m-d')  %}
-          <tr>
-              <td class="datum">
-                {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
-                {# HELP |localizeddate http://twig-extensions.readthedocs.io/en/latest/intl.html#}
-                {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
-                {% if p.header.start|localizeddate('medium', 'none','cs','Europe/Prague', 'M') != p.header.end|localizeddate('medium', 'none','cs','Europe/Prague', 'M')%}
-                  {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
-                {# pokud neni stejny den - format 6.-8. cerven #}
-                {% elseif p.header.start|localizeddate('medium', 'none') != p.header.end|localizeddate('medium', 'none')%}
-                  {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
-                {% else %}
-                {# pokud stejny den - format 6. cerven #}
-                  {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
-                {% endif %}
-              </td>
-              <td class="den">
-                {# pokud neni stejny den - format PO - PA #}
-                {% if p.header.start|localizeddate('medium', 'none','cs','Europe/Prague', 'dM') != p.header.end|localizeddate('medium', 'none','cs','Europe/Prague', 'dM')%}
-                  {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper }}
-                {% else %}
-                {# pokud stejny den - format PO #}
-                  {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper }}
-                {% endif %}
-              </td>
-              <td class="nazev"><a href="{{ p.url }}"><b>{{ p.title }}</b></a></td>
-              <td class="misto">{{p.header.place}}</td>
-              <td class="skupina" style="display: none !important;"> 
-                {% set all = true %}
-                {% for s in p.header.taxonomy.skupina %} 
-                    {% set all = false %}
-                    {{ s ~ ' ' }} 
-                {% endfor %}
-                {% if all == true %}
-                    zabicky pulci1 pulci2 zaci1 zaci2 dorost
-                {% endif %}
-              </td>
-              <td class="type" style="display: none !important;"> 
-                  {{ p.header.template }}
-              </td>
-          </tr>
-          {% endif %}
-      {% endfor %}
     </tbody>
    </table>
    
@@ -181,23 +153,39 @@ content:
 
 
 <script>
+var $datepicker = $('[data-toggle="datepicker"]'),
+    bnt_text = $datepicker.val();
+    now = Math.floor(Date.now() / 1000);
+$datepicker.datepicker({
+    language: 'cs-CZ',
+    format: 'mm/yyyy',
+    trigger: $datepicker
+  });
 
 $(document).ready(function() {
 	var options = {
-    valueNames: [ 'datum', 'den', 'nazev', 'misto', 'skupina', 'type' ],
+    valueNames: [ 'datum', 'den', 'nazev', 'misto', 'skupina', 'type', 'startMonth', 'endMonth', 'start', 'end' ],
     page: 20,
     pagination: true
 	};
 
   var userList = new List('filtr_program', options);
-
+  
   function resetList(){
   	userList.search();
-  	userList.filter();
-  	userList.update();
+    userList.sort('start', { order: "asc" });
+  	userList.filter(function (item) {
+      if (item.values().start >= now || item.values().end > (now - 5*3600*24)) {
+        return true;
+      } else {
+        return false;
+      }
+    }); 
+  	//userList.update();
   	$(".filter-all").prop('checked', true);
   	$('.filter').prop('checked', false);
-  	$('.search').val('');
+    $('.search').val('');
+    $datepicker.val(bnt_text);
   	//console.log('Reset Successfully!');
   };
 
@@ -208,31 +196,42 @@ $(document).ready(function() {
 
   	userList.filter(function (item) {
   		var skupinaFilter = false;
-  		var typeFilter = false;
+      var typeFilter = false;
+      var dateFilter = false;
 
   		if(values_skupina == "all")
   		{
   			skupinaFilter = true;
   		} else {
   			skupinaFilter = item.values().skupina.indexOf(values_skupina) >= 0;
-
-  		}
+      }
+      
   		if(values_type == "all")
   		{
   			typeFilter = true;
   		} else {
   			typeFilter = item.values().type.indexOf(values_type) >= 0;
-  		}
-  		return typeFilter && skupinaFilter;
+      }
+
+      if($datepicker.val() == bnt_text)
+      {
+        dateFilter = true;
+      } else {
+        dateFilter = item.values().startMonth.indexOf($datepicker.val()) >= 0 || item.values().endMonth.indexOf($datepicker.val()) >= 0;
+      }
+      
+  		return typeFilter && skupinaFilter && dateFilter;
   	});
   	userList.update();
-  	//console.log('Filtered: ' + values_skupina);
   };
   
   $(function(){
     //updateList();
     $("input[name=skupina]").change(updateList);
-  	$('input[name=type]').change(updateList);
+    $('input[name=type]').change(updateList);
+    $datepicker.on('change', function () {
+        updateList();
+    });
 
 /* pokud neni zaznam zobrazi hlasku,dodelat
   	userList.on('updated', function (list) {
@@ -245,6 +244,8 @@ $(document).ready(function() {
      */
     });
     
+    resetList();
     $("#reset_btn").click(resetList);
+
 });
 </script>

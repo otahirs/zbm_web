@@ -409,3 +409,8 @@ dd {
 	border-radius: 0;
 	box-shadow: none;
 }
+
+#filtr_program input.search{
+	display: inline;
+}
+
