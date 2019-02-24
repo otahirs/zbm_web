@@ -13,6 +13,7 @@
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 
     {% block stylesheets %}
+	{% do assets.addCss('theme://css/datepicker.css', 200) %}
         {% do assets.addCss('theme://css/pure-base-min.css', 101) %}
 	{% do assets.addCss('theme://css/pure-grids-min.css', 100) %}
         {% do assets.addCss('theme://css/pure-grids-responsive-min.css', 97) %}
@@ -26,14 +27,17 @@
     {{ assets.css() }}
 
     {% block javascripts %}
-        {% do assets.addJs('jquery', 100) %}
-        {% do assets.addJs('theme://js/skel.min.js', 99) %}
-        {% do assets.addJs('theme://js/util.js', 98) %}
-        {% do assets.addJs('theme://js/list.min.js', 82) %}
-        {% do assets.addJs('theme://js/dropzone.js', 81) %}
-        {% do assets.addJs('theme://js/turndown.js', 70) %}
-        {% do assets.addJs('theme://js/main.js', 1) %}
+        {% do assets.addJs('jquery', 1000) %}
+	{% do assets.addJs('theme://js/skel.min.js', 100) %}
         {% do assets.addJs('theme://js/jquery.touchSwipe.min.js', 99) %}
+        {% do assets.addJs('theme://js/util.js', 98) %}
+        {% do assets.addJs('theme://js/main.js', 97) %}
+        {% do assets.addJs('theme://js/list.min.js', 4) %}
+        {% do assets.addJs('theme://js/dropzone.js', 3) %}
+        {% do assets.addJs('theme://js/turndown.js', 2) %}
+        {% do assets.addJs('theme://js/datepicker.js', 1) %}
+
+        
 	{% do assets.addJs('theme://js/simplemde.min.js', 90) %}
     {% endblock %}
     {{ assets.js() }}
