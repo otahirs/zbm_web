@@ -11,6 +11,7 @@
     {% include 'partials/metadata.html.twig' %}
     <link rel="icon" type="image/png" href="{{ url('theme://images/frog.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
     {% block stylesheets %}
 	{% do assets.addCss('theme://css/datepicker.css', 200) %}
