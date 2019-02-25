@@ -149,6 +149,8 @@ ostatni data z formulare a odeslana dropzone.js prikazem "myDropzone.processQueu
 
 {####### News modal Javascript ########}
 <script>
+window.addEventListener('load', function () {
+
 /* inicializace prekladace z HTML zpet na markdown */
 const News_turndownService = new TurndownService({
   headingStyle: 'atx',
@@ -396,7 +398,7 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
 
     }
 }
-
+}, false); // onload
 </script>
 
 {# {% endif %} #}
@@ -406,6 +408,7 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
 ########################################}
 {# {% if (authorize(['site.blizise'])) %} #} {# kod mezi if se zobrazi jen pro uzivatele autorizovane skupiny #}
   <script>
+  window.addEventListener('load', function () {
     /* inicializace prekladace z HTML zpet na markdown "Turndown"*/
     const editBliziSe_turndownService = new TurndownService({
       headingStyle: 'atx', //mění defaultni zobrazení nadpisu na ten pouzivany v gravu
@@ -487,5 +490,6 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
           });
       })
   });
+  }, false); // laod
   </script>
 {# {% endif %} #}

@@ -153,16 +153,16 @@ content:
 
 
 <script>
-var $datepicker = $('[data-toggle="datepicker"]'),
+ window.addEventListener('load', function () {
+  var $datepicker = $('[data-toggle="datepicker"]'),
     bnt_text = $datepicker.val();
     now = Math.floor(Date.now() / 1000);
-$datepicker.datepicker({
-    language: 'cs-CZ',
-    format: 'mm/yyyy',
-    trigger: $datepicker
-  });
+  $datepicker.datepicker({
+      language: 'cs-CZ',
+      format: 'mm/yyyy',
+      trigger: $datepicker
+    });
 
-$(document).ready(function() {
 	var options = {
     valueNames: [ 'datum', 'den', 'nazev', 'misto', 'skupina', 'type', 'startMonth', 'endMonth', 'start', 'end' ],
     page: 20,
@@ -247,5 +247,5 @@ $(document).ready(function() {
     resetList();
     $("#reset_btn").click(resetList);
 
-});
+}, false); // onload
 </script>

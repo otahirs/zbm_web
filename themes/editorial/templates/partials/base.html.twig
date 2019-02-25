@@ -29,18 +29,17 @@
     {% block javascripts %}
         {% do assets.addJs('jquery', 1000) %}
 	{% do assets.addJs('theme://js/skel.min.js', 100) %}
-        {% do assets.addJs('theme://js/jquery.touchSwipe.min.js', 99) %}
-        {% do assets.addJs('theme://js/util.js', 98) %}
+        {% do assets.addJs('theme://js/jquery.touchSwipe.min.js', 98) %}
+        {% do assets.addJs('theme://js/util.js', 99) %}
         {% do assets.addJs('theme://js/main.js', 97) %}
-        {% do assets.addJs('theme://js/list.min.js', 4) %}
-        {% do assets.addJs('theme://js/dropzone.js', 3) %}
-        {% do assets.addJs('theme://js/turndown.js', 2) %}
-        {% do assets.addJs('theme://js/datepicker.js', 1) %}
-
-        
-	{% do assets.addJs('theme://js/simplemde.min.js', 90) %}
+        {% do assets.addJs('theme://js/turndown.js', {'group':'async'}) %}
+        {% do assets.addJs('theme://js/datepicker.js', {'group':'async'}) %}
+        {% do assets.addJs('theme://js/list.min.js', {'group':'async'}) %}
+        {% do assets.addJs('theme://js/dropzone.js', {'group':'async'}) %}   
+	{% do assets.addJs('theme://js/simplemde.min.js', {'group':'async'}) %}
     {% endblock %}
     {{ assets.js() }}
+    {{ assets.js('async',{'loading':'async'}) }}
 
 {% endblock head%}
 </head>
