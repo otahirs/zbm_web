@@ -19,7 +19,7 @@ Na současný stav se můžete podívat na [new.zbmob.cz](https://new.zbmob.cz),
 - [ ] stránky pro jednotlivé skupiny
 - [ ] ob postupy / 3Drun
 - [ ] mapová teorie
-- [ ] program - filtr dle data
+- [x] program - filtr dle data
 ## Toto počká, ale časem chceme dodělat
 - [ ] design
 - [ ] Konce termínů přihlášek
