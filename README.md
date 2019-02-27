@@ -15,6 +15,7 @@ Na současný stav se můžete podívat na [new.zbmob.cz](https://new.zbmob.cz),
 - [x] správa plánu na tento týden včetně možnosti použití šablon
 - [x] polaris
 - [x] základní optimalizace
+- [x] změna hostingu
 ## Co je nutné dodělat než to půjde do světa
 - [ ] stránky pro jednotlivé skupiny
 - [ ] ob postupy / 3Drun
@@ -35,7 +36,8 @@ Na současný stav se můžete podívat na [new.zbmob.cz](https://new.zbmob.cz),
 - [ ] integrace Stravy
 - [ ] Automodul
 - [ ] Archiv - staré soubory novinek a akcí přesunout do archivu
-
+- [ ] Sdružení odkazů na závody pořádané v minulosti, viz: http://zbm.eob.cz/zavody/
+- [ ] Archiv map, vcetne moznosti si ji v nejake podobe stahnout
 
 
 
