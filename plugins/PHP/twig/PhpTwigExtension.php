@@ -61,45 +61,46 @@ class PhpTwigExtension extends \Twig_Extension
     }
 
 // pomocne fce
-    /**************************************************************************
-    ** pomocna fce, projde vsechny prvky array a aplikuje htmlspecialchars() **
-    ***************************************************************************/
+    /*************************************************************
+    ** projde vsechny prvky array a aplikuje htmlspecialchars() **
+    **************************************************************/
     function array_htmlspecialchars(&$array){
         array_walk_recursive($array, function(&$value) {
             htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
         });
     }
 
-    /*****************************************************************
-    ** pomocna fce, ktera zapise soubor i kdyz chybi v ceste slozka **
-    ******************************************************************/
+    /**********************************************
+    ** zapise soubor i kdyz chybi v ceste slozka **
+    **********************************************/
     function file_force_contents($dir, $contents){
-            $parts = explode("/", $dir);
-            $file = array_pop($parts);
-            $dir = "";
+        $parts = explode("/", $dir);
+        $file = array_pop($parts);
+        $dir = "";
 
-            foreach($parts as $part) {
-                if (! is_dir($dir .= "{$part}/")) mkdir($dir);
-            }
-            //$contents = htmlspecialchars($contents, ENT_NOQUOTES, 'UTF-8');
-            return file_put_contents("{$dir}{$file}", $contents);
+        foreach($parts as $part) {
+            if (! is_dir($dir .= "{$part}/")) mkdir($dir);
         }
+        //$contents = htmlspecialchars($contents, ENT_NOQUOTES, 'UTF-8');
+        return file_put_contents("{$dir}{$file}", $contents);
+    }
 
 
     /******************************************************
-    ** pomocna fce, odstihne singlequotes, doublequotes  **
+    **      odstihne singlequotes, doublequotes          **
     ** a ze zacatku a konce stringu vsechny bile znakya  **
     ******************************************************/
-      function trim_all($str){
+    function trim_all($str){
         $str = str_replace( "'" , "" , $str );
         $str = str_replace( '"' , "" , $str );
         $str = trim($str);
         $str = htmlspecialchars(html_entity_decode($str, ENT_QUOTES, 'UTF-8'), ENT_QUOTES, 'UTF-8');
         $str = str_replace( "\n" , "<br>" , $str );
         return $str;
-      }
+    }
 
-      function format_date($date){
+
+    function format_date($date){
         $newdate = date_create_from_format('d.m.Y', $date);
         if($newdate){
             return date_format($newdate, 'Y-m-d');
@@ -107,9 +108,9 @@ class PhpTwigExtension extends \Twig_Extension
         else{
             return $date;
         }
-      }
+    }
 
-      function get_event_template($event){
+    function get_event_template($event){
         if(isset($event)){
             switch ($event) {
                 case "Z":
@@ -127,6 +128,62 @@ class PhpTwigExtension extends \Twig_Extension
         }
         return $template;
     }
+
+    /**********************************************
+    **      fce pro parsovani stranek            **
+    **********************************************/
+    
+    function parse_file_frontmatter_only($path_to_file){
+        if(!file_exists($path_to_file)){
+            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
+            echo 'Cannot parse file, "'. $path_to_file. '" do not match any file.';
+            die();
+        }
+        $txt_file    = file_get_contents($path_to_file); //nacte soubor
+        $rows        = explode("\n", $txt_file); //rozdeli na radky
+        array_shift($rows); //odstrani prvni radek souboru obsahujici "---"
+        $parsed = "";
+        foreach($rows as $row){   //prochazi vsechny radky
+            if(trim($row) == "---"){
+                break;
+            }
+            $parsed .= $row . PHP_EOL;
+        }
+        return $parsed;
+    }
+    
+    function parse_file_content_only($path_to_file){
+        if(!file_exists($path_to_file)){
+            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
+            echo 'Cannot parse file, "'. $path_to_file. '" do not match any file.';
+            die();
+        }
+        $txt_file    = file_get_contents($path_to_file); //nacte soubor
+        $rows        = explode("\n", $txt_file); //rozdeli na radky
+        array_shift($rows); //odstrani prvni radek souboru obsahujici "---"
+        $afterFrontmatter = false;
+        $parsed = "";
+        foreach($rows as $row){   //prochazi vsechny radky
+            if(trim($row) == "---"){
+                $afterFrontmatter = true;
+                continue;
+            }
+            elseif($afterFrontmatter == false){
+                continue;
+            }
+            $parsed .= $row . PHP_EOL;
+        }
+        return $parsed;
+    }
+    
+    function combine_frontmatter_with_content($frontmatter, $content){
+        $page = "---" . PHP_EOL;
+        $page .= $frontmatter;
+        $page .= "---" . PHP_EOL;
+        $page .= $content;
+        return $page;
+    }
+
       /***********************************************************
       ** funkce, ktera rozparsuje soubor, vraci array s daty    **
       ************************************************************/
@@ -816,38 +873,6 @@ class PhpTwigExtension extends \Twig_Extension
     *********************  plan pravidelnych treninku *******************************
     ********************************************************************************/
     
-    function parse_file_content_only($path_to_file){
-        $txt_file    = file_get_contents($path_to_file); //nacte soubor
-        $rows        = explode("\n", $txt_file); //rozdeli na radky
-        array_shift($rows); //odstrani prvni radek souboru obsahujici "---"
-        $afterFrontmatter = false;
-        $parsed = "";
-        foreach($rows as $row){   //prochazi vsechny radky
-            if(trim($row) == "---"){
-                $afterFrontmatter = true;
-                continue;
-            }
-            elseif($afterFrontmatter == false){
-                continue;
-            }
-            $parsed .= $row . PHP_EOL;
-        }
-        return $parsed;
-    }
-
-    function parse_file_frontmatter_only($path_to_file){
-        $txt_file    = file_get_contents($path_to_file); //nacte soubor
-        $rows        = explode("\n", $txt_file); //rozdeli na radky
-        array_shift($rows); //odstrani prvni radek souboru obsahujici "---"
-        $parsed = "";
-        foreach($rows as $row){   //prochazi vsechny radky
-            if(trim($row) == "---"){
-                break;
-            }
-            $parsed .= $row . PHP_EOL;
-        }
-        return $parsed;
-    }
 
     function get_template($path_to_file){
         $txt_file    = file_get_contents($path_to_file); //nacte soubor
@@ -1475,44 +1500,6 @@ class PhpTwigExtension extends \Twig_Extension
       }
     }
 //******** POLARIS *********
-    function parse_polaris($path_to_file){
-        if(!file_exists($path_to_file)){
-            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-            echo 'Cannot parse file, "'. $path_to_file. '" do not match any file.';
-            die();
-        }
-        // zacatek frontmatter + polaris sekce + content
-        $txt_file    = file_get_contents($path_to_file); //nacte soubor
-
-        $txt_file = substr($txt_file, 3);
-        $sections = explode("---", $txt_file, 2); // oddeli kontent
-        $parsed['content'] = $sections[1];
-
-        if(strpos($sections[0], 'polaris:') == false){
-            $parsed['frontMatter'] = "---" . $sections[0];
-            $parsed['content'] = $sections[1];
-            return $parsed;
-        }
-
-        $frontmatter = explode("polaris:", $sections[0], 2); // oddeli frontmatter
-        $parsed['frontMatter'] = "---" . $frontmatter[0];
-        $polaris = explode("\n", $frontmatter[1]);
-
-        // uklada polarisy do array $polari[rok][cislo][nazevPDF]
-        foreach($polaris as $key => $row){ // prochazi radky
-            $row_data = explode(":", $row, 2); //rozdeli radek na cast pred a za ":"
-            $row_data[0] = str_replace(" ", "", $row_data[0]); //odstrani mezery na zacatku radku
-            if(preg_match('/^(19|20)\d{2}$/', $row_data[0])){  // pokud je radek rok, ulozi
-                $year = $row_data[0];
-            }
-            elseif(preg_match('/^(p){1}[0-9]{1,3}$/', $row_data[0])){ // pokud je radek polari, ulozi
-                $cislo = $this->trim_all($row_data[0]);
-                $parsed["polaris"][$year][$cislo]= $this->trim_all($row_data[1]);
-            }
-        }
-        return $parsed;
-    }
-
     function make_jpeg_thumbnail($source, $target){
         $source = realpath($source);
         $im = new \Imagick();
@@ -1530,132 +1517,91 @@ class PhpTwigExtension extends \Twig_Extension
         $im->destroy();
     }
 
-    public function SavePolaris(){ 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if(isset($_POST["POST_type"])){
-                if( $_POST["POST_type"] == "uploadPolaris" ){
-                    $parsed = $this->parse_polaris($_POST['path'].$_POST['template'].".cs.md");
-                    $content = $parsed['frontMatter'];
-                    $content .= "polaris:" . PHP_EOL; //ulozi frontmatter
-                    $pdfName = "Polaris_" . $_POST['year'] . "_" . $_POST['cislo'] . ".pdf" ;
-                    // ulozi pokud je prvnim polarisem v tomto roce
-                    if(!isset($parsed['polaris']) or !array_key_exists($_POST['year'], $parsed["polaris"] )){
-                        $cislo = "p" . $_POST['cislo'];
-                        $parsed['polaris'][$_POST['year']][$cislo] = $pdfName;
-                        krsort($parsed['polaris']);
-                        $new = true;
-                    }
-                    if(isset($parsed['polaris'])){
-                        // prochazi kazdy rok
-                        foreach($parsed["polaris"] as $year => $polaris){
-                            $content .= "    " . $year . ":" . PHP_EOL;
-                            // pokud jiz je ulozeno stejne cislo -> error
-                            if($_POST['year']==$year and array_key_exists( "p".$_POST['cislo'], $parsed["polaris"][$year]) and !isset($new) ){
-                                header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                                echo "Už je nahrané stejné číslo Polarisu.";
-                                die();
-                            }
-                            // pokud souhlasi rok, ulozi do array a setridi
-                            elseif($_POST['year']==$year){
-                                $cislo = "p". $_POST['cislo'];
-                                $polaris[$cislo] = $pdfName;
-                                krsort($polaris);
-                            }
-                            // ulozi drivejsi polarisy
-                            foreach($polaris as $cislo => $PDF){
-                                $content .= "        ". $cislo . ": '" . $PDF . "'" . PHP_EOL;
-                            }
-                        }
-                    }
-
-
-                    $content .= "---" . PHP_EOL . $parsed['content']; //ulozi content
-
-                    // uklada PDF
-                    if (!empty($_FILES['PDF']['tmp_name'])) {
-                        $finfo = finfo_open(FILEINFO_MIME_TYPE);
-                        $mime = finfo_file($finfo, $_FILES['PDF']['tmp_name']);
-                        if ($mime != 'application/pdf') {
-                            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                            echo 'Nahraný soubor není PDF!';
-                            die();
-                        }
-                        $dirPath = $_POST['path'] . $_POST['year'];
-                        if(!is_dir($dirPath)){
-                            mkdir($dirPath);
-                        }
-                        $savePath = $dirPath ."/". $pdfName;
-                        move_uploaded_file($file_tmp=$_FILES["PDF"]["tmp_name"], $savePath);
-                        // vytvari JPG nahled
-                        $this->make_jpeg_thumbnail($savePath, $savePath.".jpg");
-                    }
-                    // zapise do souboru
-                    file_put_contents($_POST['path'].$_POST['template'].".cs.md", $content);
-                    Cache::clearCache('all');
-                }
-            }
+    function save_polaris_PDF($savePath, $polarisFileName){
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $mime = finfo_file($finfo, $_FILES['PDF']['tmp_name']);
+        if ($mime != 'application/pdf') {
+            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
+            echo 'Nahraný soubor není PDF!';
+            die();
         }
+        if(!is_dir($savePath)){
+            mkdir($savePath);
+        }
+        $saveFilesPath = $savePath ."/". $polarisFileName;
+        move_uploaded_file($file_tmp=$_FILES["PDF"]["tmp_name"], $saveFilesPath);
+
+        $this->make_jpeg_thumbnail($saveFilesPath, $saveFilesPath . ".jpg");
+    }
+
+    public function SavePolaris(){ 
+
+        // init vars
+        $pagePath = $_POST['path'];
+        $savePath = getcwd() . '/user/pages/databaze/polaris/' . $_POST['year'];
+        $polarisYear = $_POST['year'];
+        $polarisNumber = "p" . $_POST['cislo'];
+        $polarisFileName = "Polaris_" . $_POST['year'] . "_" . $_POST['cislo'] . ".pdf" ;
+
+        //get frontmatter
+        $frontmatter_yaml = $this->parse_file_frontmatter_only($pagePath);
+        $frontmatter_array = Yaml::parse($frontmatter_yaml);
+
+        // add polaris to frontmatter
+        if(isset($frontmatter_array['polaris']) && in_array ( $polarisFileName , $frontmatter_array['polaris'] ) ){
+            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
+            echo "Už je nahrané stejné číslo Polarisu.";
+            die();
+        }
+        else{
+            $frontmatter_array['polaris'][$polarisYear][$polarisNumber] = $polarisFileName;
+            krsort($frontmatter_array['polaris']);
+        } 
+
+        // save pdf and jpeg thumbnail
+        $this->save_polaris_PDF($savePath, $polarisFileName);
+        
+        // build page
+        $pageFrontmatter = Yaml::dump($frontmatter_array, 10);
+        $pageContent = $this->parse_file_content_only($pagePath);
+        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pageContent);
+
+        // save page to file
+        file_put_contents($pagePath, $page);
+        Cache::clearCache('all');
     }
 
     public function DeletePolaris(){
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if(isset($_POST["POST_type"])){
-                if( $_POST["POST_type"] == "deletePolaris" ){
-                    $parsed = $this->parse_polaris($_POST['path'].$_POST['template'].".cs.md");
-                    $content = $parsed['frontMatter'];
-                    $content .= "polaris:" . PHP_EOL; //ulozi frontmatter
-                    // ulozi pokud je prvnim polarisem v tomto roce
-                    if(isset($parsed['polaris'])){
-                        // prochazi kazdy rok
-                        foreach($parsed["polaris"] as $year => $polaris){
-                            $content .= "    " . $year . ":" . PHP_EOL;
-                            if($year == $_POST['year']){
-                                unset($polaris[$_POST['cislo']]);
-                            }
-                            // ulozi drivejsi polarisy
-                            foreach($polaris as $cislo => $PDF){
-                                $content .= "        ". $cislo . ": '" . $PDF . "'" . PHP_EOL;
-                            }
-                        }
-                    }
-                    $content .= "---" . PHP_EOL . $parsed['content']; //ulozi content
-                    $pdfPath = $_POST['path'].$_POST['year']."/".$_POST['pdf'];
-                    if(file_exists($pdfPath)){
-                      unlink($pdfPath);
-                    }
-                    if(file_exists($pdfPath.".jpg")){
-                      unlink($pdfPath.".jpg");
-                    }
-                    file_put_contents($_POST['path'].$_POST['template'].".cs.md", $content);
-                    Cache::clearCache('all');
-                }
-            }
+    
+        // init vars
+        $polarisYear = $_POST['year'];
+        $polarisNumber = "p" . $_POST['cislo'];
+        $pagePath = $_POST['path'];
+        $filePath = getcwd() . '/user/pages/databaze/polaris/' . $_POST['year']. "/" . $_POST['pdf'];
+        
+        // get frontmatter
+        $frontmatter_yaml = $this->parse_file_frontmatter_only($pagePath);
+        $frontmatter_array = Yaml::parse($frontmatter_yaml);
+
+        // remove polaris from frontmatter
+        unset($frontmatter_array['polaris'][$polarisYear][$polarisNumber]);
+
+        // delete pdf and jpeg thumbnail
+        if(file_exists($filePath)){
+            unlink($filePath);
         }
-    }
-    public function Test(){
-           /* $page_path = "./user/pages/auth/plan/default--plan-header.cs.md";
-            $templates_path = str_replace(array('/plan/', '/plan-next/'), '/plan-templates/', $page_path);
-            $template = $this->get_template($page_path);
+        if(file_exists($filePath .".jpg")){
+            unlink($filePath .".jpg");
+        }
 
-            // get yaml plan from templates page's frontmatter
-            $yaml = $this->parse_file_frontmatter_only($templates_path);
-            $parsed = Yaml::parse($yaml);
-            $array["plan"] = $parsed[$template];
-            $yaml_plan = Yaml::dump($array, 5);
+        // build page
+        $pageFrontmatter = Yaml::dump($frontmatter_array, 10);
+        $pageContent = $this->parse_file_content_only($pagePath);
+        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pageContent);
 
-            // build page
-            $data = "---" . PHP_EOL .
-                    "process:". PHP_EOL .
-                    "    twig: true" . PHP_EOL .
-                    "    markdown: false" . PHP_EOL .
-                    "access:" . PHP_EOL .
-                    "    site:" . PHP_EOL .
-                    "        plan: true" . PHP_EOL .
-                    "planTemplate: " . $template . PHP_EOL .
-                    $yaml_plan .
-                    "---" . PHP_EOL; */
-            //$data = $this->getPlanFromTemplate("winter");
-            //echo($data);
+        // save page to file
+        file_put_contents($pagePath, $page);
+        Cache::clearCache('all');
     }
 
 
