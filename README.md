@@ -15,11 +15,13 @@ Na současný stav se můžete podívat na [new.zbmob.cz](https://new.zbmob.cz),
 - [x] správa plánu na tento týden včetně možnosti použití šablon
 - [x] polaris
 - [x] základní optimalizace
+- [x] změna hostingu
 ## Co je nutné dodělat než to půjde do světa
 - [ ] stránky pro jednotlivé skupiny
 - [ ] ob postupy / 3Drun
 - [ ] mapová teorie
 - [x] program - filtr dle data
+- [ ] odkaz na přádané závody
 ## Toto počká, ale časem chceme dodělat
 - [ ] design
 - [ ] Konce termínů přihlášek
@@ -31,11 +33,13 @@ Na současný stav se můžete podívat na [new.zbmob.cz](https://new.zbmob.cz),
 - [ ] Kalendář (+ možnost filtrovat kalendář podle skupin (ideálně odkaz ze skupin))
 - [ ] skupiny nejsou podmenu ale cookie si pamatuje poslední navštívenou
 - [ ] unifikovat všechny css do sass
+- [ ] pořádané závody tahat z orisu
 - [ ] treninkovy plan součástí “plán na tento týden”
 - [ ] integrace Stravy
 - [ ] Automodul
 - [ ] Archiv - staré soubory novinek a akcí přesunout do archivu
-
+- [ ] Sdružení odkazů na závody pořádané v minulosti, viz: http://zbm.eob.cz/zavody/
+- [ ] Archiv map, vcetne moznosti si ji v nejake podobe stahnout
 
 
 
