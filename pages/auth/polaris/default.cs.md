@@ -83,9 +83,7 @@ polaris:
         responseDiv.innerHTML = '<br><i class="fa fa-spinner fa-pulse fa-3x" aria-hidden="true"></i> Náhrávám se polaris a vytváří se náhled.';
         responseDiv.style.color = "black";
           var polarisForm = new FormData(document.getElementById("polarisForm"));
-          polarisForm.append("path", "{{page.path ~"/"}}" );
-          polarisForm.append("template", "{{page.template}}" );
-          polarisForm.append("POST_type", "uploadPolaris" );
+          polarisForm.append("path", "{{'./' ~ page.relativePagePath() ~ '/' ~ page.name }}" );
           $.ajax({
               url: "/php/polaris",
               type: "POST",
@@ -121,18 +119,16 @@ polaris:
             <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4 pure-u-lg-1-5 pure-u-xl-1-6"> 
                 <div class="polaris--outerDiv">
                     <div class="polaris--innerDiv">
-                        <a href="{{base_url_absolute}}/auth/polaris/{{rok}}/{{pdf}}" target="_blank">
-                            <img class="pure-img" src="{{base_url_absolute}}/auth/polaris/{{rok}}/{{pdf}}.jpg">
+                        <a href="{{base_url_absolute}}/databaze/polaris/{{rok}}/{{pdf}}" target="_blank">
+                            <img class="pure-img" src="{{base_url_absolute}}/databaze/polaris/{{rok}}/{{pdf}}.jpg">
                             <div class="polaris--title"> 
                                 {{pdf[13:2]}}
                             </div>
                         </a> 
                     </div>
-                    {% if (authorize(['site.polaris'])) %}
-                        <div class="polaris--delete" data-year="{{rok}}" data-cislo="p{{pdf[13:2]}}" data-pdf="{{pdf}}"> 
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </div>
-                    {% endif %}
+                    <div class="polaris--delete" data-year="{{rok}}" data-cislo="{{pdf[13:2]}}" data-pdf="{{pdf}}"> 
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </div>
                 </div>
             </div>
         {% endfor %}
@@ -148,12 +144,10 @@ polaris:
         if (confirm("Odstranit Polaris?") == true) {
             var deleteDiv = this.parentElement.parentElement;
             var deletePolarisForm = new FormData();
-            deletePolarisForm.append("path", "{{page.path ~"/"}}" );
-            deletePolarisForm.append("template", "{{page.template}}" );
+            deletePolarisForm.append("path", "{{'./' ~ page.relativePagePath() ~ '/' ~ page.name }}" );
             deletePolarisForm.append("year", this.getAttribute("data-year") );
             deletePolarisForm.append("cislo", this.getAttribute("data-cislo") );
             deletePolarisForm.append("pdf", this.getAttribute("data-pdf") );
-            deletePolarisForm.append("POST_type", "deletePolaris" );
             $.ajax({
                 url: "/php/deletepolaris",
                 type: "POST",
@@ -174,5 +168,24 @@ polaris:
 
     })
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
