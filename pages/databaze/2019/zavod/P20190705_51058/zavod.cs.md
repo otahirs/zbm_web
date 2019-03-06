@@ -1,13 +1,12 @@
 ---
-title: 'Třemošná 2019 (LPM)'
-date: '2018-11-07'
-id: 'P20190705_51058'
+type: Z
 start: '2019-07-05'
 end: '2019-07-07'
-place: 'Třemošná'
+title: 'Třemošná 2019 (LPM)'
+place: Třemošná
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,16 +15,15 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'Z'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: zavod
-taxonomy:
-    skupina:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190705_51058
+taxonomy:
+    skupina: {  }
+template: zavod
 ---

@@ -1,13 +1,12 @@
 ---
-title: 'Celostátní finále Přeboru škol'
-date: '2018-11-07'
-id: 'P20190605_81205'
+type: Z
 start: '2019-06-05'
 end: '2019-06-05'
+title: 'Celostátní finále Přeboru škol'
 place: 'Brno, Lesná'
 gps: ''
 meetTime: '8:00'
-meetPlace: 'louka pod ZŠ Blažkova'
+meetplace: 'louka pod ZŠ Blažkova'
 eventTypeDescription: ''
 startTime: '11:30'
 map: ''
@@ -16,19 +15,17 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'Z'
 doWeOrganize: '1'
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: zavod
-taxonomy:
-    skupina:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190605_81205
+taxonomy:
+    skupina: {  }
+template: zavod
 ---
-**Pořádáme!!**
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}.
+* **sraz**: {{page.header.meetTime}}
 * **start**: {{page.header.startTime}}

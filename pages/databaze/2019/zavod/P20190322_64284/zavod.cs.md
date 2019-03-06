@@ -1,13 +1,12 @@
 ---
-title: 'Jarní pohár 2019 (PHK)'
-date: '2018-11-07'
-id: 'P20190322_64284'
+type: Z
 start: '2019-03-22'
 end: '2019-09-24'
+title: 'Jarní pohár 2019 (PHK)'
 place: 'Hradec králové'
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,19 +15,18 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'Z'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: zavod
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190322_64284
 taxonomy:
     skupina:
         - zaci1
         - zaci2
         - dorost
-note: ''
+template: zavod
 ---

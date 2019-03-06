@@ -1,13 +1,12 @@
 ---
-title: 'Orienteering Adventure (OAV)'
-date: '2018-11-07'
-id: 'P20190807_93400'
+type: Z
 start: '2019-08-07'
 end: '2019-08-11'
+title: 'Orienteering Adventure (OAV)'
 place: 'Špindlerův Mlýn'
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,16 +15,15 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'Z'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: zavod
-taxonomy:
-    skupina:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190807_93400
+taxonomy:
+    skupina: {  }
+template: zavod
 ---

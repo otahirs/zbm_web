@@ -1,36 +1,34 @@
 ---
-title: 'Brněnský běžecký pohár (4. závod)'
-date: '2018-11-07'
-id: 'P20181226_45560'
+type: BBP
 start: '2018-12-26'
 end: '2018-12-26'
-place: 'Syrovice'
+title: 'Brněnský běžecký pohár (4. závod)'
+place: Syrovice
 gps: ''
 meetTime: '9:00'
-meetPlace: 'Syrovce, sokolovna'
+meetplace: 'Syrovce, sokolovna'
 eventTypeDescription: ''
 startTime: '10:30 / 11:15'
 map: ''
 terrain: ''
-transport: 'individuálně'
+transport: individuálně
 accomodation: ''
 food: ''
 leader: ''
-type: 'BBP'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: akce
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20181226_45560
 taxonomy:
     skupina:
         - zaci1
         - zaci2
         - dorost
-note: ''
+template: akce
 ---
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.
 * **start**: {{page.header.startTime}}

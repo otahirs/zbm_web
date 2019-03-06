@@ -1,13 +1,12 @@
 ---
-title: 'Soustředění Švédsko'
-date: '2018-11-07'
-id: 'P20190726_70861'
+type: S
 start: '2019-07-26'
 end: '2019-08-04'
-place: 'Hallsberg'
+title: 'Soustředění Švédsko'
+place: Hallsberg
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,16 +15,15 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'S'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: soustredeni
-taxonomy:
-    skupina:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190726_70861
+taxonomy:
+    skupina: {  }
+template: soustredeni
 ---

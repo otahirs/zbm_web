@@ -1,13 +1,12 @@
 ---
-title: 'ŽB-Morava - krátká trať (PLU)'
-date: '2018-11-07'
-id: 'P20190602_93871'
+type: Z
 start: '2019-06-02'
 end: '2019-06-02'
+title: 'ŽB-Morava - krátká trať (PLU)'
 place: ''
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,16 +15,15 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'Z'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: zavod
-taxonomy:
-    skupina:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190602_93871
+taxonomy:
+    skupina: {  }
+template: zavod
 ---

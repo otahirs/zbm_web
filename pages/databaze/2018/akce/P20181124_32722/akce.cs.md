@@ -1,13 +1,12 @@
 ---
-title: 'O-gala'
-date: '2018-11-07'
-id: 'P20181124_32722'
+type: J
 start: '2018-11-24'
 end: '2018-11-24'
-place: 'Plzeň'
+title: O-gala
+place: Plzeň
 gps: ''
 meetTime: '19:00'
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,19 +15,18 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'J'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: akce
+note: 'vyhlášení nejlepších orientačních běžců za rok 2018 + ples – více informací na www stránkách http://kosslaviaplzen.cz/o-gala/'
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20181124_32722
 taxonomy:
     skupina:
         - dorost
-note: 'vyhlášení nejlepších orientačních běžců za rok 2018 + ples – více informací na www stránkách http://kosslaviaplzen.cz/o-gala/'
+template: akce
 ---
 {{page.header.note}}
 * **sraz**: {{page.header.meetTime}}

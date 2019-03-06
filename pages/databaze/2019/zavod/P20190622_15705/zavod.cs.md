@@ -1,13 +1,12 @@
 ---
-title: 'Mistrovství ČR na krátké trati (LTU)'
-date: '2018-11-07'
-id: 'P20190622_15705'
+type: Z
 start: '2019-06-22'
 end: '2019-06-23'
+title: 'Mistrovství ČR na krátké trati (LTU)'
 place: ''
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,16 +15,15 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'Z'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: zavod
-taxonomy:
-    skupina:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190622_15705
+taxonomy:
+    skupina: {  }
+template: zavod
 ---

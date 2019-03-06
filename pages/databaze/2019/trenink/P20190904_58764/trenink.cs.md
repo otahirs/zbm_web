@@ -1,13 +1,12 @@
 ---
-title: 'Středeční mapový trénink (žáci-)'
-date: '2018-11-07'
-id: 'P20190904_58764'
+type: M
 start: '2019-09-04'
 end: '2019-09-04'
+title: 'Středeční mapový trénink (žáci-)'
 place: 'Kohoutovice, Myslivna'
 gps: ''
 meetTime: '16:15'
-meetPlace: 'na křižovatce v lese nedaleko hotelu Myslivna'
+meetplace: 'na křižovatce v lese nedaleko hotelu Myslivna'
 eventTypeDescription: 'odbočovák - souboje - koridory'
 startTime: ''
 map: 'Myslivna (1:10 000, ekvidistance 5 m)'
@@ -16,15 +15,14 @@ transport: 'autobusem 52 na zastávku Šárka'
 accomodation: ''
 food: ''
 leader: ''
-type: 'M'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: trenink
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190904_58764
 taxonomy:
     skupina:
         - zabicky
@@ -33,7 +31,7 @@ taxonomy:
         - zaci1
         - zaci2
         - dorost
-note: ''
+template: trenink
 ---
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.
 * **mapa**: {{page.header.map}}

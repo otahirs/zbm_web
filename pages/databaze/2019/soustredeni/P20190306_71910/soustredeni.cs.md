@@ -1,13 +1,12 @@
 ---
-title: 'Soustředění Slovinsko'
-date: '2019-02-25'
-id: 'P20190306_71910'
+type: S
 start: '2019-03-06'
 end: '2019-03-10'
-place: 'Lipica'
+title: 'Soustředění Slovinsko'
+place: Lipica
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,20 +15,16 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'S'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: soustredeni
-taxonomy:
-    skupina:
-        - zaci2
-        - dorost
-    rankings:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190306_71910
+taxonomy:
+    skupina: {  }
+template: soustredeni
 ---
-toto by tu být nemělo ://
+.

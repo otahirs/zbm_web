@@ -1,13 +1,12 @@
 ---
-title: 'Běh s mapou z Vlčího kopce'
-date: '2018-11-07'
-id: 'P20190302_70644'
+type: T
 start: '2019-03-02'
 end: '2019-03-02'
-place: 'Radostice'
+title: 'Běh s mapou z Vlčího kopce'
+place: Radostice
 gps: ''
 meetTime: '8:45'
-meetPlace: 'na hlavním nádraží (parkoviště u 5. a 6. nástupiště)'
+meetplace: 'na hlavním nádraží (parkoviště u 5. a 6. nástupiště)'
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,19 +15,18 @@ transport: 'vlakem (Brno - Radostice)'
 accomodation: ''
 food: ''
 leader: ''
-type: 'T'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: trenink
+note: 'sraz je v běžeckém oblečení, věci na převlečení si dáme do auta, které pak bude čekat v Kohoutovicích'
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190302_70644
 taxonomy:
     skupina:
         - dorost
-note: 'sraz je v běžeckém oblečení, věci na převlečení si dáme do auta, které pak bude čekat v Kohoutovicích'
+template: trenink
 ---
 {{page.header.note}}
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.

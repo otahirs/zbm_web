@@ -1,13 +1,12 @@
 ---
-title: 'O-ringen'
-date: '2018-11-07'
-id: 'P20190720_75819'
+type: S
 start: '2019-07-20'
 end: '2019-07-27'
-place: 'Norrköping'
+title: O-ringen
+place: Norrköping
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,16 +15,15 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'S'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: soustredeni
-taxonomy:
-    skupina:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190720_75819
+taxonomy:
+    skupina: {  }
+template: soustredeni
 ---

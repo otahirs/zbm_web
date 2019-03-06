@@ -1,13 +1,12 @@
 ---
-title: 'Brněnská zimní liga (4. závod)'
-date: '2018-11-07'
-id: 'P20190224_40979'
+type: BZL
 start: '2019-02-24'
 end: '2019-02-24'
+title: 'Brněnská zimní liga (4. závod)'
 place: ''
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: '14:00'
 map: ''
@@ -16,15 +15,14 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'BZL'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: akce
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190224_40979
 taxonomy:
     skupina:
         - zabicky
@@ -33,6 +31,6 @@ taxonomy:
         - zaci1
         - zaci2
         - dorost
-note: ''
+template: akce
 ---
 * **start**: {{page.header.startTime}}

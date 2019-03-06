@@ -1,36 +1,34 @@
 ---
-title: 'Brněnský běžecký pohár (2. závod)'
-date: '2018-11-07'
-id: 'P20181201_77005'
+type: BBP
 start: '2018-12-01'
 end: '2018-12-01'
-place: 'Okrouhlá'
+title: 'Brněnský běžecký pohár (2. závod)'
+place: Okrouhlá
 gps: ''
 meetTime: '9:00'
-meetPlace: 'Okrouhlá, kulturní dům'
+meetplace: 'Okrouhlá, kulturní dům'
 eventTypeDescription: ''
 startTime: '10:30 / 11:15'
 map: ''
 terrain: ''
-transport: 'individuálně'
+transport: individuálně
 accomodation: ''
 food: ''
 leader: ''
-type: 'BBP'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: akce
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20181201_77005
 taxonomy:
     skupina:
         - zaci1
         - zaci2
         - dorost
-note: ''
+template: akce
 ---
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.
 * **start**: {{page.header.startTime}}

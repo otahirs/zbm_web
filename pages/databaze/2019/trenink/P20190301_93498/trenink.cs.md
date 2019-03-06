@@ -1,13 +1,12 @@
 ---
-title: 'noční mapový trénink'
-date: '2019-02-23'
-id: 'P20190301_93498'
+type: M
 start: '2019-03-01'
 end: '2019-03-01'
-place: 'Sentice'
+title: 'noční mapový trénink'
+place: Sentice
 gps: ''
 meetTime: '17:30'
-meetPlace: 'u konečné tramvaje číslo 1 v Řečkovicích'
+meetplace: 'u konečné tramvaje číslo 1 v Řečkovicích'
 eventTypeDescription: 'krátká trať'
 startTime: ''
 map: 'Sokolí (1:10 000, ekvidistance 5 m)'
@@ -16,20 +15,19 @@ transport: 'tramavjí 1 na konečnou zastávku Řečkovice'
 accomodation: ''
 food: ''
 leader: ''
-type: 'M'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: trenink
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190301_93498
 taxonomy:
     skupina:
         - zaci2
         - dorost
-    rankings:
-note: ''
+template: trenink
 ---
-*   **sraz**: 17:30 u konečné tramvaje číslo 1 v Řečkovicích. Doprava tramavjí 1 na konečnou zastávku Řečkovice.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.
+* **mapa**: {{page.header.map}}

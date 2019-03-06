@@ -1,13 +1,12 @@
 ---
-title: 'Běh s mapou k soutoku Oslavy a Chvojnice'
-date: '2018-11-07'
-id: 'P20190127_21837'
+type: T
 start: '2019-01-27'
 end: '2019-01-27'
-place: 'Březník'
+title: 'Běh s mapou k soutoku Oslavy a Chvojnice'
+place: Březník
 gps: ''
 meetTime: '8:30'
-meetPlace: 'u Bohémy'
+meetplace: 'u Bohémy'
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,18 +15,17 @@ transport: 'osobními auty'
 accomodation: ''
 food: ''
 leader: ''
-type: 'T'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: trenink
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190127_21837
 taxonomy:
     skupina:
         - dorost
-note: ''
+template: trenink
 ---
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.

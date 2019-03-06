@@ -1,13 +1,12 @@
 ---
-title: 'noční mapový trénink'
-date: '2019-02-14'
-id: 'P20190208_17967'
+type: M
 start: '2019-02-08'
 end: '2019-02-08'
+title: 'noční mapový trénink'
 place: 'Ochoz u Brna'
-gps: '14.41, 50.08'
+gps: ''
 meetTime: '17:00'
-meetPlace: 'na parkovišti u obchodního domu BILLA v Líšni na Novolíšeňské'
+meetplace: 'na parkovišti u obchodního domu BILLA v Líšni na Novolíšeňské'
 eventTypeDescription: 'krátká trať'
 startTime: ''
 map: 'Zadní Hády (1:10 000, ekvidistance 5 m)'
@@ -16,25 +15,19 @@ transport: 'tramvají 8 na zastávku Novolíšeňská'
 accomodation: ''
 food: ''
 leader: ''
-type: 'M'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: trenink
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190208_17967
 taxonomy:
     skupina:
         - zaci2
         - dorost
-    rankings:
-note: ''
+template: trenink
 ---
-
-
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.
 * **mapa**: {{page.header.map}}
-
-

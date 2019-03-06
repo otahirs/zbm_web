@@ -1,13 +1,12 @@
 ---
-title: 'Cena střední Moravy (KON)'
-date: '2018-11-07'
-id: 'P20190628_67962'
+type: Z
 start: '2019-06-28'
 end: '2019-06-30'
-place: 'Kladky'
+title: 'Cena střední Moravy (KON)'
+place: Kladky
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,16 +15,15 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'Z'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: zavod
-taxonomy:
-    skupina:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190628_67962
+taxonomy:
+    skupina: {  }
+template: zavod
 ---
