@@ -2,8 +2,8 @@
 title: 'Nahrát program'
 date: '2018-10-16'
 access:
-    site:
-        nahrat-program: true
+    group:
+        site.nahrat-program: true
 ---
 
 <ul>
@@ -13,6 +13,7 @@ access:
     <li>každý event musí mít min. <em>název</em> a <em>počáteční datum</em></li>
 </ul>
 <form id="uploadProgramForm" class="pure-form" method="post" action="" >
+    <input name="POST_type" type="hidden" value="uploadProgram">
     <input id="csv" name="csv" type="file" accept=".csv,text/csv">
     <button id="uploadScvFile" type="submit">Odeslat</button>
 </form>
@@ -27,12 +28,11 @@ document.getElementById("uploadScvFile").onclick = function(e){
         formResponse.innerHTML = '<i class="fa fa-spinner fa-pulse" aria-hidden="true"></i> probíhá vytváření souborů';
         formResponse.style.color = "black";
         $.ajax({
-                        url: "/php/uploadprogram",
+                        url: location.href,
                         type: "POST",
                         data: formData,
                         processData: false,
                         contentType: false,
-                        contentType: 'multipart/form-data',
                         success: function (data){   
                             formResponse.innerHTML = "<br>Úspěšně uloženo";
                             formResponse.style.color = "green";
@@ -56,3 +56,4 @@ document.getElementById("uploadScvFile").onclick = function(e){
                         });
     }
 </script>
+{{ phpUploadProgram() }}

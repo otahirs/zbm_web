@@ -4,7 +4,7 @@ use Symfony\Component\Yaml\Yaml as Yaml;
 use Grav\Common\Cache as Cache;
 class PhpTwigExtension extends \Twig_Extension
 {
-    public function gettitle()
+    public function getName()
     {
         return 'PhpTwigExtension';
     }
@@ -12,10 +12,10 @@ class PhpTwigExtension extends \Twig_Extension
     {
         return [
             new \Twig_SimpleFunction('api_racelist', [$this, 'api_racelist']),
-            new \Twig_SimpleFunction('phpUploadprogram', [$this, 'phpUploadprogram']),
+            new \Twig_SimpleFunction('phpUploadProgram', [$this, 'phpUploadProgram']),
             new \Twig_SimpleFunction('phpNews', [$this, 'NewsFunction']),
             new \Twig_SimpleFunction('phpEditBliziSe', [$this, 'editBliziSeFunction']),
-            new \Twig_SimpleFunction('phpWeeklyprogram', [$this, 'save_program_templates']),
+            new \Twig_SimpleFunction('phpWeeklyProgram', [$this, 'save_program_templates']),
             new \Twig_SimpleFunction('phpFormEditEvent', [$this, 'phpFormEditEvent']),
             new \Twig_SimpleFunction('phpSaveEditedEvent', [$this, 'phpSaveEditedEvent']),
             new \Twig_SimpleFunction('phpSavePolaris', [$this, 'SavePolaris']),
@@ -203,11 +203,11 @@ class PhpTwigExtension extends \Twig_Extension
         $parsed["Rankings"] = 0;
         foreach($rows as $row){   //prochazi vsechny radky
             if( trim($row) == "---" ){
-              $parsed["content"] = "";
+              $parsed["Content"] = "";
               continue;
             }
-            if(isset($parsed["content"])){    //pokud jiz existuje nejaky content (v souboru za "---"), tak ..
-              $parsed["content"] = $parsed["content"] . PHP_EOL . $row;  //jen dopise radek
+            if(isset($parsed["Content"])){    //pokud jiz existuje nejaky content (v souboru za "---"), tak ..
+              $parsed["Content"] = $parsed["Content"] . PHP_EOL . $row;  //jen dopise radek
               continue; // a pokracuje na dalsi radek
             }
 
@@ -217,46 +217,46 @@ class PhpTwigExtension extends \Twig_Extension
             $row_data[0] = str_replace("-", "", $row_data[0]); //odstrani "-" na zacatku radku
             switch ($row_data[0]) {  //ukladam do promene podle textu pred ":"
                 case "title":
-                    $parsed["title"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Name"] = $this->trim_all($row_data[1]);   break;
                 case "date":
-                    $parsed["date"] = $this->trim_all($row_data[1]);    break;
+                    $parsed["Date"] = $this->trim_all($row_data[1]);    break;
                 case "id":
-                    $parsed["id"] = $this->trim_all($row_data[1]);    break;
+                    $parsed["Id"] = $this->trim_all($row_data[1]);    break;
                 case "start":
-                    $parsed["start"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Date1"] = $this->trim_all($row_data[1]);   break;
                 case "end":
-                    $parsed["end"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Date2"] = $this->trim_all($row_data[1]);   break;
                 case "place":
-                    $parsed["place"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Place"] = $this->trim_all($row_data[1]);   break;
                 case "gps":
                     $parsed["GPS"] = $this->trim_all($row_data[1]);   break;
                 case "meetTime":
-                    $parsed["meetTime"] = $this->trim_all($row_data[1]);   break;
-                case "meetplace":
-                    $parsed["meetPlace"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["MeetTime"] = $this->trim_all($row_data[1]);   break;
+                case "meetPlace":
+                    $parsed["MeetPlace"] = $this->trim_all($row_data[1]);   break;
                 case "link":
-                    $parsed["link"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Link"] = $this->trim_all($row_data[1]);   break;
                 case "club":
-                    $parsed["club"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Club"] = $this->trim_all($row_data[1]);   break;
                 case "eventTypeDescription":
-                    $parsed["eventTypeDescription"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["EventTypeDescription"] = $this->trim_all($row_data[1]);   break;
                 case "startTime":
-                    $parsed["startTime"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["StartTime"] = $this->trim_all($row_data[1]);   break;
                 case "map":
-                    $parsed["map"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Map"] = $this->trim_all($row_data[1]);   break;
                 case "terrain":
-                    $parsed["terrain"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Terrain"] = $this->trim_all($row_data[1]);   break;
                 case "transport":
-                    $parsed["transport"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Transport"] = $this->trim_all($row_data[1]);   break;
                 case "accomodation":
-                    $parsed["accomodation"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Accomodation"] = $this->trim_all($row_data[1]);   break;
                 case "food":
-                    $parsed["food"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Food"] = $this->trim_all($row_data[1]);   break;
                 case "leader":
-                    $parsed["leader"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Leader"] = $this->trim_all($row_data[1]);   break;
                 //template
                 case "template":
-                    $parsed["template"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Template"] = $this->trim_all($row_data[1]);   break;
                 //entries
                 case "entry1":
                     $parsed["Entry1"] = $this->trim_all($row_data[1]);   break;
@@ -269,23 +269,27 @@ class PhpTwigExtension extends \Twig_Extension
                 case "entry5":
                     $parsed["Entry5"] = $this->trim_all($row_data[1]);   break;
                 //taxonomy
+                case "sport":
+                    $parsed["Sport"] = $this->trim_all($row_data[1]);   break;
                 case "type":
                     $parsed["Type"] = $this->trim_all($row_data[1]);   break;
+                case "cancelled":
+                    $parsed["Cancelled"] = $this->trim_all($row_data[1]);   break;
                 case "doWeOrganize":
-                    $parsed["doWeOrganize"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["DoWeOrganize"] = $this->trim_all($row_data[1]);   break;
                     //skupina
                 case "zabicky":
-                    $parsed["zabicky"] = 1;   break;
+                    $parsed["Zabicky"] = 1;   break;
                 case "pulci1":
-                    $parsed["pulci1"] = 1;   break;
+                    $parsed["Pulci1"] = 1;   break;
                 case "pulci2":
-                    $parsed["pulci2"] = 1;   break;
+                    $parsed["Pulci2"] = 1;   break;
                 case "zaci1":
-                    $parsed["zaci1"] = 1;   break;
+                    $parsed["Zaci1"] = 1;   break;
                 case "zaci2":
-                    $parsed["zaci2"] = 1;   break;
+                    $parsed["Zaci2"] = 1;   break;
                 case "dorost":
-                    $parsed["dorost"] = 1;   break;
+                    $parsed["Dorost"] = 1;   break;
                     //rankings
                 case "A":
                     $parsed["A"] = true; $parsed["Rankings"] += 1;   break;
@@ -305,18 +309,18 @@ class PhpTwigExtension extends \Twig_Extension
                     $parsed["Rank21"] = $this->trim_all($row_data[1]);   break;
                 //note
                 case "note":
-                    $parsed["note"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Note"] = $this->trim_all($row_data[1]);   break;
                 //soustredeni
                 case "return":
-                    $parsed["return"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Return"] = $this->trim_all($row_data[1]);   break;
                 case "price":
-                    $parsed["price"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Price"] = $this->trim_all($row_data[1]);   break;
                 case "program":
-                    $parsed["program"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Program"] = $this->trim_all($row_data[1]);   break;
                 case "thingsToTake":
-                    $parsed["thingsToTake"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["ThingsToTake"] = $this->trim_all($row_data[1]);   break;
                 case "signups":
-                    $parsed["signups"] = $this->trim_all($row_data[1]);   break;
+                    $parsed["Signups"] = $this->trim_all($row_data[1]);   break;
                 default: break;
               }
 
@@ -340,7 +344,7 @@ class PhpTwigExtension extends \Twig_Extension
       place: 'Radostice2'
       gps
       meetTime
-      meetplace
+      meetPlace
       link:
       club: BBM
       eventTypeDescription
@@ -364,7 +368,11 @@ class PhpTwigExtension extends \Twig_Extension
           - entry4:
           - entry5:
       taxonomy:
-          - skupina: ['pulci1', pulci2, 'zabicky', 'zaci1', zaci2, 'dorost']
+          - sport: jine
+          - type: T
+          - cancelled: 1
+          - skupina: ['pulci1', pulci2, 'zabicky', 'Zaci1', Zaci2, 'dorost']
+          - rankings: ['celostatni', 'A', 'B_cechy', 'B_morava', 'oblastni', 'verejny', 'mistrovstvi', 'stafety']
           =doWeOrganize
 
       note:
@@ -379,25 +387,25 @@ class PhpTwigExtension extends \Twig_Extension
                     omluvit ze školy, hlaste se Zhustovi." . PHP_EOL;
                 }
                 else{
-                    if(!empty($race["doWeOrganize"])){
-                        if($race["doWeOrganize"]=="1"){
+                    if(!empty($race["DoWeOrganize"])){
+                        if($race["DoWeOrganize"]=="1"){
                             $content .= "**Pořádáme!!**" . PHP_EOL;
                         }
                     }
                 }
             }
-            if(!empty($race["note"]))                {$content .= "{{page.header.note}}" . PHP_EOL;}
+            if(!empty($race["Note"]))                {$content .= "{{page.header.note}}" . PHP_EOL;}
             // jeden řádek s časem, místem srazu a typem dopravy
-            if(!empty($race["meetTime"]))            {$content .= "* **sraz**: {{page.header.meetTime}}"; $writw_eol=true;}
-            if(!empty($race["meetPlace"]))           {$content .= " {{page.header.meetPlace}}."; $writw_eol=true;}
-            if(!empty($race["transport"]))           {$content .= " Doprava {{page.header.transport}}."; $writw_eol=true;}
+            if(!empty($race["MeetTime"]))            {$content .= "* **sraz**: {{page.header.meetTime}}"; $writw_eol=true;}
+            if(!empty($race["MeetPlace"]))           {$content .= " {{page.header.meetPlace}}."; $writw_eol=true;}
+            if(!empty($race["Transport"]))           {$content .= " Doprava {{page.header.transport}}."; $writw_eol=true;}
             if(isset($writw_eol)) {if($writw_eol==true) $content .= PHP_EOL;}
 
-            if(!empty($race["accomodation"]))        {$content .= "* **ubytování**: {{page.header.accomodation}}" . PHP_EOL;}
-            if(!empty($race["food"]))                {$content .= "* **strava**: {{page.header.food}}" . PHP_EOL;}
-            if(!empty($race["startTime"]))           {$content .= "* **start**: {{page.header.startTime}}" . PHP_EOL;}
-            if(!empty($race["map"]))                 {$content .= "* **mapa**: {{page.header.map}}" . PHP_EOL;}
-            if(!empty($race["terrain"]))             {$content .= "* **terén**: {{page.header.terrain}}" . PHP_EOL;}
+            if(!empty($race["Accomodation"]))        {$content .= "* **ubytování**: {{page.header.accomodation}}" . PHP_EOL;}
+            if(!empty($race["Food"]))                {$content .= "* **strava**: {{page.header.food}}" . PHP_EOL;}
+            if(!empty($race["StartTime"]))           {$content .= "* **start**: {{page.header.startTime}}" . PHP_EOL;}
+            if(!empty($race["Map"]))                 {$content .= "* **mapa**: {{page.header.map}}" . PHP_EOL;}
+            if(!empty($race["Terrain"]))             {$content .= "* **terén**: {{page.header.terrain}}" . PHP_EOL;}
             return $content;
       }
 
@@ -407,36 +415,38 @@ class PhpTwigExtension extends \Twig_Extension
         $event =
         //base
           "---" . PHP_EOL .
-          "title: '" . $race["title"] . "'" . PHP_EOL .
+          "title: '" . $race["Name"] . "'" . PHP_EOL .
           "date: '" . date("Y-m-d") . "'" . PHP_EOL .
-          "id: '" . $race["id"] . "'" . PHP_EOL .
-          "start: '" . $this->format_date($race["start"]) . "'" . PHP_EOL .
-          "end: '" . (isset($race["end"]) ? $this->format_date($race["end"]) : $this->format_date($race["start"])) . "'" . PHP_EOL;
+          "id: '" . $race["Id"] . "'" . PHP_EOL .
+          "start: '" . $this->format_date($race["Date1"]) . "'" . PHP_EOL .
+          "end: '" . (isset($race["Date2"]) ? $this->format_date($race["Date2"]) : $this->format_date($race["Date1"])) . "'" . PHP_EOL;
         //non-necesary info
-        if(isset($race["place"]))               $event .= "place: '" . $race["place"] . "'" . PHP_EOL;
+        if(isset($race["Place"]))               $event .= "place: '" . $race["Place"] . "'" . PHP_EOL;
         if(isset($race["GPS"]))                 $event .= "gps: '" . $race["GPS"] . "'" . PHP_EOL;
-        if(isset($race["meetTime"]))            $event .= "meetTime: '" . $race["meetTime"] . "'" . PHP_EOL;
-        if(isset($race["meetPlace"]))           $event .= "meetplace: '" . $race["meetPlace"] . "'" . PHP_EOL;
-        if(isset($race["link"]))                $event .= "link: '" . $race["link"]. "'"  . PHP_EOL;
-        if(isset($race["club"]))                $event .= "club: '" . $race["club"]. "'"  . PHP_EOL;
-        if(isset($race["eventTypeDescription"]))$event .= "eventTypeDescription: '" . $race["eventTypeDescription"] . "'" . PHP_EOL;
-        if(isset($race["startTime"]))               $event .= "startTime: '" . $race["startTime"] . "'" . PHP_EOL;
-        if(isset($race["map"]))                 $event .= "map: '" . $race["map"] . "'" . PHP_EOL;
-        if(isset($race["terrain"]))             $event .= "terrain: '" . $race["terrain"] . "'" . PHP_EOL;
-        if(isset($race["transport"]))           $event .= "transport: '" . $race["transport"] . "'". PHP_EOL;
-        if(isset($race["accomodation"]))        $event .= "accomodation: '" . $race["accomodation"] . "'". PHP_EOL;
-        if(isset($race["food"]))                $event .= "food: '" . $race["food"]. "'"  . PHP_EOL;
-        if(isset($race["leader"]))              $event .= "leader: '" . $race["leader"] . "'" . PHP_EOL;
+        if(isset($race["MeetTime"]))            $event .= "meetTime: '" . $race["MeetTime"] . "'" . PHP_EOL;
+        if(isset($race["MeetPlace"]))           $event .= "meetPlace: '" . $race["MeetPlace"] . "'" . PHP_EOL;
+        if(isset($race["Link"]))                $event .= "link: '" . $race["Link"]. "'"  . PHP_EOL;
+        if(isset($race["Club"]))                $event .= "club: '" . $race["Club"]. "'"  . PHP_EOL;
+        if(isset($race["EventTypeDescription"]))$event .= "eventTypeDescription: '" . $race["EventTypeDescription"] . "'" . PHP_EOL;
+        if(isset($race["StartTime"]))               $event .= "startTime: '" . $race["StartTime"] . "'" . PHP_EOL;
+        if(isset($race["Map"]))                 $event .= "map: '" . $race["Map"] . "'" . PHP_EOL;
+        if(isset($race["Terrain"]))             $event .= "terrain: '" . $race["Terrain"] . "'" . PHP_EOL;
+        if(isset($race["Transport"]))           $event .= "transport: '" . $race["Transport"] . "'". PHP_EOL;
+        if(isset($race["Accomodation"]))        $event .= "accomodation: '" . $race["Accomodation"] . "'". PHP_EOL;
+        if(isset($race["Food"]))                $event .= "food: '" . $race["Food"]. "'"  . PHP_EOL;
+        if(isset($race["Leader"]))              $event .= "leader: '" . $race["Leader"] . "'" . PHP_EOL;
+        if(isset($race["Sport"]))               $event .= "sport: '" . $race["Sport"]. "'"  . PHP_EOL;
         if(isset($race["Type"]))                $event .= "type: '" . $race["Type"]. "'"  . PHP_EOL;
-        if(isset($race["doWeOrganize"]))        $event .= "doWeOrganize: '" . $race["doWeOrganize"]. "'"  . PHP_EOL;
+        if(isset($race["Cancelled"]))           $event .= "cancelled: '" . $race["Cancelled"]. "'"  . PHP_EOL;
+        if(isset($race["DoWeOrganize"]))        $event .= "doWeOrganize: '" . $race["DoWeOrganize"]. "'"  . PHP_EOL;
         //soustredeni
-        if(isset($race["program"])){
+        if(isset($race["Program"])){
                                                 $event .= "trainingCamp:". PHP_EOL;
-            if(isset($race["program"]))         $event .= "    program: '" . $race["program"] . "'" . PHP_EOL;
-            if(isset($race["price"]))           $event .= "    price: '" . $race["price"] . "'" . PHP_EOL;
-            if(isset($race["thingsToTake"]))    $event .= "    thingsToTake: '" . $race["thingsToTake"]  . "'" . PHP_EOL;
-            if(isset($race["return"]))          $event .= "    return: '" . $race["return"] . "'" . PHP_EOL;
-            if(isset($race["signups"]))         $event .= "    signups: '" . $race["signups"] . "'" . PHP_EOL;
+            if(isset($race["Program"]))         $event .= "    program: '" . $race["Program"] . "'" . PHP_EOL;
+            if(isset($race["Price"]))           $event .= "    price: '" . $race["Price"] . "'" . PHP_EOL;
+            if(isset($race["ThingsToTake"]))    $event .= "    thingsToTake: '" . $race["ThingsToTake"]  . "'" . PHP_EOL;
+            if(isset($race["Return"]))          $event .= "    return: '" . $race["Return"] . "'" . PHP_EOL;
+            if(isset($race["Signups"]))         $event .= "    signups: '" . $race["Signups"] . "'" . PHP_EOL;
         }
         //template
         $event .= "template: ".$template. PHP_EOL;
@@ -452,12 +462,12 @@ class PhpTwigExtension extends \Twig_Extension
         //taxonomy
         $event .= "taxonomy:" . PHP_EOL;
                                             $event .= "    skupina:" . PHP_EOL;
-          if(isset($race["zabicky"])) if($race["zabicky"] == "1")  $event .= "        - zabicky". PHP_EOL;
-          if(isset($race["pulci1"]))  if($race["pulci1"]  == "1")  $event .= "        - pulci1" . PHP_EOL;
-          if(isset($race["pulci2"]))  if($race["pulci2"]  == "1")  $event .= "        - pulci2" . PHP_EOL;
-          if(isset($race["zaci1"]))   if($race["zaci1"]   == "1")  $event .= "        - zaci1"  . PHP_EOL;
-          if(isset($race["zaci2"]))   if($race["zaci2"]   == "1")  $event .= "        - zaci2"  . PHP_EOL;
-          if(isset($race["dorost"]))  if($race["dorost"]  == "1")  $event .= "        - dorost" . PHP_EOL;
+          if(isset($race["Zabicky"])) if($race["Zabicky"] == "1")  $event .= "        - zabicky". PHP_EOL;
+          if(isset($race["Pulci1"]))  if($race["Pulci1"]  == "1")  $event .= "        - pulci1" . PHP_EOL;
+          if(isset($race["Pulci2"]))  if($race["Pulci2"]  == "1")  $event .= "        - pulci2" . PHP_EOL;
+          if(isset($race["Zaci1"]))   if($race["Zaci1"]   == "1")  $event .= "        - zaci1"  . PHP_EOL;
+          if(isset($race["Zaci2"]))   if($race["Zaci2"]   == "1")  $event .= "        - zaci2"  . PHP_EOL;
+          if(isset($race["Dorost"]))  if($race["Dorost"]  == "1")  $event .= "        - dorost" . PHP_EOL;
         if(isset($race["Rankings"])){
             $event .= "    rankings:" . PHP_EOL;
             $rankings = (int)$race["Rankings"];
@@ -491,12 +501,12 @@ class PhpTwigExtension extends \Twig_Extension
                             }
         }
         if(isset($race["Rank21"]))  $event .=  "        - rank21: " . $race["Rank21"] . PHP_EOL;
-        if(isset($race["note"]))    $event .=  "note: '" . $race["note"]. "'"  . PHP_EOL;
+        if(isset($race["Note"]))    $event .=  "note: '" . $race["Note"]. "'"  . PHP_EOL;
         $event .=  "---" . PHP_EOL;
         
-        if(isset($race["content"])){
-            $race["content"] = htmlspecialchars($race["content"], ENT_NOQUOTES, 'UTF-8');
-            $event .= $race["content"] . PHP_EOL;
+        if(isset($race["Content"])){
+            $race["Content"] = htmlspecialchars($race["Content"], ENT_NOQUOTES, 'UTF-8');
+            $event .= $race["Content"] . PHP_EOL;
         }
         else{ 
             $event .= $this->generate_content($race);
@@ -521,7 +531,34 @@ class PhpTwigExtension extends \Twig_Extension
 
         if($json["Status"]=="OK"){ //pokud byl dotaz na api uspesny
           foreach ($json["Data"] as $id => $data_json) { // prochazi kazdou akci
-            
+            // pokud jiz soubor existuje, aktualizuje rozdilna data
+            if( file_exists("./user/pages/databaze/akce/". $id) ) {
+              $parsed_file = $this->parse_file("./user/pages/databaze/akce/". $id . "/default.cs.md");   //rozparsuje existujici soubor
+              $changed = false;
+              foreach ($data_json as $data_id => $json_value) {   //projde data podle id v JSONu
+                if(isset($parsed_file[$data_id])){ //pokud existuje zaznam dat z JSONu v souboru
+                  if($parsed_file[$data_id] != $json_value) { //porovnaji se zaznamy, pokud jsou rozdilna data
+                    $parsed_file[$data_id] = $json_value;  //zapise se znmena
+                    $changed = true; //zaznamena se zmena
+
+                  }
+                }
+                else{ //pokud neexistuje zaznam dat z JSONu v souboru
+                  $parsed_file[$data_id] = $json_value; //data se zapisou
+                  $changed = true; //zaznamena se zmena
+
+
+                }
+              }
+              if($changed == true){ //pokud se neco zmenilo
+                $this->array_to_file($parsed_file, $id); // ulozi
+              }
+            }
+            // pokud soubor s eventem neexistuje, je vytvoren
+            else{
+              $this->array_to_file($data_json, $id);
+            }
+
           }
         }
         else{ mail("otakar.hirs@egmail.com","JSON error zbmob.cz", "Nacteni dat z clenske sekce pres JSON neskoncilo OK, mel bys to asi zkontrolovat. \n Ota - 2018"); }
@@ -542,10 +579,10 @@ class PhpTwigExtension extends \Twig_Extension
 
     function news_to_file($data, $year){
       $news = "---" . PHP_EOL .
-              "title: '" . $data['title'] . "'" . PHP_EOL .
-              "date: '" . $data['date'] . "'" . PHP_EOL .
+              "title: '" . $data['Title'] . "'" . PHP_EOL .
+              "date: '" . $data['Date'] . "'" . PHP_EOL .
               "template: novinka" . PHP_EOL .
-              "id: '" . $data['id'] . "'" . PHP_EOL .
+              "id: '" . $data['Id'] . "'" . PHP_EOL .
               "user: '" . $data['User'] . "'" . PHP_EOL .
               "pictures:" . PHP_EOL;
               if(isset($data['dropzone_files'])){
@@ -558,8 +595,8 @@ class PhpTwigExtension extends \Twig_Extension
                 foreach ($data['img'] as $img) {
                   if(isset($img['img_delete'])){
                     if($img['img_delete'] == "true"){
-                      unlink("./user/pages/databaze/".$year."/novinky/novinka_". $data['id'] . "/img/" . $img['img_name']);
-                      unlink("./user/pages/databaze/".$year."/novinky/novinka_". $data['id'] . "/img/" . "preview_" . $img['img_name']);
+                      unlink("./user/pages/databaze/".$year."/novinky/novinka_". $data['Id'] . "/img/" . $img['img_name']);
+                      unlink("./user/pages/databaze/".$year."/novinky/novinka_". $data['Id'] . "/img/" . "preview_" . $img['img_name']);
                       continue;
                     }
                   }
@@ -568,17 +605,17 @@ class PhpTwigExtension extends \Twig_Extension
                 }
               }
      $news .= "---" . PHP_EOL .
-              $data['content'] . PHP_EOL;
+              $data['Content'] . PHP_EOL;
 
         $news = htmlspecialchars($news, ENT_NOQUOTES, 'UTF-8');
         //probehne vytvoreni slozky a ulozeni souboru
-        $this->file_force_contents("./user/pages/databaze/".$year."/novinky/novinka_". $data['id'] . "/default.cs.md", $news);
+        $this->file_force_contents("./user/pages/databaze/".$year."/novinky/novinka_". $data['Id'] . "/default.cs.md", $news);
     }
 
     /******************************************************
      **********   Create thumbnail          **************
     ***************************************************** */
-    // link image type to correct image loader and saver
+    // Link image type to correct image loader and saver
     // - makes it easier to add additional types later on
     // - makes the function easier to read
     const IMAGE_HANDLERS = [
@@ -760,18 +797,18 @@ class PhpTwigExtension extends \Twig_Extension
 
     function save_news($user, $id, $date, $year){
         $data['TimeStamp'] = time();
-        $data['title'] = $_POST["title"];
-        $data['id'] = $id;
+        $data['Title'] = $_POST["title"];
+        $data['Id'] = $id;
         $data['User'] = $user;
-        $data['date'] = $date;
-        $data['content'] = $_POST['content'];
+        $data['Date'] = $date;
+        $data['Content'] = $_POST['content'];
         if(isset($_POST['img'])){
         $data['img'] = $_POST['img'];
         }
         if(isset($_POST['dropzone_files'])){
         $data['dropzone_files'] = $_POST['dropzone_files'];
         $this->news_to_file($data, $year);
-        $this->process_files($data['id'], $data['TimeStamp'], 1000, $year);
+        $this->process_files($data['Id'], $data['TimeStamp'], 1000, $year);
         }
         else {
         $this->news_to_file($data, $year);
@@ -811,21 +848,18 @@ class PhpTwigExtension extends \Twig_Extension
                     $year = substr($_POST["id"], 1, 4);
                     $template = $_POST['template'];
                     $path = "./user/pages/databaze/". $year ."/". $template ."/". $_POST["id"] . "/".$template.".cs.md";
+                    $parsed_file = $this->parse_file($path);   //rozparsuje existujici soubor
 
-                    $frontmatter = $this->parse_file_frontmatter_only($path);
-                    
-                    if(isset($_POST["regenerate"]) && $_POST["regenerate"]){
-                       
-                        $content = $this->generate_content(Yaml::parse($frontmatter));
-                        
+                    if(isset($_POST["regenerate"])){
+                        if($_POST["regenerate"]){
+                            $parsed_file["Content"] = $this->generate_content($parsed_file);
+                        }   
                     }
                     else{
-                        $content = $_POST["content"];
+                        $parsed_file["Content"] = $_POST["content"];
                     }
 
-                    $page = $this->combine_frontmatter_with_content($frontmatter, $content);
-
-                    file_put_contents($path, $page);
+                    $this->array_to_file($parsed_file, $template, $path);
                     Cache::clearCache('all');
                     //echo"<script type='text/javascript'>window.location.replace(location.href);</script>";
                 }
@@ -1020,7 +1054,7 @@ class PhpTwigExtension extends \Twig_Extension
         array_shift($rows); //odstrani prvni radek souboru obsahujici záhlaví tabulky
 
         //= zahlavi tabulky csv souboru
-        $csv_scheme = ["Type", "start", "end", "title", "place", "gps", "meetTime", "meetplace", "eventTypeDescription", "startTime", "zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost", "map", "terrain", "transport", "accomodation", "food", "leader", "doWeOrganize", "note", "return", "price", "program", "thingsToTake", "signups", "id"];
+        $csv_scheme = ["Type", "Date1", "Date2", "Name", "Place", "GPS", "MeetTime", "MeetPlace", "EventTypeDescription", "StartTime", "Zabicky", "Pulci1", "Pulci2", "Zaci1", "Zaci2", "Dorost", "Map", "Terrain", "Transport", "Accomodation", "Food", "Leader", "DoWeOrganize", "Note", "Return", "Price", "Program", "ThingsToTake", "Signups", "Id"];
         $approved_types = ["Z", "M", "T", "S", "BZL", "BBP", "TABOR", "L", "J"]; //ignoruje poznamky
 
         foreach($rows as $row_num => $row){   //prochazi vsechny radky
@@ -1037,41 +1071,35 @@ class PhpTwigExtension extends \Twig_Extension
     return $parsed;
     }
 
-    public function phpUploadprogram(){
-        $parsed_csv = $this->parse_csv();
-        var_dump($parsed_csv);
-        print_r($parsed_csv);
-        echo"??";
-        /*
-        $groups = ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost"];
+    public function phpUploadProgram(){
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if(isset($_POST["POST_type"])){
+                if( $_POST["POST_type"] == "uploadProgram" ){
+                    $parsed_csv = $this->parse_csv();
 
-        foreach($parsed_csv as $csv_event){
-          //var_dump($csv_event);
-            $template = $this->get_event_template($csv_event["Type"]);
+                    foreach($parsed_csv as $csv_event){
+                      //var_dump($csv_event);
+                        $template = $this->get_event_template($csv_event["Type"]);
 
-            $year = substr($csv_event["start"], -4);
-            $path = "./user/pages/databaze/" . $year ."/".$template."/". $csv_event["id"] . "/".$template.".cs.md";
-            
-            if(file_exists($path)){
-                $frontmatter = $this->get_frontmatter_as_array($path);
-            }
-
-            foreach($csv_event as $attribute){
-                if(in_array($attribute, $groups)){
-                    $frontmatter['taxonomy']['skupina'][] = $attribute;
-                    continue;
+                        $year = substr($csv_event["Date1"], -4);
+                        $path = "./user/pages/databaze/" . $year ."/".$template."/". $csv_event["Id"] . "/".$template.".cs.md";
+                        $existing_file_parsed = $this->parse_file($path);
+                        if($existing_file_parsed != false){
+                            foreach($csv_event as $attribute){
+                                if(!isset($existing_file_parsed[$attribute]) and isset($csv_event[$attribute])){
+                                    $existing_file_parsed[$attribute] = $csv_event[$attribute];
+                                }
+                            }
+                            $this->array_to_file($existing_file_parsed, $template, $path);
+                        }
+                        else{
+                            $this->array_to_file($csv_event, $template, $path);
+                        }
+                        Cache::clearCache('all');
+                    }
                 }
-                if(empty($frontmatter[$attribute])){
-                    $frontmatter[$attribute] = $csv_event[$attribute];
-                }
             }
-           
-            $content = $this->generate_content($frontmatter);
-            $page = $this->combine_frontmatter_with_content(Yaml::dump($frontmatter, 10), $content);
-
-            $this->file_force_contents($path, $page); 
-            Cache::clearCache('all');*/
-        
+        }
     }
 
     /*
@@ -1185,21 +1213,21 @@ class PhpTwigExtension extends \Twig_Extension
     public function phpFormEditEvent(){
         
         if(isset($_GET['event'])){
-            $parsed = $this->get_frontmatter_as_array("./user/pages".$_GET['event']);
+            $parsed = $this->parse_file("./user/pages".$_GET['event']);
 
             echo'<form id="editEvent" class="pure-form pure-form-aligned" method="post" action="">
                     <input name="POST_type" type="hidden" value="editEvent">
-                    <input name="id" type="hidden" value="'.($parsed["id"]??'').'">
-                    <input name="template" id="template" type="hidden" value="'.($parsed["template"]??'').'">
+                    <input name="Id" type="hidden" value="'.($parsed["Id"]??'').'">
+                    <input name="Template" id="template" type="hidden" value="'.($parsed["Template"]??'').'">
 
-                    '.($parsed["id"]??'').'
+                    '.($parsed["Id"]??'').'
 
                     <!--
-                    <select name="template">
+                    <select name="Template">
                         <option value="akce">Jiné</option>
-                        <option value="zavod" '. (isset($parsed["template"])?($parsed["template"]=="zavod"?"selected":""):"") .'>Závod</option>
-                        <option value="trenink" '. (isset($parsed["template"])?($parsed["template"]=="trenink"?"selected":""):"") .'>Trénink</option>
-                        <option value="soustredeni" '. (isset($parsed["template"])?($parsed["template"]=="soustredeni"?"selected":""):"") .'>Soustředění</option>
+                        <option value="zavod" '. (isset($parsed["Template"])?($parsed["Template"]=="zavod"?"selected":""):"") .'>Závod</option>
+                        <option value="trenink" '. (isset($parsed["Template"])?($parsed["Template"]=="trenink"?"selected":""):"") .'>Trénink</option>
+                        <option value="soustredeni" '. (isset($parsed["Template"])?($parsed["Template"]=="soustredeni"?"selected":""):"") .'>Soustředění</option>
                     </select> -->
                     <div class="pure-g">
                       <div class="pure-g">
@@ -1207,19 +1235,19 @@ class PhpTwigExtension extends \Twig_Extension
                               <div class="pure-g">
                                   <div class="pure-u-1">
                                       <label for="name">Název</label>
-                                      <input id="name" name="title" type="text" value="'.($parsed["title"]??'').'" required>
+                                      <input id="name" name="Name" type="text" value="'.($parsed["Name"]??'').'" required>
                                   </div>
                                   <div class="pure-u-1-2">
                                       <label for="date1">Od</label>
-                                      <input id="date1" name="start" type="text" value="'.($parsed["start"]??'').'" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required title="formát yyyy-mm-dd">
+                                      <input id="date1" name="Date1" type="text" value="'.($parsed["Date1"]??'').'" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required title="formát yyyy-mm-dd">
                                   </div>
                                   <div class="pure-u-1-2">
                                       <label for="date2">Do</label>
-                                      <input id="date2" name="end" type="text" value="'.($parsed["end"]??'').'" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" title="formát yyyy-mm-dd">
+                                      <input id="date2" name="Date2" type="text" value="'.($parsed["Date2"]??'').'" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" title="formát yyyy-mm-dd">
                                   </div>
                                   <div class="pure-u-1-2">
                                       <label for="place">Místo</label>
-                                      <input id="place" name="place" type="text" value="'.($parsed["place"]??'').'">
+                                      <input id="place" name="Place" type="text" value="'.($parsed["Place"]??'').'">
                                   </div>
                                   <div class="pure-u-1-2">
                                       <label for="GPS">GPS</label>
@@ -1227,15 +1255,15 @@ class PhpTwigExtension extends \Twig_Extension
                                   </div>
                                   <div class="pure-u-1-2">
                                       <label for="meetTime">Sraz / čas</label>
-                                      <input id="meetTime" name="meetTime" type="text" value="'.($parsed["meetTime"]??'').'">
+                                      <input id="meetTime" name="MeetTime" type="text" value="'.($parsed["MeetTime"]??'').'">
                                   </div>
                                   <div class="pure-u-1-2">
-                                      <label for="meetplace">Sraz / místo</label>
-                                      <input name="meetPlace" type="text" value="'.($parsed["meetPlace"]??'').'">
+                                      <label for="meetPlace">Sraz / místo</label>
+                                      <input name="MeetPlace" type="text" value="'.($parsed["MeetPlace"]??'').'">
                                   </div>
                                   <div class="pure-u-1">
                                       <label for="transport">Doprava</label>
-                                      <textarea id="transport" name="transport" type="text" rows="1">'.($parsed["transport"]??'').'</textarea>
+                                      <textarea id="transport" name="Transport" type="text" rows="1">'.($parsed["Transport"]??'').'</textarea>
                                   </div>
                               </div> <!-- pure-g -->
                           </div><!-- pure-u-10-24 --><!--
@@ -1248,76 +1276,76 @@ class PhpTwigExtension extends \Twig_Extension
                                     <br>
                                   <fieldset>
                                       <legend>Skupiny:</legend>
-                                      <input name="zabicky" type="hidden" value="0">
-                                      <input id="zabicky" type="checkbox" name="zabicky" value="1" '; if(in_array( 'zabicky' , $parsed['taxonomy']['skupina'] )) echo "checked"; echo'>
+                                      <input name="Zabicky" type="hidden" value="0">
+                                      <input id="zabicky" type="checkbox" name="Zabicky" value="1" '.(isset($parsed["Zabicky"])?"checked":"").'>
                                           <label for="zabicky"> žabičky </label> <br>
-                                      <input name="pulci1" type="hidden" value="0">
-                                      <input id="pulci1" type="checkbox" name="pulci1" value="1" '; if(in_array( 'pulci1' , $parsed['taxonomy']['skupina'] )) echo "checked"; echo'>
+                                      <input name="Pulci1" type="hidden" value="0">
+                                      <input id="pulci1" type="checkbox" name="Pulci1" value="1" '.(isset($parsed["Pulci1"])?"checked":"").'>
                                           <label for="pulci1"> pulci 1 </label> <br>
-                                      <input name="pulci2" type="hidden" value="0">
-                                      <input id="pulci2" type="checkbox" name="pulci2" value="1" '; if(in_array( 'pulci2' , $parsed['taxonomy']['skupina'] )) echo "checked"; echo'>
+                                      <input name="Pulci2" type="hidden" value="0">
+                                      <input id="pulci2" type="checkbox" name="Pulci2" value="1" '.(isset($parsed["Pulci2"])?"checked":"").'>
                                           <label for="pulci2"> pulci 2 </label> <br>
-                                      <input name="zaci1" type="hidden" value="0">
-                                      <input id="zaci1" type="checkbox" name="zaci1" value="1" '; if(in_array( 'zaci1' , $parsed['taxonomy']['skupina'] )) echo "checked"; echo'>
+                                      <input name="Zaci1" type="hidden" value="0">
+                                      <input id="zaci1" type="checkbox" name="Zaci1" value="1" '.(isset($parsed["Zaci1"])?"checked":"").'>
                                           <label for="zaci1"> žáci 1 </label> <br>
-                                      <input name="zaci2" type="hidden" value="0">
-                                      <input id="zaci2" type="checkbox" name="zaci2" value="1" '; if(in_array( 'zaci2' , $parsed['taxonomy']['skupina'] )) echo "checked"; echo'>
+                                      <input name="Zaci2" type="hidden" value="0">
+                                      <input id="zaci2" type="checkbox" name="Zaci2" value="1" '.(isset($parsed["Zaci2"])?"checked":"").'>
                                           <label for="zaci2"> žáci 2 </label> <br>
-                                      <input name="dorost" type="hidden" value="0">
-                                      <input id="dorost" type="checkbox" name="dorost" value="1" '; if(in_array( 'dorost' , $parsed['taxonomy']['skupina'] )) echo "checked"; echo'>
+                                      <input name="Dorost" type="hidden" value="0">
+                                      <input id="dorost" type="checkbox" name="Dorost" value="1" '.(isset($parsed["Dorost"])?"checked":"").'>
                                           <label for="dorost"> dorost+ </label>
                                   </fieldset>
                                 </div>
                                 <div class="pure-u-1">
                                     <label for="leader">Vedoucí</label>
-                                    <input id="leader" name="leader" type="text" value="'.($parsed["leader"]??'').'">
+                                    <input id="leader" name="Leader" type="text" value="'.($parsed["Leader"]??'').'">
                                 </div>
                               </div> <!-- pure-g -->
                           </div> <!-- pure-u-10-24 -->
                           <div class="pure-u-1">
                                 <label for="note">Poznámka</label>
-                                <textarea id="note" name="note" rows="1">'.($parsed["note"]??'').'</textarea>
+                                <textarea id="note" name="Note" rows="1">'.($parsed["Note"]??'').'</textarea>
                           </div>';
-            if(isset($parsed["template"])){
-                if($parsed["template"]=="zavod"){
+            if(isset($parsed["Template"])){
+                if($parsed["Template"]=="zavod"){
                     echo'<div class="pure-u-1">
                         <hr>
                             <label for="link">Odkaz na ORIS / stránky závodu</label>
-                            <input id="link" name="link" type="text" value="'.($parsed["link"]??'').'">
+                            <input id="link" name="Link" type="text" value="'.($parsed["Link"]??'').'">
                         </div>';
                 }
             }
-            if(isset($parsed["start"], $parsed["end"])){
-                if($parsed["start"] != $parsed["end"]){
+            if(isset($parsed["Date1"], $parsed["Date2"])){
+                if($parsed["Date1"] != $parsed["Date2"]){
                     echo'<div class="pure-g pure-u-1">
                         <hr>
                         <div class="pure-u-10-24">
                             <label for="accomodation">Ubytování</label>
-                            <textarea id="accomodation" name="accomodation" type="text" rows="1">'.($parsed["accomodation"]??'').'</textarea>
+                            <textarea id="accomodation" name="Accomodation" type="text" rows="1">'.($parsed["Accomodation"]??'').'</textarea>
                         </div><!-- pure-u-10-24 --><!--
                      --><div class="pure-u-4-24">
                             &nbsp;
                         </div><!--
                      --><div class="pure-u-10-24">
                             <label for="food">Strava</label>
-                            <textarea id="food" name="food" type="text" rows="1">'.($parsed["food"]??'').'</textarea>
+                            <textarea id="food" name="Food" type="text" rows="1">'.($parsed["Food"]??'').'</textarea>
                         </div> <!-- pure-u-10-24 -->
                     </div> <!-- pure-g -->';
                 }
             }
-            if(isset($parsed["template"])){
-                if($parsed["template"]=="zavod" || $parsed["template"]=="trenink"){
+            if(isset($parsed["Template"])){
+                if($parsed["Template"]=="zavod" || $parsed["Template"]=="trenink"){
                     echo'<div class="pure-g pure-u-1">
                             <hr>
                             <div class="pure-u-10-24">
                                 <div class="pure-g">
                                 <div class="pure-u-1">
                                     <label for="startTime">Start</label>
-                                    <input id="startTime" name="startTime" type="text" value="'.($parsed["startTime"]??'').'">
+                                    <input id="startTime" name="StartTime" type="text" value="'.($parsed["StartTime"]??'').'">
                                 </div>
                                 <div class="pure-u-1">
                                     <label for="eventTypeDescription">Tratě</label>
-                                    <textarea id="eventTypeDescription" name="eventTypeDescription" type="text" rows="1">'.($parsed["eventTypeDescription"]??'').'</textarea>
+                                    <textarea id="eventTypeDescription" name="EventTypeDescription" type="text" rows="1">'.($parsed["EventTypeDescription"]??'').'</textarea>
                                 </div>
                                 </div> <!-- pure-g -->
                             </div><!-- pure-u-10-24 --><!--
@@ -1326,41 +1354,41 @@ class PhpTwigExtension extends \Twig_Extension
                             </div><!--
                          --><div class="pure-u-10-24">
                                 <div class="pure-u-1">
-                                    <label for="map">mapa</label>
-                                    <input id="map" name="map" type="text" value="'.($parsed["map"]??'').'">
+                                    <label for="map">Mapa</label>
+                                    <input id="map" name="Map" type="text" value="'.($parsed["Map"]??'').'">
                                 </div>
                                 <div class="pure-u-1">
                                     <label for="terrain">Terén</label>
-                                    <textarea id="terrain" name="terrain" type="text" rows="3">'.($parsed["terrain"]??'').'</textarea>
+                                    <textarea id="terrain" name="Terrain" type="text" rows="3">'.($parsed["Terrain"]??'').'</textarea>
                                 </div>
                             </div> <!-- pure-u-10-24 -->
                         </div> <!-- pure-g -->';
                 }
             }
-            if(isset($parsed["template"])){
-                if($parsed["template"]=="soustredeni"){
+            if(isset($parsed["Template"])){
+                if($parsed["Template"]=="soustredeni"){
                     echo'<div class="pure-u-1" id="soustredeni">
                             <hr>
                             <div class="pure-g">
                                 <div class="pure-u-1">
                                     <label for="signups">Přihlášky</label>
-                                    <input id="signups" name="signups" type="text" value="'.($parsed["signups"]??'').'">
+                                    <input id="signups" name="Signups" type="text" value="'.($parsed["Signups"]??'').'">
                                 </div>
                                 <div class="pure-u-1">
                                     <label for="price">Cena</label>
-                                    <textarea id="price" name="price">'.($parsed["price"]??'').'</textarea>
+                                    <textarea id="price" name="Price">'.($parsed["Price"]??'').'</textarea>
                                 </div>
                                 <div class="pure-u-1">
                                     <label for="return">Návrat</label>
-                                    <textarea id="return" name="return">'.($parsed["return"]??'').'</textarea>
+                                    <textarea id="return" name="Return">'.($parsed["Return"]??'').'</textarea>
                                 </div>
                                 <div class="pure-u-1">
-                                    <label for="program">Náplň / program</label>
-                                    <textarea id="program" name="program">'.($parsed["program"]??'').'</textarea>
+                                    <label for="program">Náplň / Program</label>
+                                    <textarea id="program" name="Program">'.($parsed["Program"]??'').'</textarea>
                                 </div>
                                 <div class="pure-u-1">
                                     <label for="thingsToTake">S sebou</label>
-                                    <textarea id="thingsToTake" name="thingsToTake">'.($parsed["thingsToTake"]??'').'</textarea>
+                                    <textarea id="thingsToTake" name="ThingsToTake">'.($parsed["ThingsToTake"]??'').'</textarea>
                                 </div>
                             </div> <!-- pure-g -->
                         </div><!-- pure-u-1 id="soustredeni" -->';
@@ -1389,63 +1417,43 @@ class PhpTwigExtension extends \Twig_Extension
         if(isset($_POST["POST_type"])){
             if( $_POST["POST_type"] == "editEvent" ){
                 // kontrola doručení potřebných údajů
-                if(!isset($_POST["title"])){
+                if(!isset($_POST["Name"])){
                     header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
                     echo 'Není vyplněn "Název"';
                     die();
                 }
-                if(!isset($_POST["start"])){
+                if(!isset($_POST["Date1"])){
                     header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
                     echo 'Není vyplněno "Datum"';
                     die();
                 }
-                if(!isset($_POST["template"])){
+                if(!isset($_POST["Template"])){
                     header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                    echo 'CHYBA!!, nebyl obdržen typ události [template]';
+                    echo 'CHYBA!!, nebyl obdržen typ události [Template]';
                     die();
                 }
-                if(!isset($_POST["id"])){
+                if(!isset($_POST["Id"])){
                     header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                    echo 'CHYBA!!, nebylo obdrženo ID události [id]';
+                    echo 'CHYBA!!, nebylo obdrženo ID události [Id]';
                     die();
                 }
                             
 
-                $data = ["title","template", "start", "end",  "place", "meetTime", "meetPlace", "link", "eventTypeDescription", "startTime", "map", "terrain", "transport", "accomodation", "food", "leader", "doWeOrganize", "note", "return", "price", "program", "thingsToTake", "signups", "id"];
-                $group_arr = ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost"];
-                
-                $year = substr($_POST["id"], 1 , 4);
-                $template = $_POST['template'];
-                $path = "./user/pages/databaze/". $year ."/". $template ."/". $_POST["id"] . "/".$template.".cs.md";
-                $frontmatter = $this->get_frontmatter_as_array($path);   //rozparsuje existujici soubor
-
-                foreach($data as $attribute){
+                $post_scheme = ["Date1", "Date2", "Name", "Place", "MeetTime", "MeetPlace", "Link", "EventTypeDescription", "StartTime", "Zabicky", "Pulci1", "Pulci2", "Zaci1", "Zaci2", "Dorost", "Map", "Terrain", "Transport", "Accomodation", "Food", "Leader", "DoWeOrganize", "Note", "Return", "Price", "Program", "ThingsToTake", "Signups", "Id"];
+                $year = substr($_POST["Id"], 1 , 4);
+                $template = $_POST['Template'];
+                $path = "./user/pages/databaze/". $year ."/". $template ."/". $_POST["Id"] . "/".$template.".cs.md";
+                $parsed_file = $this->parse_file($path);   //rozparsuje existujici soubor
+                foreach($post_scheme as $attribute){
                   if(isset($_POST[$attribute])){
-                    $frontmatter[$attribute] = $this->trim_all($_POST[$attribute]);
+                    $parsed_file[$attribute] = $this->trim_all($_POST[$attribute]);
                   }
                 }
-
-                if(empty($_POST["end"])){
-                    $frontmatter['end'] = $_POST["start"];
-                }
-
-                foreach($group_arr as $key => $group){
-                    if(isset($_POST[$group]) && $_POST[$group]){
-                      $frontmatter['taxonomy']['skupina'][] = $group;
-                    }
-                    else{
-                        if(isset($frontmatter['taxonomy']['skupina'])){
-                            $del = array_search( $group , $frontmatter['taxonomy']['skupina'] );
-                            unset($frontmatter['taxonomy']['skupina'][$del]);
-                        }
-                    }
-                  }
-
                 // normalize GPS
-                if(!empty($_POST["GPS"])){
+                if(isset($_POST["GPS"]) && trim($_POST["GPS"]) != ""){
                     $gps = $this->normalize_GPS($_POST["GPS"]);
                     if($gps){
-                        $frontmatter["GPS"] = $gps;
+                        $parsed_file["GPS"] = $gps;
                     }
                     else{
                         header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
@@ -1453,13 +1461,11 @@ class PhpTwigExtension extends \Twig_Extension
                         die();
                     }
                 }
-                $frontmatter = Yaml::dump($frontmatter, 10);
-                $content = $this->parse_file_content_only($path);
-                $page = $this->combine_frontmatter_with_content($frontmatter, $content);
-                //print_r($_POST);
-                //print_r($frontmatter);
 
-                file_put_contents($path, $page);
+                //print_r($_POST);
+                //print_r($parsed_file);
+
+                $this->array_to_file($parsed_file, $template, $path);
                 Cache::clearCache('all');
 
                 //echo"<script type='text/javascript'>window.location.replace(location.href);</script>";
@@ -1485,7 +1491,7 @@ class PhpTwigExtension extends \Twig_Extension
         $im->destroy();
     }
 
-    function save_polaris_PDF($savePath, $polarisFiletitle){
+    function save_polaris_PDF($savePath, $polarisFileName){
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         $mime = finfo_file($finfo, $_FILES['PDF']['tmp_name']);
         if ($mime != 'application/pdf') {
@@ -1496,7 +1502,7 @@ class PhpTwigExtension extends \Twig_Extension
         if(!is_dir($savePath)){
             mkdir($savePath);
         }
-        $saveFilesPath = $savePath ."/". $polarisFiletitle;
+        $saveFilesPath = $savePath ."/". $polarisFileName;
         move_uploaded_file($file_tmp=$_FILES["PDF"]["tmp_name"], $saveFilesPath);
 
         $this->make_jpeg_thumbnail($saveFilesPath, $saveFilesPath . ".jpg");
@@ -1509,29 +1515,29 @@ class PhpTwigExtension extends \Twig_Extension
         $savePath = getcwd() . '/user/pages/databaze/polaris/' . $_POST['year'];
         $polarisYear = $_POST['year'];
         $polarisNumber = "p" . $_POST['cislo'];
-        $polarisFiletitle = "Polaris_" . $_POST['year'] . "_" . $_POST['cislo'] . ".pdf" ;
+        $polarisFileName = "Polaris_" . $_POST['year'] . "_" . $_POST['cislo'] . ".pdf" ;
 
         //get frontmatter
         $frontmatter = $this->get_frontmatter_as_array($pagePath);
 
         // add polaris to frontmatter
-        if(isset($frontmatter['polaris']) && in_array ( $polarisFiletitle , $frontmatter['polaris'] ) ){
+        if(isset($frontmatter['polaris']) && in_array ( $polarisFileName , $frontmatter['polaris'] ) ){
             header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
             echo "Už je nahrané stejné číslo Polarisu.";
             die();
         }
         else{
-            $frontmatter['polaris'][$polarisYear][$polarisNumber] = $polarisFiletitle;
+            $frontmatter['polaris'][$polarisYear][$polarisNumber] = $polarisFileName;
             krsort($frontmatter['polaris']);
         } 
 
         // save pdf and jpeg thumbnail
-        $this->save_polaris_PDF($savePath, $polarisFiletitle);
+        $this->save_polaris_PDF($savePath, $polarisFileName);
         
         // build page
         $pageFrontmatter = Yaml::dump($frontmatter, 10);
-        $pagecontent = $this->parse_file_content_only($pagePath);
-        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
+        $pageContent = $this->parse_file_content_only($pagePath);
+        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pageContent);
 
         // save page to file
         file_put_contents($pagePath, $page);
@@ -1562,8 +1568,8 @@ class PhpTwigExtension extends \Twig_Extension
 
         // build page
         $pageFrontmatter = Yaml::dump($frontmatter, 10);
-        $pagecontent = $this->parse_file_content_only($pagePath);
-        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
+        $pageContent = $this->parse_file_content_only($pagePath);
+        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pageContent);
 
         // save page to file
         file_put_contents($pagePath, $page);
