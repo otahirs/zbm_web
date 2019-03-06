@@ -7,6 +7,7 @@ access:
     site:
         polaris: true
 polaris:
+    2019: {  }
     2018:
         p07: Polaris_2018_07.pdf
         p06: Polaris_2018_06.pdf
@@ -168,6 +169,10 @@ polaris:
 
     })
 </script>
+
+
+
+
 
 
 
