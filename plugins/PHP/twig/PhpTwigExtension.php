@@ -4,7 +4,7 @@ use Symfony\Component\Yaml\Yaml as Yaml;
 use Grav\Common\Cache as Cache;
 class PhpTwigExtension extends \Twig_Extension
 {
-    public function gettitle()
+    public function getName()
     {
         return 'PhpTwigExtension';
     }
@@ -15,7 +15,7 @@ class PhpTwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('phpUploadProgram', [$this, 'phpUploadProgram']),
             new \Twig_SimpleFunction('phpNews', [$this, 'NewsFunction']),
             new \Twig_SimpleFunction('phpEditBliziSe', [$this, 'editBliziSeFunction']),
-            new \Twig_SimpleFunction('phpWeeklyprogram', [$this, 'save_program_templates']),
+            new \Twig_SimpleFunction('phpWeeklyProgram', [$this, 'save_program_templates']),
             new \Twig_SimpleFunction('phpFormEditEvent', [$this, 'phpFormEditEvent']),
             new \Twig_SimpleFunction('phpSaveEditedEvent', [$this, 'phpSaveEditedEvent']),
             new \Twig_SimpleFunction('phpSavePolaris', [$this, 'SavePolaris']),
@@ -205,7 +205,7 @@ class PhpTwigExtension extends \Twig_Extension
       place: 'Radostice2'
       gps
       meetTime
-      meetplace
+      meetPlace
       link:
       club: BBM
       eventTypeDescription
@@ -768,7 +768,7 @@ class PhpTwigExtension extends \Twig_Extension
         array_shift($rows); //odstrani prvni radek souboru obsahujici záhlaví tabulky
 
         //= zahlavi tabulky csv souboru
-        $csv_scheme = ["type", "start", "end", "title", "place", "gps", "meetTime", "meetplace", "eventTypeDescription", "startTime", "zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost", "map", "terrain", "transport", "accomodation", "food", "leader", "doWeOrganize", "note", "return", "price", "program", "thingsToTake", "signups", "id"];
+        $csv_scheme = ["type", "start", "end", "title", "place", "gps", "meetTime", "meetPlace", "eventTypeDescription", "startTime", "zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost", "map", "terrain", "transport", "accomodation", "food", "leader", "doWeOrganize", "note", "return", "price", "program", "thingsToTake", "signups", "id"];
         $approved_types = ["Z", "M", "T", "S", "BZL", "BBP", "TABOR", "L", "J"]; //ignoruje poznamky
 
         foreach($rows as $row_num => $row){   //prochazi vsechny radky
@@ -986,7 +986,7 @@ class PhpTwigExtension extends \Twig_Extension
                                       <input id="meetTime" name="meetTime" type="text" value="'.($parsed["meetTime"]??'').'">
                                   </div>
                                   <div class="pure-u-1-2">
-                                      <label for="meetplace">Sraz / místo</label>
+                                      <label for="meetPlace">Sraz / místo</label>
                                       <input name="meetPlace" type="text" value="'.($parsed["meetPlace"]??'').'">
                                   </div>
                                   <div class="pure-u-1">
