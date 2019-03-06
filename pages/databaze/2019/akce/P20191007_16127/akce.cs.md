@@ -1,13 +1,12 @@
 ---
-title: 'Změna tréninků - odpočinkové období'
-date: '2018-11-07'
-id: 'P20191007_16127'
+type: J
 start: '2019-10-07'
 end: '2019-10-07'
+title: 'Změna tréninků - odpočinkové období'
 place: ''
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,15 +15,14 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'J'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: akce
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20191007_16127
 taxonomy:
     skupina:
         - zabicky
@@ -33,5 +31,5 @@ taxonomy:
         - zaci1
         - zaci2
         - dorost
-note: ''
+template: akce
 ---

@@ -1,13 +1,12 @@
 ---
-title: 'Tábor OB 2019'
-date: '2018-11-07'
-id: 'P20190817_34076'
+type: TABOR
 start: '2019-08-17'
 end: '2019-08-24'
-place: 'Doksy'
+title: 'Tábor OB 2019'
+place: Doksy
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,16 +15,15 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'TABOR'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: tabor
-taxonomy:
-    skupina:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190817_34076
+taxonomy:
+    skupina: {  }
+template: tabor
 ---

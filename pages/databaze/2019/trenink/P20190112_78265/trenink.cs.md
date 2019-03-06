@@ -1,13 +1,12 @@
 ---
-title: 'Běžecké testy - Lesná = Zhustových 60 minut'
-date: '2018-11-07'
-id: 'P20190112_78265'
+type: T
 start: '2019-01-12'
 end: '2019-01-12'
-place: 'Lesná'
+title: 'Běžecké testy - Lesná = Zhustových 60 minut'
+place: Lesná
 gps: ''
 meetTime: '9:30'
-meetPlace: 'u rozvodny nad Lesnou'
+meetplace: 'u rozvodny nad Lesnou'
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,19 +15,18 @@ transport: 'autobusem 57 na zastávku Rozvodna'
 accomodation: ''
 food: ''
 leader: ''
-type: 'T'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: trenink
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190112_78265
 taxonomy:
     skupina:
         - zaci2
         - dorost
-note: ''
+template: trenink
 ---
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.

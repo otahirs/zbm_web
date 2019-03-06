@@ -1,13 +1,12 @@
 ---
-title: 'Liga brněnských škol v orientačním běhu (finále)'
-date: '2018-11-07'
-id: 'P20190607_16512'
+type: L
 start: '2019-06-07'
 end: '2019-06-07'
-place: 'Vinohrady'
+title: 'Liga brněnských škol v orientačním běhu (finále)'
+place: Vinohrady
 gps: ''
 meetTime: '8:00'
-meetPlace: 'louka za školou na Bzenecké ulici'
+meetplace: 'louka za školou na Bzenecké ulici'
 eventTypeDescription: ''
 startTime: '9:30'
 map: ''
@@ -16,22 +15,19 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'L'
 doWeOrganize: '1'
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: akce
+note: 'pořadatelé: Zhusta + dorostenci'
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190607_16512
 taxonomy:
     skupina:
         - dorost
-note: 'pořadatelé: Zhusta + dorostenci'
+template: akce
 ---
-**Pořádáme!!** Předem díky moc za pomoc s pořádáním. Kdo má čas nebo by chtěl
-                    omluvit ze školy, hlaste se Zhustovi.
 {{page.header.note}}
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}.
+* **sraz**: {{page.header.meetTime}}
 * **start**: {{page.header.startTime}}

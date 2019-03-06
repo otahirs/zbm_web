@@ -1,13 +1,12 @@
 ---
-title: 'Výprava Pulců a mapový trénink žáků'
-date: '2018-11-07'
-id: 'P20190302_33857'
+type: T
 start: '2019-03-02'
 end: '2019-03-02'
-place: 'Kohoutovice'
+title: 'Výprava Pulců a mapový trénink žáků'
+place: Kohoutovice
 gps: ''
 meetTime: '9:30'
-meetPlace: 'na zastávce trolejbusu 37 Pavlovská'
+meetplace: 'na zastávce trolejbusu 37 Pavlovská'
 eventTypeDescription: ''
 startTime: ''
 map: 'Dub Troják (1:10 000, ekvidistance 5 m)'
@@ -16,22 +15,21 @@ transport: 'trolejbusem 37 na zastávku Pavlovská'
 accomodation: ''
 food: ''
 leader: ''
-type: 'T'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: '12:00'
-    signups: ''
-template: trenink
+note: ''
+return: '12:00'
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190302_33857
 taxonomy:
     skupina:
         - pulci1
         - pulci2
         - zaci1
         - zaci2
-note: ''
+template: trenink
 ---
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.
 * **mapa**: {{page.header.map}}

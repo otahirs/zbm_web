@@ -1,13 +1,12 @@
 ---
-title: 'Středeční mapový trénink (dorost+)'
-date: '2018-11-07'
-id: 'P20190619_80641'
+type: M
 start: '2019-06-19'
 end: '2019-06-19'
-place: 'Chlébské'
+title: 'Středeční mapový trénink (dorost+)'
+place: Chlébské
 gps: ''
 meetTime: '16:30'
-meetPlace: 'u konečné tramvaje číslo 1 v Řečkovicích'
+meetplace: 'u konečné tramvaje číslo 1 v Řečkovicích'
 eventTypeDescription: 'krátké postupy'
 startTime: ''
 map: 'Chlébské údolí (1:10 000, ekvisitance 5 m)'
@@ -16,19 +15,18 @@ transport: 'tramavjí 1 na konečnou zastávku Řečkovice'
 accomodation: ''
 food: ''
 leader: ''
-type: 'M'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: trenink
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190619_80641
 taxonomy:
     skupina:
         - dorost
-note: ''
+template: trenink
 ---
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.
 * **mapa**: {{page.header.map}}

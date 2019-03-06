@@ -1,13 +1,12 @@
 ---
-title: 'Soustředění Cena střední Moravy'
-date: '2018-11-07'
-id: 'P20190628_6216'
+type: S
 start: '2019-06-28'
 end: '2019-07-03'
+title: 'Soustředění Cena střední Moravy'
 place: 'Suchý u Boskovic'
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,16 +15,15 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'S'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: soustredeni
-taxonomy:
-    skupina:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190628_6216
+taxonomy:
+    skupina: {  }
+template: soustredeni
 ---

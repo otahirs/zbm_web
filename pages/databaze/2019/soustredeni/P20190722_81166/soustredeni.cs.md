@@ -1,13 +1,12 @@
 ---
-title: 'Soustředění 5 dnů OB'
-date: '2018-11-07'
-id: 'P20190722_81166'
+type: S
 start: '2019-07-22'
 end: '2019-07-28'
-place: 'Doksy'
+title: 'Soustředění 5 dnů OB'
+place: Doksy
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,16 +15,15 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'S'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: soustredeni
-taxonomy:
-    skupina:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190722_81166
+taxonomy:
+    skupina: {  }
+template: soustredeni
 ---

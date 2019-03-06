@@ -1,13 +1,12 @@
 ---
-title: 'Bohemia Orienteering 2019 (BOR)'
-date: '2018-11-07'
-id: 'P20190724_58983'
+type: Z
 start: '2019-07-24'
 end: '2019-07-28'
+title: 'Bohemia Orienteering 2019 (BOR)'
 place: 'Nový Bor'
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,16 +15,15 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'Z'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: zavod
-taxonomy:
-    skupina:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190724_58983
+taxonomy:
+    skupina: {  }
+template: zavod
 ---

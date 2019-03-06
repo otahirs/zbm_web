@@ -1,13 +1,12 @@
 ---
-title: 'Středeční mapový trénink (všichni) - M Jihomoravského kraje ve sprintových štafetách'
-date: '2018-11-07'
-id: 'P20190605_24205'
+type: M
 start: '2019-06-05'
 end: '2019-06-05'
-place: 'Lesná'
+title: 'Středeční mapový trénink (všichni) - M Jihomoravského kraje ve sprintových štafetách'
+place: Lesná
 gps: ''
 meetTime: '16:30'
-meetPlace: 'na louce pod ZŠ Blažkova'
+meetplace: 'na louce pod ZŠ Blažkova'
 eventTypeDescription: 'sprintové štafety'
 startTime: ''
 map: 'Lesná (1:4 000, ekvidistance 2,5 m)'
@@ -16,15 +15,14 @@ transport: 'tramvají 9, 11 na konečnou zastávku Čertova rokle'
 accomodation: ''
 food: ''
 leader: ''
-type: 'M'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: trenink
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190605_24205
 taxonomy:
     skupina:
         - zabicky
@@ -32,7 +30,7 @@ taxonomy:
         - pulci2
         - zaci1
         - zaci2
-note: ''
+template: trenink
 ---
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.
 * **mapa**: {{page.header.map}}

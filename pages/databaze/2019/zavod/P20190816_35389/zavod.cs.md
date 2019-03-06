@@ -1,13 +1,12 @@
 ---
-title: 'Rumcajsový míle (SJC)'
-date: '2018-11-07'
-id: 'P20190816_35389'
+type: Z
 start: '2019-08-16'
 end: '2019-08-18'
+title: 'Rumcajsový míle (SJC)'
 place: 'Český ráj'
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,16 +15,15 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'Z'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: zavod
-taxonomy:
-    skupina:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190816_35389
+taxonomy:
+    skupina: {  }
+template: zavod
 ---

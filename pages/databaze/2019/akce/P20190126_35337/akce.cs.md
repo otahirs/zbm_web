@@ -1,36 +1,34 @@
 ---
-title: 'Brněnský běžecký pohár (7. závod)'
-date: '2018-11-07'
-id: 'P20190126_35337'
+type: BBP
 start: '2019-01-26'
 end: '2019-01-26'
-place: 'Rájec'
+title: 'Brněnský běžecký pohár (7. závod)'
+place: Rájec
 gps: ''
 meetTime: '9:00'
-meetPlace: 'Rájec, Gymnázium Rájec-Jestřebí'
+meetplace: 'Rájec, Gymnázium Rájec-Jestřebí'
 eventTypeDescription: ''
 startTime: '10:30 / 11:15'
 map: ''
 terrain: ''
-transport: 'individuálně'
+transport: individuálně
 accomodation: ''
 food: ''
 leader: ''
-type: 'BBP'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: akce
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190126_35337
 taxonomy:
     skupina:
         - zaci1
         - zaci2
         - dorost
-note: ''
+template: akce
 ---
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.
 * **start**: {{page.header.startTime}}

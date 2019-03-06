@@ -1,13 +1,12 @@
 ---
-title: 'Mistrovství ČR ve sprintu a sprintových štafetách (LPU)'
-date: '2018-11-07'
-id: 'P20190518_40710'
+type: Z
 start: '2019-05-18'
 end: '2019-05-19'
+title: 'Mistrovství ČR ve sprintu a sprintových štafetách (LPU)'
 place: ''
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,16 +15,15 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'Z'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: zavod
-taxonomy:
-    skupina:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190518_40710
+taxonomy:
+    skupina: {  }
+template: zavod
 ---

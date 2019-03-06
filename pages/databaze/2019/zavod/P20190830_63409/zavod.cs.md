@@ -1,13 +1,12 @@
 ---
-title: 'Cena východních Čech (LPU)'
-date: '2018-11-07'
-id: 'P20190830_63409'
+type: Z
 start: '2019-08-30'
 end: '2019-09-01'
-place: 'Krasnice'
+title: 'Cena východních Čech (LPU)'
+place: Krasnice
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,16 +15,15 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'Z'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: zavod
-taxonomy:
-    skupina:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190830_63409
+taxonomy:
+    skupina: {  }
+template: zavod
 ---

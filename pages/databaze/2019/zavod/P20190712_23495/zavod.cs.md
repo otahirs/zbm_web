@@ -1,13 +1,12 @@
 ---
-title: 'H.S.H. Vysočina cup (CHT)'
-date: '2018-11-07'
-id: 'P20190712_23495'
+type: Z
 start: '2019-07-12'
 end: '2019-07-14'
-place: 'Svratouch'
+title: 'H.S.H. Vysočina cup (CHT)'
+place: Svratouch
 gps: ''
 meetTime: ''
-meetPlace: ''
+meetplace: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,16 +15,15 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-type: 'Z'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: zavod
-taxonomy:
-    skupina:
 note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190712_23495
+taxonomy:
+    skupina: {  }
+template: zavod
 ---

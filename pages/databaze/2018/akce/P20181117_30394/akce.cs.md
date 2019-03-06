@@ -1,13 +1,12 @@
 ---
-title: 'Brněnský běžecký pohár (1. závod)'
-date: '2018-11-07'
-id: 'P20181117_30394'
+type: BBP
 start: '2018-11-17'
 end: '2018-11-17'
-place: 'Jehnice'
+title: 'Brněnský běžecký pohár (1. závod)'
+place: Jehnice
 gps: ''
 meetTime: '9:00'
-meetPlace: 'Jehnice, škola'
+meetplace: 'Jehnice, škola'
 eventTypeDescription: ''
 startTime: '10:30 / 11:15'
 map: ''
@@ -16,21 +15,20 @@ transport: 'autobusem 70 na zastávku Kleštínek'
 accomodation: ''
 food: ''
 leader: ''
-type: 'BBP'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: akce
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20181117_30394
 taxonomy:
     skupina:
         - zaci1
         - zaci2
         - dorost
-note: ''
+template: akce
 ---
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.
 * **start**: {{page.header.startTime}}

@@ -1,13 +1,12 @@
 ---
-title: 'Běh na Babu'
-date: '2018-11-07'
-id: 'P20181224_4113'
+type: T
 start: '2018-12-24'
 end: '2018-12-24'
-place: 'Medlánky'
+title: 'Běh na Babu'
+place: Medlánky
 gps: ''
 meetTime: '9:30'
-meetPlace: 'Skalka za Medláneckým kopcem'
+meetplace: 'Skalka za Medláneckým kopcem'
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -16,20 +15,19 @@ transport: 'tramvají 12 na konečnou zastávku Technologický park'
 accomodation: ''
 food: ''
 leader: ''
-type: 'T'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: trenink
+note: 'tradiční Štědrodenní výběh na Kuřimskou horu a zpět'
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20181224_4113
 taxonomy:
     skupina:
         - zaci2
         - dorost
-note: 'tradiční Štědrodenní výběh na Kuřimskou horu a zpět'
+template: trenink
 ---
 {{page.header.note}}
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.

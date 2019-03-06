@@ -1,13 +1,12 @@
 ---
-title: 'Středeční mapový trénink (žáci-)'
-date: '2018-11-07'
-id: 'P20190410_62096'
+type: M
 start: '2019-04-10'
 end: '2019-04-10'
-place: 'Jehnice'
+title: 'Středeční mapový trénink (žáci-)'
+place: Jehnice
 gps: ''
 meetTime: '16:15'
-meetPlace: 'v lese nad Jehnicemi (značeno ze zastávky Kleštínek)'
+meetplace: 'v lese nad Jehnicemi (značeno ze zastávky Kleštínek)'
 eventTypeDescription: 'COB - krátké postupy - krátké postupy'
 startTime: ''
 map: 'Nad Sv. Františkem (1:10 000, ekvidistance 5 m)'
@@ -16,15 +15,14 @@ transport: 'autobusem 70 na zastávku Kleštínek'
 accomodation: ''
 food: ''
 leader: ''
-type: 'M'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: trenink
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190410_62096
 taxonomy:
     skupina:
         - zabicky
@@ -32,7 +30,7 @@ taxonomy:
         - pulci2
         - zaci1
         - zaci2
-note: ''
+template: trenink
 ---
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.
 * **mapa**: {{page.header.map}}

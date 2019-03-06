@@ -1,13 +1,12 @@
 ---
-title: 'Brněnský běžecký pohár (8. závod)'
-date: '2018-11-07'
-id: 'P20190309_36511'
+type: BBP
 start: '2019-03-09'
 end: '2019-03-09'
-place: 'Modřice'
+title: 'Brněnský běžecký pohár (8. závod)'
+place: Modřice
 gps: ''
 meetTime: '9:00'
-meetPlace: 'Modřice, sokolovna'
+meetplace: 'Modřice, sokolovna'
 eventTypeDescription: ''
 startTime: '10:30 / 11:15'
 map: ''
@@ -16,21 +15,20 @@ transport: 'tramvají 2 na konečnou zastávku Modřice, smyčka'
 accomodation: ''
 food: ''
 leader: ''
-type: 'BBP'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: akce
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190309_36511
 taxonomy:
     skupina:
         - zaci1
         - zaci2
         - dorost
-note: ''
+template: akce
 ---
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.
 * **start**: {{page.header.startTime}}

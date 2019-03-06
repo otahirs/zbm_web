@@ -1,13 +1,12 @@
 ---
-title: 'Středeční mapový trénink (žáci-)'
-date: '2018-11-07'
-id: 'P20190911_52271'
+type: M
 start: '2019-09-11'
 end: '2019-09-11'
+title: 'Středeční mapový trénink (žáci-)'
 place: 'Líšeň, mariánské údolí'
 gps: ''
 meetTime: '16:15'
-meetPlace: 'v lese na křižovatce nedaleko elektrického vedení na reastaurací U raka'
+meetplace: 'v lese na křižovatce nedaleko elektrického vedení na reastaurací U raka'
 eventTypeDescription: 'linie - scorelauf - scorelauf'
 startTime: ''
 map: 'Říčky (1:10 000, ekvidistance 5 m)'
@@ -16,15 +15,14 @@ transport: 'autobusem 55 na konečnou zastávku Mariánské údolí'
 accomodation: ''
 food: ''
 leader: ''
-type: 'M'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: trenink
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190911_52271
 taxonomy:
     skupina:
         - zabicky
@@ -32,7 +30,7 @@ taxonomy:
         - pulci2
         - zaci1
         - zaci2
-note: ''
+template: trenink
 ---
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.
 * **mapa**: {{page.header.map}}

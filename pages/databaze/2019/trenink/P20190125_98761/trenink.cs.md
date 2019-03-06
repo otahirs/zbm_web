@@ -1,13 +1,12 @@
 ---
-title: 'noční mapový trénink'
-date: '2018-11-07'
-id: 'P20190125_98761'
+type: M
 start: '2019-01-25'
 end: '2019-01-25'
-place: 'Soběšice'
+title: 'noční mapový trénink'
+place: Soběšice
 gps: ''
 meetTime: '16:30'
-meetPlace: 'na okraji lesa pod Soběšicemi'
+meetplace: 'na okraji lesa pod Soběšicemi'
 eventTypeDescription: 'scorelauf + krátká trať'
 startTime: ''
 map: 'Soběšice (1:10 000, ekvidistance 5 m)'
@@ -16,20 +15,19 @@ transport: 'autobusem 43 na zastávku Útěchovská'
 accomodation: ''
 food: ''
 leader: ''
-type: 'M'
 doWeOrganize: ''
-trainingCamp:
-    program: ''
-    price: ''
-    thingsToTake: ''
-    return: ''
-    signups: ''
-template: trenink
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+id: P20190125_98761
 taxonomy:
     skupina:
         - zaci2
         - dorost
-note: ''
+template: trenink
 ---
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+* **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.
 * **mapa**: {{page.header.map}}
