@@ -12,7 +12,6 @@ class PhpTwigExtension extends \Twig_Extension
     {
         return [
             new \Twig_SimpleFunction('api_racelist', [$this, 'api_racelist']),
-	        new \Twig_SimpleFunction('PHP', [$this, 'exampleFunction2']),
             new \Twig_SimpleFunction('phpUploadProgram', [$this, 'phpUploadProgram']),
             new \Twig_SimpleFunction('phpNews', [$this, 'NewsFunction']),
             new \Twig_SimpleFunction('phpEditBliziSe', [$this, 'editBliziSeFunction']),
@@ -21,8 +20,8 @@ class PhpTwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('phpSaveEditedEvent', [$this, 'phpSaveEditedEvent']),
             new \Twig_SimpleFunction('phpSavePolaris', [$this, 'SavePolaris']),
             new \Twig_SimpleFunction('phpDeletePolaris', [$this, 'DeletePolaris']),
-            new \Twig_SimpleFunction('phpSavePlan', [$this, 'savePlan']),
-            new \Twig_SimpleFunction('phpSavePlanTemplate', [$this, 'savePlanTemplate']),   
+            new \Twig_SimpleFunction('phpSavePlan', [$this, 'SavePlan']),
+            new \Twig_SimpleFunction('phpSavePlanTemplate', [$this, 'SavePlanTemplate']),   
             new \Twig_SimpleFunction('phpLoginRedirect', [$this, 'LoginRedirect']),
             new \Twig_SimpleFunction('phpTest', [$this, 'Test']),      
             new \Twig_SimpleFunction('phpShiftPlan', [$this, 'ShiftPlan']),        
@@ -161,17 +160,18 @@ class PhpTwigExtension extends \Twig_Extension
         $txt_file    = file_get_contents($path_to_file); //nacte soubor
         $rows        = explode("\n", $txt_file); //rozdeli na radky
         array_shift($rows); //odstrani prvni radek souboru obsahujici "---"
-        $afterFrontmatter = false;
+
+        $row_is_content = false;
         $parsed = "";
         foreach($rows as $row){   //prochazi vsechny radky
-            if(trim($row) == "---"){
-                $afterFrontmatter = true;
-                continue;
+            if($row_is_content){
+                $parsed .= $row . PHP_EOL; 
             }
-            elseif($afterFrontmatter == false){
-                continue;
-            }
-            $parsed .= $row . PHP_EOL;
+            else{
+                if(trim($row) == "---"){
+                    $row_is_content = true;
+                }
+            }           
         }
         return $parsed;
     }
@@ -182,6 +182,12 @@ class PhpTwigExtension extends \Twig_Extension
         $page .= "---" . PHP_EOL;
         $page .= $content;
         return $page;
+    }
+
+    function get_frontmatter_as_array($path_to_file){
+        $frontmatter_yaml = $this->parse_file_frontmatter_only($path_to_file);
+        return Yaml::parse($frontmatter_yaml);
+        // https://symfony.com/doc/current/components/yaml.html 
     }
 
       /***********************************************************
@@ -562,14 +568,6 @@ class PhpTwigExtension extends \Twig_Extension
 
 
 
-
-
-//******************************************************************************************************/
-
-    public function exampleFunction2(string $phpCode)
-    {
-	return eval($phpCode);
-    }
 //******************************************************************************************************/
 //pridat nebo upravit Novinku
 
@@ -874,18 +872,9 @@ class PhpTwigExtension extends \Twig_Extension
     ********************************************************************************/
     
 
-    function get_template($path_to_file){
-        $txt_file    = file_get_contents($path_to_file); //nacte soubor
-        $template_index = strpos( $txt_file , "planTemplate: ") + 14;
-        
-        $template = "";
-        for ($i = $template_index; $i < strlen($txt_file); $i++){
-            $char = $txt_file[$i];
-            if($char == "\n"){
-                break;
-            }
-            $template .= $char;
-        }
+    function get_plan_template($path_to_file){
+        $frontmatter = $this->get_frontmatter_as_array($path_to_file);
+        $template = $frontmatter["planTemplate"];
         return $template;
     }
 
@@ -957,7 +946,7 @@ class PhpTwigExtension extends \Twig_Extension
 ***** tento tyden, pristi tyden / plan, plan-next *******
 *********************************************************/
     // ulozit plan
-    function savePlan(){
+    function SavePlan(){
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $data = "---" . PHP_EOL .
                     "process:". PHP_EOL .
@@ -979,87 +968,72 @@ class PhpTwigExtension extends \Twig_Extension
         }
     }
 
-    function getPlanFromTemplate($template){
+    function get_plan_from_template($template){
         if($template == "None"){
             return;
         }
-        // https://symfony.com/doc/current/components/yaml.html 
 
         $templates_path = "./user/pages/auth/plan-templates/default--plan-header.cs.md";
-        $yaml = $this->parse_file_frontmatter_only($templates_path);
+        $frontmatter = $this->get_frontmatter_as_array($templates_path);
 
-        // returns parsed frontmatter in yaml as an array
-        $parsed = Yaml::parse($yaml);
-
-        // get only template that is needed
-        $parsed = $parsed[$template];
-
-        // fix to include "plan:"
-        $array["plan"] = $parsed;
-
-        // retun plan in Yaml format as a sting
-        return Yaml::dump($array, 5); 
+        // retun plan as array
+        return $frontmatter[$template]; 
     }
 
     // nacist sablonu
-    function savePlanTemplate(){
+    function SavePlanTemplate(){
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $page_path = $_POST["filePath"];
             $templates_path = str_replace(array('/plan/', '/plan-next/'), '/plan-templates/', $page_path);
             // get last used teamplates
             $template = $_POST["template"];
 
-            // get plan from templates page
-            $yaml_plan = $this->getPlanFromTemplate($template);
+            // alternate frontmatter
+            $frontmatter = $this->get_frontmatter_as_array($page_path);             
+            $frontmatter['planTemplate'] = $template;                               // set last used template to the chosen one
+            $frontmatter['plan'] = $this->get_plan_from_template($template);        // get chosen plan from page plan-templates
+            $frontmatter = Yaml::dump($frontmatter, 10);                            // make string from array 
+
+            // get page content
+            $content = $this->parse_file_content_only($page_path);
 
             // build page
-            $data = "---" . PHP_EOL .
-                    "process:". PHP_EOL .
-                    "    twig: true" . PHP_EOL .
-                    "    markdown: false" . PHP_EOL .
-                    "access:" . PHP_EOL .
-                    "    site:" . PHP_EOL .
-                    "        plan: true" . PHP_EOL .
-                    "planTemplate: " . $template . PHP_EOL .
-                    $yaml_plan .
-                    "---" . PHP_EOL;
-            $data .= $this->parse_file_content_only($page_path);
-
+            $page = $this->combine_frontmatter_with_content($frontmatter, $content);
+           
             // save page
-            $this->file_force_contents($page_path, $data);
+            $this->file_force_contents($page_path, $page);
             Cache::clearCache('all');
         }
     }
 
     // nastavi "pristi tyden" jako "tento tyden" a do "pristi tyden" nacte predchozi pouzitou sablonu - potreba CRON/ task scheduler 
     function ShiftPlan($plan_path, $plan_next_path){
+            /******************/
             // update this week
-            $data = "---". PHP_EOL;
-            $data .= $this->parse_file_frontmatter_only($plan_next_path);
-            $data .= "---". PHP_EOL;
-            $data .= $this->parse_file_content_only($plan_path);
+            /******************/
+            $frontmatter = $this->parse_file_frontmatter_only($plan_next_path);
+            $content = $this->parse_file_content_only($plan_path);
+            $page = $this->combine_frontmatter_with_content($frontmatter, $content);
 
-            $this->file_force_contents($plan_path, $data);
+            $this->file_force_contents($plan_path, $page);
 
-            // load template for next week
-            $template = $this->get_template($plan_next_path);
-            $yaml_plan = $this->getPlanFromTemplate($template);
+            /******************************/
+            // load template for next week 
+            /******************************/
+            $template = $this->get_plan_template($plan_next_path);
+            // alternate frontmatter
+            $frontmatter = $this->get_frontmatter_as_array($plan_next_path);             
+            $frontmatter['planTemplate'] = $template;                               // set last used template to the chosen one
+            $frontmatter['plan'] = $this->get_plan_from_template($template);        // get chosen plan from page plan-templates
+            $frontmatter = Yaml::dump($frontmatter, 10);                            // make string from array 
+            // get page content
+            $content = $this->parse_file_content_only($page_path);
+            // build page
+            $page = $this->combine_frontmatter_with_content($frontmatter, $content); 
+            // save page
+            $this->file_force_contents($page_path, $page);
 
-            $data = "---" . PHP_EOL .
-                    "process:". PHP_EOL .
-                    "    twig: true" . PHP_EOL .
-                    "    markdown: false" . PHP_EOL .
-                    "access:" . PHP_EOL .
-                    "    site:" . PHP_EOL .
-                    "        plan: true" . PHP_EOL .
-                    "planTemplate: " . $template . PHP_EOL .
-                    $yaml_plan .
-                    "---" . PHP_EOL;
-            $data .= $this->parse_file_content_only($plan_next_path);
-
-            $this->file_force_contents($plan_next_path, $data);
-            Cache::clearCache('all');
-        
+            Cache::clearCache('all');        
     }
 
 
@@ -1544,25 +1518,24 @@ class PhpTwigExtension extends \Twig_Extension
         $polarisFileName = "Polaris_" . $_POST['year'] . "_" . $_POST['cislo'] . ".pdf" ;
 
         //get frontmatter
-        $frontmatter_yaml = $this->parse_file_frontmatter_only($pagePath);
-        $frontmatter_array = Yaml::parse($frontmatter_yaml);
+        $frontmatter = $this->get_frontmatter_as_array($pagePath);
 
         // add polaris to frontmatter
-        if(isset($frontmatter_array['polaris']) && in_array ( $polarisFileName , $frontmatter_array['polaris'] ) ){
+        if(isset($frontmatter['polaris']) && in_array ( $polarisFileName , $frontmatter['polaris'] ) ){
             header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
             echo "Už je nahrané stejné číslo Polarisu.";
             die();
         }
         else{
-            $frontmatter_array['polaris'][$polarisYear][$polarisNumber] = $polarisFileName;
-            krsort($frontmatter_array['polaris']);
+            $frontmatter['polaris'][$polarisYear][$polarisNumber] = $polarisFileName;
+            krsort($frontmatter['polaris']);
         } 
 
         // save pdf and jpeg thumbnail
         $this->save_polaris_PDF($savePath, $polarisFileName);
         
         // build page
-        $pageFrontmatter = Yaml::dump($frontmatter_array, 10);
+        $pageFrontmatter = Yaml::dump($frontmatter, 10);
         $pageContent = $this->parse_file_content_only($pagePath);
         $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pageContent);
 
@@ -1580,11 +1553,10 @@ class PhpTwigExtension extends \Twig_Extension
         $filePath = getcwd() . '/user/pages/databaze/polaris/' . $_POST['year']. "/" . $_POST['pdf'];
         
         // get frontmatter
-        $frontmatter_yaml = $this->parse_file_frontmatter_only($pagePath);
-        $frontmatter_array = Yaml::parse($frontmatter_yaml);
+        $frontmatter = $this->get_frontmatter_as_array($pagePath);
 
         // remove polaris from frontmatter
-        unset($frontmatter_array['polaris'][$polarisYear][$polarisNumber]);
+        unset($frontmatter['polaris'][$polarisYear][$polarisNumber]);
 
         // delete pdf and jpeg thumbnail
         if(file_exists($filePath)){
@@ -1595,7 +1567,7 @@ class PhpTwigExtension extends \Twig_Extension
         }
 
         // build page
-        $pageFrontmatter = Yaml::dump($frontmatter_array, 10);
+        $pageFrontmatter = Yaml::dump($frontmatter, 10);
         $pageContent = $this->parse_file_content_only($pagePath);
         $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pageContent);
 
