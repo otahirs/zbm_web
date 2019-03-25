@@ -4,7 +4,7 @@ process:
     twig: true
     markdown: false
 ---
-{% set p = page.find('/auth/polaris') %}
+{% set p = page.find('/databaze/polaris') %}
 {% for rok, year in p.header.polaris %}
     <section>
     <h2>{{rok}}</h2>
