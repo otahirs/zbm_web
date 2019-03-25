@@ -24,7 +24,9 @@ class PhpTwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('phpSavePlanTemplate', [$this, 'SavePlanTemplate']),   
             new \Twig_SimpleFunction('phpLoginRedirect', [$this, 'LoginRedirect']),
             new \Twig_SimpleFunction('phpTest', [$this, 'Test']),      
-            new \Twig_SimpleFunction('phpShiftPlan', [$this, 'ShiftPlan']),        
+            new \Twig_SimpleFunction('phpShiftPlan', [$this, 'ShiftPlan']),
+            new \Twig_SimpleFunction('phpSaveMapT', [$this, 'SaveMapT']),  
+            new \Twig_SimpleFunction('phpDeleteMapT', [$this, 'DeleteMapT']),     
         
         ];
     }
@@ -1243,7 +1245,7 @@ class PhpTwigExtension extends \Twig_Extension
         $im->destroy();
     }
 
-    function save_polaris_PDF($savePath, $polarisFiletitle){
+    function save_PDF($savePath, $fileTitle, $makeThumbnail=True){
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         $mime = finfo_file($finfo, $_FILES['PDF']['tmp_name']);
         if ($mime != 'application/pdf') {
@@ -1254,10 +1256,12 @@ class PhpTwigExtension extends \Twig_Extension
         if(!is_dir($savePath)){
             mkdir($savePath);
         }
-        $saveFilesPath = $savePath ."/". $polarisFiletitle;
+        $saveFilesPath = $savePath ."/". $fileTitle;
         move_uploaded_file($file_tmp=$_FILES["PDF"]["tmp_name"], $saveFilesPath);
 
-        $this->make_jpeg_thumbnail($saveFilesPath, $saveFilesPath . ".jpg");
+        if($makeThumbnail){
+            $this->make_jpeg_thumbnail($saveFilesPath, $saveFilesPath . ".jpg");
+        }
     }
 
     public function SavePolaris(){ 
@@ -1267,24 +1271,24 @@ class PhpTwigExtension extends \Twig_Extension
         $savePath = './user/pages/databaze/polaris/' . $_POST['year'];
         $polarisYear = $_POST['year'];
         $polarisNumber = "p" . $_POST['cislo'];
-        $polarisFiletitle = "Polaris_" . $_POST['year'] . "_" . $_POST['cislo'] . ".pdf" ;
+        $fileTitle = "Polaris_" . $_POST['year'] . "_" . $_POST['cislo'] . ".pdf" ;
 
         //get frontmatter
         $frontmatter = $this->get_frontmatter_as_array($pagePath);
 
         // add polaris to frontmatter
-        if(isset($frontmatter['polaris']) && in_array ( $polarisFiletitle , $frontmatter['polaris'] ) ){
+        if(isset($frontmatter['polaris']) && in_array ( $fileTitle , $frontmatter['polaris'] ) ){
             header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
             echo "Už je nahrané stejné číslo Polarisu.";
             die();
         }
         else{
-            $frontmatter['polaris'][$polarisYear][$polarisNumber] = $polarisFiletitle;
+            $frontmatter['polaris'][$polarisYear][$polarisNumber] = $fileTitle;
             krsort($frontmatter['polaris']);
         } 
 
         // save pdf and jpeg thumbnail
-        $this->save_polaris_PDF($savePath, $polarisFiletitle);
+        $this->save_PDF($savePath, $fileTitle);
         
         // build page
         $pageFrontmatter = Yaml::dump($frontmatter, 10);
@@ -1329,8 +1333,75 @@ class PhpTwigExtension extends \Twig_Extension
         file_put_contents($pagePath, $page);
         Cache::clearCache('all');
     }
+//******** Mapova Teorie *********
+    public function SaveMapT(){ 
 
+        // init vars
+        $pagePath = './user/pages/databaze/mapova_teorie/blank.md';
+        $savePath = './user/pages/databaze/mapova_teorie/';
+        $maptDate = $_POST['date'];
+        $maptGroup = $_POST['group'];
+        $fileTitle = $maptGroup . "_" . $maptDate . ".pdf" ;
 
+        //get frontmatter
+        $frontmatter = $this->get_frontmatter_as_array($pagePath);
+
+        // add mapova_teorie to frontmatter
+        if(isset($frontmatter['mapova_teorie']) && in_array ( $fileTitle , $frontmatter['mapova_teorie'] ) ){
+            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
+            echo "Už je nahrana mapova teorie se stejnym datem a skupinou";
+            die();
+        }
+        else{
+            $frontmatter['mapova_teorie'][$maptGroup][] = $fileTitle;
+            krsort($frontmatter['mapova_teorie']);
+        } 
+
+        // save pdf and jpeg thumbnail
+        $this->save_PDF($savePath, $fileTitle, $makeThumbnail=False);
+        
+        // build page
+        $pageFrontmatter = Yaml::dump($frontmatter, 10);
+        $pagecontent = $this->parse_file_content_only($pagePath);
+        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
+
+        // save page to file
+        file_put_contents($pagePath, $page);
+        Cache::clearCache('all');
+    }
+
+    public function DeleteMapT(){
+
+        // init vars
+        $maptName = $_POST['name'];
+        $pagePath = './user/pages/databaze/mapova_teorie/blank.md';
+        $filePath = './user/pages/databaze/mapova_teorie/' . $maptName;
+        
+        // get frontmatter
+        $frontmatter = $this->get_frontmatter_as_array($pagePath);
+
+        // remove mapova_teorie from frontmatter
+        unset($frontmatter['mapova_teorie'][$maptGroup][$maptDate]);
+
+        // delete pdf and jpeg thumbnail
+        if(file_exists($filePath)){
+            unlink($filePath);
+        }
+        if(file_exists($filePath .".jpg")){
+            unlink($filePath .".jpg");
+        }
+        // remove years if year is empty
+        $frontmatter['mapova_teorie'] = array_filter($frontmatter['mapova_teorie']);
+
+        // build page
+        $pageFrontmatter = Yaml::dump($frontmatter, 10);
+        $pagecontent = $this->parse_file_content_only($pagePath);
+        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
+
+        // save page to file
+        file_put_contents($pagePath, $page);
+        Cache::clearCache('all');
+    }
 }
 
 ?>
