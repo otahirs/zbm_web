@@ -67,7 +67,6 @@ access:
         responseDiv.innerHTML = '<br><i class="fa fa-spinner fa-pulse fa-3x" aria-hidden="true"></i> Náhrávám se polaris a vytváří se náhled.';
         responseDiv.style.color = "black";
           var polarisForm = new FormData(document.getElementById("polarisForm"));
-          polarisForm.append("path", "{{'./' ~ page.relativePagePath() ~ '/' ~ page.name }}" );
           $.ajax({
               url: "/php/polaris",
               type: "POST",
@@ -128,7 +127,6 @@ access:
         if (confirm("Odstranit Polaris?") == true) {
             var deleteDiv = this.parentElement.parentElement;
             var deletePolarisForm = new FormData();
-            deletePolarisForm.append("path", "{{'./' ~ page.relativePagePath() ~ '/' ~ page.name }}" );
             deletePolarisForm.append("year", this.getAttribute("data-year") );
             deletePolarisForm.append("cislo", this.getAttribute("data-cislo") );
             deletePolarisForm.append("pdf", this.getAttribute("data-pdf") );

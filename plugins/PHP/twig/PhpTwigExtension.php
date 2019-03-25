@@ -1317,6 +1317,8 @@ class PhpTwigExtension extends \Twig_Extension
         if(file_exists($filePath .".jpg")){
             unlink($filePath .".jpg");
         }
+        // remove years if year is empty
+        $frontmatter['polaris'] = array_filter($frontmatter['polaris']);
 
         // build page
         $pageFrontmatter = Yaml::dump($frontmatter, 10);
