@@ -808,7 +808,9 @@ class PhpTwigExtension extends \Twig_Extension
                 }
             }
             // skupiny
-            $frontmatter['taxonomy']['skupina'] = array();
+            if(!isset($frontmatter['taxonomy']['skupina'])){
+                $frontmatter['taxonomy']['skupina'] = array();
+            }
             foreach($groups as $group){
                 if(!in_array($group, $frontmatter['taxonomy']['skupina']) && ($csv_event[$group])=="1"){
                     $frontmatter['taxonomy']['skupina'][] = $group;
@@ -1261,8 +1263,8 @@ class PhpTwigExtension extends \Twig_Extension
     public function SavePolaris(){ 
 
         // init vars
-        $pagePath = $_POST['path'];
-        $savePath = getcwd() . '/user/pages/databaze/polaris/' . $_POST['year'];
+        $pagePath = './user/pages/databaze/polaris/blank.md';
+        $savePath = './user/pages/databaze/polaris/' . $_POST['year'];
         $polarisYear = $_POST['year'];
         $polarisNumber = "p" . $_POST['cislo'];
         $polarisFiletitle = "Polaris_" . $_POST['year'] . "_" . $_POST['cislo'] . ".pdf" ;
@@ -1299,8 +1301,8 @@ class PhpTwigExtension extends \Twig_Extension
         // init vars
         $polarisYear = $_POST['year'];
         $polarisNumber = "p" . $_POST['cislo'];
-        $pagePath = $_POST['path'];
-        $filePath = getcwd() . '/user/pages/databaze/polaris/' . $_POST['year']. "/" . $_POST['pdf'];
+        $pagePath = './user/pages/databaze/polaris/blank.md';
+        $filePath = './user/pages/databaze/polaris/' . $_POST['year']. "/" . $_POST['pdf'];
         
         // get frontmatter
         $frontmatter = $this->get_frontmatter_as_array($pagePath);
