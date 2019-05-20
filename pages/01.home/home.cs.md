@@ -3,7 +3,6 @@ title: Novinky
 process:
     twig: true
     markdown: false
-visible: true
 content:
     items: '@root.descendants'
     order:
@@ -55,15 +54,7 @@ content:
 
 
     <div id="blizi-se" class="pure-u-1 pure-u-sm-9-24">
-    <div id="home--groups">
-      <a href="/skupiny/zabicky" class="home--groups-text">Žabičky</a>&nbsp;
-      <a href="/skupiny/pulci1" class="home--groups-text">Pulci&nbsp;1</a>&nbsp;
-      <a href="/skupiny/pulci2" class="home--groups-text">Pulci&nbsp;2</a>&nbsp;
-      <a href="/skupiny/zaci1" class="home--groups-text">Žáci&nbsp;1</a>&nbsp;
-      <a href="/skupiny/zaci2" class="home--groups-text">Žáci&nbsp;2</a>&nbsp;
-      <a href="/skupiny/dorost" class="home--groups-text">Dorost+</a>
-    </div>
-
+ 
       {% set soon_collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']).order('p.header.start','asc') %}
 
       {% for p in soon_collection %}
