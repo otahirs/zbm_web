@@ -206,7 +206,7 @@
 			// Scroll lock.
 			// Note: If you do anything to change the height of the sidebar's content, be sure to
 			// trigger 'resize.sidebar-lock' on $window so stuff doesn't get out of sync.
-
+		/*
 				$window.on('load.sidebar-lock', function() {
 
 					var sh, wh, st;
@@ -277,6 +277,7 @@
 						.trigger('resize.sidebar-lock');
 
 					});
+		*/
 
 		// Menu.
 			var $menu = $('#menu'),
