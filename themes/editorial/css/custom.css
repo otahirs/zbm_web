@@ -16,15 +16,10 @@
     margin-left: -10px;
 }
 
-#home--groups{
-    background-color: #d3e2f0;
-    padding: 1rem 0.8rem 0.5rem 0.8rem;
-    margin-bottom: 3rem;
-}
 .home--groups-text {
     border-bottom: none;
-    font-size: 1.9vw;
-    font-family: Comfortaa;
+    font-size: 1.3vw;
+    font-family: Overpass;
     color: #333;
     padding: 0.8rem 0.4rem 0.5rem 0.4rem;
     border: 1px solid transparent;
@@ -57,44 +52,6 @@ table.plan td{
 /**************************/
 /********* menu ***********/
 /**************************/
-
-#menu ul a, #menu ul span{
-    padding: 0
-}
-
-#menu > ul > li {
-    border-top: none;
-    margin: 0;
-}
-
-#menu > ul > li > ul {
-    margin: 0;
-}
-
-#menu > ul > li > ul > li {
-    margin: 0;
-    padding-left: 0em;
-}
-
-#menu ul a, #menu ul span{
-    font-size: 1.5rem;
-  }
-
-#menu > ul > li > ul a, #menu > ul > li > ul span {
-    font-size: 1.3rem;
- }
-
-#menu ul {
-    letter-spacing: 0.0625em;
-}
-
-#main > .inner > section {
-    padding: 4em 0 4em 0;
-}
-
-#header{
-    padding: 4em 0 1em 0;
-}
 
   /* Odsazeni "Blizi se" */
   #blizi-se{ padding-left: 6em; } 
@@ -414,3 +371,51 @@ dd {
 	display: inline;
 }
 
+#topbar{
+    position: fixed;
+    height: 56px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+
+    line-height: 56px;
+    text-align: center;
+    overflow: hidden;
+}
+#main, #sidebar {
+    top: 56px;
+}
+#topbar a {
+    text-decoration: none;
+    font-family: Overpass;
+    color: black;
+    border-bottom: none;
+}
+.topbar--title{
+    font-size: 24px;
+    float: left;
+    left: 18px;
+    position: relative;
+}
+.topbar--links{
+    float: right;
+}
+
+.topbar--links a{
+    font-size: 18px;
+    padding: 20px;
+}
+.topbar--links div{
+    margin: 20px
+}
+a.fix-topbar-offset{
+    padding-top: 90px; margin-top: -90px;
+}
+
+@media screen and (min-width: 1280px) {
+    #sidebar .toggle::before {
+        display: none;
+    }
+}

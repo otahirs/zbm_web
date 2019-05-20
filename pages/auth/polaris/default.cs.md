@@ -15,23 +15,19 @@ access:
 
         </div>
         <div class="pure-u-1 pure-u-md-1-2">
-            <div class="pure-control-group">
-                <label for="PDF">PDF</label> 
-                <input id="PDF" type="file" name="PDF" accept="application/pdf" required oninvalid="this.setCustomValidity('Nahrejte Polaris ve formátu PDF.')"
+            <div>
+                <input type="file" name="PDF" accept="application/pdf" required oninvalid="this.setCustomValidity('Nahrejte Polaris ve formátu PDF.')"
                 oninput="setCustomValidity('')" >
             </div>
-            <div class="pure-control-group">
-                <label for="year">Rok</label>  
-                <input id="year" list="yearList" name="year" style="width: 6em;" required pattern="[0-9]{4}" oninvalid="this.setCustomValidity('Vyplňte rok ve formátu YYYY')"
+            <br>
+            <div> 
+                <input type="text" placeholder="Rok" list="yearList" name="year" style="width: 6em; display:inline;" required pattern="[0-9]{4}" oninvalid="this.setCustomValidity('Vyplňte rok ve formátu YYYY')"
                 oninput="setCustomValidity('')" autocomplete="off">
                 <datalist id="yearList">
                     <option value="{{ "now"|date("Y") }}">
                 </datalist>  
-            </div>  
-            <div class="pure-control-group">
-                <label for="cislo">Číslo</label>
-                <input id="cislo" list="cisloList" name="cislo" style="width: 4.5em" required  pattern="[0-9]{2}" oninvalid="this.setCustomValidity('Vyplňte číslo časopisu ve formátu XX')"
-                oninput="setCustomValidity('')" autocomplete="off">
+         
+                <input placeholder="Číslo" type="text" list="cisloList" name="cislo" style="width: 6em; display:inline;" required  pattern="[0-9]{2}" oninvalid="this.setCustomValidity('Vyplňte číslo časopisu ve formátu XX')" oninput="setCustomValidity('')" autocomplete="off">
                 <datalist id="cisloList">
                     <option value="01">
                     <option value="02">
@@ -48,10 +44,6 @@ access:
         <div class="pure-u-1 pure-u-md-1-2">
             <button type="submit" id="sendPolaris">Odeslat</button>
             <div id="response"></div>
-        </div>
-        <div class="pure-u-1">
-            <br>
-            <p><em>Po odeslání trvá zpracování Polarisu několik desítek sekund, neopouštějte stránku.</em></p>
         </div>
 </div>
 </form>
