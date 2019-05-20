@@ -27,3 +27,4 @@ taxonomy:
     skupina: {  }
 template: soustredeni
 ---
+DASDAS
