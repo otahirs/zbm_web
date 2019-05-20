@@ -1,5 +1,33 @@
+# 3.0.0
+## 04/11/2019
+
+1. [](#new)
+    * Added **2-Factor Authentication** support for front-end (2FA)
+    * New CLI command to `lookup` users 
+    * Check requirements to use new `lookup` command
+    * Added support for the new `Flex User` object
+1. [](#improved)
+    * Use `$grav['accounts']` instead of `$grav['users']`
+    * Update all Login classes to rely on `PageInterface` instead of `Page` class
+    * Updated typehints from `User` to `UserInterface`
+    * Use `$grav['users']` collection instead of deprecated static calls
+    * Invalidate cache when modifying users from CLI
+    * Updated code to PHP 7.1 features
+1. [](#bugfix)
+    * Fix login on registration (FlexUsers)      
+
+# v2.8.4
+## 03/20/2019
+
+1. [](#improved)  
+  * Enable "brute force" protection by default [#195](https://github.com/getgrav/grav-plugin-login/pulls/195)
+  * UPdated various language translations
+1. [](#bugfix)
+  * Set security timeouts in blueprints to use `minutes` rather than `seconds` [#194](https://github.com/getgrav/grav-plugin-login/issues/194)
+  * Send "notification" email to `to` address rather than `from` [#188](https://github.com/getgrav/grav-plugin-login/pulls/188)
+
 # v2.8.3
-## 01/25/2018
+## 01/25/2019
   
 1. [](#new)
   * Wrap data in `onUserLoginRegisterData` event in object to allow reference  
@@ -7,7 +35,7 @@
   * IP pseudonymization for rate limiter [#196](https://github.com/getgrav/grav-plugin-login/pull/196)
   * Made some error lang strings more generic to relfect ability to change username/password requirements
 1. [](#bugfix)
-  * Fix redirectLangSafe in login controller [#192](https://github.com/getgrav/grav-plugin-login/pull/192)  
+  * Fix redirectLangSafe in login controller [#192](https://github.com/getgrav/grav-plugin-login/pull/192)      
 
 # v2.8.2
 ## 12/14/2018
