@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="{{ grav.language.getActive ?: config.site.default_lang }}">
 <head>
-    
 {% block head %}
     <meta charset="utf-8" />
     <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
@@ -58,6 +57,7 @@
                 {% include 'partials/socialIcons.html.twig' %} -->
             </header><!-- End #header -->
             {% endblock %}
+
             {% block body %}
             <section>
                 <header class="main">
@@ -77,6 +77,23 @@
 
 {% block sidebar %}
     {%  include 'partials/sidebar.html.twig' %}
+{% endblock %}
+
+{% block topbar %}
+    <div id="topbar">
+        <span class="topbar--title">
+            <a href="/">SK Žabovřesky Brno</a>
+        </span>
+
+        <span class="topbar--links">
+            <a href="#">Kdo jsme?</a>
+            <a href="#">Co je to orientační běh?</a>
+            <a href="#">Pevné kontroly</a>
+            <div style="width: 0px;height: 34px; display: inline; border: solid black 1px"></div>
+            <a href="/sponsors">Sponzoři</a>
+            <a href="/kontakty">Kontakty</a>
+        </span>
+    </div>    
 {% endblock %}
 
 
