@@ -417,17 +417,21 @@ a.fix-topbar-offset{
     height: 100%;
 }
 
-#blizi-se > section {
+#blizi-se section {
     background-color: #FAFAFA;
     padding: 30px;
     border-radius: 15px;
     margin: 20px;
 }
-#blizi-se > section > article > ul {
+#blizi-se section > article > ul {
     margin: 0;
 }
-#blizi-se > h6 {
+#blizi-se h6 {
     padding-top: 40px;
+}
+#blizi-se a, #blizi-se a:hover {
+    text-decoration: none;
+    color: #222 !important;
 }
 #novinky {
     padding-top: 40px !important;

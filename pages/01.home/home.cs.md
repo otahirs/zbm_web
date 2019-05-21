@@ -78,6 +78,7 @@ content:
               {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
             </h6>
           {% endif %}
+          <a href="{{p.url}}">
           <section>
             <b>
                 {{ p.header.title ~' '~ p.header.event.location }} 
@@ -87,6 +88,7 @@ content:
               {{p.content}}
             </article>
           </section>
+          </a>
 
         {% endif %}
       {% endfor %}
