@@ -4,6 +4,7 @@
 /*******  home ***********/
 /*************************/
 .swipe-area {
+    position: absolute;
     float: left;
     width: 2em;
     height: 100%;
@@ -53,19 +54,6 @@ table.plan td{
 /********* menu ***********/
 /**************************/
 
-  /* Odsazeni "Blizi se" */
-  #blizi-se{ padding-left: 6em; } 
-  @media screen and (max-width: 1680px) {
-    #blizi-se{ padding-left: 5em; } }
-  @media screen and (max-width: 1280px) {
-    #blizi-se{ padding-left: 4em; } }
-  @media screen and (max-width: 736px) {
-    #blizi-se{ padding-left: 2em; } }
-  @media screen and (max-width: 567px) {
-    #blizi-se{ padding-left: 0; } 
-    a.home--groups-text{
-	font-size: 6vw;}
-    }
 
 
 /* The Modal (background) */
@@ -387,6 +375,9 @@ dd {
 #main, #sidebar {
     top: 56px;
 }
+#main {
+    position: relative;
+}
 #topbar a {
     text-decoration: none;
     font-family: Overpass;
@@ -418,4 +409,40 @@ a.fix-topbar-offset{
     #sidebar .toggle::before {
         display: none;
     }
+}
+
+#blizi-se {
+    padding: 0 30px 100% 30px;
+    background-color: #CFCFCF;
+}
+
+#blizi-se > section {
+    background-color: #FAFAFA;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px;
+}
+#blizi-se > section > article > ul {
+    margin: 0;
+}
+#blizi-se > h5 {
+    padding-top: 40px;
+}
+#novinky {
+    padding-top: 40px !important;
+}
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: #222;
+    border-radius: 50%;
+    display: inline-block;
+  }
+.timeline {
+    border: 2.6px #222 solid;
+    width: 0;
+    height: calc(100% - 44px);
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 44px;
 }

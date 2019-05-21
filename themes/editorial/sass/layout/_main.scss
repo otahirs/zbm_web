@@ -11,7 +11,7 @@
 		@include vendor('flex-shrink', '1');
 		width: 100%;
 
-		> .inner {
+		> .inner, #novinky {
 			@include padding(0, 6em);
 			margin: 0 auto;
 			max-width: 110em;
@@ -27,7 +27,7 @@
 		}
 
 		@include breakpoint(xlarge) {
-			> .inner {
+			> .inner, #novinky {
 				@include padding(0, 5em);
 
 				> section {
@@ -37,7 +37,7 @@
 		}
 
 		@include breakpoint(large) {
-			> .inner {
+			> .inner, #novinky {
 				@include padding(0, 4em);
 
 				> section {
@@ -47,7 +47,7 @@
 		}
 
 		@include breakpoint(small) {
-			> .inner {
+			> .inner, #novinky {
 				@include padding(0, 2em);
 
 				> section {

@@ -48,6 +48,7 @@
 <div id="wrapper">
     <div id="main">
         <div class="swipe-area"></div>
+        {% block  inner %}
         <div class="inner">
             {% block header %}
             <header id="header">
@@ -73,6 +74,7 @@
             {% endblock %}
 
         </div> <!-- End .inner -->
+        {% endblock %}
     </div><!-- End #main -->
 
 {% block sidebar %}
