@@ -412,34 +412,35 @@ a.fix-topbar-offset{
 }
 
 #blizi-se {
-    padding: 0 30px 100% 30px;
+    padding: 0 30px;
     background-color: #CFCFCF;
+    height: 100%;
 }
 
 #blizi-se > section {
     background-color: #FAFAFA;
-    padding: 20px;
+    padding: 30px;
     border-radius: 15px;
     margin: 20px;
 }
 #blizi-se > section > article > ul {
     margin: 0;
 }
-#blizi-se > h5 {
+#blizi-se > h6 {
     padding-top: 40px;
 }
 #novinky {
     padding-top: 40px !important;
 }
 .dot {
-    height: 15px;
-    width: 15px;
+    height: 14px;
+    width: 14px;
     background-color: #222;
     border-radius: 50%;
     display: inline-block;
   }
 .timeline {
-    border: 2.6px #222 solid;
+    border: 2px #222 solid;
     width: 0;
     height: calc(100% - 44px);
     position: absolute;
