@@ -10,7 +10,7 @@ content:
         dir: asc
 ---
 
-<div class="pure-g"> {# cela stranka | je pouzit css framework purecss.io grids #}
+<div class="pure-g" style="height:100%"> {# cela stranka | je pouzit css framework purecss.io grids #}
   
     <div id="novinky" class="pure-u-1 pure-u-sm-16-24"> <!-- plan + novinky vlevo -->
     <div class="inner">
@@ -57,16 +57,26 @@ content:
     <div id="blizi-se" class="pure-u-1 pure-u-sm-8-24">
       <div class="timeline"></div>
       {% set soon_collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']).order('p.header.start','asc') %}
-      {% set currdate = none %}
-  
+      {% set currdate = strtotime("today")|date('Y-m-d') %}
+              
       {% for p in soon_collection %}
         {% if  (  p.header.start|date('Y-m-d') <= strtotime("today +10 day")|date('Y-m-d') and p.header.end|date('Y-m-d') >= strtotime("today")|date('Y-m-d') ) %}
+          
+          {% if first is not defined %}
+            {% if p.header.start >= currdate  %}
+              <h6><span class="dot"></span> &nbsp;
+              {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
+              </h6>
+            {% endif %}
+          {% set first = 1 %}
+          {% endif %}
+
+
           {% if p.header.start != currdate %}
             {% set currdate = p.header.start %}
-            
-            <h5><span class="dot"></span> &nbsp;
+            <h6><span class="dot"></span> &nbsp;
               {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
-            </h5>
+            </h6>
           {% endif %}
           <section>
             <b>

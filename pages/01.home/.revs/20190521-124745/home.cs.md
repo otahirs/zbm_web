@@ -58,17 +58,15 @@ content:
       <div class="timeline"></div>
       {% set soon_collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']).order('p.header.start','asc') %}
       {% set currdate = strtotime("today")|date('Y-m-d') %}
-        <h5><span class="dot"></span> &nbsp;
-              {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
-        </h5>
+        
       {% for p in soon_collection %}
         {% if  (  p.header.start|date('Y-m-d') <= strtotime("today +10 day")|date('Y-m-d') and p.header.end|date('Y-m-d') >= strtotime("today")|date('Y-m-d') ) %}
-          {% if p.header.start != currdate %}
+          {% if p.header.start > currdate %}
             {% set currdate = p.header.start %}
             
-            <h5><span class="dot"></span> &nbsp;
+            <h6><span class="dot"></span> &nbsp;
               {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
-            </h5>
+            </h6>
           {% endif %}
           <section>
             <b>
