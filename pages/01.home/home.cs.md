@@ -12,7 +12,8 @@ content:
 
 <div class="pure-g"> {# cela stranka | je pouzit css framework purecss.io grids #}
   
-    <div id="novinky" class="pure-u-1 pure-u-sm-15-24"> <!-- plan + novinky vlevo -->
+    <div id="novinky" class="pure-u-1 pure-u-sm-16-24"> <!-- plan + novinky vlevo -->
+    <div class="inner">
 
       {% set news_collection = page.collection().ofType('novinka').order('p.header.id','asc') %}
 
@@ -49,28 +50,34 @@ content:
           <hr width="62.11%">
         {% endif %}
       {% endfor %}
-    
-   </div> <!-- plan + novinky -->
+  </div>
+   </div> <!--  novinky -->
 
 
-    <div id="blizi-se" class="pure-u-1 pure-u-sm-9-24">
- 
+    <div id="blizi-se" class="pure-u-1 pure-u-sm-8-24">
+      <div class="timeline"></div>
       {% set soon_collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']).order('p.header.start','asc') %}
-
+      {% set currdate = none %}
+  
       {% for p in soon_collection %}
         {% if  (  p.header.start|date('Y-m-d') <= strtotime("today +10 day")|date('Y-m-d') and p.header.end|date('Y-m-d') >= strtotime("today")|date('Y-m-d') ) %}
-          <article>
-            <h4>
-              {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' '~ p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
-                  |&nbsp;&nbsp;{{ p.header.title ~' '~ p.header.event.location }} 
+          {% if p.header.start != currdate %}
+            {% set currdate = p.header.start %}
+            
+            <h5><span class="dot"></span> &nbsp;
+              {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
+            </h5>
+          {% endif %}
+          <section>
+            <b>
+                {{ p.header.title ~' '~ p.header.event.location }} 
               <br>{% if p.header.eventTypeDescription is not empty %}<em style="font-weight:normal;">{{p.header.eventTypeDescription}}</em>{% endif %}
-            </h4>
-            <section data-id="{{p.header.id}}" data-template="{{p.header.template}}">
+            </b>
+            <article data-id="{{p.header.id}}" data-template="{{p.header.template}}">
               {{p.content}}
-            </section>
-          </article>
+            </article>
+          </section>
 
-          <hr width="62.11%">
         {% endif %}
       {% endfor %}
 

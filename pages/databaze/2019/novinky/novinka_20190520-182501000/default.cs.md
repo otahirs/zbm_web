@@ -5,7 +5,7 @@ template: novinka
 id: '20190520-182501000'
 user: 'ota'
 pictures:
-    - name: '1558376701_MIR_0252.jpg'
+    - name: '1558435914_MIR_5239.jpg'
       ratio: '1/1'
 ---
 # dasd

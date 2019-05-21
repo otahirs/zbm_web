@@ -2,8 +2,6 @@
 {% block header %}
 
 {% endblock %}
-{% block body %}
-            <section>
-                {% block content %}{{ page.content }}{% endblock %}
-            </section><!-- End section -->
+{% block inner %}
+    {% block content %}{{ page.content }}{% endblock %}
 {% endblock %}
