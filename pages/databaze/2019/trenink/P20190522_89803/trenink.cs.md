@@ -1,6 +1,6 @@
 ---
 type: M
-start: '2019-05-20'
+start: '2019-05-22'
 end: '2019-05-22'
 title: 'Středeční mapový trénink (všichni)'
 place: Veselka
@@ -37,9 +37,37 @@ taxonomy:
         - zaci1
         - zaci2
         - dorost
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - dorost
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - dorost
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - dorost
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - dorost
 template: trenink
 meetPlace: ''
 ---
 * **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.
 * **mapa**: {{page.header.map}}
+
+
+
+
 
