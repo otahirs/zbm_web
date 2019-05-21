@@ -18,17 +18,14 @@
 }
 
 .home--groups-text {
+    font-family: Overpass !important;
+    padding: .8rem .4rem .5rem .4rem;
+    text-transform: uppercase;
     border-bottom: none;
-    font-size: 1.3vw;
-    font-family: Overpass;
-    color: #333;
-    padding: 0.8rem 0.4rem 0.5rem 0.4rem;
-    border: 1px solid transparent;
+
 }
 .home--groups-text:hover {
     background-color: white;
-    border: 1px solid transparent;
-    border-radius: 4px;
 }
 
 table.plan td{
@@ -387,7 +384,7 @@ dd {
 .topbar--title{
     font-size: 24px;
     float: left;
-    left: 18px;
+    padding: 0 18px;
     position: relative;
 }
 .topbar--links{
@@ -406,8 +403,8 @@ a.fix-topbar-offset{
 }
 
 @media screen and (min-width: 1280px) {
-    #sidebar .toggle::before {
-        display: none;
+    #sidebar .toggle::before, #sidebar .toggle {
+        display: none; 
     }
 }
 
@@ -450,4 +447,9 @@ a.fix-topbar-offset{
     position: absolute;
     margin-left: 5px;
     margin-top: 44px;
+}
+
+#sidebar > .inner > * {
+    border-bottom: none;
+    padding: 0;
 }
