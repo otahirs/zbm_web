@@ -12,7 +12,7 @@ content:
 
 <div class="pure-g" style="height:100%"> {# cela stranka | je pouzit css framework purecss.io grids #}
   
-    <div id="novinky" class="pure-u-1 pure-u-sm-16-24"> <!-- plan + novinky vlevo -->
+    <div id="novinky" class="pure-u-1 pure-u-md-16-24"> <!-- plan + novinky vlevo -->
     <div class="inner">
 
       {% set news_collection = page.collection().ofType('novinka').order('p.header.id','asc') %}
@@ -54,7 +54,7 @@ content:
    </div> <!--  novinky -->
 
 
-    <div id="blizi-se" class="pure-u-1 pure-u-sm-8-24">
+    <div id="blizi-se" class="pure-u-1 pure-u-md-8-24">
       <div class="timeline"></div>
       {% set soon_collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']).order('p.header.start','asc') %}
       {% set currdate = strtotime("today")|date('Y-m-d') %}
