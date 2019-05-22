@@ -120,7 +120,7 @@
 
 				}
 			// Menu support for mobile (only when menu displays over page -> smaller thatn "large")
-				skel.on('+large', function() {
+				skel.on('+medium', function() {
 					// Swipe to open menu 
 					$(".swipe-area").swipe({
 						swipeStatus:function(event, phase, direction, distance, duration, fingers){
