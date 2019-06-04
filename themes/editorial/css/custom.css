@@ -412,6 +412,7 @@ a.fix-topbar-offset{
 #blizi-se {
     padding: 0 30px;
     background-color: #CFCFCF;
+    height: inherit;
 }
 
 #blizi-se section {
