@@ -56,7 +56,7 @@ content:
 
     <div id="blizi-se" class="pure-u-1 pure-u-md-8-24">
       <div class="timeline"></div>
-      {% set soon_collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']).order('p.header.start','asc') %}
+      {% set soon_collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']).order('header.start','asc') %}
       {% set currdate = strtotime("today")|date('Y-m-d') %}
               
       {% for p in soon_collection %}
