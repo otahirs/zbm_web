@@ -365,7 +365,7 @@ dd {
     background: #FFFFFF;
     box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
 
-    line-height: 58px;
+    line-height: 56px;
     text-align: center;
     overflow: hidden;
 }
@@ -399,8 +399,11 @@ dd {
 .topbar--links div{
     margin: 20px
 }
-a.fix-topbar-offset{
-    padding-top: 90px; margin-top: -90px;
+.fix-topbar-offset::before {
+    content:"";
+    display:block;
+    height:90px; /* fixed header height*/
+    margin:-90px 0 0; 
 }
 
 @media screen and (min-width: 1280px) {
@@ -458,4 +461,48 @@ a.fix-topbar-offset{
 #sidebar > .inner > * {
     border-bottom: none;
     padding: 0;
+}
+
+/* tabs */
+.tab-folder > .tab-content:target ~ .tab-content:last-child, .tab-folder > .tab-content {
+    display: none;
+}
+.tab-folder > :last-child, .tab-folder > .tab-content:target {
+    display: block;
+}
+
+/* skupiny / goups */
+#group_menu {
+    background-color: black;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+#group_menu_items {
+    height: 3rem;
+}
+
+#group_menu_items > .item {
+    display: block;
+    padding: 0 2rem;
+    line-height: 3rem;
+    float: left;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.18s;
+    height: 3rem;
+    background-color: black;
+}
+
+#group_menu_items > .item:hover {
+    background-color: pink;
+}
+#group_menu_items > .item.current {
+    background-color: grey;
+}
+
+.fix-anchor-jump::before {
+    content:"";
+    display:block;
+    height:999px; /* fixed header height*/
+    margin:-999px 0 0; 
 }
