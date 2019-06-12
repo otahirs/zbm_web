@@ -352,8 +352,12 @@ dd {
 	box-shadow: none;
 }
 
-#filtr_program input.search{
-	display: inline;
+#filter_program {
+    border: solid black 2px;
+    border-radius: 15px;
+    background-color: whitesmoke;
+    padding: 40px;
+    
 }
 
 #topbar{

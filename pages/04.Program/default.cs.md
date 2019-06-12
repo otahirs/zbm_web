@@ -9,72 +9,59 @@ content:
 ---
 
 {% set collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']) %}
-<div id="filtr_program">
-{#filtr skupin#}
-<div class="pure-g">
-  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-8" style="display: none">
+<a class="button small special" id="filter_btn">zobrazit filtr</a>
+<div id="program" >
+<div id="filter_program" class="pure-g" style="display: none">
+{#hledani a reset#}
+  <div class="pure-u-1 pure-u-sm-1-2">
+    <br>
+    <input type="text" class="search" placeholder="Hledat.." />
+    <br><br>
+    <button data-toggle="datepicker" type="button" style="height: 2.75em;font-size: 1em;line-height: 2.9em;"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;filtr data</button>
+    <br><br>
+    <button id="reset_btn" style="height:2.75em"><i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;&nbsp;obnovit&nbsp;&nbsp;</button>
+    <br><br>
+  </div>
+  <div class="pure-u-1-2 pure-u-sm-1-4">
     <input class="filter-all" type="radio" value="all" name="skupina" id="skupina-all" checked />
     <label for="skupina-all" class="pure-radio">Vše</label>
+    <br>
+    <input class="filter" type="radio" value="zabicky" name="skupina" id="skupina-zabicky" />
+    <label for="skupina-zabicky" class="pure-radio">Žabičky</label>
+    <br>
+    <input class="filter" type="radio" value="pulci1" name="skupina" id="skupina-pulci1" />
+    <label for="skupina-pulci1" class="pure-radio">Pulci 1</label>
+    <br>
+    <input class="filter" type="radio" value="pulci2" name="skupina" id="skupina-pulci2" />
+    <label for="skupina-pulci2" class="pure-radio">Pulci 2</label>
+    <br>
+    <input class="filter" type="radio" value="zaci1" name="skupina" id="skupina-zaci1" />
+    <label for="skupina-zaci1" class="pure-radio">Žáci 1</label>
+    <br>
+    <input class="filter" type="radio" value="zaci2" name="skupina" id="skupina-zaci2" />
+    <label for="skupina-zaci2" class="pure-radio">Žáci 2</label>
+    <br>
+    <input class="filter" type="radio" value="dorost" name="skupina" id="skupina-dorost" />
+    <label for="skupina-dorost" class="pure-radio">Dorost+</label>
   </div>
-  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-8">
-<input class="filter" type="radio" value="zabicky" name="skupina" id="skupina-zabicky" />
-<label for="skupina-zabicky" class="pure-radio">Žabičky</label>
-</div>
-<div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-8">
-<input class="filter" type="radio" value="pulci1" name="skupina" id="skupina-pulci1" />
-<label for="skupina-pulci1" class="pure-radio">Pulci 1</label>
-</div>
-<div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-8">
-<input class="filter" type="radio" value="pulci2" name="skupina" id="skupina-pulci2" />
-<label for="skupina-pulci2" class="pure-radio">Pulci 2</label>
-</div>
-<div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-8">
-<input class="filter" type="radio" value="zaci1" name="skupina" id="skupina-zaci1" />
-<label for="skupina-zaci1" class="pure-radio">Žáci 1</label>
-</div>
-<div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-8">
-<input class="filter" type="radio" value="zaci2" name="skupina" id="skupina-zaci2" />
-<label for="skupina-zaci2" class="pure-radio">Žáci 2</label>
-</div>
-<div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-8">
-<input class="filter" type="radio" value="dorost" name="skupina" id="skupina-dorost" />
-<label for="skupina-dorost" class="pure-radio">Dorost+</label>
-</div>
-</div>
-{#filtr typu#}
-<div class="pure-g">
-  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-8" style="display: none">
+  {#filtr typu#}
+  <div class="pure-u-1-2 pure-u-sm-1-4">
     <input class="filter-all" type="radio" value="all" name="type" id="type-all" checked />
     <label for="type-all" class="pure-radio">Vše</label>
+    <br>
+    <input class="filter" type="radio" value="trenink" name="type" id="type-T" />
+    <label for="type-T" class="pure-radio">Trénink</label>
+    <br>
+    <input class="filter" type="radio" value="zavod" name="type" id="type-Z" />
+    <label for="type-Z" class="pure-radio">Závod</label>
+    <br>
+    <input class="filter" type="radio" value="soustredeni" name="type" id="type-S" />
+    <label for="type-S" class="pure-radio">Soustředění</label>
   </div>
-  <div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-8">
-<input class="filter" type="radio" value="trenink" name="type" id="type-T" />
-<label for="type-T" class="pure-radio">Trénink</label>
-</div>
-<div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-8">
-<input class="filter" type="radio" value="zavod" name="type" id="type-Z" />
-<label for="type-Z" class="pure-radio">Závod</label>
-</div>
-<div class="pure-u-1-2 pure-u-sm-1-4 pure-u-md-1-8">
-<input class="filter" type="radio" value="soustredeni" name="type" id="type-S" />
-<label for="type-S" class="pure-radio">Soustředění</label>
-</div>
-</div>
-<hr>
- {#hledani a reset#}
-<div class="pure-g">
-  <div class="pure-u-1-2">
-    <input type="text" class="search" placeholder="Hledat.." />
-    <button id="reset_btn" style="height:2.75em"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-  </div>
-  <div class="pure-u-1-2">
-    <input data-toggle="datepicker" type="button"  value='filtr datum' style="height: 2.75em;font-size: 1em;line-height: 2.9em;">
-  </div>
-</div>
+ </div>
 <br>
 {#tabulka#}
-
-  <table class="program">
+  <table>
   <tbody class="list">
     {# eventy starsi nez DNES#}
     
@@ -147,15 +134,25 @@ content:
 
     </tbody>
    </table>
-   
    <ul class="pagination"></ul>
 </div>
 
 
 <script>
  window.addEventListener('load', function () {
+  var filter_div = document.getElementById('filter_program');
+  $('#filter_btn').click( function(){
+    if (filter_div.style.display === "none") {
+      filter_div.style.display = "block";
+      this.innerHTML = "schovat filtr";
+    } else {
+      filter_div.style.display = "none";
+      this.innerHTML = "zobrazit filtr";
+    }
+  });
+
   var $datepicker = $('[data-toggle="datepicker"]'),
-    bnt_text = $datepicker.val();
+    bnt_text = $datepicker.html();
     now = Math.floor(Date.now() / 1000);
   $datepicker.datepicker({
       language: 'cs-CZ',
@@ -169,7 +166,7 @@ content:
     pagination: true
 	};
 
-  var userList = new List('filtr_program', options);
+  var userList = new List('program', options);
   
   function resetList(){
   	userList.search();
@@ -185,13 +182,14 @@ content:
   	$(".filter-all").prop('checked', true);
   	$('.filter').prop('checked', false);
     $('.search').val('');
-    $datepicker.val(bnt_text);
+    $datepicker.html(bnt_text);
   	//console.log('Reset Successfully!');
   };
 
   function updateList(){
     var values_skupina = $("input[name=skupina]:checked").val();
   	var values_type = $("input[name=type]:checked").val();
+    var value_datepicker = $datepicker.datepicker('getDate', true) 
   	//console.log(values_skupina, values_type);
 
   	userList.filter(function (item) {
@@ -213,11 +211,11 @@ content:
   			typeFilter = item.values().type.indexOf(values_type) >= 0;
       }
 
-      if($datepicker.val() == bnt_text)
+      if($datepicker.html() == bnt_text)
       {
         dateFilter = true;
       } else {
-        dateFilter = item.values().startMonth.indexOf($datepicker.val()) >= 0 || item.values().endMonth.indexOf($datepicker.val()) >= 0;
+        dateFilter = item.values().startMonth.indexOf(value_datepicker) >= 0 || item.values().endMonth.indexOf(value_datepicker) >= 0;
       }
       
   		return typeFilter && skupinaFilter && dateFilter;
@@ -229,7 +227,7 @@ content:
     //updateList();
     $("input[name=skupina]").change(updateList);
     $('input[name=type]').change(updateList);
-    $datepicker.on('change', function () {
+    $datepicker.on('pick.datepicker', function () {
         updateList();
     });
 

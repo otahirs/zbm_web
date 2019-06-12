@@ -7,6 +7,7 @@
  *
  * Date: 2019-02-19T12:18:04.827Z
  */
+
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('jquery')) :
   typeof define === 'function' && define.amd ? define(['jquery'], factory) :
@@ -1518,17 +1519,7 @@
       return this;
     };
   }
-
-}));
-
-(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('jquery')) :
-  typeof define === 'function' && define.amd ? define(['jquery'], factory) :
-  (factory(global.jQuery));
-}(this, (function ($) {
-  'use strict';
-
-  $.fn.datepicker.languages['cs-CZ'] = {
+	$.fn.datepicker.languages['cs-CZ'] = {
     format: 'dd.mm.YYYY',
     days: ['Neděle', 'Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek', 'Sobota'],
     daysShort: ['Ne', 'Po', 'Út', 'St', 'Čt', 'Pá', 'So'],
@@ -1538,4 +1529,8 @@
     // Used everywhere, but probably not grammar correct
     monthsShort: ['Led', 'Úno', 'Bře', 'Dub', 'Květ', 'Čvn', 'Čvc', 'Srp', 'Zář', 'Říj', 'Lis', 'Pro']
   };
-})));
+
+}));
+
+
+  
