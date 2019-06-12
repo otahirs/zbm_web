@@ -67,19 +67,26 @@ class CalendarProcessor
 		foreach($collection as $event) {
 			$header = $event->header();
 			$start = $header->start;
-			$meetTime = $header->meetTime;
+			$end = $header->end;
+			//$meetTime = $header->meetTime;
+			$i = 0;
+			while ($start <= $end){
+				
+				// build dates to create an associate array
+				$carbonStart = Carbon::parse($start);
+				$year = $carbonStart->year;
+				$month = $carbonStart->month;
+				$day = $carbonStart->day;
 
-			// build dates to create an associate array
-			$carbonStart = Carbon::parse($start);
-			$year = $carbonStart->year;
- 			$month = $carbonStart->month;
- 			$day = $carbonStart->day;
+				$eventItem = $event->toArray();
+				$eventItem['header']['url'] = $event->url();
 
- 			$eventItem = $event->toArray();
- 			$eventItem['header']['url'] = $event->url();
+				// add the event to the calendar
+				$calendar[$year][$month][$day][] = $eventItem;
 
- 			// add the event to the calendar
- 			$calendar[$year][$month][$day][] = $eventItem;
+				// $start++
+				$start = date('Y-m-d',strtotime($start . "+1 days"));
+			} 
 		}
 
 		return $calendar;
