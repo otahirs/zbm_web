@@ -8,26 +8,42 @@ editable-simplemde:
             groups:
                 - edit-static-sites
 ---
-
-## Obsah
-- Základní informace
- - [Vedení oddílu](#vedeni)
- - [Emailová skupina](#zabiny)
- - [Oddílové příspěvky](#prispevky)
- - [SI čipy](#cipy)
- - [Materiální vybavení](#vybaveni)
-- Finance
- - [Financování a osobní účty](#finance)
- - [Vrcholový fond ZBM](#vrcholovy)
- - [Trenérský fond ZBM](#trenersky)
-- Přihlášky
- - [Přihlašování na závody](#zavody)
- - [Přihlašování na soustředění](#soustredeni)
- - [Kdo se může a kam přihlásit](#kdoakam)
-- Organizace/pořádání
- - [Vedoucí na závodech](#vedouci)
- - [Organizace mapových středečních tréninků](#organizace)
- - [Pořádání závodů](#poradani)
+<div class="pure-g">
+<div class="pure-u-1 pure-u-sm-1-2 pure-u-lg-1-4">
+<h3>Základní informace</h3>
+<ul>
+ <li><a href="#vedeni">Vedení oddílu</a></li>
+ <li><a href="#zabiny">Emailová skupina</a></li>
+ <li><a href="#prispevky">Oddílové příspěvky</a></li>
+ <li><a href="#cipy">SI čipy</a></li>
+ <li><a href="#vybaveni">Materiální vybavení</a></li>
+</ul>
+</div>
+<div class="pure-u-1 pure-u-sm-1-2 pure-u-lg-1-4">
+<ul>
+<h3>Finance</h3>
+ <li><a href="#finance">Financování a osobní účty</a></li>
+ <li><a href="#vrcholovy">Vrcholový fond ZBM</a></li>
+ <li><a href="#trenersky">Trenérský fond ZBM</a></li>
+ </ul>
+</div>
+<div class="pure-u-1 pure-u-sm-1-2 pure-u-lg-1-4">
+<ul>
+<h3>Přihlášky</h3>
+ <li><a href="#zavody">Přihlašování na závody</a></li>
+ <li><a href="#soustredeni">Přihlašování na soustředění</a></li>
+ <li><a href="#kdoakam">Kdo se může a kam přihlásit</a></li>
+</ul>
+</div>
+<div class="pure-u-1 pure-u-sm-1-2 pure-u-lg-1-4">
+<ul>
+<h3>Organizace/pořádání</h3>
+ <li><a href="#vedouci">Vedoucí na závodech</a></li>
+ <li><a href="#organizace">Organizace mapových středečních tréninků</a></li>
+ <li><a href="#poradani">Pořádání závodů</a></li>
+</ul>
+</div>
+</div>
 
 ---
 ## Vedení oddílu   <a class ="fix-topbar-offset" name="vedeni"></a>
