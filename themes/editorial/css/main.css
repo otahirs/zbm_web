@@ -1292,11 +1292,11 @@ a {
   -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   border-bottom: dotted 1px;
-  color: #ff4040;
+  color: #e24747;
   text-decoration: none; }
   a:hover {
-    border-bottom-color: #ff4040;
-    color: #ff4040 !important; }
+    border-bottom-color: #e24747;
+    color: #e24747 !important; }
     a:hover strong {
       color: inherit; }
 
@@ -1425,7 +1425,7 @@ header p {
   text-transform: uppercase; }
 
 header.major > :last-child {
-  border-bottom: solid 3px #ff4040;
+  border-bottom: solid 3px #e24747;
   display: inline-block;
   margin: 0 0 2em 0;
   padding: 0 0.75em 0.5em 0; }
@@ -1482,8 +1482,8 @@ textarea {
   input[type="url"]:focus,
   select:focus,
   textarea:focus {
-    border-color: #ff4040;
-    box-shadow: 0 0 0 1px #ff4040; }
+    border-color: #e24747;
+    box-shadow: 0 0 0 1px #e24747; }
 
 .select-wrapper {
   text-decoration: none;
@@ -1576,8 +1576,8 @@ input[type="radio"] {
     content: '\f00c'; }
   input[type="checkbox"]:focus + label:before,
   input[type="radio"]:focus + label:before {
-    border-color: #ff4040;
-    box-shadow: 0 0 0 1px #ff4040; }
+    border-color: #e24747;
+    box-shadow: 0 0 0 1px #e24747; }
 
 input[type="checkbox"] + label:before {
   border-radius: 0.375em; }
@@ -1738,7 +1738,7 @@ ul {
         font-weight: normal;
         text-transform: none !important; }
       ul.contact li:before {
-        color: #ff4040;
+        color: #e24747;
         display: inline-block;
         font-size: 1.5em;
         height: 1.125em;
@@ -1820,12 +1820,12 @@ ul {
         padding: 0 0.5em;
         text-align: center; }
         ul.pagination li > .page.active {
-          background-color: #ff4040;
+          background-color: #e24747;
           color: #ffffff !important; }
           ul.pagination li > .page.active:hover {
-            background-color: #ff4f4f; }
+            background-color: #e45454; }
           ul.pagination li > .page.active:active {
-            background-color: #ff3131; }
+            background-color: #e03a3a; }
       ul.pagination li:first-child {
         padding-right: 0.75em; }
       ul.pagination li:last-child {
@@ -1903,8 +1903,8 @@ button,
   background-color: transparent;
   border-radius: 0.375em;
   border: 0;
-  box-shadow: inset 0 0 0 2px #ff4040;
-  color: #ff4040 !important;
+  box-shadow: inset 0 0 0 2px #e24747;
+  color: #e24747 !important;
   cursor: pointer;
   display: inline-block;
   font-family: "Overpass", sans-serif;
@@ -1923,13 +1923,13 @@ button,
   input[type="button"]:hover,
   button:hover,
   .button:hover {
-    background-color: rgba(255, 64, 64, 0.05); }
+    background-color: rgba(226, 71, 71, 0.05); }
   input[type="submit"]:active,
   input[type="reset"]:active,
   input[type="button"]:active,
   button:active,
   .button:active {
-    background-color: rgba(255, 64, 64, 0.15); }
+    background-color: rgba(226, 71, 71, 0.15); }
   input[type="submit"].icon:before,
   input[type="reset"].icon:before,
   input[type="button"].icon:before,
@@ -1963,7 +1963,7 @@ button,
   input[type="button"].special,
   button.special,
   .button.special {
-    background-color: #ff4040;
+    background-color: #e24747;
     box-shadow: none;
     color: #ffffff !important; }
     input[type="submit"].special:hover,
@@ -1971,13 +1971,13 @@ button,
     input[type="button"].special:hover,
     button.special:hover,
     .button.special:hover {
-      background-color: #ff4f4f; }
+      background-color: #e45454; }
     input[type="submit"].special:active,
     input[type="reset"].special:active,
     input[type="button"].special:active,
     button.special:active,
     .button.special:active {
-      background-color: #ff3131; }
+      background-color: #e03a3a; }
   input[type="submit"].disabled, input[type="submit"]:disabled,
   input[type="reset"].disabled,
   input[type="reset"]:disabled,
@@ -2055,7 +2055,7 @@ button,
       text-align: center;
       width: 10em; }
       .features article .icon:before {
-        color: #ff4040;
+        color: #e24747;
         font-size: 2.75rem;
         position: relative;
         top: 0.05em; }
@@ -2337,12 +2337,15 @@ button,
   -webkit-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
   -ms-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
   transition: margin-left 0.5s ease, box-shadow 0.5s ease;
-  background-color: #d3e2f0;
+  background-color: #202020;
   font-size: 0.9em;
   position: relative;
-  width: 18em; }
+  width: 18em;
+  color: #ddd; }
   #sidebar h2 {
     font-size: 1.38889em; }
+  #sidebar a {
+    color: #ddd; }
   #sidebar > .inner {
     padding: 2.22222em 2.22222em 2.44444em 2.22222em ;
     position: relative;
@@ -2358,7 +2361,7 @@ button,
         margin-bottom: 0;
         padding-bottom: 0; }
     #sidebar > .inner > .alt {
-      background-color: #cbdded;
+      background-color: #1b1b1b;
       border-bottom: 0;
       margin: -2.22222em 0 4.44444em -2.22222em;
       padding: 2.22222em;
@@ -2479,7 +2482,7 @@ button,
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  border-bottom: solid 5px #ff4040;
+  border-bottom: solid 5px #e24747;
   padding: 3em 0 1em 0;
   position: relative; }
   #header > * {
@@ -2603,7 +2606,6 @@ button,
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #222;
   font-family: "Overpass", sans-serif;
   font-family: 400;
   letter-spacing: 0.075em;
@@ -2618,8 +2620,10 @@ button,
     display: block;
     font-size: 0.9em;
     padding: 0.625em 0; }
+    #menu ul a.active, #menu ul span.active {
+      color: #333; }
     #menu ul a:hover, #menu ul span:hover {
-      color: #ff4040; }
+      color: #e24747; }
     #menu ul a.opener, #menu ul span.opener {
       -moz-transition: color 0.2s ease-in-out;
       -webkit-transition: color 0.2s ease-in-out;
@@ -2645,7 +2649,7 @@ button,
         position: absolute;
         right: 0; }
       #menu ul a.opener:hover:before, #menu ul span.opener:hover:before {
-        color: #ff4040; }
+        color: #e24747; }
       #menu ul a.opener.active + ul, #menu ul span.opener.active + ul {
         display: block; }
       #menu ul a.opener.active:before, #menu ul span.opener.active:before {
@@ -2655,7 +2659,7 @@ button,
         transform: rotate(-180deg); }
 
 #menu > ul > li {
-  border-top: solid 1px rgba(210, 215, 217, 0.75);
+  border-top: solid 1px #1b1b1b;
   margin: 0.5em 0 0 0;
   padding: 0.5em 0 0 0; }
   #menu > ul > li > ul {

@@ -9,7 +9,6 @@
 	#menu {
 		ul {
 			@include vendor('user-select', 'none');
-			color: _palette(fg-bold);
 			font-family: _font(family-heading);
 			font-family: _font(weight-heading-alt);
 			letter-spacing: _font(kerning-heading);
@@ -25,6 +24,7 @@
 				display: block;
 				font-size: 0.9em;
 				padding: 0.625em 0;
+				&.active { color: _palette(fg)}// none
 
 				&:hover {
 					color: _palette(accent);
@@ -68,7 +68,7 @@
 
 		> ul {
 			> li {
-				border-top: solid 1px _palette(border);
+				border-top: solid 1px darken(_palette(bg-alt), 2);//_palette(border);
 				margin: 0.5em 0 0 0;
 				padding: 0.5em 0 0 0;
 
