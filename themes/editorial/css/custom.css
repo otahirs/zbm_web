@@ -22,10 +22,11 @@
     padding: .8rem .4rem .5rem .4rem;
     text-transform: uppercase;
     border-bottom: none;
+    color: white;
 
 }
 .home--groups-text:hover {
-    background-color: white;
+    background-color: #202020;
 }
 
 table.plan td{
@@ -417,24 +418,24 @@ dd {
 }
 
 #blizi-se {
-    padding: 0 30px;
-    background-color: #CFCFCF;
+    padding: 0 1.5rem;
+    background-color: #e24747;
     height: inherit;
 }
 
 #blizi-se section {
     background-color: #FAFAFA;
-    padding: 30px;
-    border-radius: 15px;
-    margin: 20px;
+    padding: 1.5rem;
+    border-radius: 7px;
+    margin: 1.3rem;
     position: relative;
-    left: 5px;
+    left: 1rem;
 }
 #blizi-se section > article > ul {
     margin: 0;
 }
 #blizi-se h6 {
-    padding-top: 40px;
+    padding-top: 1.5rem;
 }
 #blizi-se a, #blizi-se a:hover {
     text-decoration: none;
@@ -455,10 +456,10 @@ dd {
 .timeline {
     border: 2px #222 solid;
     width: 0;
-    height: calc(100% - 44px);
+    height: calc(100% - 40px);
     float: left;
     left: 9px;
-    margin-top: 44px;
+    margin-top: 40px;
     position: relative;
 }
 
@@ -510,3 +511,4 @@ dd {
     height:999px; /* fixed header height*/
     margin:-999px 0 0; 
 }
+

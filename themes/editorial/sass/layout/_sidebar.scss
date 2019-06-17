@@ -47,10 +47,12 @@
 		font-size: 0.9em;
 		position: relative;
 		width: _size(sidebar-width);
+		color: _palette(fg-white); // none
 
 		h2 {
 			font-size: (1.25em / 0.9);
 		}
+		a { color: _palette(fg-white);} // none
 
 		> .inner {
 			@include padding($pad, $pad, (0, 0, $pad, 0));
