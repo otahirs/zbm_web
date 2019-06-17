@@ -1,6 +1,6 @@
 ---
 title: 'Týdenní program'
-date: '2018-09-30'
+date: '2018-09-29'
 process:
     twig: true
     markdown: false
@@ -266,7 +266,7 @@ winter:
         var formData = new FormData(document.getElementById("form-weekly-plan"));
         var formResponse = document.getElementById("form-response");
         $.ajax({
-            url: location.href,
+            url: "/php/plan/savetemplates",
             type: "POST",
             data: formData,
             processData: false,
@@ -288,8 +288,11 @@ winter:
             });
     }
 </script>
-{# PHP code to handle the POST request and save changes to server #}
-{{ phpWeeklyProgram() }}
+
+
+
+
+
 
 
 
