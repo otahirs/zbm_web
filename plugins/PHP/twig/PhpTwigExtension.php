@@ -15,7 +15,7 @@ class PhpTwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('phpUploadProgram', [$this, 'phpUploadProgram']),
             new \Twig_SimpleFunction('phpNews', [$this, 'NewsFunction']),
             new \Twig_SimpleFunction('phpEditBliziSe', [$this, 'editBliziSeFunction']),
-            new \Twig_SimpleFunction('phpWeeklyProgram', [$this, 'save_program_templates']),
+            new \Twig_SimpleFunction('phpSaveProgramTemplates', [$this, 'SaveProgramTemplates']),
             new \Twig_SimpleFunction('phpFormEditEvent', [$this, 'phpFormEditEvent']),
             new \Twig_SimpleFunction('phpSaveEditedEvent', [$this, 'phpSaveEditedEvent']),
             new \Twig_SimpleFunction('phpSavePolaris', [$this, 'SavePolaris']),
@@ -632,10 +632,10 @@ class PhpTwigExtension extends \Twig_Extension
     }
 
     // ulozit sablony
-    function save_program_templates(){
+    function SaveProgramTemplates(){
         $data = "---" . PHP_EOL .
                 "title: 'Týdenní program'" . PHP_EOL .
-                "date: '2018-09-30'" . PHP_EOL .
+                "date: '2018-09-29'" . PHP_EOL .
                 "process:". PHP_EOL .
                 "    twig: true" . PHP_EOL .
                 "    markdown: false" . PHP_EOL .
