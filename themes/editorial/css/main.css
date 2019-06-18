@@ -1819,13 +1819,13 @@ ul {
         min-width: 2em;
         padding: 0 0.5em;
         text-align: center; }
-        ul.pagination li > .page.active {
-          background-color: #e24747;
-          color: #ffffff !important; }
-          ul.pagination li > .page.active:hover {
-            background-color: #e45454; }
-          ul.pagination li > .page.active:active {
-            background-color: #e03a3a; }
+      ul.pagination li.active > .page {
+        background-color: #e24747;
+        color: #ffffff !important; }
+        ul.pagination li.active > .page:hover {
+          background-color: #e45454; }
+        ul.pagination li.active > .page:active {
+          background-color: #e03a3a; }
       ul.pagination li:first-child {
         padding-right: 0.75em; }
       ul.pagination li:last-child {
@@ -2680,7 +2680,10 @@ button,
 /*
     Place custom styles here.
 */
-/* skupiny / goups */
+/****************
+**** Groups *****
+****************/
+/* menu */
 #group_menu {
   background-color: #202020;
   text-transform: uppercase; }
@@ -2698,6 +2701,7 @@ button,
   text-decoration: none;
   transition: all 0.18s;
   height: 3rem;
+  border-bottom: none;
   background-color: #202020; }
   #group_menu_items > .item:hover {
     background-color: black;
@@ -2717,6 +2721,22 @@ button,
   /* fixed header height*/
   margin: -999px 0 0; }
 
+/* plan */
+table.plan tr {
+  border: none; }
+
+table.plan td {
+  padding: 0.25em 1em; }
+
+.plan--lichyDen {
+  background-color: #e6e6e6 !important; }
+
+.plan--sudyDen {
+  background-color: inherit !important; }
+
+/****************
+***** HOME ******
+****************/
 /* home - soon */
 #soon {
   padding: 0 1.5rem;
@@ -2735,6 +2755,9 @@ button,
   margin: 0; }
 
 .soon--date {
+  padding-top: 1rem; }
+
+.soon--date-now {
   padding-top: 1.5rem; }
 
 #soon a, #soon a:hover {
@@ -2762,3 +2785,33 @@ button,
   left: 9px;
   margin-top: 40px;
   position: relative; }
+
+/****************
+*** Calendar ****
+****************/
+table.calendar tr {
+  background-color: inherit !important; }
+
+/****************
+**** Program ****
+****************/
+#program tr {
+  border: none;
+  cursor: pointer; }
+  #program tr:hover {
+    background-color: #e24747; }
+
+#filter_program {
+  border: #202020 dotted 3px; }
+
+#filter_program label.pure-radio {
+  margin: 2px; }
+
+#filter_program fieldset {
+  margin: 2.2em 1.1em; }
+
+tr.program--now {
+  border: solid #202020 !important;
+  border-width: 0.5em 0em !important; }
+  tr.program--now td {
+    display: none; }
