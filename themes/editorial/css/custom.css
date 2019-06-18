@@ -32,6 +32,7 @@
 table.plan td{
     padding: 0em .5em;
 }
+/*
 .plan--lichyDen{
     background-color: #d3e2f0 !important;
     border: none;
@@ -39,7 +40,7 @@ table.plan td{
 .plan--sudyDen{
     background-color: white !important;
     border: none;
-}
+} 
 
 .news--header{
     margin-bottom: 0.3em;
@@ -48,6 +49,7 @@ table.plan td{
     margin-bottom: 0.5em;
     margin-top: 0.5em;
 }
+*/
 /**************************/
 /********* menu ***********/
 /**************************/
@@ -476,39 +478,5 @@ dd {
     display: block;
 }
 
-/* skupiny / goups */
-#group_menu {
-    background-color: black;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-}
-#group_menu_items {
-    height: 3rem;
-}
 
-#group_menu_items > .item {
-    display: block;
-    padding: 0 2rem;
-    line-height: 3rem;
-    float: left;
-    color: #fff;
-    text-decoration: none;
-    transition: all 0.18s;
-    height: 3rem;
-    background-color: black;
-}
-
-#group_menu_items > .item:hover {
-    background-color: pink;
-}
-#group_menu_items > .item.current {
-    background-color: grey;
-}
-
-.fix-anchor-jump::before {
-    content:"";
-    display:block;
-    height:999px; /* fixed header height*/
-    margin:-999px 0 0; 
-}
 

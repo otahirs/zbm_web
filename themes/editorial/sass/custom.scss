@@ -1,3 +1,46 @@
 /*
     Place custom styles here.
 */
+
+/* skupiny / goups */
+#group_menu {
+    background-color: _palette(bg-alt);
+    text-transform: uppercase;
+}
+#group_menu_items {
+    height: 3rem;
+    display: table-cell;
+}
+
+#group_menu_items > .item {
+    display: block;
+    padding: 0 2rem;
+    line-height: 3rem;
+    float: left;
+    color: _palette(fg-white);
+    text-decoration: none;
+    transition: all 0.18s;
+    height: 3rem;
+    background-color: _palette(bg-alt);
+    &:hover {
+	background-color: black;
+        font-weight: bold;
+	
+    }
+}
+
+#group_menu_items > .item.current {
+    background-color: _palette(accent);
+    color: _palette(bg-alt);
+    font-weight: bold;
+    &:hover {
+	color: black !important;
+    }
+}
+
+.fix-anchor-jump::before {
+    content:"";
+    display:block;
+    height:999px; /* fixed header height*/
+    margin:-999px 0 0; 
+}
