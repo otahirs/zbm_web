@@ -64,7 +64,7 @@ content:
           
           {% if first is not defined %}
             {% if p.header.start >= currdate  %}
-              <h6 class="soon--date soon-date-now"><span class="soon--dot soon--dot-now"></span> &nbsp;
+              <h6 class="soon--date soon--date-now"><span class="soon--dot soon--dot-now"></span> &nbsp;
               {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
               </h6>
             {% endif %}
