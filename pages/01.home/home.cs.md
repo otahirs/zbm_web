@@ -54,8 +54,8 @@ content:
    </div> <!--  novinky -->
 
 
-    <div id="blizi-se" class="pure-u-1 pure-u-md-8-24">
-      <div class="timeline"></div>
+    <div id="soon" class="pure-u-1 pure-u-md-8-24">
+      <div id="soon--timeline"></div>
       {% set soon_collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']).order('header.start','asc') %}
       {% set currdate = strtotime("today")|date('Y-m-d') %}
               
@@ -64,7 +64,7 @@ content:
           
           {% if first is not defined %}
             {% if p.header.start >= currdate  %}
-              <h6><span class="dot"></span> &nbsp;
+              <h6 class="soon--date soon-date-now"><span class="soon--dot soon--dot-now"></span> &nbsp;
               {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
               </h6>
             {% endif %}
@@ -74,7 +74,7 @@ content:
 
           {% if p.header.start != currdate %}
             {% set currdate = p.header.start %}
-            <h6><span class="dot"></span> &nbsp;
+            <h6 class="soon--date"><span class="soon--dot"></span> &nbsp;
               {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
             </h6>
           {% endif %}
