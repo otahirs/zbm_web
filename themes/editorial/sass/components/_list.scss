@@ -203,17 +203,17 @@
 					padding: 0 0.5em;
 					text-align: center;
 
-					&.active {
-						background-color: _palette(accent);
-						color: _palette(bg) !important;
+				}
+				&.active > .page{
+					background-color: _palette(accent);
+					color: _palette(bg) !important;
 
-						&:hover {
-							background-color: lighten(_palette(accent), 3);
-						}
+					&:hover {
+						background-color: lighten(_palette(accent), 3);
+					}
 
-						&:active {
-							background-color: darken(_palette(accent), 3);
-						}
+					&:active {
+						background-color: darken(_palette(accent), 3);
 					}
 				}
 
