@@ -29,18 +29,6 @@
     background-color: #202020;
 }
 
-table.plan td{
-    padding: 0em .5em;
-}
-/*
-.plan--lichyDen{
-    background-color: #d3e2f0 !important;
-    border: none;
-}
-.plan--sudyDen{
-    background-color: white !important;
-    border: none;
-} 
 
 .news--header{
     margin-bottom: 0.3em;
@@ -355,13 +343,7 @@ dd {
 	box-shadow: none;
 }
 
-#filter_program {
-    border: solid black 2px;
-    border-radius: 15px;
-    background-color: whitesmoke;
-    padding: 40px;
-    
-}
+
 
 #topbar{
     position: fixed;

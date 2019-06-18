@@ -2,7 +2,11 @@
     Place custom styles here.
 */
 
-/* skupiny / goups */
+/****************
+**** Groups *****
+****************/
+
+/* menu */
 #group_menu {
     background-color: _palette(bg-alt);
     text-transform: uppercase;
@@ -21,6 +25,7 @@
     text-decoration: none;
     transition: all 0.18s;
     height: 3rem;
+    border-bottom: none;
     background-color: _palette(bg-alt);
     &:hover {
 	background-color: black;
@@ -44,7 +49,23 @@
     height:999px; /* fixed header height*/
     margin:-999px 0 0; 
 }
+/* plan */
+table.plan tr {
+    border: none;
+}
+table.plan td {
+    padding: 0.25em 1em;
+}
+.plan--lichyDen {
+    background-color: _palette(fg-white) !important;
+}
+.plan--sudyDen {
+    background-color: inherit !important;
+}
 
+/****************
+***** HOME ******
+****************/
 /* home - soon */
 #soon {
     padding: 0 1.5rem;
@@ -95,4 +116,38 @@
     left: 9px;
     margin-top: 40px;
     position: relative;
+}
+
+/****************
+*** Calendar ****
+****************/
+table.calendar tr {
+    background-color: inherit !important;
+}
+
+/****************
+**** Program ****
+****************/
+#program tr {
+    border: none;
+    cursor: pointer;
+    &:hover {
+        background-color: _palette(accent);
+    }
+}
+#filter_program {
+    border: _palette(bg-alt) dotted 3px;
+}
+#filter_program label.pure-radio {
+    margin: 2px;
+}
+#filter_program fieldset {
+    margin: 2.2em 1.1em;
+}
+tr.program--now {
+    border: solid _palette(bg-alt) !important;
+    border-width: 0.5em 0em !important;
+    td {
+        display: none;
+    }
 }
