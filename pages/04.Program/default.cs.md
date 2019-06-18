@@ -9,23 +9,25 @@ content:
 ---
 
 {% set collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']) %}
-<a class="button small special" id="filter_btn">zobrazit filtr</a>
+<a class="button small special" id="filter_btn">zobrazit filtr</a>&nbsp;<a class="button small" id="reset_btn"><i class="fa fa-refresh" aria-hidden="true"></i></a>
 <div id="program" >
 <div id="filter_program" class="pure-g" style="display: none">
 {#hledani a reset#}
   <div class="pure-u-1 pure-u-sm-1-2">
-    <br>
+    <fieldset>
+    <label>Vyhledávání</label>
     <input type="text" class="search" placeholder="Hledat.." />
-    <br><br>
+    </fieldset>
+    <fieldset>
+    <label>Filtr data</label>
     <button data-toggle="datepicker" type="button" style="height: 2.75em;font-size: 1em;line-height: 2.9em;"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;filtr data</button>
-    <br><br>
-    <button id="reset_btn" style="height:2.75em"><i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;&nbsp;obnovit&nbsp;&nbsp;</button>
-    <br><br>
+    </fieldset>
   </div>
   <div class="pure-u-1-2 pure-u-sm-1-4">
+    <fieldset>
+    <label>Skupina</label>
     <input class="filter-all" type="radio" value="all" name="skupina" id="skupina-all" checked />
-    <label for="skupina-all" class="pure-radio">Vše</label>
-    <br>
+    <label for="skupina-all" class="pure-radio" style="display:none;">Vše</label>
     <input class="filter" type="radio" value="zabicky" name="skupina" id="skupina-zabicky" />
     <label for="skupina-zabicky" class="pure-radio">Žabičky</label>
     <br>
@@ -43,12 +45,14 @@ content:
     <br>
     <input class="filter" type="radio" value="dorost" name="skupina" id="skupina-dorost" />
     <label for="skupina-dorost" class="pure-radio">Dorost+</label>
+    </fieldset>
   </div>
   {#filtr typu#}
   <div class="pure-u-1-2 pure-u-sm-1-4">
+    <fieldset>
+    <label>Typ události</label>
     <input class="filter-all" type="radio" value="all" name="type" id="type-all" checked />
-    <label for="type-all" class="pure-radio">Vše</label>
-    <br>
+    <label for="type-all" class="pure-radio" style="display:none;">Vše</label>
     <input class="filter" type="radio" value="trenink" name="type" id="type-T" />
     <label for="type-T" class="pure-radio">Trénink</label>
     <br>
@@ -57,6 +61,7 @@ content:
     <br>
     <input class="filter" type="radio" value="soustredeni" name="type" id="type-S" />
     <label for="type-S" class="pure-radio">Soustředění</label>
+    </fieldset>
   </div>
  </div>
 <br>
@@ -67,7 +72,7 @@ content:
     
   {% for p in collection %}
   
-      <tr >
+      <tr data-href="{{ p.url }}">
           <td class="datum">
             {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
             {# HELP |localizeddate http://twig-extensions.readthedocs.io/en/latest/intl.html#}
@@ -82,16 +87,7 @@ content:
               {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
             {% endif %}
           </td>
-          <td class="den">
-            {# pokud neni stejny den - format PO - PA #}
-            {% if p.header.start|localizeddate('medium', 'none','cs','Europe/Prague', 'dM') != p.header.end|localizeddate('medium', 'none','cs','Europe/Prague', 'dM')%}
-              {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper }}
-            {% else %}
-            {# pokud stejny den - format PO #}
-              {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper }}
-            {% endif %}
-          </td>
-          <td class="nazev"><a href="{{ p.url }}"><b>{{ p.title }}</b></a></td>
+          <td class="nazev"><b>{{ p.title }}</b></td>
           <td class="misto">{{p.header.place}}</td>
           <td class="skupina" style="display: none !important;"> 
             {% set all = true %}
@@ -119,17 +115,16 @@ content:
       </tr>
   {% endfor %}
   {# oddelovaci cara #}
-    <tr style="background-color: #d3e2f0; color: #d3e2f0">
+    <tr class="program--now">
           <td class="datum"></td>
-          <td class="den"></td>
           <td class="nazev"></td>
           <td class="misto"></td>
-          <td class="skupina"  style="display: none !important;"></td>
-          <td class="type" style="display: none !important;"></td>
-          <td class="startMonth" style="display: none !important;">{{ "now"| date('m/Y') }}</td>     
-          <td class="endMonth" style="display: none !important;">{{ "now"| date('m/Y') }}</td>
-          <td class="start" style="display: none !important;">{{ "now"|date("U") }}</td>
-          <td class="end" style="display: none !important;">{{ "now"|date("U") }}</td>
+          <td class="skupina" ></td>
+          <td class="type"></td>
+          <td class="startMonth">{{ "now"| date('m/Y') }}</td>     
+          <td class="endMonth">{{ "now"| date('m/Y') }}</td>
+          <td class="start">{{ "now"|date("U") }}</td>
+          <td class="end">{{ "now"|date("U") }}</td>
       </tr>
 
     </tbody>
@@ -140,6 +135,10 @@ content:
 
 <script>
  window.addEventListener('load', function () {
+  $('[data-href]').click(function () {
+    window.location = $(this).data("href");
+  });
+
   var filter_div = document.getElementById('filter_program');
   $('#filter_btn').click( function(){
     if (filter_div.style.display === "none") {
@@ -161,8 +160,8 @@ content:
     });
 
 	var options = {
-    valueNames: [ 'datum', 'den', 'nazev', 'misto', 'skupina', 'type', 'startMonth', 'endMonth', 'start', 'end' ],
-    page: 20,
+    valueNames: [ 'datum', 'nazev', 'misto', 'skupina', 'type', 'startMonth', 'endMonth', 'start', 'end' ],
+    page: 15,
     pagination: true
 	};
 
