@@ -1858,7 +1858,7 @@ table {
     border-left: 0;
     border-right: 0; }
     table tbody tr:nth-child(2n + 1) {
-      background-color: rgba(230, 235, 237, 0.25); }
+      background-color: #e6e6e6; }
   table td {
     padding: 0.75em 0.75em; }
   table th {
@@ -2272,7 +2272,7 @@ button,
     margin: 0 auto;
     max-width: 110em; }
     #main > .inner > section, #main #novinky > section {
-      padding: 6em 0 4em 0 ;
+      padding: 3em 0 1em 0 ;
       border-top: solid 2px rgba(210, 215, 217, 0.75); }
       #main > .inner > section:first-of-type, #main #novinky > section:first-of-type {
         border-top: 0 !important; }
@@ -2280,17 +2280,17 @@ button,
     #main > .inner, #main #novinky {
       padding: 0 5em 0.1em 5em ; }
       #main > .inner > section, #main #novinky > section {
-        padding: 5em 0 3em 0 ; } }
+        padding: 2.5em 0 0.5em 0 ; } }
   @media screen and (max-width: 1280px) {
     #main > .inner, #main #novinky {
       padding: 0 4em 0.1em 4em ; }
       #main > .inner > section, #main #novinky > section {
-        padding: 4em 0 2em 0 ; } }
+        padding: 2em 0 0.1em 0 ; } }
   @media screen and (max-width: 736px) {
     #main > .inner, #main #novinky {
       padding: 0 2em 0.1em 2em ; }
       #main > .inner > section, #main #novinky > section {
-        padding: 3em 0 1em 0 ; } }
+        padding: 1.5em 0 0.1em 0 ; } }
 
 /* Sidebar */
 .search-wrapper form {
@@ -2341,11 +2341,11 @@ button,
   font-size: 0.9em;
   position: relative;
   width: 18em;
-  color: #ddd; }
+  color: #e6e6e6; }
   #sidebar h2 {
     font-size: 1.38889em; }
   #sidebar a {
-    color: #ddd; }
+    color: #e6e6e6; }
   #sidebar > .inner {
     padding: 2.22222em 2.22222em 2.44444em 2.22222em ;
     position: relative;
@@ -2676,3 +2676,43 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+
+/*
+    Place custom styles here.
+*/
+/* skupiny / goups */
+#group_menu {
+  background-color: #202020;
+  text-transform: uppercase; }
+
+#group_menu_items {
+  height: 3rem;
+  display: table-cell; }
+
+#group_menu_items > .item {
+  display: block;
+  padding: 0 2rem;
+  line-height: 3rem;
+  float: left;
+  color: #e6e6e6;
+  text-decoration: none;
+  transition: all 0.18s;
+  height: 3rem;
+  background-color: #202020; }
+  #group_menu_items > .item:hover {
+    background-color: black;
+    font-weight: bold; }
+
+#group_menu_items > .item.current {
+  background-color: #e24747;
+  color: #202020;
+  font-weight: bold; }
+  #group_menu_items > .item.current:hover {
+    color: black !important; }
+
+.fix-anchor-jump::before {
+  content: "";
+  display: block;
+  height: 999px;
+  /* fixed header height*/
+  margin: -999px 0 0; }
