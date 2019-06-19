@@ -9,9 +9,9 @@ date: '2019-06-19'
 <p>Přehled areálů pevných kontrol o které se stará náš klub je k&nbsp;dispozici níže. Pokud se vám hledání kontrol zalíbí, můžete si orientační běh vyzkoušet i v&nbsp;jiných koutech České republiky. Přehled všech českých areáů pevných kontrol naleznete <a href="https://zacitorientak.cz/brno/zkusit/190#pevne-kontroly" target="_blank">zde</a>. </p>
 <p><b>Přejeme Vám neobvyklé zážitky při hledání kontrolních stanovišť a příjemný pobyt v&nbsp;brněnských lesích. </b></p>
 <hr>
-<h2>Rosnička</h2>
 <div class="pure-g">
     <div class="pure-u-1 pure-u-sm-1-2">
+        <h2>Rosnička</h2>
         <p>Areálu pevných kontrol Rosnička se nachází v městské části Brno - Žabovřesky ve&nbsp;Wilsonově lese. V&nbsp;tomto areálu můžete nalézt celkem 13&nbsp;kontrolních stanovišť. </p>
         <h4>Kde je možné získat mapu?</h4>
         <p>Mapy jsou k dispozoci na vrátnici <a href="https://mapy.cz/s/3u0fX" target="_blank">v&nbsp;hale&nbsp;SK&nbsp;Brno&nbsp;-&nbsp;Žabovřesky</a>, nebo si ji můžete stáhnout <a href="{{page.url}}/rosnicka.pdf" target="_blank">ve&nbsp;formátu&nbsp;PDF</a>.</p>
@@ -23,9 +23,9 @@ date: '2019-06-19'
     </div>
 </div>
 <hr>
-<h2>Kohoutovice</h2>
 <div class="pure-g">
     <div class="pure-u-1 pure-u-sm-1-2">      
+        <h2>Kohoutovice</h2>
         <p>Areálu pevných kontrol Kohoutovice najdeme na <a href="https://mapy.cz/s/3u09n" target="_blank">západním&nbsp;okraji&nbsp;Brna&nbsp;(mapa)</a>. V&nbsp;tomto areálu můžete nalézt celkem 14&nbsp;kontrolních stanovišť. </p>
         <h4>Kde je možné získat mapu?</h4>
         <p>Mapu můžete získat v&nbsp;areálu <a href="https://mapy.cz/s/3u0bD" target="_blank">Aquaparku&nbsp;v&nbsp;Kohoutovicích</a>, nebo si ji můžete stáhnout <a href="{{page.url}}/kohoutovice.pdf" target="_blank">ve&nbsp;formátu&nbsp;PDF</a>.</p>
@@ -35,9 +35,9 @@ date: '2019-06-19'
     </div>
 </div>
 <hr>
-<h2>Soběšice</h2>
 <div class="pure-g">
     <div class="pure-u-1 pure-u-sm-1-2">
+        <h2>Soběšice</h2>
         <p>Areálu pevných kontrol Soběšice najdeme na severu Brna <a href="https://mapy.cz/s/3u0b0" target="_blank">v&nbsp;obci&nbsp;Soběšice(mapa)</a>. V&nbsp;tomto areálu můžete nalézt celkem 14 kontrolních stanovišť. </p>
         <h4>Kde je možné získat mapu?</h4>
         <p>Mapu můžete získat na vrátnici v&nbsp;<a href="https://mapy.cz/s/3u0c5" target="_blank">hale&nbsp;TJ&nbsp;TESLA&nbsp;Brno</a>, nebo si ji můžete stáhnout <a href="{{page.url}}/sobesice.pdf" target="_blank">ve&nbsp;formátu&nbsp;PDF</a>.</p>
