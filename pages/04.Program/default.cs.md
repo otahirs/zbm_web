@@ -72,7 +72,7 @@ content:
     
   {% for p in collection %}
   
-      <tr data-href="{{ p.url }}">
+      <tr data-href="{{ p.url }}" class="click-row">
           <td class="datum">
             {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
             {# HELP |localizeddate http://twig-extensions.readthedocs.io/en/latest/intl.html#}

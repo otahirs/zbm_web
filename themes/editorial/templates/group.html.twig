@@ -47,22 +47,22 @@
         <div id="soustredeni" class="tab-content fix-anchor-jump">
             <table>
                 {% for p in collection if p.header.end >= strtotime("today")|date('Y-m-d') and p.header.template == "soustredeni" %}
-                        <tr>
+                        <tr data-href="{{ p.url }}" class="click-row">
                         <td class="datum">
                                 {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
                                 {# HELP |localizeddate http://twig-extensions.readthedocs.io/en/latest/intl.html#}
                                 {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
                                 {% if p.header.start|localizeddate('medium', 'none','cs','Europe/Prague', 'M') != p.header.end|localizeddate('medium', 'none','cs','Europe/Prague', 'M')%}
-                                {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc d. MMMM') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc d. MMMM') }}
+                                {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
                                 {# pokud neni stejny den - format 6.-8. cerven #}
                                 {% elseif p.header.start|localizeddate('medium', 'none') != p.header.end|localizeddate('medium', 'none')%}
-                                {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc d.') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc d. MMMM') }}
+                                {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
                                 {% else %}
                                 {# pokud stejny den - format 6. cerven #}
-                                {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc d. MMMM') }}
+                                {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
                                 {% endif %}
                             </td>
-                            <td class="nazev"><a href="{{ p.url }}">{{ p.title }}</a></td>
+                            <td class="nazev"><b>{{ p.title }}</b></td>
                             <td class="misto">{{p.header.place}}</td>
                         </tr>
                 {% else %}
@@ -155,4 +155,11 @@
         
     </div> <!-- pure-g -->
     <section>
+    <script>
+    window.addEventListener('load', function () {
+        $('[data-href]').click(function () {
+            window.location = $(this).data("href");
+        });
+    });
+    </script>
 {% endblock %}
