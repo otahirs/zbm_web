@@ -20,9 +20,10 @@
 	);
 
 // Font
-// import fonts using themes/js/webfont.js
+@import url('https://fonts.googleapis.com/css?family=Overpass:400,700');
+
 	$font: (
-		family:			('Raleway', sans-serif),
+		family:			('Helvetica', sans-serif),
 		family-heading:		('Overpass', sans-serif),
 		family-fixed:		('Courier New', monospace),
 		weight:			400,
