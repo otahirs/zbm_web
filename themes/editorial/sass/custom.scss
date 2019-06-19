@@ -66,6 +66,10 @@ table.plan td {
 /****************
 ***** HOME ******
 ****************/
+/* home - news */
+.newsPictures {
+    margin: 1em 0;
+}
 /* home - soon */
 #soon {
     padding: 0 1.5rem;
@@ -130,10 +134,6 @@ table.calendar tr {
 ****************/
 #program tr {
     border: none;
-    cursor: pointer;
-    &:hover {
-        background-color: _palette(accent);
-    }
 }
 #filter_program {
     border: _palette(bg-alt) dotted 3px;
@@ -149,5 +149,14 @@ tr.program--now {
     border-width: 0.5em 0em !important;
     td {
         display: none;
+    }
+}
+
+
+/* common */
+.click-row {
+    cursor: pointer;
+    &:hover {
+        background-color: _palette(accent);
     }
 }

@@ -24,6 +24,7 @@ content:
             <h4 class="news--header">
                 <span class="newsDate">{{p.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }} </span> &nbsp; &nbsp; <span class="newsTitle"> {{ p.header.title }} </span>
             </h4>
+            {% if p.header.pictures|length > 0 %}
             <div class="pure-g newsPictures">
                 {% for img in p.header.pictures %}
                   {# small screens shows double image size #}
@@ -43,6 +44,7 @@ content:
                   </div>
                 {% endfor %}
             </div>
+            {% endif %}
             <section class="newsText">
               {{p.content}}
             </section>
@@ -80,10 +82,19 @@ content:
           {% endif %}
           <a href="{{p.url}}">
           <section>
-            <b>
+            <h4>
                 {{ p.header.title ~' '~ p.header.event.location }} 
-              <br>{% if p.header.eventTypeDescription is not empty %}<em style="font-weight:normal;">{{p.header.eventTypeDescription}}</em>{% endif %}
-            </b>
+              <br>
+              <em style="font-weight:normal;">
+                {% set group = p.header.taxonomy.skupina %}
+                {% if group|length > 0 and group|length < 6 %}
+                {% if "zabicky" in group %} žabičky {% endif %} 
+                {% if "pulci1" in group and "pulci2" in group %} pulci {% elseif "pulci1" in group %} pulci1 {% elseif "pulci2" in group %} pulci2 {% endif %} 
+                {% if "zaci1" in group and "zaci2" in group %} žáci {% elseif "zaci1" in group %} žáci1 {% elseif "zaci2" in group %} žáci2 {% endif %} 
+                {% if "dorost" in group %} dorost+ {% endif %}
+                {% endif %}
+              </em>
+            </h4>
             <article data-id="{{p.header.id}}" data-template="{{p.header.template}}">
               {{p.content}}
             </article>

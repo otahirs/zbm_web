@@ -2737,6 +2737,10 @@ table.plan td {
 /****************
 ***** HOME ******
 ****************/
+/* home - news */
+.newsPictures {
+  margin: 1em 0; }
+
 /* home - soon */
 #soon {
   padding: 0 1.5rem;
