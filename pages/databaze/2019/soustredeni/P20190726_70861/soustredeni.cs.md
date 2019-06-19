@@ -24,6 +24,9 @@ thingsToTake: ''
 signups: ''
 id: P20190726_70861
 taxonomy:
-    skupina: {  }
+    skupina:
+        - dorost
 template: soustredeni
+meetPlace: ''
 ---
+

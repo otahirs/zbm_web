@@ -10,7 +10,7 @@ plan:
     monday:
         1:
             name: 'kopce (světlo s sebou)'
-            place: 'Hala Rosnička'
+            place: 'Hala Rosničk'
             meetup: '16:30'
             group:
                     - dorost
@@ -487,6 +487,7 @@ window.addEventListener('load', function() {
     });
 });
 </script>
+
 
 
 
