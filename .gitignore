@@ -5,4 +5,5 @@
 !/plugins
 !/config/groups.yaml
 .revs/
+databaze/
 /plugins/git-sync
