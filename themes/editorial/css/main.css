@@ -2258,6 +2258,7 @@ button,
 
 /* Main */
 #main, #novinky {
+  overflow-y: auto;
   -moz-flex-grow: 1;
   -webkit-flex-grow: 1;
   -ms-flex-grow: 1;
