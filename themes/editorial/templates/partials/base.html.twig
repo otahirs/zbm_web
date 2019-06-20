@@ -86,15 +86,21 @@
         <a href="/">
             <span class="topbar--title">SK Žabovřesky Brno</span>
         </a>
-        <span class="topbar--links">
-            <a href="#">Kdo jsme?</a>
-            <a href="https://zacitorientak.cz/brno/co-to-je/190" target="_blank">Co je to orientační běh?</a>
-            <a href="/arealy">Pevné kontroly</a>
-            <div style="width: 0px;height: 34px; display: inline; border: solid black 1px"></div>
-            <a href="#">Závody</a>
-            <a href="/sponsors">Sponzoři</a>
-            <a href="/kontakty">Kontakty</a>
-        </span>
+        <div  id="nav-links">
+            
+          <ul id="links">
+            <li><a href="#">Kdo jsme?</a></li>
+            <li><a href="https://zacitorientak.cz/brno/co-to-je/190" target="_blank">Co je to orientační běh?</a></li>
+            <li><a href="/arealy">Pevné kontroly</a></li>
+            <li><a href="#">Závody</a></li>
+            <li><a href="/sponsors">Sponzoři</a></li>
+            <li><a href="/kontakty">Kontakty</a></li>
+            <li class="more hide" data-width="200">
+                <a href="#">více <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                <ul></ul>
+            </li>
+        </ul>
+        </div>
     </div>    
 {% endblock %}
 

@@ -130,14 +130,14 @@
 								}
 						}
 					});
-					// Tap or click outside menu to close
-					$(document).on('click touchstart', function(event) { 
+					// Tap or click outside menu to close 
+				/*	$(document).on('click touchstart', function(event) { 
 						if(!$(event.target).closest($sidebar).length) {
 							if(!$sidebar.hasClass("inactive")){
 								$sidebar.addClass("inactive");
 							}
 						}
-					})        
+					})    */    
 					
 				})
 				
@@ -191,7 +191,7 @@
 
 					});
 
-			/*	// Hide panel on body click/tap.
+				// Hide panel on body click/tap.
 					$body.on('click touchend', function(event) {
 
 						// >large? Bail.
@@ -202,7 +202,7 @@
 							$sidebar.addClass('inactive');
 
 					});
-					*/
+					
 			// Scroll lock.
 			// Note: If you do anything to change the height of the sidebar's content, be sure to
 			// trigger 'resize.sidebar-lock' on $window so stuff doesn't get out of sync.
@@ -303,6 +303,45 @@
 					});
 
 				});
+
+		// Autohide navlinks to submenu				
+				function calcWidth() {
+					var navwidth = 0; 
+					var morewidth = $('#links .more').outerWidth(true);
+					$('#links > li:not(.more)').each(function() {
+						navwidth += $(this).outerWidth( true );
+					});
+					
+					//var availablespace = $('nav').outerWidth(true) - morewidth;
+					var availablespace = $('#nav-links').width() - morewidth;
+					
+					if (navwidth > availablespace && !$('#links > li').first().hasClass("more")) {
+						var lastItem = $('#links > li:not(.more)').last();
+						lastItem.attr('data-width', lastItem.outerWidth(true));
+						lastItem.prependTo($('#links .more ul'));
+						calcWidth();
+					} else {	
+						var firstMoreElement = $('#links li.more li').first();
+						while(navwidth + firstMoreElement.data('width') < availablespace) {
+							firstMoreElement.insertBefore($('#links .more'));
+							navwidth += firstMoreElement.data('width');
+							firstMoreElement = $('#links li.more li').first();		
+						}
+					}
+				  
+					if ($('.more li').length > 0) {
+						$('.more').css('display','block');
+					} else {
+						$('.more').css('display','none');
+					}
+				}
+				
+				
+				$(window).on('resize load',function(){
+					setTimeout(calcWidth, 100);
+					
+				});
+
 
 	});
 
