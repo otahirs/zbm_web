@@ -54,7 +54,7 @@ table.plan tr {
     border: none;
 }
 table.plan td {
-    padding: 0.25em 1em;
+    padding: 0.25em 0.75em;
 }
 .plan--lichyDen {
     background-color: _palette(fg-white) !important;
@@ -196,7 +196,13 @@ tr.program--now {
 				display: block;
 			}
 		}
-	}
+    }
+    i {
+        padding: 20px;
+        font-size: 18px;
+        position: relative;
+        top: -2px;
+    }
 	
 	a {
 		color: _palette(fg);

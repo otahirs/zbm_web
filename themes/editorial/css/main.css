@@ -2726,7 +2726,7 @@ table.plan tr {
   border: none; }
 
 table.plan td {
-  padding: 0.25em 1em; }
+  padding: 0.25em 0.75em; }
 
 .plan--lichyDen {
   background-color: #e6e6e6 !important; }
@@ -2843,6 +2843,11 @@ tr.program--now {
       color: #e24747; }
       #nav-links > ul > li:hover ul {
         display: block; }
+  #nav-links i {
+    padding: 20px;
+    font-size: 18px;
+    position: relative;
+    top: -2px; }
   #nav-links a {
     color: #333;
     text-decoration: none;
