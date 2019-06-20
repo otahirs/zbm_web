@@ -118,8 +118,8 @@ content:
     <tr class="program--now">
           <td class="datum"></td>
           <td class="nazev"></td>
-          <td class="misto"></td>
-          <td class="skupina" ></td>
+          <td class="misto">&nbsp;</td>
+          <td class="skupina"></td>
           <td class="type"></td>
           <td class="startMonth">{{ "now"| date('m/Y') }}</td>     
           <td class="endMonth">{{ "now"| date('m/Y') }}</td>
