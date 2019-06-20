@@ -160,3 +160,66 @@ tr.program--now {
         background-color: _palette(accent);
     }
 }
+
+
+
+
+
+// NAV-LINKS
+
+#nav-links {
+    position: relative;
+    width: calc(100% - 20em);
+    float: right;
+		
+	> ul {
+		float: right;
+        list-style: none;
+		margin: 0;
+		padding: 0;
+		z-index: 5;
+	}
+	
+	> ul > li {
+		background: none;
+        float: left;
+        position: relative;
+		
+		&.hide {
+			display: none;
+		}
+		
+		&:hover {
+            color: _palette(accent);
+			
+			ul {
+				display: block;
+			}
+		}
+	}
+	
+	a {
+		color: _palette(fg);
+        text-decoration: none;
+        font-family: Overpass;
+        border-bottom: none;
+        font-size: 18px;
+        padding: 20px;
+	}
+	
+	ul ul {
+		background: _palette(fg-white);
+		display: none;
+        list-style: none;
+		padding: 0;
+		position: fixed;
+        right: 0;
+        top: 56px;
+		
+		a {
+          margin-bottom: 15px;
+		  padding: 0 15px;
+		  white-space: nowrap;
+		}
+	}	
+}

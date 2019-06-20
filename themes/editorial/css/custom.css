@@ -38,9 +38,7 @@
     margin-top: 0.5em;
 }
 
-/**************************/
-/********* menu ***********/
-/**************************/
+
 
 
 
@@ -372,22 +370,12 @@ dd {
 }
 .topbar--title{
     font-size: 24px;
-    float: left;
+    left: 0;
     padding: 0 18px;
-    position: relative;
+    position: fixed;
     top: 2px;
 }
-.topbar--links{
-    float: right;
-}
 
-.topbar--links a{
-    font-size: 18px;
-    padding: 20px;
-}
-.topbar--links div{
-    margin: 20px
-}
 .fix-topbar-offset::before {
     content:"";
     display:block;
