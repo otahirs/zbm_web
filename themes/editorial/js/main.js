@@ -22,7 +22,8 @@
 		// vars
 		var	$window = $(window),
 			$head = $('head'),
-			$body = $('body');
+			$body = $('body'),
+			$main = $('#main');
 
 		// Disable animations/transitions ...
 
@@ -92,9 +93,11 @@
 				skel
 					.on('+large', function() {
 						$sidebar.addClass('inactive');
+						//$main.addClass('is-dimmed');
 					})
 					.on('-large !large', function() {
 						$sidebar.removeClass('inactive');
+						$main.removeClass('is-dimmed');
 					});
 
 			// Hack: Workaround for Chrome/Android scrollbar position bug.
@@ -116,31 +119,38 @@
 
 							// Toggle.
 								$sidebar.toggleClass('inactive');
+								$main.toggleClass('is-dimmed');
+								
+								
 						});
 
 				}
 			// Menu support for mobile (only when menu displays over page -> smaller thatn "large")
-				skel.on('+medium', function() {
+				skel.on('+large', function() {
 					// Swipe to open menu 
 					$(".swipe-area").swipe({
 						swipeStatus:function(event, phase, direction, distance, duration, fingers){
 								if (phase=="move" && direction =="right") {
 									$sidebar.removeClass("inactive");
+									$main.addClass('is-dimmed');
 									return false;
 								}
 						}
 					});
 					// Tap or click outside menu to close 
-				/*	$(document).on('click touchstart', function(event) { 
+					$(document).on('click touchstart', function(event) { 
+						if (!skel.breakpoint('large').active) return;
+
 						if(!$(event.target).closest($sidebar).length) {
 							if(!$sidebar.hasClass("inactive")){
 								$sidebar.addClass("inactive");
+								$main.removeClass('is-dimmed');
 							}
 						}
-					})    */    
+					})       
 					
 				})
-				
+			
 
 			// Events.
 
@@ -192,7 +202,7 @@
 					});
 
 				// Hide panel on body click/tap.
-					$body.on('click touchend', function(event) {
+					/*$body.on('click touchend', function(event) {
 
 						// >large? Bail.
 							if (!skel.breakpoint('large').active)
@@ -201,7 +211,7 @@
 						// Deactivate.
 							$sidebar.addClass('inactive');
 
-					});
+					}); */
 					
 			// Scroll lock.
 			// Note: If you do anything to change the height of the sidebar's content, be sure to

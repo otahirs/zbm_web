@@ -388,9 +388,6 @@ dd {
         display: none; 
     }
 }
-#novinky {
-    padding-top: 40px !important;
-}
 
 
 
@@ -408,4 +405,11 @@ dd {
 }
 
 
+#sidebar > .inner {
+    scrollbar-width: none; /*For Firefox*/
+    -ms-overflow-style: none; /*For IE and Edge*/
+}
 
+#sidebar > .inner::-webkit-scrollbar {
+width: 0px; /*For Chrome, Safari and Opera*/
+}
