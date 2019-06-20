@@ -6,12 +6,11 @@
 
 /* Main */
 
-	#main {
+	#main, #novinky {
 		@include vendor('flex-grow', '1');
 		@include vendor('flex-shrink', '1');
-		width: 100%;
 
-		> .inner, #novinky {
+		> .inner {
 			@include padding(0, 6em);
 			margin: 0 auto;
 			max-width: 110em;
@@ -27,7 +26,7 @@
 		}
 
 		@include breakpoint(xlarge) {
-			> .inner, #novinky {
+			> .inner {
 				@include padding(0, 5em);
 
 				> section {
@@ -37,7 +36,7 @@
 		}
 
 		@include breakpoint(large) {
-			> .inner, #novinky {
+			> .inner {
 				@include padding(0, 4em);
 
 				> section {
@@ -47,7 +46,7 @@
 		}
 
 		@include breakpoint(small) {
-			> .inner, #novinky {
+			> .inner {
 				@include padding(0, 2em);
 
 				> section {

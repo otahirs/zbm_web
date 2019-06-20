@@ -14,7 +14,10 @@ content:
   
     <div id="novinky" class="pure-u-1 pure-u-md-16-24"> <!-- plan + novinky vlevo -->
     <div class="inner">
-
+        <header id="header">
+            <h1>Novinky</h1>
+        </header>
+        <section>
       {% set news_collection = page.collection().ofType('novinka').order('p.header.id','asc') %}
 
       {% for p in news_collection.order('date','desc') %}
@@ -52,7 +55,9 @@ content:
           <hr width="62.11%">
         {% endif %}
       {% endfor %}
+            </section>
   </div>
+        
    </div> <!--  novinky -->
 
 

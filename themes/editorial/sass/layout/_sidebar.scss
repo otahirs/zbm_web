@@ -101,6 +101,7 @@
 			top: 0;
 			width: 6em;
 			z-index: _misc(z-index-base);
+			color: _palette(accent);
 
 			&:before {
 				content: '\f0c9';
@@ -210,8 +211,8 @@
 				}
 
 				&:after {
-					background: transparentize(lighten(_palette(fg), 35), 0.25);
-					border-radius: _size(border-radius);
+					background: transparentize(_palette(fg-white), 0.1);
+					border-radius: 2px;
 					content: '';
 					height: 3.5em;
 					left: 1em;
