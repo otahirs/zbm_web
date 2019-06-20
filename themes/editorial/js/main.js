@@ -317,7 +317,7 @@
 		// Autohide navlinks to submenu				
 				function calcWidth() {
 					var navwidth = 0; 
-					var morewidth = $('#links .more').outerWidth(true);
+					var morewidth = $('#links .more').outerWidth(true) + 30;
 					$('#links > li:not(.more)').each(function() {
 						navwidth += $(this).outerWidth( true );
 					});
