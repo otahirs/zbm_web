@@ -142,17 +142,17 @@
 					}
 				});
 				// Tap or click outside menu to close 
-				$(document).on('click', function(event) { 
+				$(document).on('click touchstart', function(event) { 
 					if (!skel.breakpoint('large').active) return;
 
 					if(!$(event.target).closest($sidebar).length) {
 						if(!$sidebar.hasClass("inactive")){
-							event.stopImmediatePropagation();
+							//event.stopImmediatePropagation();
 							event.preventDefault();
-							event.stopPropagation();
+							//event.stopPropagation();
 							$sidebar.addClass("inactive");
 							$main.removeClass('is-dimmed');
-							return false;
+							//return false;
 						}
 					}
 				})
