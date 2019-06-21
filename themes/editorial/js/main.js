@@ -139,7 +139,7 @@
 					}
 				});
 				// Tap or click outside menu to close 
-				$(document).on('click', function(event) { 
+				$main.on('click', function(event) { 
 					if (!skel.breakpoint('large').active) return;
 
 					if(!$(event.target).closest($sidebar).length) {
@@ -357,7 +357,7 @@
 
 				var linksBtn = document.getElementById('links-more-btn'),
 					linksMore = document.getElementById('links-more-ul');
-				$main.on('click touchend', function(event) { 
+				$main.on('click', function(event) { 
 					linksMore.style.display = "";
 					
 
