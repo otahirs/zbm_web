@@ -147,9 +147,12 @@
 
 					if(!$(event.target).closest($sidebar).length) {
 						if(!$sidebar.hasClass("inactive")){
-							event.preventDefault();
+							//event.stopImmediatePropagation();
+							//event.preventDefault();
+							//event.stopPropagation();
 							$sidebar.addClass("inactive");
 							$main.removeClass('is-dimmed');
+							return false;
 						}
 					}
 				})
@@ -360,13 +363,12 @@
 
 				var linksBtn = document.getElementById('links-more-btn'),
 					linksMore = document.getElementById('links-more-ul');
-				$main.on('click touchstart', function(event) { 
+				$main.on('click touchend', function(event) { 
 					linksMore.style.display = "";
-					event.preventDefault();
 					
 
 				})     
-				$(linksBtn).on('click touchstart', function(event) {
+				$(linksBtn).on('click touchend', function(event) {
 					linksMore.style.display = "block";
 				})
 
