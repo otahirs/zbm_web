@@ -125,18 +125,7 @@
 						});
 
 				}
-			// Menu support for mobile (only when menu displays over page -> smaller thatn "large")
-				
-			
-			function closemenu(){
-				event.preventDefault();
-				$sidebar.addClass("inactive");
-				$main.removeClass('is-dimmed');
-			}
-			var handled = false;
-			
-			
-			
+			// Menu support for mobile (only when menu displays over page -> smaller thatn "large")			
 			skel.on('+large', function() {
 				// Swipe to open menu 
 				$(".swipe-area").swipe({
@@ -150,23 +139,16 @@
 				});
 				// Tap or click outside menu to close 
 				$(document).on('start touchend', function(event) { 
-					event.preventDefault();
-					event.stopPropagation();
 					if (!skel.breakpoint('large').active) return;
 
 					if(!$(event.target).closest($sidebar).length) {
 						if(!$sidebar.hasClass("inactive")){
+
+							$('a, button').click(function(e){e.preventDefault()});
+							event.preventDefault();
 							event.stopPropagation();
-							if(event.type == "touchtouchend") {
-								handled = true;
-								closemenu();
-							}
-							else if(event.type == "click" && !handled) {
-								closemenu();
-							}
-							else {
-								handled = false;
-							}
+							$sidebar.addClass("inactive");
+							$main.removeClass('is-dimmed');
 						}
 					}
 				})
