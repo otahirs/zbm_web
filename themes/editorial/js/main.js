@@ -126,9 +126,6 @@
 
 				}
 
-			function disableClick(){
-				return false; 
-				}
 			// Menu support for mobile (only when menu displays over page -> smaller thatn "large")			
 			skel.on('+large', function() {
 				// Swipe to open menu 
@@ -147,9 +144,6 @@
 
 					if(!$(event.target).closest($sidebar).length) {
 						if(!$sidebar.hasClass("inactive")){
-							event.stopImmediatePropagation();
-							event.preventDefault();
-							event.stopPropagation();
 							$sidebar.addClass("inactive");
 							$main.removeClass('is-dimmed');
 							return false;
