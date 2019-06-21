@@ -125,6 +125,10 @@
 						});
 
 				}
+
+			function disableClick(){
+				return false; 
+				}
 			// Menu support for mobile (only when menu displays over page -> smaller thatn "large")			
 			skel.on('+large', function() {
 				// Swipe to open menu 
@@ -138,17 +142,17 @@
 					}
 				});
 				// Tap or click outside menu to close 
-				$(document).on('start touchend', function(event) { 
+				$(document).on('click', function(event) { 
 					if (!skel.breakpoint('large').active) return;
 
 					if(!$(event.target).closest($sidebar).length) {
 						if(!$sidebar.hasClass("inactive")){
-
-							$('a, button').click(function(e){e.preventDefault()});
+							event.stopImmediatePropagation();
 							event.preventDefault();
 							event.stopPropagation();
 							$sidebar.addClass("inactive");
 							$main.removeClass('is-dimmed');
+							return false;
 						}
 					}
 				})
