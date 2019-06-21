@@ -125,7 +125,18 @@
 						});
 
 				}
-			// Menu support for mobile (only when menu displays over page -> smaller thatn "large")		
+			// Menu support for mobile (only when menu displays over page -> smaller thatn "large")
+				
+			
+			function closemenu(){
+				event.preventDefault();
+				$sidebar.addClass("inactive");
+				$main.removeClass('is-dimmed');
+			}
+			var handled = false;
+			
+			
+			
 			skel.on('+large', function() {
 				// Swipe to open menu 
 				$(".swipe-area").swipe({
@@ -138,15 +149,22 @@
 					}
 				});
 				// Tap or click outside menu to close 
-				$(document).on('click touchstart', function(event) { 
+				$(document).on('start touchstart', function(event) { 
 					if (!skel.breakpoint('large').active) return;
 
 					if(!$(event.target).closest($sidebar).length) {
 						if(!$sidebar.hasClass("inactive")){
 							event.stopPropagation();
-							event.preventDefault();
-							$sidebar.addClass("inactive");
-							$main.removeClass('is-dimmed');
+							if(event.type == "touchstart") {
+								handled = true;
+								closemenu();
+							}
+							else if(event.type == "click" && !handled) {
+								closemenu();
+							}
+							else {
+								handled = false;
+							}
 						}
 					}
 				})       
@@ -356,7 +374,7 @@
 
 				var linksBtn = document.getElementById('links-more-btn'),
 					linksMore = document.getElementById('links-more-ul');
-				$main.on('click touchstart', function(event) { 
+				$main.on('click touchend', function(event) { 
 					linksMore.style.display = "";
 					
 
