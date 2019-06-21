@@ -138,7 +138,7 @@
 						}
 					});
 					// Tap or click outside menu to close 
-					$(document).on('click touchstart', function(event) { 
+					$(document).on('click touchend', function(event) { 
 						if (!skel.breakpoint('large').active) return;
 
 						if(!$(event.target).closest($sidebar).length) {
@@ -351,6 +351,18 @@
 					setTimeout(calcWidth, 100);
 					
 				});
+
+				var linksBtn = document.getElementById('links-more-btn'),
+					linksMore = document.getElementById('links-more-ul');
+				$(document).on('click touchend', function(event) { 
+					if(!$(event.target).closest($linksMore).length) {
+					linksMore.style.display = "none";
+					}
+
+				})     
+				$(linksBtn).on('click touchend', function(event) {
+					$(linksMore).toggle();
+				})
 
 
 	});
