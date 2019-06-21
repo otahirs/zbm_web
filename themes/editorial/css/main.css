@@ -2746,7 +2746,7 @@ table.plan td {
 #soon {
   padding: 0 1.5rem;
   background-color: #e24747;
-  height: inherit; }
+  height: auto; }
 
 #soon section {
   background-color: #FAFAFA;
