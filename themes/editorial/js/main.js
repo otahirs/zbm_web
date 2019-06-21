@@ -139,7 +139,7 @@
 					}
 				});
 				// Tap or click outside menu to close 
-				$(document).on('click touchstart', function(event) { 
+				$(document).on('click', function(event) { 
 					if (!skel.breakpoint('large').active) return;
 
 					if(!$(event.target).closest($sidebar).length) {
