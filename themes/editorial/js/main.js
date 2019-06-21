@@ -125,31 +125,33 @@
 						});
 
 				}
-			// Menu support for mobile (only when menu displays over page -> smaller thatn "large")
-				skel.on('+large', function() {
-					// Swipe to open menu 
-					$(".swipe-area").swipe({
-						swipeStatus:function(event, phase, direction, distance, duration, fingers){
-								if (phase=="move" && direction =="right") {
-									$sidebar.removeClass("inactive");
-									$main.addClass('is-dimmed');
-									return false;
-								}
-						}
-					});
-					// Tap or click outside menu to close 
-					$(document).on('click touchend', function(event) { 
-						if (!skel.breakpoint('large').active) return;
-
-						if(!$(event.target).closest($sidebar).length) {
-							if(!$sidebar.hasClass("inactive")){
-								$sidebar.addClass("inactive");
-								$main.removeClass('is-dimmed');
+			// Menu support for mobile (only when menu displays over page -> smaller thatn "large")		
+			skel.on('+large', function() {
+				// Swipe to open menu 
+				$(".swipe-area").swipe({
+					swipeStatus:function(event, phase, direction, distance, duration, fingers){
+							if (phase=="move" && direction =="right") {
+								$sidebar.removeClass("inactive");
+								$main.addClass('is-dimmed');
+								return false;
 							}
+					}
+				});
+				// Tap or click outside menu to close 
+				$(document).on('click touchstart', function(event) { 
+					if (!skel.breakpoint('large').active) return;
+
+					if(!$(event.target).closest($sidebar).length) {
+						if(!$sidebar.hasClass("inactive")){
+							event.stopPropagation();
+							event.preventDefault();
+							$sidebar.addClass("inactive");
+							$main.removeClass('is-dimmed');
 						}
-					})       
-					
-				})
+					}
+				})       
+				
+			})
 			
 
 			// Events.
@@ -354,14 +356,13 @@
 
 				var linksBtn = document.getElementById('links-more-btn'),
 					linksMore = document.getElementById('links-more-ul');
-				$(document).on('click touchend', function(event) { 
-					if(!$(event.target).closest($linksMore).length) {
-					linksMore.style.display = "none";
-					}
+				$main.on('click touchstart', function(event) { 
+					linksMore.style.display = "";
+					
 
 				})     
 				$(linksBtn).on('click touchend', function(event) {
-					$(linksMore).toggle();
+					linksMore.style.display = "block";
 				})
 
 
