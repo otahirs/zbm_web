@@ -149,7 +149,7 @@
 					}
 				});
 				// Tap or click outside menu to close 
-				$(document).on('start touchstart', function(event) { 
+				$(document).on('start touchend', function(event) { 
 					event.preventDefault();
 					event.stopPropagation();
 					if (!skel.breakpoint('large').active) return;
@@ -157,7 +157,7 @@
 					if(!$(event.target).closest($sidebar).length) {
 						if(!$sidebar.hasClass("inactive")){
 							event.stopPropagation();
-							if(event.type == "touchstart") {
+							if(event.type == "touchtouchend") {
 								handled = true;
 								closemenu();
 							}
