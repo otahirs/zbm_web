@@ -2685,42 +2685,72 @@ button,
 **** Groups *****
 ****************/
 /* menu */
-#group_menu {
+/*
+
+#group_menu_items {
+    height: 3rem;
+    display: table-cell;
+}
+
+#group_menu_items > .tab-link {
+    display: block;
+    padding: 0 2rem;
+    line-height: 3rem;
+    float: left;
+    color: _palette(fg-white);
+    text-decoration: none;
+    transition: all 0.18s;
+    height: 3rem;
+    border-bottom: none;
+    background-color: _palette(bg-alt);
+    &:hover {
+	background-color: black;
+        //font-weight: bold;
+	
+    }
+}
+
+#group_menu_items > .tab-link.current {
+    background-color: _palette(accent);
+    color: _palette(bg-alt);
+    //font-weight: bold;
+    &:hover {
+	color: black !important;
+    }
+}
+*/
+#group-menu {
   background-color: #202020;
   text-transform: uppercase; }
 
-#group_menu_items {
+ul.tabs {
   height: 3rem;
-  display: table-cell; }
+  display: table-cell;
+  padding: 0; }
 
-#group_menu_items > .item {
+ul.tabs li {
+  cursor: pointer;
   display: block;
   padding: 0 2rem;
   line-height: 3rem;
   float: left;
   color: #e6e6e6;
-  text-decoration: none;
   transition: all 0.18s;
-  height: 3rem;
-  border-bottom: none;
   background-color: #202020; }
-  #group_menu_items > .item:hover {
-    background-color: black;
-    font-weight: bold; }
+  ul.tabs li:hover {
+    background-color: black; }
 
-#group_menu_items > .item.current {
+ul.tabs li.current {
   background-color: #e24747;
-  color: #202020;
-  font-weight: bold; }
-  #group_menu_items > .item.current:hover {
+  color: #202020; }
+  ul.tabs li.current:hover {
     color: black !important; }
 
-.fix-anchor-jump::before {
-  content: "";
-  display: block;
-  height: 999px;
-  /* fixed header height*/
-  margin: -999px 0 0; }
+.tab-content {
+  display: none; }
+
+.tab-content.current {
+  display: inherit; }
 
 /* plan */
 table.plan tr {
@@ -2748,6 +2778,9 @@ table.plan td {
   background-color: #e24747;
   height: auto; }
 
+.soon--date {
+  padding-top: 1.5rem; }
+
 #soon section {
   background-color: #FAFAFA;
   padding: 1.5rem;
@@ -2758,9 +2791,6 @@ table.plan td {
 
 #soon section > article > ul {
   margin: 0; }
-
-.soon--date {
-  padding-top: 1rem; }
 
 .soon--date-now {
   padding-top: 1.5rem; }
