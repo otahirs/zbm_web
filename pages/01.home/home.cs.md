@@ -68,23 +68,21 @@ content:
               
       {% for p in soon_collection %}
         {% if  (  p.header.start|date('Y-m-d') <= strtotime("today +10 day")|date('Y-m-d') and p.header.end|date('Y-m-d') >= strtotime("today")|date('Y-m-d') ) %}
-          
+        
           {% if first is not defined %}
-            {% if p.header.start >= currdate  %}
               <h6 class="soon--date soon--date-now"><span class="soon--dot soon--dot-now"></span> &nbsp;
               {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
               </h6>
-            {% endif %}
-          {% set first = 1 %}
+            {% set first = 1 %}
           {% endif %}
 
-
-          {% if p.header.start != currdate %}
+          {% if p.header.start > currdate %}
             {% set currdate = p.header.start %}
             <h6 class="soon--date"><span class="soon--dot"></span> &nbsp;
               {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
             </h6>
           {% endif %}
+
           <a href="{{p.url}}">
           <section>
             <h4>
