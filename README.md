@@ -17,9 +17,9 @@ Na současný stav se můžete podívat na [new.zbmob.cz](https://new.zbmob.cz),
 - [x] základní optimalizace
 - [x] změna hostingu
 ## Co je nutné dodělat než to půjde do světa
-- [ ] stránky pro jednotlivé skupiny
+- [x] stránky pro jednotlivé skupiny
 - [ ] ob postupy / 3Drun
-- [ ] mapová teorie
+- [x] mapová teorie
 - [x] program - filtr dle data
 - [ ] odkaz na pořádané závody
 ## Toto počká, ale časem chceme dodělat
