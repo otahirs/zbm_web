@@ -1277,7 +1277,7 @@ class PhpTwigExtension extends \Twig_Extension
         $frontmatter = $this->get_frontmatter_as_array($pagePath);
 
         // add polaris to frontmatter
-        if(isset($frontmatter['polaris']) && in_array ( $fileTitle , $frontmatter['polaris'] ) ){
+        if(isset($frontmatter['polaris'][$polarisYear]) && in_array($fileTitle, $frontmatter['polaris'][$polarisYear])){
             header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
             echo "Už je nahrané stejné číslo Polarisu.";
             die();
