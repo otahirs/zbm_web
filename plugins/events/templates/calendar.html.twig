@@ -44,12 +44,11 @@
         </thead>
         <tbody>
             <tr>
-            {% set startDow = calendar.date|date('w') - 1 %}
-            {% set dow = startDow %}
+            {% set dow = calendar.date|date('N') - 1 %}
             {% set month = "now"|date("F") %}
             {% for day in range(1,calendar.daysInMonth) %}
-                {% if loop.first and startDow != 0 %}
-                    <td colspan="{{ startDow }}"></td>
+                {% if loop.first and dow != 0 %}
+                    <td colspan="{{ dow }}"></td>
                 {% endif %}
                 <td {% if (day == calendar.currentDay) and (month == calendar.date|date("F")) %}class="current"{% endif %}>
                     <div class="events">
