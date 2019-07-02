@@ -1337,24 +1337,23 @@ class PhpTwigExtension extends \Twig_Extension
     public function SaveMapT(){ 
 
         // init vars
-        $pagePath = './user/pages/databaze/mapova_teorie/blank.md';
-        $savePath = './user/pages/databaze/mapova_teorie/';
-        $maptDate = $_POST['date'];
+        $pagePath = './user/pages/databaze/maptheory/blank.md';
+        $savePath = './user/pages/databaze/maptheory/';
         $maptGroup = $_POST['group'];
-        $fileTitle = $maptGroup . "_" . $maptDate . ".pdf" ;
+        $fileTitle = $_POST['date'] . ".pdf" ;
 
         //get frontmatter
         $frontmatter = $this->get_frontmatter_as_array($pagePath);
 
-        // add mapova_teorie to frontmatter
-        if(isset($frontmatter['mapova_teorie']) && in_array ( $fileTitle , $frontmatter['mapova_teorie'] ) ){
+        // add maptheory to frontmatter
+        if(isset($frontmatter['maptheory'][$maptGroup]) && in_array ( $fileTitle , $frontmatter['maptheory'][$maptGroup] ) ){
             header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
             echo "Už je nahrana mapova teorie se stejnym datem a skupinou";
             die();
         }
         else{
-            $frontmatter['mapova_teorie'][$maptGroup][] = $fileTitle;
-            krsort($frontmatter['mapova_teorie']);
+            $frontmatter['maptheory'][$maptGroup][] = $fileTitle;
+            arsort($frontmatter['maptheory'][$maptGroup]);
         } 
 
         // save pdf and jpeg thumbnail
@@ -1374,24 +1373,23 @@ class PhpTwigExtension extends \Twig_Extension
 
         // init vars
         $maptName = $_POST['name'];
-        $pagePath = './user/pages/databaze/mapova_teorie/blank.md';
-        $filePath = './user/pages/databaze/mapova_teorie/' . $maptName;
+        $maptGroup = $_POST['group'];
+        $pagePath = './user/pages/databaze/maptheory/blank.md';
+        $filePath = './user/pages/databaze/maptheory/' . $maptName;
         
         // get frontmatter
         $frontmatter = $this->get_frontmatter_as_array($pagePath);
+        var_dump($frontmatter);
 
-        // remove mapova_teorie from frontmatter
-        unset($frontmatter['mapova_teorie'][$maptGroup][$maptDate]);
-
-        // delete pdf and jpeg thumbnail
+        // remove maptheory from frontmatter
+        if (($key = array_search($maptName, $frontmatter['maptheory'][$maptGroup])) !== false) {
+            unset($frontmatter['maptheory'][$maptGroup][$key]);
+        }
+        
+        // delete pdf
         if(file_exists($filePath)){
             unlink($filePath);
         }
-        if(file_exists($filePath .".jpg")){
-            unlink($filePath .".jpg");
-        }
-        // remove years if year is empty
-        $frontmatter['mapova_teorie'] = array_filter($frontmatter['mapova_teorie']);
 
         // build page
         $pageFrontmatter = Yaml::dump($frontmatter, 10);

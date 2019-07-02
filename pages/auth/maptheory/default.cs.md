@@ -1,9 +1,12 @@
 ---
-title: testmapteory
+title: 'Mapová teorie'
 date: '2018-10-08'
 process:
     twig: true
     markdown: false
+access:
+    site:
+        maptheory: true
 ---
 
 <form id="mapTheoryForm" enctype="multipart/form-data" method="post">
@@ -41,6 +44,27 @@ process:
 </form>
         <hr>
 
+{% set p = page.find('/databaze/maptheory') %}
+{% for group_name, group in p.header.maptheory %}
+    <section>
+    <h4>{{group_name}}</h4>
+        <ul>
+        {% for item in group %}  
+                    <li>            
+                        <a href="{{base_url_absolute}}/databaze/maptheory/{{item}}" target="_blank">
+                            {{item}}
+                        </a> &nbsp;
+                    <span class="maptheory--delete" data-group="{{group_name}}" data-name="{{item}}" style="cursor:pointer;"> 
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </span>
+                    </li>
+        {% endfor %}
+        </ul>
+    </section>
+    <hr>
+{% endfor %}
+
+
 <script>
     $("#mapTheoryForm").submit(function(e){
         e.preventDefault(); 
@@ -74,5 +98,33 @@ process:
               }
           });
       });
+
+
+    $(".maptheory--delete").click( function(e){
+        e.stopPropagation();
+        if (confirm("Odstranit soubor mapové teorie?") == true) {
+            var deleteLi = this.parentElement;
+            var deleteMapThForm = new FormData();
+            deleteMapThForm.append("group", this.getAttribute("data-group") );
+            deleteMapThForm.append("name", this.getAttribute("data-name") );
+            $.ajax({
+                url: "/php/mapt/deletemapt",
+                type: "POST",
+                data: deleteMapThForm,
+                processData: false,
+                contentType: false,
+                success: function (){
+                    $(deleteLi).fadeOut(1000);      
+                },
+                error: function (xhr, desc, err){
+                    console.log(err);
+                    console.log(desc);
+                    console.log(xhr);
+                }
+            });
+        }
+        
+
+    })
 </script>
 
