@@ -7,16 +7,14 @@
 ****************/
 
 /* menu */
-#group_menu {
-    background-color: _palette(bg-alt);
-    text-transform: uppercase;
-}
+/*
+
 #group_menu_items {
     height: 3rem;
     display: table-cell;
 }
 
-#group_menu_items > .item {
+#group_menu_items > .tab-link {
     display: block;
     padding: 0 2rem;
     line-height: 3rem;
@@ -29,26 +27,62 @@
     background-color: _palette(bg-alt);
     &:hover {
 	background-color: black;
-        font-weight: bold;
+        //font-weight: bold;
 	
     }
 }
 
-#group_menu_items > .item.current {
+#group_menu_items > .tab-link.current {
     background-color: _palette(accent);
     color: _palette(bg-alt);
-    font-weight: bold;
+    //font-weight: bold;
+    &:hover {
+	color: black !important;
+    }
+}
+*/
+#group-menu {
+    background-color: _palette(bg-alt);
+    text-transform: uppercase;
+}
+
+ul.tabs{
+    height: 3rem;
+    display: table-cell;
+    padding: 0;
+}
+ul.tabs li{
+    cursor: pointer;
+    display: block;
+    padding: 0 2rem;
+    line-height: 3rem;
+    float: left;
+    color: _palette(fg-white);
+    transition: all 0.18s;
+    background-color: _palette(bg-alt);
+    &:hover {
+	    background-color: black;
+    }
+}
+
+ul.tabs li.current{
+    background-color: _palette(accent);
+    color: _palette(bg-alt);
+    //font-weight: bold;
     &:hover {
 	color: black !important;
     }
 }
 
-.fix-anchor-jump::before {
-    content:"";
-    display:block;
-    height:999px; /* fixed header height*/
-    margin:-999px 0 0; 
+.tab-content{
+    display: none;
 }
+
+.tab-content.current{
+    display: inherit;
+}
+
+
 /* plan */
 table.plan tr {
     border: none;
@@ -77,6 +111,10 @@ table.plan td {
     height: auto;
 }
 
+.soon--date {
+    padding-top: 1.5rem;
+}
+
 #soon section {
     background-color: #FAFAFA;
     padding: 1.5rem;
@@ -88,9 +126,7 @@ table.plan td {
 #soon section > article > ul {
     margin: 0;
 }
-.soon--date {
-    padding-top: 1rem;
-}
+
 .soon--date-now {
     padding-top: 1.5rem;
 }
@@ -240,3 +276,5 @@ tr.program--now {
     height: 100%;
     background: rgba(0, 0, 0, .2);
 }
+
+
