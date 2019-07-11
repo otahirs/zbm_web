@@ -243,7 +243,7 @@ class PhpTwigExtension extends \Twig_Extension
             if(!empty($race["Type"])){
                 if($race["Type"]=="L"){
                     $content .= "**Pořádáme!!** Předem díky moc za pomoc s pořádáním. Kdo má čas nebo by chtěl
-                    omluvit ze školy, hlaste se Zhustovi." . PHP_EOL;
+                    omluvit ze školy, hlaste se Liborovi." . PHP_EOL;
                 }
                 else{
                     if(!empty($race["doWeOrganize"])){
@@ -262,9 +262,6 @@ class PhpTwigExtension extends \Twig_Extension
 
             if(!empty($race["accomodation"]))        {$content .= "* **ubytování**: {{page.header.accomodation}}" . PHP_EOL;}
             if(!empty($race["food"]))                {$content .= "* **strava**: {{page.header.food}}" . PHP_EOL;}
-            if(!empty($race["startTime"]))           {$content .= "* **start**: {{page.header.startTime}}" . PHP_EOL;}
-            if(!empty($race["map"]))                 {$content .= "* **mapa**: {{page.header.map}}" . PHP_EOL;}
-            if(!empty($race["terrain"]))             {$content .= "* **terén**: {{page.header.terrain}}" . PHP_EOL;}
             return $content;
       }
 
@@ -1400,6 +1397,74 @@ class PhpTwigExtension extends \Twig_Extension
         file_put_contents($pagePath, $page);
         Cache::clearCache('all');
     }
+    //******** GPS *********
+    public function SaveRoutes(){ 
+
+        // init vars
+        $pagePath = './user/pages/databaze/maptheory/blank.md';
+        $savePath = './user/pages/databaze/maptheory/';
+        $maptGroup = $_POST['group'];
+        $fileTitle = $_POST['date'] . ".pdf" ;
+
+        //get frontmatter
+        $frontmatter = $this->get_frontmatter_as_array($pagePath);
+
+        // add maptheory to frontmatter
+        if(isset($frontmatter['maptheory'][$maptGroup]) && in_array ( $fileTitle , $frontmatter['maptheory'][$maptGroup] ) ){
+            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
+            echo "Už je nahrana mapova teorie se stejnym datem a skupinou";
+            die();
+        }
+        else{
+            $frontmatter['maptheory'][$maptGroup][] = $fileTitle;
+            arsort($frontmatter['maptheory'][$maptGroup]);
+        } 
+
+        // save pdf and jpeg thumbnail
+        $this->save_PDF($savePath, $fileTitle, $makeThumbnail=False);
+        
+        // build page
+        $pageFrontmatter = Yaml::dump($frontmatter, 10);
+        $pagecontent = $this->parse_file_content_only($pagePath);
+        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
+
+        // save page to file
+        file_put_contents($pagePath, $page);
+        Cache::clearCache('all');
+    }
+
+    public function DeleteRoutes(){
+
+        // init vars
+        $maptName = $_POST['name'];
+        $maptGroup = $_POST['group'];
+        $pagePath = './user/pages/databaze/maptheory/blank.md';
+        $filePath = './user/pages/databaze/maptheory/' . $maptName;
+        
+        // get frontmatter
+        $frontmatter = $this->get_frontmatter_as_array($pagePath);
+        var_dump($frontmatter);
+
+        // remove maptheory from frontmatter
+        if (($key = array_search($maptName, $frontmatter['maptheory'][$maptGroup])) !== false) {
+            unset($frontmatter['maptheory'][$maptGroup][$key]);
+        }
+        
+        // delete pdf
+        if(file_exists($filePath)){
+            unlink($filePath);
+        }
+
+        // build page
+        $pageFrontmatter = Yaml::dump($frontmatter, 10);
+        $pagecontent = $this->parse_file_content_only($pagePath);
+        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
+
+        // save page to file
+        file_put_contents($pagePath, $page);
+        Cache::clearCache('all');
+    }
+
 }
 
 ?>
