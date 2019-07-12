@@ -42,7 +42,7 @@ date: '2018-10-28'
     <hr>
     <h1>Trenéři</h1>
     </div>
-    <div class="divOuter pure-u-1 pure-u-lg-1-2">
+    <div class="divOuter pure-u-1 pure-u-lg-1-2" id="zabicky">
         <div class="contact--divInner">
         <h3>Žabičky</h3>
             <em>nejmenši děti do 6 let</em>
@@ -56,7 +56,7 @@ date: '2018-10-28'
             </ul>  
         </div>      
     </div>
-    <div class="divOuter pure-u-1 pure-u-lg-1-2">
+    <div class="divOuter pure-u-1 pure-u-lg-1-2" id="pulci1">
         <div class="contact--divInner">
         <h3>Pulci 1</h3>
             <em>začátečníci od 6 let</em>
@@ -72,7 +72,7 @@ date: '2018-10-28'
             </ul>            
             </div>
     </div>
-    <div class="divOuter pure-u-1 pure-u-lg-1-2">
+    <div class="divOuter pure-u-1 pure-u-lg-1-2" id="pulci2">
         <div class="contact--divInner">
         <h3>Pulci 2</h3>
             <em>mírně pokročilí od 8 let</em>
@@ -88,7 +88,7 @@ date: '2018-10-28'
             </ul>          
             </div>
     </div>
-    <div class="divOuter pure-u-1 pure-u-lg-1-2">
+    <div class="divOuter pure-u-1 pure-u-lg-1-2" id="zaci1">
        <div class="contact--divInner">
         <h3>Žáci 1</h3>
             <em>pokročilejší od 10 let</em>
@@ -104,7 +104,7 @@ date: '2018-10-28'
             </ul>            
             </div>
     </div>
-    <div class="divOuter pure-u-1 pure-u-lg-1-2">
+    <div class="divOuter pure-u-1 pure-u-lg-1-2" id="zaci2">
        <div class="contact--divInner">
         <h3>Žáci 2</h3>
             <em>pokročilí od 12 let</em>
@@ -120,7 +120,7 @@ date: '2018-10-28'
             </ul>
             </div>
     </div>
-    <div class="divOuter pure-u-1 pure-u-lg-1-2">
+    <div class="divOuter pure-u-1 pure-u-lg-1-2" id="dorost">
         <div class="contact--divInner">
         <h3>Dorost+</h3>
             <em>pořád se učí, od 15 let</em>

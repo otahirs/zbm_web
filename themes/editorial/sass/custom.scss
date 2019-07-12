@@ -2,48 +2,8 @@
     Place custom styles here.
 */
 
-/****************
-**** Groups *****
-****************/
-
-/* menu */
-/*
-
-#group_menu_items {
-    height: 3rem;
-    display: table-cell;
-}
-
-#group_menu_items > .tab-link {
-    display: block;
-    padding: 0 2rem;
-    line-height: 3rem;
-    float: left;
-    color: _palette(fg-white);
-    text-decoration: none;
-    transition: all 0.18s;
-    height: 3rem;
-    border-bottom: none;
-    background-color: _palette(bg-alt);
-    &:hover {
-	background-color: black;
-        //font-weight: bold;
-	
-    }
-}
-
-#group_menu_items > .tab-link.current {
-    background-color: _palette(accent);
-    color: _palette(bg-alt);
-    //font-weight: bold;
-    &:hover {
-	color: black !important;
-    }
-}
-*/
 #group-menu {
     background-color: _palette(bg-alt);
-    text-transform: uppercase;
 }
 
 ul.tabs{
@@ -184,7 +144,7 @@ tr.program--now {
     border: solid _palette(bg-alt) !important;
     border-width: 0.5em 0em !important;
     td {
-        display: none;
+        padding: 0;
     }
 }
 
