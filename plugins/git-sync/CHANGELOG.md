@@ -1,3 +1,29 @@
+# v2.0.5
+## 05/06/2019
+
+1. [](#bugfix)
+    * Fixed validation error with commalist in Folders to Sync field (#141)
+
+# v2.0.4
+## 04/22/2019
+
+1. [](#improved)
+    * urlencode username to allow for special characters (#139)
+
+# v2.0.3
+## 03/07/2019
+
+1. [](#bugifx)
+    * Properly fallback to config message if not there yet (#134)
+
+# v2.0.2
+## 02/21/2019
+
+1. [](#improved)
+    * Fixed InitCommand spelling (#132, thanks @alex-mohemian)
+1. [](#bugfix)
+    * Fixed PHP 5.6 incompatibility introduced by latest release.
+
 # v2.0.1
 ## 02/19/2019
 

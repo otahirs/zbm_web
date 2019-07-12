@@ -1,3 +1,25 @@
+# 3.0.3
+## 07/01/2019
+
+1. [](#bugfix)
+  * Fix for not redirecting to secure page after login [#199](https://github.com/getgrav/grav-plugin-login/issues/199)
+  * Fixed `bin/plugin login new-user` ACL when using Flex Users
+
+# 3.0.2
+## 05/09/2019
+
+1. [](#new)
+  * Added `ru` and `uk` translations [#208](https://github.com/getgrav/grav-plugin-login/pulls/208)
+1. [](#improved)
+  * Fixed typo in README.md
+  * Added support for IPv6 addresses for login rate limiting @Vivalldi [#204](https://github.com/getgrav/grav-plugin-login/issues/204)
+
+# 3.0.1
+## 04/17/2019
+
+1. [](#improved)
+    * Extra checks for page visibility [#166](https://github.com/getgrav/grav-plugin-login/issues/166)
+
 # 3.0.0
 ## 04/11/2019
 
