@@ -3,6 +3,7 @@ namespace Grav\Plugin;
 
 use Composer\Autoload\ClassLoader;
 use Grav\Common\Data\ValidationException;
+use Grav\Common\Debugger;
 use Grav\Common\Filesystem\Folder;
 use Grav\Common\Grav;
 use Grav\Common\Page\Interfaces\PageInterface;
@@ -14,8 +15,10 @@ use Grav\Common\Utils;
 use Grav\Common\Uri;
 use Grav\Common\Yaml;
 use Grav\Framework\Form\Interfaces\FormInterface;
+use Grav\Framework\Route\Route;
 use Grav\Plugin\Form\Form;
 use Grav\Plugin\Form\Forms;
+use ReCaptcha\ReCaptcha;
 use RocketTheme\Toolbox\File\JsonFile;
 use RocketTheme\Toolbox\File\YamlFile;
 use RocketTheme\Toolbox\File\File;
@@ -89,7 +92,7 @@ class FormPlugin extends Plugin
     public function onPluginsInitialized()
     {
         // Backwards compatibility for plugins that use forms.
-        class_alias(Form::class, 'Grav\Plugin\Form');
+        class_alias(Form::class, \Grav\Plugin\Form::class);
 
         $this->grav['forms'] = function () {
             $forms = new Forms();
@@ -277,6 +280,40 @@ class FormPlugin extends Plugin
                     }
                 }
             }
+        } else {
+            // There is no active form to be posted.
+            // Check all the forms for the current page; we are looking for forms with remember state turned on with random unique id.
+
+            /** @var Route $route */
+            $route = $this->grav['route'];
+            $pageForms = $this->forms[$route->getRoute()] ?? [];
+
+            foreach ($pageForms as $formName => $form) {
+                if ($form->get('remember_redirect')) {
+                    // Found one; we need to check if unique id is set.
+                    $formParam = $form->get('uniqueid_param', 'fid');
+                    $uniqueId = $route->getGravParam($formParam);
+
+                    if ($uniqueId && preg_match('/[a-z\d]+/', $uniqueId)) {
+                        // URL contains unique id, initialize the current form.
+                        $form->setUniqueId($uniqueId);
+                        $form->initialize();
+
+                        /** @var Forms $forms */
+                        $forms = $this->grav['forms'];
+                        $forms->setActiveForm($form);
+
+                        break;
+                    }
+
+                    // Append unique id to the URL and redirect.
+                    $route = $route->withGravParam($formParam, $form->getUniqueId());
+                    $page->redirect((string)$route->toString());
+
+                    // TODO: Do we want to add support for multiple forms with remembered state?
+                    break;
+                }
+            }
         }
     }
 
@@ -358,7 +395,7 @@ class FormPlugin extends Plugin
                 $hostname = $uri->host();
                 $ip = Uri::ip();
 
-                $recaptcha = new \ReCaptcha\ReCaptcha($secret);
+                $recaptcha = new ReCaptcha($secret);
 
                 // get captcha version
                 $captcha_version = $captcha_config['version'] ?? 2;
@@ -380,9 +417,21 @@ class FormPlugin extends Plugin
 
                 if (!$resp->isSuccess()) {
                     $errors = $resp->getErrorCodes();
+                    $message = $this->grav['language']->translate('PLUGIN_FORM.ERROR_VALIDATING_CAPTCHA');
+
+                    $fields = $form->value()->blueprints()->get('form/fields');
+                    foreach ($fields as $field) {
+                        $type = $field['type'] ?? 'text';
+                        $field_message = $field['recaptcha_not_validated'] ?? null;
+                        if ($type === 'captcha' && $field_message) {
+                            $message =  $field_message;
+                            break;
+                        }
+                    }
+
                     $this->grav->fireEvent('onFormValidationError', new Event([
                         'form'    => $form,
-                        'message' => $this->grav['language']->translate('PLUGIN_FORM.ERROR_VALIDATING_CAPTCHA')
+                        'message' => $message
                     ]));
 
                     $this->grav['log']->addWarning('Form reCAPTCHA Errors: [' . $uri->route() . '] ' . json_encode($errors));
@@ -958,6 +1007,10 @@ class FormPlugin extends Plugin
         } catch (\Exception $e) {
             // Couldn't fetch cached forms.
             $forms = null;
+
+            /** @var Debugger $debugger */
+            $debugger = Grav::instance()['debugger'];
+            $debugger->addMessage(sprintf('Unserializing cached forms failed: %s', $e->getMessage()), 'error');
         }
 
         if (!\is_array($forms)) {
