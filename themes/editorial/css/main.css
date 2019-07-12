@@ -1292,11 +1292,11 @@ a {
   -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   border-bottom: dotted 1px;
-  color: #e24747;
+  color: #e65646;
   text-decoration: none; }
   a:hover {
-    border-bottom-color: #e24747;
-    color: #e24747 !important; }
+    border-bottom-color: #e65646;
+    color: #e65646 !important; }
     a:hover strong {
       color: inherit; }
 
@@ -1425,7 +1425,7 @@ header p {
   text-transform: uppercase; }
 
 header.major > :last-child {
-  border-bottom: solid 3px #e24747;
+  border-bottom: solid 3px #e65646;
   display: inline-block;
   margin: 0 0 2em 0;
   padding: 0 0.75em 0.5em 0; }
@@ -1482,8 +1482,8 @@ textarea {
   input[type="url"]:focus,
   select:focus,
   textarea:focus {
-    border-color: #e24747;
-    box-shadow: 0 0 0 1px #e24747; }
+    border-color: #e65646;
+    box-shadow: 0 0 0 1px #e65646; }
 
 .select-wrapper {
   text-decoration: none;
@@ -1576,8 +1576,8 @@ input[type="radio"] {
     content: '\f00c'; }
   input[type="checkbox"]:focus + label:before,
   input[type="radio"]:focus + label:before {
-    border-color: #e24747;
-    box-shadow: 0 0 0 1px #e24747; }
+    border-color: #e65646;
+    box-shadow: 0 0 0 1px #e65646; }
 
 input[type="checkbox"] + label:before {
   border-radius: 0.375em; }
@@ -1738,7 +1738,7 @@ ul {
         font-weight: normal;
         text-transform: none !important; }
       ul.contact li:before {
-        color: #e24747;
+        color: #e65646;
         display: inline-block;
         font-size: 1.5em;
         height: 1.125em;
@@ -1820,12 +1820,12 @@ ul {
         padding: 0 0.5em;
         text-align: center; }
       ul.pagination li.active > .page {
-        background-color: #e24747;
+        background-color: #e65646;
         color: #ffffff !important; }
         ul.pagination li.active > .page:hover {
-          background-color: #e45454; }
+          background-color: #e86253; }
         ul.pagination li.active > .page:active {
-          background-color: #e03a3a; }
+          background-color: #e44a39; }
       ul.pagination li:first-child {
         padding-right: 0.75em; }
       ul.pagination li:last-child {
@@ -1903,8 +1903,8 @@ button,
   background-color: transparent;
   border-radius: 0.375em;
   border: 0;
-  box-shadow: inset 0 0 0 2px #e24747;
-  color: #e24747 !important;
+  box-shadow: inset 0 0 0 2px #e65646;
+  color: #e65646 !important;
   cursor: pointer;
   display: inline-block;
   font-family: "Overpass", sans-serif;
@@ -1923,13 +1923,13 @@ button,
   input[type="button"]:hover,
   button:hover,
   .button:hover {
-    background-color: rgba(226, 71, 71, 0.05); }
+    background-color: rgba(230, 86, 70, 0.05); }
   input[type="submit"]:active,
   input[type="reset"]:active,
   input[type="button"]:active,
   button:active,
   .button:active {
-    background-color: rgba(226, 71, 71, 0.15); }
+    background-color: rgba(230, 86, 70, 0.15); }
   input[type="submit"].icon:before,
   input[type="reset"].icon:before,
   input[type="button"].icon:before,
@@ -1963,7 +1963,7 @@ button,
   input[type="button"].special,
   button.special,
   .button.special {
-    background-color: #e24747;
+    background-color: #e65646;
     box-shadow: none;
     color: #ffffff !important; }
     input[type="submit"].special:hover,
@@ -1971,13 +1971,13 @@ button,
     input[type="button"].special:hover,
     button.special:hover,
     .button.special:hover {
-      background-color: #e45454; }
+      background-color: #e86253; }
     input[type="submit"].special:active,
     input[type="reset"].special:active,
     input[type="button"].special:active,
     button.special:active,
     .button.special:active {
-      background-color: #e03a3a; }
+      background-color: #e44a39; }
   input[type="submit"].disabled, input[type="submit"]:disabled,
   input[type="reset"].disabled,
   input[type="reset"]:disabled,
@@ -2055,7 +2055,7 @@ button,
       text-align: center;
       width: 10em; }
       .features article .icon:before {
-        color: #e24747;
+        color: #e65646;
         font-size: 2.75rem;
         position: relative;
         top: 0.05em; }
@@ -2361,10 +2361,11 @@ button,
         margin-bottom: 0;
         padding-bottom: 0; }
     #sidebar > .inner > .alt {
-      background-color: #1b1b1b;
+      background-color: #111;
       border-bottom: 0;
-      margin: -2.22222em 0 4.44444em -2.22222em;
-      padding: 2.22222em;
+      margin: -2.22222em 0 1.11111em -2.22222em;
+      padding: 1.11111em;
+      padding-left: 2.22222em;
       width: calc(100% + 4.44444em); }
   #sidebar .toggle {
     text-decoration: none;
@@ -2386,7 +2387,7 @@ button,
     top: 0;
     width: 6em;
     z-index: 10000;
-    color: #e24747; }
+    color: #e65646; }
     #sidebar .toggle:before {
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
@@ -2413,8 +2414,9 @@ button,
         padding: 1.66667em 1.66667em 1.33333em 1.66667em ;
         width: 16em; }
         #sidebar > .inner > .alt {
-          margin: -1.66667em 0 3.33333em -1.66667em;
-          padding: 1.66667em;
+          margin: -1.66667em 0 0.83333em -1.66667em;
+          padding: 0.83333em;
+          padding-left: 1.66667em;
           width: calc(100% + 3.33333em); }
       #sidebar .toggle {
         height: 6.25em;
@@ -2483,7 +2485,7 @@ button,
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  border-bottom: solid 5px #e24747;
+  border-bottom: solid 5px #e65646;
   padding: 3em 0 1em 0;
   position: relative; }
   #header > * {
@@ -2624,7 +2626,7 @@ button,
     #menu ul a.active, #menu ul span.active {
       color: #333; }
     #menu ul a:hover, #menu ul span:hover {
-      color: #e24747; }
+      color: #e65646; }
     #menu ul a.opener, #menu ul span.opener {
       -moz-transition: color 0.2s ease-in-out;
       -webkit-transition: color 0.2s ease-in-out;
@@ -2650,7 +2652,7 @@ button,
         position: absolute;
         right: 0; }
       #menu ul a.opener:hover:before, #menu ul span.opener:hover:before {
-        color: #e24747; }
+        color: #e65646; }
       #menu ul a.opener.active + ul, #menu ul span.opener.active + ul {
         display: block; }
       #menu ul a.opener.active:before, #menu ul span.opener.active:before {
@@ -2681,47 +2683,8 @@ button,
 /*
     Place custom styles here.
 */
-/****************
-**** Groups *****
-****************/
-/* menu */
-/*
-
-#group_menu_items {
-    height: 3rem;
-    display: table-cell;
-}
-
-#group_menu_items > .tab-link {
-    display: block;
-    padding: 0 2rem;
-    line-height: 3rem;
-    float: left;
-    color: _palette(fg-white);
-    text-decoration: none;
-    transition: all 0.18s;
-    height: 3rem;
-    border-bottom: none;
-    background-color: _palette(bg-alt);
-    &:hover {
-	background-color: black;
-        //font-weight: bold;
-	
-    }
-}
-
-#group_menu_items > .tab-link.current {
-    background-color: _palette(accent);
-    color: _palette(bg-alt);
-    //font-weight: bold;
-    &:hover {
-	color: black !important;
-    }
-}
-*/
 #group-menu {
-  background-color: #202020;
-  text-transform: uppercase; }
+  background-color: #202020; }
 
 ul.tabs {
   height: 3rem;
@@ -2741,7 +2704,7 @@ ul.tabs li {
     background-color: black; }
 
 ul.tabs li.current {
-  background-color: #e24747;
+  background-color: #e65646;
   color: #202020; }
   ul.tabs li.current:hover {
     color: black !important; }
@@ -2775,7 +2738,7 @@ table.plan td {
 /* home - soon */
 #soon {
   padding: 0 1.5rem;
-  background-color: #e24747;
+  background-color: #e65646;
   height: auto; }
 
 .soon--date {
@@ -2802,7 +2765,7 @@ table.plan td {
 .soon--dot {
   height: 15px;
   width: 15px;
-  background-color: #e24747;
+  background-color: #e65646;
   border-radius: 50%;
   display: inline-block;
   top: 3px;
@@ -2846,13 +2809,13 @@ tr.program--now {
   border: solid #202020 !important;
   border-width: 0.5em 0em !important; }
   tr.program--now td {
-    display: none; }
+    padding: 0; }
 
 /* common */
 .click-row {
   cursor: pointer; }
   .click-row:hover {
-    background-color: #e24747; }
+    background-color: #e65646; }
 
 #nav-links {
   position: relative;
@@ -2871,7 +2834,7 @@ tr.program--now {
     #nav-links > ul > li.hide {
       display: none; }
     #nav-links > ul > li:hover {
-      color: #e24747; }
+      color: #e65646; }
       #nav-links > ul > li:hover ul {
         display: block; }
   #nav-links i {

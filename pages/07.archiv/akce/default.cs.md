@@ -1,5 +1,5 @@
 ---
-title: Program
+title: Akce
 content:
     items: '@root.descendants'
     order:
@@ -20,7 +20,7 @@ content:
     </fieldset>
     <fieldset>
     <label>Filtr data</label>
-    <button data-toggle="datepicker" type="button" style="height: 2.75em;font-size: 1em;line-height: 2.9em;"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;filtr data</button>
+    <button data-toggle="datepicker" type="button" style="height: 2.75em;font-size: 1em;line-height: 2.9em;"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;nadcházející události</button>
     </fieldset>
   </div>
   <div class="pure-u-1-2 pure-u-sm-1-4">
@@ -115,22 +115,26 @@ content:
       </tr>
   {% endfor %}
   {# oddelovaci cara #}
-    <tr class="program--now">
+    <tr class="program--now" title="Dnes - {{"today"|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM Y')}}">
           <td class="datum"></td>
           <td class="nazev"></td>
-          <td class="misto">&nbsp;</td>
-          <td class="skupina"></td>
-          <td class="type"></td>
-          <td class="startMonth">{{ "now"| date('m/Y') }}</td>     
-          <td class="endMonth">{{ "now"| date('m/Y') }}</td>
-          <td class="start">{{ "now"|date("U") }}</td>
-          <td class="end">{{ "now"|date("U") }}</td>
+          <td class="misto"></td>
+          <td class="skupina" style="display: none !important;"></td>
+          <td class="type" style="display: none !important;"></td>
+          <td class="startMonth" style="display: none !important;">{{ "now"| date('m/Y') }}</td>     
+          <td class="endMonth" style="display: none !important;">{{ "now"| date('m/Y') }}</td>
+          <td class="start" style="display: none !important;">{{ "now"|date("U") }}</td>
+          <td class="end" style="display: none !important;">{{ "now"|date("U") }}</td>
       </tr>
 
     </tbody>
    </table>
    <ul class="pagination"></ul>
 </div>
+
+<table class="no-result">
+<tr><td><em>Vyhledávání neodpovídá žádná událost.</em></td></tr>
+</table>
 
 
 <script>
@@ -222,7 +226,7 @@ content:
   	userList.update();
   };
   
-  $(function(){
+  
     //updateList();
     $("input[name=skupina]").change(updateList);
     $('input[name=type]').change(updateList);
@@ -230,7 +234,7 @@ content:
         updateList();
     });
 
-/* pokud neni zaznam zobrazi hlasku,dodelat
+/* pokud neni zaznam zobrazi hlasku*/
   	userList.on('updated', function (list) {
   		if (list.matchingItems.length > 0) {
   			$('.no-result').hide()
@@ -238,8 +242,8 @@ content:
   			$('.no-result').show()
   		}
   	 });
-     */
-    });
+     
+   
     
     resetList();
     $("#reset_btn").click(resetList);

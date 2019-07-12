@@ -37,11 +37,12 @@
 	$palette: (
 		bg:				#ffffff,
 		bg-alt:				#202020,//#d3e2f0, //#f5f6f7,
+		bg-alt-dark:   #111,
 		fg:				#333,
 		fg-bold:			#222,
 		fg-light:			#555,
 		fg-white:			#e6e6e6, // none
 		border:				rgba(210,215,217,0.75),
 		border-bg:			transparentize(#e6ebed, 0.75),
-		accent:				#e24747 //#ff4040 //#f56a6a
+		accent:				#e65646//#e24747 //#ff4040 //#f56a6a
 	);
