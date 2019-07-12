@@ -76,10 +76,11 @@
 			}
 
 			> .alt {
-				background-color: darken(_palette(bg-alt), 2);
+				background-color: _palette(bg-alt-dark);
 				border-bottom: 0;
-				margin: ($pad * -1) 0 ($pad * 2) ($pad * -1);
-				padding: $pad;
+				margin: ($pad * -1) 0 ($pad/2) ($pad * -1);
+				padding: $pad/2;
+				padding-left: $pad;
 				width: calc(100% + #{$pad * 2});
 			}
 		}
@@ -130,8 +131,9 @@
 				width: _size(sidebar-width-alt);
 
 				> .alt {
-					margin: ($pad * -1) 0 ($pad * 2) ($pad * -1);
-					padding: $pad;
+					margin: ($pad * -1) 0 ($pad/2) ($pad * -1);
+					padding: $pad/2;
+					padding-left: $pad;
 					width: calc(100% + #{$pad * 2});
 				}
 			}
