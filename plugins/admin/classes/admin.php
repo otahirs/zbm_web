@@ -9,6 +9,7 @@ use Grav\Common\GPM\GPM;
 use Grav\Common\GPM\Licenses;
 use Grav\Common\GPM\Response;
 use Grav\Common\Grav;
+use Grav\Common\Helpers\YamlLinter;
 use Grav\Common\Language\LanguageCodes;
 use Grav\Common\Page\Collection;
 use Grav\Common\Page\Interfaces\PageInterface;
@@ -479,11 +480,16 @@ class Admin
      */
     public static function doAnyUsersExist()
     {
-        // check for existence of a user account
+        $accounts = Grav::instance()['accounts'] ?? null;
+        if ($accounts instanceof \Countable) {
+            return $accounts->count() > 0;
+        }
+
+        // TODO: remove old way to check for existence of a user account (Grav < v1.6.9)
         $account_dir = $file_path = Grav::instance()['locator']->findResource('account://');
         $user_check = glob($account_dir . '/*.yaml');
 
-        return $user_check ? true : false;
+        return $user_check;
     }
 
     /**
@@ -886,6 +892,7 @@ class Admin
             try {
                 $this->gpm = new GPM();
             } catch (\Exception $e) {
+                $this->setMessage($e->getMessage(), 'error');
             }
         }
 
@@ -1440,7 +1447,7 @@ class Admin
     public function adminNiceTime($date, $long_strings = true)
     {
         if (empty($date)) {
-            return $this->translate('GRAV.NICETIME.NO_DATE_PROVIDED', null, true);
+            return $this->translate('GRAV.NICETIME.NO_DATE_PROVIDED', null);
         }
 
         if ($long_strings) {
@@ -1480,17 +1487,17 @@ class Admin
 
         // check validity of date
         if (empty($unix_date)) {
-            return $this->translate('GRAV.NICETIME.BAD_DATE', null, true);
+            return $this->translate('GRAV.NICETIME.BAD_DATE', null);
         }
 
         // is it future date or past date
         if ($now > $unix_date) {
             $difference = $now - $unix_date;
-            $tense      = $this->translate('GRAV.NICETIME.AGO', null, true);
+            $tense      = $this->translate('GRAV.NICETIME.AGO', null);
 
         } else {
             $difference = $unix_date - $now;
-            $tense      = $this->translate('GRAV.NICETIME.FROM_NOW', null, true);
+            $tense      = $this->translate('GRAV.NICETIME.FROM_NOW', null);
         }
 
         $len = count($lengths) - 1;
@@ -1512,7 +1519,7 @@ class Admin
             }
         }
 
-        $periods[$j] = $this->translate('GRAV.'.$periods[$j], null, true);
+        $periods[$j] = $this->translate('GRAV.'.$periods[$j], null);
 
         return "{$difference} {$periods[$j]} {$tense}";
     }
@@ -1669,6 +1676,14 @@ class Admin
 
         $reports['Grav Security Check'] = $this->grav['twig']->processTemplate('reports/security.html.twig', [
             'result' => $result,
+        ]);
+
+        // Linting Issues
+
+        $result = YamlLinter::lint();
+
+        $reports['Grav Yaml Linter'] = $this->grav['twig']->processTemplate('reports/yamllinter.html.twig', [
+           'result' => $result,
         ]);
 
         // Fire new event to allow plugins to manipulate page frontmatter
