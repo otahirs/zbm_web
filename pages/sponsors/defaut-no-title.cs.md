@@ -1,5 +1,5 @@
 ---
-title: Sponzoři
+title: 'Partneři klubu'
 media_order: 'Brno.svg,gpsCentrum.svg,BadgerMeterEuropa.svg,Revos.svg,JMK.svg,sanasport.svg,nsm.svg,mcae.svg,cad.png,tredos.jpg,kotlarska.png'
 date: '2018-10-29'
 ---
