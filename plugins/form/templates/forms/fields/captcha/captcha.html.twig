@@ -1,15 +1,19 @@
 {% extends "forms/field.html.twig" %}
 
-{% set site_key = field.recaptcha_site_key ?: config.plugins.form.recaptcha.site_key %}
+{% set config = grav.config %}
+{% set site_key = field.recaptcha_site_key and field.recaptcha_site_key != 'ENTER_YOUR_CAPTCHA_SITE_KEY' ? field.recaptcha_site_key : config.plugins.form.recaptcha.site_key %}
 {% set action = (page.route|trim('/') ~ '-' ~ form.name)|underscorize %}
 {% set formName = form.name|underscorize %}
+{% set theme = config.plugins.form.recaptcha.theme ?? 'light' %}
 
 {% block label %}{% endblock %}
 
 {% block input %}
-  {% if config.plugins.form.recaptcha.version == 3 %}
+  {% if not site_key %}
+      <script>console && console.error('site_key was not defined for form "{{ form.name }}" (Grav Form Plugin)')</script>
+  {% elseif config.plugins.form.recaptcha.version == 3 %}
       {#{% do assets.addJs('https://www.google.com/recaptcha/api.js?render='~site_key) %}#}
-      <script src='https://www.google.com/recaptcha/api.js?render={{ site_key }}'></script>
+      <script src='https://www.google.com/recaptcha/api.js?render={{ site_key }}&theme={{ theme }}'></script>
       <script>
           jQuery('form').each(function(index, form) {
               form = jQuery(form);
@@ -47,7 +51,7 @@
           }
       </script>
 
-      <script src="https://www.google.com/recaptcha/api.js?onload=captchaOnloadCallback_{{ formName }}&hl={{ grav.language.language }}"
+      <script src="https://www.google.com/recaptcha/api.js?onload=captchaOnloadCallback_{{ formName }}&hl={{ grav.language.language }}&theme={{ theme }}"
               async defer></script>
   {% else %}
     <script>
@@ -64,7 +68,7 @@
             grecaptcha.reset();
         };
     </script>
-    <script src="https://www.google.com/recaptcha/api.js?onload=captchaOnloadCallback_{{ formName }}&render=explicit&hl={{ grav.language.language }}"
+    <script src="https://www.google.com/recaptcha/api.js?onload=captchaOnloadCallback_{{ formName }}&render=explicit&hl={{ grav.language.language }}&theme={{ theme }} "
         async defer></script>
     <div class="g-recaptcha" id="g-recaptcha-{{ formName }}"></div>
   {% endif %}
