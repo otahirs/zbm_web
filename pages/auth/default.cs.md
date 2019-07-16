@@ -22,14 +22,11 @@ never_cache_twig: true
         <a href="/auth/plan">
             <h2>Plán na tento týden</h2>
         </a>
-        <a href="/auth/upravit-eventy">
-            <h2>Upravit akce</h2>
+        <a href="/auth/events">
+            <h2>Události</h2>
         </a>
         <a href="/auth/polaris">
             <h2>Polaris</h2>
-        </a>
-        <a href="/auth/routes">
-            <h2>Postupy</h2>
         </a>
         <a href="/auth/maptheory">
             <h2>Mapová teorie</h2>

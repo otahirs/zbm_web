@@ -238,12 +238,7 @@
     padding-left: 0.2em;
 }
 
-/******************/
-/* upravit eventy */
-/******************/
-.editEvents--event:hover {
-    background-color: #c4c4c4 !important;
-}
+
 /************/
 /* kontakty */
 /************/
