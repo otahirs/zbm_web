@@ -317,8 +317,8 @@ class PhpTwigExtension extends \Twig_Extension
                 foreach ($data['img'] as $img) {
                   if(isset($img['img_delete'])){
                     if($img['img_delete'] == "true"){
-                      unlink("./user/pages/databaze/".$year."/novinky/novinka_". $data['id'] . "/img/" . $img['img_name']);
-                      unlink("./user/pages/databaze/".$year."/novinky/novinka_". $data['id'] . "/img/" . "preview_" . $img['img_name']);
+                      unlink("./user/pages/data/".$year."/novinky/novinka_". $data['id'] . "/img/" . $img['img_name']);
+                      unlink("./user/pages/data/".$year."/novinky/novinka_". $data['id'] . "/img/" . "preview_" . $img['img_name']);
                       continue;
                     }
                   }
@@ -331,7 +331,7 @@ class PhpTwigExtension extends \Twig_Extension
 
         $news = htmlspecialchars($news, ENT_NOQUOTES, 'UTF-8');
         //probehne vytvoreni slozky a ulozeni souboru
-        $this->file_force_contents("./user/pages/databaze/".$year."/novinky/novinka_". $data['id'] . "/default.cs.md", $news);
+        $this->file_force_contents("./user/pages/data/".$year."/novinky/novinka_". $data['id'] . "/default.cs.md", $news);
     }
 
     /******************************************************
@@ -471,7 +471,7 @@ class PhpTwigExtension extends \Twig_Extension
 
     function process_files($id, $timeStamp, $previewWidthInPx, $year){
     
-        $storeFolder = "./user/pages/databaze/".$year."/novinky/novinka_". $id . "/img/";
+        $storeFolder = "./user/pages/data/".$year."/novinky/novinka_". $id . "/img/";
 
         $extension=array("jpeg","jpg","png","gif","JPEG","JPG","PNG","GIF","jpe","jif","jfif","jfi","JPE","JIF","JFIF","JFI"); //.jpe .jif, .jfif, .jfi jsou soubory jpeg
 
@@ -554,7 +554,7 @@ class PhpTwigExtension extends \Twig_Extension
                 }
                 elseif( $_POST["POST_type"] == "deleteNews" ){
                     $year = substr($_POST["id"], 0 , 4);
-                    $this->rrmdir("./user/pages/databaze/".$year."/novinky/novinka_". $_POST['id'] . "/");
+                    $this->rrmdir("./user/pages/data/".$year."/novinky/novinka_". $_POST['id'] . "/");
                 }
                 Cache::clearCache('all');
             }
@@ -566,7 +566,7 @@ class PhpTwigExtension extends \Twig_Extension
     public function editBliziSeFunction($user){
         $year = substr($_POST["id"], 1, 4);
         $template = $_POST['template'];
-        $path = "./user/pages/databaze/". $year ."/". $template ."/". $_POST["id"] . "/".$template.".cs.md";
+        $path = "./user/pages/data/". $year ."/". $template ."/". $_POST["id"] . "/".$template.".cs.md";
 
         $frontmatter = $this->parse_file_frontmatter_only($path);
         
@@ -792,7 +792,7 @@ class PhpTwigExtension extends \Twig_Extension
         foreach($parsed_csv as $csv_event){
 
             $year = substr($csv_event["start"], -4);
-            $path = "./user/pages/databaze/" . $year ."/".$template."/". $csv_event["id"] . "/".$template.".cs.md";
+            $path = "./user/pages/data/" . $year ."/".$template."/". $csv_event["id"] . "/".$template.".cs.md";
             
             if(file_exists($path)){
                 $frontmatter = $this->get_frontmatter_as_array($path);
@@ -1173,7 +1173,7 @@ class PhpTwigExtension extends \Twig_Extension
                 
                 $year = substr($_POST["id"], 1 , 4);
                 $template = $_POST['template'];
-                $path = "./user/pages/databaze/". $year ."/". $template ."/". $_POST["id"] . "/".$template.".cs.md";
+                $path = "./user/pages/data/". $year ."/". $template ."/". $_POST["id"] . "/".$template.".cs.md";
                 $frontmatter = $this->get_frontmatter_as_array($path);   //rozparsuje existujici soubor
 
                 foreach($data as $attribute){
@@ -1264,8 +1264,8 @@ class PhpTwigExtension extends \Twig_Extension
     public function SavePolaris(){ 
 
         // init vars
-        $pagePath = './user/pages/databaze/polaris/blank.md';
-        $savePath = './user/pages/databaze/polaris/' . $_POST['year'];
+        $pagePath = './user/pages/data/polaris/blank.md';
+        $savePath = './user/pages/data/polaris/' . $_POST['year'];
         $polarisYear = $_POST['year'];
         $polarisNumber = "p" . $_POST['cislo'];
         $fileTitle = "Polaris_" . $_POST['year'] . "_" . $_POST['cislo'] . ".pdf" ;
@@ -1302,8 +1302,8 @@ class PhpTwigExtension extends \Twig_Extension
         // init vars
         $polarisYear = $_POST['year'];
         $polarisNumber = "p" . $_POST['cislo'];
-        $pagePath = './user/pages/databaze/polaris/blank.md';
-        $filePath = './user/pages/databaze/polaris/' . $_POST['year']. "/" . $_POST['pdf'];
+        $pagePath = './user/pages/data/polaris/blank.md';
+        $filePath = './user/pages/data/polaris/' . $_POST['year']. "/" . $_POST['pdf'];
         
         // get frontmatter
         $frontmatter = $this->get_frontmatter_as_array($pagePath);
@@ -1334,8 +1334,8 @@ class PhpTwigExtension extends \Twig_Extension
     public function SaveMapT(){ 
 
         // init vars
-        $pagePath = './user/pages/databaze/maptheory/blank.md';
-        $savePath = './user/pages/databaze/maptheory/';
+        $pagePath = './user/pages/data/maptheory/blank.md';
+        $savePath = './user/pages/data/maptheory/';
         $maptGroup = $_POST['group'];
         $fileTitle = $_POST['date'] . ".pdf" ;
 
@@ -1371,8 +1371,8 @@ class PhpTwigExtension extends \Twig_Extension
         // init vars
         $maptName = $_POST['name'];
         $maptGroup = $_POST['group'];
-        $pagePath = './user/pages/databaze/maptheory/blank.md';
-        $filePath = './user/pages/databaze/maptheory/' . $maptName;
+        $pagePath = './user/pages/data/maptheory/blank.md';
+        $filePath = './user/pages/data/maptheory/' . $maptName;
         
         // get frontmatter
         $frontmatter = $this->get_frontmatter_as_array($pagePath);
@@ -1401,8 +1401,8 @@ class PhpTwigExtension extends \Twig_Extension
     public function SaveRoutes(){ 
 
         // init vars
-        $pagePath = './user/pages/databaze/maptheory/blank.md';
-        $savePath = './user/pages/databaze/maptheory/';
+        $pagePath = './user/pages/data/maptheory/blank.md';
+        $savePath = './user/pages/data/maptheory/';
         $maptGroup = $_POST['group'];
         $fileTitle = $_POST['date'] . ".pdf" ;
 
@@ -1438,8 +1438,8 @@ class PhpTwigExtension extends \Twig_Extension
         // init vars
         $maptName = $_POST['name'];
         $maptGroup = $_POST['group'];
-        $pagePath = './user/pages/databaze/maptheory/blank.md';
-        $filePath = './user/pages/databaze/maptheory/' . $maptName;
+        $pagePath = './user/pages/data/maptheory/blank.md';
+        $filePath = './user/pages/data/maptheory/' . $maptName;
         
         // get frontmatter
         $frontmatter = $this->get_frontmatter_as_array($pagePath);

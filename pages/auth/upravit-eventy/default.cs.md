@@ -86,7 +86,7 @@ content:
   <tbody class="list">
     {# eventy starsi nez DNES#}
   {% for p in collection %}
-      <tr class="editEvents--event" data-path="{{ base_url  ~ "/auth/upravit-eventy/edit?event=/databaze/" ~ p.header.id[1:4] ~ "/" ~ p.header.template ~ "/" ~ p.header.id ~ "/" ~ p.name }}" style="cursor: pointer;">
+      <tr class="editEvents--event" data-path="{{ base_url  ~ "/auth/upravit-eventy/edit?event=/data/" ~ p.header.id[1:4] ~ "/" ~ p.header.template ~ "/" ~ p.header.id ~ "/" ~ p.name }}" style="cursor: pointer;">
           <td class="datum">
             {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
             {# HELP |localizeddate http://twig-extensions.readthedocs.io/en/latest/intl.html#}

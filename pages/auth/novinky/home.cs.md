@@ -48,10 +48,10 @@ content:
                   {% set Mobile_img_ratio = PC_img_ratio %}
                   {% endif %}
                   <div class="newsIMG pure-u-1-{{Mobile_img_ratio}} pure-u-sm-1-{{PC_img_ratio}}" data-name="{{img.name}}" data-ratio="{{ img.ratio }}">
-                    <a href="{{base_url_absolute}}/databaze/{{p.header.date|slice(0,4)}}/novinky/novinka_{{p.header.id}}/img/{{img.name}}" target="_blank" title="Zobrazit originální obrázek">
+                    <a href="{{base_url_absolute}}/data/{{p.header.date|slice(0,4)}}/novinky/novinka_{{p.header.id}}/img/{{img.name}}" target="_blank" title="Zobrazit originální obrázek">
                       <picture>
                         {# časem WebP #}
-                        <img class="pure-img" src="{{base_url_absolute}}/databaze/{{p.header.date|slice(0,4)}}/novinky/novinka_{{p.header.id}}/img/preview_{{img.name}}" alt="Zde by měl být obrázek">
+                        <img class="pure-img" src="{{base_url_absolute}}/data/{{p.header.date|slice(0,4)}}/novinky/novinka_{{p.header.id}}/img/preview_{{img.name}}" alt="Zde by měl být obrázek">
                       </picture>
                     </a>
                   </div>
