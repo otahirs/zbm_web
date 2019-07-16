@@ -1,5 +1,9 @@
 ---
-title: Seznam událostí
+title: 'Upravit události'
+date: '2018-10-24'
+access:
+    site:
+        edit-event: true
 content:
     items: '@root.descendants'
     order:
@@ -70,8 +74,8 @@ content:
     
   {% for p in collection %}
   
-      <tr data-href="{{ p.url }}" class="click-row">
-          <td class="datum">
+      <tr data-href="{{ p.url }}" class="click-row" style="cursor: pointer;">
+          <td class="datum show">
             {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
             {# HELP |localizeddate http://twig-extensions.readthedocs.io/en/latest/intl.html#}
             {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
@@ -85,8 +89,12 @@ content:
               {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
             {% endif %}
           </td>
-          <td class="nazev"><b>{{ p.title }}</b></td>
-          <td class="misto">{{p.header.place}}</td>
+          <td class="nazev show"><b>{{ p.title }}</b></td>
+          <td class="misto show">{{p.header.place}}</td>
+          <td class="edit editEvent" title="upravit událost" data-id="{{ p.header.id }}"><i class="fa fa-pencil" aria-hidden="true"></i></td>
+          <td class="edit addRoute" title="přidat postupy"> <i class="fa fa-paper-plane" aria-hidden="true"></i></td>
+          <td class="edit addResult" title="přidat výsledky"> <i class="fa fa-list-ol" aria-hidden="true"></i></i></td>
+
           <td class="skupina" style="display: none !important;"> 
             {% set all = true %}
             {% for s in p.header.taxonomy.skupina %} 
@@ -137,9 +145,16 @@ content:
 
 <script>
  window.addEventListener('load', function () {
-  $('[data-href]').click(function () {
-    window.location = $(this).data("href");
-  });
+	$('[data-href]').click(function (e) {
+		if($(e.target).hasClass("show")){
+		window.location = $(this).data("href");
+		}
+	});
+  	$(".editEvent").click(function() {
+        var path = window.location.origin + "/auth/events/edit?event=" + this.getAttribute("data-id").substr(0,4) + "/"  + this.getAttribute("data-id");
+        var redirectWindow = window.open(path, '_blank');
+        redirectWindow.location;
+	})
 
   var filter_div = document.getElementById('filter_program');
   $('#filter_btn').click( function(){
@@ -163,7 +178,7 @@ content:
 
 	var options = {
     valueNames: [ 'datum', 'nazev', 'misto', 'skupina', 'type', 'startMonth', 'endMonth', 'start', 'end' ],
-    page: 10,
+    page: 8,
     pagination: true
 	};
 
@@ -173,7 +188,7 @@ content:
   	userList.search();
     userList.sort('start', { order: "asc" });
   	userList.filter(function (item) {
-      if (item.values().start >= now || item.values().end > (now - 5*3600*24)) {
+      if (item.values().start >= now || item.values().end > (now - 7*3600*24)) {
         return true;
       } else {
         return false;
@@ -234,17 +249,24 @@ content:
 
 /* pokud neni zaznam zobrazi hlasku*/
   	userList.on('updated', function (list) {
-  		if (list.matchingItems.length > 0) {
-  			$('.no-result').hide()
-  		} else {
-  			$('.no-result').show()
-  		}
-  	 });
+        if (list.matchingItems.length > 0) {
+          $('.no-result').hide()
+        } else {
+          $('.no-result').show()
+        } 
+    });
+     
+    
      
    
     
     resetList();
-    $("#reset_btn").click(resetList);
+	$("#reset_btn").click(resetList);
+	
+	 
 
-}, false); // onload
+
+    
+
+}, false); // onload  
 </script>

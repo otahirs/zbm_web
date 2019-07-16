@@ -16,7 +16,6 @@ class PhpTwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('phpNews', [$this, 'NewsFunction']),
             new \Twig_SimpleFunction('phpEditBliziSe', [$this, 'editBliziSeFunction']),
             new \Twig_SimpleFunction('phpSaveProgramTemplates', [$this, 'SaveProgramTemplates']),
-            new \Twig_SimpleFunction('phpFormEditEvent', [$this, 'phpFormEditEvent']),
             new \Twig_SimpleFunction('phpSaveEditedEvent', [$this, 'phpSaveEditedEvent']),
             new \Twig_SimpleFunction('phpSavePolaris', [$this, 'SavePolaris']),
             new \Twig_SimpleFunction('phpDeletePolaris', [$this, 'DeletePolaris']),
@@ -317,8 +316,8 @@ class PhpTwigExtension extends \Twig_Extension
                 foreach ($data['img'] as $img) {
                   if(isset($img['img_delete'])){
                     if($img['img_delete'] == "true"){
-                      unlink("./user/pages/data/".$year."/novinky/novinka_". $data['id'] . "/img/" . $img['img_name']);
-                      unlink("./user/pages/data/".$year."/novinky/novinka_". $data['id'] . "/img/" . "preview_" . $img['img_name']);
+                      unlink("./user/pages/data/news/" . $year . "/". $data['id'] . "/img/" . $img['img_name']);
+                      unlink("./user/pages/data/news/" . $year . "/". $data['id'] . "/img/" . "preview_" . $img['img_name']);
                       continue;
                     }
                   }
@@ -331,7 +330,7 @@ class PhpTwigExtension extends \Twig_Extension
 
         $news = htmlspecialchars($news, ENT_NOQUOTES, 'UTF-8');
         //probehne vytvoreni slozky a ulozeni souboru
-        $this->file_force_contents("./user/pages/data/".$year."/novinky/novinka_". $data['id'] . "/default.cs.md", $news);
+        $this->file_force_contents("./user/pages/data/news/" . $year . "/". $data['id'] . "/default.cs.md", $news);
     }
 
     /******************************************************
@@ -471,7 +470,7 @@ class PhpTwigExtension extends \Twig_Extension
 
     function process_files($id, $timeStamp, $previewWidthInPx, $year){
     
-        $storeFolder = "./user/pages/data/".$year."/novinky/novinka_". $id . "/img/";
+        $storeFolder = "./user/pages/data/news/" . $year . "/". $id . "/img/";
 
         $extension=array("jpeg","jpg","png","gif","JPEG","JPG","PNG","GIF","jpe","jif","jfif","jfi","JPE","JIF","JFIF","JFI"); //.jpe .jif, .jfif, .jfi jsou soubory jpeg
 
@@ -554,7 +553,7 @@ class PhpTwigExtension extends \Twig_Extension
                 }
                 elseif( $_POST["POST_type"] == "deleteNews" ){
                     $year = substr($_POST["id"], 0 , 4);
-                    $this->rrmdir("./user/pages/data/".$year."/novinky/novinka_". $_POST['id'] . "/");
+                    $this->rrmdir("./user/pages/data/news/" . $year . "/". $_POST['id'] . "/");
                 }
                 Cache::clearCache('all');
             }
@@ -566,7 +565,7 @@ class PhpTwigExtension extends \Twig_Extension
     public function editBliziSeFunction($user){
         $year = substr($_POST["id"], 1, 4);
         $template = $_POST['template'];
-        $path = "./user/pages/data/". $year ."/". $template ."/". $_POST["id"] . "/".$template.".cs.md";
+        $path = "./user/pages/data/events/". $year ."/". $_POST["id"] ."/". $template. ".cs.md";
 
         $frontmatter = $this->parse_file_frontmatter_only($path);
         
@@ -784,48 +783,57 @@ class PhpTwigExtension extends \Twig_Extension
         return $parsed;
     }
 
+    function get_event_id($event){
+        $hashStr = $event['start'].$event['end'].$event['title'].$event['place'].$event['type'];
+        $date = date_create($event['start']);
+        return $event['id'] = date_format($date, "Ymd") ."-". hash('crc32', $hashStr);
+    }
+
     public function phpUploadProgram(){
         $parsed_csv = $this->parse_csv();
         
         $groups = ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost"];
         
-        foreach($parsed_csv as $csv_event){
+        foreach($parsed_csv as $event){
+     
+            $event['template'] = $this->get_event_template($event["type"]);;
+            $event['date'] = date("Y-m-d");
+            $event['start'] = $this->format_date($event['start']);
+            $event['end'] = $this->format_date($event['end']);
+            $event['id'] = $this->get_event_id($event);
+            $year = substr($event["start"], 0, 4);
 
-            $year = substr($csv_event["start"], -4);
-            $path = "./user/pages/data/" . $year ."/".$template."/". $csv_event["id"] . "/".$template.".cs.md";
-            
+            $path = "./user/pages/data/events/". $year ."/". $event["id"] ."/". $event['template'] .".cs.md";
+
+            // if file exist, load data
             if(file_exists($path)){
                 $frontmatter = $this->get_frontmatter_as_array($path);
             }
-            
-            foreach($csv_event as $key => $attribute){
-                if((in_array($key, $groups))){
-                    continue;
-                }
-                if(empty($frontmatter[$attribute])){
-                    $frontmatter[$key] = $csv_event[$key];
-                }
-            }
-            // skupiny
+
+            // init taxonomy array if does not exist
             if(!isset($frontmatter['taxonomy']['skupina'])){
                 $frontmatter['taxonomy']['skupina'] = array();
             }
-            foreach($groups as $group){
-                if(!in_array($group, $frontmatter['taxonomy']['skupina']) && ($csv_event[$group])=="1"){
-                    $frontmatter['taxonomy']['skupina'][] = $group;
+                 
+            foreach($event as $key => $attribute){
+                // add group to taxonomy
+                if(in_array($key, $groups) && $attribute == "1"){
+                    if(!in_array($key, $frontmatter['taxonomy']['skupina'])){
+                        $frontmatter['taxonomy']['skupina'][] = $key;
+                    }
+                    continue;
                 }
-                
+                // if no info set, overwrite from given file
+                if(empty($frontmatter[$key]) && $attribute){
+                    $frontmatter[$key] = $attribute;
+                }
             }
-            $template = $this->get_event_template($csv_event["type"]);
-            $frontmatter['template'] = $template;
-            $frontmatter['date'] = date("Y-m-d");
-            $frontmatter['start'] = $this->format_date($frontmatter['start']);
-            $frontmatter['end'] = $this->format_date($frontmatter['end']);
            
             $content = $this->generate_content($frontmatter);
             $page = $this->combine_frontmatter_with_content(Yaml::dump($frontmatter, 10), $content);
 
             $this->file_force_contents($path, $page); 
+            unset($frontmatter);
         }
         Cache::clearCache('all');
         
@@ -938,209 +946,6 @@ class PhpTwigExtension extends \Twig_Extension
         return False;
     }
 
-    // formular pro upravu eventu
-    public function phpFormEditEvent(){
-        
-        if(isset($_GET['event'])){
-            $parsed = $this->get_frontmatter_as_array("./user/pages".$_GET['event']);
-
-            echo'<form id="editEvent" class="pure-form pure-form-aligned" method="post" action="">
-                    <input name="POST_type" type="hidden" value="editEvent">
-                    <input name="id" type="hidden" value="'.($parsed["id"]??'').'">
-                    <input name="template" id="template" type="hidden" value="'.($parsed["template"]??'').'">
-
-                    '.($parsed["id"]??'').'
-
-                    <!--
-                    <select name="template">
-                        <option value="akce">Jiné</option>
-                        <option value="zavod" '. (isset($parsed["template"])?($parsed["template"]=="zavod"?"selected":""):"") .'>Závod</option>
-                        <option value="trenink" '. (isset($parsed["template"])?($parsed["template"]=="trenink"?"selected":""):"") .'>Trénink</option>
-                        <option value="soustredeni" '. (isset($parsed["template"])?($parsed["template"]=="soustredeni"?"selected":""):"") .'>Soustředění</option>
-                    </select> -->
-                    <div class="pure-g">
-                      <div class="pure-g">
-                          <div class="pure-u-10-24">
-                              <div class="pure-g">
-                                  <div class="pure-u-1">
-                                      <label for="name">Název</label>
-                                      <input id="name" name="title" type="text" value="'.($parsed["title"]??'').'" required>
-                                  </div>
-                                  <div class="pure-u-1-2">
-                                      <label for="date1">Od</label>
-                                      <input id="date1" name="start" type="text" value="'.($parsed["start"]??'').'" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required title="formát yyyy-mm-dd">
-                                  </div>
-                                  <div class="pure-u-1-2">
-                                      <label for="date2">Do</label>
-                                      <input id="date2" name="end" type="text" value="'.($parsed["end"]??'').'" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" title="formát yyyy-mm-dd">
-                                  </div>
-                                  <div class="pure-u-1-2">
-                                      <label for="place">Místo</label>
-                                      <input id="place" name="place" type="text" value="'.($parsed["place"]??'').'">
-                                  </div>
-                                  <div class="pure-u-1-2">
-                                      <label for="GPS">GPS</label>
-                                      <input id="GPS" name="GPS" type="text" value="'.($parsed["GPS"]??'').'">
-                                  </div>
-                                  <div class="pure-u-1-2">
-                                      <label for="meetTime">Sraz / čas</label>
-                                      <input id="meetTime" name="meetTime" type="text" value="'.($parsed["meetTime"]??'').'">
-                                  </div>
-                                  <div class="pure-u-1-2">
-                                      <label for="meetPlace">Sraz / místo</label>
-                                      <input name="meetPlace" type="text" value="'.($parsed["meetPlace"]??'').'">
-                                  </div>
-                                  <div class="pure-u-1">
-                                      <label for="transport">Doprava</label>
-                                      <textarea id="transport" name="transport" type="text" rows="1">'.($parsed["transport"]??'').'</textarea>
-                                  </div>
-                              </div> <!-- pure-g -->
-                          </div><!-- pure-u-10-24 --><!--
-                       --><div class="pure-u-4-24">
-                            &nbsp;
-                          </div><!--
-                       --><div class="pure-u-10-24">
-                              <div class="pure-g">
-                                <div class="pure-u-1">
-                                    <br>
-                                  <fieldset>
-                                      <legend>Skupiny:</legend>
-                                      <input name="zabicky" type="hidden" value="0">
-                                      <input id="zabicky" type="checkbox" name="zabicky" value="1" '; if(in_array( 'zabicky' , $parsed['taxonomy']['skupina'] )) echo "checked"; echo'>
-                                          <label for="zabicky"> žabičky </label> <br>
-                                      <input name="pulci1" type="hidden" value="0">
-                                      <input id="pulci1" type="checkbox" name="pulci1" value="1" '; if(in_array( 'pulci1' , $parsed['taxonomy']['skupina'] )) echo "checked"; echo'>
-                                          <label for="pulci1"> pulci 1 </label> <br>
-                                      <input name="pulci2" type="hidden" value="0">
-                                      <input id="pulci2" type="checkbox" name="pulci2" value="1" '; if(in_array( 'pulci2' , $parsed['taxonomy']['skupina'] )) echo "checked"; echo'>
-                                          <label for="pulci2"> pulci 2 </label> <br>
-                                      <input name="zaci1" type="hidden" value="0">
-                                      <input id="zaci1" type="checkbox" name="zaci1" value="1" '; if(in_array( 'zaci1' , $parsed['taxonomy']['skupina'] )) echo "checked"; echo'>
-                                          <label for="zaci1"> žáci 1 </label> <br>
-                                      <input name="zaci2" type="hidden" value="0">
-                                      <input id="zaci2" type="checkbox" name="zaci2" value="1" '; if(in_array( 'zaci2' , $parsed['taxonomy']['skupina'] )) echo "checked"; echo'>
-                                          <label for="zaci2"> žáci 2 </label> <br>
-                                      <input name="dorost" type="hidden" value="0">
-                                      <input id="dorost" type="checkbox" name="dorost" value="1" '; if(in_array( 'dorost' , $parsed['taxonomy']['skupina'] )) echo "checked"; echo'>
-                                          <label for="dorost"> dorost+ </label>
-                                  </fieldset>
-                                </div>
-                                <div class="pure-u-1">
-                                    <label for="leader">Vedoucí</label>
-                                    <input id="leader" name="leader" type="text" value="'.($parsed["leader"]??'').'">
-                                </div>
-                              </div> <!-- pure-g -->
-                          </div> <!-- pure-u-10-24 -->
-                          <div class="pure-u-1">
-                                <label for="note">Poznámka</label>
-                                <textarea id="note" name="note" rows="1">'.($parsed["note"]??'').'</textarea>
-                          </div>';
-            if(isset($parsed["template"])){
-                if($parsed["template"]=="zavod"){
-                    echo'<div class="pure-u-1">
-                        <hr>
-                            <label for="link">Odkaz na ORIS / stránky závodu</label>
-                            <input id="link" name="link" type="text" value="'.($parsed["link"]??'').'">
-                        </div>';
-                }
-            }
-            if(isset($parsed["start"], $parsed["end"])){
-                if($parsed["start"] != $parsed["end"]){
-                    echo'<div class="pure-g pure-u-1">
-                        <hr>
-                        <div class="pure-u-10-24">
-                            <label for="accomodation">Ubytování</label>
-                            <textarea id="accomodation" name="accomodation" type="text" rows="1">'.($parsed["accomodation"]??'').'</textarea>
-                        </div><!-- pure-u-10-24 --><!--
-                     --><div class="pure-u-4-24">
-                            &nbsp;
-                        </div><!--
-                     --><div class="pure-u-10-24">
-                            <label for="food">Strava</label>
-                            <textarea id="food" name="food" type="text" rows="1">'.($parsed["food"]??'').'</textarea>
-                        </div> <!-- pure-u-10-24 -->
-                    </div> <!-- pure-g -->';
-                }
-            }
-            if(isset($parsed["template"])){
-                if($parsed["template"]=="zavod" || $parsed["template"]=="trenink"){
-                    echo'<div class="pure-g pure-u-1">
-                            <hr>
-                            <div class="pure-u-10-24">
-                                <div class="pure-g">
-                                <div class="pure-u-1">
-                                    <label for="startTime">Start</label>
-                                    <input id="startTime" name="startTime" type="text" value="'.($parsed["startTime"]??'').'">
-                                </div>
-                                <div class="pure-u-1">
-                                    <label for="eventTypeDescription">Tratě</label>
-                                    <textarea id="eventTypeDescription" name="eventTypeDescription" type="text" rows="1">'.($parsed["eventTypeDescription"]??'').'</textarea>
-                                </div>
-                                </div> <!-- pure-g -->
-                            </div><!-- pure-u-10-24 --><!--
-                         --><div class="pure-u-4-24">
-                              &nbsp;
-                            </div><!--
-                         --><div class="pure-u-10-24">
-                                <div class="pure-u-1">
-                                    <label for="map">mapa</label>
-                                    <input id="map" name="map" type="text" value="'.($parsed["map"]??'').'">
-                                </div>
-                                <div class="pure-u-1">
-                                    <label for="terrain">Terén</label>
-                                    <textarea id="terrain" name="terrain" type="text" rows="3">'.($parsed["terrain"]??'').'</textarea>
-                                </div>
-                            </div> <!-- pure-u-10-24 -->
-                        </div> <!-- pure-g -->';
-                }
-            }
-            if(isset($parsed["template"])){
-                if($parsed["template"]=="soustredeni"){
-                    echo'<div class="pure-u-1" id="soustredeni">
-                            <hr>
-                            <div class="pure-g">
-                                <div class="pure-u-1">
-                                    <label for="signups">Přihlášky</label>
-                                    <input id="signups" name="signups" type="text" value="'.($parsed["signups"]??'').'">
-                                </div>
-                                <div class="pure-u-1">
-                                    <label for="price">Cena</label>
-                                    <textarea id="price" name="price">'.($parsed["price"]??'').'</textarea>
-                                </div>
-                                <div class="pure-u-1">
-                                    <label for="return">Návrat</label>
-                                    <textarea id="return" name="return">'.($parsed["return"]??'').'</textarea>
-                                </div>
-                                <div class="pure-u-1">
-                                    <label for="program">Náplň / program</label>
-                                    <textarea id="program" name="program">'.($parsed["program"]??'').'</textarea>
-                                </div>
-                                <div class="pure-u-1">
-                                    <label for="thingsToTake">S sebou</label>
-                                    <textarea id="thingsToTake" name="thingsToTake">'.($parsed["thingsToTake"]??'').'</textarea>
-                                </div>
-                            </div> <!-- pure-g -->
-                        </div><!-- pure-u-1 id="soustredeni" -->';
-                }
-            }
-                          
-                    
-              echo '<div class="pure-u-1">
-                        <hr>
-                    
-                    
-                    
-                    <button id="saveEvent" type="submit">Uložit</button> <br>
-                    <div id="formResponse"></div>
-                </div>
-                </div> <!-- pure-g -->
-            </form>';
-        }
-        else{
-          echo"<h2>Není zadána cesta k souboru.</h2>";
-        }
-        // javacript is saved normaly in page
-    }
     public function phpSaveEditedEvent(){
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(isset($_POST["POST_type"])){
@@ -1171,9 +976,9 @@ class PhpTwigExtension extends \Twig_Extension
                 $data = ["title","template", "start", "end",  "place", "meetTime", "meetPlace", "link", "eventTypeDescription", "startTime", "map", "terrain", "transport", "accomodation", "food", "leader", "doWeOrganize", "note", "return", "price", "program", "thingsToTake", "signups", "id"];
                 $group_arr = ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost"];
                 
-                $year = substr($_POST["id"], 1 , 4);
+                $year = substr($_POST["id"], 0 , 4);
                 $template = $_POST['template'];
-                $path = "./user/pages/data/". $year ."/". $template ."/". $_POST["id"] . "/".$template.".cs.md";
+                $path = "./user/pages/data/events/". $year ."/". $_POST["id"] ."/". $template .".cs.md";
                 $frontmatter = $this->get_frontmatter_as_array($path);   //rozparsuje existujici soubor
 
                 foreach($data as $attribute){
