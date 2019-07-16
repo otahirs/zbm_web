@@ -142,7 +142,7 @@
         </div>
 
         <div id="mapt" class="tab-content">
-            {% set p = page.find('/databaze/maptheory') %}
+            {% set p = page.find('/data/maptheory') %}
             {% set group = attribute(p.header.maptheory, page.header.group) %}
             {% if "today"|date("m") >= 11 %}
                 {% set deadline = "today -90 days"|date("Y-m-d") %}
@@ -152,7 +152,7 @@
             <ul>
             {% for item in group if item[:10] > deadline %}                  
                 <li>            
-                    <a href="{{base_url_absolute}}/databaze/maptheory/{{item}}" target="_blank"> {{item[:10]|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM Y')}} </a> 
+                    <a href="{{base_url_absolute}}/data/maptheory/{{item}}" target="_blank"> {{item[:10]|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM Y')}} </a> 
                 </li>
             {% endfor %}
             </ul>

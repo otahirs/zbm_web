@@ -119,7 +119,7 @@ plan:
                     {# pokud je mezi start a end datum_dne_v_tydnu, zobrazi se v tabulce#}
                     {%  if (  p.header.start <= datum_dne_v_tydnu and p.header.end >= datum_dne_v_tydnu ) %}
                       <tr {% if day_num % 2 == 0 %} class="plan--lichyDen event--program"  {% else %} class="plan--sudyDen event--program" {% endif %}
-                        data-path="{{ base_url  ~ "/auth/upravit-eventy/edit?event=/databaze/" ~ p.header.id[1:4] ~ "/" ~ p.header.template ~ "/" ~ p.header.id ~ "/" ~ p.name }}">
+                        data-path="{{ base_url  ~ "/auth/upravit-eventy/edit?event=/data/" ~ p.header.id[1:4] ~ "/" ~ p.header.template ~ "/" ~ p.header.id ~ "/" ~ p.name }}">
                         <td class="den">
                             {# zobrazi nazev dne (napr. "PO") jen pokud jiz neexistuje zaznam dne v tabulce #}
                             {% if zapsany_den != den %}    {# podminka, jestli uz se zapisoval #}

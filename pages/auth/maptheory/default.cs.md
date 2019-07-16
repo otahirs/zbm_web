@@ -44,14 +44,14 @@ access:
 </form>
         <hr>
 
-{% set p = page.find('/databaze/maptheory') %}
+{% set p = page.find('/data/maptheory') %}
 {% for group_name, group in p.header.maptheory %}
     <section>
     <h4>{{group_name}}</h4>
         <ul>
         {% for item in group %}  
                     <li>            
-                        <a href="{{base_url_absolute}}/databaze/maptheory/{{item}}" target="_blank">
+                        <a href="{{base_url_absolute}}/data/maptheory/{{item}}" target="_blank">
                             {{item}}
                         </a> &nbsp;
                     <span class="maptheory--delete" data-group="{{group_name}}" data-name="{{item}}" style="cursor:pointer;"> 
