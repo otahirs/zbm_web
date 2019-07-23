@@ -109,7 +109,7 @@
 			// Toggle.
 				if (skel.vars.IEVersion > 9) {
 
-					$('<a href="#sidebar" class="toggle">Toggle</a>')
+					$('<a class="toggle">Toggle</a>')
 						.appendTo($sidebar)
 						.on('click', function(event) {
 
