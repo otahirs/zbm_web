@@ -20,44 +20,13 @@ class PhpTwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('phpSavePolaris', [$this, 'SavePolaris']),
             new \Twig_SimpleFunction('phpDeletePolaris', [$this, 'DeletePolaris']),
             new \Twig_SimpleFunction('phpSavePlan', [$this, 'SavePlan']),
-            new \Twig_SimpleFunction('phpSavePlanTemplate', [$this, 'SavePlanTemplate']),   
-            new \Twig_SimpleFunction('phpLoginRedirect', [$this, 'LoginRedirect']),
+            new \Twig_SimpleFunction('phpSavePlanTemplate', [$this, 'SavePlanTemplate']), 
             new \Twig_SimpleFunction('phpTest', [$this, 'Test']),      
             new \Twig_SimpleFunction('phpShiftPlan', [$this, 'ShiftPlan']),
             new \Twig_SimpleFunction('phpSaveMapT', [$this, 'SaveMapT']),  
             new \Twig_SimpleFunction('phpDeleteMapT', [$this, 'DeleteMapT']),     
         
         ];
-    }
-
-    function LoginRedirect(){
-        // placed in "user/plugins/login/templates/login.html.twig" - {{phpLoginRedirect()}}
-        $authenticated = False;
-        if($_SESSION["user"]["authenticated"]){
-            $authenticated = True;
-        }
-
-        if(isset($_SERVER['HTTP_REFERER'])) {
-            if(!$authenticated){
-                // if user is not logged in, save refferer
-                $_SESSION['ref'] = $_SERVER['HTTP_REFERER'];
-            }
-            else{
-                $protocol = isset($_SERVER["HTTPS"]) ? 'https' : 'http';
-
-                $login_path = $protocol . "://" . $_SERVER['HTTP_HOST'] . "/login";
-                $refferer_path = $_SERVER['HTTP_REFERER'];
-
-                // referrer is a login page and we successfully logged in -> redirect to last page before login page
-                if(isset($_SESSION['ref']) && $login_path == $refferer_path){
-                    if($_SESSION['ref'] != $login_path){
-                        header('Location: ' . $_SESSION['ref']);
-                        exit();
-                    }
-                }
-                else{header('Refresh: 1; url=/');}
-            }          
-        }
     }
 
 // pomocne fce
@@ -191,77 +160,32 @@ class PhpTwigExtension extends \Twig_Extension
         // https://symfony.com/doc/current/components/yaml.html 
     }
 
-
-      /************************************************************
-      ** funkce, ktera nacte data z array a ulozi je jako soubor **
-      *************************************************************/
-      /*
-      ---
-      title: 'Štěpánský běh'
-      date: '2018-08-30'
-      template: trenink
-      id: 'Race_2'
-      start: '2018-12-26'
-      end: '2018-12-26'
-      place: 'Radostice2'
-      gps
-      meetTime
-      meetPlace
-      link:
-      club: BBM
-      eventTypeDescription
-      startTime
-      map
-      terrain
-      transport: 'No'
-      accomodation: 'No':
-      food
-      leader
-      trainingCamp: 
-          - return
-          - price
-          - progem
-          - thingsToTake
-          - signups
-      entry:
-          - entry1: '2018-12-19'
-          - entry2:
-          - entry3:
-          - entry4:
-          - entry5:
-      taxonomy:
-          - skupina: ['pulci1', pulci2, 'zabicky', 'zaci1', zaci2, 'dorost']
-          =doWeOrganize
-
-      note:
-      ---
-      */
-      function generate_content($race){
-            $content = "";
-            // zapise uvod pro ligu škol popř. pořádáme
-            if(!empty($race["Type"])){
-                if($race["Type"]=="L"){
-                    $content .= "**Pořádáme!!** Předem díky moc za pomoc s pořádáním. Kdo má čas nebo by chtěl
-                    omluvit ze školy, hlaste se Liborovi." . PHP_EOL;
-                }
-                else{
-                    if(!empty($race["doWeOrganize"])){
-                        if($race["doWeOrganize"]=="1"){
-                            $content .= "**Pořádáme!!**" . PHP_EOL;
-                        }
+    function generate_content($race){
+        $content = "";
+        // zapise uvod pro ligu škol popř. pořádáme
+        if(!empty($race["Type"])){
+            if($race["Type"]=="L"){
+                $content .= "**Pořádáme!!** Předem díky moc za pomoc s pořádáním. Kdo má čas nebo by chtěl
+                omluvit ze školy, hlaste se Liborovi." . PHP_EOL;
+            }
+            else{
+                if(!empty($race["doWeOrganize"])){
+                    if($race["doWeOrganize"]=="1"){
+                        $content .= "**Pořádáme!!**" . PHP_EOL;
                     }
                 }
             }
-            if(!empty($race["note"]))                {$content .= "{{page.header.note}}" . PHP_EOL;}
-            // jeden řádek s časem, místem srazu a typem dopravy
-            if(!empty($race["meetTime"]))            {$content .= "* **sraz**: {{page.header.meetTime}}"; $writw_eol=true;}
-            if(!empty($race["meetPlace"]))           {$content .= " {{page.header.meetPlace}}."; $writw_eol=true;}
-            if(!empty($race["transport"]))           {$content .= " Doprava {{page.header.transport}}."; $writw_eol=true;}
-            if(isset($writw_eol)) {if($writw_eol==true) $content .= PHP_EOL;}
+        }
+        if(!empty($race["note"]))                {$content .= "{{page.header.note}}" . PHP_EOL;}
+        // jeden řádek s časem, místem srazu a typem dopravy
+        if(!empty($race["meetTime"]))            {$content .= "* **sraz**: {{page.header.meetTime}}"; $writw_eol=true;}
+        if(!empty($race["meetPlace"]))           {$content .= " {{page.header.meetPlace}}."; $writw_eol=true;}
+        if(!empty($race["transport"]))           {$content .= " Doprava {{page.header.transport}}."; $writw_eol=true;}
+        if(isset($writw_eol)) {if($writw_eol==true) $content .= PHP_EOL;}
 
-            if(!empty($race["accomodation"]))        {$content .= "* **ubytování**: {{page.header.accomodation}}" . PHP_EOL;}
-            if(!empty($race["food"]))                {$content .= "* **strava**: {{page.header.food}}" . PHP_EOL;}
-            return $content;
+        if(!empty($race["accomodation"]))        {$content .= "* **ubytování**: {{page.header.accomodation}}" . PHP_EOL;}
+        if(!empty($race["food"]))                {$content .= "* **strava**: {{page.header.food}}" . PHP_EOL;}
+        return $content;
       }
 
       public function ApiRegisterDeadlines(){}
@@ -971,7 +895,6 @@ class PhpTwigExtension extends \Twig_Extension
                     echo 'CHYBA!!, nebylo obdrženo ID události [id]';
                     die();
                 }
-                            
 
                 $data = ["title","template", "start", "end",  "place", "meetTime", "meetPlace", "link", "eventTypeDescription", "startTime", "map", "terrain", "transport", "accomodation", "food", "leader", "doWeOrganize", "note", "return", "price", "program", "thingsToTake", "signups", "id"];
                 $group_arr = ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost"];
@@ -982,18 +905,19 @@ class PhpTwigExtension extends \Twig_Extension
                 $frontmatter = $this->get_frontmatter_as_array($path);   //rozparsuje existujici soubor
 
                 foreach($data as $attribute){
-                  if(isset($_POST[$attribute])){
-                    $frontmatter[$attribute] = $this->trim_all($_POST[$attribute]);
-                  }
+                    if(isset($_POST[$attribute])){
+                        $frontmatter[$attribute] = $this->trim_all($_POST[$attribute]);
+                    }
                 }
 
                 if(empty($_POST["end"])){
                     $frontmatter['end'] = $_POST["start"];
                 }
 
+                // groups
                 foreach($group_arr as $key => $group){
                     if(isset($_POST[$group]) && $_POST[$group]){
-                      $frontmatter['taxonomy']['skupina'][] = $group;
+                        $frontmatter['taxonomy']['skupina'][] = $group;
                     }
                     else{
                         if(isset($frontmatter['taxonomy']['skupina'])){
@@ -1015,6 +939,30 @@ class PhpTwigExtension extends \Twig_Extension
                         die();
                     }
                 }
+
+                //routes
+                $i = 0;
+                unset($frontmatter["routes"]);
+                while(isset($_POST["routeName"][$i], $_POST["routeLink"][$i])){
+                    if(!empty($_POST["routeName"][$i]) && !empty($_POST["routeLink"][$i])){
+                        $frontmatter["routes"][$i]["name"] = $_POST["routeName"][$i];
+                        $frontmatter["routes"][$i]["link"] = $_POST["routeLink"][$i];
+                    }
+                    $i++;
+                }
+
+                //result
+                $i = 0;
+                unset($frontmatter["results"]);
+                while(isset($_POST["resultsName"][$i], $_POST["resultsLink"][$i])){
+                    if(!empty($_POST["resultsName"][$i]) && !empty($_POST["resultsLink"][$i])){
+                        $frontmatter["results"][$i]["name"] = $_POST["resultsName"][$i];
+                        $frontmatter["results"][$i]["link"] = $_POST["resultsLink"][$i];
+                    }
+                    $i++;
+                }
+                
+                //combine
                 $frontmatter = Yaml::dump($frontmatter, 10);
                 $content = $this->parse_file_content_only($path);
                 $page = $this->combine_frontmatter_with_content($frontmatter, $content);
