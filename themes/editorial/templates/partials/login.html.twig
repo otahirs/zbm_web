@@ -3,12 +3,9 @@
 
 
 
-<section class="alt">
+<section>
   {% if config.plugins.login.enabled and grav.user.authorize('site.login') %}
-    <header class="major">
-            <a href="/auth"> EDITOVAT <i class="fa fa-pencil-square-o" aria-hidden="true"></i></i>
- </a>
-    </header>
+    <a href="/auth"> EDITOVAT <i class="fa fa-pencil-square-o" aria-hidden="true"></i></i></a>
   {% endif %}
 
 
@@ -17,11 +14,4 @@
   {% else %}
       <a href="{{base_url}}/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Přihlásit se</a>
   {% endif %}
-
-          
-
-
-
-
-
 </section>
