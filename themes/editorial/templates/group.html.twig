@@ -1,6 +1,6 @@
 {% extends 'partials/base.html.twig' %}
 {% block header %}
-    <header id="header">
+    <header id="header" style="border-bottom: none;">
         <h1>{{ page.title }}</h1>
     </header>
 {% endblock %}
@@ -8,15 +8,14 @@
 {% block body %}
 {# {{ page.content }} #}
 
-    <div id="group-menu">
         <ul class="tabs">
             <li data-tab="info" class="tab-link">Info</li>
             <li data-tab="plan" class="tab-link current">Plán na tento týden</li>
             <li data-tab="soustredeni" class="tab-link">Soustředění</li>
-            <li data-tab="gps" class="tab-link">GPS</li>
+            <li data-tab="routes" class="tab-link">Postupy</li>
+            <li data-tab="results" class="tab-link">Výsledky</li>
             <li data-tab="mapt" class="tab-link">Mapová teorie</li>
         </ul>
-    </div>
 
     {% set collection = taxonomy.findTaxonomy({'skupina':page.header.group}).order('header.start','asc')  %} 
     {% set collection = collection.ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']) %}
@@ -137,8 +136,50 @@
             </table>
         </div>
 
-        <div id="gps" class="tab-content">
-            dela se na tom
+        <div id="routes" class="tab-content">
+            {% for p in collection if p.header.routes|length %}
+                <h4>
+                    {{ p.header.title }}&nbsp;|&nbsp;
+                    {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
+                    {% if p.header.start|localizeddate('medium', 'none','cs','Europe/Prague', 'M') != p.header.end|localizeddate('medium', 'none','cs','Europe/Prague', 'M')%}
+                    {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+                    {# pokud neni stejny den - format 6.-8. cerven #}
+                    {% elseif p.header.start|localizeddate('medium', 'none') != p.header.end|localizeddate('medium', 'none')%}
+                    {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+                    {% else %}
+                    {# pokud stejny den - format 6. cerven #}
+                    {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+                    {% endif %}
+                </h4>
+                <ul>
+                    {% for routes in p.header.routes %}
+                    <li><a href="{{ routes.link }}">{{ routes.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+
+        <div id="results" class="tab-content">
+            {% for p in collection if p.header.results|length %}
+                <h4>
+                    {{ p.header.title }}&nbsp;|&nbsp;
+                    {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
+                    {% if p.header.start|localizeddate('medium', 'none','cs','Europe/Prague', 'M') != p.header.end|localizeddate('medium', 'none','cs','Europe/Prague', 'M')%}
+                    {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+                    {# pokud neni stejny den - format 6.-8. cerven #}
+                    {% elseif p.header.start|localizeddate('medium', 'none') != p.header.end|localizeddate('medium', 'none')%}
+                    {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+                    {% else %}
+                    {# pokud stejny den - format 6. cerven #}
+                    {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+                    {% endif %}
+                </h4>
+                <ul>
+                    {% for results in p.header.results %}
+                    <li><a href="{{ results.link }}">{{ results.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
         </div>
 
         <div id="mapt" class="tab-content">

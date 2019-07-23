@@ -12,13 +12,31 @@ access:
 
 
 {% set event = page.find('/data/events/' ~ uri.query('event')) %}
-{{dump(event)}}
 
-<form id="editEvent" class="pure-form pure-form-aligned" method="post" action="">
+<form id="editEvent" method="post" action="">
         <input name="POST_type" type="hidden" value="editEvent">
         <input name="id" type="hidden" value="{{ event.header.id }}">
         <input name="template" id="template" type="hidden" value="{{ event.template }}">
         {{ event.header.id }}
+        <ul class="tabs">
+            <li data-tab="info" class="tab-link current">Základní informace</li>
+            {% if event.template == "zavod" or event.template == "trenink" %} 
+                <li data-tab="zt" class="tab-link">
+                    {% if event.template == "zavod" %}
+                        Závod
+                    {% else %}
+                        Trénink
+                    {% endif %}
+                </li> 
+            {% endif %}
+            {% if event.template == "soustredeni" %}
+                <li data-tab="soustredeni" class="tab-link">Soustředění</li> 
+            {% endif %}
+            {% if event.template == "soustredeni" or event.template == "trenink" %}
+                <li data-tab="routes" class="tab-link">Postupy</li>
+                <li data-tab="results" class="tab-link">Výsledky</li>
+            {% endif %}
+        </ul>
         <!--
         <select name="template">
             <option value="akce">Jiné</option>
@@ -26,174 +44,171 @@ access:
             <option value="trenink" '. (isset($parsed["template"])?($parsed["template"]=="trenink"?"selected":""):"") .'>Trénink</option>
             <option value="soustredeni" '. (isset($parsed["template"])?($parsed["template"]=="soustredeni"?"selected":""):"") .'>Soustředění</option>
         </select> -->
-        <div class="pure-g">
-          <div class="pure-g">
-              <div class="pure-u-10-24">
-                  <div class="pure-g">
-                      <div class="pure-u-1">
-                          <label for="name">Název</label>
-                          <input id="name" name="title" type="text" value="{{ event.header.title }}" required>
-                      </div>
-                      <div class="pure-u-1-2">
-                          <label for="date1">Od</label>
-                          <input id="date1" name="start" type="text" value="{{ event.header.start }}" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required title="formát yyyy-mm-dd">
-                      </div>
-                      <div class="pure-u-1-2">
-                          <label for="date2">Do</label>
-                          <input id="date2" name="end" type="text" value="{{ event.header.end }}" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" title="formát yyyy-mm-dd">
-                      </div>
-                      <div class="pure-u-1-2">
-                          <label for="place">Místo</label>
-                          <input id="place" name="place" type="text" value="{{ event.header.place }}">
-                      </div>
-                      <div class="pure-u-1-2">
-                          <label for="GPS">GPS</label>
-                          <input id="GPS" name="GPS" type="text" value="{{ event.header.gps }}">
-                      </div>
-                      <div class="pure-u-1-2">
-                          <label for="meetTime">Sraz / čas</label>
-                          <input id="meetTime" name="meetTime" type="text" value="{{ event.header.meetTime }}">
-                      </div>
-                      <div class="pure-u-1-2">
-                          <label for="meetPlace">Sraz / místo</label>
-                          <input name="meetPlace" type="text" value="{{ event.header.meetPlace }}">
-                      </div>
-                      <div class="pure-u-1">
-                          <label for="transport">Doprava</label>
-                          <textarea id="transport" name="transport" type="text" rows="1">{{ event.header.transport }}</textarea>
-                      </div>
-                  </div> <!-- pure-g -->
-              </div><!-- pure-u-10-24 --><!--
-           --><div class="pure-u-4-24">
-                &nbsp;
-              </div><!--
-           --><div class="pure-u-10-24">
-                  <div class="pure-g">
+        <div id="info" class="tab-content current">
+            <div class="pure-g">
+            <div class="pure-u-1-2">
+                <div class="pure-g">
                     <div class="pure-u-1">
-                        <br>
-                      <fieldset>
-                          <legend>Skupiny:</legend>
-                          <input name="zabicky" type="hidden" value="0">
-                          <input id="zabicky" type="checkbox" name="zabicky" value="1" {% if "zabicky" in event.header.taxonomy.skupina %} "checked" {% endif %}>
-                              <label for="zabicky"> žabičky </label> <br>
-                          <input name="pulci1" type="hidden" value="0">
-                          <input id="pulci1" type="checkbox" name="pulci1" value="1" {% if "pulci1" in event.header.taxonomy.skupina %} "checked" {% endif %}>
-                              <label for="pulci1"> pulci 1 </label> <br>
-                          <input name="pulci2" type="hidden" value="0">
-                          <input id="pulci2" type="checkbox" name="pulci2" value="1" {% if "pulcu2" in event.header.taxonomy.skupina %} "checked" {% endif %}>
-                              <label for="pulci2"> pulci 2 </label> <br>
-                          <input name="zaci1" type="hidden" value="0">
-                          <input id="zaci1" type="checkbox" name="zaci1" value="1" {% if "zaci1" in event.header.taxonomy.skupina %} "checked" {% endif %}>
-                              <label for="zaci1"> žáci 1 </label> <br>
-                          <input name="zaci2" type="hidden" value="0">
-                          <input id="zaci2" type="checkbox" name="zaci2" value="1" {% if "zaci2" in event.header.taxonomy.skupina %} "checked" {% endif %}>
-                              <label for="zaci2"> žáci 2 </label> <br>
-                          <input name="dorost" type="hidden" value="0">
-                          <input id="dorost" type="checkbox" name="dorost" value="1" {% if "dorost" in event.header.taxonomy.skupina %} "checked" {% endif %}>
-                              <label for="dorost"> dorost+ </label>
-                      </fieldset>
+                        <label for="name">Název</label>
+                        <input id="name" name="title" type="text" value="{{ event.header.title }}" required>
+                    </div>
+                    <div class="pure-u-1-2">
+                        <label for="date1">Od</label>
+                        <input id="date1" name="start" type="text" value="{{ event.header.start }}" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required title="formát yyyy-mm-dd">
+                    </div>
+                    <div class="pure-u-1-2">
+                        <label for="date2">Do</label>
+                        <input id="date2" name="end" type="text" value="{{ event.header.end }}" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" title="formát yyyy-mm-dd">
+                    </div>
+                    <div class="pure-u-1-2">
+                        <label for="place">Místo</label>
+                        <input id="place" name="place" type="text" value="{{ event.header.place }}">
+                    </div>
+                    <div class="pure-u-1-2">
+                        <label for="GPS">GPS</label>
+                        <input id="GPS" name="GPS" type="text" value="{{ event.header.gps }}">
+                    </div>
+                    <div class="pure-u-1-2">
+                        <label for="meetTime">Sraz / čas</label>
+                        <input id="meetTime" name="meetTime" type="text" value="{{ event.header.meetTime }}">
+                    </div>
+                    <div class="pure-u-1-2">
+                        <label for="meetPlace">Sraz / místo</label>
+                        <input name="meetPlace" type="text" value="{{ event.header.meetPlace }}">
                     </div>
                     <div class="pure-u-1">
-                        <label for="leader">Vedoucí</label>
-                        <input id="leader" name="leader" type="text" value="{{ event.header.leader }}">
+                        <label for="transport">Doprava</label>
+                        <textarea id="transport" name="transport" type="text" rows="1">{{ event.header.transport }}</textarea>
                     </div>
-                  </div> <!-- pure-g -->
-              </div> <!-- pure-u-10-24 -->
-              <div class="pure-u-1">
-                    <label for="note">Poznámka</label>
-                    <textarea id="note" name="note" rows="1">{{ event.header.note }}</textarea>
-              </div>';
-{% if event.template == "zavod" %}
-    <div class="pure-u-1">
-        <hr>
-        <label for="link">Odkaz na ORIS / stránky závodu</label>
-        <input id="link" name="link" type="text" value="{{ event.header.link }}">
-    </div>';
-{% endif %}
+                </div>
+            </div>
+            <div class="pure-u-1-2">
+                <br>
+                <fieldset>
+                    <legend>Skupiny:</legend>
+                    <input name="zabicky" type="hidden" value="0">
+                    <input id="zabicky" type="checkbox" name="zabicky" value="1" {% if "zabicky" in event.header.taxonomy.skupina %} "checked" {% endif %}>
+                        <label for="zabicky"> žabičky </label> <br>
+                    <input name="pulci1" type="hidden" value="0">
+                    <input id="pulci1" type="checkbox" name="pulci1" value="1" {% if "pulci1" in event.header.taxonomy.skupina %} "checked" {% endif %}>
+                        <label for="pulci1"> pulci 1 </label> <br>
+                    <input name="pulci2" type="hidden" value="0">
+                    <input id="pulci2" type="checkbox" name="pulci2" value="1" {% if "pulcu2" in event.header.taxonomy.skupina %} "checked" {% endif %}>
+                        <label for="pulci2"> pulci 2 </label> <br>
+                    <input name="zaci1" type="hidden" value="0">
+                    <input id="zaci1" type="checkbox" name="zaci1" value="1" {% if "zaci1" in event.header.taxonomy.skupina %} "checked" {% endif %}>
+                        <label for="zaci1"> žáci 1 </label> <br>
+                    <input name="zaci2" type="hidden" value="0">
+                    <input id="zaci2" type="checkbox" name="zaci2" value="1" {% if "zaci2" in event.header.taxonomy.skupina %} "checked" {% endif %}>
+                        <label for="zaci2"> žáci 2 </label> <br>
+                    <input name="dorost" type="hidden" value="0">
+                    <input id="dorost" type="checkbox" name="dorost" value="1" {% if "dorost" in event.header.taxonomy.skupina %} "checked" {% endif %}>
+                        <label for="dorost"> dorost+ </label>
+                </fieldset>
 
-{% if event.start != event.end %}
-        <div class="pure-g pure-u-1">
-            <hr>
-            <div class="pure-u-10-24">
-                <label for="accomodation">Ubytování</label>
-                <textarea id="accomodation" name="accomodation" type="text" rows="1">{{ event.header.accomodation }}</textarea>
-            </div><!-- pure-u-10-24 --><!--
-         --><div class="pure-u-4-24">
-                &nbsp;
-            </div><!--
-         --><div class="pure-u-10-24">
-                <label for="food">Strava</label>
-                <textarea id="food" name="food" type="text" rows="1">{{ event.header.food }}</textarea>
-            </div> <!-- pure-u-10-24 -->
-        </div> <!-- pure-g -->';
-{% endif %}
-
-{% if event.template == "zavod" or event.template == "trenink" %}
-    <div class="pure-g pure-u-1">
-                <hr>
-                <div class="pure-u-10-24">
-                    <div class="pure-g">
-                    <div class="pure-u-1">
-                        <label for="startTime">Start</label>
-                        <input id="startTime" name="startTime" type="text" value="{{ event.header.startTime }}">
-                    </div>
-                    <div class="pure-u-1">
-                        <label for="eventTypeDescription">Tratě</label>
-                        <textarea id="eventTypeDescription" name="eventTypeDescription" type="text" rows="1">{{ event.header.eventTypeDescription }}</textarea>
-                    </div>
-                    </div> <!-- pure-g -->
-                </div><!-- pure-u-10-24 --><!--
-             --><div class="pure-u-4-24">
-                  &nbsp;
-                </div><!--
-             --><div class="pure-u-10-24">
-                    <div class="pure-u-1">
-                        <label for="map">mapa</label>
-                        <input id="map" name="map" type="text" value="{{ event.header.map }}">
-                    </div>
-                    <div class="pure-u-1">
-                        <label for="terrain">Terén</label>
-                        <textarea id="terrain" name="terrain" type="text" rows="3">{{ event.header.terrain }}</textarea>
-                    </div>
-                </div> <!-- pure-u-10-24 -->
-            </div> <!-- pure-g -->';
-{% endif %}
-
-{% if event.template == "soustredeni" %}
-    <div class="pure-u-1" id="soustredeni">
-        <hr>
-        <div class="pure-g">
+                <label for="leader">Vedoucí</label>
+                <input id="leader" name="leader" type="text" value="{{ event.header.leader }}">
+            </div> 
             <div class="pure-u-1">
-                <label for="signups">Přihlášky</label>
-                <input id="signups" name="signups" type="text" value="{{ event.header.singups }}">
+                <label for="note">Poznámka</label>
+                <textarea id="note" name="note" rows="1">{{ event.header.note }}</textarea>
             </div>
-            <div class="pure-u-1">
-                <label for="price">Cena</label>
-                <textarea id="price" name="price">{{ event.header.price }}</textarea>
-            </div>
-            <div class="pure-u-1">
-                <label for="return">Návrat</label>
-                <textarea id="return" name="return">{{ event.header.return }}</textarea>
-            </div>
-            <div class="pure-u-1">
-                <label for="program">Náplň / program</label>
-                <textarea id="program" name="program">{{ event.header.program }}</textarea>
-            </div>
-            <div class="pure-u-1">
-                <label for="thingsToTake">S sebou</label>
-                <textarea id="thingsToTake" name="thingsToTake">{{ event.header.thingsToTake }}</textarea>
-            </div>
-        </div> <!-- pure-g -->
-    </div><!-- pure-u-1 id="soustredeni" -->';
-{% endif %}
-              
-        
-        <div class="pure-u-1">
-                <hr>
-            <button id="saveEvent" type="submit" class="special">Uložit</button> <br>
-            <div id="formResponse"></div>
         </div>
-    </div> <!-- pure-g -->
+        </div>
+   
+        {% if event.start != event.end %}
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <label for="accomodation">Ubytování</label>
+                    <textarea id="accomodation" name="accomodation" type="text" rows="1">{{ event.header.accomodation }}</textarea>
+                </div>
+                <div class="pure-u-1-2">
+                    <label for="food">Strava</label>
+                    <textarea id="food" name="food" type="text" rows="1">{{ event.header.food }}</textarea>
+                </div> 
+            </div> <!-- pure-g -->
+        {% endif %}
+
+
+    <div id="zt" class="tab-content">
+        {% if event.template == "zavod" %}
+            <label for="link">Odkaz na ORIS / stránky závodu</label>
+            <input id="link" name="link" type="text" value="{{ event.header.link }}">
+            <hr>
+        {% endif %}
+    
+        {% if event.template == "zavod" or event.template == "trenink" %}
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <label for="startTime">Start</label>
+                    <input id="startTime" name="startTime" type="text" value="{{ event.header.startTime }}">
+                
+                    <label for="eventTypeDescription">Tratě</label>
+                    <textarea id="eventTypeDescription" name="eventTypeDescription" type="text" rows="1">{{ event.header.eventTypeDescription }}</textarea>
+                </div>
+                <div class="pure-u-1-2">
+                    <label for="map">Mapa</label>
+                    <input id="map" name="map" type="text" value="{{ event.header.map }}">
+                
+                    <label for="terrain">Terén</label>
+                    <textarea id="terrain" name="terrain" type="text" rows="3">{{ event.header.terrain }}</textarea>
+                </div>
+            </div> <!-- pure-g -->
+        {% endif %}
+    </div>
+
+    {% if event.template == "soustredeni" %}
+        <div id="soustredeni" class="tab-content">
+            <label for="signups">Přihlášky</label>
+            <input id="signups" name="signups" type="text" value="{{ event.header.singups }}">
+            
+            <label for="price">Cena</label>
+            <textarea id="price" name="price">{{ event.header.price }}</textarea>
+        
+            <label for="return">Návrat</label>
+            <textarea id="return" name="return">{{ event.header.return }}</textarea>
+        
+            <label for="program">Náplň / program</label>
+            <textarea id="program" name="program">{{ event.header.program }}</textarea>
+        
+            <label for="thingsToTake">S sebou</label>
+            <textarea id="thingsToTake" name="thingsToTake">{{ event.header.thingsToTake }}</textarea>
+        </div><!-- id="soustredeni" -->
+    {% endif %}
+    <div id="routes" class="tab-content">
+        {% for route in event.header.routes %}
+        <fieldset>
+        <div class="pure-g"> 
+            <div class="pure-u-1 pure-u-sm-1-2">
+                <input name="routeName[]" type="text" placeholder="Popis" value="{{ route.name }}">
+            </div>
+            <div class="pure-u-1 pure-u-sm-1-2">
+                <input name="routeLink[]" type="text" placeholder="Odkaz" value="{{ route.link }}">
+            </div>
+        </div>
+        </fieldset>
+        {% endfor %}
+        <button id="addRoute" type="button">přdat další</button>
+    </div>
+    <div id="results" class="tab-content">
+        {% for results in event.header.results %}
+        <fieldset>
+        <div class="pure-g"> 
+            <div class="pure-u-1 pure-u-sm-1-2">
+                <input name="resultsName[]" type="text" placeholder="Popis" value="{{ results.name }}">
+            </div>
+            <div class="pure-u-1 pure-u-sm-1-2">
+                <input name="resultsLink[]" type="text" placeholder="Odkaz" value="{{ results.link }}">
+            </div>
+        </div>
+        </fieldset>
+        {% endfor %}
+        <button id="addResults" type="button">přdat další</button>
+    </div>        
+    <hr>
+    <button id="saveEvent" type="submit" class="special">Uložit</button> <br>
+    <div id="formResponse"></div>
+    
 </form>
 
 
@@ -206,6 +221,7 @@ access:
                 return false;
             }
         });
+
     /**** autoresize textareas ***/
         $.fn.extend({
             autoresize: function () {
@@ -234,6 +250,44 @@ access:
             this.value = this.value.replaceAll('<br>', '');
         });
 
+    /*** tabs ***/
+    $('ul.tabs li').click(function(){
+            var tab_id = $(this).attr('data-tab');
+
+            $('ul.tabs li').removeClass('current');
+            $('.tab-content').removeClass('current');
+
+            $(this).addClass('current');
+            $("#"+tab_id).addClass('current');
+            //resize textarea
+            $("textarea").each(function(){
+            $(this).height( this.scrollHeight);
+        });
+        })
+
+    /*** addRoute ***/
+    $("#addRoute").click(function(){
+        $(this).before('<fieldset><div class="pure-g">' + 
+                        '<div class="pure-u-1 pure-u-sm-1-2">' +
+                        '    <input name="routeName[]" type="text" placeholder="Popis">' +
+                        '</div>' +
+                        '<div class="pure-u-1 pure-u-sm-1-2">' +
+                        '    <input name="routeLink[]" type="text" placeholder="Odkaz">' +
+                        '</div>' +
+                       '</div></fieldset>');
+    })
+    /*** addResults ***/
+    $("#addResults").click(function(){
+        $(this).before('<fieldset><div class="pure-g">' + 
+                        '<div class="pure-u-1 pure-u-sm-1-2">' +
+                        '    <input name="resultsName[]" type="text" placeholder="Popis">' +
+                        '</div>' +
+                        '<div class="pure-u-1 pure-u-sm-1-2">' +
+                        '    <input name="resultsLink[]" type="text" placeholder="Odkaz">' +
+                        '</div>' +
+                       '</div></fieldset>');
+    })
+        
     /* submit */
     var save_btn = document.getElementById("saveEvent"),
         form = document.getElementById("editEvent"),
@@ -254,12 +308,12 @@ access:
                 processData: false,
                 contentType: false,
                 success: function (){   
-                    formResponse.innerHTML = "<br>Úspěšně uloženo, stránka se nyní obnoví.";
+                    formResponse.innerHTML = "<br>Úspěšně uloženo.";
                     formResponse.style.color = "green";
                     setTimeout(function(){ 
                         formResponse.innerHTML = ""; 
                     }, 3000);
-                    window.location.replace(location.href);
+                    //window.location.replace(location.href);
                 },
                 error: function (xhr, desc, err){
 
