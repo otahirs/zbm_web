@@ -52,7 +52,11 @@
 		h2 {
 			font-size: (1.25em / 0.9);
 		}
-		a { color: _palette(fg-white);} // none
+		a { color: _palette(fg-white);
+			&:hover{
+				color: _palette(accent);
+			}
+		} // none
 
 		> .inner {
 			@include padding($pad, $pad, (0, 0, $pad, 0));
@@ -99,7 +103,7 @@
 			position: absolute;
 			text-align: center;
 			text-indent: 7.5em;
-			top: 0;
+			top: 2px; //topbar shadow
 			width: 6em;
 			z-index: _misc(z-index-base);
 			color: _palette(accent);

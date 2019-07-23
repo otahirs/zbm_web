@@ -2,10 +2,6 @@
     Place custom styles here.
 */
 
-#group-menu {
-    background-color: _palette(bg-alt);
-}
-
 ul.tabs{
     height: 3rem;
     display: table-cell;
@@ -14,23 +10,22 @@ ul.tabs{
 ul.tabs li{
     cursor: pointer;
     display: block;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     line-height: 3rem;
     float: left;
-    color: _palette(fg-white);
     transition: all 0.18s;
-    background-color: _palette(bg-alt);
+    background-color: _palette(fg-white);
+    font-weight: bold;
     &:hover {
-	    background-color: black;
+	    color: _palette(accent);
     }
 }
 
 ul.tabs li.current{
-    background-color: _palette(accent);
-    color: _palette(bg-alt);
-    //font-weight: bold;
+    box-shadow: inset 0 -5px 0 _palette(accent);
+    color: _palette(accent);
     &:hover {
-	color: black !important;
+	    //color: black !important;
     }
 }
 
@@ -235,6 +230,25 @@ tr.program--now {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, .2);
+}
+
+#program .backgroundAccent{
+    background-color: _palette(accent);
+}
+#program td.edit{
+    padding: 0;
+    a {
+        border-bottom: none;
+        display: block;
+        padding: 0.75em 0.75em;
+    }
+    &:hover {
+        background-color: _palette(accent);
+        a {
+            color: _palette(fg) !important;
+        }
+        
+    }
 }
 
 
