@@ -74,7 +74,7 @@ content:
     
   {% for p in collection %}
   
-      <tr data-href="{{ p.url }}" class="click-row" style="cursor: pointer;">
+      <tr data-href="{{ p.url }}" style="cursor: pointer;">
           <td class="datum show">
             {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
             {# HELP |localizeddate http://twig-extensions.readthedocs.io/en/latest/intl.html#}
@@ -91,9 +91,11 @@ content:
           </td>
           <td class="nazev show"><b>{{ p.title }}</b></td>
           <td class="misto show">{{p.header.place}}</td>
-          <td class="edit editEvent" title="upravit událost" data-id="{{ p.header.id }}"><i class="fa fa-pencil" aria-hidden="true"></i></td>
-          <td class="edit addRoute" title="přidat postupy"> <i class="fa fa-paper-plane" aria-hidden="true"></i></td>
-          <td class="edit addResult" title="přidat výsledky"> <i class="fa fa-list-ol" aria-hidden="true"></i></i></td>
+          <td class="edit">
+            <a href="{{ base_url }}/auth/events/edit?event={{ p.header.id[:4] }}/{{ p.header.id }}" target="_blank">
+              Upravit&nbsp;&nbsp;<i class="fa fa-pencil" aria-hidden="true"></i>
+            </a>
+          </td>
 
           <td class="skupina" style="display: none !important;"> 
             {% set all = true %}
@@ -150,11 +152,12 @@ content:
 		window.location = $(this).data("href");
 		}
 	});
-  	$(".editEvent").click(function() {
-        var path = window.location.origin + "/auth/events/edit?event=" + this.getAttribute("data-id").substr(0,4) + "/"  + this.getAttribute("data-id");
-        var redirectWindow = window.open(path, '_blank');
-        redirectWindow.location;
-	})
+  $("table td").hover(
+    function (e) { 
+      if($(e.target).hasClass("show")){
+        $(this).parent().find("td:not(.edit)").addClass('backgroundAccent') }}, 
+    function () { $(this).parent().find("td:not(:last-child)").removeClass('backgroundAccent') }
+);
 
   var filter_div = document.getElementById('filter_program');
   $('#filter_btn').click( function(){
@@ -178,7 +181,7 @@ content:
 
 	var options = {
     valueNames: [ 'datum', 'nazev', 'misto', 'skupina', 'type', 'startMonth', 'endMonth', 'start', 'end' ],
-    page: 8,
+    page: 9,
     pagination: true
 	};
 
