@@ -447,17 +447,18 @@ width: 0px; /*For Chrome, Safari and Opera*/
   }
 }
 
-  
-.panel-open:after {
-    content: '';
+
+.dim {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: none;
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, .2);
-    transition: background-color 1s ease-in-out;
-}
+    background: rgba(0,0,0,0.4);
+  }
 
 
 

@@ -115,9 +115,12 @@
 					slideout.close();
 				}
 
+				var $dim = $('.dim');
 				slideout
 					.on('beforeopen', function() {
 						this.panel.classList.add('panel-open');
+						$dim.fadeIn(200); 
+						
 					})
 					.on('open', function() {
 						this.panel.addEventListener('click', closeMenu);
@@ -125,6 +128,7 @@
 					.on('beforeclose', function() {
 						this.panel.classList.remove('panel-open');
 						this.panel.removeEventListener('click', closeMenu);
+						$dim.fadeOut(200); 
 					});
 
 			
