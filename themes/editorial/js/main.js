@@ -92,7 +92,8 @@
 			  var slideout = new Slideout({
 			    'panel': document.getElementById('main'),
 					'menu': document.getElementById('sidebar'),
-					'padding': $sidebar.css("width").slice(0, -2)
+					'padding': $sidebar.css("width").slice(0, -2),
+					'easing': 'ease-in-out'
 				});		
 				
 				// resize padding because sidebar width is dynamic
