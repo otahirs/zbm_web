@@ -29,7 +29,7 @@
     {% block javascripts %}
         {% do assets.addJs('jquery', 1000) %}
 	{% do assets.addJs('theme://js/skel.min.js', 100) %}
-        {% do assets.addJs('theme://js/jquery.touchSwipe.min.js', 98) %}
+        {% do assets.addJs('theme://js/slideout.min.js', 98) %}
         {% do assets.addJs('theme://js/util.js', 99) %}
         {% do assets.addJs('theme://js/main.js', 97) %}
         {% do assets.addJs('theme://js/turndown.js', {'group':'defer'}) %}
@@ -47,9 +47,10 @@
 
 <div id="wrapper">
     <div id="main">
-        <div class="swipe-area"></div>
+        <a id="toggle">Toggle</a>
         {% block  inner %}
         <div class="inner">
+        
             {% block header %}
             <header id="header">
 		<h1>{{ page.title }}</h1>
@@ -61,7 +62,7 @@
 
             {% block body %}
             <section>
-                <header class="main">
+                <header class="main">              
                   <!--  <h1>{{ page.title }}</h1> -->
                 </header>
                 {% if page.header.primaryImage %}

@@ -23,7 +23,8 @@
 		var	$window = $(window),
 			$head = $('head'),
 			$body = $('body'),
-			$main = $('#main');
+			$main = $('#main'),
+			$sidebar = $('#sidebar');
 
 		// Disable animations/transitions ...
 
@@ -86,140 +87,54 @@
 					});
 
 		// Sidebar.
-			var $sidebar = $('#sidebar'),
-				$sidebar_inner = $sidebar.children('.inner');
+			
+			// Menu swipe support
+			  var slideout = new Slideout({
+			    'panel': document.getElementById('main'),
+					'menu': document.getElementById('sidebar'),
+					'padding': $sidebar.css("width").slice(0, -2)
+				});		
+				
+				// resize padding because sidebar width is dynamic
+				$(window).on('resize load',function(){
+					setTimeout(function(){
+						if(skel.breakpoint("large").active){
+							slideout.padding = $sidebar.css("width").slice(0, -2);
+						}
+					}, 100);					
+				});
 
-			// Inactive by default on <= large.
-				skel
-					.on('+large', function() {
-						$sidebar.addClass('inactive');
-						//$main.addClass('is-dimmed');
-					})
-					.on('-large !large', function() {
-						$sidebar.removeClass('inactive');
-						$main.removeClass('is-dimmed');
-					});
-
-			// Hack: Workaround for Chrome/Android scrollbar position bug.
-				if (skel.vars.os == 'android'
-				&&	skel.vars.browser == 'chrome')
-					$('<style>#sidebar .inner::-webkit-scrollbar { display: none; }</style>')
-						.appendTo($head);
-
-			// Toggle.
-				if (skel.vars.IEVersion > 9) {
-
-					$('<a class="toggle">Toggle</a>')
-						.appendTo($sidebar)
-						.on('click', function(event) {
-
-							// Prevent default.
-								event.preventDefault();
-								event.stopPropagation();
-
-							// Toggle.
-								$sidebar.toggleClass('inactive');
-								$main.toggleClass('is-dimmed');
-								
-								
-						});
-
+			  // Toggle button
+			  document.getElementById('toggle').addEventListener('click', function() {
+			    slideout.toggle();
+			  });	
+	
+				// close on click outside sidebar
+				function closeMenu(e) {
+					e.preventDefault();
+					slideout.close();
 				}
 
-			// Menu support for mobile (only when menu displays over page -> smaller thatn "large")			
-			skel.on('+large', function() {
-				// Swipe to open menu 
-				$(".swipe-area").swipe({
-					swipeStatus:function(event, phase, direction, distance, duration, fingers){
-							if (phase=="move" && direction =="right") {
-								$sidebar.removeClass("inactive");
-								$main.addClass('is-dimmed');
-								return false;
-							}
-					}
-				});
-				// Tap or click outside menu to close 
-				$main.on('click', function(event) { 
-					if (!skel.breakpoint('large').active) return;
+				slideout
+					.on('beforeopen', function() {
+						this.panel.classList.add('panel-open');
+					})
+					.on('open', function() {
+						this.panel.addEventListener('click', closeMenu);
+					})
+					.on('beforeclose', function() {
+						this.panel.classList.remove('panel-open');
+						this.panel.removeEventListener('click', closeMenu);
+					});
 
-					if(!$(event.target).closest($sidebar).length) {
-						if(!$sidebar.hasClass("inactive")){
-							$sidebar.addClass("inactive");
-							$main.removeClass('is-dimmed');
-							return false;
-						}
-					}
-				})
-				      
-				
-			})
 			
-
-			// Events.
-
-				// Link clicks.
-					$sidebar.on('click', 'a', function(event) {
-
-						// >large? Bail.
-							if (!skel.breakpoint('large').active)
-								return;
-
-						// Vars.
-							var $a = $(this),
-								href = $a.attr('href'),
-								target = $a.attr('target');
-
-						// Prevent default.
-							event.preventDefault();
-							event.stopPropagation();
-
-						// Check URL.
-							if (!href || href == '#' || href == '')
-								return;
-
-						// Hide sidebar.
-							$sidebar.addClass('inactive');
-
-						// Redirect to href.
-							setTimeout(function() {
-
-								if (target == '_blank')
-									window.open(href);
-								else
-									window.location.href = href;
-
-							}, 500);
-
-					});
-
-				// Prevent certain events inside the panel from bubbling.
-					$sidebar.on('click touchend touchstart touchmove', function(event) {
-
-						// >large? Bail.
-							if (!skel.breakpoint('large').active)
-								return;
-
-						// Prevent propagation.
-							event.stopPropagation();
-
-					});
-
-				// Hide panel on body click/tap.
-					/*$body.on('click touchend', function(event) {
-
-						// >large? Bail.
-							if (!skel.breakpoint('large').active)
-								return;
-
-						// Deactivate.
-							$sidebar.addClass('inactive');
-
-					}); */
-					
+			
+				
 			// Scroll lock.
 			// Note: If you do anything to change the height of the sidebar's content, be sure to
-			// trigger 'resize.sidebar-lock' on $window so stuff doesn't get out of sync.
-		/*
+			// trigger 'resize.sidebar-lock' on $window so stuff doesn't get out of sync.			
+		/*		
+				var  $sidebar_inner = $sidebar.children('.inner');
 				$window.on('load.sidebar-lock', function() {
 
 					var sh, wh, st;

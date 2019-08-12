@@ -2333,10 +2333,11 @@ button,
   -webkit-flex-shrink: 0;
   -ms-flex-shrink: 0;
   flex-shrink: 0;
-  -moz-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
-  -webkit-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
-  -ms-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
-  transition: margin-left 0.5s ease, box-shadow 0.5s ease;
+  /*@include vendor('transition', (
+			'margin-left 0.5s ease',
+			'box-shadow 0.5s ease'
+		));
+		*/
   background-color: #202020;
   font-size: 0.9em;
   position: relative;
@@ -2369,46 +2370,6 @@ button,
       padding: 1.11111em;
       padding-left: 2.22222em;
       width: calc(100% + 4.44444em); }
-  #sidebar .toggle {
-    text-decoration: none;
-    -moz-transition: left 0.5s ease;
-    -webkit-transition: left 0.5s ease;
-    -ms-transition: left 0.5s ease;
-    transition: left 0.5s ease;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-    border: 0;
-    display: block;
-    height: 7.5em;
-    left: 18em;
-    line-height: 7.5em;
-    outline: 0;
-    overflow: hidden;
-    position: absolute;
-    text-align: center;
-    text-indent: 7.5em;
-    top: 2px;
-    width: 6em;
-    z-index: 10000;
-    color: #e65646; }
-    #sidebar .toggle:before {
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased;
-      font-family: FontAwesome;
-      font-style: normal;
-      font-weight: normal;
-      text-transform: none !important; }
-    #sidebar .toggle:before {
-      content: '\f0c9';
-      font-size: 2rem;
-      height: inherit;
-      left: 0;
-      line-height: inherit;
-      position: absolute;
-      text-indent: 0;
-      top: 0;
-      width: inherit; }
-  #sidebar.inactive {
-    margin-left: -18em; }
   @media screen and (max-width: 1680px) {
     #sidebar {
       width: 16em; }
@@ -2419,25 +2380,14 @@ button,
           margin: -1.66667em 0 0.83333em -1.66667em;
           padding: 0.83333em;
           padding-left: 1.66667em;
-          width: calc(100% + 3.33333em); }
-      #sidebar .toggle {
-        height: 6.25em;
-        left: 16em;
-        line-height: 6.25em;
-        text-indent: 5em;
-        width: 5em; }
-        #sidebar .toggle:before {
-          font-size: 1.5rem; }
-      #sidebar.inactive {
-        margin-left: -16em; } }
+          width: calc(100% + 3.33333em); } }
   @media screen and (max-width: 1280px) {
     #sidebar {
       box-shadow: 0 0 5em 0 rgba(0, 0, 0, 0.175);
       height: 100%;
       left: 0;
       position: fixed;
-      top: 0;
-      z-index: 10000; }
+      top: 0; }
       #sidebar.inactive {
         box-shadow: none; }
       #sidebar > .inner {
@@ -2453,25 +2403,73 @@ button,
           display: block;
           height: 4em;
           width: 100%; }
-      #sidebar .toggle {
-        text-indent: 6em;
-        width: 6em; }
-        #sidebar .toggle:before {
-          font-size: 1.5rem;
-          margin-left: -0.4375em; }
       body.is-loading #sidebar {
         display: none; } }
+
+#toggle {
+  text-decoration: none;
+  -moz-transition: left 0.5s ease;
+  -webkit-transition: left 0.5s ease;
+  -ms-transition: left 0.5s ease;
+  transition: left 0.5s ease;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  border: 0;
+  display: none;
+  height: 7.5em;
+  line-height: 7.5em;
+  outline: 0;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  text-indent: 7.5em;
+  top: 2px;
+  width: 6em;
+  z-index: 10000;
+  color: #e65646; }
+  #toggle:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none !important; }
+  #toggle:before {
+    content: '\f0c9';
+    font-size: 2rem;
+    height: inherit;
+    left: 0;
+    line-height: inherit;
+    position: absolute;
+    text-indent: 0;
+    top: 0;
+    width: inherit; }
+  @media screen and (max-width: 1680px) {
+    #toggle {
+      height: 6.25em;
+      line-height: 6.25em;
+      text-indent: 5em;
+      width: 5em; }
+      #toggle:before {
+        font-size: 1.5rem; } }
+  @media screen and (max-width: 1280px) {
+    #toggle {
+      display: block;
+      text-indent: 6em;
+      width: 6em; }
+      #toggle:before {
+        font-size: 1.5rem;
+        margin-left: -0.4375em; } }
   @media screen and (max-width: 736px) {
-    #sidebar .toggle {
+    #toggle {
       text-indent: 7.25em;
       width: 7.25em; }
-      #sidebar .toggle:before {
+      #toggle:before {
         color: #333;
         margin-left: -0.0625em;
         margin-top: -0.25em;
         font-size: 1.1rem;
         z-index: 1; }
-      #sidebar .toggle:after {
+      #toggle:after {
         background: rgba(230, 230, 230, 0.9);
         border-radius: 2px;
         content: '';
