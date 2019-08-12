@@ -334,7 +334,7 @@ dd {
 
 
 
-#topbar{
+#topbar {
     position: fixed;
     height: 56px;
     left: 0px;
@@ -342,10 +342,10 @@ dd {
     top: 0px;
     background: #e6e6e6;
     box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
-
     line-height: 56px;
     text-align: center;
     overflow: hidden;
+    z-index: 2;
 }
 #main, #sidebar {
     top: 56px;
@@ -398,5 +398,66 @@ dd {
 #sidebar > .inner::-webkit-scrollbar {
 width: 0px; /*For Chrome, Safari and Opera*/
 }
+
+/* swipe */
+.slideout-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 0;
+  display: none;
+}
+
+.slideout-menu-left {
+  left: 0;
+}
+
+.slideout-menu-right {
+  right: 0;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  background-color: #FFF; /* A background-color is required */
+  min-height: 100vh;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+@media screen and (min-width: 1280px) {
+  .slideout-panel {
+    margin-left: 0;
+  }
+
+  .slideout-menu {
+    display: block;
+  }
+}
+
+  
+.panel-open:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .2);
+    transition: background-color 1s ease-in-out;
+}
+
 
 

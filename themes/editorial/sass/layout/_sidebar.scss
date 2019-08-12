@@ -39,10 +39,11 @@
 
 		@include vendor('flex-grow', '0');
 		@include vendor('flex-shrink', '0');
-		@include vendor('transition', (
+		/*@include vendor('transition', (
 			'margin-left 0.5s ease',
 			'box-shadow 0.5s ease'
 		));
+		*/
 		background-color: _palette(bg-alt);
 		font-size: 0.9em;
 		position: relative;
@@ -89,42 +90,6 @@
 			}
 		}
 
-		.toggle {
-			@include icon;
-			@include vendor('transition', 'left 0.5s ease');
-			-webkit-tap-highlight-color: rgba(255,255,255,0);
-			border: 0;
-			display: block;
-			height: 7.5em;
-			left: _size(sidebar-width);
-			line-height: 7.5em;
-			outline: 0;
-			overflow: hidden;
-			position: absolute;
-			text-align: center;
-			text-indent: 7.5em;
-			top: 2px; //topbar shadow
-			width: 6em;
-			z-index: _misc(z-index-base);
-			color: _palette(accent);
-
-			&:before {
-				content: '\f0c9';
-				font-size: 2rem;
-				height: inherit;
-				left: 0;
-				line-height: inherit;
-				position: absolute;
-				text-indent: 0;
-				top: 0;
-				width: inherit;
-			}
-		}
-
-		&.inactive {
-			margin-left: (_size(sidebar-width) * -1);
-		}
-
 		@include breakpoint(xlarge) {
 			$pad: 1.5em / 0.9;
 
@@ -141,22 +106,6 @@
 					width: calc(100% + #{$pad * 2});
 				}
 			}
-
-			.toggle {
-				height: 6.25em;
-				left: _size(sidebar-width-alt);
-				line-height: 6.25em;
-				text-indent: 5em;
-				width: 5em;
-
-				&:before {
-					font-size: 1.5rem;
-				}
-			}
-
-			&.inactive {
-				margin-left: (_size(sidebar-width-alt) * -1);
-			}
 		}
 
 		@include breakpoint(large) {
@@ -165,7 +114,7 @@
 			left: 0;
 			position: fixed;
 			top: 0;
-			z-index: _misc(z-index-base);
+			//z-index: _misc(z-index-base);
 
 			&.inactive {
 				box-shadow: none;
@@ -188,44 +137,85 @@
 				}
 			}
 
-			.toggle {
-				text-indent: 6em;
-				width: 6em;
-
-				&:before {
-					font-size: 1.5rem;
-					margin-left: (-0.875em / 2);
-				}
-			}
-
 			body.is-loading & {
 				display: none;
 			}
 		}
+	}
+
+	#toggle {
+		@include icon;
+		@include vendor('transition', 'left 0.5s ease');
+		-webkit-tap-highlight-color: rgba(255,255,255,0);
+		border: 0;
+		display: none;
+		height: 7.5em;
+		line-height: 7.5em;
+		outline: 0;
+		overflow: hidden;
+		position: absolute;
+		text-align: center;
+		text-indent: 7.5em;
+		top: 2px; //topbar shadow
+		width: 6em;
+		z-index: _misc(z-index-base);
+		color: _palette(accent);
+
+		&:before {
+			content: '\f0c9';
+			font-size: 2rem;
+			height: inherit;
+			left: 0;
+			line-height: inherit;
+			position: absolute;
+			text-indent: 0;
+			top: 0;
+			width: inherit;
+		}
+
+		@include breakpoint(xlarge) {
+			height: 6.25em;
+			line-height: 6.25em;
+			text-indent: 5em;
+			width: 5em;
+
+			&:before {
+				font-size: 1.5rem;
+			}
+		}
+
+		@include breakpoint(large) {
+			display: block;
+			text-indent: 6em;
+			width: 6em;
+
+			&:before {
+				font-size: 1.5rem;
+				margin-left: (-0.875em / 2);
+			}
+		}
 
 		@include breakpoint(small) {
-			.toggle {
-				text-indent: 7.25em;
-				width: 7.25em;
+			text-indent: 7.25em;
+			width: 7.25em;
 
-				&:before {
-					color: _palette(fg);
-					margin-left: (-0.125em / 2);
-					margin-top: (-0.5em / 2);
-					font-size: 1.1rem;
-					z-index: 1;
-				}
+			&:before {
+				color: _palette(fg);
+				margin-left: (-0.125em / 2);
+				margin-top: (-0.5em / 2);
+				font-size: 1.1rem;
+				z-index: 1;
+			}
 
-				&:after {
-					background: transparentize(_palette(fg-white), 0.1);
-					border-radius: 2px;
-					content: '';
-					height: 3.5em;
-					left: 1em;
-					position: absolute;
-					top: 1em;
-					width: 5em;
-				}
+			&:after {
+				background: transparentize(_palette(fg-white), 0.1);
+				border-radius: 2px;
+				content: '';
+				height: 3.5em;
+				left: 1em;
+				position: absolute;
+				top: 1em;
+				width: 5em;
 			}
 		}
 	}
