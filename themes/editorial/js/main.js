@@ -55,22 +55,9 @@
 
 				});
 			// 
-			$links.addClass('is-loading');
-
-			$window.on('load', function() {
-				setTimeout(function() {
-					$links.removeClass('is-loading');
-				}, 100);
-			});
-
-			//
-			$sidebar.addClass('is-loading');
-
-			$window.on('load', function() {
-				setTimeout(function() {
-					$sidebar.removeClass('is-loading');
-				}, 100);
-			});
+			$window.on('load', () => {
+				$sidebar.css("opacity", "1");
+			})
 
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();
@@ -286,9 +273,12 @@
 					}
 				}
 				
-				$(window).on('resize load',function(){
+				$(window).on('load',function(){
+					calcWidth();
+					$links.css("opacity", "1");
+				});
+				$(window).on('resize',function(){
 					setTimeout(calcWidth, 100);
-					
 				});
 
 				var linksBtn = document.getElementById('links-more-btn'),

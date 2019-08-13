@@ -243,3 +243,10 @@ tr.program--now {
 }
 
 
+@include breakpoint(large) {
+    #sidebar, #nav-links {
+        opacity: 0;
+    }
+}
+
+
