@@ -245,7 +245,6 @@
 						navwidth += $(this).outerWidth( true );
 					});
 					
-					//var availablespace = $('nav').outerWidth(true) - morewidth;
 					var availablespace = $('#nav-links').width() - morewidth;
 					
 					if (navwidth > availablespace && !$('#links > li').first().hasClass("more")) {
@@ -269,22 +268,33 @@
 					}
 				}
 				
-				
 				$(window).on('resize load',function(){
 					setTimeout(calcWidth, 100);
 					
 				});
 
 				var linksBtn = document.getElementById('links-more-btn'),
-					linksMore = document.getElementById('links-more-ul');
-				$main.on('click', function(event) { 
-					linksMore.style.display = "";
-					
+						linksMore = document.getElementById('links-more-ul');   
 
-				})     
-				$(linksBtn).on('click touchend', function(event) {
-					linksMore.style.display = "block";
+				// open nad close on button click
+				linksBtn.addEventListener('click', () => {
+					if(linksMore.style.display){
+						linksMore.style.display = "";
+					}
+					else{
+						linksMore.style.display = "block";
+					}
 				})
+
+				// close when clicked outside button
+				document.addEventListener('click', (e) => {
+					if(!linksBtn.contains(e.target)){
+						linksMore.style.display = "";
+					}
+				});
+
+				// close on main menu manipulation
+				slideout.on('translatestart', () => { linksMore.style.display = "" });
 
 
 		// fix offset for anchors due to fixed header
