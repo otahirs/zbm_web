@@ -250,3 +250,34 @@ tr.program--now {
 }
 
 
+ul.tabs li.group-icon {
+    display: none;
+}
+@include breakpoint(medium) {
+    ul.tabs li.group-icon {
+        display: block;
+    }
+    ul.tabs li.group-text {
+        display: none;
+    }
+}
+
+@include breakpoint(medium) {
+    ul.tabs {
+        display: flex;
+    }
+    ul.tabs li{ 
+        text-align: center;
+        &.group-info {
+            flex: 1;
+        }
+        &.group-plan {
+            flex: 3;
+        }
+        &.group-icon {
+            flex: 1;
+        }
+    }
+}
+
+
