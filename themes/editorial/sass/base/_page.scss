@@ -35,5 +35,14 @@
 					@include vendor('transition', 'none !important');
 				}
 			}
+	}
 
+	#nav-links.is-loading {
+		visibility: hidden;
+	}
+
+	#sidebar .is-loading{
+		@include breakpoint(large) {
+			visibility: hidden;
+		}
 	}

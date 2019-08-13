@@ -24,7 +24,8 @@
 			$head = $('head'),
 			$body = $('body'),
 			$main = $('#main'),
-			$sidebar = $('#sidebar');
+			$sidebar = $('#sidebar'),
+			$links = $('#nav-links');
 
 		// Disable animations/transitions ...
 
@@ -53,6 +54,23 @@
 						}, 100);
 
 				});
+			// 
+			$links.addClass('is-loading');
+
+			$window.on('load', function() {
+				setTimeout(function() {
+					$links.removeClass('is-loading');
+				}, 100);
+			});
+
+			//
+			$sidebar.addClass('is-loading');
+
+			$window.on('load', function() {
+				setTimeout(function() {
+					$sidebar.removeClass('is-loading');
+				}, 100);
+			});
 
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();

@@ -1269,6 +1269,13 @@ body {
     -ms-transition: none !important;
     transition: none !important; }
 
+#nav-links.is-loading {
+  visibility: hidden; }
+
+@media screen and (max-width: 1280px) {
+  #sidebar .is-loading {
+    visibility: hidden; } }
+
 /* Type */
 body, input, select, textarea, .pure-g [class*="pure-u"] {
   color: #333;
@@ -2827,7 +2834,8 @@ tr.program--now {
   #nav-links > ul > li {
     background: none;
     float: left;
-    position: relative; }
+    position: relative;
+    padding: 0; }
     #nav-links > ul > li.hide {
       display: none; }
     #nav-links > ul > li:hover {
