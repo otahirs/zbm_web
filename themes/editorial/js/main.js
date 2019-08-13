@@ -97,7 +97,7 @@
 				});		
 				
 				// resize padding because sidebar width is dynamic
-				$(window).on('resize load',function(){
+				$(window).on('resize',function(){
 					setTimeout(function(){
 						if(skel.breakpoint("large").active){
 							slideout.padding = $sidebar.css("width").slice(0, -2);
@@ -293,8 +293,8 @@
 					}
 				});
 
-				// close on main menu manipulation
-				slideout.on('translatestart', () => { linksMore.style.display = "" });
+				// close when main menu is opened
+				slideout.on('beforeopen', () => { linksMore.style.display = "" });
 
 
 		// fix offset for anchors due to fixed header
