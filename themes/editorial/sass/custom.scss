@@ -63,7 +63,8 @@ table.plan td {
 #soon {
     padding: 0 1.5rem;
     background-color: _palette(accent);
-    height: auto;
+    height: 100%;
+    position: relative;
 }
 
 .soon--date {
@@ -108,9 +109,9 @@ table.plan td {
     width: 0;
     height: calc(100% - 40px);
     float: left;
-    left: 9px;
+    left: 30px;
     margin-top: 40px;
-    position: relative;
+    position: absolute;
 }
 
 /****************
