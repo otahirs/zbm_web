@@ -179,7 +179,7 @@ content:
         return false;
       }
     }); 
-  	//userList.update();
+  	userList.update();
   	$(".filter-all").prop('checked', true);
   	$('.filter').prop('checked', false);
     $('.search').val('');
