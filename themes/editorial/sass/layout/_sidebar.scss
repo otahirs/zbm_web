@@ -36,7 +36,8 @@
 
 	#sidebar {
 		$pad: 2em / 0.9;
-
+		overflow: hidden;
+		
 		@include vendor('flex-grow', '0');
 		@include vendor('flex-shrink', '0');
 		/*@include vendor('transition', (
@@ -217,5 +218,6 @@
 				top: 1em;
 				width: 5em;
 			}
+
 		}
 	}
