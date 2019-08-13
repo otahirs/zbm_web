@@ -1269,13 +1269,6 @@ body {
     -ms-transition: none !important;
     transition: none !important; }
 
-#nav-links.is-loading {
-  visibility: hidden; }
-
-@media screen and (max-width: 1280px) {
-  #sidebar .is-loading {
-    visibility: hidden; } }
-
 /* Type */
 body, input, select, textarea, .pure-g [class*="pure-u"] {
   color: #333;
@@ -2880,3 +2873,7 @@ tr.program--now {
     background-color: #e65646; }
     #program td.edit:hover a {
       color: #333 !important; }
+
+@media screen and (max-width: 1280px) {
+  #sidebar, #nav-links {
+    opacity: 0; } }
