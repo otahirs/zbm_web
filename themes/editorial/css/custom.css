@@ -459,7 +459,7 @@ width: 0px; /*For Chrome, Safari and Opera*/
   }
 
 #main {
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 
