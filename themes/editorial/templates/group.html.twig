@@ -9,12 +9,19 @@
 {# {{ page.content }} #}
 
         <ul class="tabs">
-            <li data-tab="info" class="tab-link">Info</li>
-            <li data-tab="plan" class="tab-link current">Plán na tento týden</li>
-            <li data-tab="soustredeni" class="tab-link">Soustředění</li>
-            <li data-tab="routes" class="tab-link">Postupy</li>
-            <li data-tab="results" class="tab-link">Výsledky</li>
-            <li data-tab="mapt" class="tab-link">Mapová teorie</li>
+            <li data-tab="info" class="tab-link group-base group-info">Info</li>
+            <li data-tab="plan" class="tab-link group-base group-plan current">Plán na tento týden</li>
+        
+            <li data-tab="soustredeni" class="tab-link group-text">Soustředění</li>
+            <li data-tab="routes" class="tab-link group-text">Postupy</li>
+            <li data-tab="results" class="tab-link group-text">Výsledky</li>
+            <li data-tab="mapt" class="tab-link group-text">Mapová teorie</li>
+        </ul>
+        <ul class="tabs">
+            <li data-tab="soustredeni" class="tab-link group-icon"><i class="fa fa-users" aria-hidden="true"></i></li>
+            <li data-tab="routes" class="tab-link group-icon"><i class="fa fa-location-arrow" aria-hidden="true"></i></li>
+            <li data-tab="results" class="tab-link group-icon"><i class="fa fa-list-ol" aria-hidden="true"></i></li>
+            <li data-tab="mapt" class="tab-link group-icon"><i class="fa fa-map" aria-hidden="true"></i></li>
         </ul>
 
     {% set collection = taxonomy.findTaxonomy({'skupina':page.header.group}).order('header.start','asc')  %} 
