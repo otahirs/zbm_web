@@ -296,7 +296,6 @@
 				// close on main menu manipulation
 				slideout.on('translatestart', () => { linksMore.style.display = "none" });
 
-
 		// fix offset for anchors due to fixed header
 			var offset = 95;
 			$('a[href*="#"]:not([href="#"], #sidebar)').click(function() {
