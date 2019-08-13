@@ -97,7 +97,7 @@
 				});		
 				
 				// resize padding because sidebar width is dynamic
-				$(window).on('resize load',function(){
+				$(window).on('resize',function(){
 					setTimeout(function(){
 						if(skel.breakpoint("large").active){
 							slideout.padding = $sidebar.css("width").slice(0, -2);
@@ -278,8 +278,8 @@
 
 				// open nad close on button click
 				linksBtn.addEventListener('click', () => {
-					if(linksMore.style.display){
-						linksMore.style.display = "";
+					if(linksMore.style.display == "block"){
+						linksMore.style.display = "none";
 					}
 					else{
 						linksMore.style.display = "block";
@@ -289,12 +289,12 @@
 				// close when clicked outside button
 				document.addEventListener('click', (e) => {
 					if(!linksBtn.contains(e.target)){
-						linksMore.style.display = "";
+						linksMore.style.display = "none";
 					}
 				});
 
 				// close on main menu manipulation
-				slideout.on('translatestart', () => { linksMore.style.display = "" });
+				slideout.on('translatestart', () => { linksMore.style.display = "none" });
 
 
 		// fix offset for anchors due to fixed header
