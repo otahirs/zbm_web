@@ -16,8 +16,12 @@ content:
 
 <div class="pure-g"> {# cela stranka | je pouzit css framework purecss.io grids #}
   
-    <div id="novinky" class="pure-u-1 pure-u-sm-15-24"> <!-- plan + novinky vlevo -->
-
+    <div id="novinky" class="pure-u-1 pure-u-md-16-24"> <!-- plan + novinky vlevo -->
+    <div class="inner">
+        <header id="header">
+            <h1>Novinky</h1>
+        </header>
+        <section>
     {# {% if (authorize(['site.novinky'])) %} #} 
         <h2>         
             <span id="addNewsButton" style="cursor: pointer; padding: 5px 10px; border: grey dashed 2px;">Přidat novinku <i class="fa fa-plus-square-o" aria-hidden="true"></i></span>    
@@ -48,10 +52,10 @@ content:
                   {% set Mobile_img_ratio = PC_img_ratio %}
                   {% endif %}
                   <div class="newsIMG pure-u-1-{{Mobile_img_ratio}} pure-u-sm-1-{{PC_img_ratio}}" data-name="{{img.name}}" data-ratio="{{ img.ratio }}">
-                    <a href="{{base_url_absolute}}/data/{{p.header.date|slice(0,4)}}/novinky/novinka_{{p.header.id}}/img/{{img.name}}" target="_blank" title="Zobrazit originální obrázek">
+                    <a href="{{base_url_absolute}}/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/{{img.name}}" target="_blank" title="Zobrazit originální obrázek">
                       <picture>
                         {# časem WebP #}
-                        <img class="pure-img" src="{{base_url_absolute}}/data/{{p.header.date|slice(0,4)}}/novinky/novinka_{{p.header.id}}/img/preview_{{img.name}}" alt="Zde by měl být obrázek">
+                        <img class="pure-img" src="{{base_url_absolute}}/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/preview_{{img.name}}" alt="Zde by měl být obrázek">
                       </picture>
                     </a>
                   </div>
@@ -72,38 +76,57 @@ content:
             }
         });
     </script>
+    </section>
+    </div>
    </div> <!-- plan + novinky -->
 
 
-    <div id="blizi-se" class="pure-u-1 pure-u-sm-9-24">
-    <div id="home--groups">
-      <a href="/skupiny/zabicky" class="home--groups-text">Žabičky</a>&nbsp;
-      <a href="/skupiny/pulci1" class="home--groups-text">Pulci&nbsp;1</a>&nbsp;
-      <a href="/skupiny/pulci2" class="home--groups-text">Pulci&nbsp;2</a>&nbsp;
-      <a href="/skupiny/zaci1" class="home--groups-text">Žáci&nbsp;1</a>&nbsp;
-      <a href="/skupiny/zaci2" class="home--groups-text">Žáci&nbsp;2</a>&nbsp;
-      <a href="/skupiny/dorost" class="home--groups-text">Dorost+</a>
-    </div>
-
-      {% set soon_collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']).order('p.header.start','asc') %}
+    <div id="soon" class="pure-u-1 pure-u-md-8-24">
+    <br>
+      <h4>Kliknutím upravíte náhled události</h4>
+    
+      <div id="soon--timeline"></div>
+      {% set soon_collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']).order('header.start','asc') %}
+      {% set currdate = strtotime("today")|date('Y-m-d') %}
 
       {% for p in soon_collection %}
         {% if  (  p.header.start|date('Y-m-d') <= strtotime("today +10 day")|date('Y-m-d') and p.header.end|date('Y-m-d') >= strtotime("today")|date('Y-m-d') ) %}
-          <article>
-            <h4>
-              {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' '~ p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
-                  |&nbsp;&nbsp;{{ p.header.title ~' '~ p.header.event.location }} 
-            {#  {% if (authorize(['site.blizise'])) %} #}
-                &nbsp; <span class="editBliziSeButton" style="cursor: pointer;"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-            {#  {% endif %} #}
-              <br>{% if p.header.eventTypeDescription is not empty %}<em style="font-weight:normal;">{{p.header.eventTypeDescription}}</em>{% endif %}
-            </h4>
-            <section data-id="{{p.header.id}}" data-template="{{p.header.template}}">
-              {{p.content}}
-            </section>
-          </article>
 
-          <hr width="62.11%">
+          {% if first is not defined %}
+              <h6 class="soon--date soon--date-now"><span class="soon--dot soon--dot-now"></span> &nbsp;
+              {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
+              </h6>
+            {% set first = 1 %}
+          {% endif %}
+
+          {% if p.header.start > currdate %}
+            {% set currdate = p.header.start %}
+            <h6 class="soon--date"><span class="soon--dot"></span> &nbsp;
+              {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
+            </h6>
+          {% endif %}
+
+          
+          <section class="editBliziSeButton" style="cursor: pointer;">
+            <h4>
+              {{ p.header.title ~' '~ p.header.event.location }} 
+          
+              <br>
+              <em style="font-weight:normal;">
+                {% set group = p.header.taxonomy.skupina %}
+                {% if group|length > 0 and group|length < 6 %}
+                {% if "zabicky" in group %} žabičky {% endif %} 
+                {% if "pulci1" in group and "pulci2" in group %} pulci {% elseif "pulci1" in group %} pulci1 {% elseif "pulci2" in group %} pulci2 {% endif %} 
+                {% if "zaci1" in group and "zaci2" in group %} žáci {% elseif "zaci1" in group %} žáci1 {% elseif "zaci2" in group %} žáci2 {% endif %} 
+                {% if "dorost" in group %} dorost+ {% endif %}
+                {% endif %}
+              </em>
+            </h4>
+            <article data-id="{{p.header.id}}" data-template="{{p.header.template}}">
+              {{p.content}}
+            </article>
+          </section>
+         
         {% endif %}
       {% endfor %}
 
@@ -195,7 +218,7 @@ var News_simplemde = new SimpleMDE({ element: document.getElementById("News--con
     document.getElementById("addNewsButton").onclick = function() {       
         News_POST_type.value = "addNews"; //inicializace POST pozadavku pro PHP zpracovani
         News_header.innerHTML = "Přidat novinku";  //inicializace - Nadpis
-        $(News_modal).scrollTop(0);
+        window.scrollTo(0, 0);
         News_modal.style.display = "block"; //zobrazi modal
         News_simplemde.codemirror.refresh(); //inicializuje textovy iditor
     }
@@ -245,7 +268,7 @@ $(".edit-news").click(function(){
      /* prida tlacitko pro smazani novinky*/
        News_deleteButtonSpan.innerHTML = '<button type="button" id="deleteNewsButton"><i class="fa fa-trash-o" aria-hidden="true"></i></button>';
      
-    $(News_modal).scrollTop(0);
+    window.scrollTo(0, 0);
     News_modal.style.display = "block"; // zobrazi modal
     News_simplemde.codemirror.refresh(); //inicializace textovy editor
 });
@@ -417,8 +440,10 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
     });
 
   $(".editBliziSeButton").click(function(){
-      this.style.display = "none";  //schova ikonu na upravu
-      var content = this.parentElement.parentElement.querySelector("section") //nacte tag obsahujici text blizi se
+      var soonEvent = this;
+      if(soonEvent.classList.contains("active")) return;
+      soonEvent.classList.add("active");
+      var content = this.querySelector("article") //nacte tag obsahujici text blizi se
       var content_text = content.innerHTML.trim(); //ulozi stary text a odstihne ze zacatku a konce bile znaky
       content.innerHTML = '<form method="post" action="/php/blizise">' +  //nahradi text blizi se formularem na upravu
                             '<input name="POST_type" type="hidden" value="editBliziSe">' +
@@ -445,7 +470,7 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
       $(".editBliziSeCancel").click(function(e){ //tlacitko pro zruseni
         e.stopPropagation(); //zastavi propagaci click eventu aby se neodesilal formular pres tlacitko submit
         content.innerHTML = content_text; //vrati drive ulozeny text
-        $(".editBliziSeButton").css("display", "inline"); //zobrazi tlacitko pro edit
+        soonEvent.classList.remove("active");
       })
 
       $(".saveBlizise").click(function(e){
@@ -460,7 +485,9 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
               processData: false,
               contentType: false,
               success: function ()
-              {  window.location.replace(location.href);
+              { 
+                soonEvent.classList.remove("active"); 
+                window.location.replace(location.href);
               },
               error: function (xhr, desc, err){
                 console.log(err);
@@ -480,7 +507,8 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
               processData: false,
               contentType: false,
               success: function ()
-              {  window.location.replace(location.href);
+              {  soonEvent.classList.remove("active");
+                window.location.replace(location.href);  
               },
               error: function (xhr, desc, err){
                 console.log(err);

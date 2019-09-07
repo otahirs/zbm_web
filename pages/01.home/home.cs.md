@@ -41,7 +41,7 @@ content:
                     <a href="{{base_url_absolute}}/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/{{img.name}}" target="_blank" title="Zobrazit originální obrázek">
                       <picture>
                         {# časem WebP #}
-                        <img class="pure-img" src="user/pages/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/preview_{{img.name}}" alt="Zde by měl být obrázek">
+                        <img class="pure-img" src="{{base_url_absolute}}/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/preview_{{img.name}}" alt="Zde by měl být obrázek">
                       </picture>
                     </a>
                   </div>
