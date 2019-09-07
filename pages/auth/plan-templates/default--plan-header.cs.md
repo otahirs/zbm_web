@@ -52,6 +52,7 @@ winter:
             place: 'Hala Rosnička'
             meetup: '16:30'
             group:
+                    - zaci2
                     - dorost
     tuesday:
         1:
@@ -133,27 +134,21 @@ winter:
 ---
 
 <form id="form-weekly-plan" class="pure-form" method="post" action="" >
-<div class="pure-g">
-        <div class="pure-u">
-        <input name="POST_type" type="hidden" value="weeklyPlan">
-        <input name="filePath" type="hidden" value="{{'./' ~ page.relativePagePath() ~ '/' ~ page.name}}"> 
-        <input id="POST_season" name="season" type="hidden" value="{{page.header.currentSeason}}"> 
-        </div>
-        <div id="control" class="pure-u-1 pure-u-lg-4-24" >
-            <div style="padding-left: 5em;">
-                <h4>Vybrat šablonu:</h4>
-                <input type="radio" name="season" value="summer" id="choose-summer" {% if page.header.currentSeason == "summer" %} checked {% endif %}> 
-                    <label for="choose-summer" class="pure-radio">Letní</label>   
-                <input type="radio" name="season" value="winter" id="choose-winter" {% if page.header.currentSeason == "winter" %} checked {% endif %}> 
-                    <label for="choose-winter" class="pure-radio">Zimní</label>  
-                <hr>
-                <button id="save-weekly-plan" type="submit">Uložit</button>
-                <span id="form-response"></span>
-                <hr>
-            </div>
-        </div>
+    <input name="POST_type" type="hidden" value="weeklyPlan">
+    <input name="filePath" type="hidden" value="{{'./' ~ page.relativePagePath() ~ '/' ~ page.name}}"> 
+    <input id="POST_season" name="season" type="hidden" value="{{page.header.currentSeason}}"> 
+    <div id="control">
+        <b>Vybrat šablonu:</b>
+        <input type="radio" name="season" value="summer" id="choose-summer" {% if page.header.currentSeason == "summer" %} checked {% endif %}> 
+            <label for="choose-summer" class="pure-radio">Letní</label>   
+        <input type="radio" name="season" value="winter" id="choose-winter" {% if page.header.currentSeason == "winter" %} checked {% endif %}> 
+            <label for="choose-winter" class="pure-radio">Zimní</label>  
+
+        <button id="save-weekly-plan" type="submit">Uložit</button>
+        <span id="form-response"></span>
+    </div>
+    <hr>
         {# tables for each season #}
-        <div id="tables" class="pure-u-1 pure-u-lg-20-24">
             {% set listOfSeasons = ["summer", "winter"] %}
             {% for season in listOfSeasons %}
                 <table class="pure" id="table-{{season}}" {% if page.header.currentSeason != season %} style="display: none;" {% endif %}>
@@ -234,8 +229,6 @@ winter:
                     });
                 </script>
             {% endfor %}
-        </div>
-</div>
  </form>
 {# sctript with the same code for all tables #}
 <script>
@@ -288,6 +281,8 @@ winter:
             });
     }
 </script>
+
+
 
 
 

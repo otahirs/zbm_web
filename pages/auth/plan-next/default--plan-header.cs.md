@@ -303,8 +303,26 @@ window.addEventListener('load', function() {
         modal.style.display = "block";
       }
 
+      function reset_modal(){
+        zabicky.checked = pulci1.checked = pulci2.checked = zaci1.checked = zaci2.checked = dorost.checked = false;
+        name.value = meetup.value = place.value = "";
+      }
+
+      function remove_if_empty(){
+        /* pokud je všechno prazdne a neni posledni radek, odstrani se */
+        if($(clicked_row).hasClass("event--basic") && name.value == "" && meetup.value == "" && place.value == "" ){
+          // presune nazev dne
+            var day_name = $(clicked_row).children(".den").html();
+            if(day_name.trim().length > 1){
+              $(clicked_row).next().children(".den").html(day_name);
+            }
+          // ostranit
+          $(clicked_row).remove();
+        }
+      }
+
         // fce vrací upravená data do tabulky, odstrani radek pokud je prazdny, popř. po vyplnění dodá další prázdný
-          function close_modal(event) {
+          function save_modal(event) {
             // presun dat 
               // skupiny
                 var data_str = "",
@@ -357,38 +375,32 @@ window.addEventListener('load', function() {
                   $(clicked_row).addClass("event--basic");
                   $(clicked_row).after(new_row);
                 }
-            /* pokud je všechno prazdne a neni posledni radek, odstrani se */
-                if($(clicked_row).hasClass("event--basic") && name.value == "" && meetup.value == "" && place.value == "" ){
-                  // presune nazev dne
-                    var day_name = $(clicked_row).children(".den").html();
-                    if(day_name.trim().length > 1){
-                      $(clicked_row).next().children(".den").html(day_name);
-                    }
-                  // ostranit
-                  $(clicked_row).remove();
-                }
-            // reset modal
-                zabicky.checked = pulci1.checked = pulci2.checked = zaci1.checked = zaci2.checked = dorost.checked = false;
-                name.value = meetup.value = place.value = "";
+            
+            remove_if_empty();
+            reset_modal();
             // zavrit modal
-                modal.style.display = "none";
+            modal.style.display = "none";
           } 
       // vymazat řádek
           modal_delete_btn.addEventListener('click',function(){
-            name.value = meetup.value = place.value = "";
-            close_modal();
+            reset_modal();
+            remove_if_empty();
+            
+            modal.style.display = "none";
           })
 
       // Zavřit modal beze zmen
           // Ecs
           window.addEventListener('keyup',function(e){
             if (e.keyCode === 27) { 
+              reset_modal();
               modal.style.display = "none";
             }
           })
           // click mimo modal
           window.addEventListener('click', function(e){
             if (e.target == modal) {
+              reset_modal();
               modal.style.display = "none";
             }
           })
@@ -397,14 +409,15 @@ window.addEventListener('load', function() {
           // Enter
           window.addEventListener('keyup',function(e){
             if (e.keyCode === 13) { //13 = enter
-              close_modal();
+              save_modal();
             }
           })
           
           // Save
-          modal_sava_btn.addEventListener('click', close_modal)
+          modal_sava_btn.addEventListener('click', save_modal)
 
-      function saveAll(reload=true){
+      // uložit vše
+      save_btn.addEventListener('click', function(){
         var planForm = new FormData();
         // všechny řádky tabulky označené jako event--basic pošle na zpracování
         $(".event--basic").each(function(index){
@@ -429,17 +442,13 @@ window.addEventListener('load', function() {
              processData: false,
              contentType: false,
              success: function (){ 
-               if(reload){
-                  window.location.replace(location.href);
-               }
+               window.location.replace(location.href);
              },
              error: function (xhr, desc, err){
 
              }
         });
-      }
-      // uložit vše
-      save_btn.addEventListener('click', saveAll);
+      })
 
   /******************/
   /* Načíst šablonu */
@@ -492,67 +501,5 @@ window.addEventListener('load', function() {
             console.log(event.target);
       }
     });
-
-    /* cron save */
-    function getSearchParams(k){
-      var p={};
-      location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})
-      return k?p[k]:p;
-    }
-    
-    if(getSearchParams("save")){
-        saveAll(reload=false);
-    }
 });
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
