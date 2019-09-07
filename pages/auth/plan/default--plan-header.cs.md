@@ -115,7 +115,7 @@ plan:
                     {# pokud je mezi start a end datum_dne_v_tydnu, zobrazi se v tabulce#}
                     {%  if (  p.header.start <= datum_dne_v_tydnu and p.header.end >= datum_dne_v_tydnu ) %}
                       <tr {% if day_num % 2 == 0 %} class="plan--lichyDen event--program"  {% else %} class="plan--sudyDen event--program" {% endif %}
-                        data-path="{{ base_url  ~ "/auth/upravit-eventy/edit?event=/data/" ~ p.header.id[1:4] ~ "/" ~ p.header.template ~ "/" ~ p.header.id ~ "/" ~ p.name }}">
+                        data-path="{{ base_url  ~ "/auth/events/edit?event=" ~ p.header.id[0:4] ~ "/" ~ p.header.id }}">
                         <td class="den">
                             {# zobrazi nazev dne (napr. "PO") jen pokud jiz neexistuje zaznam dne v tabulce #}
                             {% if zapsany_den != den %}    {# podminka, jestli uz se zapisoval #}
@@ -299,8 +299,26 @@ window.addEventListener('load', function() {
         modal.style.display = "block";
       }
 
+      function reset_modal(){
+        zabicky.checked = pulci1.checked = pulci2.checked = zaci1.checked = zaci2.checked = dorost.checked = false;
+        name.value = meetup.value = place.value = "";
+      }
+
+      function remove_if_empty(){
+        /* pokud je všechno prazdne a neni posledni radek, odstrani se */
+        if($(clicked_row).hasClass("event--basic") && name.value == "" && meetup.value == "" && place.value == "" ){
+          // presune nazev dne
+            var day_name = $(clicked_row).children(".den").html();
+            if(day_name.trim().length > 1){
+              $(clicked_row).next().children(".den").html(day_name);
+            }
+          // ostranit
+          $(clicked_row).remove();
+        }
+      }
+
         // fce vrací upravená data do tabulky, odstrani radek pokud je prazdny, popř. po vyplnění dodá další prázdný
-          function close_modal(event) {
+          function save_modal(event) {
             // presun dat 
               // skupiny
                 var data_str = "",
@@ -353,38 +371,32 @@ window.addEventListener('load', function() {
                   $(clicked_row).addClass("event--basic");
                   $(clicked_row).after(new_row);
                 }
-            /* pokud je všechno prazdne a neni posledni radek, odstrani se */
-                if($(clicked_row).hasClass("event--basic") && name.value == "" && meetup.value == "" && place.value == "" ){
-                  // presune nazev dne
-                    var day_name = $(clicked_row).children(".den").html();
-                    if(day_name.trim().length > 1){
-                      $(clicked_row).next().children(".den").html(day_name);
-                    }
-                  // ostranit
-                  $(clicked_row).remove();
-                }
-            // reset modal
-                zabicky.checked = pulci1.checked = pulci2.checked = zaci1.checked = zaci2.checked = dorost.checked = false;
-                name.value = meetup.value = place.value = "";
+            
+            remove_if_empty();
+            reset_modal();
             // zavrit modal
-                modal.style.display = "none";
+            modal.style.display = "none";
           } 
       // vymazat řádek
           modal_delete_btn.addEventListener('click',function(){
-            name.value = meetup.value = place.value = "";
-            close_modal();
+            reset_modal();
+            remove_if_empty();
+            
+            modal.style.display = "none";
           })
 
       // Zavřit modal beze zmen
           // Ecs
           window.addEventListener('keyup',function(e){
             if (e.keyCode === 27) { 
+              reset_modal();
               modal.style.display = "none";
             }
           })
           // click mimo modal
           window.addEventListener('click', function(e){
             if (e.target == modal) {
+              reset_modal();
               modal.style.display = "none";
             }
           })
@@ -393,12 +405,12 @@ window.addEventListener('load', function() {
           // Enter
           window.addEventListener('keyup',function(e){
             if (e.keyCode === 13) { //13 = enter
-              close_modal();
+              save_modal();
             }
           })
           
           // Save
-          modal_sava_btn.addEventListener('click', close_modal)
+          modal_sava_btn.addEventListener('click', save_modal)
 
       // uložit vše
       save_btn.addEventListener('click', function(){
