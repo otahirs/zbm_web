@@ -133,9 +133,10 @@ class PhpTwigExtension extends \Twig_Extension
 
         $row_is_content = false;
         $parsed = "";
-        foreach($rows as $row){   //prochazi vsechny radky
+        foreach($rows as $key => $row){   //prochazi vsechny radky
             if($row_is_content){
-                $parsed .= $row . PHP_EOL; 
+                $parsed .= $row; 
+                if($key !== array_key_last($rows)) $parsed .= PHP_EOL;
             }
             else{
                 if(trim($row) == "---"){
@@ -487,7 +488,7 @@ class PhpTwigExtension extends \Twig_Extension
     //******************************************************************************************************/
     //updatuje kontent zobrazovany v Blizi se
     public function editBliziSeFunction($user){
-        $year = substr($_POST["id"], 1, 4);
+        $year = substr($_POST["id"], 0, 4);
         $template = $_POST['template'];
         $path = "./user/pages/data/events/". $year ."/". $_POST["id"] ."/". $template. ".cs.md";
 
