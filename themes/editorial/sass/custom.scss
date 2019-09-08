@@ -272,6 +272,9 @@ tr.program--now {
     position: relative;
     top: -2px;
 }
+#links-more-ul {
+    box-shadow: 0 3px 2px rgba(0,0,0,.2);
+}
 
 #program .backgroundAccent{
     background-color: _palette(accent);
