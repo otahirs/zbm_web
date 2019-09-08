@@ -2844,7 +2844,7 @@ tr.program--now {
     text-decoration: none;
     font-family: Overpass;
     border-bottom: none;
-    font-size: 18px;
+    font-size: 1rem;
     padding: 20px; }
   #nav-links ul ul {
     background: #e6e6e6;
