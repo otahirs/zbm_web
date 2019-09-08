@@ -1858,7 +1858,7 @@ table {
     border-left: 0;
     border-right: 0; }
     table tbody tr:nth-child(2n + 1) {
-      background-color: #e6e6e6; }
+      background-color: #EEE; }
   table td {
     padding: 0.75em 0.75em; }
   table th {
@@ -2343,11 +2343,11 @@ button,
   font-size: 0.9em;
   position: relative;
   width: 18em;
-  color: #e6e6e6; }
+  color: #EEE; }
   #sidebar h2 {
     font-size: 1.38889em; }
   #sidebar a {
-    color: #e6e6e6; }
+    color: #EEE; }
     #sidebar a:hover {
       color: #e65646; }
   #sidebar > .inner {
@@ -2471,7 +2471,7 @@ button,
         font-size: 1.1rem;
         z-index: 1; }
       #toggle:after {
-        background: rgba(230, 230, 230, 0.9);
+        background: rgba(238, 238, 238, 0.9);
         border-radius: 2px;
         content: '';
         height: 3.5em;
@@ -2695,7 +2695,7 @@ ul.tabs li {
   line-height: 3rem;
   float: left;
   transition: all 0.18s;
-  background-color: #e6e6e6;
+  background-color: #EEE;
   font-weight: bold; }
   ul.tabs li:hover {
     color: #e65646; }
@@ -2718,7 +2718,7 @@ table.plan td {
   padding: 0.25em 0.75em; }
 
 .plan--lichyDen {
-  background-color: #e6e6e6 !important; }
+  background-color: #EEE !important; }
 
 .plan--sudyDen {
   background-color: inherit !important; }
@@ -2736,17 +2736,41 @@ table.plan td {
   background-color: #e65646;
   height: 100%;
   position: relative; }
+  #soon section {
+    padding: 1.5rem;
+    margin: 1.5rem;
+    position: relative;
+    left: 1rem;
+    border: 1px dotted black;
+    transition: background-color 0.5s;
+    /*
+        background-color: #FAFAFA;
+        padding: 1.5rem;
+        border-radius: 7px;
+        margin: 1.3rem;
+        position: relative;
+        left: 1rem;
+        */ }
+    #soon section:hover {
+      outline: black solid 2px;
+      outline-offset: -2px; }
+  #soon:hover section {
+    border-style: solid;
+    background-color: white;
+    transition: background-color 0.5s; }
+  @media screen and (max-width: 736px) {
+    #soon section {
+      border-style: solid;
+      background-color: white; } }
 
 .soon--date {
   padding-top: 1.5rem; }
 
-#soon section {
-  background-color: #FAFAFA;
-  padding: 1.5rem;
-  border-radius: 7px;
-  margin: 1.3rem;
-  position: relative;
-  left: 1rem; }
+.soon-content {
+  font-size: 0.9em; }
+
+.soon-title {
+  font-size: 1em; }
 
 #soon section > article > ul {
   margin: 0; }
@@ -2834,30 +2858,32 @@ tr.program--now {
       color: #e65646; }
       #nav-links > ul > li:hover ul {
         display: block; }
-  #nav-links i {
-    padding: 20px;
-    font-size: 18px;
-    position: relative;
-    top: -2px; }
   #nav-links a {
     color: #333;
     text-decoration: none;
     font-family: Overpass;
     border-bottom: none;
     font-size: 1rem;
-    padding: 20px; }
+    padding: 1rem; }
   #nav-links ul ul {
-    background: #e6e6e6;
+    background: #EEE;
     display: none;
     list-style: none;
     padding: 0;
     position: fixed;
     right: 0;
-    top: 56px; }
+    top: 3rem; }
+    #nav-links ul ul li {
+      padding: 0; }
     #nav-links ul ul a {
-      margin-bottom: 15px;
-      padding: 0 15px;
-      white-space: nowrap; }
+      display: block;
+      padding: 0 1rem; }
+
+#links-more-btn i {
+  padding: 1rem;
+  font-size: 1rem;
+  position: relative;
+  top: -2px; }
 
 #program .backgroundAccent {
   background-color: #e65646; }

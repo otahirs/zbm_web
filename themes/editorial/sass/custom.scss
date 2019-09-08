@@ -64,20 +64,67 @@ table.plan td {
     background-color: _palette(accent);
     height: 100%;
     position: relative;
+
+    
+    section {
+    
+        padding: 1.5rem;
+        margin: 1.5rem;
+        position: relative;
+        left: 1rem;
+        border: 1px dotted black;
+        transition: background-color 0.5s;
+        
+        &:hover {
+            outline: black solid 2px;
+            outline-offset: -2px;
+        }
+        /*
+        background-color: #FAFAFA;
+        padding: 1.5rem;
+        border-radius: 7px;
+        margin: 1.3rem;
+        position: relative;
+        left: 1rem;
+        */
+        
+    }
+
+    &:hover {
+        section {
+            border-style: solid;
+            background-color: white;
+            transition: background-color 0.5s;
+        }
+    }
+
+    @include breakpoint(small) {
+        section {
+            border-style: solid;
+            background-color: white;
+        }
+    }
+    
+    
+
+
 }
 
 .soon--date {
     padding-top: 1.5rem;
 }
+.soon-content {
 
-#soon section {
-    background-color: #FAFAFA;
-    padding: 1.5rem;
-    border-radius: 7px;
-    margin: 1.3rem;
-    position: relative;
-    left: 1rem;
+    font-size: 0.9em;
+
 }
+.soon-title {
+
+    font-size: 1em;
+
+}
+
+
 #soon section > article > ul {
     margin: 0;
 }
@@ -158,6 +205,7 @@ tr.program--now {
 
 // NAV-LINKS
 
+
 #nav-links {
     position: relative;
     width: calc(100% - 20em);
@@ -189,12 +237,6 @@ tr.program--now {
 			}
 		}
     }
-    i {
-        padding: 20px;
-        font-size: 18px;
-        position: relative;
-        top: -2px;
-    }
 	
 	a {
 		color: _palette(fg);
@@ -202,7 +244,7 @@ tr.program--now {
         font-family: Overpass;
         border-bottom: none;
         font-size: 1rem;
-        padding: 20px;
+        padding: 1rem;
 	}
 	
 	ul ul {
@@ -212,14 +254,23 @@ tr.program--now {
 		padding: 0;
 		position: fixed;
         right: 0;
-        top: 56px;
-		
+        top: 3rem;
+        
+        li {
+            padding: 0;
+        }
 		a {
-          margin-bottom: 15px;
-		  padding: 0 15px;
-		  white-space: nowrap;
-		}
+            display: block;
+            padding: 0 1rem;
+        }
+        
 	}	
+}
+#links-more-btn i{
+    padding: 1rem;
+    font-size: 1rem;
+    position: relative;
+    top: -2px;
 }
 
 #program .backgroundAccent{

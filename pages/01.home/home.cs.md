@@ -85,7 +85,7 @@ content:
 
           <a href="{{p.url}}">
           <section>
-            <h4>
+            <h4 class="soon-title">
                 {{ p.header.title ~' '~ p.header.event.location }} 
               <br>
               <em style="font-weight:normal;">
@@ -98,7 +98,7 @@ content:
                 {% endif %}
               </em>
             </h4>
-            <article data-id="{{p.header.id}}" data-template="{{p.header.template}}">
+            <article class="soon-content" data-id="{{p.header.id}}" data-template="{{p.header.template}}">
               {{p.content}}
             </article>
           </section>

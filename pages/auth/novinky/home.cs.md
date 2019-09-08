@@ -108,7 +108,7 @@ content:
 
           
           <section class="editBliziSeButton" style="cursor: pointer;">
-            <h4>
+            <h4 class="soon-title">
               {{ p.header.title ~' '~ p.header.event.location }} 
           
               <br>
@@ -122,7 +122,7 @@ content:
                 {% endif %}
               </em>
             </h4>
-            <article data-id="{{p.header.id}}" data-template="{{p.header.template}}">
+            <article class="soon-content" data-id="{{p.header.id}}" data-template="{{p.header.template}}">
               {{p.content}}
             </article>
           </section>
