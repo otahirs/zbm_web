@@ -2357,7 +2357,7 @@ button,
     #sidebar > .inner > * {
       border-bottom: solid 2px rgba(210, 215, 217, 0.75);
       margin: 0 0 3.5em 0;
-      padding: 0 0 3.5em 0; }
+      padding: 1em 0 0 0.7em; }
       #sidebar > .inner > * > :last-child {
         margin-bottom: 0; }
       #sidebar > .inner > *:last-child {
@@ -2663,7 +2663,6 @@ button,
         transform: rotate(-180deg); }
 
 #menu > ul > li {
-  border-top: solid 1px #2B2B2B;
   margin: 0.5em 0 0 0;
   padding: 0.5em 0 0 0; }
   #menu > ul > li > ul {
@@ -2741,7 +2740,7 @@ table.plan td {
     margin: 1.5rem;
     position: relative;
     left: 1rem;
-    border: 1px dotted black;
+    border: 1px dashed black;
     transition: background-color 0.5s;
     /*
         background-color: #FAFAFA;
@@ -2752,15 +2751,14 @@ table.plan td {
         left: 1rem;
         */ }
     #soon section:hover {
-      outline: black solid 2px;
-      outline-offset: -2px; }
+      outline: black solid 2px !important; }
   #soon:hover section {
-    border-style: solid;
+    border: solid white 1px;
     background-color: white;
-    transition: background-color 0.5s; }
+    transition: background-color 0.5s, border 0.5s, outline 0s; }
   @media screen and (max-width: 736px) {
     #soon section {
-      border-style: solid;
+      border: solid white 1px;
       background-color: white; } }
 
 .soon--date {
