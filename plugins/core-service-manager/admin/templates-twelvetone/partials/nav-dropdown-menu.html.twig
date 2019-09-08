@@ -138,8 +138,16 @@
         </button>
         <ul class="dropdown-menu">
             {% for item in items %}
-                <li><a class="button" href="{{ item.href }}"
-                       onclick='{{ item.onclick }}'><em>{{ item.caption }}</em></a></li>
+                <li>
+                    <a class="button" href="{{ item.href }}"
+                       onclick='{{ item.onclick }}'>
+                        {% if item.icon %}
+{#                        <i class="{{ item.iconstyle ?: 'fa' }} fa-fw {{ item.icon }}"></i>#}
+                        <i class="fa {{ item.icon }}"></i>
+                        {% endif %}
+                        <em>{{ item.caption }}</em>
+                    </a>
+                </li>
                 {#<li><a class="button" {{  "onclick='#{item.onclick}'" }} href="#modal" data-remodal-target="modal">{{ item.caption }}</a></li>#}
             {% endfor %}
         </ul>
