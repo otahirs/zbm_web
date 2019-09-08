@@ -23,7 +23,7 @@
 #
 
 name: Admin Power Tools
-version: 0.1.10
+version: 0.1.12
 description: Power tools for Grav.
 icon: plug
 author:
@@ -64,7 +64,7 @@ form:
         1: Enabled
         0: Disabled
       validate:
-        type: bool        
+        type: bool
 
     edit_section_enabled:
       type: toggle
@@ -88,7 +88,7 @@ form:
         0: Disabled
       validate:
         type: bool
-                
+
     add_page_enabled:
       type: toggle
       label: Additional <strong>Add Page</strong> options
@@ -98,8 +98,8 @@ form:
         1: Enabled
         0: Disabled
       validate:
-        type: bool        
-        
+        type: bool
+
     reports_enabled:
       type: toggle
       label: Reports
@@ -109,7 +109,7 @@ form:
         1: Enabled
         0: Disabled
       validate:
-        type: bool  
+        type: bool
 
     rename_page_enabled:
       type: toggle
@@ -121,8 +121,8 @@ form:
         1: Enabled
         0: Disabled
       validate:
-        type: bool                      
-        
+        type: bool
+
     move_page_enabled:
       type: toggle
       label: Move Page
@@ -133,8 +133,8 @@ form:
         1: Enabled
         0: Disabled
       validate:
-        type: bool      
-        
+        type: bool
+
     child_reordering_enabled:
       type: toggle
       label: Child Reordering
@@ -145,8 +145,8 @@ form:
         1: Show
         0: Hide
       validate:
-        type: bool                
-        
+        type: bool
+
     child_reordering_immediate:
       type: toggle
       label: Child Reordering Immediate
@@ -157,5 +157,4 @@ form:
         1: Show
         0: Hide
       validate:
-        type: bool        
-                  
+        type: bool
