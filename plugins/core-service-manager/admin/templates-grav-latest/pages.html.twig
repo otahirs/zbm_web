@@ -10,11 +10,8 @@
     {% set config = twig_vars['config'] %}
     {% set separator = config.system.param_sep %}
     {% set display_field = config.plugins.admin.pages_list_display_field %}
-    {% set base_url = twig_vars['base_url_relative'] %}
     {% set base_url_relative_frontend = twig_vars['base_url_relative_frontend'] %}
-    {% set base_url_simple = twig_vars['base_url_simple'] %}
-    {% set admin_route = twig_vars['admin_route'] %}
-    {% set admin_lang = twig_vars['admin_lang'] %}
+    {% set admin = twig_vars['admin'] %}
     {% set warn = twig_vars['warn'] %}
     {% set uri = twig_vars['uri'] %}
 
@@ -30,10 +27,10 @@
 
     {% for p in pcol %}
         {% set description = (not p.page ? "PLUGIN_ADMIN.FOLDER"|tu ~ ' &bull; ' : "PLUGIN_ADMIN.PAGE"|tu ~ ' &bull; ') ~
-            (p.modular ? "PLUGIN_ADMIN.MODULAR"|tu ~ ' &bull; ' : '') ~
-            (p.routable ? "PLUGIN_ADMIN.ROUTABLE"|tu ~ ' &bull; ' : "PLUGIN_ADMIN.NON_ROUTABLE"|tu ~ ' &bull; ') ~
-            (p.visible ? "PLUGIN_ADMIN.VISIBLE"|tu ~ ' &bull; ' : "PLUGIN_ADMIN.NON_VISIBLE"|tu ~ ' &bull; ') ~
-            (p.published ? "PLUGIN_ADMIN.PUBLISHED"|tu ~ ' &bull; ' : "PLUGIN_ADMIN.NON_PUBLISHED"|tu ~ ' &bull; ') %}
+                             (p.modular ? "PLUGIN_ADMIN.MODULAR"|tu ~ ' &bull; ' : '') ~
+                             (p.routable ? "PLUGIN_ADMIN.ROUTABLE"|tu ~ ' &bull; ' : "PLUGIN_ADMIN.NON_ROUTABLE"|tu ~ ' &bull; ') ~
+                             (p.visible ? "PLUGIN_ADMIN.VISIBLE"|tu ~ ' &bull; ' : "PLUGIN_ADMIN.NON_VISIBLE"|tu ~ ' &bull; ') ~
+                             (p.published ? "PLUGIN_ADMIN.PUBLISHED"|tu ~ ' &bull; ' : "PLUGIN_ADMIN.NON_PUBLISHED"|tu ~ ' &bull; ') %}
 
         {% set page_url = getPageUrl(p) %}
 
@@ -49,7 +46,7 @@
                             <a href="{{ page_url }}" class="page-edit">{{ page_label|e }}</a>
                         </span>
                         {% if p.language %}
-                            <span class="badge lang {% if p.language == admin_lang %}info{% endif %}">{{p.language}}</span>
+                            <span class="badge lang {% if p.language == admin.language %}info{% endif %}">{{p.language}}</span>
                         {% endif %}
                         {% if p.home %}
                             <span class="page-home"><i class="fa fa-home"></i></span>
@@ -60,11 +57,11 @@
                 <span class="page-item__tools">
                     {% if config.plugins.admin.frontend_preview_target != 'inline' %}
                         {% set preview_target = config.plugins.admin.frontend_preview_target %}
-                        {% set preview_html = (base_url_relative_frontend|rtrim('/') ~ (p.home ? '' : p.route)) ?: '/' %}
-                        {% set preview_link = p.routable ? '<a class="page-view" target="' ~ preview_target ~ '" href="' ~ preview_html ~ '" title="' ~ "PLUGIN_ADMIN.PREVIEW"|tu ~ '"> <i class="fa fa-fw fa-eye"></i></a>' : '' %}
+                        {% set preview_route = (base_url_relative_frontend|rtrim('/') ~ (p.home ? '' : p.route)) ?: '/' %}
+                        {% set preview_link = p.routable ? '<a class="page-view" target="' ~ preview_target ~ '" href="' ~ preview_route ~ '" title="' ~ "PLUGIN_ADMIN.PREVIEW"|tu ~ '"> <i class="fa fa-fw fa-eye"></i></a>' : '' %}
                     {% else %}
-                        {% set preview_html = (base_url|rtrim('/') ~ '/preview' ~ (p.home ? '' : p.route)) ?: '/' %}
-                        {% set preview_link = p.routable ? '<a class="page-view" href="' ~ preview_html ~ '" title="' ~ "PLUGIN_ADMIN.PREVIEW"|tu ~ '"> <i class="fa fa-fw fa-eye"></i></a>' : '' %}
+                        {% set preview_route = admin_route('/preview' ~ (p.home ? '' : p.route), 'fi') %}
+                        {% set preview_link = p.routable ? '<a class="page-view" href="' ~ preview_route ~ '" title="' ~ "PLUGIN_ADMIN.PREVIEW"|tu ~ '"> <i class="fa fa-fw fa-eye"></i></a>' : '' %}
                     {% endif %}
                     {{ preview_link|raw }}
                     {% if warn %}
@@ -87,6 +84,14 @@
 
 {% if admin.route %}
     {% set context = admin.page(true) %}
+    {#
+    {% if admin.language != admin.session.admin_lang %}
+        {% do admin.setMessage('Session language does not match') %}
+    {% endif %}
+    #}
+{% elseif grav.language.enabled and admin.language != admin.session.admin_lang %}
+    {# Redirect to last set language #}
+    {% do admin.redirect(admin.adminRoute('/pages', admin.session.admin_lang)) %}
 {% endif %}
 
 {% if uri.param('new') %}
@@ -94,7 +99,7 @@
 {%  elseif context %}
     {% set mode = 'edit' %}
     {% if context.exists %}
-        {% set page_url = base_url ~ '/pages' ~ (context.header.routes.default ?: context.rawRoute) %}
+        {% set page_url = admin_route('/pages' ~ (context.header.routes.default ?: context.rawRoute)) %}
         {% set exists = true %}
         {% set title = (context.exists ? "PLUGIN_ADMIN.EDIT"|tu : "PLUGIN_ADMIN.CREATE"|tu ) ~ " " ~ (context.header.title ?: context.title) %}
     {% else %}
@@ -107,7 +112,6 @@
 
 {% set modular = context.modular ? 'modular_' : '' %}
 {% set warn = config.plugins.admin.warnings.delete_page %}
-{% set admin_lang = admin.session.admin_lang ?: 'en' %}
 {% set page_lang = context.language %}
 {% set type = 'page' %}
 
@@ -115,27 +119,100 @@
     {% if mode == 'edit' %}
         {% do assets.addCss(theme_url~'/css/codemirror/codemirror.css') %}
     {% endif %}
+    {#tt#}
+    {% set theScope = mode == 'edit' ? 'page' : 'pages' %}
+    {% for sheet in service_items('admin:stylesheets', theScope, 'first') %}
+        {% do assets.addCss("#{sheet}") %}
+    {% endfor %}
+    {% for sheet in service_items('admin:stylesheets', theScope, 'before:parent') %}
+        {% do assets.addCss("#{sheet}") %}
+    {% endfor %}
+    {#tt end#}
     {{ parent() }}
+    {#tt#}
+    {% for sheet in service_items('admin:stylesheets', theScope, 'after:parent') %}
+        {% do assets.addCss("#{sheet}") %}
+    {% endfor %}
+    {% for sheet in service_items('admin:stylesheets', theScope, 'last') %}
+        {% do assets.addCss("#{sheet}") %}
+    {% endfor %}
+    {#tt end#}
 {% endblock %}
 
 {% block javascripts %}
+    {#tt#}
+    {% set theScope = mode == 'edit' ? 'page' : 'pages' %}
+    {% for asset in service_list('asset', theScope, 'first') %}
+        {% if asset.type == 'link' %}
+            <link rel="{{ asset.rel }}" href="{{ asset.url }}" />
+        {% endif %}
+        {% if asset.type == 'twig' %}
+            {% include "#{asset.url}" %}
+        {% endif %}
+        {% if asset.type == 'javascript' %}
+            {% do assets.addJs("#{asset.url}") %}
+        {% endif %}
+    {% endfor %}
+    {#tt end#}
+    {#tt#}
+    {% for asset in service_list('asset', theScope, 'before:parent') %}
+        {% if asset.type == 'link' %}
+            <link rel="{{ asset.rel }}" href="{{ asset.url }}" />
+        {% endif %}
+        {% if asset.type == 'twig' %}
+            {% include "#{asset.url}" %}
+        {% endif %}
+        {% if asset.type == 'javascript' %}
+            {% do assets.addJs("#{asset.url}") %}
+        {% endif %}
+    {% endfor %}
+    {#tt end#}
     {{ parent() }}
+    {#tt#}
+    {% for asset in service_list('asset', theScope, 'after:parent') %}
+        {% if asset.type == 'link' %}
+            <link rel="{{ asset.rel }}" href="{{ asset.url }}" />
+        {% endif %}
+        {% if asset.type == 'twig' %}
+            {% include "#{asset.url}" %}
+        {% endif %}
+        {% if asset.type == 'javascript' %}
+            {% do assets.addJs("#{asset.url}") %}
+        {% endif %}
+    {% endfor %}
+    {#tt end#}
+    {#tt#}
+    {% for asset in service_list('asset', theScope, 'last') %}
+        {% if asset.type == 'link' %}
+            <link rel="{{ asset.rel }}" href="{{ asset.url }}" />
+        {% endif %}
+        {% if asset.type == 'twig' %}
+            {% include "#{asset.url}" %}
+        {% endif %}
+        {% if asset.type == 'javascript' %}
+            {% do assets.addJs("#{asset.url}") %}
+        {% endif %}
+    {% endfor %}
+    {#tt end#}
 {% endblock %}
 
 {% if config.plugins.admin.frontend_preview_target != 'inline' %}
-    {% set preview_html = (base_url_relative_frontend|rtrim('/') ~ (context.home ? '' : context.route)) ?: '/' %}
+    {% set preview_route = (base_url_relative_frontend|rtrim('/') ~ (context.home ? '' : context.route)) ?: '/' %}
     {% set preview_target = config.plugins.admin.frontend_preview_target %}
-    {% set preview_link = context.routable ? '<a class="button" target="' ~ preview_target ~ '" href="' ~ preview_html ~ '" title="' ~ "PLUGIN_ADMIN.PREVIEW"|tu ~ '"> <i class="fa fa-fw fa-eye" style="font-size:18px;margin-right:0;"></i></a>' : '' %}
+    {% set preview_link = context.routable ? '<a class="button" target="' ~ preview_target ~ '" href="' ~ preview_route ~ '" title="' ~ "PLUGIN_ADMIN.PREVIEW"|tu ~ '"> <i class="fa fa-fw fa-eye" style="font-size:18px;margin-right:0;"></i></a>' : '' %}
 {% else %}
-    {% set preview_html = (base_url|rtrim('/') ~ '/preview' ~ (context.home ? '' : context.route)) ?: '/' %}
-    {% set preview_link = context.routable ? '<a class="button" href="' ~ preview_html ~ '" title="' ~ "PLUGIN_ADMIN.PREVIEW"|tu ~ '"> <i class="fa fa-fw fa-eye" style="font-size:18px;margin-right:0;"></i></a>' : '' %}
+    {% set preview_route = admin_route('/preview' ~ (context.home ? '' : context.route)) %}
+    {% set preview_link = context.routable ? '<a class="button" href="' ~ preview_route ~ '" title="' ~ "PLUGIN_ADMIN.PREVIEW"|tu ~ '"> <i class="fa fa-fw fa-eye" style="font-size:18px;margin-right:0;"></i></a>' : '' %}
 {% endif %}
 
 {% block titlebar %}
-
     <div class="button-bar">
         {% if mode == 'list' %}
-            <a class="button" href="{{ base_url }}"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
+            {#tt#}
+            {{ service_render('renderer', 'pages', 'first', context) | raw }}
+            {{ service_render('action', 'pages', 'first', context) | raw }}
+            {#tt end#}
+            <a class="button" href="{{ admin_route() }}"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
 
             {% for key, add_modal in config.plugins.admin.add_modals %}
                 {% if add_modal.show_in|defined('bar') == 'bar' %}
@@ -143,6 +220,10 @@
                 {% endif %}
             {% endfor %}
 
+            {#tt#}
+            {{ service_render('renderer', 'pages', 'before:parent', context) | raw }}
+            {{ service_render('action', 'pages', 'before:parent', context) | raw }}
+            {#tt end#}
             <div class="button-group">
                 <button type="button" class="button disabled" href="#modal" data-remodal-target="modal">
                     <i class="fa fa-plus"></i> {{ "PLUGIN_ADMIN.ADD"|tu }}
@@ -161,14 +242,24 @@
                             <li><a class="button {{ add_modal.link_classes }}" href="#modal-add_modal-{{ key }}" data-remodal-target="modal-add_modal-{{ key }}">{{ add_modal.label|tu }}</a></li>
                         {% endif %}
                     {% endfor %}
+                    {#tt#}
+                    {% for item in service_list_filter("(&(objectClass=action)(menu=page:add)(scope=pages))", context) %}
+                        {% set key = item.form_id ? "href=##{item.form_id} data-remodal-target=#{item.form_id}" : "" %}
+                        <li><a class="button" {{ key }}>{{ item.caption }}</a></li>
+                    {% endfor %}
+                    {#tt end#}
                 </ul>
             </div>
 
+            {#tt#}
+            {{ service_render('renderer', 'pages', 'after:parent', context) | raw }}
+            {{ service_render('action', 'pages', 'after:parent', context) | raw }}
+            {#tt end#}
             {% if admin.multilang %}
                 <div class="button-group">
                     <button type="button" class="button disabled">
                         <i class="fa fa-flag-o"></i>
-                        {% set langName = admin.siteLanguages[admin_lang] %}
+                        {% set langName = admin.siteLanguages[admin.language] %}
                         {{ langName[:1]|upper ~ langName[1:] }}
                     </button>
                     {%  if admin.languages_enabled|length > 1 %}
@@ -178,7 +269,7 @@
                     <ul class="dropdown-menu language-switcher">
                         {% for langCode in admin.languages_enabled %}
                             {% set langName = admin.siteLanguages[langCode] %}
-                            {% if langCode != admin_lang %}
+                            {% if langCode != admin.language %}
                                 <li><a href="{{ uri.addNonce(base_url_relative ~ theme.slug ~ '/pages/task' ~ config.system.param_sep ~ 'switchlanguage/lang' ~ config.system.param_sep ~ langCode, 'admin-form', 'admin-nonce') }}">{{ langName[:1]|upper ~ langName[1:] }}</a></li>
                             {% endif %}
                         {% endfor %}
@@ -187,27 +278,40 @@
                 </div>
             {% endif %}
 
+            {#tt#}
+            {{ service_render('renderer', 'pages', 'last', context) | raw }}
+            {{ service_render('action', 'pages', 'last', context) | raw }}
+            {#tt end#}
         {% elseif mode == 'edit' %}
 
             {{ preview_link|raw }}
 
-            <a class="button" href="{{ base_url }}/pages" title="{{ "PLUGIN_ADMIN.BACK"|tu }}"><i class="fa fa-reply"></i></a>
+            {#tt#}
+            {{ service_render('renderer', 'page', 'first', context) | raw }}
+            {{ service_render('action', 'page', 'first', context) | raw }}
+            {#tt end#}
+            <a class="button" href="{{ admin_route('/pages') }}" title="{{ "PLUGIN_ADMIN.BACK"|tu }}"><i class="fa fa-reply"></i></a>
 
+            {% if exists %}
             {% set siblings = context.parent().children() %}
 
             {% if not siblings.isFirst(context.path) %}
                 {% set sib = siblings.nextSibling(context.path) %}
-                {% set sib_url = base_url ~ '/pages' ~ (sib.header.routes.default ?: sib.rawRoute) %}
+                    {% set sib_url = admin_route('/pages' ~ (sib.header.routes.default ?: sib.rawRoute)) %}
                 <a class="button hidden-mobile" href="{{ sib_url }}" title="{{ "PLUGIN_ADMIN.PREVIOUS"|tu }}"><i class="fa fa-chevron-left"></i></a>
             {% endif %}
 
             {% if not siblings.isLast(context.path) %}
                 {% set sib = siblings.prevSibling(context.path) %}
-                {% set sib_url = base_url ~ '/pages' ~ (sib.header.routes.default ?: sib.rawRoute) %}
+                    {% set sib_url = admin_route('/pages' ~ (sib.header.routes.default ?: sib.rawRoute)) %}
                 <a class="button hidden-mobile" href="{{ sib_url }}" title="{{ "PLUGIN_ADMIN.NEXT"|tu }}"><i class="fa fa-chevron-right"></i></a>
             {% endif %}
 
-            {% if exists %}
+            {#tt#}
+            {{ service_render('renderer', 'page', 'before:parent', context) | raw }}
+            {{ service_render('action', 'page', 'before:parent', context) | raw }}
+            {#tt end#}
+
                 <div class="button-group">
                     <button type="button" class="button disabled" href="#modal" data-remodal-target="modal">
                         <i class="fa fa-plus"></i> {{ "PLUGIN_ADMIN.ADD"|tu }}
@@ -221,11 +325,33 @@
                         {% if admin.modularTypes is not empty %}
                             <li><a class="button" href="#modular" data-remodal-target="modular">{{ "PLUGIN_ADMIN.ADD_MODULAR"|tu }}</a></li>
                         {% endif %}
+                        {#tt#}
+                        {% for item in service_list_filter("(&(objectClass=action)(menu=page:add)(scope=page))", context) %}
+                            {% set key = item.form_id ? "href=##{item.form_id} data-remodal-target=#{item.form_id}" : "" %}
+                            <li><a class="button" {{ key }}>{{ item.caption }}</a></li>
+                        {% endfor %}
+                        {#tt end#}
                     </ul>
                 </div>
 
+                {#tt#}
+                {% if service_render_count('action', 'page:more', 'any', context) > 0 %}
+                    <div class="button-group">
+                        <button type="button" class="button disabled" href="#">
+                            <i class="fa fa-plus-square"></i> {{ "More" }}
+                        </button>
+                        <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            {{ service_render('action', 'page:more', 'any', context) | raw }}
+                        </ul>
+                    </div>
+                {% endif %}
+                {#tt end#}
+
                 <a class="button disable-after-click" href="{{ uri.addNonce(page_url ~ '/task' ~ config.system.param_sep ~ 'copy', 'admin-form', 'admin-nonce') }}" class="page-copy" ><i class="fa fa-copy"></i> {{ "PLUGIN_ADMIN.COPY"|tu }}</a>
-                <a class="button" href="#" data-remodal-target="move"><i class="fa fa-arrows"></i> {{ "PLUGIN_ADMIN.MOVE"|tu }}</a>
+                <a class="button" href="#" data-remodal-target="move" data-parents="data[route]"><i class="fa fa-arrows"></i> {{ "PLUGIN_ADMIN.MOVE"|tu }}</a>
                 {% if config.plugins['admin-pro'].enabled %}
                     <a class="button" href="#" data-remodal-target="revisions"><i class="fa fa-history"></i> {{ "PLUGIN_ADMIN_PRO.REVISIONS"|tu }}</a>
                 {% endif %}
@@ -236,15 +362,20 @@
                 {% endif %}
             {% endif %}
 
+            {#tt#}
+            {{ service_render('renderer', 'page', 'after:parent', context) | raw }}
+            {{ service_render('action', 'page', 'after:parent', context) | raw }}
+            {#tt end#}
             <div class="button-group">
                 <button class="button" name="task" value="save" form="blueprints" type="submit"><i class="fa fa-check"></i> {{ "PLUGIN_ADMIN.SAVE"|tu }}</button>
                 {% if exists and admin.multilang %}
-                    {% if context.untranslatedLanguages %}
+                    {%  set untranslated = context.untranslatedLanguages(true) %}
+                    {% if untranslated %}
                         <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <ul class="dropdown-menu lang-switcher">
-                            {% for langCode in context.untranslatedLanguages %}
+                            {% for langCode in untranslated %}
                                 {% set langName = admin.siteLanguages[langCode] %}
                                 {% if langCode != page_lang %}
                                     <li><button class="button task" name="task" value="saveas" lang="{{langCode}}" form="blueprints" type="submit">{{ "PLUGIN_ADMIN.SAVE_AS"|tu }} {{ langName[:1]|upper ~ langName[1:] }}</button></li>
@@ -255,6 +386,10 @@
                 {% endif %}
             </div>
 
+            {#tt#}
+            {{ service_render('renderer', 'page', 'last', context) | raw }}
+            {{ service_render('action', 'page', 'last', context) | raw }}
+            {#tt end#}
 
         {% endif %}
     </div>
@@ -283,15 +418,15 @@
                             {% if exists %}
                                 {{ page_lang }}
                             {% else %}
-                                {{ admin_lang }}
+                                {{ admin.language }}
                             {% endif %}
                         </button>
-                        {% if exists and context.translatedLanguages|length > 1 %}
+                        {% if exists and context.translatedLanguages(false)|length > 1 %}
                             <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-caret-down"></i>
                             </button>
                             <ul class="dropdown-menu language-switcher">
-                                {% for language, route in context.translatedLanguages %}
+                                {% for language, route in context.translatedLanguages(false) %}
                                     {% if language != page_lang %}
                                     <li><button class="task" name="task" value="switchlanguage" lang="{{language}}" redirect="{{context.rawRoute|trim('/')}}" form="blueprints">{{ language }}</button></li>
                                     {% endif %}
@@ -309,9 +444,9 @@
                 {% set expertText = macro.spanToggle(expertText, maxLen) %}
                 <form id="admin-mode-toggle">
                     <div class="switch-toggle switch-grav">
-                        <input type="radio" value="normal" data-leave-url="{{ base_url }}/pages/{{ admin.route|trim('/') }}/mode{{ config.system.param_sep }}normal" id="normal" name="mode-switch" class="highlight" {% if admin.session.expert == '0' %} checked="checked"{% endif %}>
+                        <input type="radio" value="normal" data-leave-url="{{ admin_route('/pages/' ~ admin.route|trim('/') ~ '/mode' ~ config.system.param_sep ~ 'normal') }}" id="normal" name="mode-switch" class="highlight" {% if admin.session.expert == '0' %} checked="checked"{% endif %}>
                         <label for="normal">{{ normalText|raw }}</label>
-                        <input type="radio" value="expert" data-leave-url="{{ base_url }}/pages/{{ admin.route|trim('/') }}/mode{{ config.system.param_sep }}expert" id="expert" name="mode-switch" class="highlight" {% if admin.session.expert == '1' %} checked="checked"{% endif %}>
+                        <input type="radio" value="expert" data-leave-url="{{ admin_route('/pages/' ~ admin.route|trim('/') ~ '/mode' ~ config.system.param_sep ~ 'expert') }}" id="expert" name="mode-switch" class="highlight" {% if admin.session.expert == '1' %} checked="checked"{% endif %}>
                         <label for="expert">{{ expertText|raw }}</label>
                         <a></a>
                     </div>
@@ -379,12 +514,40 @@
             {% include add_modal.template|defined('partials/blueprints-new.html.twig') with { blueprints: admin.blueprints(add_modal.blueprint), data: context, form_id:'add-modal' }|merge(add_modal.with|defined({})) %}
         </div>
     {% endfor %}
+
+    {#tt#}
+    {% for item in service_list_filter("(&(objectClass=action)(menu=page:add)(scope=#{ mode=='list' ? 'pages' : 'page' }))", context) %}
+        {% if item.form_id %}
+            {% set form_data = item.form_data(context) %}
+            <div class="remodal" data-remodal-id="{{ item.form_id }}" data-remodal-options="hashTracking: false">
+                {% include "partials/blueprints-new-custom.html.twig" with { blueprints:  item.form_blueprint, data: obj_data, form_data:form_data, form_id:"#{item.form_id}" } %}
+            </div>
+        {% endif %}
+    {% endfor %}
+    {% for item in service_list("action", mode == 'list' ? "pages" : ["page", "page:more"], "any", context) %}
+        {% if item.form_id %}
+            {% set form_data = item.form_data(context) %}
+            <div class="remodal" data-remodal-id="{{ item.form_id }}" data-remodal-options="hashTracking: false">
+                {% include "partials/blueprints-new-custom.html.twig" with { blueprints:  item.form_blueprint, data: obj_data, form_data:form_data, form_id:"#{item.form_id}" } %}
+            </div>
+        {% endif %}
+    {% endfor %}
+    {#tt end#}
     {% endif %}
 
-
+    <div class="remodal parents-container" data-remodal-id="parents" data-remodal-options="hashTracking: false, stack: true">
+        <form>
+            <h1>Parents</h1>
+            <div class="grav-loading"><div class="grav-loader">Loading...</div></div>
+            <div class="parents-content"></div>
+            <div class="button-bar">
+                <a class="button secondary remodal-cancel" data-remodal-action="cancel" href="#"><i class="fa fa-fw fa-close"></i> {{ "PLUGIN_ADMIN.CANCEL"|tu }}</a>
+                <a class="button" data-parents-select href="#"><i class="fa fa-fw fa-check"></i> {{ "PLUGIN_ADMIN.CONTINUE"|tu }}</a>
+            </div>
+        </form>
+    </div>
     {% if mode == 'edit' %}
-    <div class="remodal" data-remodal-id="move" data-remodal-options="hashTracking: false">
-
+    <div class="remodal parents-container" data-remodal-id="move" data-remodal-options="hashTracking: false">
         {% include 'partials/page-move.html.twig' with { blueprints: admin.blueprints('admin/pages/move'), data: context } %}
     </div>
     <div class="remodal" data-remodal-id="revisions" data-remodal-options="hashTracking: false">
@@ -419,7 +582,41 @@
 
 {% block bottom %}
     {{ parent() }}
+<script>
+    $('.admin-pages .form-tabs .tabs-nav').css('margin-right', ($('#admin-topbar').width() + 20) + 'px');
+</script>
+
+{#tt - remove this when the admin plugin is fixed#}
+{{ assets.js('bottom') | raw }}
+{#tt end#}
+
+    {#tt#}
+    {% set like_data = grav.session.getFlashObject("like_data") %}
+    {% set like_page = grav.session.getFlashObject("like_page") %}
+    {% if like_page %}
     <script>
-        $('.admin-pages .form-tabs .tabs-nav').css('margin-right', ($('#admin-topbar').width() + 20) + 'px');
+        let title2 = $('input[name="data[header][title]"]');
+        title2.val('{{ grav.session.getFlashObject('use_title')  }}');
+
+        let content2 = $('textarea[name="data[content]"]');
+        content2.val({{ grav.session.getFlashObject('use_content') | json_encode | raw }});
+
+        {
+            let c = $('input[name="data[header][body_classes]"]');
+            c.val('{{ like_page.header.body_classes }}');
+        }
+
+        {
+            let c = $('select[name="data[name]"]');
+            c.val('{{ like_page.template }}');
+        }
+
+        {% for name, items in grav.session.getFlashObject('use_taxonomy')  %}
+            let tax{{ name }} = $('select[name="data[header][taxonomy][{{ name }}][]"]');
+            tax{{ name }}.val({{ items | json_encode | raw }});
+        {% endfor %}
     </script>
+    {% endif %}
+    {#tt end#}
+
 {% endblock %}
