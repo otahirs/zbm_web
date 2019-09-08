@@ -21,6 +21,8 @@
 #sidebar nav a, #sidebar section a {
     text-transform: uppercase;
     font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     padding: 0.625em 0;
     display: block;
     border-bottom: none;
@@ -356,6 +358,8 @@ dd {
     font-family: Overpass;
     color: black;
     border-bottom: none;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 .topbar--title{
     font-size: 24px;
