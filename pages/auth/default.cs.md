@@ -1,5 +1,5 @@
 ---
-title: auth
+title: 'Editorské menu'
 date: '2018-07-09'
 process:
     twig: true
@@ -10,32 +10,44 @@ never_cache_twig: true
     .pure-u-1 a {
         display: block;
         border: solid black 1px;
-        min-height: 100px;
-    }
+        min-height: 100px;    
+        padding: 20px;
+}
 </style>
 <div class="pure-g">
-    <div class="pure-u-1 pure-u-sm-1-2">
-    
+    <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3">
         <a href="/auth/novinky">
             <h2>Novinky</h2>
         </a>
+    </div>
+    <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3">
         <a href="/auth/plan">
             <h2>Plán na tento týden</h2>
         </a>
+    </div>
+    <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3">
         <a href="/auth/events">
             <h2>Události</h2>
         </a>
+    </div>
+    <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3">
         <a href="/auth/polaris">
             <h2>Polaris</h2>
         </a>
+    </div>
+    <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3">
         <a href="/auth/maptheory">
             <h2>Mapová teorie</h2>
         </a>
+    </div>
+    <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3">
         <a href="/auth/nahrat-program">
             <h2>Importovat program</h2>
         </a>
     </div>
-    <div class="pure-u-1 pure-u-sm-1-2">
+</div>
+<hr>
+    <div>
         <p>Chyby na opravu zde:
             <ul>
                 <li>nadchazejici eventy bez zadane skupiny</li>
@@ -46,4 +58,3 @@ never_cache_twig: true
             
         </p>
     </div>
-</div>
