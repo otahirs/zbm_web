@@ -2480,6 +2480,16 @@ button,
         top: 1em;
         width: 5em; } }
 
+#triangle-topleft {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 1em solid #e65646;
+  border-right: 18em solid transparent; }
+  @media screen and (max-width: 1680px) {
+    #triangle-topleft {
+      border-right: 16em solid transparent; } }
+
 /* Header */
 #header {
   display: -moz-flex;
