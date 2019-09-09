@@ -150,24 +150,25 @@ ostatni data z formulare a odeslana dropzone.js prikazem "myDropzone.processQueu
 {# {% if (authorize(['site.novinky'])) %} #} {# kod mezi "if" a "endif" se zobrazi jen pro uzivatele autorizovane skupiny #}
 {####### News modal PHP a HTML ########}
 <div id="NewsModal" class="news--modal">
-  {# Modal content #}
-  <div id="NewsModalContent" class="news--modal-content">
-    <h2 id="News--header">Přidat novinku</h2>
-    <form id="News--form" enctype="multipart/form-data" method="post" action="/php/news">
-      <input id="News--POST-type" name="POST_type" type="hidden" value="addNews">  {# identifikace POST pozadavku pro PHP zpracovani #}
-      <input id="News--id" name="id" type="hidden" value="">  {# id novinky, pokud se upravuje #}
-      <input id="News--date" name="date" type="hidden" value="">
-      <input type="text" id="News--title" name="title"  placeholder="Nadpis" value="">
-      <div id="News--pictures"> {# zde se budou dynamicky pridavat nastaveni sirky pro obrazky #}
-      </div>
-      <textarea id="News--content" name="content"  placeholder="Za sedmero horami..." ></textarea>
-      <div class="dropzone" id="NewsDropzone"></div> {# dropzone pro upload obrazku #}
-      <button type="button" class="special" id="News--submit-all">Uložit</button>
-      <button type="button" id="News--close">Zrušit</button>
-      <span id="News--deleteButtonSpan"></span>
-    </form>
-    <div id="News--responseText" style="color:red"></div>
-  </div> <!-- modal content -->
+  <div id="NewsModalScroll">
+    <div id="NewsModalContent" class="news--modal-content">
+      <h2 id="News--header">Přidat novinku</h2>
+      <form id="News--form" enctype="multipart/form-data" method="post" action="/php/news">
+        <input id="News--POST-type" name="POST_type" type="hidden" value="addNews">  {# identifikace POST pozadavku pro PHP zpracovani #}
+        <input id="News--id" name="id" type="hidden" value="">  {# id novinky, pokud se upravuje #}
+        <input id="News--date" name="date" type="hidden" value="">
+        <input type="text" id="News--title" name="title"  placeholder="Nadpis" value="">
+        <div id="News--pictures"> {# zde se budou dynamicky pridavat nastaveni sirky pro obrazky #}
+        </div>
+        <textarea id="News--content" name="content"  placeholder="Za sedmero horami..." ></textarea>
+        <div class="dropzone" id="NewsDropzone"></div> {# dropzone pro upload obrazku #}
+        <button type="button" class="special" id="News--submit-all">Uložit</button>
+        <button type="button" id="News--close">Zrušit</button>
+        <span id="News--deleteButtonSpan"></span>
+      </form>
+      <div id="News--responseText" style="color:red"></div>
+    </div> <!-- modal content -->
+  </div>
 </div> <!-- modal -->
 
 {####### News modal Javascript ########}
@@ -194,7 +195,8 @@ var News_simplemde = new SimpleMDE({ element: document.getElementById("News--con
       News_pictures = document.getElementById("News--pictures"),
       News_modal = document.getElementById('NewsModal'),
       News_ModalContent = document.getElementById('NewsModalContent'),
-      News_responseText = document.getElementById('News--responseText');
+      News_responseText = document.getElementById('News--responseText'),
+      News_ModalScroll = document.getElementById('NewsModalScroll');
 
 // pokud se klikne na zrusit, zavre se modal
     document.getElementById("News--close").onclick = function(e) {
@@ -218,7 +220,7 @@ var News_simplemde = new SimpleMDE({ element: document.getElementById("News--con
     document.getElementById("addNewsButton").onclick = function() {       
         News_POST_type.value = "addNews"; //inicializace POST pozadavku pro PHP zpracovani
         News_header.innerHTML = "Přidat novinku";  //inicializace - Nadpis
-        window.scrollTo(0, 0);
+        News_ModalContent.style.marginTop = window.pageYOffset + "px";
         News_modal.style.display = "block"; //zobrazi modal
         News_simplemde.codemirror.refresh(); //inicializuje textovy iditor
     }
@@ -268,7 +270,8 @@ $(".edit-news").click(function(){
      /* prida tlacitko pro smazani novinky*/
        News_deleteButtonSpan.innerHTML = '<button type="button" id="deleteNewsButton"><i class="fa fa-trash-o" aria-hidden="true"></i></button>';
      
-    window.scrollTo(0, 0);
+    
+    News_ModalContent.style.marginTop = window.pageYOffset + "px";
     News_modal.style.display = "block"; // zobrazi modal
     News_simplemde.codemirror.refresh(); //inicializace textovy editor
 });
