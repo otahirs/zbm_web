@@ -261,7 +261,7 @@ window.addEventListener('load', function() {
   /************************************/
   var modal = document.getElementById("plan--modal"),
       event_program = $(".event--program"),
-      modal = document.getElementById("plan--modal"),
+      modal_content = document.getElementById("plan--modal-content"),
       zabicky = document.getElementById("plan--checkbox-zabicky"),
       pulci1 = document.getElementById("plan--checkbox-pulci1"),
       pulci2 = document.getElementById("plan--checkbox-pulci2"),
@@ -296,12 +296,17 @@ window.addEventListener('load', function() {
           meetup.value = clicked_row.getAttribute("data-meetup");
         // misto
           place.value = clicked_row.getAttribute("data-place");
-        modal.style.display = "block";
+          
+          modal_content.style.marginTop = window.pageYOffset + "px";
+          bodyScrollLock.disableBodyScroll(modal);
+          modal.style.display = "block";
       }
 
       function reset_modal(){
         zabicky.checked = pulci1.checked = pulci2.checked = zaci1.checked = zaci2.checked = dorost.checked = false;
         name.value = meetup.value = place.value = "";
+        modal.style.display = "none";
+        bodyScrollLock.enableBodyScroll(modal);
       }
 
       function remove_if_empty(){
@@ -374,15 +379,11 @@ window.addEventListener('load', function() {
             
             remove_if_empty();
             reset_modal();
-            // zavrit modal
-            modal.style.display = "none";
           } 
       // vymazat řádek
           modal_delete_btn.addEventListener('click',function(){
             reset_modal();
             remove_if_empty();
-            
-            modal.style.display = "none";
           })
 
       // Zavřit modal beze zmen
@@ -390,14 +391,12 @@ window.addEventListener('load', function() {
           window.addEventListener('keyup',function(e){
             if (e.keyCode === 27) { 
               reset_modal();
-              modal.style.display = "none";
             }
           })
           // click mimo modal
           window.addEventListener('click', function(e){
             if (e.target == modal) {
               reset_modal();
-              modal.style.display = "none";
             }
           })
 
