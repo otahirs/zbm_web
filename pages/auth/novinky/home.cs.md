@@ -19,14 +19,10 @@ content:
     <div id="novinky" class="pure-u-1 pure-u-md-16-24"> <!-- plan + novinky vlevo -->
     <div class="inner">
         <header id="header">
-            <h1>Novinky</h1>
+            <h1>Novinky &nbsp;&nbsp;&nbsp;<span id="addNewsButton" class="button small special">Přidat&nbsp;<i class="fa fa-plus-square-o" aria-hidden="true"></i></span>  </h1>
         </header>
         <section>
-    {# {% if (authorize(['site.novinky'])) %} #} 
-        <h2>         
-            <span id="addNewsButton" style="cursor: pointer; padding: 5px 10px; border: grey dashed 2px;">Přidat novinku <i class="fa fa-plus-square-o" aria-hidden="true"></i></span>    
-        </h2>
-     {# {% endif %} #} 
+    
 
       {% set news_collection = page.collection().ofType('novinka').order('p.header.id','asc') %}
 
@@ -107,7 +103,7 @@ content:
           {% endif %}
 
           
-          <section class="editBliziSeButton" style="cursor: pointer;">
+          <section class="editBliziSeButton" style="cursor: pointer; background-color:white">
             <h4 class="soon-title">
               {{ p.header.title ~' '~ p.header.event.location }} 
           
@@ -138,7 +134,6 @@ content:
 {#######################################
 ######## Pridani a edit novinek ########
 ########################################
-kde neni nutne pouzivat jQuery snazim se pouzivat cisty JavaScrip, ne vsak na ukor prehlednosti
 je pouzit jeden modal jak pro pridani tak upravu Novinky
 pomoci js se dynamicky meni obsah modalu, podle toho, ktere tlacitko ho vyvolalo
 formular se odesila na server dvema zpusoby
@@ -147,8 +142,8 @@ ostatni data z formulare a odeslana dropzone.js prikazem "myDropzone.processQueu
 2. pokud je formular odesilan bez novych obrazku je odeslan klasicky 
 #######################################}
 
-{# {% if (authorize(['site.novinky'])) %} #} {# kod mezi "if" a "endif" se zobrazi jen pro uzivatele autorizovane skupiny #}
-{####### News modal PHP a HTML ########}
+
+{#######  HTML ########}
 <div id="NewsModal" class="news--modal">
   <div id="NewsModalScroll">
     <div id="NewsModalContent" class="news--modal-content">
@@ -427,12 +422,11 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
 }, false); // onload
 </script>
 
-{# {% endif %} #}
 
 {#######################################
 ############ Edit blizise ##############
 ########################################}
-{# {% if (authorize(['site.blizise'])) %} #} {# kod mezi if se zobrazi jen pro uzivatele autorizovane skupiny #}
+
   <script>
   window.addEventListener('load', function () {
     /* inicializace prekladace z HTML zpet na markdown "Turndown"*/
