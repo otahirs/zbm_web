@@ -14,9 +14,9 @@ content:
         dir: asc
 ---
 
-<div class="pure-g"> {# cela stranka | je pouzit css framework purecss.io grids #}
+<div class="row no-gutters"> {# cela stranka | je pouzit css framework purecss.io grids #}
   
-    <div id="novinky" class="pure-u-1 pure-u-md-16-24"> <!-- plan + novinky vlevo -->
+    <div id="novinky" class="col-md-8"> <!-- plan + novinky vlevo -->
     <div class="inner">
         <header id="header">
             <h1>Novinky &nbsp;&nbsp;&nbsp;<span id="addNewsButton" class="button small special">Přidat&nbsp;<i class="fa fa-plus-square-o" aria-hidden="true"></i></span>  </h1>
@@ -38,20 +38,18 @@ content:
                 <span class="edit-news" style="cursor: pointer;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
         	{#	  {% endif %}#} 
             </h4>
-            <div class="pure-g newsPictures">
+            <div class="row newsPictures">
                 {% for img in p.header.pictures %}
                   {# small screens shows double image size #}
-                  {% set PC_img_ratio = img.ratio|slice(2,2) %}
-                  {% if PC_img_ratio % 2 == 0  %}
-                  {% set Mobile_img_ratio = PC_img_ratio // 2 %}
-                  {% else %}
-                  {% set Mobile_img_ratio = PC_img_ratio %}
+                  {% set img_mobile = img.ratio %}
+                  {% if img.ratio * 2 <= 12  %}
+                    {% set img_mobile = img.ratio * 2 %}
                   {% endif %}
-                  <div class="newsIMG pure-u-1-{{Mobile_img_ratio}} pure-u-sm-1-{{PC_img_ratio}}" data-name="{{img.name}}" data-ratio="{{ img.ratio }}">
+                  <div class="newsIMG col-md-{{img.ratio}} col-sm-{{img_mobile}}" data-name="{{img.name}}" data-ratio="{{ img.ratio }}">
                     <a href="{{base_url_absolute}}/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/{{img.name}}" target="_blank" title="Zobrazit originální obrázek">
                       <picture>
                         {# časem WebP #}
-                        <img class="pure-img" src="{{base_url_absolute}}/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/preview_{{img.name}}" alt="Zde by měl být obrázek">
+                        <img src="{{base_url_absolute}}/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/preview_{{img.name}}" alt="Zde by měl být obrázek">
                       </picture>
                     </a>
                   </div>
@@ -77,7 +75,7 @@ content:
    </div> <!-- plan + novinky -->
 
 
-    <div id="soon" class="pure-u-1 pure-u-md-8-24">
+    <div id="soon" class="col-md-4">
     <br>
       <h4>Kliknutím upravíte náhled události</h4>
     
@@ -128,7 +126,7 @@ content:
 
     </div> <!-- blizi se -->
 
-</div> <!-- uzavira celou stranku , pure-g -->
+</div> <!-- uzavira celou stranku , row -->
 
 
 {#######################################
@@ -240,10 +238,9 @@ $(".edit-news").click(function(){
                            '<div class="News--img-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></div>' +
                            '<input class="News--img-settings" name="img['+ img_index +'][img_name]" type="hidden" value="'+ this.getAttribute("data-name") + '">' +
                            '<select class="News--img-settings" name="img['+ img_index +'][img_ratio]" id="' + novinka.id + '_' + img_index + '">' +
-                              '<option value="1/1">1/1</option>' +
-                              '<option value="1/2">1/2</option>' +
-                              '<option value="1/4">1/4</option>' +
-                              '<option value="1/8">1/8</option>' +
+                              '<option value="12">1</option>' +
+                              '<option value="6">1/2</option>' +
+                              '<option value="3">1/4</option>' +
                             '</select>';
         select.innerHTML += '<label class="News--img-label" for="' + novinka.id + '_' + img_index + '">' + this.getAttribute("data-name").slice(11) + '</label>'; //popisek, nazev obrazku oriznut o timestamp
         News_pictures.appendChild(select); //vlozi do modalu
@@ -448,12 +445,11 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
                             '<input name="template" type="hidden" value="'+ content.getAttribute("data-template") +'">' +
                             '<textarea name="content"></textarea>' +
                             '<button class="saveBlizise special fit" type="submit" style="margin-top: 1em">Uložit</button>' +
-                            '<div class="pure-g">' +
-                            '<div class="pure-u-18-24">' +
+                            '<div class="row">' +
+                            '<div class="col-8">' +
                             '<button class="editBliziSeCancel fit small" type="button">Zrušit</button>' +
-                            '</div>' +
-                            '<div class="pure-u-1-24">&nbsp;</div>'+
-                            '<div class="pure-u-5-24">' +
+                            '</div>'
+                            '<div class="col-3 offset-1">' +
                             '<button class="regenerateBliziSe fit small" type="button" title="Znovu vygenerovat obsah"><i class="fa fa-refresh" aria-hidden="true"></i></button>' +
                             '</div>' +
                             '</div>' +

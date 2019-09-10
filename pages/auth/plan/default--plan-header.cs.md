@@ -219,8 +219,8 @@ plan:
 
 <div id="plan--modal">
   <div id="plan--modal-content">
-    <div class="pure-g">
-      <div class="pure-u-1-2">
+    <div class="row">
+      <div class="col-6">
           <input type="checkbox" id="plan--checkbox-zabicky">
             <label for="plan--checkbox-zabicky">žabičky</label><br>
           <input type="checkbox" id="plan--checkbox-pulci1">
@@ -234,7 +234,7 @@ plan:
           <input type="checkbox" id="plan--checkbox-dorost">
             <label for="plan--checkbox-dorost">dorost+</label>
       </div>
-      <div class="pure-u-1-2">
+      <div class="col-6">
         <input type="text" id="plan--name" placeholder="název">
         <input type="text" id="plan--meetup" placeholder="čas">
         <input type="text" id="plan--place" placeholder="místo">
@@ -243,7 +243,7 @@ plan:
           <button type="button" class="fit small" id="plan--modal-delete">Smazat</button>
         </div>
       </div>
-    <div>  <!-- pure-g -->
+    <div>  <!-- row -->
   </div> <!-- modal content -->
 </div> <!-- modal -->
 

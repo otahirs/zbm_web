@@ -8,8 +8,8 @@ editable-simplemde:
             groups:
                 - edit-static-sites
 ---
-<div class="pure-g">
-<div class="pure-u-1 pure-u-sm-1-2 pure-u-lg-1-4">
+<div class="row">
+<div class="col-sm-6 col-lg-3">
 <h3>Základní informace</h3>
 <ul>
  <li><a href="#vedeni">Vedení oddílu</a></li>
@@ -19,7 +19,7 @@ editable-simplemde:
  <li><a href="#vybaveni">Materiální vybavení</a></li>
 </ul>
 </div>
-<div class="pure-u-1 pure-u-sm-1-2 pure-u-lg-1-4">
+<div class="col-sm-6 col-lg-3">
 <ul>
 <h3>Finance</h3>
  <li><a href="#finance">Financování a osobní účty</a></li>
@@ -27,7 +27,7 @@ editable-simplemde:
  <li><a href="#trenersky">Trenérský fond ZBM</a></li>
  </ul>
 </div>
-<div class="pure-u-1 pure-u-sm-1-2 pure-u-lg-1-4">
+<div class="col-sm-6 col-lg-3">
 <ul>
 <h3>Přihlášky</h3>
  <li><a href="#zavody">Přihlašování na závody</a></li>
@@ -35,7 +35,7 @@ editable-simplemde:
  <li><a href="#kdoakam">Kdo se může a kam přihlásit</a></li>
 </ul>
 </div>
-<div class="pure-u-1 pure-u-sm-1-2 pure-u-lg-1-4">
+<div class="col-sm-6 col-lg-3">
 <ul>
 <h3>Organizace/pořádání</h3>
  <li><a href="#vedouci">Vedoucí na závodech</a></li>
@@ -79,7 +79,7 @@ Proto jsme založili emailovou skupinu **zabiny@googlegroups.com**, která by m�
 - _a další.._
 
 #### Jak se přihlásit? 
-<form class="pure-form pure-form-aligned" action="https://groups.google.com/forum/#!forum/zabiny/join" target="_blank">
+<form action="https://groups.google.com/forum/#!forum/zabiny/join" target="_blank">
 <button onclick="https://groups.google.com/forum/#!forum/zabiny/join">Přihlásit se do skupiny Žabiny</button>
 </form>
 

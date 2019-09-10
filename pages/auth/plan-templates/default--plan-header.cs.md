@@ -133,16 +133,16 @@ winter:
     sunday: null
 ---
 
-<form id="form-weekly-plan" class="pure-form" method="post" action="" >
+<form id="form-weekly-plan" method="post" action="" >
     <input name="POST_type" type="hidden" value="weeklyPlan">
     <input name="filePath" type="hidden" value="{{'./' ~ page.relativePagePath() ~ '/' ~ page.name}}"> 
     <input id="POST_season" name="season" type="hidden" value="{{page.header.currentSeason}}"> 
     <div id="control">
         <b>Vybrat šablonu:</b>
         <input type="radio" name="season" value="summer" id="choose-summer" {% if page.header.currentSeason == "summer" %} checked {% endif %}> 
-            <label for="choose-summer" class="pure-radio">Letní</label>   
+            <label for="choose-summer">Letní</label>   
         <input type="radio" name="season" value="winter" id="choose-winter" {% if page.header.currentSeason == "winter" %} checked {% endif %}> 
-            <label for="choose-winter" class="pure-radio">Zimní</label>  
+            <label for="choose-winter">Zimní</label>  
 
         <button id="save-weekly-plan" type="submit">Uložit</button>
         <span id="form-response"></span>
@@ -151,7 +151,7 @@ winter:
         {# tables for each season #}
             {% set listOfSeasons = ["summer", "winter"] %}
             {% for season in listOfSeasons %}
-                <table class="pure" id="table-{{season}}" {% if page.header.currentSeason != season %} style="display: none;" {% endif %}>
+                <table id="table-{{season}}" {% if page.header.currentSeason != season %} style="display: none;" {% endif %}>
                 {% set CZweek = ["Pondělí","Úterý","Středa","Čtvertek","Pátek","Sobota","Neděle"] %}
                 {% set numberOfEvents = 0 %}
                 {% for day in attribute(attribute(page, "header"), season) %}

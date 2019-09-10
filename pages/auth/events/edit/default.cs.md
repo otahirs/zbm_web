@@ -45,44 +45,44 @@ access:
             <option value="soustredeni" '. (isset($parsed["template"])?($parsed["template"]=="soustredeni"?"selected":""):"") .'>Soustředění</option>
         </select> -->
         <div id="info" class="tab-content current">
-            <div class="pure-g">
-            <div class="pure-u-1-2">
-                <div class="pure-g">
-                    <div class="pure-u-1">
+            <div class="row">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-12">
                         <label for="name">Název</label>
                         <input id="name" name="title" type="text" value="{{ event.header.title }}" required>
                     </div>
-                    <div class="pure-u-1-2">
+                    <div class="col-6">
                         <label for="date1">Od</label>
                         <input id="date1" name="start" type="text" value="{{ event.header.start }}" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required title="formát yyyy-mm-dd">
                     </div>
-                    <div class="pure-u-1-2">
+                    <div class="col-6">
                         <label for="date2">Do</label>
                         <input id="date2" name="end" type="text" value="{{ event.header.end }}" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" title="formát yyyy-mm-dd">
                     </div>
-                    <div class="pure-u-1-2">
+                    <div class="col-6">
                         <label for="place">Místo</label>
                         <input id="place" name="place" type="text" value="{{ event.header.place }}">
                     </div>
-                    <div class="pure-u-1-2">
+                    <div class="col-6">
                         <label for="GPS">GPS</label>
                         <input id="GPS" name="GPS" type="text" value="{{ event.header.gps }}">
                     </div>
-                    <div class="pure-u-1-2">
+                    <div class="col-6">
                         <label for="meetTime">Sraz / čas</label>
                         <input id="meetTime" name="meetTime" type="text" value="{{ event.header.meetTime }}">
                     </div>
-                    <div class="pure-u-1-2">
+                    <div class="col-6">
                         <label for="meetPlace">Sraz / místo</label>
                         <input name="meetPlace" type="text" value="{{ event.header.meetPlace }}">
                     </div>
-                    <div class="pure-u-1">
+                    <div class="col-12">
                         <label for="transport">Doprava</label>
                         <textarea id="transport" name="transport" type="text" rows="1">{{ event.header.transport }}</textarea>
                     </div>
                 </div>
             </div>
-            <div class="pure-u-1-2">
+            <div class="col-6">
                 <br>
                 <fieldset>
                     <legend>Skupiny:</legend>
@@ -110,7 +110,7 @@ access:
                 <label for="leader">Vedoucí</label>
                 <input id="leader" name="leader" type="text" value="{{ event.header.leader }}">
             </div> 
-            <div class="pure-u-1">
+            <div class="col-12">
                 <label for="note">Poznámka</label>
                 <textarea id="note" name="note" rows="1">{{ event.header.note }}</textarea>
             </div>
@@ -118,16 +118,16 @@ access:
         </div>
    
         {% if event.start != event.end %}
-            <div class="pure-g">
-                <div class="pure-u-1-2">
+            <div class="row">
+                <div class="col-6">
                     <label for="accomodation">Ubytování</label>
                     <textarea id="accomodation" name="accomodation" type="text" rows="1">{{ event.header.accomodation }}</textarea>
                 </div>
-                <div class="pure-u-1-2">
+                <div class="col-6">
                     <label for="food">Strava</label>
                     <textarea id="food" name="food" type="text" rows="1">{{ event.header.food }}</textarea>
                 </div> 
-            </div> <!-- pure-g -->
+            </div> <!-- row -->
         {% endif %}
 
 
@@ -139,22 +139,22 @@ access:
         {% endif %}
     
         {% if event.template == "zavod" or event.template == "trenink" %}
-            <div class="pure-g">
-                <div class="pure-u-1-2">
+            <div class="row">
+                <div class="col-6">
                     <label for="startTime">Start</label>
                     <input id="startTime" name="startTime" type="text" value="{{ event.header.startTime }}">
                 
                     <label for="eventTypeDescription">Tratě</label>
                     <textarea id="eventTypeDescription" name="eventTypeDescription" type="text" rows="1">{{ event.header.eventTypeDescription }}</textarea>
                 </div>
-                <div class="pure-u-1-2">
+                <div class="col-6">
                     <label for="map">Mapa</label>
                     <input id="map" name="map" type="text" value="{{ event.header.map }}">
                 
                     <label for="terrain">Terén</label>
                     <textarea id="terrain" name="terrain" type="text" rows="3">{{ event.header.terrain }}</textarea>
                 </div>
-            </div> <!-- pure-g -->
+            </div> <!-- row -->
         {% endif %}
     </div>
 
@@ -179,11 +179,11 @@ access:
     <div id="routes" class="tab-content">
         {% for route in event.header.routes %}
         <fieldset>
-        <div class="pure-g"> 
-            <div class="pure-u-1 pure-u-sm-1-2">
+        <div class="row"> 
+            <div class="col-sm-6">
                 <input name="routeName[]" type="text" placeholder="Popis" value="{{ route.name }}">
             </div>
-            <div class="pure-u-1 pure-u-sm-1-2">
+            <div class="col-sm-6">
                 <input name="routeLink[]" type="text" placeholder="Odkaz" value="{{ route.link }}">
             </div>
         </div>
@@ -194,11 +194,11 @@ access:
     <div id="results" class="tab-content">
         {% for results in event.header.results %}
         <fieldset>
-        <div class="pure-g"> 
-            <div class="pure-u-1 pure-u-sm-1-2">
+        <div class="row"> 
+            <div class="col-sm-6">
                 <input name="resultsName[]" type="text" placeholder="Popis" value="{{ results.name }}">
             </div>
-            <div class="pure-u-1 pure-u-sm-1-2">
+            <div class="col-sm-6">
                 <input name="resultsLink[]" type="text" placeholder="Odkaz" value="{{ results.link }}">
             </div>
         </div>
@@ -268,22 +268,22 @@ access:
 
     /*** addRoute ***/
     $("#addRoute").click(function(){
-        $(this).before('<fieldset><div class="pure-g">' + 
-                        '<div class="pure-u-1 pure-u-sm-1-2">' +
+        $(this).before('<fieldset><div class="row">' + 
+                        '<div class="col-sm-6">' +
                         '    <input name="routeName[]" type="text" placeholder="Popis">' +
                         '</div>' +
-                        '<div class="pure-u-1 pure-u-sm-1-2">' +
+                        '<div class="col-sm-6">' +
                         '    <input name="routeLink[]" type="text" placeholder="Odkaz">' +
                         '</div>' +
                        '</div></fieldset>');
     })
     /*** addResults ***/
     $("#addResults").click(function(){
-        $(this).before('<fieldset><div class="pure-g">' + 
-                        '<div class="pure-u-1 pure-u-sm-1-2">' +
+        $(this).before('<fieldset><div class="row">' + 
+                        '<div class="col-sm-6">' +
                         '    <input name="resultsName[]" type="text" placeholder="Popis">' +
                         '</div>' +
-                        '<div class="pure-u-1 pure-u-sm-1-2">' +
+                        '<div class="col-sm-6">' +
                         '    <input name="resultsLink[]" type="text" placeholder="Odkaz">' +
                         '</div>' +
                        '</div></fieldset>');

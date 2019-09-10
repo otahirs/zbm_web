@@ -10,58 +10,56 @@ content:
         dir: asc
 ---
 
-<div class="pure-g" style="height:100%"> {# cela stranka | je pouzit css framework purecss.io grids #}
+<div class="row no-gutters" style="height:100%"> {# cela stranka | je pouzit css framework purecss.io grids #}
   
-    <div id="novinky" class="pure-u-1 pure-u-md-16-24"> <!-- plan + novinky vlevo -->
-    <div class="inner">
+  <div id="novinky" class="col-md-8"> <!-- plan + novinky vlevo -->
+      <div class="inner">
         <header id="header">
             <h1>Novinky</h1>
         </header>
         <section>
-      {% set news_collection = page.collection().ofType('novinka').order('p.header.id','asc') %}
+        {% set news_collection = page.collection().ofType('novinka').order('p.header.id','asc') %}
 
-      {% for p in news_collection.order('date','desc') %}
+        {% for p in news_collection.order('date','desc') %}
 
-        {% if  ( p.header.date|date('Y-m-d') >= strtotime("today -30 day")|date('Y-m-d') ) %}
-          <article id="{{ p.header.id }}">
-            <h4 class="news--header">
-                <span class="newsDate">{{p.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }} </span> &nbsp; &nbsp; <span class="newsTitle"> {{ p.header.title }} </span>
-            </h4>
-            {% if p.header.pictures|length > 0 %}
-            <div class="pure-g newsPictures">
-                {% for img in p.header.pictures %}
-                  {# small screens shows double image size #}
-                  {% set PC_img_ratio = img.ratio|slice(2,2) %}
-                  {% if PC_img_ratio % 2 == 0  %}
-                  {% set Mobile_img_ratio = PC_img_ratio // 2 %}
-                  {% else %}
-                  {% set Mobile_img_ratio = PC_img_ratio %}
-                  {% endif %}
-                  <div class="newsIMG pure-u-1-{{Mobile_img_ratio}} pure-u-sm-1-{{PC_img_ratio}}" data-name="{{img.name}}" data-ratio="{{ img.ratio }}">
-                    <a href="{{base_url_absolute}}/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/{{img.name}}" target="_blank" title="Zobrazit originální obrázek">
-                      <picture>
-                        {# časem WebP #}
-                        <img class="pure-img" src="{{base_url_absolute}}/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/preview_{{img.name}}" alt="Zde by měl být obrázek">
-                      </picture>
-                    </a>
-                  </div>
-                {% endfor %}
-            </div>
-            {% endif %}
-            <section class="newsText">
-              {{p.content}}
-            </section>
-          </article>
-          <hr width="62.11%">
-        {% endif %}
-      {% endfor %}
-            </section>
-  </div>
-        
-   </div> <!--  novinky -->
+          {% if  ( p.header.date|date('Y-m-d') >= strtotime("today -30 day")|date('Y-m-d') ) %}
+            <article id="{{ p.header.id }}">
+              <h4 class="news--header">
+                  <span class="newsDate">{{p.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }} </span> &nbsp; &nbsp; <span class="newsTitle"> {{ p.header.title }} </span>
+              </h4>
+              {% if p.header.pictures|length > 0 %}
+              <div class="row newsPictures">
+                  {% for img in p.header.pictures %}
+                    {# small screens shows double image size #}
+                    {% set img_mobile = img.ratio %}
+                    {% if img.ratio * 2 <= 12  %}
+                      {% set img_mobile = img.ratio * 2 %}
+                    {% endif %}
+                    <div class="newsIMG col-md-{{img.ratio}} col-sm-{{img_mobile}}" data-name="{{img.name}}" data-ratio="{{ img.ratio }}">
+                      <a href="{{base_url_absolute}}/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/{{img.name}}" target="_blank" title="Zobrazit originální obrázek">
+                        <picture>
+                          {# časem WebP #}
+                          <img src="{{base_url_absolute}}/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/preview_{{img.name}}" alt="Zde by měl být obrázek">
+                        </picture>
+                      </a>
+                    </div>
+                  {% endfor %}
+              </div>
+              {% endif %}
+              <section class="newsText">
+                {{p.content}}
+              </section>
+            </article>
+            <hr width="62.11%">
+          {% endif %}
+
+        {% endfor %}
+        </section>
+      </div>      
+  </div> <!--  novinky -->
 
 
-    <div id="soon" class="pure-u-1 pure-u-md-8-24">
+  <div id="soon" class="col-md-4">
       <div id="soon--timeline"></div>
       {% set soon_collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']).order('header.start','asc') %}
       {% set currdate = strtotime("today")|date('Y-m-d') %}
@@ -107,6 +105,6 @@ content:
         {% endif %}
       {% endfor %}
 
-    </div> <!-- blizi se -->
+  </div> <!-- blizi se -->
 
 </div> <!-- uzavira celou stranku , pure-g -->
