@@ -472,3 +472,9 @@ width: 0px; /*For Chrome, Safari and Opera*/
 #main {
     overflow-y: hidden;
 }
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}   
