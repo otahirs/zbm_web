@@ -448,8 +448,8 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
                             '<div class="row">' +
                             '<div class="col-8">' +
                             '<button class="editBliziSeCancel fit small" type="button">Zrušit</button>' +
-                            '</div>'
-                            '<div class="col-3 offset-1">' +
+                            '</div>' +
+                            '<div class="col-4">' +
                             '<button class="regenerateBliziSe fit small" type="button" title="Znovu vygenerovat obsah"><i class="fa fa-refresh" aria-hidden="true"></i></button>' +
                             '</div>' +
                             '</div>' +

@@ -478,3 +478,7 @@ img {
     max-width: 100%;
     height: auto;
 }   
+
+#soon form {
+    margin: 0;
+}

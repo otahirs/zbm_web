@@ -114,7 +114,7 @@ content:
       </tr>
   {% endfor %}
   {# oddelovaci cara #}
-    <tr class="program--now" title="Dnes - {{"today"|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM Y')}">
+    <tr class="program--now" title="Dnes - {{'today'|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM Y')}}">
           <td class="datum"></td>
           <td class="nazev"></td>
           <td class="misto"></td>

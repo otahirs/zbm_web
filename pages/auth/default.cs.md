@@ -12,9 +12,9 @@ never_cache_twig: true
         border: solid black 1px;
         min-height: 100px;    
         padding: 20px;
-}
+    }
 </style>
-<div class="row">
+<div class="row no-gutters">
     <div class="col-sm-6 col-md-4">
         <a href="/auth/novinky">
             <h2>Novinky</h2>
