@@ -12,55 +12,56 @@ content:
 <div id="program" >
 <input type="text" style="display:inline" class="search" placeholder="Hledat.." />&nbsp;<a class="button" id="reset_btn"><i class="fa fa-refresh" aria-hidden="true"></i></a>&nbsp;<a class="button special" id="filter_btn">zobrazit filtr</a>
 <br><br>
-<div id="filter_program" class="pure-g" style="display: none">
-  <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-4" >
+<div id="filter_program" class="row" style="display: none">
+  <div class="col-sm-6 col-md-3" >
     <fieldset>
     <label>Filtr data</label>
     <button data-toggle="datepicker" type="button" style="height: 2.75em;font-size: 1em;line-height: 2.9em;"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;nyní</button>
     </fieldset>
   </div>
-  <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-4">
+  <div class="col-sm-6 col-md-3">
     <fieldset>
     <label>Typ události</label>
     <input class="filter-all" type="radio" value="all" name="type" id="type-all" checked />
-    <label for="type-all" class="pure-radio" style="display:none;">Vše</label>
+    <label for="type-all" style="display:none;">Vše</label>
     <input class="filter" type="radio" value="trenink" name="type" id="type-T" />
-    <label for="type-T" class="pure-radio">Trénink</label>
+    <label for="type-T">Trénink</label>
     <input class="filter" type="radio" value="zavod" name="type" id="type-Z" />
-    <label for="type-Z" class="pure-radio">Závod</label>
+    <label for="type-Z">Závod</label>
     <input class="filter" type="radio" value="soustredeni" name="type" id="type-S" />
-    <label for="type-S" class="pure-radio">Soustředění</label>
+    <label for="type-S">Soustředění</label>
     </fieldset>
   </div>
-  <div class="pure-u-1 pure-u-md-1-2">
+  <div class="col-md-6">
     <fieldset>
     <label>Skupina</label>
-	<div class="pure-g">
-		<div class="pure-u-1-2 pure-u-sm-1-2">
-			<input class="filter-all" type="radio" value="all" name="skupina" id="skupina-all" checked />
-			<label for="skupina-all" class="pure-radio" style="display:none;">Vše</label>
-			<input class="filter" type="radio" value="zabicky" name="skupina" id="skupina-zabicky" />
-			<label for="skupina-zabicky" class="pure-radio">Žabičky</label>
-			<br>
-			<input class="filter" type="radio" value="pulci1" name="skupina" id="skupina-pulci1" />
-			<label for="skupina-pulci1" class="pure-radio">Pulci 1</label>
-			<br>
-			<input class="filter" type="radio" value="pulci2" name="skupina" id="skupina-pulci2" />
-			<label for="skupina-pulci2" class="pure-radio">Pulci 2</label>
-			<br>
-		</div>
-		<div class="pure-u-1-2 pure-u-sm-1-2">
-			<input class="filter" type="radio" value="zaci1" name="skupina" id="skupina-zaci1" />
-			<label for="skupina-zaci1" class="pure-radio">Žáci 1</label>
-			<br>
-			<input class="filter" type="radio" value="zaci2" name="skupina" id="skupina-zaci2" />
-			<label for="skupina-zaci2" class="pure-radio">Žáci 2</label>
-			<br>
-			<input class="filter" type="radio" value="dorost" name="skupina" id="skupina-dorost" />
-			<label for="skupina-dorost" class="pure-radio">Dorost+</label>
-		</div>	
-	<div>
-	</fieldset>
+    <div class="row">
+      <div class="col-6">
+        <input class="filter-all" type="radio" value="all" name="skupina" id="skupina-all" checked />
+        <label for="skupina-all" style="display:none;">Vše</label>
+        <input class="filter" type="radio" value="zabicky" name="skupina" id="skupina-zabicky" />
+        <label for="skupina-zabicky">Žabičky</label>
+        <br>
+        <input class="filter" type="radio" value="pulci1" name="skupina" id="skupina-pulci1" />
+        <label for="skupina-pulci1">Pulci 1</label>
+        <br>
+        <input class="filter" type="radio" value="pulci2" name="skupina" id="skupina-pulci2" />
+        <label for="skupina-pulci2">Pulci 2</label>
+        <br>
+      </div>
+      <div class="col-6">
+        <input class="filter" type="radio" value="dorost" name="skupina" id="skupina-dorost" />
+        <label for="skupina-dorost">Dorost+</label>
+        <br>
+        <input class="filter" type="radio" value="zaci1" name="skupina" id="skupina-zaci1" />
+        <label for="skupina-zaci1">Žáci 1</label>
+        <br>
+        <input class="filter" type="radio" value="zaci2" name="skupina" id="skupina-zaci2" />
+        <label for="skupina-zaci2">Žáci 2</label>
+        <br>
+      </div>	
+    <div>
+	  </fieldset>
   </div>
  </div>
 {#tabulka#}
@@ -113,7 +114,7 @@ content:
       </tr>
   {% endfor %}
   {# oddelovaci cara #}
-    <tr class="program--now" title="Dnes - {{"today"|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM Y')}}">
+    <tr class="program--now" title="Dnes - {{"today"|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM Y')}">
           <td class="datum"></td>
           <td class="nazev"></td>
           <td class="misto"></td>
