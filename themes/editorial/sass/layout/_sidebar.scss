@@ -226,6 +226,7 @@
 		position: absolute;
 		width: 0;
 		height: 0;
+		z-index: 1;
 		border-top: 1em solid _palette(accent);
 		border-right: _size(sidebar-width) solid transparent;
 
