@@ -1,0 +1,31 @@
+name: Get JSON API
+version: 0.1.0
+description: Twig extension, that gets API url, decode JSON and return a TWIG object.
+icon: plug
+author:
+  name: Otakar Hirs
+  email: otakar.hirs@gmail.com
+homepage: 
+demo: 
+keywords: grav, plugin, json, api
+bugs: 
+docs: 
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    text_var:
+      type: text
+      label: PLUGIN_GET_JSON_API.TEXT_VARIABLE
+      help: PLUGIN_GET_JSON_API.TEXT_VARIABLE_HELP

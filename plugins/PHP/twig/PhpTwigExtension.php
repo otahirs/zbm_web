@@ -234,7 +234,7 @@ class PhpTwigExtension extends \Twig_Extension
               if(isset($data['dropzone_files'])){
                 foreach ($data['dropzone_files'] as $img) {
                   $news .=  "    - name: '" . $data['TimeStamp'] . "_" . $img . "'" . PHP_EOL .
-                            "      ratio: '1/4'" . PHP_EOL;
+                            "      ratio: '3'" . PHP_EOL;
                 }
               }
               if(isset($data['img'])){

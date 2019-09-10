@@ -9,9 +9,7 @@
 {% block body %}
          <section>
              
-     	{% block content %}
-	<div class="pure-g"> 	   
-    <div class="pure-u-xl-20-24 pure-u-1"> 	 
+     	{% block content %}	 
             {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
             {% if page.header.start|localizeddate('medium', 'none','cs','Europe/Prague', 'M') != page.header.end|localizeddate('medium', 'none','cs','Europe/Prague', 'M')%}
             {{page.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc d. MMMM') ~ ' — '~ page.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc d. MMMM') }}
@@ -114,8 +112,6 @@
         </script>
     {% endif %}
 
-    </div>
-</div> <!-- pure-g -->
 
 	
 

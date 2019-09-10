@@ -2484,6 +2484,7 @@ button,
   position: absolute;
   width: 0;
   height: 0;
+  z-index: 1;
   border-top: 1em solid #e65646;
   border-right: 18em solid transparent; }
   @media screen and (max-width: 1680px) {

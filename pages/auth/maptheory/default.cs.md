@@ -10,11 +10,9 @@ access:
 ---
 
 <form id="mapTheoryForm" enctype="multipart/form-data" method="post">
-<div class="pure-g">
-        <div class="pure-u-1">
-            <h2>Nahrát mapovou teorii</h2>
-        </div>
-        <div class="pure-u-1 pure-u-md-1-2">
+<h2>Nahrát mapovou teorii</h2>
+<div class="row">
+        <div class="col-md-6">
             <div>
                 <input type="file" name="PDF" accept="application/pdf" required oninvalid="this.setCustomValidity('Nahrejte soubor ve formátu PDF.')" oninput="setCustomValidity('')" >
             </div>
@@ -36,7 +34,7 @@ access:
                 </select> 
             </div> 
         </div>
-        <div class="pure-u-1 pure-u-md-1-2">
+        <div class="col-md-6">
             <button type="submit" id="sendForm">Odeslat</button>
             <div id="response"></div>
         </div>

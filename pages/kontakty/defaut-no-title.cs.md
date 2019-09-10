@@ -2,47 +2,44 @@
 title: Kontakty
 date: '2018-10-28'
 ---
-
-<div class="pure-g">
-    <div class="pure-u-1">
-        <h2>Vedení oddílu</h2>
-            <h4>Libor Zřídkaveselý - předseda</h4>
-                <ul class="fa-ul">
-                    <li><i class="fa-li fa fa-phone"></i>604 996 773</li>
-                    <li><i class="fa-li fa fa-envelope"></i>zr@sky.cz</li>
-                    <li><i class="fa-li fa fa-home"></i>Skorkovského 153<br>Brno, 636 00</li>
-                </ul>
-   </div>
-    <div class="pure-u-1"><hr></div>
-    <div class="pure-u-1 pure-u-lg-1-2">  
+<h2>Vedení oddílu</h2>
+<h4>Libor Zřídkaveselý - předseda</h4>
+<ul class="fa-ul">
+    <li><i class="fa-li fa fa-phone"></i>604 996 773</li>
+    <li><i class="fa-li fa fa-envelope"></i>zr@sky.cz</li>
+    <li><i class="fa-li fa fa-home"></i>Skorkovského 153<br>Brno, 636 00</li>
+</ul>
+<hr>
+<div class="row">
+    <div class="col-lg-6">  
         <h4>Finance - Věra Mádlová</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>vera.madlova@centrum.cz</li>
             </ul>
     </div>
-    <div class="pure-u-1 pure-u-lg-1-2">
+    <div class="col-lg-6">
         <h4>Přihlášky na závody + Polaris - Jan Drábek</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>drbca@centrum.cz</li>
             </ul>
     </div>
-    <div class="pure-u-1 pure-u-lg-1-2">
+    <div class="col-lg-6">
         <h4>IT - Richard Pátek</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>arnost.p@centrum.cz</li>
             </ul>
     </div>
-    <div class="pure-u-1 pure-u-lg-1-2">
+    <div class="col-lg-6">
         <h4>Sklad - Štěpán Zimmermann</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>stepazdepa@seznam.cz</li>
             </ul>
     </div>
-    <div class="pure-u-1">
+    <div class="col-12">
     <hr>
     <h1>Trenéři</h1>
     </div>
-    <div class="divOuter pure-u-1 pure-u-lg-1-2" id="zabicky">
+    <div class="divOuter col-lg-6" id="zabicky">
         <div class="contact--divInner">
         <h3>Žabičky</h3>
             <em>nejmenši děti do 6 let</em>
@@ -56,7 +53,7 @@ date: '2018-10-28'
             </ul>  
         </div>      
     </div>
-    <div class="divOuter pure-u-1 pure-u-lg-1-2" id="pulci1">
+    <div class="divOuter col-lg-6" id="pulci1">
         <div class="contact--divInner">
         <h3>Pulci 1</h3>
             <em>začátečníci od 6 let</em>
@@ -72,7 +69,7 @@ date: '2018-10-28'
             </ul>            
             </div>
     </div>
-    <div class="divOuter pure-u-1 pure-u-lg-1-2" id="pulci2">
+    <div class="divOuter col-lg-6" id="pulci2">
         <div class="contact--divInner">
         <h3>Pulci 2</h3>
             <em>mírně pokročilí od 8 let</em>
@@ -88,7 +85,7 @@ date: '2018-10-28'
             </ul>          
             </div>
     </div>
-    <div class="divOuter pure-u-1 pure-u-lg-1-2" id="zaci1">
+    <div class="divOuter col-lg-6" id="zaci1">
        <div class="contact--divInner">
         <h3>Žáci 1</h3>
             <em>pokročilejší od 10 let</em>
@@ -104,7 +101,7 @@ date: '2018-10-28'
             </ul>            
             </div>
     </div>
-    <div class="divOuter pure-u-1 pure-u-lg-1-2" id="zaci2">
+    <div class="divOuter col-lg-6" id="zaci2">
        <div class="contact--divInner">
         <h3>Žáci 2</h3>
             <em>pokročilí od 12 let</em>
@@ -120,7 +117,7 @@ date: '2018-10-28'
             </ul>
             </div>
     </div>
-    <div class="divOuter pure-u-1 pure-u-lg-1-2" id="dorost">
+    <div class="divOuter col-lg-6" id="dorost">
         <div class="contact--divInner">
         <h3>Dorost+</h3>
             <em>pořád se učí, od 15 let</em>
@@ -136,7 +133,7 @@ date: '2018-10-28'
             </ul>
         </div>
     </div>
-    <div class="pure-u-1">
+    <div class="col-12">
     <hr>
         <h2>Údaje sportovního klubu</h2>
             <h4>Sportovní klub Brno - Žabovřesky z.s.</h4>
