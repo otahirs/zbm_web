@@ -6,7 +6,7 @@
 
 /* Type */
 
-	body, input, select, textarea, .pure-g [class *= "pure-u"] {
+	body, input, select, textarea {
 		color: _palette(fg);
 		font-family: _font(family);
 		font-size: 15pt;
@@ -72,7 +72,7 @@
 	}
 
 	h1 {
-		font-size: 4em;
+		font-size: 2.5em;
 		margin: 0 0 (_size(element-margin) * 0.25) 0;
 		line-height: 1.3;
 	}
@@ -99,25 +99,25 @@
 
 	@include breakpoint(xlarge) {
 		h1 {
-			font-size: 3.5em;
+			font-size: 2.2em;
 		}
 		.posttime h2 {
-			font-size: 2.8em;
+			font-size: 1.7em;
 		}
 	}
 
 	@include breakpoint(medium) {
 		h1 {
-			font-size: 3.25em;
+			font-size: 2em;
 		}
 		.posttime h2 {
-			font-size: 2.6em;
+			font-size: 1.6em;
 		}
 	}
 
 	@include breakpoint(small) {
 		h1 {
-			font-size: 2em;
+			font-size: 1.9em;
 			line-height: 1.4;
 		}
 
