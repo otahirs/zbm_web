@@ -35,14 +35,14 @@ process:
     </div> <!-- list -->
     <script>
     window.addEventListener('load', function () {
-        
+
         var options = {
         valueNames: [ 'name', 'region', 'region', 'level']
         };
 
         var userList = new List('mylist', options);
 
-        $("input:checkbox").change( () => {
+        function updateList(){
             var filter_levels = [];
             $("input[name=level]:checked").each(function() {
                 filter_levels.push($(this).val());
@@ -61,7 +61,12 @@ process:
                 }
                 return false;
             });
+        }
+        
+        $("input:checkbox").change( () => {
+            updateList();
         })
+        updateList();
     });
     </script>
 {% catch %}
