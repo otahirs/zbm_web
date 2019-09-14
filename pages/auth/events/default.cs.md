@@ -14,8 +14,22 @@ content:
 
 {% set collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']) %}
 <div id="program" >
-<input type="text" style="display:inline" class="search" placeholder="Hledat.." />&nbsp;<a class="button" id="reset_btn"><i class="fa fa-refresh" aria-hidden="true"></i></a>&nbsp;<a class="button special" id="filter_btn">zobrazit filtr</a>
-<br><br>
+<div class="row">
+  <div class="col">
+    <input type="text" style="display:inline" class="search" placeholder="Hledat.." />&nbsp;
+    <a class="button" id="reset_btn"><i class="fa fa-refresh" aria-hidden="true"></i></a>&nbsp;
+    <a class="button special" id="filter_btn">zobrazit filtr</a>
+  </div>
+  <div class="col-auto">
+    <select id="events--create">
+        <option value="0" selected="true" disabled="disabled" hidden="true">Vytvořit nový</option>
+        <option class="create-event" value="trenink">Trénink</option>
+        <option class="create-event" value="zavod">Závod</option>
+        <option class="create-event" value="soustredeni">Soustředění</option>
+    </select>
+  </div>
+</div>
+<br>
 <div id="filter_program" class="row" style="display: none">
   <div class="col-sm-6 col-md-3" >
     <fieldset>
@@ -147,6 +161,15 @@ content:
 
 <script>
  window.addEventListener('load', function () {
+   
+  // create event
+  document.getElementById("events--create").value = "0";
+  $('.create-event').click( (e) => {
+      e.preventDefault;
+      location.href = "{{base_url}}/auth/events/edit?new=" + e.target.value;
+  })
+
+  // links
 	$('[data-href]').click(function (e) {
 		if($(e.target).hasClass("show")){
 		window.location = $(this).data("href");
@@ -157,8 +180,9 @@ content:
       if($(e.target).hasClass("show")){
         $(this).parent().find("td:not(.edit)").addClass('backgroundAccent') }}, 
     function () { $(this).parent().find("td:not(:last-child)").removeClass('backgroundAccent') }
-);
+  );
 
+  // show/hide filter
   var filter_div = document.getElementById('filter_program');
   $('#filter_btn').click( function(){
     if (filter_div.style.display === "none") {
@@ -170,6 +194,7 @@ content:
     }
   });
 
+  // datepicker
   var $datepicker = $('[data-toggle="datepicker"]'),
     bnt_text = $datepicker.html();
     now = Math.floor(Date.now() / 1000);
@@ -185,6 +210,7 @@ content:
     pagination: true
 	};
 
+  // list.js
   var userList = new List('program', options);
   
   function resetList(){
@@ -258,18 +284,11 @@ content:
           $('.no-result').show()
         } 
     });
-     
-    
-     
-   
+
     
     resetList();
 	$("#reset_btn").click(resetList);
 	
-	 
-
-
-    
 
 }, false); // onload  
 </script>

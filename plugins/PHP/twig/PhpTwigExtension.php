@@ -708,10 +708,10 @@ class PhpTwigExtension extends \Twig_Extension
         return $parsed;
     }
 
-    function get_event_id($event){
-        $hashStr = $event['start'].$event['end'].$event['title'].$event['place'].$event['type'];
-        $date = date_create($event['start']);
-        return $event['id'] = date_format($date, "Ymd") ."-". hash('crc32', $hashStr);
+    function create_event_id($template, $title, $start, $place){
+        $hashStr = $template.$title.$start.$place;
+        $date = date_create($start);
+        return date_format($date, "Ymd") ."-". hash('crc32', $hashStr);
     }
 
     public function phpUploadProgram(){
@@ -725,7 +725,7 @@ class PhpTwigExtension extends \Twig_Extension
             $event['date'] = date("Y-m-d");
             $event['start'] = $this->format_date($event['start']);
             $event['end'] = $this->format_date($event['end']);
-            $event['id'] = $this->get_event_id($event);
+            $event['id'] = $this->create_event_id($event['template'], $event['title'], $event['start'], $event['place']);
             $year = substr($event["start"], 0, 4);
 
             $path = "./user/pages/data/events/". $year ."/". $event["id"] ."/". $event['template'] .".cs.md";
@@ -876,34 +876,49 @@ class PhpTwigExtension extends \Twig_Extension
         if(isset($_POST["POST_type"])){
             if( $_POST["POST_type"] == "editEvent" ){
                 // kontrola doručení potřebných údajů
-                if(!isset($_POST["title"])){
-                    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                    echo 'Není vyplněn "Název"';
-                    die();
-                }
-                if(!isset($_POST["start"])){
-                    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                    echo 'Není vyplněno "Datum"';
-                    die();
-                }
-                if(!isset($_POST["template"])){
+                if(empty($_POST["template"])){
                     header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
                     echo 'CHYBA!!, nebyl obdržen typ události [template]';
                     die();
                 }
-                if(!isset($_POST["id"])){
+                if(empty($_POST["title"])){
                     header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                    echo 'CHYBA!!, nebylo obdrženo ID události [id]';
+                    echo 'Není vyplněn "Název"';
                     die();
                 }
-
-                $data = ["title","template", "start", "end",  "place", "meetTime", "meetPlace", "link", "eventTypeDescription", "startTime", "map", "terrain", "transport", "accomodation", "food", "leader", "doWeOrganize", "note", "return", "price", "program", "thingsToTake", "signups", "id"];
+                if(empty($_POST["start"])){
+                    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
+                    echo 'Není vyplněno "Datum"';
+                    die();
+                }
+                if(empty($_POST["place"])){
+                    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
+                    echo 'Není vyplněno "Místo"';
+                    die();
+                }
+                if(isset($_POST["delete"])){
+                    $path = "./user/pages/data/events/". substr($_POST["id"], 0 , 4) ."/". $_POST["id"] ;
+                    $this->rrmdir($path);
+                    die();
+                }
+                
+                
+                $data = ["template","title", "start", "end",  "place", "meetTime", "meetPlace", "link", "eventTypeDescription", "startTime", "map", "terrain", "transport", "accomodation", "food", "leader", "doWeOrganize", "note", "return", "price", "program", "thingsToTake", "signups"];
                 $group_arr = ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost"];
                 
-                $year = substr($_POST["id"], 0 , 4);
-                $template = $_POST['template'];
-                $path = "./user/pages/data/events/". $year ."/". $_POST["id"] ."/". $template .".cs.md";
-                $frontmatter = $this->get_frontmatter_as_array($path);   //rozparsuje existujici soubor
+                
+                $id = empty($_POST["id"]) ? $this->create_event_id($_POST['template'], $_POST['title'], $_POST['start'], $_POST['place']) : $_POST["id"];
+                $year = substr($id, 0 , 4);
+                $path = "./user/pages/data/events/". $year ."/". $id ."/". $_POST['template'] .".cs.md";
+
+                $new = file_exists($path) ? false : true;
+
+                if ($new) {
+                    $frontmatter["id"] = $id;
+                }
+                else {              
+                    $frontmatter = $this->get_frontmatter_as_array($path);   //rozparsuje existujici soubor  
+                }
 
                 foreach($data as $attribute){
                     if(isset($_POST[$attribute])){
@@ -911,7 +926,7 @@ class PhpTwigExtension extends \Twig_Extension
                     }
                 }
 
-                if(empty($_POST["end"])){
+                if(empty($frontmatter['end'])){
                     $frontmatter['end'] = $_POST["start"];
                 }
 
@@ -964,16 +979,20 @@ class PhpTwigExtension extends \Twig_Extension
                 }
                 
                 //combine
+                if ($new) {
+                    $content = $this->generate_content($frontmatter);
+                }
+                else {
+                    $content = $this->parse_file_content_only($path);
+                }
+                
                 $frontmatter = Yaml::dump($frontmatter, 10);
-                $content = $this->parse_file_content_only($path);
                 $page = $this->combine_frontmatter_with_content($frontmatter, $content);
                 //print_r($_POST);
                 //print_r($frontmatter);
 
-                file_put_contents($path, $page);
+                $this->file_force_contents($path, $page);
                 Cache::clearCache('all');
-
-                //echo"<script type='text/javascript'>window.location.replace(location.href);</script>";
             }
         }
       }
