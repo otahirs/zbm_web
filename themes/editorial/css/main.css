@@ -2752,25 +2752,17 @@ table.plan td {
     position: relative;
     left: 1rem;
     border: 1px dashed black;
-    transition: background-color 0.5s;
-    /*
-        background-color: #FAFAFA;
-        padding: 1.5rem;
-        border-radius: 7px;
-        margin: 1.3rem;
-        position: relative;
-        left: 1rem;
-        */ }
-    #soon section:hover {
-      outline: black solid 2px !important; }
-  #soon:hover section {
-    border: solid white 1px;
-    background-color: white;
-    transition: background-color 0.5s, border 0.5s, outline 0s; }
-  @media screen and (max-width: 736px) {
-    #soon section {
-      border: solid white 1px;
-      background-color: white; } }
+    transition: all 0.5s; }
+    #soon section.event {
+      border: 1px solid black; }
+      #soon section.event:hover {
+        border: solid white 1px;
+        background-color: white;
+        transition: all 0.5s; }
+      @media screen and (max-width: 736px) {
+        #soon section.event {
+          border: solid white 1px;
+          background-color: white; } }
 
 .soon--date {
   padding-top: 1.5rem; }
@@ -2935,3 +2927,12 @@ ul.tabs li.group-icon {
       flex: 3; }
     ul.tabs li.group-icon {
       flex: 1; } }
+
+.soon-deadline > .entry {
+  border-top: 1px dashed;
+  padding: 1em 0; }
+  .soon-deadline > .entry.last {
+    padding-bottom: 0; }
+
+.soon-deadline > .title {
+  padding-bottom: 0.8em; }
