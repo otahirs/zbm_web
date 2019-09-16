@@ -10,8 +10,27 @@ access:
         edit-event: true
 ---
 
+{% if uri.query('event') %}
+    {% set event = page.find('/data/events/' ~ uri.query('event')) %}
+    {% if event.header is null %} {% set error = "header" %} {% endif %}
+{% elseif uri.query('new') %}
+    {% set event = []|merge({'template': uri.query('new')})  %}
+    {% if event.template not in ['zavod', 'soustredeni', 'trenink'] %} {% set error = "new" %} {% endif %}
+{% else %}
+    {% set error = "parram" %}
+{% endif %}
 
-{% set event = page.find('/data/events/' ~ uri.query('event')) %}
+{% if error %}
+    <div class="notices red">
+        {% if error == "header" %} 
+        <p> CHYBA: Událost nenalezena </p>
+        {% elseif error == "new" %}
+        <p> CHYBA: Pokus o vytvoření neznámého typu události</p>
+        {% else %}
+        <p> CHYBA: Není zadán žádný požadavek</p>
+        {% endif %}
+    </div>
+{% else %}
 
 <form id="editEvent" method="post" action="">
         <input name="POST_type" type="hidden" value="editEvent">
@@ -37,13 +56,6 @@ access:
                 <li data-tab="results" class="tab-link">Výsledky</li>
             {% endif %}
         </ul>
-        <!--
-        <select name="template">
-            <option value="akce">Jiné</option>
-            <option value="zavod" '. (isset($parsed["template"])?($parsed["template"]=="zavod"?"selected":""):"") .'>Závod</option>
-            <option value="trenink" '. (isset($parsed["template"])?($parsed["template"]=="trenink"?"selected":""):"") .'>Trénink</option>
-            <option value="soustredeni" '. (isset($parsed["template"])?($parsed["template"]=="soustredeni"?"selected":""):"") .'>Soustředění</option>
-        </select> -->
         <div id="info" class="tab-content current">
             <div class="row">
             <div class="col-6">
@@ -62,7 +74,7 @@ access:
                     </div>
                     <div class="col-6">
                         <label for="place">Místo</label>
-                        <input id="place" name="place" type="text" value="{{ event.header.place }}">
+                        <input id="place" name="place" type="text" value="{{ event.header.place }}" required>
                     </div>
                     <div class="col-6">
                         <label for="GPS">GPS</label>
@@ -105,7 +117,6 @@ access:
                     <input id="dorost" type="checkbox" name="dorost" value="1" {% if "dorost" in event.header.taxonomy.skupina %} checked {% endif %}>
                         <label for="dorost"> dorost+ </label>
                 </fieldset>
-                {{ dump(event.header.taxonomy.skupina)}}
 
                 <label for="leader">Vedoucí</label>
                 <input id="leader" name="leader" type="text" value="{{ event.header.leader }}">
@@ -207,8 +218,17 @@ access:
         <button id="addResults" type="button">přdat další</button>
     </div>        
     <hr>
-    <button id="saveEvent" type="submit" class="special">Uložit</button> <br>
-    <div id="formResponse"></div>
+    <div class="row row justify-content-between">
+        <div class="col-auto">
+            <button id="saveEvent" type="submit" class="special">Uložit</button>
+        </div>
+        <div class="col"  id="formResponse" style="line-height: 1em;">
+        </div>
+        <div class="col-auto">
+            <button id="deleteEvent" type="button"><i class="fa fa-trash-o" aria-hidden="true"></i></button> 
+        </div>
+    </div>
+    <br>
     
 </form>
 
@@ -291,6 +311,7 @@ access:
         
     /* submit */
     var save_btn = document.getElementById("saveEvent"),
+        delete_btn = document.getElementById("deleteEvent"),
         form = document.getElementById("editEvent"),
         date1 = document.getElementById("date1"),
         date2 = document.getElementById("date2"),
@@ -345,5 +366,38 @@ access:
 
         }
     }
+    delete_btn.onclick = function(e){
+        e.preventDefault();
+        if (confirm("Smazat událost?") == true) {
+            var formData = new FormData(form);
+            formData.append('delete', true );
+            $.ajax({
+                url: "/php/editevent",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (){   
+                    formResponse.innerHTML = "<br>Událost byla smazána, pokud jste si to rozmysleli, klikněte na tlačítko uložit";
+                    formResponse.style.color = "red";
+                    //window.location.replace(location.href);
+                },
+                error: function (xhr, desc, err){
+
+                    if(xhr.responseText){
+                        formResponse.innerHTML = xhr.responseText;
+                    }
+                    else{
+                        formResponse.innerHTML = "<br>Chyba, zkontrolujte console log";
+                    }
+                    formResponse.style.color = "red";
+                    console.log(err);
+                    console.log(desc);
+                    console.log(xhr);
+                    }
+            });
+        }
+    }
     </script>
+{% endif %}
     
