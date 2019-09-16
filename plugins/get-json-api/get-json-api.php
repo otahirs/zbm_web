@@ -16,10 +16,26 @@ class GetJSONAPIPlugin extends Plugin
         $this->grav['twig']->twig()->addFilter(
             new \Twig_SimpleFilter('getJson', [$this, 'getRemoteJson'])
         );
+        $this->grav['twig']->twig()->addFilter(
+            new \Twig_SimpleFilter('getJsonZbmEntries', [$this, 'getRemoteJsonZBM'])
+        );
     }
 
     public function getRemoteJson($url) {
 	$body = Response::get($url);
 	return json_decode($body, true);
     }
+
+    public function getRemoteJsonZBM($url) {
+        $body = Response::get($url);
+        $data = json_decode($body, true);
+
+        foreach( $data["Data"] as $event){
+            $entries[$event["Entry1"]][] = [
+                "name" => $event["Name"],
+                "date" => $event["Date1"]
+            ];
+        }
+        return $entries;
+        }
 }

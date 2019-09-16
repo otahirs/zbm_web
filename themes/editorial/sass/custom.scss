@@ -70,38 +70,30 @@ table.plan td {
         position: relative;
         left: 1rem;
         border: 1px dashed black;
-        transition: background-color 0.5s;
-        
-        &:hover {
-            outline: black solid 2px !important;
-        }
-        /*
-        background-color: #FAFAFA;
-        padding: 1.5rem;
-        border-radius: 7px;
-        margin: 1.3rem;
-        position: relative;
-        left: 1rem;
-        */
-        
-    }
+        transition: all 0.5s;
 
-    &:hover {
-        section {
-            border: solid white 1px;
-            background-color: white;
-            transition: background-color 0.5s, border 0.5s, outline 0s;
-        }
-    }
+        &.event {
+            border: 1px solid black;
 
-    @include breakpoint(small) {
-        section {
-            border: solid white 1px;
-            background-color: white;
+
+            &:hover {
+                border: solid white 1px;
+                background-color: white;
+                transition: all 0.5s;
+            }
+
+
+            @include breakpoint(small) {
+                border: solid white 1px;
+                background-color: white;  
+            }
+
+
+
+
         }
+
     }
-    
-    
 
 
 }
@@ -329,4 +321,14 @@ ul.tabs li.group-icon {
     }
 }
 
+.soon-deadline > .entry {
+    border-top: 1px dashed;
+    padding: 1em 0;
+    &.last {
+        padding-bottom: 0;
+    }
+}
+.soon-deadline > .title {
+    padding-bottom: 0.8em;
+}
 
