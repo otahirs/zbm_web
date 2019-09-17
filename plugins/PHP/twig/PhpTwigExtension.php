@@ -1036,6 +1036,12 @@ class PhpTwigExtension extends \Twig_Extension
 
     public function SavePolaris(){ 
 
+        if(empty($_FILES["PDF"]["tmp_name"])){
+            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
+            echo "Nahrání PDF souboru se nezdařilo.";
+            die();
+        }
+
         // init vars
         $pagePath = './user/pages/data/polaris/blank.md';
         $savePath = './user/pages/data/polaris/' . $_POST['year'];
@@ -1052,10 +1058,9 @@ class PhpTwigExtension extends \Twig_Extension
             echo "Už je nahrané stejné číslo Polarisu.";
             die();
         }
-        else{
-            $frontmatter['polaris'][$polarisYear][$polarisNumber] = $fileTitle;
-            krsort($frontmatter['polaris']);
-        } 
+
+        $frontmatter['polaris'][$polarisYear][$polarisNumber] = $fileTitle;
+        krsort($frontmatter['polaris']);
 
         // save pdf and jpeg thumbnail
         $this->save_PDF($savePath, $fileTitle);
