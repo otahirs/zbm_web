@@ -30,6 +30,12 @@ class PhpTwigExtension extends \Twig_Extension
     }
 
 // pomocne fce
+    function return_ERROR($errMsg){
+        http_response_code(500); // 500 - Internal server error
+        echo $errMsg;
+        die();
+    }
+
     /*************************************************************
     ** projde vsechny prvky array a aplikuje htmlspecialchars() **
     **************************************************************/
@@ -104,9 +110,7 @@ class PhpTwigExtension extends \Twig_Extension
     
     function parse_file_frontmatter_only($path_to_file){
         if(!file_exists($path_to_file)){
-            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-            echo 'Cannot parse file, "'. $path_to_file. '" do not match any file.';
-            die();
+            $this->return_ERROR('Cannot parse file, "'. $path_to_file. '" do not match any file.');
         }
         $txt_file    = file_get_contents($path_to_file); //nacte soubor
         $rows        = explode("\n", $txt_file); //rozdeli na radky
@@ -123,9 +127,7 @@ class PhpTwigExtension extends \Twig_Extension
     
     function parse_file_content_only($path_to_file){
         if(!file_exists($path_to_file)){
-            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-            echo 'Cannot parse file, "'. $path_to_file. '" do not match any file.';
-            die();
+            $this->return_ERROR('Cannot parse file, "'. $path_to_file. '" do not match any file.');
         }
         $txt_file    = file_get_contents($path_to_file); //nacte soubor
         $rows        = explode("\n", $txt_file); //rozdeli na radky
@@ -404,9 +406,7 @@ class PhpTwigExtension extends \Twig_Extension
                     $ext=pathinfo($file_name,PATHINFO_EXTENSION);
                     if(!in_array($ext,$extension))
                     {
-                        header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                        echo "<em>" . $file_name . "</em>není podporovaný typ obrázku";
-                        die();
+                        $this->return_ERROR("<em>" . $file_name . "</em>není podporovaný typ obrázku");
                     }
                 
         }
@@ -851,9 +851,7 @@ class PhpTwigExtension extends \Twig_Extension
 
     function normalize_GPS($latlng){
         if(!strpos($latlng, ",")){
-            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-            echo '<br>Nepodporovaný formát GPS: hodnoty zem. šířky a délky musí být odděleny čárkou. <br>např 50°42\'38.9"N<b>,</b> 15°36\'56.6"E';
-            die();
+            $this->return_ERROR('<br>Nepodporovaný formát GPS: hodnoty zem. šířky a délky musí být odděleny čárkou. <br>např 50°42\'38.9"N<b>,</b> 15°36\'56.6"E');
         }
 
         $arr = explode( "," , $latlng );
@@ -877,24 +875,16 @@ class PhpTwigExtension extends \Twig_Extension
             if( $_POST["POST_type"] == "editEvent" ){
                 // kontrola doručení potřebných údajů
                 if(empty($_POST["template"])){
-                    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                    echo 'CHYBA!!, nebyl obdržen typ události [template]';
-                    die();
+                    $this->return_ERROR('CHYBA!!, nebyl obdržen typ události [template]');
                 }
                 if(empty($_POST["title"])){
-                    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                    echo 'Není vyplněn "Název"';
-                    die();
+                    $this->return_ERROR('Není vyplněn "Název"');
                 }
                 if(empty($_POST["start"])){
-                    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                    echo 'Není vyplněno "Datum"';
-                    die();
+                    $this->return_ERROR('Není vyplněno "Datum"');
                 }
                 if(empty($_POST["place"])){
-                    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                    echo 'Není vyplněno "Místo"';
-                    die();
+                    $this->return_ERROR('Není vyplněno "Místo"');
                 }
                 if(isset($_POST["delete"])){
                     $path = "./user/pages/data/events/". substr($_POST["id"], 0 , 4) ."/". $_POST["id"] ;
@@ -950,9 +940,7 @@ class PhpTwigExtension extends \Twig_Extension
                         $frontmatter["GPS"] = $gps;
                     }
                     else{
-                        header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                        echo 'Nepodporovaný formát GPS';
-                        die();
+                        $this->return_ERROR('Nepodporovaný formát GPS');
                     }
                 }
 
@@ -1019,9 +1007,7 @@ class PhpTwigExtension extends \Twig_Extension
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         $mime = finfo_file($finfo, $_FILES['PDF']['tmp_name']);
         if ($mime != 'application/pdf') {
-            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-            echo 'Nahraný soubor není PDF!';
-            die();
+            $this->return_ERROR('Nahraný soubor není PDF!');
         }
         if(!is_dir($savePath)){
             mkdir($savePath);
@@ -1037,9 +1023,7 @@ class PhpTwigExtension extends \Twig_Extension
     public function SavePolaris(){ 
 
         if(empty($_FILES["PDF"]["tmp_name"])){
-            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-            echo "Nahrání PDF souboru se nezdařilo.";
-            die();
+            $this->return_ERROR("Nahrání PDF souboru se nezdařilo.");
         }
 
         // init vars
@@ -1054,9 +1038,7 @@ class PhpTwigExtension extends \Twig_Extension
 
         // add polaris to frontmatter
         if(isset($frontmatter['polaris'][$polarisYear]) && in_array($fileTitle, $frontmatter['polaris'][$polarisYear])){
-            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-            echo "Už je nahrané stejné číslo Polarisu.";
-            die();
+            $this->return_ERROR("Už je nahrané stejné číslo Polarisu.");
         }
 
         $frontmatter['polaris'][$polarisYear][$polarisNumber] = $fileTitle;
@@ -1122,9 +1104,7 @@ class PhpTwigExtension extends \Twig_Extension
 
         // add maptheory to frontmatter
         if(isset($frontmatter['maptheory'][$maptGroup]) && in_array ( $fileTitle , $frontmatter['maptheory'][$maptGroup] ) ){
-            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-            echo "Už je nahrana mapova teorie se stejnym datem a skupinou";
-            die();
+            $this->return_ERROR("Už je nahrana mapova teorie se stejnym datem a skupinou");
         }
         else{
             $frontmatter['maptheory'][$maptGroup][] = $fileTitle;
@@ -1189,9 +1169,7 @@ class PhpTwigExtension extends \Twig_Extension
 
         // add maptheory to frontmatter
         if(isset($frontmatter['maptheory'][$maptGroup]) && in_array ( $fileTitle , $frontmatter['maptheory'][$maptGroup] ) ){
-            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-            echo "Už je nahrana mapova teorie se stejnym datem a skupinou";
-            die();
+            $this->return_ERROR("Už je nahrana mapova teorie se stejnym datem a skupinou");
         }
         else{
             $frontmatter['maptheory'][$maptGroup][] = $fileTitle;
