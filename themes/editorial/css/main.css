@@ -2936,3 +2936,79 @@ ul.tabs li.group-icon {
 
 .soon-deadline > .title {
   padding-bottom: 0.8em; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+.row:before {
+  display: table;
+  content: " "; }
+
+.grid-calendar {
+  min-width: 1px; }
+  .grid-calendar .row {
+    /*
+        override these from bootstrap
+  
+        margin-right: -15px;
+        margin-left: -15px;
+      */
+    margin: 0; }
+  .grid-calendar .calendar-week .calendar-day {
+    background-color: #f6f6f6;
+    border: 5px solid #fff;
+    height: 100%;
+    outline: #ccc 1px solid;
+    outline-offset: -5px;
+    height: 100%;
+    padding-right: 10px; }
+    .grid-calendar .calendar-week .calendar-day:before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+      float: left; }
+    .grid-calendar .calendar-week .calendar-day .grid-day {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: #dcdada;
+      width: 1.75rem;
+      height: 1.75rem;
+      line-height: 1.75rem;
+      font-size: .75rem;
+      text-align: center; }
+      .grid-calendar .calendar-week .calendar-day .grid-day.calendar-today {
+        background-color: #e65646; }
+    .grid-calendar .calendar-week .calendar-day .grid-list {
+      display: flex;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden; }
+      .grid-calendar .calendar-week .calendar-day .grid-list ul {
+        padding: 0;
+        padding-top: 1.55em;
+        margin: 0; }
+      .grid-calendar .calendar-week .calendar-day .grid-list li {
+        list-style: none;
+        padding-left: 0; }
+      .grid-calendar .calendar-week .calendar-day .grid-list a {
+        color: black;
+        border-bottom: none; }
+      .grid-calendar .calendar-week .calendar-day .grid-list .fa-caret-right {
+        color: black; }
+    .grid-calendar .calendar-week .calendar-day.diff-month {
+      opacity: 0.4; }
+    .grid-calendar .calendar-week .calendar-day .event-title {
+      font-size: small;
+      padding: 5px;
+      position: relative;
+      top: -2px; }
+  .grid-calendar .calendar-week-header {
+    text-align: center; }
+  .grid-calendar .grid-cell {
+    display: inline-block;
+    float: left;
+    min-height: 1px;
+    padding: 0;
+    position: relative;
+    width: 14.28571%; }

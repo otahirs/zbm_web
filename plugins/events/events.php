@@ -14,7 +14,6 @@
 namespace Grav\Plugin;
 
 // import classes
-require_once __DIR__.'/vendor/autoload.php';
 require_once __DIR__.'/classes/calendarProcessor.php';
 
 use Grav\Common\Plugin;
@@ -25,9 +24,7 @@ use Grav\Common\Page\Pages;
 use Grav\Common\Taxonomy;
 use RocketTheme\Toolbox\Event\Event;
 
-use Carbon\Carbon;
-
-use Events\CalendarProcessor;
+use Calendar\CalendarProcessor;
 
 /**
  * Grav Events
@@ -77,14 +74,6 @@ use Events\CalendarProcessor;
  */
 class EventsPlugin extends Plugin
 {
-	/**
-	 * Current Carbon DateTime
-	 *
-	 * @since  1.0.0 Initial Release
-	 * @var object Carbon DateTime
-	 */
-	protected $now;
-
 
 	/**
 	 * Calendar Class
@@ -124,26 +113,9 @@ class EventsPlugin extends Plugin
 	 */
 	public function onPluginsInitialized()
 	{
-		// Nothing else is needed for admin so close it out
-		if ( $this->isAdmin() ) {
-
-			$this->enable([
-				'onAdminSave' => ['onAdminSave', 0],
-			]);
-
-			return;
-		}
-
-		// Add these to taxonomy for events management
-		$event_taxonomies = array('type', 'event_freq', 'event_repeat', 'event_location');
-		$taxonomy_config = array_merge((array)$this->config->get('site.taxonomies'), $event_taxonomies);
-		$this->config->set('site.taxonomies', $taxonomy_config);
-
-		// get the current datetime with c
-		$this->now = Carbon::now();
 
 		// set the calendar accessor
-		$this->calendar = new \Events\CalendarProcessor();
+		$this->calendar = new \Calendar\CalendarProcessor();
 
 		// enable the following hooks
 		$this->enable([
@@ -169,27 +141,7 @@ class EventsPlugin extends Plugin
 	}
 
 
-	/**
-	 * Association with page templates
-	 *
-	 * @param	 Event Event
-	 * @since  1.0.15 Major Refactor
-	 * @return void
-	 */
-	public function onGetPageTemplates(Event $event)
-	{
-		$types = $event->types;
 
-    /* @var Locator $locator */
-    $locator = Grav::instance()['locator'];
-
-    // Set templates.
-    $types->scanTemplates($locator->findResource('plugin://events/templates'));
-
-    // reverse the FUBARd order of blueprints
-    $event = array_reverse($types['event']);
-    $types['event'] = $event;
-	}
 
 	/**
 	 * Set needed variables to display events
@@ -235,49 +187,4 @@ class EventsPlugin extends Plugin
 
 	}
 
-	/**
-	 * Process Event Information
-	 *
-	 * This hook fires a reverse geocoding hook for the location field
-	 * on single events.
-	 *
-	 * @param  Event  $event
-	 * @since  1.0.15 Location Field Update
-	 * @return void
-	 */
-	public function onAdminSave(Event $event)
-  {
-		// get the ojbect being saved
-  	$obj = $event['object'];
-
-		// check to see if the object is a `Page` with template `event`
-    if ($obj instanceof Page &&  $obj->template() == 'event' ) {
-
-			// get the header
-			$header = $obj->header();
-
-			// check for location information
-    	if ( isset( $header->event['location'] ) && ! isset( $header->event['coordinates'] ) ) {
-	    	$location = $header->event['location'];
-
-	    	// build a url
-	    	$url = "http://maps.googleapis.com/maps/api/geocode/json?address=" . urlencode($location);
-
-	    	// fetch the results
-				$ch = curl_init();
-				curl_setopt($ch, CURLOPT_URL, $url);
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-				$geoloc = json_decode(curl_exec($ch), true);
-
-				// build the coord string
-				$lat = $geoloc['results'][0]['geometry']['location']['lat'];
-				$lng = $geoloc['results'][0]['geometry']['location']['lng'];
-				$coords = $lat . ", " . $lng;
-
-				// set the header info
-				$header->event['coordinates'] = $coords;
-				$obj->header($header);
-    	}
-    }
-  }
 }

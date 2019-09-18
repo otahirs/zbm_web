@@ -6,11 +6,88 @@
 	<h2 class="calendar-title">{{ page.title }}</h2>
 
 	<div class="calendar-content">{{ page.content }}</div>
-	{{dump(calendar.currentDay)}}
-		{% set todayUrl = page.url ~ '/year:' ~ "now"|date('Y') ~ '/month:' ~ "now"|date('m') %}
-    {% set prevMonthUrl = page.url ~ '/year:' ~ calendar.prev.date|date('Y') ~ '/month:' ~ calendar.prev.date|date('m') %}
-    {% set nextMonthUrl = page.url ~ '/year:' ~ calendar.next.date|date('Y') ~ '/month:' ~ calendar.next.date|date('m') %}
+	    {% set todayUrl = page.url ~ '/year:' ~ "now"|date('Y') ~ '/month:' ~ "now"|date('m') %}
+    {% set prevMonthUrl = page.url ~ '/year:' ~ calendar.prevMonth|date('Y') ~ '/month:' ~ calendar.prevMonth|date('m') %}
+    {% set nextMonthUrl = page.url ~ '/year:' ~ calendar.nextMonth|date('Y') ~ '/month:' ~ calendar.nextMonth|date('m') %}
+    
+    <style>
+       
+    </style>
+    <div class="container">
+    <div class="grid-calendar">
+        <div class="row controls-container justify-content-md-center">
+                <div class="controls col-xs-12 col-md">
+                    <a href="{{ prevMonthUrl }}" class="calendar-button calendar-control">&lsaquo;</a>
+                    <span class="month-title">{{ calendar.selectedMonth|localizeddate('medium', 'none', 'cs','Europe/Prague', 'LLLL') ~ calendar.date|date(' Y') }}</span>
+                    <a href="{{ nextMonthUrl }}" class="calendar-button calendar-control">&rsaquo;</a>
+                </div>
+                <div>
+					<ul class="calendar-legend col-auto">
+						<li class="calendar-today">
+							<span class="key"> <a href="{{ todayUrl }}" class="calendar-button calendar-control">Dnes</a></span>
+							<span class="color">{{ "now"|date('j') }}</span>
+						</li>
+					</ul>
+                </div>
+        </div>
+        <div class="row calendar-week-header">
+			<div class="col-xs-1 grid-cell"><div><div><span>{{ 'GRAV.DAYS_OF_THE_WEEK'|ta(0) }}</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>{{ 'GRAV.DAYS_OF_THE_WEEK'|ta(1) }}</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>{{ 'GRAV.DAYS_OF_THE_WEEK'|ta(2) }}</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>{{ 'GRAV.DAYS_OF_THE_WEEK'|ta(3) }}</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>{{ 'GRAV.DAYS_OF_THE_WEEK'|ta(4) }}</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>{{ 'GRAV.DAYS_OF_THE_WEEK'|ta(5) }}</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>{{ 'GRAV.DAYS_OF_THE_WEEK'|ta(6) }}</span></div></div></div>
+		</div>
+        {% set currentDay = calendar.startDay %}
+        {% for week in range(1, calendar.weekCount) %}
+            
+            <div class="row calendar-week">
+            {% for day in 1..7 %}
+            <div class="col-xs-1 grid-cell">
+                <div class="calendar-day {% if calendar.selectedMonth|date("m") != currentDay|date("m") %} diff-month {% endif %}">
+                    <div class="grid-day {% if currentDay|date("dmY") == "now"|date("dmY") %} calendar-today {% endif %}">{{currentDay|date("j")}}</div>
+                    {% if calendar.events[currentDay|date("U")] != null %}
+                    <div class="grid-list">
+	                       	<ul>
+		                        {% for event in calendar.events[currentDay|date("U")] %}
+		                            {{dump(event)}}
+		                                    <li class="event" title="{{ event.header.title }}">
+		                                    	<i class="fa fa-caret-right" aria-hidden="true"></i><span class="event-title">
+		                                    		<a href="{{ event.header.url }}" class="p-name u-url">
+		                                    			<span>{{ event.header.title }}</span>
+		                                    		</a>
+		                                    	</span>
+		                                    </li>                         
+		                        {% endfor %}
+	                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+                {% set currentDay = currentDay|date_modify("+1 day") %}
+                
+            {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+    </div>
 
+
+
+		<div class="calendar-modal">
+		  <div class="calendar-modal-inner">
+				<div class="calendar-close-modal">X</div>
+				<h2 class="calendar-modal-title"></h2>
+				<div class="calendar-modal-content"></div>
+			</div>
+		</div>
+
+</section><!--.calendar-container-->
+
+{% endblock %}
+
+{#
     <table class="calendar">
         <thead>
             <tr class="controls-container">
@@ -67,7 +144,6 @@
 		                                    <li class="event">
 		                                    	<span class="event-title">
 		                                    		<a href="{{ event.url }}" class="p-name u-url">
-		                                    			{# <time class="dt-start" datetime="{{ event.start|date("c") }}">{{ event.meetTime }}</time> #}
 		                                    			<span>{{ event.title }}</span>
 		                                    		</a>
 		                                    	</span>
@@ -95,15 +171,4 @@
             </tr>
         </tbody>
     </table>
-
-		<div class="calendar-modal">
-		  <div class="calendar-modal-inner">
-				<div class="calendar-close-modal">X</div>
-				<h2 class="calendar-modal-title"></h2>
-				<div class="calendar-modal-content"></div>
-			</div>
-		</div>
-
-</section><!--.calendar-container-->
-
-{% endblock %}
+    #}

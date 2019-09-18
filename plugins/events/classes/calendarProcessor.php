@@ -10,9 +10,7 @@
  * Designed + Developed by Kaleb Heitzman  |___/
  * (c) 2016
  */
-namespace Events;
-require_once __DIR__.'/../vendor/autoload.php';
-use Carbon\Carbon;
+namespace Calendar;
 
 /**
  * Events Plugin Calendar Class
@@ -35,6 +33,24 @@ use Carbon\Carbon;
  */
 class CalendarProcessor
 {
+
+	function getStartOfWeek($date){
+		while(date_format($date, "N") != 1){ // 1 == monday
+			$date->modify('-1 day');
+		}
+		return $date;
+	}
+
+	function getSundayAfterEndOfMonth($date){
+		$numOfDaysInMonth = date_format($date, "t");
+		$date->modify('+' . $numOfDaysInMonth . 'days');
+
+		while(date_format($date, "N") != 7){ // 7 == sunday
+			$date->modify('+1 day');
+		}
+		return $date;
+	}
+
 	/**
 	 * Twig Calendar Vars
 	 *
@@ -73,16 +89,14 @@ class CalendarProcessor
 			while ($start <= $end){
 				
 				// build dates to create an associate array
-				$carbonStart = Carbon::parse($start);
-				$year = $carbonStart->year;
-				$month = $carbonStart->month;
-				$day = $carbonStart->day;
+				$dateStart = date_create($start);
+				$timestamp = $dateStart->getTimestamp();
 
 				$eventItem = $event->toArray();
 				$eventItem['header']['url'] = $event->url();
 
 				// add the event to the calendar
-				$calendar[$year][$month][$day][] = $eventItem;
+				$calendar[$timestamp][] = $eventItem;
 
 				// $start++
 				$start = date('Y-m-d',strtotime($start . "+1 days"));
@@ -129,31 +143,31 @@ class CalendarProcessor
 		}
 
 		$monthYearString = "${yearParam}-${monthParam}-01";
-		$carbonMonthYear = Carbon::parse($monthYearString);
+		$date = date_create($monthYearString);
+
+		$startDay = $this->getStartOfWeek(clone $date);
+		$endDay = $this->getSundayAfterEndOfMonth(clone $date);
 
 		// add vars for use in the calendar twig var
-		$twigVars['calendar']['daysInMonth'] = $carbonMonthYear->daysInMonth;
-		$twigVars['calendar']['currentDay'] = date('d');
+		$twigVars['calendar']['daysInMonth'] = (clone $date)->format("t");
+		$twigVars['calendar']['selectedMonth'] = (clone $date);
+		$twigVars['calendar']['startDay'] = $startDay;
+		$twigVars['calendar']['endDay'] = $endDay;
+		$twigVars['calendar']['weekCount'] = (date_diff($startDay, $endDay)->days + 1)/7;
 
+
+		
 		// current dates
-		$twigVars['calendar']['date'] = $carbonMonthYear->timestamp;
-		$twigVars['calendar']['year'] = $carbonMonthYear->year;
-		$twigVars['calendar']['month'] = $carbonMonthYear->month;
-		$twigVars['calendar']['day'] = $carbonMonthYear->day;
+		$twigVars['calendar']['year'] = (clone $date)->format("Y");
+		$twigVars['calendar']['month'] = (clone $date)->format("m");
 
-		// next dates
-		$nextMonth = $carbonMonthYear->copy()->addMonth();
-		$twigVars['calendar']['next']['date'] = $nextMonth->timestamp;
-
-		// prev dates
-		$prevMonth = $carbonMonthYear->copy()->subMonth();
-		$twigVars['calendar']['prev']['date'] = $prevMonth->timestamp;
+		// months
+		$twigVars['calendar']['nextMonth'] = (clone $date)->modify("+1 month");
+		$twigVars['calendar']['prevMonth'] = (clone $date)->modify("-1 month");
 
 		// years
-		$nextYear = $carbonMonthYear->copy()->addYear();
-		$prevYear = $carbonMonthYear->copy()->subYear();
-		$twigVars['calendar']['prevYear'] = $prevYear;
-		$twigVars['calendar']['nextYear'] = $nextYear;
+		$twigVars['calendar']['prevYear'] = (clone $date)->modify("-1 year");
+		$twigVars['calendar']['nextYear'] = (clone $date)->modify("+1 year");
 
 		return $twigVars;
 	}
