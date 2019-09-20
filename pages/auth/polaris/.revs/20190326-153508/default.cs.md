@@ -61,7 +61,7 @@ access:
         var submitButton = document.getElementById("sendPolaris");
         var responseDiv = document.getElementById("response");
         submitButton.style.display = "none";
-        responseDiv.innerHTML = '<br><i class="fa fa-spinner fa-pulse fa-3x" aria-hidden="true"></i> Náhrávám se polaris a vytváří se náhled.';
+        responseDiv.innerHTML = '<br><i class="fa fa-spinner fa-pulse fa-3x" aria-hidden="true"></i> Náhrává se polaris a vytváří se náhled.';
         responseDiv.style.color = "black";
           var polarisForm = new FormData(document.getElementById("polarisForm"));
           $.ajax({
