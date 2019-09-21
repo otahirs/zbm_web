@@ -29,6 +29,7 @@ Na současný stav se můžete podívat na [new.zbmob.cz](https://new.zbmob.cz) 
 - [ ] Automodul
 - [ ] Archiv - staré soubory novinek a akcí přesunout do archivu
 - [ ] Archiv map, včetně možnosti si ji v nějaké podobě stáhnout
+- [ ] rozhraní pro nastavení přeposílání emailů 
 
 
 
