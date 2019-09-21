@@ -9,13 +9,13 @@
     {% set nextMonthUrl = page.url ~ '/year:' ~ calendar.nextMonth|date('Y') ~ '/month:' ~ calendar.nextMonth|date('m') %}
 
 
-    <div class="row calendar-controls justify-content-md-center">
-        <div class="col-xs-12 col-md">
+    <div class="row no-gutters calendar-controls justify-content-md-center">
+        <div class="col-xs-10 col">
             <a href="{{ prevMonthUrl }}" class="calendar-button">&lsaquo;</a>
             <span class="month-title">{{ calendar.selectedMonth|localizeddate('medium', 'none', 'cs','Europe/Prague', 'LLLL Y') }}</span>
             <a href="{{ nextMonthUrl }}" class="calendar-button">&rsaquo;</a>
         </div>
-        <div class="col-auto">
+        <div class="col-auto col-xs-2">
 			 <a href="{{ todayUrl }}">
                 <span class="key">dnes</span>
                 <span class="calendar-day-tag calendar-today">{{ "now"|date('j') }}</span>
