@@ -59,6 +59,7 @@
 
 #calendar-modal-close {
     float: right;
+    cursor: pointer;
 }
 
 
