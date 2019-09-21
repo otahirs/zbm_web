@@ -245,7 +245,7 @@
 		// Autohide navlinks to submenu				
 				function calcWidth() {
 					var navwidth = 0; 
-					var morewidth = $('#links .more').outerWidth(true) + 30;
+					var morewidth = $('#links .more').outerWidth(true) + 35;
 					$('#links > li:not(.more)').each(function() {
 						navwidth += $(this).outerWidth( true );
 					});
@@ -277,7 +277,7 @@
 					calcWidth();
 					$links.css("opacity", "1");
 				});
-				$(window).on('resize',function(){
+				$(window).on('resize orientationchange',function(){
 					setTimeout(calcWidth, 100);
 				});
 
