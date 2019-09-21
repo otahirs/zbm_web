@@ -277,8 +277,11 @@
 					calcWidth();
 					$links.css("opacity", "1");
 				});
-				$(window).on('resize orientationchange',function(){
+				$(window).on('resize',function(){
 					setTimeout(calcWidth, 100);
+				});
+				$(window).on('orientationchange',function(){
+					setTimeout(calcWidth, 1000);
 				});
 
 				var linksBtn = document.getElementById('links-more-btn'),
