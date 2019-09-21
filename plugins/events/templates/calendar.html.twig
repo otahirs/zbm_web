@@ -49,7 +49,7 @@
                     <div class="grid-day calendar-day-tag{% if currentDay|date("dmY") == "now"|date("dmY") %} calendar-today {% endif %}" {% if calendar.events[currentDay|date("U")] != null %} style="cursor:pointer" {% endif %}>{{currentDay|date("j")}}</div>
                     {% if calendar.events[currentDay|date("U")] != null %}
                     <div class="calendar-list">
-                        <ul data-date="{{currentDay|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM')}}">
+                        <ul data-date="{{currentDay|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc | d. MMMM')}}">
                             {% for event in calendar.events[currentDay|date("U")] %}
                                 {{dump(event)}}
                                 <li class="event" title="{{ event.header.title }}" data-name="{{event.header.title}}" data-href="{{event.header.url}}">
