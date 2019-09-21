@@ -2937,78 +2937,96 @@ ul.tabs li.group-icon {
 .soon-deadline > .title {
   padding-bottom: 0.8em; }
 
-*, *:before, *:after {
-  box-sizing: border-box; }
-
-.row:before {
-  display: table;
-  content: " "; }
-
-.grid-calendar {
-  min-width: 1px; }
-  .grid-calendar .row {
-    /*
-        override these from bootstrap
-  
+#calendar .row {
+  /*
+        override these from bootstrap:
         margin-right: -15px;
         margin-left: -15px;
-      */
-    margin: 0; }
-  .grid-calendar .calendar-week .calendar-day {
-    background-color: #f6f6f6;
-    border: 5px solid #fff;
-    height: 100%;
-    outline: #ccc 1px solid;
-    outline-offset: -5px;
-    height: 100%;
-    padding-right: 10px; }
-    .grid-calendar .calendar-week .calendar-day:before {
-      content: "";
-      display: block;
-      padding-top: 100%;
-      float: left; }
-    .grid-calendar .calendar-week .calendar-day .grid-day {
-      position: absolute;
-      right: 0;
-      top: 0;
-      background: #dcdada;
-      width: 1.75rem;
-      height: 1.75rem;
-      line-height: 1.75rem;
-      font-size: .75rem;
-      text-align: center; }
-      .grid-calendar .calendar-week .calendar-day .grid-day.calendar-today {
-        background-color: #e65646; }
-    .grid-calendar .calendar-week .calendar-day .grid-list {
-      display: flex;
-      width: 100%;
-      white-space: nowrap;
-      overflow: hidden; }
-      .grid-calendar .calendar-week .calendar-day .grid-list ul {
-        padding: 0;
-        padding-top: 1.55em;
-        margin: 0; }
-      .grid-calendar .calendar-week .calendar-day .grid-list li {
-        list-style: none;
-        padding-left: 0; }
-      .grid-calendar .calendar-week .calendar-day .grid-list a {
-        color: black;
-        border-bottom: none; }
-      .grid-calendar .calendar-week .calendar-day .grid-list .fa-caret-right {
-        color: black; }
-    .grid-calendar .calendar-week .calendar-day.diff-month {
-      opacity: 0.4; }
-    .grid-calendar .calendar-week .calendar-day .event-title {
-      font-size: small;
-      padding: 5px;
-      position: relative;
-      top: -2px; }
-  .grid-calendar .calendar-week-header {
-    text-align: center; }
-  .grid-calendar .grid-cell {
+        */
+  margin: 0; }
+
+#calendar .calendar-controls {
+  text-align: center;
+  margin-bottom: 1em; }
+  #calendar .calendar-controls .month-title {
+    min-width: 8em;
+    display: inline-block; }
+  #calendar .calendar-controls .calendar-button {
     display: inline-block;
-    float: left;
-    min-height: 1px;
-    padding: 0;
+    width: 1.5rem;
+    color: black;
+    line-height: 1.5rem;
+    background-color: #eee;
+    border-radius: 2px;
+    margin: 0 0.05em 0.5rem; }
+    #calendar .calendar-controls .calendar-button a {
+      color: black; }
+    #calendar .calendar-controls .calendar-button:hover {
+      transition: background-color 0.2s ease;
+      background-color: #ddd; }
+  #calendar .calendar-controls .calendar-day-tag {
+    display: inline-block;
+    position: initial; }
+
+#calendar .calendar-week-header {
+  text-align: center; }
+
+#calendar .calendar-day {
+  background-color: #eee;
+  height: 100%;
+  padding-right: 10px;
+  min-height: 3em;
+  border: 10px solid #fff; }
+  @media screen and (max-width: 980px) {
+    #calendar .calendar-day {
+      border-left-width: 5px; } }
+  #calendar .calendar-day:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+    float: left; }
+  #calendar .calendar-day .calendar-list {
+    display: flex;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden; }
+    #calendar .calendar-day .calendar-list ul {
+      padding: 0;
+      padding-top: 2em;
+      margin: 0; }
+    #calendar .calendar-day .calendar-list li {
+      list-style: none;
+      padding-left: 0; }
+    #calendar .calendar-day .calendar-list a {
+      color: black;
+      border-bottom: none; }
+    #calendar .calendar-day .calendar-list .fa-caret-right {
+      color: black; }
+  #calendar .calendar-day.diff-month {
+    opacity: 0.4; }
+  #calendar .calendar-day .event-title {
+    font-size: small;
+    padding: 5px;
     position: relative;
-    width: 14.28571%; }
+    top: -2px; }
+
+#calendar .calendar-day-tag {
+  right: 10px;
+  top: 10px;
+  position: absolute;
+  background: #dbdbdb;
+  width: 1.75rem;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  font-size: .75rem;
+  text-align: center; }
+  #calendar .calendar-day-tag.calendar-today {
+    background-color: #e65646;
+    color: black !important; }
+
+#calendar .calendar-cell {
+  float: left;
+  min-height: 1px;
+  padding: 0;
+  position: relative;
+  width: 14.28571%; }

@@ -41,7 +41,7 @@
 
 
 /* The Modal (background) */
-.news--modal, #plan--modal {
+.news--modal, #plan--modal, #calendar-modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 10001; /* Sit on top */
@@ -53,19 +53,28 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-#plan--modal {
+#plan--modal, #calendar-modal {
     padding-top: 150px; /* Location of the box */
+}
+
+#calendar-modal-close {
+    float: right;
 }
 
 
 /* Modal Content */
-.news--modal-content, #plan--modal-content {
+.news--modal-content, #plan--modal-content, #calendar-modal-inner {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     max-width: 700px;
     margin-bottom: 100px;
+}
+
+#calendar-modal-inner{
+    padding: 50px;
+    max-width: 500px;
 }
 #NewsModalScroll {
     overflow-y: auto;
@@ -482,3 +491,8 @@ img {
 #soon form {
     margin: 0;
 }
+
+
+
+
+
