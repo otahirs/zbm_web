@@ -175,14 +175,15 @@ class EventsPlugin extends Plugin
 			$twig->twig_vars['calendar'] = array_shift($twigVars);
 		}
 
-		// scripts
+		// scripts 
+		/*
 		$js = 'plugin://events/assets/events.js';
 		$assets->add('jquery');
-		$assets->addJs($js);
+		$assets->addJs($js); */
 
 		// styles
-		$css = 'plugin://events/assets/events.css';
-		$assets->addCss($css);
+		//$css = 'plugin://events/assets/events.css';
+		//$assets->addCss($css);
 
 	}
 
