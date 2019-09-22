@@ -370,17 +370,6 @@ var myDropzone = new Dropzone("div#NewsDropzone", {
             appendForm(formData);
         });
 
-        myDropzone.on("queuecomplete", function() {
-            /*if ( myDropzone.files[0].status != Dropzone.SUCCESS ) {
-                // solve for dropzone.js bug : https://github.com/enyo/dropzone/issues/578
-                // if the first file is invalid then do nothing
-                // this event has been fired prematurely
-            } else {
-                showLoader(); 
-            }  */  
-            showLoader(); 
-        });
-
         myDropzone.on("successmultiple", function() {
             window.location.replace(location.href);
         });
@@ -409,8 +398,11 @@ var myDropzone = new Dropzone("div#NewsDropzone", {
             }
         });
 
-        myDropzone.on("totaluploadprogress", function(progress, totalBytes, totalBytesSent) {
-            console.log(progress);
+        myDropzone.on("totaluploadprogress", function(progress) {
+            if (progress == 100) {
+                showLoader();
+                return;
+            }
             var drop = document.getElementById("NewsDropzone");
             drop.innerHTML = ''
             drop.style.border = "none";
