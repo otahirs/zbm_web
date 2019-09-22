@@ -449,7 +449,10 @@ class PhpTwigExtension extends \Twig_Extension
         }
 
         $this->news_to_file($data, $year);
-        $this->process_files($data['id'], 1000, $year);
+        if (!empty($_FILES)) {
+            $this->process_files($data['id'], 1000, $year);
+        }
+        
         
     }
 
