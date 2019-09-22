@@ -266,17 +266,12 @@ class PhpTwigExtension extends \Twig_Extension
     const IMAGE_HANDLERS = [
         IMAGETYPE_JPEG => [
             'load' => 'imagecreatefromjpeg',
-            'save' => 'imagejpeg',
-            'quality' => 70
         ],
         IMAGETYPE_PNG => [
             'load' => 'imagecreatefrompng',
-            'save' => 'imagepng',
-            'quality' => 4
         ],
         IMAGETYPE_GIF => [
             'load' => 'imagecreatefromgif',
-            'save' => 'imagegif'
         ]
     ];
 
@@ -371,24 +366,9 @@ class PhpTwigExtension extends \Twig_Extension
 
 
         // 3. Save the $thumbnail to disk
-        // - call the correct save method
         // - set the correct quality level
 
-        // save the duplicate version of the image to disk
-        if($type == IMAGETYPE_GIF){
-            return call_user_func(
-                self::IMAGE_HANDLERS[$type]['save'],
-                $thumbnail,
-                $dest
-            );
-        }
-        
-        return call_user_func(
-            self::IMAGE_HANDLERS[$type]['save'],
-            $thumbnail,
-            $dest,
-            self::IMAGE_HANDLERS[$type]['quality']
-        );
+        return imagejpeg($thumbnail, $dest, 70);
     }
 
 
