@@ -1018,6 +1018,7 @@ class PhpTwigExtension extends \Twig_Extension
 
         $frontmatter['polaris'][$polarisYear][$polarisNumber] = $fileTitle;
         krsort($frontmatter['polaris']);
+        krsort($frontmatter['polaris'][$polarisYear]);
 
         // save pdf and jpeg thumbnail
         $this->save_PDF($savePath, $fileTitle);
