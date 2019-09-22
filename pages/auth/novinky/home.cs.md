@@ -263,7 +263,7 @@ $(".edit-news").click(function(){
     /* pro kazdy ubrazek v novince vytvori "select", kde se da vybrat kolik max stranky bude obrazek zabirat */
     $(novinka).find(".newsIMG").each(function(img_index) { //foreach cyklus pro obrazky v novince
         var formName = this.getAttribute("data-name"),
-            displayName = formName.slice(11);
+            displayName = formName.slice(14);
         createImageOptionsDiv(formName, displayName);
         document.getElementById(formName).value = this.getAttribute("data-ratio"); //v modulu vybere v "select" hodnutu, ktera byla nastavena v novince
      });
