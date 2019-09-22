@@ -154,7 +154,9 @@ ostatni data z formulare a odeslana dropzone.js prikazem "myDropzone.processQueu
         <div id="News--pictures"> {# zde se budou dynamicky pridavat nastaveni sirky pro obrazky #}
         </div>
         <textarea id="News--content" name="content"  placeholder="Za sedmero horami..." ></textarea>
-        <div class="dropzone" id="NewsDropzone"></div> {# dropzone pro upload obrazku #}
+        <div class="dropzone" id="NewsDropzone">
+        </div> {# dropzone pro upload obrazku #}
+        
         <button type="button" class="special" id="News--submit-all">Uložit</button>
         <button type="button" id="News--close">Zrušit</button>
         <span id="News--deleteButtonSpan"></span>
@@ -280,6 +282,7 @@ $(".edit-news").click(function(){
   function showLoader(){
     var newsDropzone = document.getElementById('NewsDropzone');
     newsDropzone.style.border = "none";
+    newsDropzone.style.backgroundColor = "white";
     newsDropzone.innerHTML = '<div class="loader">Odesílám</div>';
   }
 
@@ -404,6 +407,19 @@ var myDropzone = new Dropzone("div#NewsDropzone", {
                 var rmdiv = document.getElementById(file.upload.filename).parentElement;
                 rmdiv.parentElement.removeChild(rmdiv);
             }
+        });
+
+        myDropzone.on("totaluploadprogress", function(progress, totalBytes, totalBytesSent) {
+            console.log(progress);
+            var drop = document.getElementById("NewsDropzone");
+            drop.innerHTML = ''
+            drop.style.border = "none";
+            drop.style.backgroundColor = "#e65646";
+            drop.style.height = "0.5em";
+            drop.style.transition = "all 0.5s";
+            drop.style.margin = "1em 0";
+
+            drop.style.width = progress + "%";
         });
       
     } // } init function
