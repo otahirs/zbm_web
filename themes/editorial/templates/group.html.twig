@@ -59,7 +59,7 @@
                     {% for p in collection if p.header.template in ['zavod', 'trenink', 'soustredeni', 'tabor'] %}
                         {# pokud je mezi start a end datum_dne_v_tydnu, zobrazi se v tabulce#}
                         {%  if (  p.header.start <= datum_dne_v_tydnu and p.header.end >= datum_dne_v_tydnu ) %}
-                        <tr {% if day_num % 2 == 0 %} class="plan--lichyDen"  {% else %} class="plan--sudyDen" {% endif %}>
+                        <tr class="event--program{% if day_num % 2 == 0 %} plan--lichyDen  {% else %} plan--sudyDen {% endif %}">
                             <td class="den">
                                 {# zobrazi nazev dne (napr. "PO") jen pokud jiz neexistuje zaznam dne v tabulce #}
                                 {% if zapsany_den != den %}    {# podminka, jestli uz se zapisoval #}
