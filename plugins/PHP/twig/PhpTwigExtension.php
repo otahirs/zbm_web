@@ -41,7 +41,7 @@ class PhpTwigExtension extends \Twig_Extension
     **************************************************************/
     function array_htmlspecialchars(&$array){
         array_walk_recursive($array, function(&$value) {
-            htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+            $value = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
         });
     }
 
@@ -227,24 +227,21 @@ class PhpTwigExtension extends \Twig_Extension
 
     function news_to_file($data, $year){
       $news = "---" . PHP_EOL .
-              "title: '" . $data['title'] . "'" . PHP_EOL .
+              "title: '" . str_replace("'","''",$data['title']) . "'" . PHP_EOL . // escape ' in frontmatter
               "date: '" . $data['date'] . "'" . PHP_EOL .
               "template: novinka" . PHP_EOL .
               "id: '" . $data['id'] . "'" . PHP_EOL .
               "user: '" . $data['User'] . "'" . PHP_EOL .
               "pictures:" . PHP_EOL;
-              if(isset($data['dropzone_files'])){
-                foreach ($data['dropzone_files'] as $img) {
-                  $news .=  "    - name: '" . $data['TimeStamp'] . "_" . $img . "'" . PHP_EOL .
-                            "      ratio: '3'" . PHP_EOL;
-                }
-              }
+
               if(isset($data['img'])){
                 foreach ($data['img'] as $img) {
                   if(isset($img['img_delete'])){
                     if($img['img_delete'] == "true"){
-                      unlink("./user/pages/data/news/" . $year . "/". $data['id'] . "/img/" . $img['img_name']);
-                      unlink("./user/pages/data/news/" . $year . "/". $data['id'] . "/img/" . "preview_" . $img['img_name']);
+                      $imgPath =     "./user/pages/data/news/" . $year . "/". $data['id'] . "/img/" . $img['img_name'];
+                      $previewPath = "./user/pages/data/news/" . $year . "/". $data['id'] . "/img/" . "preview_" . $img['img_name'];
+                      if (file_exists($imgPath)) unlink($imgPath);
+                      if (file_exists($previewPath)) unlink($previewPath);
                       continue;
                     }
                   }
@@ -395,36 +392,36 @@ class PhpTwigExtension extends \Twig_Extension
     }
 
 
-    function process_files($id, $timeStamp, $previewWidthInPx, $year){
+    function process_files($id, $previewWidthInPx, $year){
     
         $storeFolder = "./user/pages/data/news/" . $year . "/". $id . "/img/";
 
         $extension=array("jpeg","jpg","png","gif","JPEG","JPG","PNG","GIF","jpe","jif","jfif","jfi","JPE","JIF","JFIF","JFI"); //.jpe .jif, .jfif, .jfi jsou soubory jpeg
 
         foreach($_FILES["file"]["tmp_name"] as $key=>$tmp_name){
-                    $file_name=$_FILES["file"]["name"][$key];
-                    $ext=pathinfo($file_name,PATHINFO_EXTENSION);
-                    if(!in_array($ext,$extension))
-                    {
-                        $this->return_ERROR("<em>" . $file_name . "</em>není podporovaný typ obrázku");
-                    }
+            $file_name=$_FILES["file"]["name"][$key];
+            $ext=pathinfo($file_name,PATHINFO_EXTENSION);
+            if(!in_array($ext,$extension))
+            {
+                $this->return_ERROR("<em>" . $file_name . "</em>není podporovaný typ obrázku");
+            }
                 
         }
 
         foreach($_FILES["file"]["tmp_name"] as $key=>$tmp_name){
 
-                    $file_name=$_FILES["file"]["name"][$key];
-                    $file_tmp=$_FILES["file"]["tmp_name"][$key];
-                
-                    if(!file_exists($storeFolder . $file_name)){
-                        if(! is_dir($storeFolder)){
-                            mkdir($storeFolder);
-                        }
-                        $saveImagePath = $storeFolder . $timeStamp . "_" . $file_name;
-                        $savePreviewPath = $storeFolder . "preview_" . $timeStamp . "_" . $file_name;
-                        move_uploaded_file($file_tmp=$_FILES["file"]["tmp_name"][$key], $saveImagePath);
-                        $this->createThumbnail($saveImagePath, $savePreviewPath, $previewWidthInPx, $targetHeight = null);
-                    };
+            $file_name=$_FILES["file"]["name"][$key];
+            $file_tmp=$_FILES["file"]["tmp_name"][$key];
+            
+            if(!file_exists($storeFolder . $file_name)){
+                if(! is_dir($storeFolder)){
+                    mkdir($storeFolder);
+                }
+                $saveImagePath = $storeFolder . $file_name;
+                $savePreviewPath = $storeFolder . "preview_" . $file_name;
+                move_uploaded_file($file_tmp=$_FILES["file"]["tmp_name"][$key], $saveImagePath);
+                $this->createThumbnail($saveImagePath, $savePreviewPath, $previewWidthInPx, $targetHeight = null);
+            };
         }
     }
 
@@ -442,23 +439,18 @@ class PhpTwigExtension extends \Twig_Extension
     }
 
     function save_news($user, $id, $date, $year){
-        $data['TimeStamp'] = time();
         $data['title'] = $_POST["title"];
         $data['id'] = $id;
         $data['User'] = $user;
         $data['date'] = $date;
         $data['content'] = $_POST['content'];
         if(isset($_POST['img'])){
-        $data['img'] = $_POST['img'];
+            $data['img'] = $_POST['img'];
         }
-        if(isset($_POST['dropzone_files'])){
-        $data['dropzone_files'] = $_POST['dropzone_files'];
+
         $this->news_to_file($data, $year);
-        $this->process_files($data['id'], $data['TimeStamp'], 1000, $year);
-        }
-        else {
-        $this->news_to_file($data, $year);
-        }
+        $this->process_files($data['id'], 1000, $year);
+        
     }
 
     public function NewsFunction($user){
