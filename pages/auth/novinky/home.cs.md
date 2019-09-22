@@ -38,7 +38,7 @@ content:
                 <span class="edit-news" style="cursor: pointer;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
         	{#	  {% endif %}#} 
             </h4>
-            <div class="row newsPictures">
+            <div class="row no-gutters newsPictures">
                 {% for img in p.header.pictures %}
                   {# small screens shows double image size #}
                   {% set img_mobile = img.ratio %}
@@ -209,16 +209,45 @@ var News_simplemde = new SimpleMDE({ element: document.getElementById("News--con
     }*/
 
 /**** Pridani Novinky ****/
-    // kdyz se zmackne tlaticko "+", otevre se modal, pobiha prepis informaci, pokud byl predtim otevren modal pro edit novinky
-    document.getElementById("addNewsButton").onclick = function() {       
-        News_POST_type.value = "addNews"; //inicializace POST pozadavku pro PHP zpracovani
-        News_header.innerHTML = "Přidat novinku";  //inicializace - Nadpis
-        News_ModalContent.style.marginTop = window.pageYOffset + "px";
-        News_modal.style.display = "block"; //zobrazi modal
-        News_simplemde.codemirror.refresh(); //inicializuje textovy iditor
+// kdyz se zmackne tlaticko "+", otevre se modal, pobiha prepis informaci, pokud byl predtim otevren modal pro edit novinky
+document.getElementById("addNewsButton").onclick = function() {       
+    News_POST_type.value = "addNews"; //inicializace POST pozadavku pro PHP zpracovani
+    News_header.innerHTML = "Přidat novinku";  //inicializace - Nadpis
+    News_ModalContent.style.marginTop = window.pageYOffset + "px";
+    News_modal.style.display = "block"; //zobrazi modal
+    News_simplemde.codemirror.refresh(); //inicializuje textovy iditor
+}
+
+function deleteImageToggle(){
+    var delete_img = this.parentElement.querySelector(".News--img-delete-input");
+    if(delete_img.value == "true"){
+        this.parentElement.style.backgroundColor = "white";
+        delete_img.value = "false";
     }
+    else {
+        this.parentElement.style.backgroundColor = "#ff2d2d";
+        delete_img.value = "true";
+    }
+}
     
-   
+function createImageOptionsDiv(formName, displayName){
+    var img_index = News_pictures.lastElementChild ? Number(News_pictures.lastElementChild.getAttribute("data-index")) + 1 : 0;
+    var select = document.createElement('div'); 
+        select.setAttribute("data-index", img_index);
+        select.innerHTML = '<input type="hidden" class="News--img-delete-input News--img-settings" name="img['+ img_index +'][img_delete]" value="false">' +
+                           '<div class="News--img-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></div>' +
+                           '<input class="News--img-settings" name="img['+ img_index +'][img_name]" type="hidden" value="'+ formName + '">' +
+                           '<select class="News--img-settings" name="img['+ img_index +'][img_ratio]" id="' + formName + '">' +
+                              '<option value="12">1</option>' +
+                              '<option value="6" selected>1/2</option>' +
+                              '<option value="3">1/4</option>' +
+                            '</select>';
+        select.innerHTML += '<label class="News--img-label" for="' + formName + '">' + displayName + '</label>'; 
+    News_pictures.appendChild(select); //vlozi do modalu
+    select.querySelector(".News--img-delete").addEventListener( "click", deleteImageToggle);
+}
+
+
 
 /**** Edit Novinky ****/
 $(".edit-news").click(function(){
@@ -233,32 +262,12 @@ $(".edit-news").click(function(){
 
     /* pro kazdy ubrazek v novince vytvori "select", kde se da vybrat kolik max stranky bude obrazek zabirat */
     $(novinka).find(".newsIMG").each(function(img_index) { //foreach cyklus pro obrazky v novince
-        var select = document.createElement('div'); //vytvori div a naplni ho nazvem obrazku a "select", zaroven obsahuje "class" a "value" pro zpracovani formulare
-        select.innerHTML = '<input type="hidden" class="News--img-delete-input News--img-settings" name="img['+ img_index +'][img_delete]" value="false">' +
-                           '<div class="News--img-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></div>' +
-                           '<input class="News--img-settings" name="img['+ img_index +'][img_name]" type="hidden" value="'+ this.getAttribute("data-name") + '">' +
-                           '<select class="News--img-settings" name="img['+ img_index +'][img_ratio]" id="' + novinka.id + '_' + img_index + '">' +
-                              '<option value="12">1</option>' +
-                              '<option value="6">1/2</option>' +
-                              '<option value="3">1/4</option>' +
-                            '</select>';
-        select.innerHTML += '<label class="News--img-label" for="' + novinka.id + '_' + img_index + '">' + this.getAttribute("data-name").slice(11) + '</label>'; //popisek, nazev obrazku oriznut o timestamp
-        News_pictures.appendChild(select); //vlozi do modalu
-        document.getElementById(novinka.id + '_' + img_index).value = this.getAttribute("data-ratio"); //v modulu vybere v "select" hodnutu, ktera byla nastavena v novince
+        var formName = this.getAttribute("data-name"),
+            displayName = formName.slice(11);
+        createImageOptionsDiv(formName, displayName);
+        document.getElementById(formName).value = this.getAttribute("data-ratio"); //v modulu vybere v "select" hodnutu, ktera byla nastavena v novince
      });
 
-     /* smazani obrazku */
-     $(".News--img-delete").click(function(){
-         var delete_img = this.parentElement.querySelector(".News--img-delete-input");
-         if(delete_img.value == "true"){
-           this.parentElement.style.backgroundColor = "white";
-           delete_img.value = "false";
-         }
-         else {
-           this.parentElement.style.backgroundColor = "#ff2d2d";
-           delete_img.value = "true";
-          }
-     })
      /* prida tlacitko pro smazani novinky*/
        News_deleteButtonSpan.innerHTML = '<button type="button" id="deleteNewsButton"><i class="fa fa-trash-o" aria-hidden="true"></i></button>';
      
@@ -303,91 +312,103 @@ $(".edit-news").click(function(){
 /*****************************/
 
 // pro odeslání obrázků použit dropzone.js
-  var myDropzone = new Dropzone("div#NewsDropzone", {
-      url: "/php/news",   //kam posila
-      autoProcessQueue: false, //zakaze defaultni zpracovani
-      uploadMultiple: true,  // nahravani vice souboru
-      parallelUploads: 10,
-      maxFiles: 10,
-      maxFilesize: 20, //v MB
-      acceptedFiles: "image/jpeg, image/png, image/gif",
-      addRemoveLinks: true, //lze odstranit nahrany soubor
-      init: function() {
-          var myDropzone = this;
-          /**************************/
-          /** Zpracovani formulare **/
-          /**************************/
-          document.getElementById("News--submit-all").onclick = function (e) {
+var myDropzone = new Dropzone("div#NewsDropzone", {
+    url: "/php/news",   //kam posila
+    autoProcessQueue: false, //zakaze defaultni zpracovani
+    uploadMultiple: true,  // nahravani vice souboru
+    parallelUploads: 10,
+    maxFiles: 10,
+    maxFilesize: 20, //v MB
+    acceptedFiles: "image/jpeg, image/png, image/gif",
+    addRemoveLinks: true, //lze odstranit nahrany soubor
+    renameFile: function (file) {
+        return new Date().getTime() + '_' + file.name;
+    },
+    init: function() {
+        var myDropzone = this;
+        /**************************/
+        /** Zpracovani formulare **/
+        /**************************/
+        document.getElementById("News--submit-all").onclick = function (e) {
 
-              if( News_title.value == '' || News_simplemde.value() == '' ){ //pokud je nadpis nebo text novinky prazdny
-                alert('Musí být vyplněn název a text novinky.');
+            if( News_title.value == ''){ 
+              alert('Musí být vyplněn název novinky.');
+            }
+            else{
+              // pokud v dropzone nejsou soubory, odesle se formular
+              if (myDropzone.getQueuedFiles().length <= 0) { 
+
+                  var formData = new FormData();
+                    appendForm(formData);
+                    showLoader();
+                    $.ajax({
+                        url: "/php/news",
+                        type: "POST",
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function ()
+                        {  window.location.replace(location.href);
+                        },
+                        error: function (xhr, desc, err){
+                          showError(xhr, desc, err);
+                        }
+                    });
               }
-              else{
-                // pokud v dropzone nejsou soubory, odesle se formular
-                if (myDropzone.getQueuedFiles().length <= 0) { 
-
-                    var formData = new FormData();
-                      appendForm(formData);
-                      showLoader();
-                      $.ajax({
-                          url: "/php/news",
-                          type: "POST",
-                          data: formData,
-                          processData: false,
-                          contentType: false,
-                          success: function ()
-                          {  window.location.replace(location.href);
-                          },
-                          error: function (xhr, desc, err){
-                            showError(xhr, desc, err);
-                          }
-                      });
-                }
-                // pokud jsou, odeslou se obrazky
-                else {
-                    myDropzone.processQueue();
-                }
+              // pokud jsou, odeslou se obrazky
+              else {
+                  myDropzone.processQueue();
               }
-          };
-         //k odeslanym obrazkum se pridaji i zbyle data
-                    myDropzone.on("sendingmultiple", function(data, xhr, formData) {
-                        // jmena souboru kvuli zpracovani
-                        for (var index = 0; index < myDropzone.files.length; index++) {
-                            var file = myDropzone.files[index];
-                            if (file.type == "image/jpeg" || file.type == "image/png" || file.type == "image/gif"){
-                              formData.append('dropzone_files[]', file.name );
-                            }
-                          }
-                        // ostatni
-                        appendForm(formData);
-                    });
-                    myDropzone.on("queuecomplete", function() {
-                        if ( myDropzone.files[0].status != Dropzone.SUCCESS ) {
-                            // solve for dropzone.js bug : https://github.com/enyo/dropzone/issues/578
-                            // if the first file is invalid then do nothing
-                            // this event has been fired prematurely
-                        } else {
-                             showLoader();
-                        }     
-                    });
-                    myDropzone.on("successmultiple", function() {
-                        window.location.replace(location.href);
-                    });
-                    myDropzone.on('error', function(file, errorMessage, xhr) {
-                      if(errorMessage){
-                        News_responseText.innerHTML = "<br>" . errorMessage;
-                      }
-                      else if(xhr.responseText){
-                        News_responseText.innerHTML = "<br>" . xhr.responseText;
-                      }
-                      else{
-                        showError(xhr, errorMessage, file); 
-                      }
-                    });
-        
-      } // } init function
+            }
+        };
 
-    }) // }) dropzone
+       //k odeslanym obrazkum se pridaji i zbyle data
+        myDropzone.on("sendingmultiple", function(data, xhr, formData) {
+            appendForm(formData);
+        });
+
+        myDropzone.on("queuecomplete", function() {
+            /*if ( myDropzone.files[0].status != Dropzone.SUCCESS ) {
+                // solve for dropzone.js bug : https://github.com/enyo/dropzone/issues/578
+                // if the first file is invalid then do nothing
+                // this event has been fired prematurely
+            } else {
+                showLoader(); 
+            }  */  
+            showLoader(); 
+        });
+
+        myDropzone.on("successmultiple", function() {
+            window.location.replace(location.href);
+        });
+
+        myDropzone.on('error', function(file, errorMessage, xhr) {
+          if(errorMessage){
+            News_responseText.innerHTML = "<br>" . errorMessage;
+          }
+          else if(xhr.responseText){
+            News_responseText.innerHTML = "<br>" . xhr.responseText;
+          }
+          else{
+            showError(xhr, errorMessage, file); 
+          }
+        });
+        myDropzone.on('addedfile', function(file) {        
+            setTimeout(function(){  // needed to wait until "accepted" atributes is created
+                if (file.accepted) createImageOptionsDiv(file.upload.filename, file.name);
+            }, 100);
+        });
+
+        myDropzone.on("removedfile", function(file) {
+            if (file.accepted) {
+                var rmdiv = document.getElementById(file.upload.filename).parentElement;
+                rmdiv.parentElement.removeChild(rmdiv);
+            }
+        });
+      
+    } // } init function
+
+}) // }) dropzone
 
 /**** Delete Novinky ****/
 document.getElementById("News--deleteButtonSpan").onclick = function(e) {
