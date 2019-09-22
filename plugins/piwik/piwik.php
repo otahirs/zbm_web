@@ -32,23 +32,21 @@ class piwikPlugin extends Plugin
         $sitePiWikURL = str_replace($search,'',$sitePiWikURL);
         if ($siteId && $sitePiWikURL) {
             $init = "
-//<!-- Piwik -->
-  var _paq = _paq || [];
-  // tracker methods like \"setCustomDimension\" should be called before \"trackPageView\"
+<!-- Matomo -->
+<script type=\"text/javascript\">
+  var _paq = window._paq || [];
+  /* tracker methods like \"setCustomDimension\" should be called before \"trackPageView\" */
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
     var u=\"//{$sitePiWikURL}/\";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', '{$siteId}']);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
-<!-- Piwik Image Tracker-->
-<noscript><img src=\"//{$sitePiWikURL}/piwik.php?idsite={$siteId}&rec=1\" style=\"border:0\" alt=\"\" /></noscript>
-<!-- End Piwik -->
-<script type=\"text/javascript\">
+<!-- End Matomo Code -->
             ";
             $this->grav['assets']->addInlineJs($init);
         }
