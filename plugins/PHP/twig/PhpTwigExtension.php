@@ -912,7 +912,7 @@ class PhpTwigExtension extends \Twig_Extension
                 if(!empty($_POST["GPS"])){
                     $gps = $this->normalize_GPS($_POST["GPS"]);
                     if($gps){
-                        $frontmatter["GPS"] = $gps;
+                        $frontmatter["gps"] = $gps;
                     }
                     else{
                         $this->return_ERROR('Nepodporovaný formát GPS');
