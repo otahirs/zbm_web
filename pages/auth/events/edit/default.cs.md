@@ -105,7 +105,7 @@ access:
                     <input id="pulci1" type="checkbox" name="pulci1" value="1" {% if "pulci1" in event.header.taxonomy.skupina %} checked {% endif %}>
                         <label for="pulci1"> pulci 1 </label> <br>
                     <input name="pulci2" type="hidden" value="0">
-                    <input id="pulci2" type="checkbox" name="pulci2" value="1" {% if "pulcu2" in event.header.taxonomy.skupina %} checked {% endif %}>
+                    <input id="pulci2" type="checkbox" name="pulci2" value="1" {% if "pulci2" in event.header.taxonomy.skupina %} checked {% endif %}>
                         <label for="pulci2"> pulci 2 </label> <br>
                     <input name="zaci1" type="hidden" value="0">
                     <input id="zaci1" type="checkbox" name="zaci1" value="1" {% if "zaci1" in event.header.taxonomy.skupina %} checked {% endif %}>
