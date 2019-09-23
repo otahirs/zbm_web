@@ -1,12 +1,20 @@
 ---
 taxonomy:
     skupina:
-        - zabicky
-        - pulci1
-        - pulci2
-        - zaci1
-        - zaci2
-        - dorost
+        1: pulci1
+        3: zaci1
+        4: zaci2
+        5: dorost
+        6: zabicky
+        7: pulci1
+        8: zaci1
+        9: zaci2
+        10: dorost
+        11: zabicky
+        12: pulci1
+        13: zaci1
+        14: zaci2
+        15: dorost
 type: M
 start: '2019-09-25'
 end: '2019-09-25'
@@ -20,5 +28,10 @@ transport: 'autobusem 52 na zastávku Kopce'
 id: 20190925-e917a8ee
 template: trenink
 date: '2019-07-16'
+startTime: ''
+terrain: ''
+leader: ''
+note: ''
+GPS: '16.47702, 49.21183'
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
