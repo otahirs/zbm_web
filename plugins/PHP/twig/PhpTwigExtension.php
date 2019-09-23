@@ -897,11 +897,13 @@ class PhpTwigExtension extends \Twig_Extension
 
                 // groups
                 foreach($group_arr as $key => $group){
-                    if(isset($_POST[$group]) && $_POST[$group]){
-                        $frontmatter['taxonomy']['skupina'][] = $group;
+                    if($_POST[$group]){
+                        if (!isset($frontmatter['taxonomy']['skupina']) || !in_array($group, $frontmatter['taxonomy']['skupina'])) {
+                            $frontmatter['taxonomy']['skupina'][] = $group;
+                        }
                     }
                     else{
-                        if(isset($frontmatter['taxonomy']['skupina'])){
+                        if (isset($frontmatter['taxonomy']['skupina'])){
                             $del = array_search( $group , $frontmatter['taxonomy']['skupina'] );
                             unset($frontmatter['taxonomy']['skupina'][$del]);
                         }
@@ -912,7 +914,7 @@ class PhpTwigExtension extends \Twig_Extension
                 if(!empty($_POST["GPS"])){
                     $gps = $this->normalize_GPS($_POST["GPS"]);
                     if($gps){
-                        $frontmatter["GPS"] = $gps;
+                        $frontmatter["gps"] = $gps;
                     }
                     else{
                         $this->return_ERROR('Nepodporovaný formát GPS');
