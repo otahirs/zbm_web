@@ -27,7 +27,6 @@ content:
               <h4 class="news--header">
                   <span class="newsDate">{{p.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }} </span> &nbsp; &nbsp; 
                   <span class="newsTitle"> {{ p.header.title }} </span>
-                  <a href="{{base_url_absolute ~ p.url ~ "#commento"}}"></a>
               </h4>
               {% if p.header.pictures|length > 0 %}
               <div class="row newsPictures">
@@ -50,6 +49,8 @@ content:
               {% endif %}
               <section class="newsText">
                 {{p.content}}
+		
+                <a class="comment-count" href="{{base_url_absolute ~ p.url ~ "#commento"}}"> </a> 
               </section>
             </article>
             <hr width="62.11%">
