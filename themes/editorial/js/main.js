@@ -245,12 +245,13 @@
 		// Autohide navlinks to submenu				
 				function calcWidth() {
 					var navwidth = 0; 
-					var morewidth = $('#links .more').outerWidth(true) + 35;
-					$('#links > li:not(.more)').each(function() {
+					$('#links > li').each(function() {
 						navwidth += $(this).outerWidth( true );
 					});
 					
-					var availablespace = $('#nav-links').width() - morewidth;
+					var availablespace = $('#nav-links').width() - 10;
+					console.log("navwidth", navwidth);
+					console.log("avaible", availablespace);
 					
 					if (navwidth > availablespace && !$('#links > li').first().hasClass("more")) {
 						var lastItem = $('#links > li:not(.more)').last();
@@ -278,12 +279,10 @@
 					$links.css("opacity", "1");
 				});
 				$(window).on('resize',function(){
-					setTimeout(calcWidth, 100);
+					calcWidth()
+					setTimeout(calcWidth, 300);
 				});
-				$(window).on('orientationchange',function(){
-					setTimeout(calcWidth, 1000);
-				});
-
+				
 				var linksBtn = document.getElementById('links-more-btn'),
 						linksMore = document.getElementById('links-more-ul');   
 
