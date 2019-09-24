@@ -1,7 +1,7 @@
 (function(global, document) {
   "use strict";
 
-  var origin = "[[[.Origin]]]";
+  var origin = "https://commento.zabiny.club";
 
   function post(url, data, callback) {
     var xmlDoc = new XMLHttpRequest();
@@ -60,7 +60,15 @@
         if(useCustomCommentsText) {
           doms[i].innerText = eval(doms[i].getAttribute("data-custom-comments-text"))(count);
         } else {
-          doms[i].innerText = count + " " + (count === 1 ? "<i class=\"fa fa-comment-o\" aria-hidden=\"true\"></i>" : "<i class=\"fa fa-comments-o\" aria-hidden=\"true\"></i>");
+	  if (count === 0) {
+	    doms[i].innerText = "žádné komentáře";
+	  }
+	  else if (count === 1) {
+	    doms[i].innerText = count + " kometář";
+	  }
+	  else {
+	    doms[i].innerText = count + " komentářů";
+          }
         }
       }
     });
