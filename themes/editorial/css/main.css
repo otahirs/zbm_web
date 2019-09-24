@@ -2844,7 +2844,8 @@ tr.program--now {
 #nav-links {
   position: relative;
   width: calc(100% - 20em);
-  float: right; }
+  float: right;
+  white-space: nowrap; }
   #nav-links > ul {
     float: right;
     list-style: none;
