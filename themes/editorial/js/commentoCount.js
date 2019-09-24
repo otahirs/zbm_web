@@ -64,7 +64,10 @@
 	    doms[i].innerText = "žádné komentáře";
 	  }
 	  else if (count === 1) {
-	    doms[i].innerText = count + " kometář";
+	    doms[i].innerText = count + " komentář";
+	  }
+	  else if (count > 1 && count < 5) {
+	    doms[i].innerText = count + " komentáře";
 	  }
 	  else {
 	    doms[i].innerText = count + " komentářů";
