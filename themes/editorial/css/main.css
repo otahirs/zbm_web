@@ -3035,5 +3035,5 @@ ul.tabs li.group-icon {
   position: relative;
   width: 14.28571%; }
 
-.commento-root > * {
+.commento-root * {
   all: initial; }
