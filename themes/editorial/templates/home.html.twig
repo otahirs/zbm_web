@@ -1,4 +1,8 @@
 {% extends 'partials/base.html.twig' %}
+{% block javascripts %}
+    {{ parent() }}
+    {% do assets.addJs('theme://js/commentoCount.js', {'group':'defer'}) %}
+{% endblock %}
 {% block header %}
 
 {% endblock %}
