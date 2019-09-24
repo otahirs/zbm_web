@@ -26,7 +26,6 @@
 		grid: ( gutters: 1.5em )
 	));
 
-:not(#commento) {
 // Base.
 
 	@import 'base/page';
@@ -58,4 +57,9 @@
 
 // Custom.
 	@import 'custom';
+
+.commento-root > * {
+	all: initial;
 }
+	  
+	  
