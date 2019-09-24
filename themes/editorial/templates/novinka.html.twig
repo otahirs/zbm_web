@@ -1,27 +1,41 @@
 {% extends 'partials/base.html.twig' %}
+{% block javascripts %}
+    {{ parent() }}
+    {% do assets.addJs('https://commento.zabiny.club/js/commento.js', {'group':'defer'}) %}
+{% endblock %}
 
-
+{% block header %}
+            <header id="header">
+		<h1>{{page.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }} </span> &nbsp; &nbsp; <span class="newsTitle"> {{ page.header.title }}
+</h1>
+            </header><!-- End #header -->
+{% endblock %}
 
 
 {% block body %}
          <section>
-             <header class="main">
-                 <h1>{{ page.title }}</h1>
-             </header>
-             {% if page.header.primaryImage %}
-                 {% set primaryImage = ((page.header.primaryImage)|first) %}
-                 <span class="image main">{{ page.media[primaryImage.name].html() }}</span>
-             {% endif %}
+           
      	{% block content %}
-		      <table>
-            <tr><td>Datum</td><td>{{page.header.event.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM')}}</td></tr>
-            <tr><td>Místo</td><td>{{page.header.location}}</td></tr>
-            <tr><td>Sraz</td><td>{{page.header.event.meetingpoint ~ ' '~ page.header.event.start|localizeddate('none', 'medium', 'cs','Europe/Prague', 'H:mm')}}</td></tr>
-          
-
-
-            
-          </table>
+              
+              {% if page.header.pictures|length > 0 %}
+              <div class="row newsPictures">
+                  {% for img in page.header.pictures %}
+                    {# small screens shows double image size #}
+                    {% set img_mobile = img.ratio %}
+                    {% if img.ratio * 2 <= 12  %}
+                      {% set img_mobile = img.ratio * 2 %}
+                    {% endif %}
+                    <div class="newsIMG col-md-{{img.ratio}} col-sm-{{img_mobile}}" data-name="{{img.name}}" data-ratio="{{ img.ratio }}">
+                      <a href="{{page.url}}/img/{{img.name}}" target="_blank" title="Zobrazit originální obrázek">
+                        <picture>
+                          {# časem WebP #}
+                          <img src="{{page.url}}/img/preview_{{img.name}}" alt="Zde by měl být obrázek">
+                        </picture>
+                      </a>
+                    </div>
+                  {% endfor %}
+              </div>
+              {% endif %}
 
 
 
@@ -30,6 +44,8 @@
 
 
 	{{ page.content }}
+    <hr>
+    <div id="commento"></div>
 
 
 
