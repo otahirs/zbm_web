@@ -250,8 +250,6 @@
 					});
 					
 					var availablespace = $('#nav-links').width() - 10;
-					console.log("navwidth", navwidth);
-					console.log("avaible", availablespace);
 					
 					if (navwidth > availablespace && !$('#links > li').first().hasClass("more")) {
 						var lastItem = $('#links > li:not(.more)').last();
@@ -283,6 +281,7 @@
 					setTimeout(calcWidth, 300);
 				});
 				
+
 				var linksBtn = document.getElementById('links-more-btn'),
 						linksMore = document.getElementById('links-more-ul');   
 

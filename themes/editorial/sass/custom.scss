@@ -201,6 +201,7 @@ tr.program--now {
     position: relative;
     width: calc(100% - 20em);
     float: right;
+    white-space: nowrap;
 		
 	> ul {
 		float: right;
