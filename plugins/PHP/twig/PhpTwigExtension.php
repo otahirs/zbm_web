@@ -463,7 +463,7 @@ class PhpTwigExtension extends \Twig_Extension
                     $this->rrmdir("./user/pages/data/news/" . $year . "/". $_POST['id'] . "/");
                     $this->log_grav($user . " | NEWS removed | " . $_POST["id"]);
                 }
-                Cache::clearCache('all');
+                Cache::clearCache('cache-only');
             }
         }
     }
@@ -489,7 +489,7 @@ class PhpTwigExtension extends \Twig_Extension
         $page = $this->combine_frontmatter_with_content($frontmatter, $content);
 
         file_put_contents($path, $page);
-        Cache::clearCache('all');
+        Cache::clearCache('cache-only');
     }
 
     /********************************************************************************
@@ -559,7 +559,7 @@ class PhpTwigExtension extends \Twig_Extension
         $data .= $this->parse_file_content_only($_POST["filePath"]);
 
         $this->file_force_contents($_POST["filePath"], $data);
-        Cache::clearCache('all');
+        Cache::clearCache('cache-only');
                
     }
 /********************************************************
@@ -584,7 +584,7 @@ class PhpTwigExtension extends \Twig_Extension
         $data .= $this->parse_file_content_only($_POST["filePath"]);
 
         $this->file_force_contents($_POST["filePath"], $data);
-        Cache::clearCache('all');
+        Cache::clearCache('cache-only');
     
     }
 
@@ -622,7 +622,7 @@ class PhpTwigExtension extends \Twig_Extension
            
             // save page
             $this->file_force_contents($page_path, $page);
-            Cache::clearCache('all');
+            Cache::clearCache('cache-only');
 
     }
 
@@ -653,7 +653,7 @@ class PhpTwigExtension extends \Twig_Extension
             // save page
             $this->file_force_contents($page_path, $page);
 
-            Cache::clearCache('all');        
+            Cache::clearCache('cache-only');        
     }
 
 
@@ -743,7 +743,7 @@ class PhpTwigExtension extends \Twig_Extension
             $this->file_force_contents($path, $page); 
             unset($frontmatter);
         }
-        Cache::clearCache('all');
+        Cache::clearCache('cache-only');
         
     }
 
@@ -977,7 +977,7 @@ class PhpTwigExtension extends \Twig_Extension
                     $content = $this->parse_file_content_only($path);
                     $this->log_grav($user . " | EVENT edited | " . $id);
                 }
-                Cache::clearCache('all');
+                Cache::clearCache('cache-only');
             }
         }
       }
@@ -1052,7 +1052,7 @@ class PhpTwigExtension extends \Twig_Extension
 
         // save page to file
         file_put_contents($pagePath, $page);
-        Cache::clearCache('all');
+        Cache::clearCache('cache-only');
     }
 
     public function DeletePolaris(){
@@ -1086,7 +1086,7 @@ class PhpTwigExtension extends \Twig_Extension
 
         // save page to file
         file_put_contents($pagePath, $page);
-        Cache::clearCache('all');
+        Cache::clearCache('cache-only');
     }
 //******** Mapova Teorie *********
     public function SaveMapT(){ 
@@ -1119,7 +1119,7 @@ class PhpTwigExtension extends \Twig_Extension
 
         // save page to file
         file_put_contents($pagePath, $page);
-        Cache::clearCache('all');
+        Cache::clearCache('cache-only');
     }
 
     public function DeleteMapT(){
@@ -1151,7 +1151,7 @@ class PhpTwigExtension extends \Twig_Extension
 
         // save page to file
         file_put_contents($pagePath, $page);
-        Cache::clearCache('all');
+        Cache::clearCache('cache-only');
     }
     //******** GPS *********
     public function SaveRoutes(){ 
@@ -1184,7 +1184,7 @@ class PhpTwigExtension extends \Twig_Extension
 
         // save page to file
         file_put_contents($pagePath, $page);
-        Cache::clearCache('all');
+        Cache::clearCache('cache-only');
     }
 
     public function DeleteRoutes(){
@@ -1216,7 +1216,7 @@ class PhpTwigExtension extends \Twig_Extension
 
         // save page to file
         file_put_contents($pagePath, $page);
-        Cache::clearCache('all');
+        Cache::clearCache('cache-only');
     }
 
 }
