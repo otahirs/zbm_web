@@ -398,7 +398,10 @@ var myDropzone = new Dropzone("div#NewsDropzone", {
             }
         });
 
-        myDropzone.on("totaluploadprogress", function(progress) {
+        myDropzone.on("totaluploadprogress", function(progress, totalBytes, totalBytesSent) {
+            if (totalBytes == 0) { //fix totaluploadprogress event fire when file is removed from dropzone
+                return;
+            }
             if (progress == 100) {
                 showLoader();
                 return;
