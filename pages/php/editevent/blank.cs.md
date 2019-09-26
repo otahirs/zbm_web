@@ -6,4 +6,4 @@ access:
         edit-event: true
 ---
 
-{{phpSaveEditedEvent()}}
+{{phpSaveEditedEvent(grav.user.fullname)}}

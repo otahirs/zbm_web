@@ -329,9 +329,13 @@ access:
                 data: formData,
                 processData: false,
                 contentType: false,
-                success: function (){   
+                success: function (response){   
                     formResponse.innerHTML = "<br>Úspěšně uloženo.";
                     formResponse.style.color = "green";
+                    var json = $.parseJSON(response);
+                    if (json.id) {
+                        $("[name='id']").val(json.id);
+                    }
                     setTimeout(function(){ 
                         formResponse.innerHTML = ""; 
                     }, 3000);
