@@ -1,6 +1,7 @@
 <?php
 namespace Grav\Plugin;
 use Symfony\Component\Yaml\Yaml as Yaml;
+use Grav\Common\Grav;
 use Grav\Common\Cache as Cache;
 class PhpTwigExtension extends \Twig_Extension
 {
@@ -34,6 +35,10 @@ class PhpTwigExtension extends \Twig_Extension
         http_response_code(500); // 500 - Internal server error
         echo $errMsg;
         die();
+    }
+
+    function log_grav($msg){
+        Grav::instance()['log']->info($msg);
     }
 
     /*************************************************************
@@ -444,16 +449,19 @@ class PhpTwigExtension extends \Twig_Extension
                     $date = date("Y-m-d");
                     $year = substr($date, 0 , 4);
                     $this->save_news($user, $id, $date, $year);
+                    $this->log_grav($user . " | NEWS created | " . $id);
                 }
                 elseif( $_POST["POST_type"] == "updateNews" ){
                     $id = $_POST["id"];
                     $date = date( "Y-m-d", strtotime(str_replace(' ','', $_POST["date"])) );
                     $year = substr($date, 0 , 4);
                     $this->save_news($user, $id, $date, $year);
+                    $this->log_grav($user . " | NEWS edited | " . $id);
                 }
                 elseif( $_POST["POST_type"] == "deleteNews" ){
                     $year = substr($_POST["id"], 0 , 4);
                     $this->rrmdir("./user/pages/data/news/" . $year . "/". $_POST['id'] . "/");
+                    $this->log_grav($user . " | NEWS removed | " . $_POST["id"]);
                 }
                 Cache::clearCache('all');
             }
@@ -844,7 +852,7 @@ class PhpTwigExtension extends \Twig_Extension
         return False;
     }
 
-    public function phpSaveEditedEvent(){
+    public function phpSaveEditedEvent($user){
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(isset($_POST["POST_type"])){
             if( $_POST["POST_type"] == "editEvent" ){
@@ -864,7 +872,8 @@ class PhpTwigExtension extends \Twig_Extension
                 if(isset($_POST["delete"])){
                     $path = "./user/pages/data/events/". substr($_POST["id"], 0 , 4) ."/". $_POST["id"] ;
                     $this->rrmdir($path);
-                    die();
+                    $this->log_grav($user . " | EVENT removed | " . $_POST["id"]);
+                    die(); 
                 }
                 
                 
@@ -957,6 +966,17 @@ class PhpTwigExtension extends \Twig_Extension
                 //print_r($frontmatter);
 
                 $this->file_force_contents($path, $page);
+                if ($new) {
+                    $content = $this->generate_content($frontmatter);
+                    $this->log_grav($user . " | EVENT created | " . $id);
+                    $result = array("id" => $id);
+                    echo json_encode($result);
+
+                }
+                else {
+                    $content = $this->parse_file_content_only($path);
+                    $this->log_grav($user . " | EVENT edited | " . $id);
+                }
                 Cache::clearCache('all');
             }
         }

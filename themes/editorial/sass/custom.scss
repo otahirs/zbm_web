@@ -455,4 +455,40 @@ ul.tabs li.group-icon {
     }
 }
   
-  
+.logs-output {
+    table.noflex {
+
+        td.level .badge {
+            &.error, &.critical, &.alert {
+                background-color: #DC3023;
+                color: #fff;
+            }
+            &.notice, &.warning {
+                background-color: #E08A1E;
+                color: #fff;
+            }
+            &.debug {
+                background-color: #26A65B;
+                color: #fff;
+            }
+            &.info {
+                background-color: #22A7F0;
+                color: #fff;
+            }
+            &.emergency {
+                background-color: #8E44AD;
+                color: #fff;
+            }
+        }
+    }
+}
+.badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 0px 6px;
+    min-width: 20px;
+    line-height: 20px;
+    text-align: center;
+}
