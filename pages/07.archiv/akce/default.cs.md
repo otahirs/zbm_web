@@ -137,7 +137,7 @@ content:
 
 
 <script>
- window.addEventListener('load', function () {
+ window.addEventListener('DOMContentLoaded', function () {
   $('[data-href]').click(function () {
     window.location = $(this).data("href");
   });
@@ -247,5 +247,5 @@ content:
     resetList();
     $("#reset_btn").click(resetList);
 
-}, false); // onload
+}; // onload
 </script>

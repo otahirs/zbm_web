@@ -34,7 +34,7 @@ process:
     </div>
     </div> <!-- list -->
     <script>
-    window.addEventListener('load', function () {
+    window.addEventListener('DOMContentLoaded', function () {
 
         var options = {
         valueNames: [ 'name', 'region', 'region', 'level']

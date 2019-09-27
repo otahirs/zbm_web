@@ -160,7 +160,7 @@ content:
 
 
 <script>
- window.addEventListener('load', function () {
+ window.addEventListener('DOMContentLoaded', function () {
    
   // create event
   document.getElementById("events--create").value = "0";
