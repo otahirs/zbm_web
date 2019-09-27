@@ -255,7 +255,7 @@ plan:
 
 <script>
 
-window.addEventListener('load', function() {
+window.addEventListener('DOMContentLoaded', function() {
   /************************************/
   /* Eventy ze šablony - event--basic */
   /************************************/

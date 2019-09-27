@@ -232,7 +232,7 @@ winter:
  </form>
 {# sctript with the same code for all tables #}
 <script>
-    {# romove clicked row #}
+window.addEventListener('DOMContentLoaded', function() {
     $(".remove-row").click(function(){
             if(confirm("Smazat akci?")){
             var clickedRow =  this.parentElement.parentElement;
@@ -280,6 +280,7 @@ winter:
                 }
             });
     }
+});
 </script>
 
 
