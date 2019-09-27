@@ -132,27 +132,38 @@ class CoreServiceManagerPlugin extends Plugin
             "type" => "js",
             "url" => 'plugin://core-service-manager/assets/ajax_action.js'
         ]);
+
+        ServiceManager::getInstance()->registerService("asset", [
+                    "type" => "css",
+                    "url" => 'plugin://core-service-manager/assets/core.css'
+        ]);
     }
 
     public function onAdminTwigTemplatePaths($event)
     {
+        $is_1_7 = version_compare(GRAV_VERSION, "1.7.0-beta.8", ">=");
+
         if ($this->config->get("plugins.core-service-manager.override_admin_twigs", true)) {
             $grav = Grav::instance();
             $plugins = $grav['plugins'];
             $plugin = $plugins->get('admin');
             if ($plugin) {
                 $version = $plugin->blueprints()->version;
+                $admin_is_1_8 = version_compare($version, '1.10.0-beta.8') >= 0;
                 $version = preg_replace('/-beta.*$/', '', $version);
-                if (version_compare($version, '1.9.0') < 0) {
-                    $event['paths'] = array_merge($event['paths'], [__DIR__ . '/admin/templates-grav-1_9']);
+                if ($is_1_7 && $admin_is_1_8) {
+                  $event['paths'] = array_merge($event['paths'], [__DIR__ . '/templates/grav-1.7/admin-latest']);
+                }
+                else if (version_compare($version, '1.9.0') < 0) {
+                    $event['paths'] = array_merge($event['paths'], [__DIR__ . '/templates/grav-1.6/admin-1.9']);
                 } else if (version_compare($version, '1.10.0') < 0) {
-                    $event['paths'] = array_merge($event['paths'], [__DIR__ . '/admin/templates-grav-1_10']);
+                    $event['paths'] = array_merge($event['paths'], [__DIR__ . '/templates/grav-1.6/admin-1.10']);
                 } else {
-                    $event['paths'] = array_merge($event['paths'], [__DIR__ . '/admin/templates-grav-latest']);
+                    $event['paths'] = array_merge($event['paths'], [__DIR__ . '/templates/grav-1.6/admin-latest']);
                 }
             }
         }
-        $event['paths'] = array_merge($event['paths'], [__DIR__ . '/admin/templates-twelvetone']);
+        $event['paths'] = array_merge($event['paths'], [__DIR__ . '/templates/twelvetone']);
 
         return $event;
     }
