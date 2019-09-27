@@ -1,5 +1,27 @@
+# v1.0.20
+##  9/21/2019
+
+1. [](#bugfix)
+    * Update template for Grav 1.7 compatibility
+2. [](#improvement)
+    * Refactor template directory layout
+3. [](#improvement)
+    * Update CSS for sidebar button group
+4. [](#bugfix)
+    * Fix finicky changelog format
+    
+# v1.0.19
+##  9/21/2019
+
+1. [](#bugfix)
+    * Update template for Grav 1.7 compatibility
+2. [](#improvement)
+    * Refactor template directory layout
+3. [](#improvement)
+    * Update CSS for sidebar button group
+    
 # v1.0.18
-##  9/28/2019
+##  8/28/2019
 
 1. [](#improvement)
     * Add icon support to dropdown menus
