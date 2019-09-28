@@ -50,7 +50,10 @@ content:
               <section class="newsText">
                 {{p.content}}
 		
-                <a class="comment-count" href="{{base_url_absolute ~ p.url ~ "#commento"}}"> </a> 
+                <div class="row justify-content-between">
+                  <div class="author col-auto"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;{{p.header.user}}</div>
+                  <a class="comment-count col-auto" href="{{base_url_absolute ~ p.url ~ "#commento"}}"> <i class="fa fa-comments-o" aria-hidden="true"></i></a>
+                </div> 
               </section>
             </article>
             <hr width="62.11%">
