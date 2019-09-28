@@ -1,13 +1,6 @@
 ---
 title: Informace
 date: '2018-07-10'
-editable-simplemde:
-    self: true
-    editable_by:
-        -
-            groups:
-                - edit-static-sites
-editable-simplemde.merged: null
 ---
 
 <div class="row">
