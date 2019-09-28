@@ -56,15 +56,15 @@ table.plan td {
 ****************/
 /* home - news */
 .newsPictures {
-    margin: 1em 0;
+    margin: 1em 0 0 0;
+}
+.newsIMG {
+    padding-bottom: 30px;
 }
 /* home - soon */
 #soon {
     padding: 0 1.5rem;
     background-color: _palette(accent);
-    height: 100%;
-    position: relative;
-
     
     section {
     

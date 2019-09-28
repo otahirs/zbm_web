@@ -38,7 +38,7 @@ content:
                 <span class="edit-news" style="cursor: pointer;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
         	{#	  {% endif %}#} 
             </h4>
-            <div class="row no-gutters newsPictures">
+            <div class="row newsPictures">
                 {% for img in p.header.pictures %}
                   {# small screens shows double image size #}
                   {% set img_mobile = img.ratio %}
@@ -46,12 +46,10 @@ content:
                     {% set img_mobile = img.ratio * 2 %}
                   {% endif %}
                   <div class="newsIMG col-md-{{img.ratio}} col-sm-{{img_mobile}}" data-name="{{img.name}}" data-ratio="{{ img.ratio }}">
-                    <a href="{{base_url_absolute}}/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/{{img.name}}" target="_blank" title="Zobrazit originální obrázek">
-                      <picture>
-                        {# časem WebP #}
-                        <img src="{{base_url_absolute}}/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/{{img.name}}_preview.jpg" alt="Zde by měl být obrázek">
-                      </picture>
-                    </a>
+                    <picture>
+                      {# časem WebP #}
+                      <img src="{{base_url_absolute}}/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/{{img.name}}_preview.jpg" alt="Zde by měl být obrázek">
+                    </picture>
                   </div>
                 {% endfor %}
             </div>
@@ -244,7 +242,7 @@ function createImageOptionsDiv(formName, displayName){
                               '<option value="6" selected>1/2</option>' +
                               '<option value="3">1/4</option>' +
                             '</select>';
-        select.innerHTML += '<label class="News--img-label" for="' + formName + '">' + displayName + '</label>'; 
+        select.innerHTML += '<label class="News--img-label" for="' + formName + '" title="' + displayName + '">' + displayName + '</label>'; 
     News_pictures.appendChild(select); //vlozi do modalu
     select.querySelector(".News--img-delete").addEventListener( "click", deleteImageToggle);
 }
@@ -463,8 +461,8 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
 
   $(".editBliziSeButton").click(function(){
       var soonEvent = this;
-      if(soonEvent.classList.contains("active")) return;
-      soonEvent.classList.add("active");
+      if(soonEvent.classList.contains("edit-blizise-active")) return;
+      soonEvent.classList.add("edit-blizise-active");
       var content = this.querySelector("article") //nacte tag obsahujici text blizi se
       var content_text = content.innerHTML.trim(); //ulozi stary text a odstihne ze zacatku a konce bile znaky
       content.innerHTML = '<form method="post" action="/php/blizise">' +  //nahradi text blizi se formularem na upravu
@@ -491,7 +489,7 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
       $(".editBliziSeCancel").click(function(e){ //tlacitko pro zruseni
         e.stopPropagation(); //zastavi propagaci click eventu aby se neodesilal formular pres tlacitko submit
         content.innerHTML = content_text; //vrati drive ulozeny text
-        soonEvent.classList.remove("active");
+        soonEvent.classList.remove("edit-blizise-active");
       })
 
       $(".saveBlizise").click(function(e){
@@ -507,7 +505,7 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
               contentType: false,
               success: function ()
               { 
-                soonEvent.classList.remove("active"); 
+                soonEvent.classList.remove("edit-blizise-active"); 
                 window.location.replace(location.href);
               },
               error: function (xhr, desc, err){
@@ -528,7 +526,7 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
               processData: false,
               contentType: false,
               success: function ()
-              {  soonEvent.classList.remove("active");
+              {  soonEvent.classList.remove("edit-blizise-active");
                 window.location.replace(location.href);  
               },
               error: function (xhr, desc, err){
