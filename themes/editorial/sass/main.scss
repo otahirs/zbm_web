@@ -20,12 +20,13 @@
 		small-to-xlarge: '(min-width: 481px) and (max-width: 1680px)'
 	));
 
+	/*
 	@include skel-layout((
 		reset: 'full',
 		boxModel: 'border',
 		grid: ( gutters: 1.5em )
 	));
-
+	*/
 // Base.
 
 	@import 'base/page';
