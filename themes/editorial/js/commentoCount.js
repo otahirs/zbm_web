@@ -58,20 +58,9 @@
         var useCustomCommentsText = doms[i].getAttribute("data-custom-comments-text") !== null;
 
         if(useCustomCommentsText) {
-          doms[i].innerText = eval(doms[i].getAttribute("data-custom-comments-text"))(count);
+          doms[i].innerText = count + doms[i].getAttribute("data-custom-comments-text");
         } else {
-	  if (count === 0) {
-	    doms[i].innerText = "žádné komentáře";
-	  }
-	  else if (count === 1) {
-	    doms[i].innerText = count + " komentář";
-	  }
-	  else if (count > 1 && count < 5) {
-	    doms[i].innerText = count + " komentáře";
-	  }
-	  else {
-	    doms[i].innerText = count + " komentářů";
-          }
+          doms[i].innerHTML = count + '\xa0' + doms[i].innerHTML;
         }
       }
     });
