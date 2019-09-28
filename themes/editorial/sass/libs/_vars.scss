@@ -20,7 +20,52 @@
 	);
 
 // Font
-@import url('https://fonts.googleapis.com/css?family=Overpass:400,700');
+	//@import url('https://fonts.googleapis.com/css?family=Overpass:400,700');
+	/* overpass-regular - latin_latin-ext */
+	@font-face {
+		font-family: 'Overpass';
+		font-style: normal;
+		font-weight: 400;
+		font-display: block;
+		src: local('Overpass Regular'), local('Overpass-Regular'),
+			url('../fonts/overpass-v4-latin_latin-ext-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('../fonts/overpass-v4-latin_latin-ext-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	}
+	
+	/* overpass-italic - latin_latin-ext */
+	@font-face {
+		font-family: 'Overpass';
+		font-style: italic;
+		font-weight: 400;
+		font-display: block;
+		src: local('Overpass Italic'), local('Overpass-Italic'),
+			url('../fonts/overpass-v4-latin_latin-ext-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('../fonts/overpass-v4-latin_latin-ext-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	}
+	
+	/* overpass-700 - latin_latin-ext */
+	@font-face {
+		font-family: 'Overpass';
+		font-style: normal;
+		font-weight: 700;
+		font-display: block;
+		src: local('Overpass Bold'), local('Overpass-Bold'),
+			url('../fonts/overpass-v4-latin_latin-ext-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('../fonts/overpass-v4-latin_latin-ext-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	}
+	
+	/* overpass-700italic - latin_latin-ext */
+	@font-face {
+		font-family: 'Overpass';
+		font-style: italic;
+		font-weight: 700;
+		font-display: block;
+		src: local('Overpass Bold Italic'), local('Overpass-BoldItalic'),
+			url('../fonts/overpass-v4-latin_latin-ext-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('../fonts/overpass-v4-latin_latin-ext-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	}
+  
+  
 
 	$font: (
 		family:			('Helvetica', sans-serif),
