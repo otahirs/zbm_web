@@ -5,52 +5,57 @@
 {% endblock %}
 
 {% block header %}
-            <header id="header">
-		<h1>{{page.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }} </span> &nbsp; &nbsp; <span class="newsTitle"> {{ page.header.title }}
-</h1>
-            </header><!-- End #header -->
+  <header id="header">
+		<h2 class="row justify-content-between">
+      <span class="col-auto">
+        {{page.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }}
+        &nbsp; &nbsp; 
+        {{ page.header.title }}
+      </span>
+      <span class="col-auto" style="font-weight: normal">{{page.header.user}}</span>
+    </h2>
+  </header><!-- End #header -->
 {% endblock %}
 
 
 {% block body %}
-         <section>
-           
-     	{% block content %}
+  <section>
+        
+  {% block content %}
               
-              {% if page.header.pictures|length > 0 %}
-              <div class="row newsPictures">
-                  {% for img in page.header.pictures %}
-                    {# small screens shows double image size #}
-                    {% set img_mobile = img.ratio %}
-                    {% if img.ratio * 2 <= 12  %}
-                      {% set img_mobile = img.ratio * 2 %}
-                    {% endif %}
-                    <div class="newsIMG col-md-{{img.ratio}} col-sm-{{img_mobile}}" data-name="{{img.name}}" data-ratio="{{ img.ratio }}">
-                      <a href="{{page.url}}/img/{{img.name}}" target="_blank" title="Zobrazit originální obrázek">
-                        <picture>
-                          {# časem WebP #}
-                          <img src="{{page.url}}/img/{{img.name}}_preview.jpg" alt="Zde by měl být obrázek">
-                        </picture>
-                      </a>
-                    </div>
-                  {% endfor %}
-              </div>
-              {% endif %}
+    {% if page.header.pictures|length > 0 %}
+    <div class="row newsPictures">
+        {% for img in page.header.pictures %}
+          {# small screens shows double image size #}
+          {% set img_mobile = img.ratio %}
+          {% set img_normal = img.ratio %}
+          {% if img_normal == 3 %}
+            {% set img_normal = 2 %}
+          {% else %}
+            {% set img_normal = img.ratio // 2 %}
+          {% endif %}
 
+          <div class="newsIMG col-md-{{img_normal}} col-{{img_mobile}}">
+            <a href="{{page.url}}/img/{{img.name}}" target="_blank" title="Zobrazit originální obrázek">
+              <picture>
+                {# časem WebP #}
+                <img src="{{page.url}}/img/{{img.name}}_preview.jpg" alt="Zde by měl být obrázek">
+              </picture>
+            </a>
+          </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 
-
-
-
-
-	{{ page.content }}
-    
+	  {{ page.content }}
+    <hr>
     <div id="commento"></div>
 
 
 
 
-	   {% endblock %}
-            </section><!-- End section -->
+	{% endblock %}
+  </section><!-- End section -->
 {% endblock %}
             
 
