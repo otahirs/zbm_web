@@ -7,7 +7,9 @@ editable-simplemde:
         -
             groups:
                 - edit-static-sites
+editable-simplemde.merged: null
 ---
+
 <div class="row">
 <div class="col-sm-6 col-lg-3">
 <h3>Základní informace</h3>
