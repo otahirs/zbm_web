@@ -244,7 +244,7 @@ class PhpTwigExtension extends \Twig_Extension
                   if(isset($img['img_delete'])){
                     if($img['img_delete'] == "true"){
                       $imgPath =     "./user/pages/data/news/" . $year . "/". $data['id'] . "/img/" . $img['img_name'];
-                      $previewPath = "./user/pages/data/news/" . $year . "/". $data['id'] . "/img/" . "preview_" . $img['img_name'];
+                      $previewPath = "./user/pages/data/news/" . $year . "/". $data['id'] . "/img/" . $img['img_name'] . "_preview.jpg";
                       if (file_exists($imgPath)) unlink($imgPath);
                       if (file_exists($previewPath)) unlink($previewPath);
                       continue;
@@ -403,7 +403,7 @@ class PhpTwigExtension extends \Twig_Extension
                     mkdir($storeFolder);
                 }
                 $saveImagePath = $storeFolder . $file_name;
-                $savePreviewPath = $storeFolder . "preview_" . $file_name;
+                $savePreviewPath = $saveImagePath . "_preview.jpg";
                 move_uploaded_file($file_tmp=$_FILES["file"]["tmp_name"][$key], $saveImagePath);
                 $this->createThumbnail($saveImagePath, $savePreviewPath, $previewWidthInPx, $targetHeight = null);
             };
