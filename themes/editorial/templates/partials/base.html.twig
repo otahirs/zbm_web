@@ -13,12 +13,12 @@
 
     {% block stylesheets %}
         {% do assets.addCss('theme://css/main.css', 101) %}
-        {% do assets.addCss('theme://css/custom.css', 100) %}
         {% do assets.addCss('theme://css/bootstrap-grid.min.css', 99) %}
         {% do assets.addCss('theme://css/font-awesome.min.css', 98) %}
 	    {% do assets.addCss('theme://css/datepicker.css', 90) %}
 	    {% do assets.addCss('theme://css/simplemde.min.css', 10) %}
 	    {% do assets.addCss('theme://css/dropzone.css', 10) %}
+        {% do assets.addCss('theme://css/custom.css', 1) %}
 
     {% endblock %}
     {{ assets.css()|raw }}

@@ -95,6 +95,9 @@
 .News--img-label, .News--img-settings, .News--img-delete-button{
     display: inline;
 }
+.News--img-label {
+    white-space: nowrap;
+}
 .News--img-delete{
     width: 1.8em;
     padding: 0 0.6rem;
@@ -114,7 +117,10 @@
 
 #News--pictures{
     margin-bottom: 1rem;
-    margin-top: 1rem
+    margin-top: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-right: 20px;
 }
 
 #News--deleteButtonSpan, #News--close{
