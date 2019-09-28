@@ -2,6 +2,7 @@
 title: Informace
 date: '2018-07-10'
 ---
+
 <div class="row">
 <div class="col-sm-6 col-lg-3">
 <h3>Základní informace</h3>
