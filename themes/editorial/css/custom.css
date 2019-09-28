@@ -493,6 +493,9 @@ img {
     margin: 0;
 }
 
-
+.comment-count {
+    color: inherit;
+    border-bottom: none;
+}
 
 
