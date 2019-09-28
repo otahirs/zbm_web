@@ -14,7 +14,7 @@ content:
         dir: asc
 ---
 
-<div class="row no-gutters"> {# cela stranka | je pouzit css framework purecss.io grids #}
+<div class="row no-gutters" style="height: 100%;"> {# cela stranka | je pouzit css framework purecss.io grids #}
   
     <div id="novinky" class="col-md-8"> <!-- plan + novinky vlevo -->
     <div class="inner">
