@@ -1,12 +1,6 @@
 ---
 title: Informace
 date: '2018-07-10'
-editable-simplemde:
-    self: true
-    editable_by:
-        -
-            groups:
-                - edit-static-sites
 ---
 <div class="row">
 <div class="col-sm-6 col-lg-3">
