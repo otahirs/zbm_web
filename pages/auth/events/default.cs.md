@@ -21,11 +21,11 @@ content:
     <a class="button special" id="filter_btn">zobrazit filtr</a>
   </div>
   <div class="col-auto">
-    <select id="events--create">
+    <select id="create-event">
         <option value="0" selected="true" disabled="disabled" hidden="true">Vytvořit nový</option>
-        <option class="create-event" value="trenink">Trénink</option>
-        <option class="create-event" value="zavod">Závod</option>
-        <option class="create-event" value="soustredeni">Soustředění</option>
+        <option value="trenink">Trénink</option>
+        <option value="zavod">Závod</option>
+        <option value="soustredeni">Soustředění</option>
     </select>
   </div>
 </div>
@@ -141,6 +141,7 @@ content:
           <td class="datum"></td>
           <td class="nazev"></td>
           <td class="misto"></td>
+          <td class="edit"></td>
           <td class="skupina" style="display: none !important;"></td>
           <td class="type" style="display: none !important;"></td>
           <td class="startMonth" style="display: none !important;">{{ "now"| date('m/Y') }}</td>     
@@ -163,8 +164,9 @@ content:
  window.addEventListener('DOMContentLoaded', function () {
    
   // create event
-  document.getElementById("events--create").value = "0";
-  $('.create-event').click( (e) => {
+  var createEvent = document.getElementById("create-event");
+  createEvent.value = "0";
+  createEvent.addEventListener("change", (e) => {
       e.preventDefault;
       location.href = "{{base_url}}/auth/events/edit?new=" + e.target.value;
   })
@@ -186,7 +188,7 @@ content:
   var filter_div = document.getElementById('filter_program');
   $('#filter_btn').click( function(){
     if (filter_div.style.display === "none") {
-      filter_div.style.display = "block";
+      filter_div.style.display = "flex";
       this.innerHTML = "schovat filtr";
     } else {
       filter_div.style.display = "none";
