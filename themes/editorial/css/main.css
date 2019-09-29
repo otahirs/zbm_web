@@ -1870,3 +1870,23 @@ ul.tabs li.group-icon {
   min-width: 20px;
   line-height: 20px;
   text-align: center; }
+
+/* commento */
+#commento .commento-button {
+  color: white !important; }
+
+#commento .commento-input:focus {
+  box-shadow: none; }
+
+#commento .commento-root textarea:focus {
+  box-shadow: none; }
+
+#commento .commento-option-button {
+  box-shadow: none; }
+
+#commento .commento-submit-button {
+  background-color: #e65646; }
+
+.comment-count {
+  color: inherit;
+  border-bottom: none; }

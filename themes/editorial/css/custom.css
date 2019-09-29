@@ -498,30 +498,3 @@ img {
 #soon form {
     margin: 0;
 }
-
-
-
-/* commento */
-.commento-button {
-    color: white !important;
-}
-.commento-input {
-    width: 100%;
-}
-#commento-login-box-password-input {
-    width: calc(100% - 110px);
-}
-.commento-submit-button {
-    background-color: #e65646;
-}
-.commento-root textarea:focus {
-    box-shadow: none;
-}
-.commento-option-button {
-    box-shadow: none;
-}
-
-.comment-count {
-    color: inherit;
-    border-bottom: none;
-}
