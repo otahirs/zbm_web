@@ -6,13 +6,10 @@
 
 {% block header %}
   <header id="header">
-		<h2 class="row justify-content-between">
-      <span class="col-auto">
-        {{page.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }}
-        &nbsp; &nbsp; 
-        {{ page.header.title }}
-      </span>
-      <span class="col-auto" style="font-weight: normal">{{page.header.user}}</span>
+		<h2>
+      {{page.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }}
+      &nbsp; &nbsp; 
+      {{ page.header.title }}
     </h2>
   </header><!-- End #header -->
 {% endblock %}
@@ -48,6 +45,7 @@
     {% endif %}
 
 	  {{ page.content }}
+    <i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;{{page.header.user}}
     <hr>
     <div id="commento"></div>
 
