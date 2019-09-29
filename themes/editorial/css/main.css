@@ -655,7 +655,8 @@ dl {
 
 table {
   margin: 0 0 2em 0;
-  width: 100%; }
+  width: 100%;
+  border-collapse: collapse; }
   table tbody tr {
     border: solid 1px rgba(210, 215, 217, 0.75);
     border-left: 0;
@@ -1625,7 +1626,8 @@ table.calendar tr {
   border: none; }
 
 #filter_program {
-  border: #202020 dotted 3px; }
+  border: #202020 dashed 1px;
+  margin-bottom: 2em; }
 
 #filter_program label.pure-radio {
   margin: 2px; }

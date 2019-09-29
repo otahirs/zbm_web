@@ -145,7 +145,7 @@ content:
   var filter_div = document.getElementById('filter_program');
   $('#filter_btn').click( function(){
     if (filter_div.style.display === "none") {
-      filter_div.style.display = "block";
+      filter_div.style.display = "flex";
       this.innerHTML = "schovat filtr";
     } else {
       filter_div.style.display = "none";
@@ -247,5 +247,5 @@ content:
     resetList();
     $("#reset_btn").click(resetList);
 
-}; // onload
+}); // onload
 </script>

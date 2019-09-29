@@ -165,7 +165,8 @@ table.calendar tr {
     border: none;
 }
 #filter_program {
-    border: _palette(bg-alt) dotted 3px;
+    border: _palette(bg-alt) dashed 1px;
+    margin-bottom: 2em;
 }
 #filter_program label.pure-radio {
     margin: 2px;
