@@ -73,32 +73,12 @@ table.plan td {
         position: relative;
         left: 1rem;
         border: 1px dashed black;
-        transition: all 0.5s;
 
         &.event {
             border: 1px solid black;
-
-
-            &:hover {
-                border: solid white 1px;
-                background-color: white;
-                transition: all 0.5s;
-            }
-
-
-            @include breakpoint(small) {
-                border: solid white 1px;
-                background-color: white;  
-            }
-
-
-
-
+            background-color: white;
         }
-
     }
-
-
 }
 
 .soon--date {
