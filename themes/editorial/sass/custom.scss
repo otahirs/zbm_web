@@ -508,9 +508,13 @@ ul.tabs li.group-icon {
     .commento-option-button {
         box-shadow: none;
     }
+    textarea:focus {
+        box-shadow: none;
+    }
     .commento-submit-button {
         background-color: _palette(accent);
     }
+
 }
 
 .comment-count {

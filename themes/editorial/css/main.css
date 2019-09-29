@@ -1884,6 +1884,9 @@ ul.tabs li.group-icon {
 #commento .commento-option-button {
   box-shadow: none; }
 
+#commento textarea:focus {
+  box-shadow: none; }
+
 #commento .commento-submit-button {
   background-color: #e65646; }
 
