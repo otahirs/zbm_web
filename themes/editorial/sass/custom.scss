@@ -455,7 +455,7 @@ ul.tabs li.group-icon {
       width: percentage(1/7);
     }
 }
-  
+
 .logs-output {
     table.noflex {
 
@@ -492,4 +492,28 @@ ul.tabs li.group-icon {
     min-width: 20px;
     line-height: 20px;
     text-align: center;
+}
+
+/* commento */
+#commento {
+    .commento-button {
+        color: white !important;
+    }
+    .commento-input:focus {
+        box-shadow: none;
+    }
+    .commento-root textarea:focus {
+        box-shadow: none;
+    }
+    .commento-option-button {
+        box-shadow: none;
+    }
+    .commento-submit-button {
+        background-color: _palette(accent);
+    }
+}
+
+.comment-count {
+    color: inherit;
+    border-bottom: none;
 }
