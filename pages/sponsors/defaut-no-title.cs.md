@@ -53,9 +53,4 @@ date: '2018-10-29'
         <img class="sponsors--img" src="{{page.relativePagePath()}}/kotlarska.png" style="height: 70%;">
         </a>
     </div>
-    <div class="col-md-4">
-        <a href="https://www.tredos.cz/" target="_blank">
-        <img class="sponsors--img" src="{{page.relativePagePath()}}/tredos.jpg">
-        </a>
-    </div>
 </div>
