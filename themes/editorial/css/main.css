@@ -1550,6 +1550,9 @@ table.plan td {
 .newsIMG {
   padding-bottom: 30px; }
 
+.newsText {
+  text-align: justify; }
+
 /* home - soon */
 #soon {
   padding: 0 1.5rem;
