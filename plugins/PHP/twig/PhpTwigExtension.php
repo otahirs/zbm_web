@@ -691,8 +691,8 @@ class PhpTwigExtension extends \Twig_Extension
         return $parsed;
     }
 
-    function create_event_id($template, $title, $start, $place){
-        $hashStr = $template.$title.$start.$place;
+    function create_event_id($template, $title, $start){
+        $hashStr = $template.$title.$start;
         $date = date_create($start);
         return date_format($date, "Ymd") ."-". hash('crc32', $hashStr);
     }
@@ -708,7 +708,7 @@ class PhpTwigExtension extends \Twig_Extension
             $event['date'] = date("Y-m-d");
             $event['start'] = $this->format_date($event['start']);
             $event['end'] = $this->format_date($event['end']);
-            $event['id'] = $this->create_event_id($event['template'], $event['title'], $event['start'], $event['place']);
+            $event['id'] = $this->create_event_id($event['template'], $event['title'], $event['start']);
             $year = substr($event["start"], 0, 4);
 
             $path = "./user/pages/data/events/". $year ."/". $event["id"] ."/". $event['template'] .".cs.md";
@@ -881,7 +881,7 @@ class PhpTwigExtension extends \Twig_Extension
                 $group_arr = ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost"];
                 
                 
-                $id = empty($_POST["id"]) ? $this->create_event_id($_POST['template'], $_POST['title'], $_POST['start'], $_POST['place']) : $_POST["id"];
+                $id = empty($_POST["id"]) ? $this->create_event_id($_POST['template'], $_POST['title'], $_POST['start']) : $_POST["id"];
                 $year = substr($id, 0 , 4);
                 $path = "./user/pages/data/events/". $year ."/". $id ."/". $_POST['template'] .".cs.md";
 
