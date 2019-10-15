@@ -66,15 +66,15 @@ access:
                     </div>
                     <div class="col-6">
                         <label for="date1">Od</label>
-                        <input id="date1" name="start" type="text" value="{{ event.header.start }}" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required title="formát yyyy-mm-dd">
+                        <input id="date1" name="start" type="text" value="{{ event.header.start }}" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required title="yyyy-mm-dd">
                     </div>
                     <div class="col-6">
                         <label for="date2">Do</label>
-                        <input id="date2" name="end" type="text" value="{{ event.header.end }}" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" title="formát yyyy-mm-dd">
+                        <input id="date2" name="end" type="text" value="{{ event.header.end }}" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" title="yyyy-mm-dd">
                     </div>
                     <div class="col-6">
                         <label for="place">Místo</label>
-                        <input id="place" name="place" type="text" value="{{ event.header.place }}" required>
+                        <input id="place" name="place" type="text" value="{{ event.header.place }}">
                     </div>
                     <div class="col-6">
                         <label for="GPS">GPS</label>
@@ -315,6 +315,7 @@ access:
         form = document.getElementById("editEvent"),
         date1 = document.getElementById("date1"),
         date2 = document.getElementById("date2"),
+        id = document.querySelector("[name='id']"),
         formResponse = document.getElementById("formResponse");
 
     save_btn.onclick = function(e){
@@ -332,13 +333,16 @@ access:
                 success: function (response){   
                     formResponse.innerHTML = "<br>Úspěšně uloženo.";
                     formResponse.style.color = "green";
-                    var json = $.parseJSON(response);
-                    if (json.id) {
-                        $("[name='id']").val(json.id);
-                    }
                     setTimeout(function(){ 
                         formResponse.innerHTML = ""; 
                     }, 3000);
+                    if (id.value == "") {
+                        var json = $.parseJSON(response);
+                        if (json.id) {
+                            $("[name='id']").val(json.id);
+                        }
+                    }
+                    
                     //window.location.replace(location.href);
                 },
                 error: function (xhr, desc, err){
@@ -353,21 +357,20 @@ access:
                     console.log(err);
                     console.log(desc);
                     console.log(xhr);
-                    }
+                }
             });
 
         }
         else{
-           if(date1.validity || date2.validity){
-                  formResponse.innerHTML ='<br>Datum musí být ve formátu "yyyy-mm-dd"';
-                  formResponse.style.color = "red";
-           }
-           
+            form.reportValidity();
             if($("#name").val().trim() == ""){
-                formResponse.innerHTML ='<br>Název události nesmí být prázdný';
+                formResponse.innerHTML ='<br>Musí být vyplněn název události';
                 formResponse.style.color = "red";
             }
-
+            else if(!date1.checkValidity() || !date2.checkValidity()){
+                formResponse.innerHTML ='<br>Datum musí být ve formátu "yyyy-mm-dd"';
+                formResponse.style.color = "red";
+            }
         }
     }
     delete_btn.onclick = function(e){
@@ -398,7 +401,7 @@ access:
                     console.log(err);
                     console.log(desc);
                     console.log(xhr);
-                    }
+                }
             });
         }
     }
