@@ -22,4 +22,4 @@ thingsToTake: ''
 signups: ''
 gps: '14.31124, 48.46109'
 ---
-koko
+* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
