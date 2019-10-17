@@ -7,25 +7,19 @@ access:
         plan: true
 planTemplate: winter
 plan:
-    monday:
-        1:
-            name: 'kopce (světlo s sebou)'
-            place: 'Hala Rosničk'
-            meetup: '16:30'
-            group:
-                    - dorost
+    monday: null
     tuesday:
         1:
-            name: 'běžecké posilování'
+            name: 'běžecký trénink'
             place: 'ZŠ Kotlářská'
             meetup: '16:15'
             group:
                     - zaci1
                     - zaci2
         2:
-            name: 'běžecké posilování'
-            place: 'ZŠ Kotlářská'
-            meetup: '20:00'
+            name: 'Trailtour - hrad Veveří'
+            place: 'Bystrc - přístaviště'
+            meetup: '17:00'
             group:
                     - dorost
     wednesday:
@@ -36,57 +30,32 @@ plan:
             group:
                     - zabicky
         2:
-            name: 'hry + mapa'
+            name: 'mapový trénink'
             place: 'ZŠ Milénova'
             meetup: '16:00'
             group:
                     - pulci1
                     - pulci2
         3:
-            name: 'běžecký trénink'
+            name: 'mapový trénink'
             place: 'ZŠ Milénova'
             meetup: '16:00'
             group:
                     - zaci1
                     - zaci2
-        4:
-            name: 'intervaly'
-            place: 'ZŠ Milénova'
-            meetup: '16:30'
-            group:
-                    - dorost
     thursday:
         1:
-            name: 'tělocvična'
+            name: 'hry'
             place: 'ZŠ Kotlářská'
             meetup: '16:00'
             group:
-                    - pulci1
-                    - pulci2
-        2:
-            name: 'tělocvična'
-            place: 'ZŠ Kotlářská'
-            meetup: '16:30'
-            group:
                     - zaci1
                     - zaci2
-        3:
-            name: 'kompenzační cvičení'
-            place: 'ZŠ Kotlářská'
-            meetup: '17:30'
-            group:
-                    - dorost
-        4:
-            name: 'volejbal'
-            place: 'ZŠ Kotlářská'
-            meetup: '19:30'
-            group:
-                    - dorost
     friday:
         1:
-            name: 'florbal, basket'
-            place: 'ZŠ Kotlářská'
-            meetup: '18:00'
+            name: 'Trailtour - Stránská skála'
+            place: 'Skorkovského 153'
+            meetup: '17:00'
             group:
                     - dorost
     saturday:
