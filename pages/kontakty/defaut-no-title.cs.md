@@ -124,7 +124,7 @@ date: '2018-10-28'
             <h4>Jan Zháňal</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-phone"></i>725 258 326</li>
-                <li><i class="fa-li fa fa-envelope"></i>jendazh@gmail.com</li>
+                <li><i class="fa-li fa fa-envelope"></i>jenda.zh@gmail.com</li>
             </ul>
             <h4>Libor Zřídkaveselý</h4>
             <ul class="fa-ul">
