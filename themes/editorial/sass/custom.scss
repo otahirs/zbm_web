@@ -124,6 +124,12 @@ table.plan td {
 .soon--dot-now{
     background-color: _palette(bg-alt);
 }
+.soon--countdown {
+    float: right;
+    top: 3px;
+    position: relative;
+}
+
 #soon--timeline {
     border: 2px _palette(bg-alt) solid;
     width: 0;
