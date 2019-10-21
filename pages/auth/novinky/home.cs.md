@@ -24,19 +24,15 @@ content:
         <section>
     
 
-      {% set news_collection = page.collection().ofType('novinka').order('p.header.id','asc') %}
+      {% set news_collection = page.collection().ofType('novinka').order('header.id','desc').order('header.date','desc') %}
 
-      {% for p in news_collection.order('date','desc') %}
+      {% for p in news_collection %}
 
         {% if  ( p.header.date|date('Y-m-d') >= strtotime("today -30 day")|date('Y-m-d') ) %}
           <article id="{{ p.header.id }}">
-            <h4 class="news--header">
-                <span class="newsDate">{{p.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }} </span> &nbsp; &nbsp; <span class="newsTitle"> {{ p.header.title }} </span>
-            {#  {% if (authorize(['site.novinky'])) %} #} 
-          			&nbsp;
-                {# otevrit modal #}
-                <span class="edit-news" style="cursor: pointer;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-        	{#	  {% endif %}#} 
+            <h4 class="news--header row justify-content-between">
+                  <span class="news--header_left col edit-news" style="cursor: pointer;"> <span class="newsTitle">{{ p.header.title }}</span>&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i> </span> 
+                  <span class="news--header_right col-auto newsDate">{{p.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y') }}</span>
             </h4>
             <div class="row newsPictures">
                 {% for img in p.header.pictures %}
