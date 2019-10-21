@@ -17,6 +17,7 @@ Na současný stav se můžete podívat na [new.zbmob.cz](https://new.zbmob.cz) 
 - [x] kalendář
 - [x] Konce termínů přihlášek
 ## Chceme dodělat
+- [ ] Mapy pro orientační běh vydané oddílem
 - [ ] design
 - [ ] překlad do AJ
 - [ ] vyhledávání
