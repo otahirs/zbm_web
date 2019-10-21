@@ -91,8 +91,22 @@ content:
           {% set currdate = strtotime("today +" ~ i ~ " day")|date('Y-m-d') %}
 
           {% if currdate in events|keys or currdate in entries|keys or currdate == "now"|date('Y-m-d') %}
-            <h6 class="soon--date"><span class="soon--dot {% if currdate == "now"|date('Y-m-d') %} soon--dot-now {% endif %}"></span> &nbsp;
-              {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
+            <h6 class="soon--date">
+              <span class="soon--dot {% if currdate == "now"|date('Y-m-d') %} soon--dot-now {% endif %}"></span> &nbsp;
+              <span class="soon--day"> 
+                {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
+              </span>
+              <span class="soon--countdown">
+                {% if i == 0 %}
+                  dnes
+                {% elseif i == 1 %}
+                  zítra
+                {% elseif 1 < i and i < 5 %}
+                  za {{i}} dny
+                {% else %}
+                  za {{i}} dní
+                {% endif %}
+              </span>
             </h6>
           {% endif %}
           
@@ -117,21 +131,20 @@ content:
                 </article>
               </section>
               </a>
-            {% endfor %}
+          {% endfor %}
 
-            {% if currdate in entries|keys %}
-              <section class="soon-deadline">
-                <div class="title"><i class="fa fa-bell-o" aria-hidden="true"></i> Přihlášky <br></div>
+          {% if currdate in entries|keys %}
+            <section class="soon-deadline">
+              <div class="title"><i class="fa fa-bell-o" aria-hidden="true"></i> Přihlášky <br></div>
 
-                {% for event in attribute(entries, currdate) %}
-                  <div class="entry{% if loop.last %} last{% endif %}">
-                    {{event.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM')}} | {{event.name}}
-
-                  </div>
-                {% endfor %}
-              </section>
-            {% endif %}
-        {% endfor %}
+              {% for event in attribute(entries, currdate) %}
+                <div class="entry{% if loop.last %} last{% endif %}">
+                  {{event.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM')}} | {{event.name}}
+                </div>
+              {% endfor %}
+            </section>
+          {% endif %}
+      {% endfor %}
 
        
 

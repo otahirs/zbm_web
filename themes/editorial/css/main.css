@@ -1599,6 +1599,11 @@ table.plan td {
 .soon--dot-now {
   background-color: #202020; }
 
+.soon--countdown {
+  float: right;
+  top: 3px;
+  position: relative; }
+
 #soon--timeline {
   border: 2px #202020 solid;
   width: 0;
