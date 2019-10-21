@@ -25,7 +25,8 @@ class PhpTwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('phpTest', [$this, 'Test']),      
             new \Twig_SimpleFunction('phpShiftPlan', [$this, 'ShiftPlan']),
             new \Twig_SimpleFunction('phpSaveMapT', [$this, 'SaveMapT']),  
-            new \Twig_SimpleFunction('phpDeleteMapT', [$this, 'DeleteMapT']),     
+            new \Twig_SimpleFunction('phpDeleteMapT', [$this, 'DeleteMapT']),    
+            new \Twig_SimpleFunction('collectionToEventsByDate', [$this, 'collectionToEventsByDate']),  
         
         ];
     }
@@ -196,8 +197,7 @@ class PhpTwigExtension extends \Twig_Extension
         return $content;
       }
 
-      public function ApiRegisterDeadlines(){}
-
+     
       /*******************************************************
       **  funkce, ktera nacte JSON data z api, pokud zavod  **
       **  neexistuje, je vytvoren, pokud existuje, jsou     **
@@ -1217,6 +1217,14 @@ class PhpTwigExtension extends \Twig_Extension
         // save page to file
         file_put_contents($pagePath, $page);
         Cache::clearCache('cache-only');
+    }
+
+    public function collectionToEventsByDate($collection){
+        foreach($collection as $event) {
+            $date = $event->value("header.start");
+            $array[$date][] = $event;
+        }
+        return $array;
     }
 
 }
