@@ -24,9 +24,9 @@ content:
 
           {% if  ( p.header.date|date('Y-m-d') >= strtotime("today -30 day")|date('Y-m-d') ) %}
             <article id="{{ p.header.id }}">
-              <h4 class="news--header">
-                  <span class="newsDate">{{p.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }} </span> &nbsp; &nbsp; 
-                  <span class="newsTitle"> {{ p.header.title }} </span>
+              <h4 class="news--header row justify-content-between">
+                  <span class="news--header_left col"> {{ p.header.title }} </span> 
+                  <span class="news--header_right col-auto"> {{p.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }}</span>
               </h4>
               {% if p.header.pictures|length > 0 %}
               <div class="row newsPictures">
