@@ -75,6 +75,8 @@ content:
             {% set soon_collection = soon_collection.remove() %}
         {% endif %}
       {% endfor %}
+      {% set events = collectionToEventsByDate(soon_collection) %}
+      
       {# try to get entries from members.zbm.eob #}
       {% try %}
           {% set entries = "https://members.eob.cz/zbm/api_racelist.php"|getJsonZbmEntries %}
@@ -87,12 +89,15 @@ content:
       <div id="soon--timeline"></div>
       {% for i in 0..10 %}
           {% set currdate = strtotime("today +" ~ i ~ " day")|date('Y-m-d') %}
-          <h6 class="soon--date"><span class="soon--dot {% if currdate|date("l") in ["Saturday", "Sunday"] %} soon--dot-now {% endif %}"></span> &nbsp;
-            {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
-          </h6>
+
+          {% if currdate in events|keys or currdate in entries|keys or currdate == "now"|date('Y-m-d') %}
+            <h6 class="soon--date"><span class="soon--dot {% if currdate == "now"|date('Y-m-d') %} soon--dot-now {% endif %}"></span> &nbsp;
+              {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
+            </h6>
+          {% endif %}
           
           {# ongoing events that started before today #}
-          {% for p in soon_collection if p.header.start|date('Y-m-d') <= currdate and p.header.end|date('Y-m-d') >= currdate %}      
+          {% for p in attribute(events, currdate) if currdate in events|keys %}      
               <a href="{{p.url}}">
               <section class="event" title="Klikni pro více informací">
                 <h4 class="soon-title">
