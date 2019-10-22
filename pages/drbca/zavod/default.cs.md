@@ -67,10 +67,8 @@ process:
         <div class="col-12"><hr></div>
 
         <div class="col-3">Seznam kategorií</div>
-        <div class="col-9">
-        {% for class in oris.Classes %}
-            {{class.Name}}
-        {% endfor %}
+        <div class="col-9" style="line-break: anywhere;">
+            {% for class in oris.Classes %}{{class.Name}};{% endfor %}
         </div>
         <div class="col-12"><hr></div>
         <div class="col-3">Účet</div>
