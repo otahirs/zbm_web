@@ -22,7 +22,6 @@ process:
     <div class="list">
     {% set url = 'https://oris.orientacnisporty.cz/API/?format=json&method=getEventList&sport=1&datefrom=' ~ "now"|date("Y-m-d") ~ "&dateto=" ~ "now +1 year"|date("Y-12-31") %}
     {% set oris = url|getJson %}
-    {{dump(oris)}}
     {% for race in oris.Data %}
         <div class="row">
         <span class="col-4 col-xs-3 col-md-2">{{ race.Date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM Y') }}</span>
