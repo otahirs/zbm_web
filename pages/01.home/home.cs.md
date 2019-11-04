@@ -75,6 +75,7 @@ content:
             {% set soon_collection = soon_collection.remove() %}
         {% endif %}
       {% endfor %}
+       
       {% set events = collectionToEventsByDate(soon_collection) %}
       
       {# try to get entries from members.zbm.eob #}
