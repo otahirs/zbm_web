@@ -47,6 +47,8 @@ never_cache_twig: true
     </div>
 </div>
 <hr>
+<a href="/user_profile">můj účet</a>
+<hr>
     <div>
         <p>Chyby na opravu zde:
             <ul>
