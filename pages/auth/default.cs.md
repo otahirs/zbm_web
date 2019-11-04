@@ -41,13 +41,11 @@ never_cache_twig: true
         </a>
     </div>
     <div class="col-sm-6 col-md-4">
-        <a href="/auth/nahrat-program">
-            <h2>Importovat program</h2>
+        <a href="/user_profile">
+            <h2>Můj účet</h2>
         </a>
     </div>
 </div>
-<hr>
-<a href="/user_profile">můj účet</a>
 <hr>
     <div>
         <p>Chyby na opravu zde:
