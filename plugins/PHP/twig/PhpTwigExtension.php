@@ -455,7 +455,8 @@ class PhpTwigExtension extends \Twig_Extension
                     $id = $_POST["id"];
                     $date = date( "Y-m-d", strtotime(str_replace(' ','', $_POST["date"])) );
                     $year = substr($date, 0 , 4);
-                    $this->save_news($user, $id, $date, $year);
+                    $author = $_POST["author"];
+                    $this->save_news($author, $id, $date, $year);
                     $this->log_grav($user . " | NEWS edited | " . $id);
                 }
                 elseif( $_POST["POST_type"] == "deleteNews" ){

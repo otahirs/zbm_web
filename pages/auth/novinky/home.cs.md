@@ -29,7 +29,7 @@ content:
       {% for p in news_collection %}
 
         {% if  ( p.header.date|date('Y-m-d') >= strtotime("today -30 day")|date('Y-m-d') ) %}
-          <article id="{{ p.header.id }}">
+          <article id="{{ p.header.id }}" data-author="{{p.header.user}}">
             <h4 class="news--header row justify-content-between">
                   <span class="news--header_left col edit-news" style="cursor: pointer;"> <span class="newsTitle">{{ p.header.title }}</span>&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i> </span> 
                   <span class="news--header_right col-auto newsDate">{{p.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y') }}</span>
@@ -143,6 +143,7 @@ ostatni data z formulare a odeslana dropzone.js prikazem "myDropzone.processQueu
       <form id="News--form" enctype="multipart/form-data" method="post" action="/php/news">
         <input id="News--POST-type" name="POST_type" type="hidden" value="addNews">  {# identifikace POST pozadavku pro PHP zpracovani #}
         <input id="News--id" name="id" type="hidden" value="">  {# id novinky, pokud se upravuje #}
+        <input id="News--author" name="author" type="hidden" value=""> 
         <input id="News--date" name="date" type="hidden" value="">
         <input type="text" id="News--title" name="title"  placeholder="Nadpis" value="">
         <div id="News--pictures"> {# zde se budou dynamicky pridavat nastaveni sirky pro obrazky #}
@@ -180,6 +181,7 @@ var News_simplemde = new SimpleMDE({ element: document.getElementById("News--con
       News_POST_type = document.getElementById("News--POST-type"),
       News_id = document.getElementById("News--id"),
       News_date = document.getElementById("News--date"),
+      News_author = document.getElementById("News--author"),
       News_title = document.getElementById("News--title"),
       News_pictures = document.getElementById("News--pictures"),
       News_modal = document.getElementById('NewsModal'),
@@ -251,6 +253,7 @@ $(".edit-news").click(function(){
     News_header.innerHTML = "Upravit novinku"; //inicializace - Nadpis
 
     var novinka = $(this).closest("article")[0]; //nacte tag arcitle obalujici novinku, ktery je nejbize tlacitku (cestuje nahoru po DOM)
+    News_author.value = novinka.dataset.author;
     News_id.value = novinka.id; //nacte do skryteho "form input" ID novinky, kvuli PHP zpracovani
     News_date.value = novinka.querySelector(".newsDate").innerHTML; //nacte do skryteho "form input" datum novinky, kvuli PHP zpracovani
     News_title.value = novinka.querySelector(".newsTitle").innerHTML.trim() ; //nacte nazev
@@ -297,6 +300,7 @@ $(".edit-news").click(function(){
     formData.append("title", News_title.value );
     formData.append("id", News_id.value );
     formData.append("date", News_date.value );
+    formData.append("author", News_author.value );
     formData.append("content", News_simplemde.value() );
     
     var img_arr = $(".News--img-settings");
