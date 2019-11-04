@@ -49,7 +49,7 @@ winter:
     monday:
         1:
             name: 'kopce (světlo s sebou)'
-            place: 'Hala Rosnička'
+            place: 'Hala Rosnička, Horákova 7'
             meetup: '16:30'
             group:
                     - zaci2
