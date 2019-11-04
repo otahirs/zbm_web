@@ -6,4 +6,4 @@ id: '20191104-085623000'
 user: 'Jenda'
 pictures:
 ---
-Dnes začínáme trénovat podle zimního modelu. Plán na tyden najdete v najdete menu, po kliknutí na svoji skupinu.
+Dnes začínáme trénovat podle zimního modelu. Plán na tento týden najdete v levém  menu, po kliknutí na svoji skupinu.
