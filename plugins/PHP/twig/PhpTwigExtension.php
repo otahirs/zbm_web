@@ -1220,6 +1220,7 @@ class PhpTwigExtension extends \Twig_Extension
     }
 
     public function collectionToEventsByDate($collection){
+        $array = array();
         foreach($collection as $event) {
             $date = $event->value("header.start");
             $today = date('Y-m-d');
