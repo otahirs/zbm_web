@@ -20,7 +20,7 @@ content:
         <section>
         {% set news_collection = page.collection().ofType('novinka').order('p.header.id','asc') %}
 
-        {% for p in news_collection.order('date','desc') %}
+        {% for p in news_collection %}
 
           {% if  ( p.header.date|date('Y-m-d') >= strtotime("today -30 day")|date('Y-m-d') ) %}
             <article id="{{ p.header.id }}">
