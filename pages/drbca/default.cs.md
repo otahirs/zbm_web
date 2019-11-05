@@ -25,7 +25,7 @@ process:
     {% for race in oris.Data %}
         <div class="row">
         <span class="col-4 col-xs-3 col-md-2">{{ race.Date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM Y') }}</span>
-        <span class="col-auto name"><a href="{{base_url}}/drbca/zavod?id={{race.ID}}">{{race.Name}}</a></span>
+        <span class="col-auto name"><a href="/drbca/zavod?id={{race.ID}}">{{race.Name}}</a></span>
         <span class="col-auto level">{{ race.Level.ShortName }}</span>
         <span class="col-auto region">{{ race.Region }}</span>
         </div>
