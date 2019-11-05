@@ -91,8 +91,8 @@ access:
             <div class="col-sm-6 col-md-3 col-lg-2">
                 <div class="polaris--outerDiv">
                     <div class="polaris--innerDiv">
-                        <a href="{{base_url_absolute}}/data/polaris/{{rok}}/{{pdf}}" target="_blank">
-                            <img src="{{base_url_absolute}}/data/polaris/{{rok}}/{{pdf}}.jpg">
+                        <a href="/data/polaris/{{rok}}/{{pdf}}" target="_blank">
+                            <img src="/data/polaris/{{rok}}/{{pdf}}.jpg">
                             <div class="polaris--title"> 
                                 {{pdf[13:2]}}
                             </div>
