@@ -18,11 +18,9 @@ content:
             <h1>Novinky</h1>
         </header>
         <section>
-        {% set news_collection = page.collection().ofType('novinka').order('p.header.id','asc') %}
+        {% set news_collection = page.collection().ofType('novinka').order('p.header.id','desc') %}
 
-        {% for p in news_collection %}
-
-          {% if  ( p.header.date|date('Y-m-d') >= strtotime("today -30 day")|date('Y-m-d') ) %}
+        {% for p in news_collection if  ( p.header.date|date('Y-m-d') >= strtotime("today -30 day")|date('Y-m-d') ) %}
             <article id="{{ p.header.id }}">
               <h4 class="news--header row justify-content-between">
                   <span class="news--header_left col"> {{ p.header.title }} </span> 
@@ -57,7 +55,6 @@ content:
               </section>
             </article>
             <hr width="62.11%">
-          {% endif %}
 
         {% endfor %}
         </section>

@@ -26,9 +26,7 @@ content:
 
       {% set news_collection = page.collection().ofType('novinka').order('header.id','desc') %}
 
-      {% for p in news_collection %}
-
-        {% if  ( p.header.date|date('Y-m-d') >= strtotime("today -30 day")|date('Y-m-d') ) %}
+      {% for p in news_collection if ( p.header.date|date('Y-m-d') >= strtotime("today -30 day")|date('Y-m-d') ) %}
           <article id="{{ p.header.id }}" data-author="{{p.header.user}}">
             <h4 class="news--header row justify-content-between">
                   <span class="news--header_left col edit-news" style="cursor: pointer;"> <span class="newsTitle">{{ p.header.title }}</span>&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i> </span> 
@@ -54,7 +52,6 @@ content:
             </section>
           </article>
           <hr width="62.11%">
-        {% endif %}
       {% endfor %}
     
     <script>
