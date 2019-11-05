@@ -24,7 +24,7 @@ content:
         <section>
     
 
-      {% set news_collection = page.collection().ofType('novinka').order('header.id','desc').order('header.date','desc') %}
+      {% set news_collection = page.collection().ofType('novinka').order('header.id','desc') %}
 
       {% for p in news_collection %}
 
