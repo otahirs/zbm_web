@@ -35,10 +35,10 @@ content:
                       {% set img_mobile = img.ratio * 2 %}
                     {% endif %}
                     <div class="newsIMG col-md-{{img.ratio}} col-sm-{{img_mobile}}" data-name="{{img.name}}" data-ratio="{{ img.ratio }}">
-                      <a href="{{base_url_absolute}}/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/{{img.name}}" target="_blank" title="Zobrazit originální obrázek">
+                      <a href="/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/{{img.name}}" target="_blank" title="Zobrazit originální obrázek">
                         <picture>
                           {# časem WebP #}
-                          <img src="{{base_url_absolute}}/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/{{img.name}}_preview.jpg" alt="Zde by měl být obrázek">
+                          <img src="/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/{{img.name}}_preview.jpg" alt="Zde by měl být obrázek">
                         </picture>
                       </a>
                     </div>
@@ -50,7 +50,7 @@ content:
 		
                 <div class="row justify-content-between">
                   <div class="author col-auto"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;{{p.header.user}}</div>
-                  <a class="comment-count col-auto" href="{{base_url_absolute ~ p.url ~ "#commento"}}"> <i class="fa fa-comments-o" aria-hidden="true"></i></a>
+                  <a class="comment-count col-auto" href="{{p.url ~ "#commento"}}"> <i class="fa fa-comments-o" aria-hidden="true"></i></a>
                 </div> 
               </section>
             </article>

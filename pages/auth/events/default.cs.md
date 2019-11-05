@@ -106,7 +106,7 @@ content:
           <td class="nazev show"><b>{{ p.title }}</b></td>
           <td class="misto show">{{p.header.place}}</td>
           <td class="edit">
-            <a href="{{ base_url }}/auth/events/edit?event={{ p.header.id[:4] }}/{{ p.header.id }}" target="_blank">
+            <a href="/auth/events/edit?event={{ p.header.id[:4] }}/{{ p.header.id }}" target="_blank">
               Upravit&nbsp;&nbsp;<i class="fa fa-pencil" aria-hidden="true"></i>
             </a>
           </td>
@@ -168,7 +168,7 @@ content:
   createEvent.value = "0";
   createEvent.addEventListener("change", (e) => {
       e.preventDefault;
-      location.href = "{{base_url}}/auth/events/edit?new=" + e.target.value;
+      location.href = "/auth/events/edit?new=" + e.target.value;
   })
 
   // links
