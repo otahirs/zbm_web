@@ -3,12 +3,15 @@ title: Kontakty
 date: '2018-10-28'
 ---
 <h2>Vedení oddílu</h2>
+Připravujeme
+<!--
 <h4>Libor Zřídkaveselý - předseda</h4>
 <ul class="fa-ul">
     <li><i class="fa-li fa fa-phone"></i>604 996 773</li>
     <li><i class="fa-li fa fa-envelope"></i>zr@sky.cz</li>
     <li><i class="fa-li fa fa-home"></i>Skorkovského 153<br>Brno, 636 00</li>
 </ul>
+
 <hr>
 <div class="row">
     <div class="col-lg-6">  
@@ -133,20 +136,20 @@ date: '2018-10-28'
             </ul>
         </div>
     </div>
-    <div class="col-12">
-    <hr>
-        <h2>Údaje sportovního klubu</h2>
-            <h4>Sportovní klub Brno - Žabovřesky z.s.</h4>
-            <ul class="fa-ul">
-                <li>IČO: 00214272</li>
-                <li>prezident SK: Ing. Petr Hájek</li>
-                <li>ředitel: JUDr. Petr Vrážel</li>
-                <li><i class="fa-li fa fa-phone"></i>549 248 986</li>
-                <li><i class="fa-li fa fa-envelope"></i>reditel@skzabovresky.cz</li>
-                <li><i class="fa-li fa fa-map-marker"></i>Horákova 3080/7<br>Brno, 616 00</li>
-            </ul>
-    </div>
 </div>
+    -->
+<hr>
+<h2>Údaje sportovního klubu</h2>
+<h4>Sportovní klub Brno - Žabovřesky z.s.</h4>
+<ul class="fa-ul">
+    <li>IČO: 00214272</li>
+    <li>prezident SK: Ing. Petr Hájek</li>
+    <li>ředitel: JUDr. Petr Vrážel</li>
+    <li><i class="fa-li fa fa-phone"></i>549 248 986</li>
+    <li><i class="fa-li fa fa-envelope"></i>reditel@skzabovresky.cz</li>
+    <li><i class="fa-li fa fa-map-marker"></i>Horákova 3080/7<br>Brno, 616 00</li>
+</ul>
+
 
 
  
