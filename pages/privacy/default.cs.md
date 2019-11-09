@@ -1,5 +1,6 @@
 ---
 title: privacy
+routable: false
 ---
 
 <div id="optout-form">
