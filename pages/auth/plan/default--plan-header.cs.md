@@ -9,87 +9,91 @@ planTemplate: winter
 plan:
     monday:
         1:
-            name: 'klus kolem řeky '
-            place: 'Hala Rosnička'
+            name: 'kopce (světlo s sebou)'
+            place: 'Hala Rosnička, Horákova 7'
             meetup: '16:30'
             group:
-                    - zaci2
-                    - dorost
+                - dorost
     tuesday:
         1:
             name: 'běžecké posilování'
             place: 'ZŠ Kotlářská'
             meetup: '16:15'
             group:
-                    - zaci1
-                    - zaci2
+                - zaci1
+                - zaci2
         2:
             name: 'běžecké posilování'
             place: 'ZŠ Kotlářská'
             meetup: '20:00'
             group:
-                    - dorost
+                - dorost
     wednesday:
         1:
             name: 'výprava za OB'
             place: 'ZŠ Milénova'
             meetup: '16:00'
             group:
-                    - zabicky
+                - zabicky
         2:
-            name: 'běh + mapová teorie'
+            name: 'hry + mapa'
             place: 'ZŠ Milénova'
             meetup: '16:00'
             group:
-                    - pulci1
-                    - pulci2
+                - pulci1
+                - pulci2
         3:
-            name: 'běžecký trénink'
+            name: 'mapa + teorie'
             place: 'ZŠ Milénova'
             meetup: '16:00'
             group:
-                    - zaci1
-                    - zaci2
+                - zaci1
         4:
-            name: 'intervaly'
+            name: 'běžecký trénink + teorie'
             place: 'ZŠ Milénova'
             meetup: '16:30'
             group:
-                    - dorost
+                - zaci2
+        5:
+            name: intervaly
+            place: 'ZŠ Milénova'
+            meetup: '16:30'
+            group:
+                - dorost
     thursday:
         1:
-            name: 'tělocvična'
+            name: tělocvična
             place: 'ZŠ Kotlářská'
             meetup: '16:00'
             group:
-                    - pulci1
-                    - pulci2
+                - pulci1
+                - pulci2
         2:
-            name: 'tělocvična'
+            name: tělocvična
             place: 'ZŠ Kotlářská'
             meetup: '16:30'
             group:
-                    - zaci1
-                    - zaci2
+                - zaci1
+                - zaci2
         3:
             name: 'kompenzační cvičení'
             place: 'ZŠ Kotlářská'
             meetup: '17:30'
             group:
-                    - dorost
+                - dorost
         4:
-            name: 'volejbal'
+            name: volejbal
             place: 'ZŠ Kotlářská'
             meetup: '19:30'
             group:
-                    - dorost
+                - dorost
     friday:
         1:
             name: 'florbal, basket'
             place: 'ZŠ Kotlářská'
             meetup: '18:00'
             group:
-                    - dorost
+                - dorost
     saturday: null
     sunday: null
 ---

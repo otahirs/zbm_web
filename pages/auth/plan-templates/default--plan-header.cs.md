@@ -52,7 +52,6 @@ winter:
             place: 'Hala Rosnička, Horákova 7'
             meetup: '16:30'
             group:
-                    - zaci2
                     - dorost
     tuesday:
         1:
@@ -83,13 +82,18 @@ winter:
                     - pulci1
                     - pulci2
         3:
-            name: 'běžecký trénink'
+            name: 'mapa + teorie'
             place: 'ZŠ Milénova'
             meetup: '16:00'
             group:
                     - zaci1
-                    - zaci2
         4:
+            name: 'běžecký trénink + teorie'
+            place: 'ZŠ Milénova'
+            meetup: '16:30'
+            group:
+                    - zaci2
+        5:
             name: 'intervaly'
             place: 'ZŠ Milénova'
             meetup: '16:30'
