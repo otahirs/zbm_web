@@ -88,7 +88,7 @@ Posláním prázdného emailu na adresu _zabiny+unsubscribe@googlegroups.com_ bu
 Osobní účty vede Věra Mádlová, aktuální stav je on-line v „Členské sekci".
 
 #### Plnění osobních účtů
-- Bezhotovostně na účet u České spořitelny 4067843369/0800, v.s. xxxx (xxxx = registrační číslo). Částka bude připsána na váš osobní oddílový účet. Oddíl platbu eviduje ve formě dodatečného členského příspěvku. <!-- V případě, že chcete naplnit svůj účet darem (který můžete odečíst ze základu daně při ročním zúčtování daně z příjmu), kontaktujte předem Libora Zřídkaveselého (_zr@sky.cz_). Darovaná částka nesmí být nižší než 1 000,– Kč a maximální možnost odečtu ze základu daně je 10%. -->  
+- Bezhotovostně na účet u České spořitelny 4067843369/0800, v.s. xxxx (xxxx = registrační číslo). Částka bude připsána na váš osobní oddílový účet. <!-- V případě, že chcete naplnit svůj účet darem (který můžete odečíst ze základu daně při ročním zúčtování daně z příjmu), kontaktujte předem Libora Zřídkaveselého (_zr@sky.cz_). Darovaná částka nesmí být nižší než 1 000,– Kč a maximální možnost odečtu ze základu daně je 10%. -->  
 
 #### Čerpání z osobního účtu
 - Finance z vašeho oddílového účtu lze použít zejména na zaplacení oddílových příspěvků, soustředění, startovného na nedotované závody (např. prázdninové vícedení závody, LOB, MTBO) či oddílového oblečení. Finance jednou poskytnuté na oddílový účet již nelze poslat zpět na účet soukromý.
