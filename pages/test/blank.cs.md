@@ -3,9 +3,9 @@ title: test
 date: '2019-06-19'
 process:
     markdown: false
+routable: false
 ---
 
-{#
 <div class="logs-content">
 
     {% macro render_select(name, options, selected, autokey=false) %}
@@ -85,5 +85,3 @@ process:
 
 
 </div>
-
-#}
