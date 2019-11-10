@@ -5,6 +5,9 @@ process:
     twig: true
     markdown: false
 never_cache_twig: true
+access:
+    site:
+        login: true
 ---
 <style>
     .row > div > a {
