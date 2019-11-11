@@ -95,14 +95,17 @@ class PhpTwigExtension extends \Twig_Extension
         if(isset($event)){
             switch ($event) {
                 case "Z":
+                case "BZL":
                   $template = "zavod";        break;
                 case "M":
                 case "T":
+                case "BBP":
                   $template = "trenink";      break;
                 case "S":
-                  $template = "soustredeni";    break;
                 case "TABOR":
-                  $template = "tabor";    break;
+                  $template = "soustredeni";    break;
+                //case "TABOR":
+                // $template = "tabor";    break;
                 default:
                   $template = "akce";
               }
@@ -669,27 +672,21 @@ class PhpTwigExtension extends \Twig_Extension
           http_response_code(415);
           die();
         }
-        $csv_string = file_get_contents($file_name);
-        $csv_string = iconv( "Windows-1250", "UTF-8", $csv_string);
-        $rows = preg_split("/\\r\\n/", $csv_string); //rozdeli csv soubor po radcich
-        array_shift($rows); //odstrani prvni radek souboru obsahujici záhlaví tabulky
+
+        $rows = array_map('str_getcsv', file($file_name)); 
 
         //= zahlavi tabulky csv souboru
-        $csv_scheme = ["type", "start", "end", "title", "place", "gps", "meetTime", "meetPlace", "eventTypeDescription", "startTime", "zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost", "map", "terrain", "transport", "accomodation", "food", "leader", "doWeOrganize", "note", "return", "price", "program", "thingsToTake", "signups", "id"];
-        $approved_types = ["Z", "M", "T", "S", "BZL", "BBP", "TABOR", "L", "J"]; //ignoruje poznamky
+        $csv_scheme = ["type", "start", "end", "title", "place", "gps", "meetTime", "meetPlace", "transport", "leader", "note", "zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost", "accomodation", "food", "startTime", "eventTypeDescription", "map", "terrain", "return", "price", "program", "thingsToTake", "signups", "doWeOrganize"];
+        $approved = ["Z", "M", "T", "S", "BZL", "BBP", "TABOR", "L", "J"]; //ignoruje poznamky
 
-        foreach($rows as $row_num => $row){   //prochazi vsechny radky
-            $row_data = explode(";", $row); //rozdeli radek na jednotlive polozky oddelene ";"
-            if(isset($row_data[0])){
-              if(!in_array(trim($row_data[0]), $approved_types)){ //parsuje jen spravne zaznamy
-                continue;
-              }
-            }
-            foreach($csv_scheme as $collum_num => $collum){ //prochazi sloupce a uklada do array
-                $parsed[$row_num][$collum]= $this->trim_all($row_data[$collum_num]);
+        foreach($rows as $event_num => $data){   //prochazi vsechny radky
+            if(in_array(trim($data[0]), $approved)){ //parsuje jen spravne zaznamy
+                foreach($csv_scheme as $att_index => $attribute){ //prochazi sloupce a uklada do array
+                    $event_list[$event_num][$attribute] = array_key_exists($att_index, $data) ? $data[$att_index] : ""; //$this->trim_all($data[$collum_num])
+                }
             }
         }
-        return $parsed;
+        return $event_list;
     }
 
     function create_event_id($template, $title, $start){
