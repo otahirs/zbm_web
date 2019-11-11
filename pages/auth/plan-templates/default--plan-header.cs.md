@@ -48,7 +48,7 @@ summer:
 winter:
     monday:
         1:
-            name: 'kopce (světlo s sebou)'
+            name: 'kopce (světlo a buzola s sebou)'
             place: 'Hala Rosnička, Horákova 7'
             meetup: '16:30'
             group:
@@ -94,7 +94,7 @@ winter:
             group:
                     - zaci2
         5:
-            name: 'intervaly'
+            name: 'tempové intervaly a teorie'
             place: 'ZŠ Milénova'
             meetup: '16:30'
             group:
