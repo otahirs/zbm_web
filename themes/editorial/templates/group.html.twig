@@ -24,7 +24,7 @@
             <li data-tab="mapt" class="tab-link group-icon"><i class="fa fa-map" aria-hidden="true"></i></li>
         </ul>
 
-    {% set collection = taxonomy.findTaxonomy({'skupina':page.header.group}).order('header.start','asc')  %} 
+    {% set collection = taxonomy.findTaxonomy({'skupina':page.header.group}).order('header.start','desc')  %} 
     {% set collection = collection.ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']) %}
     <section>
 
