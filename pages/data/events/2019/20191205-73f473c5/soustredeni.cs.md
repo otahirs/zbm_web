@@ -1,11 +1,8 @@
 ---
 taxonomy:
     skupina:
-        1: pulci2
-        2: zaci1
         3: zaci2
         4: dorost
-        5: pulci1
 type: S
 start: '2019-12-05'
 end: '2019-12-08'
@@ -21,7 +18,7 @@ return: '15:00'
 price: '1200 Kč'
 program: 'Běh nebo lyže'
 thingsToTake: 'maratonky, orientky a lyže (pokud bude sníh), hry  na  dlouhé zimní  večery (mobily vyberu),  dárky  pod vánoční stromeček (vždy alespoň jeden!).'
-signups: 'v členské sekci'
+signups: ''
 template: soustredeni
 date: '2019-11-11'
 id: 20191205-73f473c5
