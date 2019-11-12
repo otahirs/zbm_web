@@ -50,14 +50,15 @@
          
     {% block content %}	 
         
-        
 
+        {% if page.header.link %}
+            {{page.header.link}}
+            <br>
+        {% endif %}
         
-        
-        {{page.header.link}} <br>
 
         {% if page.header.note %}
-            <p> {{ page.header.note }}</p>
+            <p> {{ page.header.note|markdown }}</p>
             <hr>
         {% endif %}
 
@@ -138,6 +139,7 @@
     <div id="map" style="height:400px;"></div>
     <br>
     <script type="text/javascript">
+
         // nacteni mapy
             var alt = {{ page.header.gps|split(',')|first }};
             var lng = {{ page.header.gps|split(',')|last }};

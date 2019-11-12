@@ -232,8 +232,21 @@ access:
     
 </form>
 
+<style>
+.CodeMirror, .CodeMirror-scroll {
+	min-height: 100px;
+}
+</style>
 
 <script>
+window.addEventListener('DOMContentLoaded', function () {
+    var simplemde = new SimpleMDE({ 
+        element: document.getElementById("note"), //misto textarea nacte markdown editor
+        spellChecker: false,
+        status: false,
+        hideIcons: ["side-by-side", "fullscreen"],
+    });
+
     /**** prevent submit on enter ***/
         $(document).on("keypress", "input", function (e) {
             var code = e.keyCode || e.which;
@@ -324,6 +337,7 @@ access:
         if(form.checkValidity()){
 
             var formData = new FormData(form);
+            formData.append('note', simplemde.value() );
             $.ajax({
                 url: "/php/editevent",
                 type: "POST",
@@ -405,6 +419,8 @@ access:
             });
         }
     }
+        
+    })
     </script>
 {% endif %}
     

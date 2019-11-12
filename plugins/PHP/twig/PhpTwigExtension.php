@@ -682,7 +682,7 @@ class PhpTwigExtension extends \Twig_Extension
         foreach($rows as $event_num => $data){   //prochazi vsechny radky
             if(in_array(trim($data[0]), $approved)){ //parsuje jen spravne zaznamy
                 foreach($csv_scheme as $att_index => $attribute){ //prochazi sloupce a uklada do array
-                    $event_list[$event_num][$attribute] = array_key_exists($att_index, $data) ? $data[$att_index] : ""; //$this->trim_all($data[$collum_num])
+                    $event_list[$event_num][$attribute] = array_key_exists($att_index, $data) ? $data[$att_index] : "";
                 }
             }
         }
@@ -741,7 +741,7 @@ class PhpTwigExtension extends \Twig_Extension
                     $frontmatter["gps"] = $gps;
                 }
             }
-            
+
             $content = $this->generate_content($frontmatter);
             $page = $this->combine_frontmatter_with_content(Yaml::dump($frontmatter, 10), $content);
 
@@ -900,7 +900,7 @@ class PhpTwigExtension extends \Twig_Extension
 
                 foreach($data as $attribute){
                     if(isset($_POST[$attribute])){
-                        $frontmatter[$attribute] = $this->trim_all($_POST[$attribute]);
+                        $frontmatter[$attribute] = trim($_POST[$attribute]);
                     }
                 }
 
