@@ -99,7 +99,7 @@
         <br>
         <script type="text/javascript">
             // nacteni mapy
-                var center = SMap.Coords.fromWGS84( {{page.header.gps}} );
+                var center = SMap.Coords.fromWGS84( {{ page.header.gps|split(',')|reverse|join(', ') }} );
                 var m = new SMap(JAK.gel("map"), center, 10);
                 m.addDefaultLayer(SMap.DEF_BASE).enable();
                 m.addDefaultControls();	 
@@ -112,9 +112,9 @@
                 var card = new SMap.Card();
                 card.getHeader().innerHTML = "<strong>{{page.header.title}}</strong>";
                 card.getBody().innerHTML = "{{page.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc d. MMMM') }}";
-
+  
                 var options = { 
-                    title: "Dobré ráno"
+                    title: "Místo tréninku"
                 };
                 var marker = new SMap.Marker(center, "myMarker", options);
                 marker.decorate(SMap.Marker.Feature.Card, card);
