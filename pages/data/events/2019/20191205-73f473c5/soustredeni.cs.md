@@ -8,7 +8,7 @@ start: '2019-12-05'
 end: '2019-12-08'
 title: 'Soustředění Vysočina'
 place: Sklené
-gps: '16.00859, 49.61037'
+gps: '49.61037, 16.00859'
 meetTime: '16:30'
 meetPlace: 'Řečkovice, konečná'
 transport: 'auty nebo vlakem dle přihlášek (pakliže bude dostatek aut, pojedeme auty)'
