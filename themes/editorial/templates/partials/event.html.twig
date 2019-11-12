@@ -51,6 +51,26 @@
     {% block content %}	 
         
 
+        {% if page.header.results %}
+            <h4>Výsledky</h4>
+            <ul>    
+                {% for r in page.header.results %}
+                <li><a href="{{ r.link }}">{{ r.name }}</a></li>
+                {% endfor %}
+            </ul>
+            <hr>
+        {% endif %}
+
+        {% if page.header.routes %}
+            <h4>Postupy</h4>
+            <ul>    
+                {% for r in page.header.routes %}
+                <li><a href="{{ r.link }}">{{ r.name }}</a></li>
+                {% endfor %}
+            </ul>
+            <hr>
+        {% endif %}
+
         {% if page.header.link %}
             {{page.header.link}}
             <br>
