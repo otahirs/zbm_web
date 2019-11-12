@@ -837,15 +837,14 @@ class PhpTwigExtension extends \Twig_Extension
 
         $arr = explode( "," , $latlng );
 
-        $lng = $arr[1]; // Longitude of Brno: 16.606837
         $lat = $arr[0]; // Latitude of Brno: 49.195060
-        if($arr)
+        $lng = $arr[1]; // Longitude of Brno: 16.606837
 
-        $lng = $this->convertDMSToDecimal($lng);
         $lat = $this->convertDMSToDecimal($lat);
+        $lng = $this->convertDMSToDecimal($lng);
 
-        if($lng && $lat){
-            return ($lng . ", " . $lat);
+        if($lat && $lng){
+            return ($lat . ", " . $lng);
         }
         return False;
     }
