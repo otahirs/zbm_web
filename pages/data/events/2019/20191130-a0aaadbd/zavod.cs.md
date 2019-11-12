@@ -1,13 +1,13 @@
 ---
 taxonomy:
     skupina:
-        - dorost
+        1: dorost
 type: BZL
 start: '2019-11-30'
 end: '2019-11-30'
 title: 'Vracov - COB, hromadně'
 place: Vracov
-gps: '16.62009, 49.18693'
+gps: '49.18693, 16.62009'
 meetTime: '9:00'
 meetPlace: 'Parkoviště u Lidlu, Dornych'
 template: zavod

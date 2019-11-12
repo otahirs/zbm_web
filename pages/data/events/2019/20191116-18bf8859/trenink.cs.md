@@ -23,6 +23,6 @@ map: ''
 terrain: ''
 leader: ''
 note: ''
-gps: '16.63033, 49.27636'
+gps: '49.27636, 16.63033'
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
