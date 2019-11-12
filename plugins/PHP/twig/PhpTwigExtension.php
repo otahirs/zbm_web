@@ -734,7 +734,14 @@ class PhpTwigExtension extends \Twig_Extension
                     $frontmatter[$key] = $attribute;
                 }
             }
-           
+            
+            if(!empty($event["gps"])){
+                $gps = $this->normalize_GPS($event["gps"]);
+                if($gps){
+                    $frontmatter["gps"] = $gps;
+                }
+            }
+            
             $content = $this->generate_content($frontmatter);
             $page = $this->combine_frontmatter_with_content(Yaml::dump($frontmatter, 10), $content);
 
@@ -832,7 +839,7 @@ class PhpTwigExtension extends \Twig_Extension
 
     function normalize_GPS($latlng){
         if(!strpos($latlng, ",")){
-            $this->return_ERROR('<br>Nepodporovaný formát GPS: hodnoty zem. šířky a délky musí být odděleny čárkou. <br>např 50°42\'38.9"N<b>,</b> 15°36\'56.6"E');
+            return False;
         }
 
         $arr = explode( "," , $latlng );
@@ -923,7 +930,7 @@ class PhpTwigExtension extends \Twig_Extension
                         $frontmatter["gps"] = $gps;
                     }
                     else{
-                        $this->return_ERROR('Nepodporovaný formát GPS');
+                        $this->return_ERROR('<br>Nepodporovaný formát GPS: hodnoty zem. šířky a délky musí být odděleny čárkou. <br>např 50°42\'38.9"N<b>,</b> 15°36\'56.6"E');
                     }
                 }
 
