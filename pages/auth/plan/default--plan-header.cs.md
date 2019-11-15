@@ -12,7 +12,7 @@ plan:
         1:
             name: 'běžecké posilování'
             place: 'ZŠ Kotlářská'
-            meetup: '16:15'
+            meetup: '16:30'
             group:
                     - zaci1
                     - zaci2
