@@ -20,7 +20,20 @@ date: '2019-11-11'
 id: 20191115-e47da21b
 terrain: ''
 leader: Jenda
-note: "Sraz zde: https://en.mapy.cz/s/jedufegape\r<br>Nejezděte trolejákem, nabírá obrovské zpoždění!"
+note: "Sraz zde: https://en.mapy.cz/s/jedufegape\r\n<br>Nejezděte trolejákem, nabírá obrovské zpoždění!"
 gps: '49.31848, 16.74495'
+routes:
+    -
+        name: Dorost
+        link: 'http://3drerun.worldofo.com/?id=-632121&type=info'
+    -
+        name: H
+        link: 'http://3drerun.worldofo.com/?id=-632121&type=info'
+    -
+        name: D
+        link: 'http://3drerun.worldofo.com/index.php?id=-632119&type=info'
+    -
+        name: HDD
+        link: 'http://3drerun.worldofo.com/index.php?id=-632120&type=info'
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
