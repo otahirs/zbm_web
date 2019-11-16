@@ -160,7 +160,7 @@
                 </h4>
                 <ul>
                     {% for routes in p.header.routes %}
-                    <li><a href="{{ routes.link }}">{{ routes.name }}</a></li>
+                    <li><a href="{{ routes.link }}" target="_blank">{{ routes.name }}</a></li>
                     {% endfor %}
                 </ul>
             {% endfor %}
@@ -183,7 +183,7 @@
                 </h4>
                 <ul>
                     {% for results in p.header.results %}
-                    <li><a href="{{ results.link }}">{{ results.name }}</a></li>
+                    <li><a href="{{ results.link }}" target="_blank">{{ results.name }}</a></li>
                     {% endfor %}
                 </ul>
             {% endfor %}
