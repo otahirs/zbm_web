@@ -9,7 +9,7 @@ taxonomy:
 type: T
 start: '2019-11-16'
 end: '2019-11-16'
-title: 'Běh s mapou, výprava pulců'
+title: 'Běh s mapou, trénink žáků a výprava pulců'
 place: Útěchov
 meetTime: '9:30'
 meetPlace: 'zastávka MHD: U buku'
@@ -19,10 +19,10 @@ date: '2019-11-11'
 id: 20191116-18bf8859
 eventTypeDescription: ''
 startTime: ''
-map: ''
+map: 'U buku'
 terrain: ''
 leader: ''
-note: ''
+note: 'Přihlášky v členské sekci'
 gps: '49.27636, 16.63033'
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
