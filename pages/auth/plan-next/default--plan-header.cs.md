@@ -242,7 +242,7 @@ plan:
         <input type="text" id="plan--meetup" placeholder="čas">
         <input type="text" id="plan--place" placeholder="místo">
           <br>
-          <button type="button" class="special fit" id="plan--modal-save">Uložit</button>
+          <button type="button" class="special fit" id="plan--modal-save">Změnit</button>
           <button type="button" class="fit small" id="plan--modal-delete">Smazat</button>
         </div>
       </div>
