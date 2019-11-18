@@ -9,5 +9,7 @@ pictures:
       ratio: '3'
     - name: '1573927652009_H1.jpg'
       ratio: '3'
+    - name: '1574033475212_P1020828.JPG'
+      ratio: '3'
 ---
 Pulci pod vedením Lenky našli své kontroly a zahráli si fotbal. Žáci oběhli trénink s krátkými postupy od LuFa a pro dorost+ Miloš roznesl na každou kontrolu posed!

@@ -7,7 +7,13 @@ access:
         plan: true
 planTemplate: winter
 plan:
-    monday: null
+    monday:
+        1:
+            name: 'kopce (světlo a buzolu)'
+            place: 'Hala Rosnička, Horákova 7'
+            meetup: '16:30'
+            group:
+                    - dorost
     tuesday:
         1:
             name: 'běžecké posilování'
