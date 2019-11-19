@@ -1,9 +1,11 @@
 {% extends 'partials/base.html.twig' %}
+{% block javascripts %}
+    {{ parent() }}
+    {% do assets.addJs('theme://js/commentoCount.js', {'group':'defer'}) %}
+{% endblock %}
 {% block header %}
 
 {% endblock %}
-{% block body %}
-            <section>
-                {% block content %}{{ page.content }}{% endblock %}
-            </section><!-- End section -->
+{% block inner %}
+    {% block content %}{{ page.content }}{% endblock %}
 {% endblock %}

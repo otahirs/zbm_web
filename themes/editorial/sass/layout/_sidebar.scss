@@ -36,21 +36,29 @@
 
 	#sidebar {
 		$pad: 2em / 0.9;
-
+		overflow: hidden;
+		
 		@include vendor('flex-grow', '0');
 		@include vendor('flex-shrink', '0');
-		@include vendor('transition', (
+		/*@include vendor('transition', (
 			'margin-left 0.5s ease',
 			'box-shadow 0.5s ease'
 		));
+		*/
 		background-color: _palette(bg-alt);
 		font-size: 0.9em;
 		position: relative;
 		width: _size(sidebar-width);
+		color: _palette(fg-white); // none
 
 		h2 {
 			font-size: (1.25em / 0.9);
 		}
+		a { color: _palette(fg-white);
+			&:hover{
+				color: _palette(accent);
+			}
+		} // none
 
 		> .inner {
 			@include padding($pad, $pad, (0, 0, $pad, 0));
@@ -60,7 +68,7 @@
 			> * {
 				border-bottom: solid 2px _palette(border);
 				margin: 0 0 (_size(element-margin) * 1.75) 0;
-				padding: 0 0 (_size(element-margin) * 1.75) 0;
+				padding: 1em 0 0 0.7em;
 
 				> :last-child {
 					margin-bottom: 0;
@@ -74,47 +82,13 @@
 			}
 
 			> .alt {
-				background-color: darken(_palette(bg-alt), 2);
+				background-color: _palette(bg-alt-dark);
 				border-bottom: 0;
-				margin: ($pad * -1) 0 ($pad * 2) ($pad * -1);
-				padding: $pad;
+				margin: ($pad * -1) 0 ($pad/2) ($pad * -1);
+				padding: $pad/2;
+				padding-left: $pad;
 				width: calc(100% + #{$pad * 2});
 			}
-		}
-
-		.toggle {
-			@include icon;
-			@include vendor('transition', 'left 0.5s ease');
-			-webkit-tap-highlight-color: rgba(255,255,255,0);
-			border: 0;
-			display: block;
-			height: 7.5em;
-			left: _size(sidebar-width);
-			line-height: 7.5em;
-			outline: 0;
-			overflow: hidden;
-			position: absolute;
-			text-align: center;
-			text-indent: 7.5em;
-			top: 0;
-			width: 6em;
-			z-index: _misc(z-index-base);
-
-			&:before {
-				content: '\f0c9';
-				font-size: 2rem;
-				height: inherit;
-				left: 0;
-				line-height: inherit;
-				position: absolute;
-				text-indent: 0;
-				top: 0;
-				width: inherit;
-			}
-		}
-
-		&.inactive {
-			margin-left: (_size(sidebar-width) * -1);
 		}
 
 		@include breakpoint(xlarge) {
@@ -127,26 +101,11 @@
 				width: _size(sidebar-width-alt);
 
 				> .alt {
-					margin: ($pad * -1) 0 ($pad * 2) ($pad * -1);
-					padding: $pad;
+					margin: ($pad * -1) 0 ($pad/2) ($pad * -1);
+					padding: $pad/2;
+					padding-left: $pad;
 					width: calc(100% + #{$pad * 2});
 				}
-			}
-
-			.toggle {
-				height: 6.25em;
-				left: _size(sidebar-width-alt);
-				line-height: 6.25em;
-				text-indent: 5em;
-				width: 5em;
-
-				&:before {
-					font-size: 1.5rem;
-				}
-			}
-
-			&.inactive {
-				margin-left: (_size(sidebar-width-alt) * -1);
 			}
 		}
 
@@ -156,7 +115,7 @@
 			left: 0;
 			position: fixed;
 			top: 0;
-			z-index: _misc(z-index-base);
+			//z-index: _misc(z-index-base);
 
 			&.inactive {
 				box-shadow: none;
@@ -179,44 +138,100 @@
 				}
 			}
 
-			.toggle {
-				text-indent: 6em;
-				width: 6em;
-
-				&:before {
-					font-size: 1.5rem;
-					margin-left: (-0.875em / 2);
-				}
-			}
-
 			body.is-loading & {
 				display: none;
 			}
 		}
+	}
 
-		@include breakpoint(small) {
-			.toggle {
-				text-indent: 7.25em;
-				width: 7.25em;
+	#toggle {
+		@include icon;
+		@include vendor('transition', 'left 0.5s ease');
+		-webkit-tap-highlight-color: rgba(255,255,255,0);
+		border: 0;
+		display: none;
+		height: 7.5em;
+		line-height: 7.5em;
+		outline: 0;
+		overflow: hidden;
+		position: absolute;
+		text-align: center;
+		text-indent: 7.5em;
+		top: 2px; //topbar shadow
+		width: 6em;
+		z-index: _misc(z-index-base);
+		color: _palette(accent);
 
-				&:before {
-					color: _palette(fg);
-					margin-left: (-0.125em / 2);
-					margin-top: (-0.5em / 2);
-					font-size: 1.1rem;
-					z-index: 1;
-				}
+		&:before {
+			content: '\f0c9';
+			font-size: 2rem;
+			height: inherit;
+			left: 0;
+			line-height: inherit;
+			position: absolute;
+			text-indent: 0;
+			top: 0;
+			width: inherit;
+		}
 
-				&:after {
-					background: transparentize(lighten(_palette(fg), 35), 0.25);
-					border-radius: _size(border-radius);
-					content: '';
-					height: 3.5em;
-					left: 1em;
-					position: absolute;
-					top: 1em;
-					width: 5em;
-				}
+		@include breakpoint(xlarge) {
+			height: 6.25em;
+			line-height: 6.25em;
+			text-indent: 5em;
+			width: 5em;
+
+			&:before {
+				font-size: 1.5rem;
 			}
 		}
+
+		@include breakpoint(large) {
+			display: block;
+			text-indent: 6em;
+			width: 6em;
+
+			&:before {
+				font-size: 1.5rem;
+				margin-left: (-0.875em / 2);
+			}
+		}
+
+		@include breakpoint(small) {
+			text-indent: 7.25em;
+			width: 7.25em;
+
+			&:before {
+				color: _palette(fg);
+				margin-left: (-0.125em / 2);
+				margin-top: (-0.5em / 2);
+				font-size: 1.1rem;
+				z-index: 1;
+			}
+
+			&:after {
+				background: transparentize(_palette(fg-white), 0.1);
+				border-radius: 2px;
+				content: '';
+				height: 3.5em;
+				left: 1em;
+				position: absolute;
+				top: 1em;
+				width: 5em;
+			}
+
+		}
+	}
+
+	#triangle-topleft {
+		position: absolute;
+		width: 0;
+		height: 0;
+		z-index: 1;
+		border-top: 1em solid _palette(accent);
+		border-right: _size(sidebar-width) solid transparent;
+
+		@include breakpoint(xlarge) {
+			border-right: _size(sidebar-width-alt) solid transparent;
+		}
+
 	}

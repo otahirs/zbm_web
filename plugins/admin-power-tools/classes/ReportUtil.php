@@ -131,10 +131,20 @@ class ReportUtil
         return "<div class='report-tree'>" . $s . "</div>";
     }
 
+    public static function getAdminBaseRelative()
+    {
+        $config = \Grav\Common\Grav::instance()['config'];
+        $route = $config->get('plugins.admin.route');
+        $base = '/' . trim($route, '/');
+        return $config->grav['base_url_relative'] . $base;
+//        $admin_base = '/' . trim($config->get('plugins.admin.route'), '/');
+//        $admin_base = trim($config->get('plugins.admin.route'), '/');
+//        return $admin_base;
+    }
+
     public static function edit_link($page, $text)
     {
-        $base = \Grav\Common\Grav::instance()['base_url_relative'];
-        $href = $base . "/admin/pages" . $page->route();
+        $href = self::getAdminBaseRelative() . "/pages" . $page->route();
         return "<a href='$href'>" . $text . "</a>";
     }
 
@@ -155,7 +165,7 @@ class ReportUtil
     public static function edit_url($page)
     {
         $base = \Grav\Common\Grav::instance()['base_url_relative'];
-        $href = $base . "/admin/pages" . $page->route();
+        $href = self:: getAdminBaseRelative() . "/pages" . $page->route();
         return $href;
     }
 
@@ -211,7 +221,7 @@ class ReportUtil
                     $unused[$path] = $html;
 //                    $unused[$path] = [
 //                        "page" => ,
-//                        "preview" => 
+//                        "preview" =>
 //                    ];
                 }
             }

@@ -1,6 +1,7 @@
 <?php
 namespace Grav\Plugin;
 use Symfony\Component\Yaml\Yaml as Yaml;
+use Grav\Common\Grav;
 use Grav\Common\Cache as Cache;
 class PhpTwigExtension extends \Twig_Extension
 {
@@ -15,57 +16,38 @@ class PhpTwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('phpUploadProgram', [$this, 'phpUploadProgram']),
             new \Twig_SimpleFunction('phpNews', [$this, 'NewsFunction']),
             new \Twig_SimpleFunction('phpEditBliziSe', [$this, 'editBliziSeFunction']),
-            new \Twig_SimpleFunction('phpWeeklyProgram', [$this, 'save_program_templates']),
-            new \Twig_SimpleFunction('phpFormEditEvent', [$this, 'phpFormEditEvent']),
+            new \Twig_SimpleFunction('phpSaveProgramTemplates', [$this, 'SaveProgramTemplates']),
             new \Twig_SimpleFunction('phpSaveEditedEvent', [$this, 'phpSaveEditedEvent']),
             new \Twig_SimpleFunction('phpSavePolaris', [$this, 'SavePolaris']),
             new \Twig_SimpleFunction('phpDeletePolaris', [$this, 'DeletePolaris']),
             new \Twig_SimpleFunction('phpSavePlan', [$this, 'SavePlan']),
-            new \Twig_SimpleFunction('phpSavePlanTemplate', [$this, 'SavePlanTemplate']),   
-            new \Twig_SimpleFunction('phpLoginRedirect', [$this, 'LoginRedirect']),
+            new \Twig_SimpleFunction('phpSavePlanTemplate', [$this, 'SavePlanTemplate']), 
             new \Twig_SimpleFunction('phpTest', [$this, 'Test']),      
-            new \Twig_SimpleFunction('phpShiftPlan', [$this, 'ShiftPlan']),        
+            new \Twig_SimpleFunction('phpShiftPlan', [$this, 'ShiftPlan']),
+            new \Twig_SimpleFunction('phpSaveMapT', [$this, 'SaveMapT']),  
+            new \Twig_SimpleFunction('phpDeleteMapT', [$this, 'DeleteMapT']),    
+            new \Twig_SimpleFunction('collectionToEventsByDate', [$this, 'collectionToEventsByDate']),  
         
         ];
     }
 
-    function LoginRedirect(){
-        // placed in "user/plugins/login/templates/login.html.twig" - {{phpLoginRedirect()}}
-        $authenticated = False;
-        if($_SESSION["user"]["authenticated"]){
-            $authenticated = True;
-        }
-
-        if(isset($_SERVER['HTTP_REFERER'])) {
-            if(!$authenticated){
-                // if user is not logged in, save refferer
-                $_SESSION['ref'] = $_SERVER['HTTP_REFERER'];
-            }
-            else{
-                $protocol = isset($_SERVER["HTTPS"]) ? 'https' : 'http';
-
-                $login_path = $protocol . "://" . $_SERVER['HTTP_HOST'] . "/login";
-                $refferer_path = $_SERVER['HTTP_REFERER'];
-
-                // referrer is a login page and we successfully logged in -> redirect to last page before login page
-                if(isset($_SESSION['ref']) && $login_path == $refferer_path){
-                    if($_SESSION['ref'] != $login_path){
-                        header('Location: ' . $_SESSION['ref']);
-                        exit();
-                    }
-                }
-                else{header('Refresh: 1; url=/');}
-            }          
-        }
+// pomocne fce
+    function return_ERROR($errMsg){
+        http_response_code(500); // 500 - Internal server error
+        echo $errMsg;
+        die();
     }
 
-// pomocne fce
+    function log_grav($msg){
+        Grav::instance()['log']->info($msg);
+    }
+
     /*************************************************************
     ** projde vsechny prvky array a aplikuje htmlspecialchars() **
     **************************************************************/
     function array_htmlspecialchars(&$array){
         array_walk_recursive($array, function(&$value) {
-            htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+            $value = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
         });
     }
 
@@ -113,14 +95,17 @@ class PhpTwigExtension extends \Twig_Extension
         if(isset($event)){
             switch ($event) {
                 case "Z":
+                case "BZL":
                   $template = "zavod";        break;
                 case "M":
                 case "T":
+                case "BBP":
                   $template = "trenink";      break;
                 case "S":
-                  $template = "soustredeni";    break;
                 case "TABOR":
-                  $template = "tabor";    break;
+                  $template = "soustredeni";    break;
+                //case "TABOR":
+                // $template = "tabor";    break;
                 default:
                   $template = "akce";
               }
@@ -134,9 +119,7 @@ class PhpTwigExtension extends \Twig_Extension
     
     function parse_file_frontmatter_only($path_to_file){
         if(!file_exists($path_to_file)){
-            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-            echo 'Cannot parse file, "'. $path_to_file. '" do not match any file.';
-            die();
+            $this->return_ERROR('Cannot parse file, "'. $path_to_file. '" do not match any file.');
         }
         $txt_file    = file_get_contents($path_to_file); //nacte soubor
         $rows        = explode("\n", $txt_file); //rozdeli na radky
@@ -153,9 +136,7 @@ class PhpTwigExtension extends \Twig_Extension
     
     function parse_file_content_only($path_to_file){
         if(!file_exists($path_to_file)){
-            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-            echo 'Cannot parse file, "'. $path_to_file. '" do not match any file.';
-            die();
+            $this->return_ERROR('Cannot parse file, "'. $path_to_file. '" do not match any file.');
         }
         $txt_file    = file_get_contents($path_to_file); //nacte soubor
         $rows        = explode("\n", $txt_file); //rozdeli na radky
@@ -163,9 +144,10 @@ class PhpTwigExtension extends \Twig_Extension
 
         $row_is_content = false;
         $parsed = "";
-        foreach($rows as $row){   //prochazi vsechny radky
+        foreach($rows as $key => $row){   //prochazi vsechny radky
             if($row_is_content){
-                $parsed .= $row . PHP_EOL; 
+                $parsed .= $row; 
+                if($key !== array_key_last($rows)) $parsed .= PHP_EOL;
             }
             else{
                 if(trim($row) == "---"){
@@ -190,334 +172,35 @@ class PhpTwigExtension extends \Twig_Extension
         // https://symfony.com/doc/current/components/yaml.html 
     }
 
-      /***********************************************************
-      ** funkce, ktera rozparsuje soubor, vraci array s daty    **
-      ************************************************************/
-      function parse_file($path_to_file){
-        if(!file_exists($path_to_file)){
-            return false;
-        }
-        $txt_file    = file_get_contents($path_to_file); //nacte soubor
-        $rows        = explode("\n", $txt_file); //rozdeli na radky
-        array_shift($rows); //odstrani prvni radek souboru obsahujici "---"
-        $parsed["Rankings"] = 0;
-        foreach($rows as $row){   //prochazi vsechny radky
-            if( trim($row) == "---" ){
-              $parsed["Content"] = "";
-              continue;
+    function generate_content($race){
+        $content = "";
+        // zapise uvod pro ligu škol popř. pořádáme
+        if(!empty($race["Type"])){
+            if($race["Type"]=="L"){
+                $content .= "**Pořádáme!!** Předem díky moc za pomoc s pořádáním. Kdo má čas nebo by chtěl
+                omluvit ze školy, hlaste se Liborovi." . PHP_EOL;
             }
-            if(isset($parsed["Content"])){    //pokud jiz existuje nejaky content (v souboru za "---"), tak ..
-              $parsed["Content"] = $parsed["Content"] . PHP_EOL . $row;  //jen dopise radek
-              continue; // a pokracuje na dalsi radek
-            }
-
-            $row_data   = explode(":", $row, 2); //rozdeli radek na cast pred a za ":"
-
-            $row_data[0] = str_replace(" ", "", $row_data[0]); //odstrani mezery na zacatku radku
-            $row_data[0] = str_replace("-", "", $row_data[0]); //odstrani "-" na zacatku radku
-            switch ($row_data[0]) {  //ukladam do promene podle textu pred ":"
-                case "title":
-                    $parsed["Name"] = $this->trim_all($row_data[1]);   break;
-                case "date":
-                    $parsed["Date"] = $this->trim_all($row_data[1]);    break;
-                case "id":
-                    $parsed["Id"] = $this->trim_all($row_data[1]);    break;
-                case "start":
-                    $parsed["Date1"] = $this->trim_all($row_data[1]);   break;
-                case "end":
-                    $parsed["Date2"] = $this->trim_all($row_data[1]);   break;
-                case "place":
-                    $parsed["Place"] = $this->trim_all($row_data[1]);   break;
-                case "gps":
-                    $parsed["GPS"] = $this->trim_all($row_data[1]);   break;
-                case "meetTime":
-                    $parsed["MeetTime"] = $this->trim_all($row_data[1]);   break;
-                case "meetPlace":
-                    $parsed["MeetPlace"] = $this->trim_all($row_data[1]);   break;
-                case "link":
-                    $parsed["Link"] = $this->trim_all($row_data[1]);   break;
-                case "club":
-                    $parsed["Club"] = $this->trim_all($row_data[1]);   break;
-                case "eventTypeDescription":
-                    $parsed["EventTypeDescription"] = $this->trim_all($row_data[1]);   break;
-                case "startTime":
-                    $parsed["StartTime"] = $this->trim_all($row_data[1]);   break;
-                case "map":
-                    $parsed["Map"] = $this->trim_all($row_data[1]);   break;
-                case "terrain":
-                    $parsed["Terrain"] = $this->trim_all($row_data[1]);   break;
-                case "transport":
-                    $parsed["Transport"] = $this->trim_all($row_data[1]);   break;
-                case "accomodation":
-                    $parsed["Accomodation"] = $this->trim_all($row_data[1]);   break;
-                case "food":
-                    $parsed["Food"] = $this->trim_all($row_data[1]);   break;
-                case "leader":
-                    $parsed["Leader"] = $this->trim_all($row_data[1]);   break;
-                //template
-                case "template":
-                    $parsed["Template"] = $this->trim_all($row_data[1]);   break;
-                //entries
-                case "entry1":
-                    $parsed["Entry1"] = $this->trim_all($row_data[1]);   break;
-                case "entry2":
-                    $parsed["Entry2"] = $this->trim_all($row_data[1]);   break;
-                case "entry3":
-                    $parsed["Entry3"] = $this->trim_all($row_data[1]);   break;
-                case "entry4":
-                    $parsed["Entry4"] = $this->trim_all($row_data[1]);   break;
-                case "entry5":
-                    $parsed["Entry5"] = $this->trim_all($row_data[1]);   break;
-                //taxonomy
-                case "sport":
-                    $parsed["Sport"] = $this->trim_all($row_data[1]);   break;
-                case "type":
-                    $parsed["Type"] = $this->trim_all($row_data[1]);   break;
-                case "cancelled":
-                    $parsed["Cancelled"] = $this->trim_all($row_data[1]);   break;
-                case "doWeOrganize":
-                    $parsed["DoWeOrganize"] = $this->trim_all($row_data[1]);   break;
-                    //skupina
-                case "zabicky":
-                    $parsed["Zabicky"] = 1;   break;
-                case "pulci1":
-                    $parsed["Pulci1"] = 1;   break;
-                case "pulci2":
-                    $parsed["Pulci2"] = 1;   break;
-                case "zaci1":
-                    $parsed["Zaci1"] = 1;   break;
-                case "zaci2":
-                    $parsed["Zaci2"] = 1;   break;
-                case "dorost":
-                    $parsed["Dorost"] = 1;   break;
-                    //rankings
-                case "A":
-                    $parsed["A"] = true; $parsed["Rankings"] += 1;   break;
-                case "B_morava":
-                    $parsed["B_morava"] = true; $parsed["Rankings"] += 2;   break;
-                case "B_cechy":
-                    $parsed["B_cechy"] = true; $parsed["Rankings"] += 4;   break;
-                case "oblast":
-                    $parsed["oblast"] = true; $parsed["Rankings"] += 8;   break;
-                case "mistrovstvi":
-                    $parsed["mistrovstvi"] = true; $parsed["Rankings"] += 16;   break;
-                case "stafety":
-                    $parsed["stafety"] = true; $parsed["Rankings"] += 32;   break;
-                case "verejny":
-                    $parsed["verejny"] = true; $parsed["Rankings"] += 128;   break;
-                case "rank21":
-                    $parsed["Rank21"] = $this->trim_all($row_data[1]);   break;
-                //note
-                case "note":
-                    $parsed["Note"] = $this->trim_all($row_data[1]);   break;
-                //soustredeni
-                case "return":
-                    $parsed["Return"] = $this->trim_all($row_data[1]);   break;
-                case "price":
-                    $parsed["Price"] = $this->trim_all($row_data[1]);   break;
-                case "program":
-                    $parsed["Program"] = $this->trim_all($row_data[1]);   break;
-                case "thingsToTake":
-                    $parsed["ThingsToTake"] = $this->trim_all($row_data[1]);   break;
-                case "signups":
-                    $parsed["Signups"] = $this->trim_all($row_data[1]);   break;
-                default: break;
-              }
-
-
-          }
-
-      return $parsed;
-      }
-
-      /************************************************************
-      ** funkce, ktera nacte data z array a ulozi je jako soubor **
-      *************************************************************/
-      /*
-      ---
-      title: 'Štěpánský běh'
-      date: '2018-08-30'
-      template: trenink
-      id: 'Race_2'
-      start: '2018-12-26'
-      end: '2018-12-26'
-      place: 'Radostice2'
-      gps
-      meetTime
-      meetPlace
-      link:
-      club: BBM
-      eventTypeDescription
-      startTime
-      map
-      terrain
-      transport: 'No'
-      accomodation: 'No':
-      food
-      leader
-      trainingCamp: 
-          - return
-          - price
-          - progem
-          - thingsToTake
-          - signups
-      entry:
-          - entry1: '2018-12-19'
-          - entry2:
-          - entry3:
-          - entry4:
-          - entry5:
-      taxonomy:
-          - sport: jine
-          - type: T
-          - cancelled: 1
-          - skupina: ['pulci1', pulci2, 'zabicky', 'Zaci1', Zaci2, 'dorost']
-          - rankings: ['celostatni', 'A', 'B_cechy', 'B_morava', 'oblastni', 'verejny', 'mistrovstvi', 'stafety']
-          =doWeOrganize
-
-      note:
-      ---
-      */
-      function generate_content($race){
-            $content = "";
-            // zapise uvod pro ligu škol popř. pořádáme
-            if(!empty($race["Type"])){
-                if($race["Type"]=="L"){
-                    $content .= "**Pořádáme!!** Předem díky moc za pomoc s pořádáním. Kdo má čas nebo by chtěl
-                    omluvit ze školy, hlaste se Zhustovi." . PHP_EOL;
-                }
-                else{
-                    if(!empty($race["DoWeOrganize"])){
-                        if($race["DoWeOrganize"]=="1"){
-                            $content .= "**Pořádáme!!**" . PHP_EOL;
-                        }
+            else{
+                if(!empty($race["doWeOrganize"])){
+                    if($race["doWeOrganize"]=="1"){
+                        $content .= "**Pořádáme!!**" . PHP_EOL;
                     }
                 }
             }
-            if(!empty($race["Note"]))                {$content .= "{{page.header.note}}" . PHP_EOL;}
-            // jeden řádek s časem, místem srazu a typem dopravy
-            if(!empty($race["MeetTime"]))            {$content .= "* **sraz**: {{page.header.meetTime}}"; $writw_eol=true;}
-            if(!empty($race["MeetPlace"]))           {$content .= " {{page.header.meetPlace}}."; $writw_eol=true;}
-            if(!empty($race["Transport"]))           {$content .= " Doprava {{page.header.transport}}."; $writw_eol=true;}
-            if(isset($writw_eol)) {if($writw_eol==true) $content .= PHP_EOL;}
+        }
+        if(!empty($race["note"]))                {$content .= "{{page.header.note}}" . PHP_EOL;}
+        // jeden řádek s časem, místem srazu a typem dopravy
+        if(!empty($race["meetTime"]))            {$content .= "* **sraz**: {{page.header.meetTime}}"; $writw_eol=true;}
+        if(!empty($race["meetPlace"]))           {$content .= " {{page.header.meetPlace}}."; $writw_eol=true;}
+        if(!empty($race["transport"]))           {$content .= " Doprava {{page.header.transport}}."; $writw_eol=true;}
+        if(isset($writw_eol)) {if($writw_eol==true) $content .= PHP_EOL;}
 
-            if(!empty($race["Accomodation"]))        {$content .= "* **ubytování**: {{page.header.accomodation}}" . PHP_EOL;}
-            if(!empty($race["Food"]))                {$content .= "* **strava**: {{page.header.food}}" . PHP_EOL;}
-            if(!empty($race["StartTime"]))           {$content .= "* **start**: {{page.header.startTime}}" . PHP_EOL;}
-            if(!empty($race["Map"]))                 {$content .= "* **mapa**: {{page.header.map}}" . PHP_EOL;}
-            if(!empty($race["Terrain"]))             {$content .= "* **terén**: {{page.header.terrain}}" . PHP_EOL;}
-            return $content;
+        if(!empty($race["accomodation"]))        {$content .= "* **ubytování**: {{page.header.accomodation}}" . PHP_EOL;}
+        if(!empty($race["food"]))                {$content .= "* **strava**: {{page.header.food}}" . PHP_EOL;}
+        return $content;
       }
 
-      function array_to_file($race, $template, $path){ //$race je array s daty urciteho zavodu a $id jeho data_id
-        //nactene informace se postupne ukladaji do $event, nektere jsou zapsany jen kdyz jsou zadany
-        
-        $event =
-        //base
-          "---" . PHP_EOL .
-          "title: '" . $race["Name"] . "'" . PHP_EOL .
-          "date: '" . date("Y-m-d") . "'" . PHP_EOL .
-          "id: '" . $race["Id"] . "'" . PHP_EOL .
-          "start: '" . $this->format_date($race["Date1"]) . "'" . PHP_EOL .
-          "end: '" . (isset($race["Date2"]) ? $this->format_date($race["Date2"]) : $this->format_date($race["Date1"])) . "'" . PHP_EOL;
-        //non-necesary info
-        if(isset($race["Place"]))               $event .= "place: '" . $race["Place"] . "'" . PHP_EOL;
-        if(isset($race["GPS"]))                 $event .= "gps: '" . $race["GPS"] . "'" . PHP_EOL;
-        if(isset($race["MeetTime"]))            $event .= "meetTime: '" . $race["MeetTime"] . "'" . PHP_EOL;
-        if(isset($race["MeetPlace"]))           $event .= "meetPlace: '" . $race["MeetPlace"] . "'" . PHP_EOL;
-        if(isset($race["Link"]))                $event .= "link: '" . $race["Link"]. "'"  . PHP_EOL;
-        if(isset($race["Club"]))                $event .= "club: '" . $race["Club"]. "'"  . PHP_EOL;
-        if(isset($race["EventTypeDescription"]))$event .= "eventTypeDescription: '" . $race["EventTypeDescription"] . "'" . PHP_EOL;
-        if(isset($race["StartTime"]))               $event .= "startTime: '" . $race["StartTime"] . "'" . PHP_EOL;
-        if(isset($race["Map"]))                 $event .= "map: '" . $race["Map"] . "'" . PHP_EOL;
-        if(isset($race["Terrain"]))             $event .= "terrain: '" . $race["Terrain"] . "'" . PHP_EOL;
-        if(isset($race["Transport"]))           $event .= "transport: '" . $race["Transport"] . "'". PHP_EOL;
-        if(isset($race["Accomodation"]))        $event .= "accomodation: '" . $race["Accomodation"] . "'". PHP_EOL;
-        if(isset($race["Food"]))                $event .= "food: '" . $race["Food"]. "'"  . PHP_EOL;
-        if(isset($race["Leader"]))              $event .= "leader: '" . $race["Leader"] . "'" . PHP_EOL;
-        if(isset($race["Sport"]))               $event .= "sport: '" . $race["Sport"]. "'"  . PHP_EOL;
-        if(isset($race["Type"]))                $event .= "type: '" . $race["Type"]. "'"  . PHP_EOL;
-        if(isset($race["Cancelled"]))           $event .= "cancelled: '" . $race["Cancelled"]. "'"  . PHP_EOL;
-        if(isset($race["DoWeOrganize"]))        $event .= "doWeOrganize: '" . $race["DoWeOrganize"]. "'"  . PHP_EOL;
-        //soustredeni
-        if(isset($race["Program"])){
-                                                $event .= "trainingCamp:". PHP_EOL;
-            if(isset($race["Program"]))         $event .= "    program: '" . $race["Program"] . "'" . PHP_EOL;
-            if(isset($race["Price"]))           $event .= "    price: '" . $race["Price"] . "'" . PHP_EOL;
-            if(isset($race["ThingsToTake"]))    $event .= "    thingsToTake: '" . $race["ThingsToTake"]  . "'" . PHP_EOL;
-            if(isset($race["Return"]))          $event .= "    return: '" . $race["Return"] . "'" . PHP_EOL;
-            if(isset($race["Signups"]))         $event .= "    signups: '" . $race["Signups"] . "'" . PHP_EOL;
-        }
-        //template
-        $event .= "template: ".$template. PHP_EOL;
-
-        //entry dates
-        if(isset($race["Entry1"])) $event .= "entries:" . PHP_EOL .
-                                               "    entry1: '" . $race["Entry1"] . "'". PHP_EOL;
-          if(isset($race["Entry2"])) $event .= "    entry2: '" . $race["Entry2"] . "'". PHP_EOL;
-          if(isset($race["Entry3"])) $event .= "    entry3: '" . $race["Entry3"] . "'". PHP_EOL;
-          if(isset($race["Entry4"])) $event .= "    entry4: '" . $race["Entry4"] . "'". PHP_EOL;
-          if(isset($race["Entry5"])) $event .= "    entry5: '" . $race["Entry5"] . "'". PHP_EOL;
-
-        //taxonomy
-        $event .= "taxonomy:" . PHP_EOL;
-                                            $event .= "    skupina:" . PHP_EOL;
-          if(isset($race["Zabicky"])) if($race["Zabicky"] == "1")  $event .= "        - zabicky". PHP_EOL;
-          if(isset($race["Pulci1"]))  if($race["Pulci1"]  == "1")  $event .= "        - pulci1" . PHP_EOL;
-          if(isset($race["Pulci2"]))  if($race["Pulci2"]  == "1")  $event .= "        - pulci2" . PHP_EOL;
-          if(isset($race["Zaci1"]))   if($race["Zaci1"]   == "1")  $event .= "        - zaci1"  . PHP_EOL;
-          if(isset($race["Zaci2"]))   if($race["Zaci2"]   == "1")  $event .= "        - zaci2"  . PHP_EOL;
-          if(isset($race["Dorost"]))  if($race["Dorost"]  == "1")  $event .= "        - dorost" . PHP_EOL;
-        if(isset($race["Rankings"])){
-            $event .= "    rankings:" . PHP_EOL;
-            $rankings = (int)$race["Rankings"];
-            if( ($rankings-128) >= 0 ) {
-                $event .= "        - verejny" . PHP_EOL;
-                $rankings -= 128;
-                }
-                if( ($rankings-32) >= 0 ) {
-                    $event .= "        - stafety" . PHP_EOL;
-                    $rankings -= 32;
-                }
-                if( ($rankings-16) >= 0 ) {
-                    $event .= "        - mistrovstvi" . PHP_EOL;
-                    $rankings -= 16;
-                    }
-                    if( ($rankings-8) >= 0 ) {
-                        $event .= "        - oblast" . PHP_EOL;
-                        $rankings -= 8;
-                    }
-                    if( ($rankings-4) >= 0 ) {
-                        $event .= "        - B_cechy" . PHP_EOL;
-                        $rankings -= 4;
-                        }
-                        if( ($rankings-2) >= 0 ) {
-                            $event .= "        - B_morava" . PHP_EOL;
-                            $rankings -= 2;
-                        }
-                        if( ($rankings-1) >= 0 ) {
-                            $event .= "        - A" . PHP_EOL;
-                            $rankings -= 1;
-                            }
-        }
-        if(isset($race["Rank21"]))  $event .=  "        - rank21: " . $race["Rank21"] . PHP_EOL;
-        if(isset($race["Note"]))    $event .=  "note: '" . $race["Note"]. "'"  . PHP_EOL;
-        $event .=  "---" . PHP_EOL;
-        
-        if(isset($race["Content"])){
-            $race["Content"] = htmlspecialchars($race["Content"], ENT_NOQUOTES, 'UTF-8');
-            $event .= $race["Content"] . PHP_EOL;
-        }
-        else{ 
-            $event .= $this->generate_content($race);
-        } 
-        $this->file_force_contents($path, $event);
-      }
-
-
-
-      public function ApiRegisterDeadlines(){}
-
+     
       /*******************************************************
       **  funkce, ktera nacte JSON data z api, pokud zavod  **
       **  neexistuje, je vytvoren, pokud existuje, jsou     **
@@ -531,34 +214,7 @@ class PhpTwigExtension extends \Twig_Extension
 
         if($json["Status"]=="OK"){ //pokud byl dotaz na api uspesny
           foreach ($json["Data"] as $id => $data_json) { // prochazi kazdou akci
-            // pokud jiz soubor existuje, aktualizuje rozdilna data
-            if( file_exists("./user/pages/databaze/akce/". $id) ) {
-              $parsed_file = $this->parse_file("./user/pages/databaze/akce/". $id . "/default.cs.md");   //rozparsuje existujici soubor
-              $changed = false;
-              foreach ($data_json as $data_id => $json_value) {   //projde data podle id v JSONu
-                if(isset($parsed_file[$data_id])){ //pokud existuje zaznam dat z JSONu v souboru
-                  if($parsed_file[$data_id] != $json_value) { //porovnaji se zaznamy, pokud jsou rozdilna data
-                    $parsed_file[$data_id] = $json_value;  //zapise se znmena
-                    $changed = true; //zaznamena se zmena
-
-                  }
-                }
-                else{ //pokud neexistuje zaznam dat z JSONu v souboru
-                  $parsed_file[$data_id] = $json_value; //data se zapisou
-                  $changed = true; //zaznamena se zmena
-
-
-                }
-              }
-              if($changed == true){ //pokud se neco zmenilo
-                $this->array_to_file($parsed_file, $id); // ulozi
-              }
-            }
-            // pokud soubor s eventem neexistuje, je vytvoren
-            else{
-              $this->array_to_file($data_json, $id);
-            }
-
+            
           }
         }
         else{ mail("otakar.hirs@egmail.com","JSON error zbmob.cz", "Nacteni dat z clenske sekce pres JSON neskoncilo OK, mel bys to asi zkontrolovat. \n Ota - 2018"); }
@@ -579,24 +235,21 @@ class PhpTwigExtension extends \Twig_Extension
 
     function news_to_file($data, $year){
       $news = "---" . PHP_EOL .
-              "title: '" . $data['Title'] . "'" . PHP_EOL .
-              "date: '" . $data['Date'] . "'" . PHP_EOL .
+              "title: '" . str_replace("'","''",$data['title']) . "'" . PHP_EOL . // escape ' in frontmatter
+              "date: '" . $data['date'] . "'" . PHP_EOL .
               "template: novinka" . PHP_EOL .
-              "id: '" . $data['Id'] . "'" . PHP_EOL .
+              "id: '" . $data['id'] . "'" . PHP_EOL .
               "user: '" . $data['User'] . "'" . PHP_EOL .
               "pictures:" . PHP_EOL;
-              if(isset($data['dropzone_files'])){
-                foreach ($data['dropzone_files'] as $img) {
-                  $news .=  "    - name: '" . $data['TimeStamp'] . "_" . $img . "'" . PHP_EOL .
-                            "      ratio: '1/4'" . PHP_EOL;
-                }
-              }
+
               if(isset($data['img'])){
                 foreach ($data['img'] as $img) {
                   if(isset($img['img_delete'])){
                     if($img['img_delete'] == "true"){
-                      unlink("./user/pages/databaze/".$year."/novinky/novinka_". $data['Id'] . "/img/" . $img['img_name']);
-                      unlink("./user/pages/databaze/".$year."/novinky/novinka_". $data['Id'] . "/img/" . "preview_" . $img['img_name']);
+                      $imgPath =     "./user/pages/data/news/" . $year . "/". $data['id'] . "/img/" . $img['img_name'];
+                      $previewPath = "./user/pages/data/news/" . $year . "/". $data['id'] . "/img/" . $img['img_name'] . "_preview.jpg";
+                      if (file_exists($imgPath)) unlink($imgPath);
+                      if (file_exists($previewPath)) unlink($previewPath);
                       continue;
                     }
                   }
@@ -605,33 +258,28 @@ class PhpTwigExtension extends \Twig_Extension
                 }
               }
      $news .= "---" . PHP_EOL .
-              $data['Content'] . PHP_EOL;
+              $data['content'] . PHP_EOL;
 
         $news = htmlspecialchars($news, ENT_NOQUOTES, 'UTF-8');
         //probehne vytvoreni slozky a ulozeni souboru
-        $this->file_force_contents("./user/pages/databaze/".$year."/novinky/novinka_". $data['Id'] . "/default.cs.md", $news);
+        $this->file_force_contents("./user/pages/data/news/" . $year . "/". $data['id'] . "/default.cs.md", $news);
     }
 
     /******************************************************
      **********   Create thumbnail          **************
     ***************************************************** */
-    // Link image type to correct image loader and saver
+    // link image type to correct image loader and saver
     // - makes it easier to add additional types later on
     // - makes the function easier to read
     const IMAGE_HANDLERS = [
         IMAGETYPE_JPEG => [
             'load' => 'imagecreatefromjpeg',
-            'save' => 'imagejpeg',
-            'quality' => 70
         ],
         IMAGETYPE_PNG => [
             'load' => 'imagecreatefrompng',
-            'save' => 'imagepng',
-            'quality' => 4
         ],
         IMAGETYPE_GIF => [
             'load' => 'imagecreatefromgif',
-            'save' => 'imagegif'
         ]
     ];
 
@@ -726,59 +374,42 @@ class PhpTwigExtension extends \Twig_Extension
 
 
         // 3. Save the $thumbnail to disk
-        // - call the correct save method
         // - set the correct quality level
 
-        // save the duplicate version of the image to disk
-        if($type == IMAGETYPE_GIF){
-            return call_user_func(
-                self::IMAGE_HANDLERS[$type]['save'],
-                $thumbnail,
-                $dest
-            );
-        }
-        
-        return call_user_func(
-            self::IMAGE_HANDLERS[$type]['save'],
-            $thumbnail,
-            $dest,
-            self::IMAGE_HANDLERS[$type]['quality']
-        );
+        return imagejpeg($thumbnail, $dest, 70);
     }
 
 
-    function process_files($id, $timeStamp, $previewWidthInPx, $year){
+    function process_files($id, $previewWidthInPx, $year){
     
-        $storeFolder = "./user/pages/databaze/".$year."/novinky/novinka_". $id . "/img/";
+        $storeFolder = "./user/pages/data/news/" . $year . "/". $id . "/img/";
 
         $extension=array("jpeg","jpg","png","gif","JPEG","JPG","PNG","GIF","jpe","jif","jfif","jfi","JPE","JIF","JFIF","JFI"); //.jpe .jif, .jfif, .jfi jsou soubory jpeg
 
         foreach($_FILES["file"]["tmp_name"] as $key=>$tmp_name){
-                    $file_name=$_FILES["file"]["name"][$key];
-                    $ext=pathinfo($file_name,PATHINFO_EXTENSION);
-                    if(!in_array($ext,$extension))
-                    {
-                        header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                        echo "<em>" . $file_name . "</em>není podporovaný typ obrázku";
-                        die();
-                    }
+            $file_name=$_FILES["file"]["name"][$key];
+            $ext=pathinfo($file_name,PATHINFO_EXTENSION);
+            if(!in_array($ext,$extension))
+            {
+                $this->return_ERROR("<em>" . $file_name . "</em>není podporovaný typ obrázku");
+            }
                 
         }
 
         foreach($_FILES["file"]["tmp_name"] as $key=>$tmp_name){
 
-                    $file_name=$_FILES["file"]["name"][$key];
-                    $file_tmp=$_FILES["file"]["tmp_name"][$key];
-                
-                    if(!file_exists($storeFolder . $file_name)){
-                        if(! is_dir($storeFolder)){
-                            mkdir($storeFolder);
-                        }
-                        $saveImagePath = $storeFolder . $timeStamp . "_" . $file_name;
-                        $savePreviewPath = $storeFolder . "preview_" . $timeStamp . "_" . $file_name;
-                        move_uploaded_file($file_tmp=$_FILES["file"]["tmp_name"][$key], $saveImagePath);
-                        $this->createThumbnail($saveImagePath, $savePreviewPath, $previewWidthInPx, $targetHeight = null);
-                    };
+            $file_name=$_FILES["file"]["name"][$key];
+            $file_tmp=$_FILES["file"]["tmp_name"][$key];
+            
+            if(!file_exists($storeFolder . $file_name)){
+                if(! is_dir($storeFolder)){
+                    mkdir($storeFolder);
+                }
+                $saveImagePath = $storeFolder . $file_name;
+                $savePreviewPath = $saveImagePath . "_preview.jpg";
+                move_uploaded_file($file_tmp=$_FILES["file"]["tmp_name"][$key], $saveImagePath);
+                $this->createThumbnail($saveImagePath, $savePreviewPath, $previewWidthInPx, $targetHeight = null);
+            };
         }
     }
 
@@ -796,23 +427,21 @@ class PhpTwigExtension extends \Twig_Extension
     }
 
     function save_news($user, $id, $date, $year){
-        $data['TimeStamp'] = time();
-        $data['Title'] = $_POST["title"];
-        $data['Id'] = $id;
+        $data['title'] = $_POST["title"];
+        $data['id'] = $id;
         $data['User'] = $user;
-        $data['Date'] = $date;
-        $data['Content'] = $_POST['content'];
+        $data['date'] = $date;
+        $data['content'] = $_POST['content'];
         if(isset($_POST['img'])){
-        $data['img'] = $_POST['img'];
+            $data['img'] = $_POST['img'];
         }
-        if(isset($_POST['dropzone_files'])){
-        $data['dropzone_files'] = $_POST['dropzone_files'];
+
         $this->news_to_file($data, $year);
-        $this->process_files($data['Id'], $data['TimeStamp'], 1000, $year);
+        if (!empty($_FILES)) {
+            $this->process_files($data['id'], 1000, $year);
         }
-        else {
-        $this->news_to_file($data, $year);
-        }
+        
+        
     }
 
     public function NewsFunction($user){
@@ -823,18 +452,22 @@ class PhpTwigExtension extends \Twig_Extension
                     $date = date("Y-m-d");
                     $year = substr($date, 0 , 4);
                     $this->save_news($user, $id, $date, $year);
+                    $this->log_grav($user . " | NEWS created | " . $id);
                 }
                 elseif( $_POST["POST_type"] == "updateNews" ){
                     $id = $_POST["id"];
                     $date = date( "Y-m-d", strtotime(str_replace(' ','', $_POST["date"])) );
                     $year = substr($date, 0 , 4);
-                    $this->save_news($user, $id, $date, $year);
+                    $author = $_POST["author"];
+                    $this->save_news($author, $id, $date, $year);
+                    $this->log_grav($user . " | NEWS edited | " . $id);
                 }
                 elseif( $_POST["POST_type"] == "deleteNews" ){
                     $year = substr($_POST["id"], 0 , 4);
-                    $this->rrmdir("./user/pages/databaze/".$year."/novinky/novinka_". $_POST['id'] . "/");
+                    $this->rrmdir("./user/pages/data/news/" . $year . "/". $_POST['id'] . "/");
+                    $this->log_grav($user . " | NEWS removed | " . $_POST["id"]);
                 }
-                Cache::clearCache('all');
+                Cache::clearCache('cache-only');
             }
         }
     }
@@ -842,29 +475,25 @@ class PhpTwigExtension extends \Twig_Extension
     //******************************************************************************************************/
     //updatuje kontent zobrazovany v Blizi se
     public function editBliziSeFunction($user){
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if(isset($_POST["POST_type"])){
-                if( $_POST["POST_type"] == "editBliziSe" ){
-                    $year = substr($_POST["id"], 1, 4);
-                    $template = $_POST['template'];
-                    $path = "./user/pages/databaze/". $year ."/". $template ."/". $_POST["id"] . "/".$template.".cs.md";
-                    $parsed_file = $this->parse_file($path);   //rozparsuje existujici soubor
+        $year = substr($_POST["id"], 0, 4);
+        $template = $_POST['template'];
+        $path = "./user/pages/data/events/". $year ."/". $_POST["id"] ."/". $template. ".cs.md";
 
-                    if(isset($_POST["regenerate"])){
-                        if($_POST["regenerate"]){
-                            $parsed_file["Content"] = $this->generate_content($parsed_file);
-                        }   
-                    }
-                    else{
-                        $parsed_file["Content"] = $_POST["content"];
-                    }
-
-                    $this->array_to_file($parsed_file, $template, $path);
-                    Cache::clearCache('all');
-                    //echo"<script type='text/javascript'>window.location.replace(location.href);</script>";
-                }
-            }
+        $frontmatter = $this->parse_file_frontmatter_only($path);
+        
+        if(isset($_POST["regenerate"]) && $_POST["regenerate"]){
+           
+            $content = $this->generate_content(Yaml::parse($frontmatter));
+            
         }
+        else{
+            $content = $_POST["content"];
+        }
+
+        $page = $this->combine_frontmatter_with_content($frontmatter, $content);
+
+        file_put_contents($path, $page);
+        Cache::clearCache('cache-only');
     }
 
     /********************************************************************************
@@ -911,61 +540,56 @@ class PhpTwigExtension extends \Twig_Extension
     }
 
     // ulozit sablony
-    function save_program_templates(){
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if(isset($_POST["POST_type"])){
-                if( $_POST["POST_type"] == "weeklyPlan" ){
-                    $data = "---" . PHP_EOL .
-                            "title: 'Týdenní program'" . PHP_EOL .
-                            "date: '2018-09-30'" . PHP_EOL .
-                            "process:". PHP_EOL .
-                            "    twig: true" . PHP_EOL .
-                            "    markdown: false" . PHP_EOL .
-                            "access:" . PHP_EOL .
-                            "    site:" . PHP_EOL .
-                            "        plan: true" . PHP_EOL .
-                            "currentSeason: " . $_POST["season"]  . PHP_EOL .
-                            "summer:" . PHP_EOL;
-                    if(isset($_POST['summer'])){
-                        $data = $this->add_season_to_string("summer",$data);
-                    }
-                    $data .= "winter:" . PHP_EOL;
-                    if(isset($_POST['winter'])){
-                        $data = $this->add_season_to_string("winter",$data);
-                    }
-                    $data .= "---" . PHP_EOL;
-                    $data .= $this->parse_file_content_only($_POST["filePath"]);
-
-                    $this->file_force_contents($_POST["filePath"], $data);
-                    Cache::clearCache('all');
-                }
-            }
+    function SaveProgramTemplates(){
+        $data = "---" . PHP_EOL .
+                "title: 'Týdenní program'" . PHP_EOL .
+                "date: '2018-09-29'" . PHP_EOL .
+                "process:". PHP_EOL .
+                "    twig: true" . PHP_EOL .
+                "    markdown: false" . PHP_EOL .
+                "access:" . PHP_EOL .
+                "    site:" . PHP_EOL .
+                "        plan: true" . PHP_EOL .
+                "currentSeason: " . $_POST["season"]  . PHP_EOL .
+                "summer:" . PHP_EOL;
+        if(isset($_POST['summer'])){
+            $data = $this->add_season_to_string("summer",$data);
         }
+        $data .= "winter:" . PHP_EOL;
+        if(isset($_POST['winter'])){
+            $data = $this->add_season_to_string("winter",$data);
+        }
+        $data .= "---" . PHP_EOL;
+        $data .= $this->parse_file_content_only($_POST["filePath"]);
+
+        $this->file_force_contents($_POST["filePath"], $data);
+        Cache::clearCache('cache-only');
+               
     }
 /********************************************************
 ***** tento tyden, pristi tyden / plan, plan-next *******
 *********************************************************/
     // ulozit plan
     function SavePlan(){
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $data = "---" . PHP_EOL .
-                    "process:". PHP_EOL .
-                    "    twig: true" . PHP_EOL .
-                    "    markdown: false" . PHP_EOL .
-                    "access:" . PHP_EOL .
-                    "    site:" . PHP_EOL .
-                    "        plan: true" . PHP_EOL .
-                    "planTemplate: " . $_POST["template"] . PHP_EOL .
-                    "plan:" . PHP_EOL;
-            if(isset($_POST['data'])){
-                $data = $this->add_season_to_string("data",$data);
-            }
-            $data .= "---" . PHP_EOL;
-            $data .= $this->parse_file_content_only($_POST["filePath"]);
 
-            $this->file_force_contents($_POST["filePath"], $data);
-            Cache::clearCache('all');
+        $data = "---" . PHP_EOL .
+                "process:". PHP_EOL .
+                "    twig: true" . PHP_EOL .
+                "    markdown: false" . PHP_EOL .
+                "access:" . PHP_EOL .
+                "    site:" . PHP_EOL .
+                "        plan: true" . PHP_EOL .
+                "planTemplate: " . $_POST["template"] . PHP_EOL .
+                "plan:" . PHP_EOL;
+        if(isset($_POST['data'])){
+            $data = $this->add_season_to_string("data",$data);
         }
+        $data .= "---" . PHP_EOL;
+        $data .= $this->parse_file_content_only($_POST["filePath"]);
+
+        $this->file_force_contents($_POST["filePath"], $data);
+        Cache::clearCache('cache-only');
+    
     }
 
     function get_plan_from_template($template){
@@ -982,7 +606,7 @@ class PhpTwigExtension extends \Twig_Extension
 
     // nacist sablonu
     function SavePlanTemplate(){
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
             $page_path = $_POST["filePath"];
             $templates_path = str_replace(array('/plan/', '/plan-next/'), '/plan-templates/', $page_path);
             // get last used teamplates
@@ -1002,8 +626,8 @@ class PhpTwigExtension extends \Twig_Extension
            
             // save page
             $this->file_force_contents($page_path, $page);
-            Cache::clearCache('all');
-        }
+            Cache::clearCache('cache-only');
+
     }
 
     // nastavi "pristi tyden" jako "tento tyden" a do "pristi tyden" nacte predchozi pouzitou sablonu - potreba CRON/ task scheduler 
@@ -1033,7 +657,7 @@ class PhpTwigExtension extends \Twig_Extension
             // save page
             $this->file_force_contents($page_path, $page);
 
-            Cache::clearCache('all');        
+            Cache::clearCache('cache-only');        
     }
 
 
@@ -1042,64 +666,90 @@ class PhpTwigExtension extends \Twig_Extension
 //******************************************************************************************************/
     //nahravani programu z CSV souboru
     function parse_csv(){
-        $file_name = $_FILES['csv']['tmp_name'];
-        $extension = pathinfo($_FILES['csv']['name'], PATHINFO_EXTENSION);
+        $file_name = $_FILES['file']['tmp_name'];
+        $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
         if ($extension != "csv"){ //pokud soubor neni csv vrati error
           http_response_code(415);
           die();
         }
-        $csv_string = file_get_contents($file_name);
-        $csv_string = iconv( "Windows-1250", "UTF-8", $csv_string);
-        $rows = preg_split("/\\r\\n/", $csv_string); //rozdeli csv soubor po radcich
-        array_shift($rows); //odstrani prvni radek souboru obsahujici záhlaví tabulky
+
+        $rows = array_map('str_getcsv', file($file_name)); 
 
         //= zahlavi tabulky csv souboru
-        $csv_scheme = ["Type", "Date1", "Date2", "Name", "Place", "GPS", "MeetTime", "MeetPlace", "EventTypeDescription", "StartTime", "Zabicky", "Pulci1", "Pulci2", "Zaci1", "Zaci2", "Dorost", "Map", "Terrain", "Transport", "Accomodation", "Food", "Leader", "DoWeOrganize", "Note", "Return", "Price", "Program", "ThingsToTake", "Signups", "Id"];
-        $approved_types = ["Z", "M", "T", "S", "BZL", "BBP", "TABOR", "L", "J"]; //ignoruje poznamky
+        $csv_scheme = ["type", "start", "end", "title", "place", "gps", "meetTime", "meetPlace", "transport", "leader", "note", "zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost", "accomodation", "food", "startTime", "eventTypeDescription", "map", "terrain", "return", "price", "program", "thingsToTake", "signups", "doWeOrganize"];
+        $approved = ["Z", "M", "T", "S", "BZL", "BBP", "TABOR", "L", "J"]; //ignoruje poznamky
 
-        foreach($rows as $row_num => $row){   //prochazi vsechny radky
-            $row_data = explode(";", $row); //rozdeli radek na jednotlive polozky oddelene ";"
-            if(isset($row_data[0])){
-              if(!in_array(trim($row_data[0]), $approved_types)){ //parsuje jen spravne zaznamy
-                continue;
-              }
-            }
-            foreach($csv_scheme as $collum_num => $collum){ //prochazi sloupce a uklada do array
-                $parsed[$row_num][$collum]= $this->trim_all($row_data[$collum_num]);
-            }
-        }
-    return $parsed;
-    }
-
-    public function phpUploadProgram(){
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if(isset($_POST["POST_type"])){
-                if( $_POST["POST_type"] == "uploadProgram" ){
-                    $parsed_csv = $this->parse_csv();
-
-                    foreach($parsed_csv as $csv_event){
-                      //var_dump($csv_event);
-                        $template = $this->get_event_template($csv_event["Type"]);
-
-                        $year = substr($csv_event["Date1"], -4);
-                        $path = "./user/pages/databaze/" . $year ."/".$template."/". $csv_event["Id"] . "/".$template.".cs.md";
-                        $existing_file_parsed = $this->parse_file($path);
-                        if($existing_file_parsed != false){
-                            foreach($csv_event as $attribute){
-                                if(!isset($existing_file_parsed[$attribute]) and isset($csv_event[$attribute])){
-                                    $existing_file_parsed[$attribute] = $csv_event[$attribute];
-                                }
-                            }
-                            $this->array_to_file($existing_file_parsed, $template, $path);
-                        }
-                        else{
-                            $this->array_to_file($csv_event, $template, $path);
-                        }
-                        Cache::clearCache('all');
-                    }
+        foreach($rows as $event_num => $data){   //prochazi vsechny radky
+            if(in_array(trim($data[0]), $approved)){ //parsuje jen spravne zaznamy
+                foreach($csv_scheme as $att_index => $attribute){ //prochazi sloupce a uklada do array
+                    $event_list[$event_num][$attribute] = array_key_exists($att_index, $data) ? $data[$att_index] : "";
                 }
             }
         }
+        return $event_list;
+    }
+
+    function create_event_id($template, $title, $start){
+        $hashStr = $template.$title.$start;
+        $date = date_create($start);
+        return date_format($date, "Ymd") ."-". hash('crc32', $hashStr);
+    }
+
+    public function phpUploadProgram(){
+        $parsed_csv = $this->parse_csv();
+        
+        $groups = ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost"];
+        
+        foreach($parsed_csv as $event){
+     
+            $event['template'] = $this->get_event_template($event["type"]);;
+            $event['date'] = date("Y-m-d");
+            $event['start'] = $this->format_date($event['start']);
+            $event['end'] = $this->format_date($event['end']);
+            $event['id'] = $this->create_event_id($event['template'], $event['title'], $event['start']);
+            $year = substr($event["start"], 0, 4);
+
+            $path = "./user/pages/data/events/". $year ."/". $event["id"] ."/". $event['template'] .".cs.md";
+
+            // if file exist, load data
+            if(file_exists($path)){
+                $frontmatter = $this->get_frontmatter_as_array($path);
+            }
+
+            // init taxonomy array if does not exist
+            if(!isset($frontmatter['taxonomy']['skupina'])){
+                $frontmatter['taxonomy']['skupina'] = array();
+            }
+                 
+            foreach($event as $key => $attribute){
+                // add group to taxonomy
+                if(in_array($key, $groups) && $attribute == "1"){
+                    if(!in_array($key, $frontmatter['taxonomy']['skupina'])){
+                        $frontmatter['taxonomy']['skupina'][] = $key;
+                    }
+                    continue;
+                }
+                // if no info set, overwrite from given file
+                if(empty($frontmatter[$key]) && $attribute){
+                    $frontmatter[$key] = $attribute;
+                }
+            }
+            
+            if(!empty($event["gps"])){
+                $gps = $this->normalize_GPS($event["gps"]);
+                if($gps){
+                    $frontmatter["gps"] = $gps;
+                }
+            }
+
+            $content = $this->generate_content($frontmatter);
+            $page = $this->combine_frontmatter_with_content(Yaml::dump($frontmatter, 10), $content);
+
+            $this->file_force_contents($path, $page); 
+            unset($frontmatter);
+        }
+        Cache::clearCache('cache-only');
+        
     }
 
     /*
@@ -1189,286 +839,149 @@ class PhpTwigExtension extends \Twig_Extension
 
     function normalize_GPS($latlng){
         if(!strpos($latlng, ",")){
-            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-            echo '<br>Nepodporovaný formát GPS: hodnoty zem. šířky a délky musí být odděleny čárkou. <br>např 50°42\'38.9"N<b>,</b> 15°36\'56.6"E';
-            die();
+            return False;
         }
 
         $arr = explode( "," , $latlng );
 
-        $lng = $arr[1]; // Longitude of Brno: 16.606837
         $lat = $arr[0]; // Latitude of Brno: 49.195060
-        if($arr)
+        $lng = $arr[1]; // Longitude of Brno: 16.606837
 
-        $lng = $this->convertDMSToDecimal($lng);
         $lat = $this->convertDMSToDecimal($lat);
+        $lng = $this->convertDMSToDecimal($lng);
 
-        if($lng && $lat){
-            return ($lng . ", " . $lat);
+        if($lat && $lng){
+            return ($lat . ", " . $lng);
         }
         return False;
     }
 
-    // formular pro upravu eventu
-    public function phpFormEditEvent(){
-        
-        if(isset($_GET['event'])){
-            $parsed = $this->parse_file("./user/pages".$_GET['event']);
-
-            echo'<form id="editEvent" class="pure-form pure-form-aligned" method="post" action="">
-                    <input name="POST_type" type="hidden" value="editEvent">
-                    <input name="Id" type="hidden" value="'.($parsed["Id"]??'').'">
-                    <input name="Template" id="template" type="hidden" value="'.($parsed["Template"]??'').'">
-
-                    '.($parsed["Id"]??'').'
-
-                    <!--
-                    <select name="Template">
-                        <option value="akce">Jiné</option>
-                        <option value="zavod" '. (isset($parsed["Template"])?($parsed["Template"]=="zavod"?"selected":""):"") .'>Závod</option>
-                        <option value="trenink" '. (isset($parsed["Template"])?($parsed["Template"]=="trenink"?"selected":""):"") .'>Trénink</option>
-                        <option value="soustredeni" '. (isset($parsed["Template"])?($parsed["Template"]=="soustredeni"?"selected":""):"") .'>Soustředění</option>
-                    </select> -->
-                    <div class="pure-g">
-                      <div class="pure-g">
-                          <div class="pure-u-10-24">
-                              <div class="pure-g">
-                                  <div class="pure-u-1">
-                                      <label for="name">Název</label>
-                                      <input id="name" name="Name" type="text" value="'.($parsed["Name"]??'').'" required>
-                                  </div>
-                                  <div class="pure-u-1-2">
-                                      <label for="date1">Od</label>
-                                      <input id="date1" name="Date1" type="text" value="'.($parsed["Date1"]??'').'" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required title="formát yyyy-mm-dd">
-                                  </div>
-                                  <div class="pure-u-1-2">
-                                      <label for="date2">Do</label>
-                                      <input id="date2" name="Date2" type="text" value="'.($parsed["Date2"]??'').'" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" title="formát yyyy-mm-dd">
-                                  </div>
-                                  <div class="pure-u-1-2">
-                                      <label for="place">Místo</label>
-                                      <input id="place" name="Place" type="text" value="'.($parsed["Place"]??'').'">
-                                  </div>
-                                  <div class="pure-u-1-2">
-                                      <label for="GPS">GPS</label>
-                                      <input id="GPS" name="GPS" type="text" value="'.($parsed["GPS"]??'').'">
-                                  </div>
-                                  <div class="pure-u-1-2">
-                                      <label for="meetTime">Sraz / čas</label>
-                                      <input id="meetTime" name="MeetTime" type="text" value="'.($parsed["MeetTime"]??'').'">
-                                  </div>
-                                  <div class="pure-u-1-2">
-                                      <label for="meetPlace">Sraz / místo</label>
-                                      <input name="MeetPlace" type="text" value="'.($parsed["MeetPlace"]??'').'">
-                                  </div>
-                                  <div class="pure-u-1">
-                                      <label for="transport">Doprava</label>
-                                      <textarea id="transport" name="Transport" type="text" rows="1">'.($parsed["Transport"]??'').'</textarea>
-                                  </div>
-                              </div> <!-- pure-g -->
-                          </div><!-- pure-u-10-24 --><!--
-                       --><div class="pure-u-4-24">
-                            &nbsp;
-                          </div><!--
-                       --><div class="pure-u-10-24">
-                              <div class="pure-g">
-                                <div class="pure-u-1">
-                                    <br>
-                                  <fieldset>
-                                      <legend>Skupiny:</legend>
-                                      <input name="Zabicky" type="hidden" value="0">
-                                      <input id="zabicky" type="checkbox" name="Zabicky" value="1" '.(isset($parsed["Zabicky"])?"checked":"").'>
-                                          <label for="zabicky"> žabičky </label> <br>
-                                      <input name="Pulci1" type="hidden" value="0">
-                                      <input id="pulci1" type="checkbox" name="Pulci1" value="1" '.(isset($parsed["Pulci1"])?"checked":"").'>
-                                          <label for="pulci1"> pulci 1 </label> <br>
-                                      <input name="Pulci2" type="hidden" value="0">
-                                      <input id="pulci2" type="checkbox" name="Pulci2" value="1" '.(isset($parsed["Pulci2"])?"checked":"").'>
-                                          <label for="pulci2"> pulci 2 </label> <br>
-                                      <input name="Zaci1" type="hidden" value="0">
-                                      <input id="zaci1" type="checkbox" name="Zaci1" value="1" '.(isset($parsed["Zaci1"])?"checked":"").'>
-                                          <label for="zaci1"> žáci 1 </label> <br>
-                                      <input name="Zaci2" type="hidden" value="0">
-                                      <input id="zaci2" type="checkbox" name="Zaci2" value="1" '.(isset($parsed["Zaci2"])?"checked":"").'>
-                                          <label for="zaci2"> žáci 2 </label> <br>
-                                      <input name="Dorost" type="hidden" value="0">
-                                      <input id="dorost" type="checkbox" name="Dorost" value="1" '.(isset($parsed["Dorost"])?"checked":"").'>
-                                          <label for="dorost"> dorost+ </label>
-                                  </fieldset>
-                                </div>
-                                <div class="pure-u-1">
-                                    <label for="leader">Vedoucí</label>
-                                    <input id="leader" name="Leader" type="text" value="'.($parsed["Leader"]??'').'">
-                                </div>
-                              </div> <!-- pure-g -->
-                          </div> <!-- pure-u-10-24 -->
-                          <div class="pure-u-1">
-                                <label for="note">Poznámka</label>
-                                <textarea id="note" name="Note" rows="1">'.($parsed["Note"]??'').'</textarea>
-                          </div>';
-            if(isset($parsed["Template"])){
-                if($parsed["Template"]=="zavod"){
-                    echo'<div class="pure-u-1">
-                        <hr>
-                            <label for="link">Odkaz na ORIS / stránky závodu</label>
-                            <input id="link" name="Link" type="text" value="'.($parsed["Link"]??'').'">
-                        </div>';
-                }
-            }
-            if(isset($parsed["Date1"], $parsed["Date2"])){
-                if($parsed["Date1"] != $parsed["Date2"]){
-                    echo'<div class="pure-g pure-u-1">
-                        <hr>
-                        <div class="pure-u-10-24">
-                            <label for="accomodation">Ubytování</label>
-                            <textarea id="accomodation" name="Accomodation" type="text" rows="1">'.($parsed["Accomodation"]??'').'</textarea>
-                        </div><!-- pure-u-10-24 --><!--
-                     --><div class="pure-u-4-24">
-                            &nbsp;
-                        </div><!--
-                     --><div class="pure-u-10-24">
-                            <label for="food">Strava</label>
-                            <textarea id="food" name="Food" type="text" rows="1">'.($parsed["Food"]??'').'</textarea>
-                        </div> <!-- pure-u-10-24 -->
-                    </div> <!-- pure-g -->';
-                }
-            }
-            if(isset($parsed["Template"])){
-                if($parsed["Template"]=="zavod" || $parsed["Template"]=="trenink"){
-                    echo'<div class="pure-g pure-u-1">
-                            <hr>
-                            <div class="pure-u-10-24">
-                                <div class="pure-g">
-                                <div class="pure-u-1">
-                                    <label for="startTime">Start</label>
-                                    <input id="startTime" name="StartTime" type="text" value="'.($parsed["StartTime"]??'').'">
-                                </div>
-                                <div class="pure-u-1">
-                                    <label for="eventTypeDescription">Tratě</label>
-                                    <textarea id="eventTypeDescription" name="EventTypeDescription" type="text" rows="1">'.($parsed["EventTypeDescription"]??'').'</textarea>
-                                </div>
-                                </div> <!-- pure-g -->
-                            </div><!-- pure-u-10-24 --><!--
-                         --><div class="pure-u-4-24">
-                              &nbsp;
-                            </div><!--
-                         --><div class="pure-u-10-24">
-                                <div class="pure-u-1">
-                                    <label for="map">Mapa</label>
-                                    <input id="map" name="Map" type="text" value="'.($parsed["Map"]??'').'">
-                                </div>
-                                <div class="pure-u-1">
-                                    <label for="terrain">Terén</label>
-                                    <textarea id="terrain" name="Terrain" type="text" rows="3">'.($parsed["Terrain"]??'').'</textarea>
-                                </div>
-                            </div> <!-- pure-u-10-24 -->
-                        </div> <!-- pure-g -->';
-                }
-            }
-            if(isset($parsed["Template"])){
-                if($parsed["Template"]=="soustredeni"){
-                    echo'<div class="pure-u-1" id="soustredeni">
-                            <hr>
-                            <div class="pure-g">
-                                <div class="pure-u-1">
-                                    <label for="signups">Přihlášky</label>
-                                    <input id="signups" name="Signups" type="text" value="'.($parsed["Signups"]??'').'">
-                                </div>
-                                <div class="pure-u-1">
-                                    <label for="price">Cena</label>
-                                    <textarea id="price" name="Price">'.($parsed["Price"]??'').'</textarea>
-                                </div>
-                                <div class="pure-u-1">
-                                    <label for="return">Návrat</label>
-                                    <textarea id="return" name="Return">'.($parsed["Return"]??'').'</textarea>
-                                </div>
-                                <div class="pure-u-1">
-                                    <label for="program">Náplň / Program</label>
-                                    <textarea id="program" name="Program">'.($parsed["Program"]??'').'</textarea>
-                                </div>
-                                <div class="pure-u-1">
-                                    <label for="thingsToTake">S sebou</label>
-                                    <textarea id="thingsToTake" name="ThingsToTake">'.($parsed["ThingsToTake"]??'').'</textarea>
-                                </div>
-                            </div> <!-- pure-g -->
-                        </div><!-- pure-u-1 id="soustredeni" -->';
-                }
-            }
-                          
-                    
-              echo '<div class="pure-u-1">
-                        <hr>
-                    
-                    
-                    
-                    <button id="saveEvent" type="submit">Uložit</button> <br>
-                    <div id="formResponse"></div>
-                </div>
-                </div> <!-- pure-g -->
-            </form>';
-        }
-        else{
-          echo"<h2>Není zadána cesta k souboru.</h2>";
-        }
-        // javacript is saved normaly in page
-    }
-    public function phpSaveEditedEvent(){
+    public function phpSaveEditedEvent($user){
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(isset($_POST["POST_type"])){
             if( $_POST["POST_type"] == "editEvent" ){
                 // kontrola doručení potřebných údajů
-                if(!isset($_POST["Name"])){
-                    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                    echo 'Není vyplněn "Název"';
-                    die();
+                if(empty($_POST["template"])){
+                    $this->return_ERROR('CHYBA!!, nebyl obdržen typ události [template]');
                 }
-                if(!isset($_POST["Date1"])){
-                    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                    echo 'Není vyplněno "Datum"';
-                    die();
+                if(empty($_POST["title"])){
+                    $this->return_ERROR('Není vyplněn "Název"');
                 }
-                if(!isset($_POST["Template"])){
-                    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                    echo 'CHYBA!!, nebyl obdržen typ události [Template]';
-                    die();
+                if(empty($_POST["start"])){
+                    $this->return_ERROR('Není vyplněno "Datum"');
                 }
-                if(!isset($_POST["Id"])){
-                    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                    echo 'CHYBA!!, nebylo obdrženo ID události [Id]';
-                    die();
+                if(empty($_POST["place"])){
+                    $this->return_ERROR('Není vyplněno "Místo"');
                 }
-                            
+                if(isset($_POST["delete"])){
+                    $path = "./user/pages/data/events/". substr($_POST["id"], 0 , 4) ."/". $_POST["id"] ;
+                    $this->rrmdir($path);
+                    $this->log_grav($user . " | EVENT removed | " . $_POST["id"]);
+                    die(); 
+                }
+                
+                
+                $data = ["template","title", "start", "end",  "place", "meetTime", "meetPlace", "link", "eventTypeDescription", "startTime", "map", "terrain", "transport", "accomodation", "food", "leader", "doWeOrganize", "note", "return", "price", "program", "thingsToTake", "signups"];
+                $group_arr = ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost"];
+                
+                
+                $id = empty($_POST["id"]) ? $this->create_event_id($_POST['template'], $_POST['title'], $_POST['start']) : $_POST["id"];
+                $year = substr($id, 0 , 4);
+                $path = "./user/pages/data/events/". $year ."/". $id ."/". $_POST['template'] .".cs.md";
 
-                $post_scheme = ["Date1", "Date2", "Name", "Place", "MeetTime", "MeetPlace", "Link", "EventTypeDescription", "StartTime", "Zabicky", "Pulci1", "Pulci2", "Zaci1", "Zaci2", "Dorost", "Map", "Terrain", "Transport", "Accomodation", "Food", "Leader", "DoWeOrganize", "Note", "Return", "Price", "Program", "ThingsToTake", "Signups", "Id"];
-                $year = substr($_POST["Id"], 1 , 4);
-                $template = $_POST['Template'];
-                $path = "./user/pages/databaze/". $year ."/". $template ."/". $_POST["Id"] . "/".$template.".cs.md";
-                $parsed_file = $this->parse_file($path);   //rozparsuje existujici soubor
-                foreach($post_scheme as $attribute){
-                  if(isset($_POST[$attribute])){
-                    $parsed_file[$attribute] = $this->trim_all($_POST[$attribute]);
-                  }
+                $new = file_exists($path) ? false : true;
+
+                if ($new) {
+                    $frontmatter["id"] = $id;
                 }
-                // normalize GPS
-                if(isset($_POST["GPS"]) && trim($_POST["GPS"]) != ""){
-                    $gps = $this->normalize_GPS($_POST["GPS"]);
-                    if($gps){
-                        $parsed_file["GPS"] = $gps;
+                else {              
+                    $frontmatter = $this->get_frontmatter_as_array($path);   //rozparsuje existujici soubor  
+                }
+
+                foreach($data as $attribute){
+                    if(isset($_POST[$attribute])){
+                        $frontmatter[$attribute] = trim($_POST[$attribute]);
+                    }
+                }
+
+                if(empty($frontmatter['end'])){
+                    $frontmatter['end'] = $_POST["start"];
+                }
+
+                // groups
+                foreach($group_arr as $key => $group){
+                    if($_POST[$group]){
+                        if (!isset($frontmatter['taxonomy']['skupina']) || !in_array($group, $frontmatter['taxonomy']['skupina'])) {
+                            $frontmatter['taxonomy']['skupina'][] = $group;
+                        }
                     }
                     else{
-                        header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-                        echo 'Nepodporovaný formát GPS';
-                        die();
+                        if (isset($frontmatter['taxonomy']['skupina'])){
+                            $del = array_search( $group , $frontmatter['taxonomy']['skupina'] );
+                            unset($frontmatter['taxonomy']['skupina'][$del]);
+                        }
+                    }
+                  }
+
+                // normalize GPS
+                if(!empty($_POST["GPS"])){
+                    $gps = $this->normalize_GPS($_POST["GPS"]);
+                    if($gps){
+                        $frontmatter["gps"] = $gps;
+                    }
+                    else{
+                        $this->return_ERROR('<br>Nepodporovaný formát GPS: hodnoty zem. šířky a délky musí být odděleny čárkou. <br>např 50°42\'38.9"N<b>,</b> 15°36\'56.6"E');
                     }
                 }
 
+                //routes
+                $i = 0;
+                unset($frontmatter["routes"]);
+                while(isset($_POST["routeName"][$i], $_POST["routeLink"][$i])){
+                    if(!empty($_POST["routeName"][$i]) && !empty($_POST["routeLink"][$i])){
+                        $frontmatter["routes"][$i]["name"] = $_POST["routeName"][$i];
+                        $frontmatter["routes"][$i]["link"] = $_POST["routeLink"][$i];
+                    }
+                    $i++;
+                }
+
+                //result
+                $i = 0;
+                unset($frontmatter["results"]);
+                while(isset($_POST["resultsName"][$i], $_POST["resultsLink"][$i])){
+                    if(!empty($_POST["resultsName"][$i]) && !empty($_POST["resultsLink"][$i])){
+                        $frontmatter["results"][$i]["name"] = $_POST["resultsName"][$i];
+                        $frontmatter["results"][$i]["link"] = $_POST["resultsLink"][$i];
+                    }
+                    $i++;
+                }
+                
+                //combine
+                if ($new) {
+                    $content = $this->generate_content($frontmatter);
+                }
+                else {
+                    $content = $this->parse_file_content_only($path);
+                }
+                
+                $frontmatter = Yaml::dump($frontmatter, 10);
+                $page = $this->combine_frontmatter_with_content($frontmatter, $content);
                 //print_r($_POST);
-                //print_r($parsed_file);
+                //print_r($frontmatter);
 
-                $this->array_to_file($parsed_file, $template, $path);
-                Cache::clearCache('all');
+                $this->file_force_contents($path, $page);
+                if ($new) {
+                    $content = $this->generate_content($frontmatter);
+                    $this->log_grav($user . " | EVENT created | " . $id);
+                    $result = array("id" => $id);
+                    echo json_encode($result);
 
-                //echo"<script type='text/javascript'>window.location.replace(location.href);</script>";
+                }
+                else {
+                    $content = $this->parse_file_content_only($path);
+                    $this->log_grav($user . " | EVENT edited | " . $id);
+                }
+                Cache::clearCache('cache-only');
             }
         }
       }
@@ -1491,57 +1004,59 @@ class PhpTwigExtension extends \Twig_Extension
         $im->destroy();
     }
 
-    function save_polaris_PDF($savePath, $polarisFileName){
+    function save_PDF($savePath, $fileTitle, $makeThumbnail=True){
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         $mime = finfo_file($finfo, $_FILES['PDF']['tmp_name']);
         if ($mime != 'application/pdf') {
-            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-            echo 'Nahraný soubor není PDF!';
-            die();
+            $this->return_ERROR('Nahraný soubor není PDF!');
         }
         if(!is_dir($savePath)){
             mkdir($savePath);
         }
-        $saveFilesPath = $savePath ."/". $polarisFileName;
+        $saveFilesPath = $savePath ."/". $fileTitle;
         move_uploaded_file($file_tmp=$_FILES["PDF"]["tmp_name"], $saveFilesPath);
 
-        $this->make_jpeg_thumbnail($saveFilesPath, $saveFilesPath . ".jpg");
+        if($makeThumbnail){
+            $this->make_jpeg_thumbnail($saveFilesPath, $saveFilesPath . ".jpg");
+        }
     }
 
     public function SavePolaris(){ 
 
+        if(empty($_FILES["PDF"]["tmp_name"])){
+            $this->return_ERROR("Nahrání PDF souboru se nezdařilo.");
+        }
+
         // init vars
-        $pagePath = $_POST['path'];
-        $savePath = getcwd() . '/user/pages/databaze/polaris/' . $_POST['year'];
+        $pagePath = './user/pages/data/polaris/blank.md';
+        $savePath = './user/pages/data/polaris/' . $_POST['year'];
         $polarisYear = $_POST['year'];
         $polarisNumber = "p" . $_POST['cislo'];
-        $polarisFileName = "Polaris_" . $_POST['year'] . "_" . $_POST['cislo'] . ".pdf" ;
+        $fileTitle = "Polaris_" . $_POST['year'] . "_" . $_POST['cislo'] . ".pdf" ;
 
         //get frontmatter
         $frontmatter = $this->get_frontmatter_as_array($pagePath);
 
         // add polaris to frontmatter
-        if(isset($frontmatter['polaris']) && in_array ( $polarisFileName , $frontmatter['polaris'] ) ){
-            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
-            echo "Už je nahrané stejné číslo Polarisu.";
-            die();
+        if(isset($frontmatter['polaris'][$polarisYear]) && in_array($fileTitle, $frontmatter['polaris'][$polarisYear])){
+            $this->return_ERROR("Už je nahrané stejné číslo Polarisu.");
         }
-        else{
-            $frontmatter['polaris'][$polarisYear][$polarisNumber] = $polarisFileName;
-            krsort($frontmatter['polaris']);
-        } 
+
+        $frontmatter['polaris'][$polarisYear][$polarisNumber] = $fileTitle;
+        krsort($frontmatter['polaris']);
+        krsort($frontmatter['polaris'][$polarisYear]);
 
         // save pdf and jpeg thumbnail
-        $this->save_polaris_PDF($savePath, $polarisFileName);
+        $this->save_PDF($savePath, $fileTitle);
         
         // build page
         $pageFrontmatter = Yaml::dump($frontmatter, 10);
-        $pageContent = $this->parse_file_content_only($pagePath);
-        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pageContent);
+        $pagecontent = $this->parse_file_content_only($pagePath);
+        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
 
         // save page to file
         file_put_contents($pagePath, $page);
-        Cache::clearCache('all');
+        Cache::clearCache('cache-only');
     }
 
     public function DeletePolaris(){
@@ -1549,8 +1064,8 @@ class PhpTwigExtension extends \Twig_Extension
         // init vars
         $polarisYear = $_POST['year'];
         $polarisNumber = "p" . $_POST['cislo'];
-        $pagePath = $_POST['path'];
-        $filePath = getcwd() . '/user/pages/databaze/polaris/' . $_POST['year']. "/" . $_POST['pdf'];
+        $pagePath = './user/pages/data/polaris/blank.md';
+        $filePath = './user/pages/data/polaris/' . $_POST['year']. "/" . $_POST['pdf'];
         
         // get frontmatter
         $frontmatter = $this->get_frontmatter_as_array($pagePath);
@@ -1565,17 +1080,161 @@ class PhpTwigExtension extends \Twig_Extension
         if(file_exists($filePath .".jpg")){
             unlink($filePath .".jpg");
         }
+        // remove years if year is empty
+        $frontmatter['polaris'] = array_filter($frontmatter['polaris']);
 
         // build page
         $pageFrontmatter = Yaml::dump($frontmatter, 10);
-        $pageContent = $this->parse_file_content_only($pagePath);
-        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pageContent);
+        $pagecontent = $this->parse_file_content_only($pagePath);
+        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
 
         // save page to file
         file_put_contents($pagePath, $page);
-        Cache::clearCache('all');
+        Cache::clearCache('cache-only');
+    }
+//******** Mapova Teorie *********
+    public function SaveMapT(){ 
+
+        // init vars
+        $pagePath = './user/pages/data/maptheory/blank.md';
+        $savePath = './user/pages/data/maptheory/';
+        $maptGroup = $_POST['group'];
+        $fileTitle = $_POST['date'] . ".pdf" ;
+
+        //get frontmatter
+        $frontmatter = $this->get_frontmatter_as_array($pagePath);
+
+        // add maptheory to frontmatter
+        if(isset($frontmatter['maptheory'][$maptGroup]) && in_array ( $fileTitle , $frontmatter['maptheory'][$maptGroup] ) ){
+            $this->return_ERROR("Už je nahrana mapova teorie se stejnym datem a skupinou");
+        }
+        else{
+            $frontmatter['maptheory'][$maptGroup][] = $fileTitle;
+            arsort($frontmatter['maptheory'][$maptGroup]);
+        } 
+
+        // save pdf and jpeg thumbnail
+        $this->save_PDF($savePath, $fileTitle, $makeThumbnail=False);
+        
+        // build page
+        $pageFrontmatter = Yaml::dump($frontmatter, 10);
+        $pagecontent = $this->parse_file_content_only($pagePath);
+        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
+
+        // save page to file
+        file_put_contents($pagePath, $page);
+        Cache::clearCache('cache-only');
     }
 
+    public function DeleteMapT(){
+
+        // init vars
+        $maptName = $_POST['name'];
+        $maptGroup = $_POST['group'];
+        $pagePath = './user/pages/data/maptheory/blank.md';
+        $filePath = './user/pages/data/maptheory/' . $maptName;
+        
+        // get frontmatter
+        $frontmatter = $this->get_frontmatter_as_array($pagePath);
+        var_dump($frontmatter);
+
+        // remove maptheory from frontmatter
+        if (($key = array_search($maptName, $frontmatter['maptheory'][$maptGroup])) !== false) {
+            unset($frontmatter['maptheory'][$maptGroup][$key]);
+        }
+        
+        // delete pdf
+        if(file_exists($filePath)){
+            unlink($filePath);
+        }
+
+        // build page
+        $pageFrontmatter = Yaml::dump($frontmatter, 10);
+        $pagecontent = $this->parse_file_content_only($pagePath);
+        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
+
+        // save page to file
+        file_put_contents($pagePath, $page);
+        Cache::clearCache('cache-only');
+    }
+    //******** GPS *********
+    public function SaveRoutes(){ 
+
+        // init vars
+        $pagePath = './user/pages/data/maptheory/blank.md';
+        $savePath = './user/pages/data/maptheory/';
+        $maptGroup = $_POST['group'];
+        $fileTitle = $_POST['date'] . ".pdf" ;
+
+        //get frontmatter
+        $frontmatter = $this->get_frontmatter_as_array($pagePath);
+
+        // add maptheory to frontmatter
+        if(isset($frontmatter['maptheory'][$maptGroup]) && in_array ( $fileTitle , $frontmatter['maptheory'][$maptGroup] ) ){
+            $this->return_ERROR("Už je nahrana mapova teorie se stejnym datem a skupinou");
+        }
+        else{
+            $frontmatter['maptheory'][$maptGroup][] = $fileTitle;
+            arsort($frontmatter['maptheory'][$maptGroup]);
+        } 
+
+        // save pdf and jpeg thumbnail
+        $this->save_PDF($savePath, $fileTitle, $makeThumbnail=False);
+        
+        // build page
+        $pageFrontmatter = Yaml::dump($frontmatter, 10);
+        $pagecontent = $this->parse_file_content_only($pagePath);
+        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
+
+        // save page to file
+        file_put_contents($pagePath, $page);
+        Cache::clearCache('cache-only');
+    }
+
+    public function DeleteRoutes(){
+
+        // init vars
+        $maptName = $_POST['name'];
+        $maptGroup = $_POST['group'];
+        $pagePath = './user/pages/data/maptheory/blank.md';
+        $filePath = './user/pages/data/maptheory/' . $maptName;
+        
+        // get frontmatter
+        $frontmatter = $this->get_frontmatter_as_array($pagePath);
+        var_dump($frontmatter);
+
+        // remove maptheory from frontmatter
+        if (($key = array_search($maptName, $frontmatter['maptheory'][$maptGroup])) !== false) {
+            unset($frontmatter['maptheory'][$maptGroup][$key]);
+        }
+        
+        // delete pdf
+        if(file_exists($filePath)){
+            unlink($filePath);
+        }
+
+        // build page
+        $pageFrontmatter = Yaml::dump($frontmatter, 10);
+        $pagecontent = $this->parse_file_content_only($pagePath);
+        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
+
+        // save page to file
+        file_put_contents($pagePath, $page);
+        Cache::clearCache('cache-only');
+    }
+
+    public function collectionToEventsByDate($collection){
+        $array = array();
+        foreach($collection as $event) {
+            $date = $event->value("header.start");
+            $today = date('Y-m-d');
+            if ($date < $today) {
+                $date = $today;
+            }
+            $array[$date][] = $event;
+        }
+        return $array;
+    }
 
 }
 

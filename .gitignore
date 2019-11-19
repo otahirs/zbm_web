@@ -4,5 +4,6 @@
 !/themes
 !/plugins
 !/config/groups.yaml
-**/.revs
+.revs/
+data/
 /plugins/git-sync

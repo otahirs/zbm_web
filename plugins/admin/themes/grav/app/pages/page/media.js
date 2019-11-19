@@ -101,7 +101,7 @@ export default class PageMedia extends FilesField {
         formData.delete('task');
         */
 
-        formData.append('name', this.options.dotNotation);
+        formData.append('name', this.options.dotNotation || file.name);
         formData.append('admin-nonce', config.admin_nonce);
         formData.append('uri', this.getURI());
     }
@@ -139,7 +139,9 @@ export default class PageMedia extends FilesField {
             let file = target.parent('.dz-preview').find('.dz-filename');
             let filename = encodeURI(file.text());
             let URL = target.closest('[data-media-path]').data('media-path');
-            let original = this.dropzone.files.filter((file) => encodeURIComponent(file.name) === filename).shift().extras.original;
+            let original = this.dropzone.files.filter((file) => encodeURIComponent(file.name) === filename).shift();
+
+            original = original.extras.original || encodeURIComponent(original.name);
 
             target.attr('href', `${URL}/${original}`);
         });

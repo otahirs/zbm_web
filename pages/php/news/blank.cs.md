@@ -7,4 +7,4 @@ access:
         novinky: true
 ---
 
-    {{ phpNews( grav.user.username) }}
+    {{ phpNews( grav.user.fullname) }}

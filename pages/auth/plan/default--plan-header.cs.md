@@ -9,86 +9,91 @@ planTemplate: winter
 plan:
     monday:
         1:
-            name: 'kopce (světlo s sebou)'
-            place: 'Hala Rosnička'
+            name: 'kopce (světlo a buzolu)'
+            place: 'Hala Rosnička, Horákova 7'
             meetup: '16:30'
             group:
-                - dorost
+                    - dorost
     tuesday:
         1:
             name: 'běžecké posilování'
             place: 'ZŠ Kotlářská'
-            meetup: '16:15'
+            meetup: '16:30'
             group:
-                - zaci1
-                - zaci2
+                    - zaci1
+                    - zaci2
         2:
             name: 'běžecké posilování'
             place: 'ZŠ Kotlářská'
             meetup: '20:00'
             group:
-                - dorost
+                    - dorost
     wednesday:
         1:
             name: 'výprava za OB'
             place: 'ZŠ Milénova'
             meetup: '16:00'
             group:
-                - zabicky
+                    - zabicky
         2:
             name: 'hry + mapa'
             place: 'ZŠ Milénova'
             meetup: '16:00'
             group:
-                - pulci1
-                - pulci2
+                    - pulci1
+                    - pulci2
         3:
-            name: 'běžecký trénink'
+            name: 'mapa + teorie'
             place: 'ZŠ Milénova'
             meetup: '16:00'
             group:
-                - zaci1
-                - zaci2
+                    - zaci1
         4:
-            name: intervaly
+            name: 'běžecký trénink + teorie'
             place: 'ZŠ Milénova'
             meetup: '16:30'
             group:
-                - dorost
+                    - zaci2
+        5:
+            name: 'intervaly'
+            place: 'ZŠ Milénova'
+            meetup: '16:30'
+            group:
+                    - dorost
     thursday:
         1:
-            name: tělocvična
+            name: 'tělocvična'
             place: 'ZŠ Kotlářská'
             meetup: '16:00'
             group:
-                - pulci1
-                - pulci2
+                    - pulci1
+                    - pulci2
         2:
-            name: tělocvična
+            name: 'tělocvična'
             place: 'ZŠ Kotlářská'
             meetup: '16:30'
             group:
-                - zaci1
-                - zaci2
+                    - zaci1
+                    - zaci2
         3:
             name: 'kompenzační cvičení'
             place: 'ZŠ Kotlářská'
             meetup: '17:30'
             group:
-                - dorost
+                    - dorost
         4:
-            name: volejbal
+            name: 'volejbal'
             place: 'ZŠ Kotlářská'
             meetup: '19:30'
             group:
-                - dorost
+                    - dorost
     friday:
         1:
             name: 'florbal, basket'
             place: 'ZŠ Kotlářská'
             meetup: '18:00'
             group:
-                - dorost
+                    - dorost
     saturday: null
     sunday: null
 ---
@@ -115,7 +120,7 @@ plan:
                     {# pokud je mezi start a end datum_dne_v_tydnu, zobrazi se v tabulce#}
                     {%  if (  p.header.start <= datum_dne_v_tydnu and p.header.end >= datum_dne_v_tydnu ) %}
                       <tr {% if day_num % 2 == 0 %} class="plan--lichyDen event--program"  {% else %} class="plan--sudyDen event--program" {% endif %}
-                        data-path="{{ base_url  ~ "/auth/upravit-eventy/edit?event=/databaze/" ~ p.header.id[1:4] ~ "/" ~ p.header.template ~ "/" ~ p.header.id ~ "/" ~ p.name }}">
+                        data-path="{{ "/auth/events/edit?event=" ~ p.header.id[0:4] ~ "/" ~ p.header.id }}">
                         <td class="den">
                             {# zobrazi nazev dne (napr. "PO") jen pokud jiz neexistuje zaznam dne v tabulce #}
                             {% if zapsany_den != den %}    {# podminka, jestli uz se zapisoval #}
@@ -219,8 +224,8 @@ plan:
 
 <div id="plan--modal">
   <div id="plan--modal-content">
-    <div class="pure-g">
-      <div class="pure-u-1-2">
+    <div class="row">
+      <div class="col-6">
           <input type="checkbox" id="plan--checkbox-zabicky">
             <label for="plan--checkbox-zabicky">žabičky</label><br>
           <input type="checkbox" id="plan--checkbox-pulci1">
@@ -234,16 +239,16 @@ plan:
           <input type="checkbox" id="plan--checkbox-dorost">
             <label for="plan--checkbox-dorost">dorost+</label>
       </div>
-      <div class="pure-u-1-2">
+      <div class="col-6">
         <input type="text" id="plan--name" placeholder="název">
         <input type="text" id="plan--meetup" placeholder="čas">
         <input type="text" id="plan--place" placeholder="místo">
           <br>
-          <button type="button" class="special fit" id="plan--modal-save">Uložit</button>
+          <button type="button" class="special fit" id="plan--modal-save">Změnit</button>
           <button type="button" class="fit small" id="plan--modal-delete">Smazat</button>
         </div>
       </div>
-    <div>  <!-- pure-g -->
+    <div>  <!-- row -->
   </div> <!-- modal content -->
 </div> <!-- modal -->
 
@@ -255,13 +260,13 @@ plan:
 
 <script>
 
-window.addEventListener('load', function() {
+window.addEventListener('DOMContentLoaded', function() {
   /************************************/
   /* Eventy ze šablony - event--basic */
   /************************************/
   var modal = document.getElementById("plan--modal"),
       event_program = $(".event--program"),
-      modal = document.getElementById("plan--modal"),
+      modal_content = document.getElementById("plan--modal-content"),
       zabicky = document.getElementById("plan--checkbox-zabicky"),
       pulci1 = document.getElementById("plan--checkbox-pulci1"),
       pulci2 = document.getElementById("plan--checkbox-pulci2"),
@@ -296,11 +301,34 @@ window.addEventListener('load', function() {
           meetup.value = clicked_row.getAttribute("data-meetup");
         // misto
           place.value = clicked_row.getAttribute("data-place");
-        modal.style.display = "block";
+          
+          modal_content.style.marginTop = window.pageYOffset + "px";
+          bodyScrollLock.disableBodyScroll(modal);
+          modal.style.display = "block";
+      }
+
+      function reset_modal(){
+        zabicky.checked = pulci1.checked = pulci2.checked = zaci1.checked = zaci2.checked = dorost.checked = false;
+        name.value = meetup.value = place.value = "";
+        modal.style.display = "none";
+        bodyScrollLock.enableBodyScroll(modal);
+      }
+
+      function remove_if_empty(){
+        /* pokud je všechno prazdne a neni posledni radek, odstrani se */
+        if($(clicked_row).hasClass("event--basic") && name.value == "" && meetup.value == "" && place.value == "" ){
+          // presune nazev dne
+            var day_name = $(clicked_row).children(".den").html();
+            if(day_name.trim().length > 1){
+              $(clicked_row).next().children(".den").html(day_name);
+            }
+          // ostranit
+          $(clicked_row).remove();
+        }
       }
 
         // fce vrací upravená data do tabulky, odstrani radek pokud je prazdny, popř. po vyplnění dodá další prázdný
-          function close_modal(event) {
+          function save_modal(event) {
             // presun dat 
               // skupiny
                 var data_str = "",
@@ -353,39 +381,27 @@ window.addEventListener('load', function() {
                   $(clicked_row).addClass("event--basic");
                   $(clicked_row).after(new_row);
                 }
-            /* pokud je všechno prazdne a neni posledni radek, odstrani se */
-                if($(clicked_row).hasClass("event--basic") && name.value == "" && meetup.value == "" && place.value == "" ){
-                  // presune nazev dne
-                    var day_name = $(clicked_row).children(".den").html();
-                    if(day_name.trim().length > 1){
-                      $(clicked_row).next().children(".den").html(day_name);
-                    }
-                  // ostranit
-                  $(clicked_row).remove();
-                }
-            // reset modal
-                zabicky.checked = pulci1.checked = pulci2.checked = zaci1.checked = zaci2.checked = dorost.checked = false;
-                name.value = meetup.value = place.value = "";
-            // zavrit modal
-                modal.style.display = "none";
+            
+            remove_if_empty();
+            reset_modal();
           } 
       // vymazat řádek
           modal_delete_btn.addEventListener('click',function(){
-            name.value = meetup.value = place.value = "";
-            close_modal();
+            reset_modal();
+            remove_if_empty();
           })
 
       // Zavřit modal beze zmen
           // Ecs
           window.addEventListener('keyup',function(e){
             if (e.keyCode === 27) { 
-              modal.style.display = "none";
+              reset_modal();
             }
           })
           // click mimo modal
           window.addEventListener('click', function(e){
             if (e.target == modal) {
-              modal.style.display = "none";
+              reset_modal();
             }
           })
 
@@ -393,12 +409,12 @@ window.addEventListener('load', function() {
           // Enter
           window.addEventListener('keyup',function(e){
             if (e.keyCode === 13) { //13 = enter
-              close_modal();
+              save_modal();
             }
           })
           
           // Save
-          modal_sava_btn.addEventListener('click', close_modal)
+          modal_sava_btn.addEventListener('click', save_modal)
 
       // uložit vše
       save_btn.addEventListener('click', function(){
@@ -487,6 +503,8 @@ window.addEventListener('load', function() {
     });
 });
 </script>
+
+
 
 
 

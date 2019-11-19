@@ -1,3 +1,29 @@
+# v1.9.4
+## 10/19/2019
+
+1. [](#bugfix)
+    * Fixed a regression issue that caused sitemap not to work 'unless' you had an existing `sitemap` page [#65](https://github.com/getgrav/grav-plugin-sitemap/issues/65)
+
+# v1.9.3
+## 10/18/2019
+
+1. [](#improved)
+    * Support existing `sitemap` HTML page to be used in place of XSL version
+    * Remove `/` from end of home URLS [#58](https://github.com/getgrav/grav-plugin-sitemap/pull/58)
+    * Include translated pages only [#57](https://github.com/getgrav/grav-plugin-sitemap/pull/57)
+    * Make sure `modular` pages are not included in configuration [#56](https://github.com/getgrav/grav-plugin-sitemap/pull/56)
+
+# v1.9.2
+## 05/09/2019
+
+1. [](#improved)
+    * Enhanced HTML layout with XSL transformation [#24](https://github.com/getgrav/grav-plugin-sitemap/pull/24)
+    * Global toggles for change frequency and priority [#52](https://github.com/getgrav/grav-plugin-sitemap/pull/52)
+    * Added a meta name="robots" content="noindex" into the header for seo [#50](https://github.com/getgrav/grav-plugin-sitemap/pull/50)
+    * Added `ru` and `uk` translations [#61](https://github.com/getgrav/grav-plugin-sitemap/pull/61)
+1. [](#bugfix)
+    * Only add published translations to the sitemap [#43](https://github.com/getgrav/grav-plugin-sitemap/issues/43)
+
 # v1.9.1
 ## 04/21/2017
 

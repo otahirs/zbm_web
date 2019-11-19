@@ -14,16 +14,62 @@
 		border-radius:		0.375em,
 		element-height:		2.75em,
 		element-margin:		2em,
-		sidebar-width:		22em,
-		sidebar-width-alt:	20em,
+		sidebar-width:		18em,
+		sidebar-width-alt:	16em,
 		gutter:			3em
 	);
 
 // Font
-// import fonts using themes/js/webfont.js
+	//@import url('https://fonts.googleapis.com/css?family=Overpass:400,700');
+	/* overpass-regular - latin_latin-ext */
+	@font-face {
+		font-family: 'Overpass';
+		font-style: normal;
+		font-weight: 400;
+		font-display: block;
+		src: local('Overpass Regular'), local('Overpass-Regular'),
+			url('../fonts/overpass-v4-latin_latin-ext-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('../fonts/overpass-v4-latin_latin-ext-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	}
+	
+	/* overpass-italic - latin_latin-ext */
+	@font-face {
+		font-family: 'Overpass';
+		font-style: italic;
+		font-weight: 400;
+		font-display: block;
+		src: local('Overpass Italic'), local('Overpass-Italic'),
+			url('../fonts/overpass-v4-latin_latin-ext-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('../fonts/overpass-v4-latin_latin-ext-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	}
+	
+	/* overpass-700 - latin_latin-ext */
+	@font-face {
+		font-family: 'Overpass';
+		font-style: normal;
+		font-weight: 700;
+		font-display: block;
+		src: local('Overpass Bold'), local('Overpass-Bold'),
+			url('../fonts/overpass-v4-latin_latin-ext-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('../fonts/overpass-v4-latin_latin-ext-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	}
+	
+	/* overpass-700italic - latin_latin-ext */
+	@font-face {
+		font-family: 'Overpass';
+		font-style: italic;
+		font-weight: 700;
+		font-display: block;
+		src: local('Overpass Bold Italic'), local('Overpass-BoldItalic'),
+			url('../fonts/overpass-v4-latin_latin-ext-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('../fonts/overpass-v4-latin_latin-ext-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	}
+  
+  
+
 	$font: (
-		family:			('Raleway', sans-serif),
-		family-heading:		('Comfortaa', cursive),
+		family:			('Helvetica', sans-serif),
+		family-heading:		('Overpass', sans-serif),
 		family-fixed:		('Courier New', monospace),
 		weight:			400,
 		weight-bold:		600,
@@ -35,11 +81,13 @@
 // Palette.
 	$palette: (
 		bg:				#ffffff,
-		bg-alt:				#d3e2f0, //#f5f6f7,
+		bg-alt:			#202020,//#d3e2f0, //#f5f6f7,
+		bg-alt-dark:   	#2B2B2B,
 		fg:				#333,
 		fg-bold:			#222,
 		fg-light:			#555,
+		fg-white:			#EEE, // none
 		border:				rgba(210,215,217,0.75),
 		border-bg:			transparentize(#e6ebed, 0.75),
-		accent:				#ff4040 //#f56a6a
+		accent:				#f76555 //#e65646//#e24747 //#ff4040 //#f56a6a
 	);

@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import Dropzone from 'dropzone';
 import EXIF from 'exif-js';
-import { config, translations } from 'grav-form';
+import {config, translations} from 'grav-form';
 
 // translations
 const Dictionary = {
@@ -21,7 +21,7 @@ const Dictionary = {
 Dropzone.autoDiscover = false;
 
 const DropzoneMediaConfig = {
-    createImageThumbnails: { thumbnailWidth: 150 },
+    createImageThumbnails: {thumbnailWidth: 150},
     addRemoveLinks: false,
     dictDefaultMessage: Dictionary.dictDefaultMessage,
     dictRemoveFileConfirmation: Dictionary.dictRemoveFileConfirmation,
@@ -31,9 +31,11 @@ const DropzoneMediaConfig = {
 window.EXIF = EXIF;
 
 export default class FilesField {
-    constructor({ container = '.dropzone.files-upload', options = {} } = {}) {
+    constructor({container = '.dropzone.files-upload', options = {}} = {}) {
         this.container = $(container);
-        if (!this.container.length) { return; }
+        if (!this.container.length) {
+            return;
+        }
 
         this.urls = {};
         DropzoneMediaConfig.previewTemplate = $('#dropzone-template').html();
@@ -55,7 +57,9 @@ export default class FilesField {
     initDropzone() {
         let files = this.options.klass.container.find('[data-file]');
         let dropzone = this;
-        if (!files.length) { return; }
+        if (!files.length) {
+            return;
+        }
 
         files.each((index, file) => {
             file = $(file);
@@ -67,7 +71,8 @@ export default class FilesField {
                 status: Dropzone.ADDED,
                 accepted: true,
                 url: this.options.url,
-                removeUrl: data.remove
+                removeUrl: data.remove,
+                data
             };
 
             dropzone.files.push(mock);
@@ -83,7 +88,12 @@ export default class FilesField {
     }
 
     onDropzoneSending(file, xhr, formData) {
-        formData.append('__form-name__', this.container.closest('form').find('[name="__form-name__"]').val());
+        const form = this.container.closest('form');
+        const unique_id = form.find('[name="__unique_form_id__"]');
+        formData.append('__form-name__', form.find('[name="__form-name__"]').val());
+        if (unique_id.length) {
+            formData.append('__unique_form_id__', unique_id.val());
+        }
         formData.append('__form-file-uploader__', 1);
         formData.append('name', this.options.dotNotation);
         formData.append('form-nonce', config.form_nonce);
@@ -138,13 +148,17 @@ export default class FilesField {
     }
 
     onDropzoneRemovedFile(file, ...extra) {
-        if (!file.accepted || file.rejected) { return; }
+        if (!file.accepted || file.rejected) {
+            return;
+        }
+        const form = this.container.closest('form');
+        const unique_id = form.find('[name="__unique_form_id__"]');
         let url = file.removeUrl || this.urls.delete || `${location.href}.json`;
         let path = (url || '').match(/path:(.*)\//);
         let data = new FormData();
 
         data.append('filename', file.name);
-        data.append('__form-name__', this.container.closest('form').find('[name="__form-name__"]').val());
+        data.append('__form-name__', form.find('[name="__form-name__"]').val());
         data.append('name', this.options.dotNotation);
         data.append('form-nonce', config.form_nonce);
         data.append('uri', this.getURI());
@@ -154,6 +168,10 @@ export default class FilesField {
             data.append('session', file.sessionParams);
         }
 
+        if (unique_id.length) {
+            data.append('__unique_form_id__', unique_id.val());
+        }
+
         $.ajax({
             url,
             data,
@@ -161,7 +179,9 @@ export default class FilesField {
             contentType: false,
             processData: false,
             success: () => {
-                if (!path) { return; }
+                if (!path) {
+                    return;
+                }
 
                 path = global.atob(path[1]);
                 let input = this.container.find('[name][type="hidden"]');
@@ -178,7 +198,7 @@ export default class FilesField {
 
         return this.handleError({
             file,
-            data: { status: 'error' },
+            data: {status: 'error'},
             msg: `<pre>${message}</pre>`
         });
     }
@@ -215,6 +235,7 @@ export default class FilesField {
     }
 }
 
+/*
 export function UriToMarkdown(uri) {
     uri = uri.replace(/@3x|@2x|@1x/, '');
     uri = uri.replace(/\(/g, '%28');
@@ -222,12 +243,15 @@ export function UriToMarkdown(uri) {
 
     return uri.match(/\.(jpe?g|png|gif|svg)$/i) ? `![](${uri})` : `[${decodeURI(uri)}](${uri})`;
 }
+*/
 
 let instances = [];
 let cache = $();
 const onAddedNodes = (event, target/* , record, instance */) => {
     let files = $(target).find('.dropzone.files-upload');
-    if (!files.length) { return; }
+    if (!files.length) {
+        return;
+    }
 
     files.each((index, file) => {
         file = $(file);
@@ -258,35 +282,52 @@ const addNode = (container) => {
         resizeQuality: settings.resizeQuality || null,
         accept: function(file, done) {
             const resolution = settings.resolution;
+            let error = '';
             if (!resolution) return done();
 
-            setTimeout(() => {
-                let error = '';
-                if (resolution.min) {
-                    Object.keys(resolution.min).forEach((attr) => {
-                        if (file[attr] < resolution.min[attr]) {
-                            error += translations.PLUGIN_FORM.RESOLUTION_MIN.replace(/{{attr}}/g, attr).replace(/{{min}}/g, resolution.min[attr]);
-                        }
-                    });
-                }
+            if ((this.options.maxFiles != null) && (this.getAcceptedFiles().length >= this.options.maxFiles)) {
+                done(this.options.dictMaxFilesExceeded.replace('{{maxFiles}}', this.options.maxFiles));
+                return this.emit('maxfilesexceeded', file);
+            }
 
-                if (!(settings.resizeWidth || settings.resizeHeight)) {
-                    if (resolution.max) {
-                        Object.keys(resolution.max).forEach((attr) => {
-                            if (file[attr] > resolution.max[attr]) {
-                                error += translations.PLUGIN_FORM.RESOLUTION_MAX.replace(/{{attr}}/g, attr).replace(/{{max}}/g, resolution.max[attr]);
+            const reader = new FileReader();
+            if (resolution.min || (!(settings.resizeWidth || settings.resizeHeight) && resolution.max)) {
+                reader.onload = function(event) {
+                    const image = new Image();
+                    image.src = event.target.result;
+                    image.onload = function() {
+                        if (resolution.min) {
+                            Object.keys(resolution.min).forEach((attr) => {
+                                if (this[attr] < resolution.min[attr]) {
+                                    error += translations.PLUGIN_FORM.RESOLUTION_MIN.replace(/{{attr}}/g, attr).replace(/{{min}}/g, resolution.min[attr]);
+                                }
+                            });
+                        }
+
+                        if (!(settings.resizeWidth || settings.resizeHeight)) {
+                            if (resolution.max) {
+                                Object.keys(resolution.max).forEach((attr) => {
+                                    if (this[attr] > resolution.max[attr]) {
+                                        error += translations.PLUGIN_FORM.RESOLUTION_MAX.replace(/{{attr}}/g, attr).replace(/{{max}}/g, resolution.max[attr]);
+                                    }
+                                });
                             }
-                        });
-                    }
-                }
+                        }
+
+                        done(error);
+                    };
+                };
+
+                reader.readAsDataURL(file);
+            } else {
                 return done(error);
-            }, 50);
+            }
         }
     };
 
     cache = cache.add(container);
     container = container[0];
-    instances.push(new FilesField({ container, options }));
+    instances.push(new FilesField({container, options}));
 };
 
 export let Instances = (() => {

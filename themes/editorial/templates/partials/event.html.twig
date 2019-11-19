@@ -1,0 +1,217 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block javascripts %}
+{{ parent() }}
+{% do assets.addJs('https://api4.mapy.cz/loader.js', 1) %}
+{% do assets.addJs('theme://js/loadMap.js', 1) %}
+{% endblock %}
+
+    {% block header %}
+    <header id="header" class="container">
+        <div class="row align-items-center">
+            <div class="col-8">
+
+                <h1>{{ page.title }}</h1>
+                {% set group = page.header.taxonomy.skupina %}
+                {% if group|length > 0 and group|length < 6 %}
+                {% if "zabicky" in group %} žabičky {% endif %} 
+                {% if "pulci1" in group and "pulci2" in group %} pulci {% elseif "pulci1" in group %} pulci1 {% elseif "pulci2" in group %} pulci2 {% endif %} 
+                {% if "zaci1" in group and "zaci2" in group %} žáci {% elseif "zaci1" in group %} žáci1 {% elseif "zaci2" in group %} žáci2 {% endif %} 
+                {% if "dorost" in group %} dorost+ {% endif %}
+                {% else %}
+                všichni
+                {% endif %}
+
+
+            </div>
+            <div class="col-4">
+
+                <span class="day-month">
+                    
+                </span>
+                
+                {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
+                {% if page.header.start|localizeddate('medium', 'none','cs','Europe/Prague', 'M') != page.header.end|localizeddate('medium', 'none','cs','Europe/Prague', 'M')%}
+                {{page.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc d. MMMM') ~ ' — '~ page.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc d. MMMM') }}
+                {# pokud neni stejny den - format 6.-8. cerven #}
+                {% elseif page.header.start != page.header.end %}
+                {{page.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc d.') ~ ' — '~ page.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc d. MMMM') }}
+                {% else %}
+                {# pokud stejny den - format 6. cerven #}
+                {{page.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc d. MMMM') }}
+                {% endif %}
+                <br>
+            {{page.header.place}}
+
+            </div>
+        </div>
+    </header>
+    {% endblock %}
+         
+    {% block content %}	 
+        
+
+        {% if page.header.results %}
+            <h4>Výsledky</h4>
+            <ul>    
+                {% for r in page.header.results %}
+                <li><a href="{{ r.link }}">{{ r.name }}</a></li>
+                {% endfor %}
+            </ul>
+            <hr>
+        {% endif %}
+
+        {% if page.header.routes %}
+            <h4>Postupy</h4>
+            <ul>    
+                {% for r in page.header.routes %}
+                <li><a href="{{ r.link }}">{{ r.name }}</a></li>
+                {% endfor %}
+            </ul>
+            <hr>
+        {% endif %}
+
+        {% if page.header.link %}
+            {{page.header.link}}
+            <br>
+        {% endif %}
+        
+
+        {% if page.header.note %}
+            <p> {{ page.header.note|markdown }}</p>
+            <hr>
+        {% endif %}
+
+        
+        <dl>
+            {% if page.header.transport %}
+                <dt>Sraz</dt>
+                <dd>{{page.header.meetTime ~ ' '~ page.header.meetPlace}} </dd>
+            {% endif %}
+
+            {% if page.header.transport %}
+                <dt>Doprava</dt>
+                <dd>{{page.header.transport}}</dd>
+            {% endif %}
+
+            {% if page.header.accomodation %}
+                <dt>Ubytování</dt>
+                <dd>{{page.header.accomodation}}</dd>
+            {% endif %}
+
+            {% if page.header.food %}
+                <dt>Jídlo</dt>
+                <dd>{{page.header.food}}</dd>
+            {% endif %}
+        </dl>
+
+        <dl>
+            {% if page.header.startTime %}
+                <dt>Start</dt>
+                <dd>{{page.header.startTime}}</dd>
+            {% endif %}
+
+            {% if page.header.map %}
+                <dt>Mapa</dt>
+                <dd>{{page.header.map }}</dd>
+            {% endif %}
+
+            {% if page.header.terrain %}
+                <dt>Terén</dt>
+                <dd>{{page.header.terrain }}</dd>
+            {% endif %}
+            {% if page.header.eventTypeDescription %}
+                <dt>Typ</dt>
+                <dd>{{page.header.eventTypeDescription }}</dd>
+            {% endif %}
+        </dl>
+
+         <dl>
+            {% if page.header.price %}
+                <dt>Cena</dt>
+                <dd>{{page.header.price}}</dd>
+            {% endif %}
+
+            {% if page.header.return %}
+                <dt>Návrat</dt>
+                <dd>{{page.header.return}}</dd>
+            {% endif %}
+
+            {% if page.header.program %}
+                <dt>Program</dt>
+                <dd>{{page.header.program}}</dd>
+            {% endif %}
+
+            {% if page.header.thingsToTake %}
+                <dt>S sebou</dt>
+                <dd>{{page.header.thingsToTake}}</dd>
+            {% endif %}
+        </dl>
+
+        {% if page.header.leader %}
+            Vedoucí {{page.header.leader}}
+            <br><br>
+        {% endif %}
+
+
+    {% if page.header.gps %}
+    <hr>
+    <div id="map" style="height:400px;"></div>
+    <br>
+    <script type="text/javascript">
+
+        // nacteni mapy
+            var alt = {{ page.header.gps|split(',')|first }};
+            var lng = {{ page.header.gps|split(',')|last }};
+
+            var center = SMap.Coords.fromWGS84( lng,alt );
+            var m = new SMap(JAK.gel("map"), center, 10);
+            m.addDefaultLayer(SMap.DEF_BASE).enable();
+            m.addDefaultControls();	 
+        
+        // marker    
+            var layer = new SMap.Layer.Marker();
+            m.addLayer(layer);
+            layer.enable();
+
+            var card = new SMap.Card();
+            card.getHeader().innerHTML = "<strong>{{page.header.title}}</strong>";
+            card.getBody().innerHTML = '<a href="https://mapy.cz/zakladni?x=' + lng + '&y=' + alt + '&z=17&source=coor&id=' + lng + '%2C' + alt + '" target="_blank">otevřít na mapy.cz</a>';
+  
+            var options = { 
+                title: "Místo tréninku"
+            };
+            var marker = new SMap.Marker(center, "myMarker", options);
+            marker.decorate(SMap.Marker.Feature.Card, card);
+            layer.addMarker(marker);     
+
+        // autorezize
+            var sync = new SMap.Control.Sync();
+            m.addControl(sync);      
+
+        // zakázání scrollovacího zoomování
+            var controls = m.getControls();
+            for (var i=0;i<controls.length;i++) {
+                if (controls[i] instanceof SMap.Control.Mouse) {
+                    controls[i].configure(SMap.MOUSE_PAN | SMap.MOUSE_ZOOM);
+                }
+            }
+    </script>
+    {% endif %}
+
+
+	
+
+
+
+
+
+
+
+	
+
+
+
+	   {% endblock %}
+            
+

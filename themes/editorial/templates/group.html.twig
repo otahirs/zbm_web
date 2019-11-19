@@ -1,0 +1,232 @@
+{% extends 'partials/base.html.twig' %}
+{% block header %}
+    <header id="header" style="border-bottom: none;">
+        <h1>{{ page.title }}</h1>
+    </header>
+{% endblock %}
+
+{% block body %}
+{# {{ page.content }} #}
+
+        <ul class="tabs">
+            <li data-tab="info" class="tab-link group-base group-info">Info</li>
+            <li data-tab="plan" class="tab-link group-base group-plan current">Plán na tento týden</li>
+        
+            <li data-tab="soustredeni" class="tab-link group-text">Soustředění</li>
+            <li data-tab="routes" class="tab-link group-text">Postupy</li>
+            <li data-tab="results" class="tab-link group-text">Výsledky</li>
+            <li data-tab="mapt" class="tab-link group-text">Mapová teorie</li>
+        </ul>
+        <ul class="tabs">
+            <li data-tab="soustredeni" class="tab-link group-icon"><i class="fa fa-users" aria-hidden="true"></i></li>
+            <li data-tab="routes" class="tab-link group-icon"><i class="fa fa-location-arrow" aria-hidden="true"></i></li>
+            <li data-tab="results" class="tab-link group-icon"><i class="fa fa-list-ol" aria-hidden="true"></i></li>
+            <li data-tab="mapt" class="tab-link group-icon"><i class="fa fa-map" aria-hidden="true"></i></li>
+        </ul>
+
+    {% set collection = taxonomy.findTaxonomy({'skupina':page.header.group}).order('header.start','desc')  %} 
+    {% set collection = collection.ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']) %}
+    <section>
+
+        <div id="info" class="tab-content">
+            <div>
+            {{ page.header.description }}
+            <hr>
+            <a href="/kontakty#{{page.header.group}}">Kontakty na trenéry</a>
+            <!--
+            <div id="commento"></div>
+            <script defer src="https://cdn.commento.io/js/commento.js"></script>
+            -->
+            </div>
+        </div>
+
+        <div id="plan" class="tab-content current">
+            {# ziska array s pravidelnymi treninky #}
+            {% set pravidelne_treninky_site = page.find('/auth/plan') %}
+            {% set pravidelne_treninky =  attribute(attribute(pravidelne_treninky_site, "header"), "plan") %}
+            <table class="plan">
+                {# inicializace pole urcujiciho den v tydnu #}
+                {% set ENGweek = ['monday','tuesday','wednesday','thursday','friday','saturday', 'sunday'] %}
+                {% set CZweek = [ 'PO', 'UT', 'ST', 'CT', 'PA', 'SO', 'NE'] %}
+                {# inicializace promene urcujici jestli uz je v tabulce zapsany den v tydnu #}
+                {% set zapsany_den = 'NULL' %}
+
+                {# cyklus pro 7 dni prochazejici pole "CZweek", aktualni promenou zastupuje "den" #}
+                {% for day_num,den in CZweek %}
+                    {# "datum_dne_v_tydnu" drzi datum dnu v aktualnim tydnu#}
+                    {% set datum_dne_v_tydnu = strtotime([strtotime("last Sunday")|date('Y-m-d'), " +", loop.index, " day"]|join)|date('Y-m-d') %} {#kvuli chybe ve 'strtotime' nelze zadat jen 'last Sunday + day'#}
+                    {#cyklus prochazejici vsechny soubory v databazi#}
+                    {% for p in collection if p.header.template in ['zavod', 'trenink', 'soustredeni', 'tabor'] %}
+                        {# pokud je mezi start a end datum_dne_v_tydnu, zobrazi se v tabulce#}
+                        {%  if (  p.header.start <= datum_dne_v_tydnu and p.header.end >= datum_dne_v_tydnu ) %}
+                        <tr class="event--program{% if day_num % 2 == 0 %} plan--lichyDen  {% else %} plan--sudyDen {% endif %}">
+                            <td class="den">
+                                {# zobrazi nazev dne (napr. "PO") jen pokud jiz neexistuje zaznam dne v tabulce #}
+                                {% if zapsany_den != den %}    {# podminka, jestli uz se zapisoval #}
+                                {{ datum_dne_v_tydnu|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper }}
+                                {% set zapsany_den = den %}   {# ulozime, ze uz se zapisoval #}
+                                {% endif %}
+                            </td>
+                            <td class="nazev"> <a href="{{ p.url }}">{{ p.title }}</a></td>         {# vypise nazev s odkazem na event #}
+                            <td class="sraz">
+                            {# pokud se datum dne rovná datu zacatku eventu, zobrazi sraz #}
+                            {% if p.header.start == datum_dne_v_tydnu %}
+                                {% if p.header.meetTime is defined  %}
+                                {{p.header.meetTime }}
+                                {% endif %}
+                            {% endif %}
+                            </td>    
+                            <td class="misto"> 
+                                {# pokud se datum dne rovná datu zacatku eventu, zobrazi misto srazu #}
+                                {% if p.header.start == datum_dne_v_tydnu %}
+                                {% if p.header.meetPlace is defined  %}
+                                {{p.header.meetPlace }}
+                                {% endif %}
+                            {% endif %}
+                            </td>                            
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+                    {% for event in attribute(pravidelne_treninky, ENGweek[day_num]) if page.header.group in event.group %}
+                    <tr {% if day_num % 2 == 0 %} class="plan--lichyDen"  {% else %} class="plan--sudyDen" {% endif %}>
+                            <td class="den">
+                                {# zobrazi nazev dne (napr. "PO") jen pokud jiz neexistuje zaznam dne v tabulce #}
+                                {% if zapsany_den != den %}    {# podminka, jestli uz se zapisoval #}
+                                {{ datum_dne_v_tydnu|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper }}
+                                {% set zapsany_den = den %}   {# ulozime, ze uz se zapisoval #}
+                                {% endif %}
+                            </td>
+                            <td class="nazev"> {{event.name}} </td>         {# vypise nazev s odkazem na event #}
+                            <td class="sraz"> {{event.meetup}} </td>
+                            <td class="misto"> {{event.place}} </td>                            {# vypise misto konani #}
+                    </tr>
+                    {% endfor %}
+                    {# pokud neni v den nic, je volno #}
+                    {% if zapsany_den != den %}  {# jestli se nezapisoval den do tabulky, neni tam zadny zaznam => zapiseme ze je volno #}
+                    <tr {% if day_num % 2 == 0 %} class="plan--lichyDen"  {% else %} class="plan--sudyDen" {% endif %}>
+                        <td class="den"> {{ datum_dne_v_tydnu|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper }}  </td>
+                        <td class="nazev"> volno </td>
+                        <td class="misto"> </td>
+                        <td class="sraz"> </td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="soustredeni" class="tab-content">
+            <table>
+                {% for p in collection if p.header.end >= strtotime("today")|date('Y-m-d') and p.header.template == "soustredeni" %}
+                        <tr data-href="{{ p.url }}" class="click-row">
+                        <td class="datum">
+                                {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
+                                {# HELP |localizeddate http://twig-extensions.readthedocs.io/en/latest/intl.html#}
+                                {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
+                                {% if p.header.start|localizeddate('medium', 'none','cs','Europe/Prague', 'M') != p.header.end|localizeddate('medium', 'none','cs','Europe/Prague', 'M')%}
+                                {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+                                {# pokud neni stejny den - format 6.-8. cerven #}
+                                {% elseif p.header.start|localizeddate('medium', 'none') != p.header.end|localizeddate('medium', 'none')%}
+                                {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+                                {% else %}
+                                {# pokud stejny den - format 6. cerven #}
+                                {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+                                {% endif %}
+                            </td>
+                            <td class="nazev"><b>{{ p.title }}</b></td>
+                            <td class="misto">{{p.header.place}}</td>
+                        </tr>
+                {% else %}
+                    <tr>
+                        <td><em>Momentálně nejsou naplánována žádná soustředění.</em></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="routes" class="tab-content">
+            {% for p in collection if p.header.routes|length %}
+                <h4>
+                    {{ p.header.title }}&nbsp;|&nbsp;
+                    {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
+                    {% if p.header.start|localizeddate('medium', 'none','cs','Europe/Prague', 'M') != p.header.end|localizeddate('medium', 'none','cs','Europe/Prague', 'M')%}
+                    {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+                    {# pokud neni stejny den - format 6.-8. cerven #}
+                    {% elseif p.header.start|localizeddate('medium', 'none') != p.header.end|localizeddate('medium', 'none')%}
+                    {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+                    {% else %}
+                    {# pokud stejny den - format 6. cerven #}
+                    {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+                    {% endif %}
+                </h4>
+                <ul>
+                    {% for routes in p.header.routes %}
+                    <li><a href="{{ routes.link }}" target="_blank">{{ routes.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+
+        <div id="results" class="tab-content">
+            {% for p in collection if p.header.results|length %}
+                <h4>
+                    {{ p.header.title }}&nbsp;|&nbsp;
+                    {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
+                    {% if p.header.start|localizeddate('medium', 'none','cs','Europe/Prague', 'M') != p.header.end|localizeddate('medium', 'none','cs','Europe/Prague', 'M')%}
+                    {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+                    {# pokud neni stejny den - format 6.-8. cerven #}
+                    {% elseif p.header.start|localizeddate('medium', 'none') != p.header.end|localizeddate('medium', 'none')%}
+                    {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+                    {% else %}
+                    {# pokud stejny den - format 6. cerven #}
+                    {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+                    {% endif %}
+                </h4>
+                <ul>
+                    {% for results in p.header.results %}
+                    <li><a href="{{ results.link }}" target="_blank">{{ results.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+
+        <div id="mapt" class="tab-content">
+            {% set p = page.find('/data/maptheory') %}
+            {% set group = attribute(p.header.maptheory, page.header.group) %}
+            {% if "today"|date("m") >= 11 %}
+                {% set deadline = "today -90 days"|date("Y-m-d") %}
+            {% else %}
+                {% set deadline = "today -360 days"|date("Y-m-d") %}
+            {% endif %}
+            <ul>
+            {% for item in group if item[:10] > deadline %}                  
+                <li>            
+                    <a href="{{base_url_absolute}}/data/maptheory/{{item}}" target="_blank"> {{item[:10]|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM Y')}} </a> 
+                </li>
+            {% endfor %}
+            </ul>
+            <em>Zobrazují se mapové teorie za poslední rok, starší záznamy naleznete v archivu.</em>
+        </div>
+  
+
+
+    <section>
+    <script>
+    window.addEventListener('load', function () {
+        $('[data-href]').click(function () {
+            window.location = $(this).data("href");
+        });
+
+        $('ul.tabs li').click(function(){
+            var tab_id = $(this).attr('data-tab');
+
+            $('ul.tabs li').removeClass('current');
+            $('.tab-content').removeClass('current');
+
+            $(this).addClass('current');
+            $("#"+tab_id).addClass('current');
+	    })
+    });
+
+    
+    </script>
+{% endblock %}

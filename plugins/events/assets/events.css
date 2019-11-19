@@ -30,7 +30,7 @@ html {
       line-height: 1.5rem;
       font-size: .75rem; }
     .calendar-legend li.calendar-today .color {
-      background: #1BB3E9;
+      background: #e65646;
       color: #ffffff; }
 
 /* html5 .calendar-container element */
@@ -86,7 +86,7 @@ html {
       vertical-align: top;
       padding: .45rem; }
       .calendar-container .calendar tbody tr td.current .events .day {
-        background: #1BB3E9;
+        background: #e65646;
         color: #ffffff; }
         .calendar-container .calendar tbody tr td.current .events .day a {
           color: #ffffff; }
@@ -115,7 +115,7 @@ html {
             height: 100%;
             color: #222222; }
             .calendar-container .calendar tbody tr td .events .day a:hover {
-              background: #1BB3E9;
+              background: #e65646;
               color: #ffffff; }
         .calendar-container .calendar tbody tr td .events .expand {
           background: #dddddd;
@@ -203,15 +203,15 @@ html {
 /* html5 .event-button element */
 .event-button {
   display: inline-block;
-  border: 2px solid #1BB3E9;
+  border: 2px solid #e65646;
   border-radius: 4px;
   padding: 0.5rem 2rem;
-  color: #1BB3E9;
+  color: #e65646;
   background: #ffffff; }
   .event-button:hover {
     color: #fff;
-    border: 2px solid #1BB3E9;
-    background: #1BB3E9; }
+    border: 2px solid #e65646;
+    background: #e65646; }
 
 /* html5 .events-container element */
 .events-container {
@@ -411,7 +411,7 @@ html {
   display: inline-block; }
   .event-tags a {
     display: inline-block;
-    border: 1px solid #1BB3E9;
+    border: 1px solid #e65646;
     border-radius: 4px;
     padding: 0 0.5rem;
     text-transform: uppercase;
