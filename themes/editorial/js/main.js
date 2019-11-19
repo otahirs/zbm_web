@@ -22,7 +22,10 @@
 		// vars
 		var	$window = $(window),
 			$head = $('head'),
-			$body = $('body');
+			$body = $('body'),
+			$main = $('#main'),
+			$sidebar = $('#sidebar'),
+			$links = $('#nav-links');
 
 		// Disable animations/transitions ...
 
@@ -51,6 +54,10 @@
 						}, 100);
 
 				});
+			// 
+			$window.on('load', () => {
+				$sidebar.css("opacity", "1");
+			})
 
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();
@@ -85,128 +92,59 @@
 					});
 
 		// Sidebar.
-			var $sidebar = $('#sidebar'),
-				$sidebar_inner = $sidebar.children('.inner');
-
-			// Inactive by default on <= large.
-				skel
-					.on('+large', function() {
-						$sidebar.addClass('inactive');
-					})
-					.on('-large !large', function() {
-						$sidebar.removeClass('inactive');
-					});
-
-			// Hack: Workaround for Chrome/Android scrollbar position bug.
-				if (skel.vars.os == 'android'
-				&&	skel.vars.browser == 'chrome')
-					$('<style>#sidebar .inner::-webkit-scrollbar { display: none; }</style>')
-						.appendTo($head);
-
-			// Toggle.
-				if (skel.vars.IEVersion > 9) {
-
-					$('<a href="#sidebar" class="toggle">Toggle</a>')
-						.appendTo($sidebar)
-						.on('click', function(event) {
-
-							// Prevent default.
-								event.preventDefault();
-								event.stopPropagation();
-
-							// Toggle.
-								$sidebar.toggleClass('inactive');
-						});
-
-				}
-			// Menu support for mobile (only when menu displays over page -> smaller thatn "large")
-				skel.on('+large', function() {
-					// Swipe to open menu 
-					$(".swipe-area").swipe({
-						swipeStatus:function(event, phase, direction, distance, duration, fingers){
-								if (phase=="move" && direction =="right") {
-									$sidebar.removeClass("inactive");
-									return false;
-								}
-						}
-					});
-					// Tap or click outside menu to close
-					$(document).on('click touchstart', function(event) { 
-						if(!$(event.target).closest($sidebar).length) {
-							if(!$sidebar.hasClass("inactive")){
-								$sidebar.addClass("inactive");
-							}
-						}
-					})        
-					
-				})
+			
+			// Menu swipe support
+			  var slideout = new Slideout({
+			    'panel': document.getElementById('main'),
+					'menu': document.getElementById('sidebar'),
+					'padding': $sidebar.css("width").slice(0, -2),
+					'easing': 'ease-in-out'
+				});		
 				
+				// resize padding because sidebar width is dynamic
+				$(window).on('resize',function(){
+					setTimeout(function(){
+						if(skel.breakpoint("large").active){
+							slideout.padding = $sidebar.css("width").slice(0, -2);
+						}
+					}, 100);					
+				});
 
-			// Events.
+			  // Toggle button
+			  document.getElementById('toggle').addEventListener('click', function() {
+			    slideout.toggle();
+			  });	
+	
+				// close on click outside sidebar
+				function closeMenu(e) {
+					e.preventDefault();
+					slideout.close();
+				}
 
-				// Link clicks.
-					$sidebar.on('click', 'a', function(event) {
-
-						// >large? Bail.
-							if (!skel.breakpoint('large').active)
-								return;
-
-						// Vars.
-							var $a = $(this),
-								href = $a.attr('href'),
-								target = $a.attr('target');
-
-						// Prevent default.
-							event.preventDefault();
-							event.stopPropagation();
-
-						// Check URL.
-							if (!href || href == '#' || href == '')
-								return;
-
-						// Hide sidebar.
-							$sidebar.addClass('inactive');
-
-						// Redirect to href.
-							setTimeout(function() {
-
-								if (target == '_blank')
-									window.open(href);
-								else
-									window.location.href = href;
-
-							}, 500);
-
+				var $dim = $('.dim');
+				slideout
+					.on('beforeopen', function() {
+						this.panel.classList.add('panel-open');
+						$dim.fadeIn(200); 
+						
+					})
+					.on('open', function() {
+						this.panel.addEventListener('click', closeMenu);
+					})
+					.on('beforeclose', function() {
+						this.panel.classList.remove('panel-open');
+						this.panel.removeEventListener('click', closeMenu);
+						$dim.fadeOut(200); 
 					});
 
-				// Prevent certain events inside the panel from bubbling.
-					$sidebar.on('click touchend touchstart touchmove', function(event) {
-
-						// >large? Bail.
-							if (!skel.breakpoint('large').active)
-								return;
-
-						// Prevent propagation.
-							event.stopPropagation();
-
-					});
-
-			/*	// Hide panel on body click/tap.
-					$body.on('click touchend', function(event) {
-
-						// >large? Bail.
-							if (!skel.breakpoint('large').active)
-								return;
-
-						// Deactivate.
-							$sidebar.addClass('inactive');
-
-					});
-					*/
+			
+			
+				
 			// Scroll lock.
 			// Note: If you do anything to change the height of the sidebar's content, be sure to
-			// trigger 'resize.sidebar-lock' on $window so stuff doesn't get out of sync.
-
+			// trigger 'resize.sidebar-lock' on $window so stuff doesn't get out of sync.			
+		/*		
+				var  $sidebar_inner = $sidebar.children('.inner');
 				$window.on('load.sidebar-lock', function() {
 
 					var sh, wh, st;
@@ -277,6 +215,7 @@
 						.trigger('resize.sidebar-lock');
 
 					});
+		*/
 
 		// Menu.
 			var $menu = $('#menu'),
@@ -303,6 +242,97 @@
 
 				});
 
+		// Autohide navlinks to submenu				
+				function calcWidth() {
+					var navwidth = 0; 
+					$('#links > li').each(function() {
+						navwidth += $(this).outerWidth( true );
+					});
+					
+					var availablespace = $('#nav-links').width() - 10;
+					
+					if (navwidth > availablespace && !$('#links > li').first().hasClass("more")) {
+						var lastItem = $('#links > li:not(.more)').last();
+						lastItem.attr('data-width', lastItem.outerWidth(true));
+						lastItem.prependTo($('#links .more ul'));
+						calcWidth();
+					} else {	
+						var firstMoreElement = $('#links li.more li').first();
+						while(navwidth + firstMoreElement.data('width') < availablespace) {
+							firstMoreElement.insertBefore($('#links .more'));
+							navwidth += firstMoreElement.data('width');
+							firstMoreElement = $('#links li.more li').first();		
+						}
+					}
+				  
+					if ($('.more li').length > 0) {
+						$('.more').css('display','block');
+					} else {
+						$('.more').css('display','none');
+					}
+				}
+				
+				$(window).on('load',function(){
+					calcWidth();
+					$links.css("opacity", "1");
+				});
+				$(window).on('resize',function(){
+					calcWidth()
+					setTimeout(calcWidth, 300);
+				});
+				
+
+				var linksBtn = document.getElementById('links-more-btn'),
+						linksMore = document.getElementById('links-more-ul');   
+
+				// open nad close on button click
+				linksBtn.addEventListener('click', () => {
+					if(linksMore.style.display == "block"){
+						linksMore.style.display = "none";
+					}
+					else{
+						linksMore.style.display = "block";
+					}
+				})
+
+				// close when clicked outside button
+				document.addEventListener('click', (e) => {
+					if(!linksBtn.contains(e.target)){
+						linksMore.style.display = "none";
+					}
+				});
+
+				// close on main menu manipulation
+				slideout.on('translatestart', () => { linksMore.style.display = "none" });
+
+		// fix offset for anchors due to fixed header
+			var offset = 95;
+			$('a[href*="#"]:not([href="#"], #sidebar)').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			
+				var target = $(this.hash);
+				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+				if (target.length) {
+					$('html,body').animate({
+					scrollTop: target.offset().top - offset //offsets for fixed header
+					}, 500);
+					return false;
+				}
+				}
+			});
+			//Executed on page load with URL containing an anchor tag.
+			if($(location.href.split("#")[1])) {
+				var target = $('#'+location.href.split("#")[1]);
+				if (target.length) {
+					$('html,body').animate({
+					scrollTop: target.offset().top - offset //offset height of header here too.
+					}, 500);
+					return false;
+				}
+			}
+
 	});
+
+	
 
 })(jQuery);

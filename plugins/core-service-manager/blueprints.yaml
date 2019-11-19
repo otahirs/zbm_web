@@ -1,5 +1,5 @@
 name: Core Service Manager
-version: 1.0.16
+version: 1.0.20
 description: Adds a service manager layer to the Grav API.
 icon: plug
 author:
@@ -15,7 +15,7 @@ license: MIT
 dependencies:
     - { name: grav, version: '>=1.0.0' }
     - { name: admin, version: '>=1.8.3' }
-    
+
 form:
   validation: strict
   fields:
@@ -29,7 +29,7 @@ form:
         0: Disabled
       validate:
         type: bool
-        
+
     override_admin_twigs:
       type: toggle
       label: Override Admin Twig
@@ -38,10 +38,10 @@ form:
       default: 1
       options:
         1: Yes
-        0: No 
+        0: No
       validate:
-        type: bool 
-        
+        type: bool
+
     show_samples:
       type: toggle
       label: Add sample services
@@ -52,4 +52,4 @@ form:
         1: Enabled
         0: Disabled
       validate:
-        type: bool       
+        type: bool

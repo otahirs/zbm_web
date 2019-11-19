@@ -72,8 +72,8 @@
             }
         ]);
 
-        $url = \Grav\Common\Grav::instance()['base_url_relative'];
-        $url .= "/admin/admin-power-tools/reports";
+        $url = ReportUtil::getAdminBaseRelative();
+        $url .= "/admin-power-tools/reports";
         $manager->registerService('action', [
             "caption" => "Reports",
             "icon" => "fa-list",

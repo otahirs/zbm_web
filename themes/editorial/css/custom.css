@@ -4,47 +4,28 @@
 /*******  home ***********/
 /*************************/
 .swipe-area {
+    position: absolute;
     float: left;
     width: 2em;
     height: 100%;
 }
 
 .active:last-child {
-    margin-right: -15%;
+    margin-right: -17%;
     background-color: #ffffff;
     padding: 10px !important;
     margin-left: -10px;
 }
 
-#home--groups{
-    background-color: #d3e2f0;
-    padding: 1rem 0.8rem 0.5rem 0.8rem;
-    margin-bottom: 3rem;
-}
-.home--groups-text {
-    border-bottom: none;
-    font-size: 1.9vw;
-    font-family: Comfortaa;
-    color: #333;
-    padding: 0.8rem 0.4rem 0.5rem 0.4rem;
-    border: 1px solid transparent;
-}
-.home--groups-text:hover {
-    background-color: white;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
 
-table.plan td{
-    padding: 0em .5em;
-}
-.plan--lichyDen{
-    background-color: #d3e2f0 !important;
-    border: none;
-}
-.plan--sudyDen{
-    background-color: white !important;
-    border: none;
+#sidebar nav a, #sidebar section a {
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 0.625em 0;
+    display: block;
+    border-bottom: none;
 }
 
 .news--header{
@@ -54,65 +35,13 @@ table.plan td{
     margin-bottom: 0.5em;
     margin-top: 0.5em;
 }
-/**************************/
-/********* menu ***********/
-/**************************/
 
-#menu ul a, #menu ul span{
-    padding: 0
-}
 
-#menu > ul > li {
-    border-top: none;
-    margin: 0;
-}
 
-#menu > ul > li > ul {
-    margin: 0;
-}
-
-#menu > ul > li > ul > li {
-    margin: 0;
-    padding-left: 0em;
-}
-
-#menu ul a, #menu ul span{
-    font-size: 1.5rem;
-  }
-
-#menu > ul > li > ul a, #menu > ul > li > ul span {
-    font-size: 1.3rem;
- }
-
-#menu ul {
-    letter-spacing: 0.0625em;
-}
-
-#main > .inner > section {
-    padding: 4em 0 4em 0;
-}
-
-#header{
-    padding: 4em 0 1em 0;
-}
-
-  /* Odsazeni "Blizi se" */
-  #blizi-se{ padding-left: 6em; } 
-  @media screen and (max-width: 1680px) {
-    #blizi-se{ padding-left: 5em; } }
-  @media screen and (max-width: 1280px) {
-    #blizi-se{ padding-left: 4em; } }
-  @media screen and (max-width: 736px) {
-    #blizi-se{ padding-left: 2em; } }
-  @media screen and (max-width: 567px) {
-    #blizi-se{ padding-left: 0; } 
-    a.home--groups-text{
-	font-size: 6vw;}
-    }
 
 
 /* The Modal (background) */
-.news--modal, #plan--modal {
+.news--modal, #plan--modal, #calendar-modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 10001; /* Sit on top */
@@ -124,18 +53,32 @@ table.plan td{
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-#plan--modal {
+#plan--modal, #calendar-modal {
     padding-top: 150px; /* Location of the box */
 }
 
+#calendar-modal-close {
+    float: right;
+    cursor: pointer;
+}
+
+
 /* Modal Content */
-.news--modal-content, #plan--modal-content {
+.news--modal-content, #plan--modal-content, #calendar-modal-inner {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     max-width: 700px;
     margin-bottom: 100px;
+}
+
+#calendar-modal-inner{
+    padding: 50px;
+    max-width: 500px;
+}
+#NewsModalScroll {
+    overflow-y: auto;
 }
 
 /* modal obsah */
@@ -151,6 +94,9 @@ table.plan td{
 }
 .News--img-label, .News--img-settings, .News--img-delete-button{
     display: inline;
+}
+.News--img-label {
+    white-space: nowrap;
 }
 .News--img-delete{
     width: 1.8em;
@@ -171,7 +117,10 @@ table.plan td{
 
 #News--pictures{
     margin-bottom: 1rem;
-    margin-top: 1rem
+    margin-top: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-right: 20px;
 }
 
 #News--deleteButtonSpan, #News--close{
@@ -305,12 +254,7 @@ table.plan td{
     padding-left: 0.2em;
 }
 
-/******************/
-/* upravit eventy */
-/******************/
-.editEvents--event:hover {
-    background-color: #c4c4c4 !important;
-}
+
 /************/
 /* kontakty */
 /************/
@@ -410,7 +354,147 @@ dd {
 	box-shadow: none;
 }
 
-#filtr_program input.search{
-	display: inline;
+
+
+#topbar {
+    position: fixed;
+    height: 3rem;
+    width: 100%;
+    top: 0px;
+    background: #EEE;
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+    line-height: 3rem;
+    text-align: center;
+    z-index: 2;
+}
+#main, #sidebar {
+    top: 3rem;
+}
+#main {
+    position: relative;
+}
+#topbar a {
+    text-decoration: none;
+    font-family: Overpass;
+    color: black;
+    border-bottom: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#topbar a:hover {
+    outline: 1px dotted black;
+    outline-offset: -1px;
+}
+.topbar--title{
+    font-size: 24px;
+    left: 0;
+    padding: 0 18px;
+    position: fixed;
+    top: 2px;
 }
 
+
+@media screen and (min-width: 1280px) {
+    #sidebar .toggle::before, #sidebar .toggle {
+        display: none; 
+    }
+}
+
+
+
+#sidebar > .inner > * {
+    border-bottom: none;
+}
+
+/* tabs */
+.tab-folder > .tab-content:target ~ .tab-content:last-child, .tab-folder > .tab-content {
+    display: none;
+}
+.tab-folder > :last-child, .tab-folder > .tab-content:target {
+    display: block;
+}
+
+
+#sidebar > .inner {
+    scrollbar-width: none; /*For Firefox*/
+    -ms-overflow-style: none; /*For IE and Edge*/
+}
+
+#sidebar > .inner::-webkit-scrollbar {
+width: 0px; /*For Chrome, Safari and Opera*/
+}
+
+/* swipe */
+.slideout-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 0;
+  display: none;
+}
+
+.slideout-menu-left {
+  left: 0;
+}
+
+.slideout-menu-right {
+  right: 0;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  background-color: #FFF; /* A background-color is required */
+  min-height: 100vh;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+@media screen and (min-width: 1280px) {
+  .slideout-panel {
+    margin-left: 0;
+  }
+
+  .slideout-menu {
+    display: block;
+  }
+}
+
+
+.dim {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+  }
+
+#main {
+    overflow-y: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}   
+
+#soon form {
+    margin: 0;
+}

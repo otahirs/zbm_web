@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="{{ grav.language.getActive ?: config.site.default_lang }}">
 <head>
-    
 {% block head %}
     <meta charset="utf-8" />
     <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
@@ -11,36 +10,34 @@
     {% include 'partials/metadata.html.twig' %}
     <link rel="icon" type="image/png" href="{{ url('theme://images/frog.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
     {% block stylesheets %}
-	{% do assets.addCss('theme://css/datepicker.css', 200) %}
-        {% do assets.addCss('theme://css/pure-base-min.css', 101) %}
-	{% do assets.addCss('theme://css/pure-grids-min.css', 100) %}
-        {% do assets.addCss('theme://css/pure-grids-responsive-min.css', 97) %}
-        {% do assets.addCss('theme://css/font-awesome.min.css', 99) %}
-        {% do assets.addCss('theme://css/main.css', 200) %}
+        {% do assets.addCss('theme://css/main.css', 101) %}
+        {% do assets.addCss('theme://css/bootstrap-grid.min.css', 99) %}
+        {% do assets.addCss('theme://css/font-awesome.min.css', 98) %}
+	    {% do assets.addCss('theme://css/datepicker.css', 90) %}
+	    {% do assets.addCss('theme://css/simplemde.min.css', 10) %}
+	    {% do assets.addCss('theme://css/dropzone.css', 10) %}
         {% do assets.addCss('theme://css/custom.css', 1) %}
-	{% do assets.addCss('theme://css/simplemde.min.css', 96) %}
-	{% do assets.addCss('theme://css/dropzone.css', 81) %}
 
     {% endblock %}
-    {{ assets.css() }}
+    {{ assets.css()|raw }}
 
     {% block javascripts %}
         {% do assets.addJs('jquery', 1000) %}
-	{% do assets.addJs('theme://js/skel.min.js', 100) %}
-        {% do assets.addJs('theme://js/jquery.touchSwipe.min.js', 98) %}
-        {% do assets.addJs('theme://js/util.js', 99) %}
-        {% do assets.addJs('theme://js/main.js', 97) %}
-        {% do assets.addJs('theme://js/turndown.js', {'group':'defer'}) %}
-        {% do assets.addJs('theme://js/datepicker.js', {'group':'defer'}) %}
+	    {% do assets.addJs('theme://js/skel.min.js', 100) %}
+        {% do assets.addJs('theme://js/main.js', 99) %}
+        {% do assets.addJs('theme://js/slideout.min.js', 98) %}
+        {% do assets.addJs('theme://js/util.js', 97) %}
         {% do assets.addJs('theme://js/list.min.js', {'group':'defer'}) %}
+        {% do assets.addJs('theme://js/datepicker.js', {'group':'defer'}) %}
+        {% do assets.addJs('theme://js/bodyScrollLock.js', {'group':'defer'}) %}
+        {% do assets.addJs('theme://js/turndown.js', {'group':'defer'}) %}
         {% do assets.addJs('theme://js/dropzone.js', {'group':'defer'}) %}   
-	{% do assets.addJs('theme://js/simplemde.min.js', {'group':'defer'}) %}
+	    {% do assets.addJs('theme://js/simplemde.min.js', {'group':'defer'}) %}
     {% endblock %}
-    {{ assets.js() }}
-    {{ assets.js('defer',{'loading':'defer'}) }}
+    {{ assets.js()|raw }}
+    {{ assets.js('defer',{'loading':'defer'})|raw }}
 
 {% endblock head%}
 </head>
@@ -48,8 +45,11 @@
 
 <div id="wrapper">
     <div id="main">
-        <div class="swipe-area"></div>
+        <div class="dim"></div>
+        <a id="toggle"></a>
+        {% block  inner %}
         <div class="inner">
+        
             {% block header %}
             <header id="header">
 		<h1>{{ page.title }}</h1>
@@ -58,9 +58,10 @@
                 {% include 'partials/socialIcons.html.twig' %} -->
             </header><!-- End #header -->
             {% endblock %}
+
             {% block body %}
             <section>
-                <header class="main">
+                <header class="main">              
                   <!--  <h1>{{ page.title }}</h1> -->
                 </header>
                 {% if page.header.primaryImage %}
@@ -73,10 +74,34 @@
             {% endblock %}
 
         </div> <!-- End .inner -->
+        {% endblock %}
     </div><!-- End #main -->
 
 {% block sidebar %}
     {%  include 'partials/sidebar.html.twig' %}
+{% endblock %}
+
+{% block topbar %}
+    <div id="topbar">
+        <a href="/">
+            <span class="topbar--title">SK Žabovřesky Brno</span>
+        </a>
+        <div  id="nav-links">
+            
+          <ul id="links">
+            <li><a href="/about">Kdo jsme?</a></li>
+            <li><a href="https://zacitorientak.cz/brno/co-to-je/190" target="_blank">Co je to orientační běh? <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+            <li><a href="/arealy">Pevné kontroly</a></li>
+            <li><a href="/races">Závody</a></li>
+            <li><a href="/sponsors">Partneři</a></li>
+            <li><a href="/kontakty">Kontakty</a></li>
+            <li id="links-more-btn" class="more hide" data-width="200">
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                <ul id="links-more-ul"></ul>
+            </li>
+        </ul>
+        </div>
+    </div>    
 {% endblock %}
 
 

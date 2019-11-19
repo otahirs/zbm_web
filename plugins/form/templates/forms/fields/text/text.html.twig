@@ -1,13 +1,13 @@
+{% if field.prepend or field.append or field.copy_to_clipboard %}
+    {% set field = field|merge({'wrapper_classes': 'form-input-addon-wrapper'}) %}
+{% endif %}
+
 {% extends "forms/field.html.twig" %}
 
 {% block prepend %}
 {% if field.prepend %}
     <div class="form-input-addon form-input-prepend">
-        {% if grav.twig.twig.filters['tu'] is defined %}
-            {{- field.prepend|tu|raw -}}
-        {% else %}
-            {{- field.prepend|t|raw -}}
-        {% endif %}
+        {{- field.prepend|t|raw -}}
     </div>
 {% endif %}
 {% endblock %}
@@ -21,20 +21,19 @@
 {% endblock %}
 
 {% block append %}
-    {% if field.append %}
-        <div class="form-input-addon form-input-append">
-            {% if grav.twig.twig.filters['tu'] is defined %}
-                {{- field.append|tu|raw -}}
+    {% if field.copy_to_clipboard %}
+        <div class="form-input-addon form-input-append copy-to-clipboard">
+            {% if field.copy_to_clipboard in ['0', '1'] %}
+                <i class="fa fa-clipboard"></i>
             {% else %}
-                {{- field.append|t|raw -}}
+                {{- field.copy_to_clipboard|t|raw -}}
             {% endif %}
+        </div>
+    {% elseif field.append %}
+        <div class="form-input-addon form-input-append">
+            {{- field.append|t|raw -}}
         </div>
     {% endif %}
 {% endblock %}
 
-{% block input %}
-{% if field.prepend or field.append %}
-    {% set field = field|merge({'wrapper_classes': 'form-input-addon-wrapper'}) %}
-{% endif %}
-{{ parent() }}
-{% endblock %}
+

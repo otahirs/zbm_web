@@ -2,7 +2,6 @@
 @import 'libs/functions';
 @import 'libs/mixins';
 @import 'libs/skel';
-@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700|Raleway:400,400i,700,700i');
 
 /*
 	Editorial by HTML5 UP
@@ -21,12 +20,13 @@
 		small-to-xlarge: '(min-width: 481px) and (max-width: 1680px)'
 	));
 
+	/*
 	@include skel-layout((
 		reset: 'full',
 		boxModel: 'border',
 		grid: ( gutters: 1.5em )
 	));
-
+	*/
 // Base.
 
 	@import 'base/page';
@@ -55,3 +55,8 @@
 	@import 'layout/banner';
 	@import 'layout/footer';
 	@import 'layout/menu';
+
+// Custom.
+	@import 'custom';
+ 
+	  

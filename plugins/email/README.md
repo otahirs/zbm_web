@@ -20,6 +20,11 @@ from:
 from_name:
 to:
 to_name:
+queue:
+  enabled: true
+  flush_frequency: '* * * * *'
+  flush_msg_limit: 10
+  flush_time_limit: 100
 mailer:
   engine: sendmail
   smtp:
@@ -80,8 +85,8 @@ mailer:
   engine: smtp
   smtp:
     server: smtp.gmail.com
-    port: 465
-    encryption: ssl
+    port: 587
+    encryption: tls
     user: 'YOUR_GOOGLE_EMAIL_ADDRESS'
     password: 'YOUR_GOOGLE_PASSWORD'
 ```
@@ -179,6 +184,18 @@ Solid SMTP options that even provide a FREE tier for low email volumes include:
 
 If you are still unsure why should be using one in the first place, check out this article: https://zapier.com/learn/email-marketing/best-transactional-email-sending-services/
 
+## Email Queue
+
+For performance reasons, it's often desirable to queue emails and send them in batches, rather than forcing Grav to wait while an email is sent.  This is because email servers are sometimes slow and you might not want to wait for the whole email-sending process before continuing with Grav processing.
+
+To address this, you can enable the **Email Queue** and this will ensure all email's in Grav are actually sent to the queue, and not sent directly.  In order for the emails to be actually sent, you need to flush the queue.  By default this is handled by the **Grav Scheduler**, so you need to ensure you have that enabled and setup correctly or **your emails will not be sent!!!**.
+
+You can also manually flush the queue by using the provided CLI command:
+
+```
+$ bin/plugin email flush-queue
+```
+
 ## Testing with CLI Command
 
 You can test your email configuration with the following CLI Command:
@@ -229,15 +246,79 @@ form:
     # Their values may be referenced in email actions via '{{ form.value.FIELDNAME|e }}'
 
   process:
-    - email:
-        subject: "[Custom form] {{ form.value.name|e }}"
+    email:
+      subject: "[Custom form] {{ form.value.name|e }}"
+      body: "{% include 'forms/data.txt.twig' %}"
+      from: sender@example.com
+      from_name: 'Custom sender name'
+      to: recipient@example.com
+      to_name: 'Custom recipient name'
+      content_type: 'text/plain'
+      process_markdown: true
+```
+
+## Multiple Emails
+
+You can send multiple emails by creating an array of emails under the `process: email:` option in the form:
+
+```
+title: Custom form
+
+form:
+  name: custom_form
+  fields:
+
+    # Any fields you'd like to add to the form:
+    # Their values may be referenced in email actions via '{{ form.value.FIELDNAME|e }}'
+
+  process:
+    email:
+      -
+        subject: "[Custom Email 1] {{ form.value.name|e }}"
         body: "{% include 'forms/data.txt.twig' %}"
-        from: sender@example.com
-        from_name: 'Custom sender name'
-        to: recipient@example.com
-        to_name: 'Custom recipient name'
-        content_type: 'text/plain'
-        process_markdown: true
+        from: {mail: "owner@mysite.com", name: "Site OWner"}'
+        to: {mail: "recepient_1@example.com", name: "Recepient 1"}
+        template: "email/base.html.twig"
+      -
+        subject: "[Custom Email 2] {{ form.value.name|e }}"
+        body: "{% include 'forms/data.txt.twig' %}"
+        from: {mail: "owner@mysite.com", name: "Site OWner"}'
+        to: {mail: "recepient_2@example.com", name: "Recepient 1"}
+        template: "email/base.html.twig"
+```
+
+## Templating Emails
+
+You can specify a Twig template for HTML rendering, else Grav will use the default one `email/base.html.twig` which is included in this plugin.  You can also specify a custom template that extends the base, where you can customize the `{% block content %}` and `{% block footer %}`.  For example:
+
+```twig
+{% extends 'email/base.html.twig' %}
+
+{% block content %}
+<p>
+    Greetings {{ form.value.name|e }},
+</p>
+
+<p>
+    We have received your request for help. Our team will get in touch with you within 3 Business Days.
+</p>
+
+<p>
+    Regards,
+</p>
+
+<p>
+    <b>My Company</b>
+    <br /><br />
+    E - <a href="mailto:help@mycompany.com">help@mycompany.com</a><br />
+    M - +1 555-123-4567<br />
+    W - <a href="https://mycompany.com">mycompany.com</a>
+</p>
+{% endblock %}
+
+{% block footer %}
+  <p style="text-align: center;">My Company - All Rights Reserved</p>
+{% endblock %}
 ```
 
 ## Sending Attachments
@@ -250,8 +331,7 @@ form:
   name: custom_form
   fields:
 
-    -
-      name: my-file
+    my-file:
       label: 'Add a file'
       type: file
       multiple: false
@@ -263,11 +343,11 @@ form:
         - text/plain
 
   process:
-    -
-      email:
-        body: '{% include "forms/data.html.twig" %}'
-        attachments:
-          - 'my-file'
+    
+    email:
+      body: '{% include "forms/data.html.twig" %}'
+      attachments:
+        - 'my-file'
 ```
 
 ## Additional action parameters
@@ -306,6 +386,12 @@ to:
   name: Human-readable name
 ```
 
+or inline:
+
+```
+to: {mail: 'mail@example.com', name: 'Human-readable name'}
+```
+
 #### Multiple email addresses (with and without names)
 
 ```
@@ -320,6 +406,16 @@ to:
     mail+3@example.com
   -
     mail+4@example.com
+```
+
+or inline:
+
+```
+to:
+  - {mail: 'mail@example.com', name: 'Human-readable name'} 
+  - {mail: 'mail+2@example.com', name: 'Another human-readable name'}
+  - mail+3@example.com
+  - mail+4@example.com
 ```
 
 ## Multi-part MIME messages

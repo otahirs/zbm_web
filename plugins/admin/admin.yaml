@@ -6,6 +6,7 @@ logo_text: ''
 body_classes: ''
 content_padding: true
 twofa_enabled: true
+log_viewer_files: ['grav', 'email']
 sidebar:
   activate: tab
   hover_delay: 100
@@ -25,6 +26,7 @@ session:
   timeout: 1800
 warnings:
   delete_page: true
+  secure_delete: false
 edit_mode: normal
 frontend_preview_target: inline
 show_github_msg: true

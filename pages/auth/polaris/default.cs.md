@@ -6,48 +6,25 @@ process:
 access:
     site:
         polaris: true
-polaris:
-    2018:
-        p07: Polaris_2018_07.pdf
-        p06: Polaris_2018_06.pdf
-        p05: Polaris_2018_05.pdf
-        p04: Polaris_2018_04.pdf
-        p03: Polaris_2018_03.pdf
-        p02: Polaris_2018_02.pdf
-        p01: Polaris_2018_01.pdf
-    2017:
-        p06: Polaris_2017_06.pdf
-        p05: Polaris_2017_05.pdf
-        p04: Polaris_2017_04.pdf
-        p03: Polaris_2017_03.pdf
-        p02: Polaris_2017_02.pdf
-        p01: Polaris_2017_01.pdf
 ---
 
-<form id="polarisForm" class="pure-form pure-form-aligned" enctype="multipart/form-data" method="post">
-<div class="pure-g">
-        <div class="pure-u-1">
-            <h2>Nahrát nový Polaris</h2>
-
-        </div>
-        <div class="pure-u-1 pure-u-md-1-2">
-            <div class="pure-control-group">
-                <label for="PDF">PDF</label> 
-                <input id="PDF" type="file" name="PDF" accept="application/pdf" required oninvalid="this.setCustomValidity('Nahrejte Polaris ve formátu PDF.')"
+<form id="polarisForm" enctype="multipart/form-data" method="post">
+<h2>Nahrát nový Polaris</h2>
+<div class="row">
+        <div class="col-md-6">
+            <div>
+                <input type="file" name="PDF" accept="application/pdf" required oninvalid="this.setCustomValidity('Nahrejte Polaris ve formátu PDF.')"
                 oninput="setCustomValidity('')" >
             </div>
-            <div class="pure-control-group">
-                <label for="year">Rok</label>  
-                <input id="year" list="yearList" name="year" style="width: 6em;" required pattern="[0-9]{4}" oninvalid="this.setCustomValidity('Vyplňte rok ve formátu YYYY')"
+            <br>
+            <div> 
+                <input type="text" placeholder="Rok" list="yearList" name="year" style="width: 6em; display:inline;" required pattern="[0-9]{4}" oninvalid="this.setCustomValidity('Vyplňte rok ve formátu YYYY')"
                 oninput="setCustomValidity('')" autocomplete="off">
                 <datalist id="yearList">
                     <option value="{{ "now"|date("Y") }}">
                 </datalist>  
-            </div>  
-            <div class="pure-control-group">
-                <label for="cislo">Číslo</label>
-                <input id="cislo" list="cisloList" name="cislo" style="width: 4.5em" required  pattern="[0-9]{2}" oninvalid="this.setCustomValidity('Vyplňte číslo časopisu ve formátu XX')"
-                oninput="setCustomValidity('')" autocomplete="off">
+         
+                <input placeholder="Číslo" type="text" list="cisloList" name="cislo" style="width: 6em; display:inline;" required  pattern="[0-9]{2}" oninvalid="this.setCustomValidity('Vyplňte číslo časopisu ve formátu XX')" oninput="setCustomValidity('')" autocomplete="off">
                 <datalist id="cisloList">
                     <option value="01">
                     <option value="02">
@@ -61,13 +38,9 @@ polaris:
                 </datalist>
             </div> 
         </div>
-        <div class="pure-u-1 pure-u-md-1-2">
+        <div class="col-md-6">
             <button type="submit" id="sendPolaris">Odeslat</button>
             <div id="response"></div>
-        </div>
-        <div class="pure-u-1">
-            <br>
-            <p><em>Po odeslání trvá zpracování Polarisu několik desítek sekund, neopouštějte stránku.</em></p>
         </div>
 </div>
 </form>
@@ -83,7 +56,6 @@ polaris:
         responseDiv.innerHTML = '<br><i class="fa fa-spinner fa-pulse fa-3x" aria-hidden="true"></i> Náhrávám se polaris a vytváří se náhled.';
         responseDiv.style.color = "black";
           var polarisForm = new FormData(document.getElementById("polarisForm"));
-          polarisForm.append("path", "{{'./' ~ page.relativePagePath() ~ '/' ~ page.name }}" );
           $.ajax({
               url: "/php/polaris",
               type: "POST",
@@ -110,17 +82,17 @@ polaris:
 </script>
 
 
-
-{% for rok, year in page.header.polaris %}
+{% set p = page.find('/data/polaris') %}
+{% for rok, year in p.header.polaris %}
     <section>
     <h2>{{rok}}</h2>
-    <div class="pure-g">
+    <div class="row">
         {% for cislo, pdf in year %}
-            <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4 pure-u-lg-1-5 pure-u-xl-1-6"> 
+            <div class="col-sm-6 col-md-3 col-lg-2">
                 <div class="polaris--outerDiv">
                     <div class="polaris--innerDiv">
-                        <a href="{{base_url_absolute}}/databaze/polaris/{{rok}}/{{pdf}}" target="_blank">
-                            <img class="pure-img" src="{{base_url_absolute}}/databaze/polaris/{{rok}}/{{pdf}}.jpg">
+                        <a href="/data/polaris/{{rok}}/{{pdf}}" target="_blank">
+                            <img src="/data/polaris/{{rok}}/{{pdf}}.jpg">
                             <div class="polaris--title"> 
                                 {{pdf[13:2]}}
                             </div>
@@ -144,7 +116,6 @@ polaris:
         if (confirm("Odstranit Polaris?") == true) {
             var deleteDiv = this.parentElement.parentElement;
             var deletePolarisForm = new FormData();
-            deletePolarisForm.append("path", "{{'./' ~ page.relativePagePath() ~ '/' ~ page.name }}" );
             deletePolarisForm.append("year", this.getAttribute("data-year") );
             deletePolarisForm.append("cislo", this.getAttribute("data-cislo") );
             deletePolarisForm.append("pdf", this.getAttribute("data-pdf") );
