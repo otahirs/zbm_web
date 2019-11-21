@@ -9,7 +9,7 @@ planTemplate: winter
 plan:
     monday:
         1:
-            name: 'kopce (světlo a buzolu)'
+            name: 'kopce (světlo a buzolu) - dnes po cestách'
             place: 'Hala Rosnička, Horákova 7'
             meetup: '16:30'
             group:
