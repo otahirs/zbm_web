@@ -1,6 +1,8 @@
 ---
 maptheory:
-    dorost:
-        - 2019-11-13.pdf
+    dorost: {  }
+    pulci2: {  }
+    zaci2: {  }
+    zaci1: {  }
 ---
 

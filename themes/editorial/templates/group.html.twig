@@ -200,7 +200,7 @@
             <ul>
             {% for item in group if item[:10] > deadline %}                  
                 <li>            
-                    <a href="{{base_url_absolute}}/data/maptheory/{{item}}" target="_blank"> {{item[:10]|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM Y')}} </a> 
+                    <a href="{{base_url_absolute}}/data/maptheory/{{page.header.group}}/{{item}}" target="_blank"> {{item[:10]|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM Y')}} </a> 
                 </li>
             {% endfor %}
             </ul>
