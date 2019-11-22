@@ -23,5 +23,12 @@ map: ''
 terrain: ''
 leader: ''
 note: 'https://www.atletikauni.cz/cz/s2423/Serialy/Seznam-rocniku/c3117-Rocnik-serialu/atsy35'
+results:
+    -
+        name: '10 km'
+        link: 'https://www.atletikauni.cz/cz/s1526/Vysledky/Seznam-zavodu/c3108-Detail-vysledku/atr7084-Hlavni-zavod-10km'
+    -
+        name: '5 km'
+        link: 'https://www.atletikauni.cz/cz/s1526/Vysledky/Seznam-zavodu/c3108-Detail-vysledku/atr7083-Hlavni-zavod-5km'
 ---
 * **sraz**: {{page.header.meetTime}} Doprava {{page.header.transport}}.
