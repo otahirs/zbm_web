@@ -126,8 +126,6 @@ access:
                 <textarea id="note" name="note" rows="1">{{ event.header.note }}</textarea>
             </div>
         </div>
-        </div>
-   
         {% if event.header.start != event.header.end %}
             <hr>
             <div class="row">
@@ -141,6 +139,9 @@ access:
                 </div> 
             </div> <!-- row -->
         {% endif %}
+        </div>
+   
+        
 
 
     <div id="zt" class="tab-content">
