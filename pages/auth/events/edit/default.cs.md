@@ -128,7 +128,8 @@ access:
         </div>
         </div>
    
-        {% if event.start != event.end %}
+        {% if event.header.start != event.header.end %}
+            <hr>
             <div class="row">
                 <div class="col-6">
                     <label for="accomodation">Ubytování</label>
