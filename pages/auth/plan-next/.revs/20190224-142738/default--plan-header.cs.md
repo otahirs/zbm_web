@@ -2,96 +2,101 @@
 process:
     twig: true
     markdown: false
+never_cache_twig: true
 access:
     site:
         plan: true
 planTemplate: winter
 plan:
-    monday: null
+    monday:
+        1:
+            name: 'kopce (světlo s sebou)'
+            place: 'Hala Rosnička'
+            meetup: '16:30'
+            group:
+                - dorost
     tuesday:
         1:
             name: 'běžecké posilování'
             place: 'ZŠ Kotlářská'
-            meetup: '16:30'
+            meetup: '16:15'
             group:
-                    - zaci1
-                    - zaci2
+                - zaci1
+                - zaci2
         2:
             name: 'běžecké posilování'
             place: 'ZŠ Kotlářská'
             meetup: '20:00'
             group:
-                    - dorost
+                - dorost
     wednesday:
         1:
             name: 'výprava za OB'
             place: 'ZŠ Milénova'
             meetup: '16:00'
             group:
-                    - zabicky
+                - zabicky
         2:
             name: 'hry + mapa'
             place: 'ZŠ Milénova'
             meetup: '16:00'
             group:
-                    - pulci1
-                    - pulci2
+                - pulci1
+                - pulci2
         3:
-            name: 'mapa + teorie'
+            name: 'běžecký trénink'
             place: 'ZŠ Milénova'
             meetup: '16:00'
             group:
-                    - zaci1
+                - zaci1
+                - zaci2
         4:
-            name: 'běžecký trénink + teorie'
+            name: intervaly
             place: 'ZŠ Milénova'
             meetup: '16:30'
             group:
-                    - zaci2
-        5:
-            name: 'intervaly'
-            place: 'ZŠ Milénova'
-            meetup: '16:30'
-            group:
-                    - dorost
+                - dorost
     thursday:
         1:
-            name: 'tělocvična'
+            name: tělocvična
             place: 'ZŠ Kotlářská'
             meetup: '16:00'
             group:
-                    - pulci1
-                    - pulci2
+                - pulci1
+                - pulci2
         2:
-            name: 'tělocvična'
+            name: tělocvična
             place: 'ZŠ Kotlářská'
             meetup: '16:30'
             group:
-                    - zaci1
-                    - zaci2
+                - zaci1
+                - zaci2
         3:
             name: 'kompenzační cvičení'
             place: 'ZŠ Kotlářská'
             meetup: '17:30'
             group:
-                    - dorost
+                - dorost
         4:
-            name: 'volejbal'
+            name: volejbal
             place: 'ZŠ Kotlářská'
             meetup: '19:30'
             group:
-                    - dorost
+                - dorost
     friday:
         1:
             name: 'florbal, basket'
             place: 'ZŠ Kotlářská'
             meetup: '18:00'
             group:
-                    - dorost
+                - dorost
     saturday: null
     sunday: null
 ---
 
+{# ************************************************************#}
+{# rozdíl mezi /plan-next and /plan je jen -  "loop.index + 7" #}
+{# ************************************************************#}
 <div id="planEdit">
         {% set plan_collection = page.collection({'items':'@root.descendants','order': {'by': 'default', 'dir': 'asc'}}).ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']) %}
         
@@ -108,13 +113,13 @@ plan:
             {# cyklus pro 7 dni prochazejici pole "CZweek", aktualni promenou zastupuje "den" #}
             {% for day_num,den in CZweek %}
                 {# "datum_dne_v_tydnu" drzi datum dnu v aktualnim tydnu #}
-                {% set datum_dne_v_tydnu = strtotime([strtotime("last Sunday")|date('Y-m-d'), " +", loop.index, " day"]|join)|date('Y-m-d') %} {#kvuli chybe ve 'strtotime' nelze zadat jen 'last Sunday + day'#}
+                {% set datum_dne_v_tydnu = strtotime([strtotime("last Sunday")|date('Y-m-d'), " +", loop.index + 7, " day"]|join)|date('Y-m-d') %} {#kvuli chybe ve 'strtotime' nelze zadat jen 'last Sunday + day'#}
                 {#cyklus prochazejici vsechny soubory v databazi#}
                 {% for p in plan_collection %}
                     {# pokud je mezi start a end datum_dne_v_tydnu, zobrazi se v tabulce#}
                     {%  if (  p.header.start <= datum_dne_v_tydnu and p.header.end >= datum_dne_v_tydnu ) %}
                       <tr {% if day_num % 2 == 0 %} class="plan--lichyDen event--program"  {% else %} class="plan--sudyDen event--program" {% endif %}
-                        data-path="{{ "/auth/events/edit?event=" ~ p.header.id[0:4] ~ "/" ~ p.header.id }}">
+                        data-path="{{ base_url  ~ "/auth/upravit-eventy/edit?event=/databaze/" ~ p.header.id[1:4] ~ "/" ~ p.header.template ~ "/" ~ p.header.id ~ "/" ~ p.name }}">
                         <td class="den">
                             {# zobrazi nazev dne (napr. "PO") jen pokud jiz neexistuje zaznam dne v tabulce #}
                             {% if zapsany_den != den %}    {# podminka, jestli uz se zapisoval #}
@@ -218,8 +223,8 @@ plan:
 
 <div id="plan--modal">
   <div id="plan--modal-content">
-    <div class="row">
-      <div class="col-6">
+    <div class="pure-g">
+      <div class="pure-u-1-2">
           <input type="checkbox" id="plan--checkbox-zabicky">
             <label for="plan--checkbox-zabicky">žabičky</label><br>
           <input type="checkbox" id="plan--checkbox-pulci1">
@@ -233,16 +238,16 @@ plan:
           <input type="checkbox" id="plan--checkbox-dorost">
             <label for="plan--checkbox-dorost">dorost+</label>
       </div>
-      <div class="col-6">
+      <div class="pure-u-1-2">
         <input type="text" id="plan--name" placeholder="název">
         <input type="text" id="plan--meetup" placeholder="čas">
         <input type="text" id="plan--place" placeholder="místo">
           <br>
-          <button type="button" class="special fit" id="plan--modal-save">Změnit</button>
+          <button type="button" class="special fit" id="plan--modal-save">Uložit</button>
           <button type="button" class="fit small" id="plan--modal-delete">Smazat</button>
         </div>
       </div>
-    <div>  <!-- row -->
+    <div>  <!-- pure-g -->
   </div> <!-- modal content -->
 </div> <!-- modal -->
 
@@ -254,13 +259,13 @@ plan:
 
 <script>
 
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
   /************************************/
   /* Eventy ze šablony - event--basic */
   /************************************/
   var modal = document.getElementById("plan--modal"),
       event_program = $(".event--program"),
-      modal_content = document.getElementById("plan--modal-content"),
+      modal = document.getElementById("plan--modal"),
       zabicky = document.getElementById("plan--checkbox-zabicky"),
       pulci1 = document.getElementById("plan--checkbox-pulci1"),
       pulci2 = document.getElementById("plan--checkbox-pulci2"),
@@ -295,34 +300,11 @@ window.addEventListener('DOMContentLoaded', function() {
           meetup.value = clicked_row.getAttribute("data-meetup");
         // misto
           place.value = clicked_row.getAttribute("data-place");
-          
-          modal_content.style.marginTop = window.pageYOffset + "px";
-          bodyScrollLock.disableBodyScroll(modal);
-          modal.style.display = "block";
-      }
-
-      function reset_modal(){
-        zabicky.checked = pulci1.checked = pulci2.checked = zaci1.checked = zaci2.checked = dorost.checked = false;
-        name.value = meetup.value = place.value = "";
-        modal.style.display = "none";
-        bodyScrollLock.enableBodyScroll(modal);
-      }
-
-      function remove_if_empty(){
-        /* pokud je všechno prazdne a neni posledni radek, odstrani se */
-        if($(clicked_row).hasClass("event--basic") && name.value == "" && meetup.value == "" && place.value == "" ){
-          // presune nazev dne
-            var day_name = $(clicked_row).children(".den").html();
-            if(day_name.trim().length > 1){
-              $(clicked_row).next().children(".den").html(day_name);
-            }
-          // ostranit
-          $(clicked_row).remove();
-        }
+        modal.style.display = "block";
       }
 
         // fce vrací upravená data do tabulky, odstrani radek pokud je prazdny, popř. po vyplnění dodá další prázdný
-          function save_modal(event) {
+          function close_modal(event) {
             // presun dat 
               // skupiny
                 var data_str = "",
@@ -375,27 +357,39 @@ window.addEventListener('DOMContentLoaded', function() {
                   $(clicked_row).addClass("event--basic");
                   $(clicked_row).after(new_row);
                 }
-            
-            remove_if_empty();
-            reset_modal();
+            /* pokud je všechno prazdne a neni posledni radek, odstrani se */
+                if($(clicked_row).hasClass("event--basic") && name.value == "" && meetup.value == "" && place.value == "" ){
+                  // presune nazev dne
+                    var day_name = $(clicked_row).children(".den").html();
+                    if(day_name.trim().length > 1){
+                      $(clicked_row).next().children(".den").html(day_name);
+                    }
+                  // ostranit
+                  $(clicked_row).remove();
+                }
+            // reset modal
+                zabicky.checked = pulci1.checked = pulci2.checked = zaci1.checked = zaci2.checked = dorost.checked = false;
+                name.value = meetup.value = place.value = "";
+            // zavrit modal
+                modal.style.display = "none";
           } 
       // vymazat řádek
           modal_delete_btn.addEventListener('click',function(){
-            reset_modal();
-            remove_if_empty();
+            name.value = meetup.value = place.value = "";
+            close_modal();
           })
 
       // Zavřit modal beze zmen
           // Ecs
           window.addEventListener('keyup',function(e){
             if (e.keyCode === 27) { 
-              reset_modal();
+              modal.style.display = "none";
             }
           })
           // click mimo modal
           window.addEventListener('click', function(e){
             if (e.target == modal) {
-              reset_modal();
+              modal.style.display = "none";
             }
           })
 
@@ -403,15 +397,14 @@ window.addEventListener('DOMContentLoaded', function() {
           // Enter
           window.addEventListener('keyup',function(e){
             if (e.keyCode === 13) { //13 = enter
-              save_modal();
+              close_modal();
             }
           })
           
           // Save
-          modal_sava_btn.addEventListener('click', save_modal)
+          modal_sava_btn.addEventListener('click', close_modal)
 
-      // uložit vše
-      save_btn.addEventListener('click', function(){
+      function saveAll(reload=true){
         var planForm = new FormData();
         // všechny řádky tabulky označené jako event--basic pošle na zpracování
         $(".event--basic").each(function(index){
@@ -436,13 +429,17 @@ window.addEventListener('DOMContentLoaded', function() {
              processData: false,
              contentType: false,
              success: function (){ 
-               window.location.replace(location.href);
+               if(reload){
+                  window.location.replace(location.href);
+               }
              },
              error: function (xhr, desc, err){
 
              }
         });
-      })
+      }
+      // uložit vše
+      save_btn.addEventListener('click', saveAll);
 
   /******************/
   /* Načíst šablonu */
@@ -495,8 +492,33 @@ window.addEventListener('DOMContentLoaded', function() {
             console.log(event.target);
       }
     });
+
+    /* cron save */
+    function getSearchParams(k){
+      var p={};
+      location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})
+      return k?p[k]:p;
+    }
+    
+    if(getSearchParams("save")){
+        saveAll(reload=false);
+    }
 });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
