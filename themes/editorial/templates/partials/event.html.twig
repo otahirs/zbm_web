@@ -159,6 +159,7 @@
     <div id="map" style="height:400px;"></div>
     <br>
     <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', function () {
 
         // nacteni mapy
             var alt = {{ page.header.gps|split(',')|first }};
@@ -196,6 +197,7 @@
                     controls[i].configure(SMap.MOUSE_PAN | SMap.MOUSE_ZOOM);
                 }
             }
+    });
     </script>
     {% endif %}
 
