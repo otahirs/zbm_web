@@ -39,13 +39,16 @@ date: '2018-07-10'
 
 ---
 ## Vedení oddílu   <a class ="fix-topbar-offset" name="vedeni"></a>
+připravujeme
+<!--
 **Předseda:** Aleš Finstrle
 **Trenér dorostu:** Jan Zháňal
 **Trenér žactva:** Andrea Firešová
 **Pořadatel závodů:** Jan Drábek
 **Koordinátor:** Otakar Hirš
 
-<!--
+
+
 **trenéři:**	Jan Drábek, Dobra Janotová, Jitka Kabáthová, Lenka Kočová,  Aleš a Luděk Finstrle, Andrea Firešová, Lenka Hrušková, Bohumila Klangová, Hana Nedbálková, Petr Přikryl, Kamila Tachovská, Markéta Uhanavá, Pavel Zelený, Jan Zháňal, Štěpán Zimmermann, Daniel Hájek
 
 **skladník:** Štěpán Zimmermann  
@@ -55,9 +58,10 @@ date: '2018-07-10'
 **správa členské sekce:** Richard Pátek
 **oddílové oblečení:** Barbora Zháňalová
 -->
-
+<!--
 **stanovy**: Oddíl se řídí svými stanovami, které jsou stejně jako zápisy z členských schůzi a ze schůzí vedení dostupné v členské sekci.
 **vedení oddílu:**  Vedení oddílu má 5 členů a volí na členské schůzi. Vedení oddílu se stará o jeho pravidelný chod a na základě komunikace s dalšími členy řídí další směřování oddílu. Pokud máte jakékoliv datazy či připomínky, nebojte se obrátit na kohokoliv z vedení.
+-->
 
 ---
 ## Emailová skupina Žabiny <a class ="fix-topbar-offset" name="zabiny"></a>
