@@ -1096,10 +1096,10 @@ class PhpTwigExtension extends \Twig_Extension
     public function SaveMapT(){ 
 
         // init vars
-        $pagePath = './user/pages/data/maptheory/blank.md';
-        $savePath = './user/pages/data/maptheory/';
         $maptGroup = $_POST['group'];
         $fileTitle = $_POST['date'] . ".pdf" ;
+        $pagePath = './user/pages/data/maptheory/blank.md';
+        $savePath = './user/pages/data/maptheory/' . $maptGroup;
 
         //get frontmatter
         $frontmatter = $this->get_frontmatter_as_array($pagePath);
@@ -1132,7 +1132,7 @@ class PhpTwigExtension extends \Twig_Extension
         $maptName = $_POST['name'];
         $maptGroup = $_POST['group'];
         $pagePath = './user/pages/data/maptheory/blank.md';
-        $filePath = './user/pages/data/maptheory/' . $maptName;
+        $filePath = './user/pages/data/maptheory/' . $maptGroup . '/' . $maptName;
         
         // get frontmatter
         $frontmatter = $this->get_frontmatter_as_array($pagePath);
@@ -1157,72 +1157,7 @@ class PhpTwigExtension extends \Twig_Extension
         file_put_contents($pagePath, $page);
         Cache::clearCache('cache-only');
     }
-    //******** GPS *********
-    public function SaveRoutes(){ 
-
-        // init vars
-        $pagePath = './user/pages/data/maptheory/blank.md';
-        $savePath = './user/pages/data/maptheory/';
-        $maptGroup = $_POST['group'];
-        $fileTitle = $_POST['date'] . ".pdf" ;
-
-        //get frontmatter
-        $frontmatter = $this->get_frontmatter_as_array($pagePath);
-
-        // add maptheory to frontmatter
-        if(isset($frontmatter['maptheory'][$maptGroup]) && in_array ( $fileTitle , $frontmatter['maptheory'][$maptGroup] ) ){
-            $this->return_ERROR("Už je nahrana mapova teorie se stejnym datem a skupinou");
-        }
-        else{
-            $frontmatter['maptheory'][$maptGroup][] = $fileTitle;
-            arsort($frontmatter['maptheory'][$maptGroup]);
-        } 
-
-        // save pdf and jpeg thumbnail
-        $this->save_PDF($savePath, $fileTitle, $makeThumbnail=False);
-        
-        // build page
-        $pageFrontmatter = Yaml::dump($frontmatter, 10);
-        $pagecontent = $this->parse_file_content_only($pagePath);
-        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
-
-        // save page to file
-        file_put_contents($pagePath, $page);
-        Cache::clearCache('cache-only');
-    }
-
-    public function DeleteRoutes(){
-
-        // init vars
-        $maptName = $_POST['name'];
-        $maptGroup = $_POST['group'];
-        $pagePath = './user/pages/data/maptheory/blank.md';
-        $filePath = './user/pages/data/maptheory/' . $maptName;
-        
-        // get frontmatter
-        $frontmatter = $this->get_frontmatter_as_array($pagePath);
-        var_dump($frontmatter);
-
-        // remove maptheory from frontmatter
-        if (($key = array_search($maptName, $frontmatter['maptheory'][$maptGroup])) !== false) {
-            unset($frontmatter['maptheory'][$maptGroup][$key]);
-        }
-        
-        // delete pdf
-        if(file_exists($filePath)){
-            unlink($filePath);
-        }
-
-        // build page
-        $pageFrontmatter = Yaml::dump($frontmatter, 10);
-        $pagecontent = $this->parse_file_content_only($pagePath);
-        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
-
-        // save page to file
-        file_put_contents($pagePath, $page);
-        Cache::clearCache('cache-only');
-    }
-
+    
     public function collectionToEventsByDate($collection){
         $array = array();
         foreach($collection as $event) {
