@@ -49,7 +49,7 @@ access:
         <ul>
         {% for item in group %}  
                     <li>            
-                        <a href="/data/maptheory/{{item}}" target="_blank">
+                        <a href="/data/maptheory/{{group_name}}/{{item}}" target="_blank">
                             {{item}}
                         </a> &nbsp;
                     <span class="maptheory--delete" data-group="{{group_name}}" data-name="{{item}}" style="cursor:pointer;"> 

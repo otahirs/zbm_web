@@ -2,6 +2,7 @@
 taxonomy:
     skupina:
         1: dorost
+        2: zaci2
 type: M
 start: '2019-11-29'
 end: '2019-11-29'

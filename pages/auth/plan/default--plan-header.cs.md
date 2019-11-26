@@ -9,8 +9,8 @@ planTemplate: winter
 plan:
     monday:
         1:
-            name: 'kopce (světlo a buzolu)'
-            place: 'Hala Rosnička, Horákova 7'
+            name: 'výběhy, světlo s sebou'
+            place: 'Rosnička'
             meetup: '16:30'
             group:
                     - dorost
@@ -55,7 +55,7 @@ plan:
             group:
                     - zaci2
         5:
-            name: 'intervaly'
+            name: 'tempové intervaly, teorie'
             place: 'ZŠ Milénova'
             meetup: '16:30'
             group:

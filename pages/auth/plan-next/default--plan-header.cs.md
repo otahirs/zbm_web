@@ -9,8 +9,8 @@ planTemplate: winter
 plan:
     monday:
         1:
-            name: 'kopce (světlo s sebou)'
-            place: 'Hala Rosnička, Horákova 7'
+            name: 'volně podél řeky'
+            place: 'Hala Rosnička'
             meetup: '16:30'
             group:
                     - dorost
