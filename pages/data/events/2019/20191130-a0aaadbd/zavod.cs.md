@@ -18,8 +18,8 @@ eventTypeDescription: 'T1, T2, T3, T4, T5, T6'
 startTime: '11:00'
 map: 'Vracovské duny'
 terrain: 'Rovinatý s minimálním převýšením a s výskytem písečných dun. Většinou dobře průběžný borovicový les, místy polouzavřený prostor se smíšeným lesem a podmáčenými oblastmi.'
-transport: auty
+transport: 'auty,'
 leader: Jenda
-note: ''
+note: 'doprava v [google dokumentu](https://docs.google.com/spreadsheets/d/1zA6o1Jcc0F_uvmgz6oLd5eJ8OWvo3iOXlOqyXCdZbR0/edit?fbclid=IwAR1miroMO6irE10Qdd_2fFqp06nyUK7I1YGxaOvLMPEXAuKq-utI5W2fPec#gid=0)'
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}.
