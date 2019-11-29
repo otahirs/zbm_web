@@ -23,7 +23,7 @@ content:
         <article>
               <h4 class="news--header row justify-content-between">
                   <span class="news--header_left col"> Plán na tento týden </span> 
-                  <span class="news--header_right col-auto"> </span>
+                  <span class="news--header_right col-auto"><i class="fa fa-star" aria-hidden="true"></i> </span>
               </h4>
               
               <section class="newsText">
