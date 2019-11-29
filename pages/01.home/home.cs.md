@@ -20,6 +20,18 @@ content:
         <section>
         {% set news_collection = page.collection().ofType('novinka').order('p.header.id','desc') %}
 
+        <article>
+              <h4 class="news--header row justify-content-between">
+                  <span class="news--header_left col"> Plán na tento týden </span> 
+                  <span class="news--header_right col-auto"> </span>
+              </h4>
+              
+              <section class="newsText">
+                Aktuální plán na tento týden naleznete vždy po rozkliknutí své tréninkové skupiny v levém menu.
+              </section>
+            </article>
+        <hr width="62.11%">
+
         {% for p in news_collection if  ( p.header.date|date('Y-m-d') >= strtotime("today -30 day")|date('Y-m-d') ) %}
             <article id="{{ p.header.id }}">
               <h4 class="news--header row justify-content-between">
