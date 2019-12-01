@@ -10,7 +10,7 @@ title: 'Předvánoční Sklené'
 place: Sklené
 gps: '49.61037, 16.00859'
 meetTime: '16:30'
-meetPlace: 'Řečkovice, konečná'
+meetPlace: 'https://mapy.cz/s/jacubofuco'
 transport: auty
 accomodation: 'Na posteli'
 food: 'od páteční snídaně, vemte si s sebou večeři na čtvrtek!!!'
@@ -23,7 +23,7 @@ template: soustredeni
 date: '2019-11-11'
 id: 20191205-73f473c5
 leader: 'Jan Zháňal'
-note: 'Doprava se řeší v [google dokumentu](https://docs.google.com/spreadsheets/d/1YinuAYm1ibCy6NifeXaW6OeX15bLgZhP4Kx4qsW4tCc/edit#gid=0)'
+note: "**POZOR: změna místa srazu!**\r\nDoprava se řeší v [google dokumentu](https://docs.google.com/spreadsheets/d/1YinuAYm1ibCy6NifeXaW6OeX15bLgZhP4Kx4qsW4tCc/edit#gid=0)"
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
 * **ubytování**: {{page.header.accomodation}}
