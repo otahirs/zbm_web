@@ -19,6 +19,6 @@ startTime: ''
 map: ''
 terrain: ''
 leader: ''
-note: ''
+note: 'https://mslavia.cz/akce/beh-na-byci-skalu-2019-porada/'
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
