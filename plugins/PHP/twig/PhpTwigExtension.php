@@ -23,7 +23,6 @@ class PhpTwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('phpSavePlan', [$this, 'SavePlan']),
             new \Twig_SimpleFunction('phpSavePlanTemplate', [$this, 'SavePlanTemplate']), 
             new \Twig_SimpleFunction('phpTest', [$this, 'Test']),      
-            new \Twig_SimpleFunction('phpShiftPlan', [$this, 'ShiftPlan']),
             new \Twig_SimpleFunction('phpSaveMapT', [$this, 'SaveMapT']),  
             new \Twig_SimpleFunction('phpDeleteMapT', [$this, 'DeleteMapT']),    
             new \Twig_SimpleFunction('collectionToEventsByDate', [$this, 'collectionToEventsByDate']),  
@@ -628,36 +627,6 @@ class PhpTwigExtension extends \Twig_Extension
             $this->file_force_contents($page_path, $page);
             Cache::clearCache('cache-only');
 
-    }
-
-    // nastavi "pristi tyden" jako "tento tyden" a do "pristi tyden" nacte predchozi pouzitou sablonu - potreba CRON/ task scheduler 
-    function ShiftPlan($plan_path, $plan_next_path){
-            /******************/
-            // update this week
-            /******************/
-            $frontmatter = $this->parse_file_frontmatter_only($plan_next_path);
-            $content = $this->parse_file_content_only($plan_path);
-            $page = $this->combine_frontmatter_with_content($frontmatter, $content);
-
-            $this->file_force_contents($plan_path, $page);
-
-            /******************************/
-            // load template for next week 
-            /******************************/
-            $template = $this->get_plan_template($plan_next_path);
-            // alternate frontmatter
-            $frontmatter = $this->get_frontmatter_as_array($plan_next_path);             
-            $frontmatter['planTemplate'] = $template;                               // set last used template to the chosen one
-            $frontmatter['plan'] = $this->get_plan_from_template($template);        // get chosen plan from page plan-templates
-            $frontmatter = Yaml::dump($frontmatter, 10);                            // make string from array 
-            // get page content
-            $content = $this->parse_file_content_only($page_path);
-            // build page
-            $page = $this->combine_frontmatter_with_content($frontmatter, $content); 
-            // save page
-            $this->file_force_contents($page_path, $page);
-
-            Cache::clearCache('cache-only');        
     }
 
 
