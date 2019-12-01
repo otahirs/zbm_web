@@ -13,7 +13,7 @@ date: '2019-11-11'
 id: 20191201-2b908a68
 meetTime: ''
 meetPlace: ''
-link: ''
+link: 'http://cup.adamna.net/'
 eventTypeDescription: ''
 startTime: ''
 map: ''
