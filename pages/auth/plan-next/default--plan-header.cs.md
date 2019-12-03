@@ -13,87 +13,93 @@ plan:
             place: 'Hala Rosnička, Horákova 7'
             meetup: '16:30'
             group:
-                    - dorost
+                - dorost
     tuesday:
         1:
             name: 'běžecké posilování'
             place: 'ZŠ Kotlářská'
-            meetup: '16:30'
+            meetup: '16:45'
             group:
-                    - zaci1
-                    - zaci2
+                - zaci1
+                - zaci2
         2:
             name: 'běžecké posilování'
             place: 'ZŠ Kotlářská'
             meetup: '20:00'
             group:
-                    - dorost
+                - dorost
     wednesday:
         1:
             name: 'výprava za OB'
             place: 'ZŠ Milénova'
             meetup: '16:00'
             group:
-                    - zabicky
+                - zabicky
         2:
             name: 'hry + mapa'
             place: 'ZŠ Milénova'
             meetup: '16:00'
             group:
-                    - pulci1
-                    - pulci2
+                - pulci1
+                - pulci2
         3:
             name: 'mapa + teorie'
             place: 'ZŠ Milénova'
             meetup: '16:00'
             group:
-                    - zaci1
+                - zaci1
         4:
             name: 'běžecký trénink + teorie'
             place: 'ZŠ Milénova'
             meetup: '16:30'
             group:
-                    - zaci2
+                - zaci2
         5:
             name: 'tempové intervaly a teorie'
             place: 'ZŠ Milénova'
             meetup: '16:30'
             group:
-                    - dorost
+                - dorost
     thursday:
         1:
-            name: 'tělocvična'
+            name: tělocvična
             place: 'ZŠ Kotlářská'
             meetup: '16:00'
             group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
+                - pulci1
+                - pulci2
+                - zaci1
         2:
             name: 'běžecký trénink (žáci 1 druhým rokem)'
             place: 'Hala Rosnička, Horákova 7'
             meetup: '16:30'
             group:
-                    - zaci1
+                - zaci1
         3:
             name: 'kompenzační cvičení'
             place: 'ZŠ Kotlářská'
             meetup: '17:30'
             group:
-                    - dorost
+                - dorost
         4:
             name: 'volejbal (po domluvě)'
             place: 'ZŠ Kotlářská'
             meetup: '19:30'
             group:
-                    - dorost
+                - dorost
         5:
             name: 'běžecký trénink'
             place: 'Hala Rosnička, Horákova 7'
             meetup: '16:30'
             group:
-                    - zaci2
-    friday: null
+                - zaci2
+    friday:
+        1:
+            name: 'florbal, basket (po domluvě)'
+            place: 'ZŠ Kotlářská'
+            meetup: '18:00'
+            group:
+                - dorost
     saturday: null
     sunday: null
 ---
