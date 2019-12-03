@@ -57,7 +57,7 @@ winter:
         1:
             name: 'běžecké posilování'
             place: 'ZŠ Kotlářská'
-            meetup: '16:30'
+            meetup: '16:45'
             group:
                     - zaci1
                     - zaci2
