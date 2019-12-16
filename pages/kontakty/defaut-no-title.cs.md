@@ -28,9 +28,14 @@ Připravujeme
             </ul>
     </div>
     <div class="col-lg-6">
-        <h4>IT - Richard Pátek</h4>
+        <h3>IT</h3>
+            <h4>Richard Pátek</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>arnost.p@centrum.cz</li>
+            </ul>
+            <h4>Otakar Hirš</h4>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-envelope"></i>otakar.hirs@gmail.com</li>
             </ul>
     </div>
     <div class="col-lg-6">
@@ -63,7 +68,7 @@ Připravujeme
             <em>začátečníci od 6 let</em>
             <h4>Hanka Nedbálková</h4>
             <ul class="fa-ul">
-                <li>kontakt je v <a href="https://members.eob.cz/zbm/index.php?id=1" target="_blank">členské sekci</a>/li>
+                <li><i class="fa-li fa fa-envelope"></i>hana.nedbalkova@seznam.cz</li>
             </ul>
             </ul>
             <h4>Lenka Kočová</h4>
@@ -84,7 +89,7 @@ Připravujeme
             </ul>
             <h4>Alena Finstrlová</h4>
             <ul class="fa-ul">
-                <li>kontakt je v <a href="https://members.eob.cz/zbm/index.php?id=1" target="_blank">členské sekci</a></li>
+                <li><i class="fa-li fa fa-envelope"></i>finstrlova@centrum.cz</li>
             </ul>          
             </div>
     </div>
@@ -94,7 +99,7 @@ Připravujeme
             <em>pokročilejší od 10 let</em>
             <h4>Pavel Zelený</h4>
             <ul class="fa-ul">
-                <li>kontakt je v <a href="https://members.eob.cz/zbm/index.php?id=1" target="_blank">členské sekci</a></li>
+                <li><i class="fa-li fa fa-envelope"></i>pzeleny@post.cz</li>
             </ul>
             <h4>Andrea Firešová</h4>
             <ul class="fa-ul">
@@ -109,15 +114,16 @@ Připravujeme
             <em>pokročilí od 12 let</em>
             <h4>Luděk Finstrle</h4>
             <ul class="fa-ul">
-                <li>kontakt je v <a href="https://members.eob.cz/zbm/index.php?id=1" target="_blank">členské sekci</a></li>
+                <li><i class="fa-li fa fa-phone"></i>+420 603 874 687</li>
+                <li><i class="fa-li fa fa-envelope"></i>luf@seznam.cz</li>
             </ul>
             <h4>Pavel Rotek</h4>
             <ul class="fa-ul">
-                <li>kontakt je v <a href="https://members.eob.cz/zbm/index.php?id=1" target="_blank">členské sekci</a></li>
+                <li><i class="fa-li fa fa-envelope"></i>pavel.rotek@gmail.com</li>
             </ul>
             <h4>Daniel Hájek</h4>
             <ul class="fa-ul">
-                <li>kontakt je v <a href="https://members.eob.cz/zbm/index.php?id=1" target="_blank">členské sekci</a></li>
+                <li><i class="fa-li fa fa-envelope"></i>daniel@hajci.cz</li>
             </ul>
             </div>
     </div>
@@ -132,15 +138,15 @@ Připravujeme
             </ul>
             <h4>Barbora Zháňalová</h4>
             <ul class="fa-ul">
-                <li>kontakt je v <a href="https://members.eob.cz/zbm/index.php?id=1" target="_blank">členské sekci</a></li>
+                <li><i class="fa-li fa fa-envelope"></i>barborazhanalova@gmail.com</li>
             </ul>
             <h4>Stanislav Mokrý</h4>
             <ul class="fa-ul">
-                <li>kontakt je v <a href="https://members.eob.cz/zbm/index.php?id=1" target="_blank">členské sekci</a></li>
+                <li><i class="fa-li fa fa-envelope"></i>mokry.stanislav@gmail.com</li>
             </ul>
             <h4>Otakar Hirš</h4>
             <ul class="fa-ul">
-                <li>kontakt je v <a href="https://members.eob.cz/zbm/index.php?id=1" target="_blank">členské sekci</a></li>
+                <li><i class="fa-li fa fa-envelope"></i>otakar.hirs@gmail.com</li>
             </ul>
         </div>
     </div>
