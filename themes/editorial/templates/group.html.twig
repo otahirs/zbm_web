@@ -132,7 +132,7 @@
 
         <div id="soustredeni" class="tab-content">
             <table>
-                {% for p in collection if p.header.end >= "today"|date('Y-m-d') and p.header.template == "soustredeni" %}
+                {% for p in collection.order('header.start','asc') if p.header.end >= "today"|date('Y-m-d') and p.header.template == "soustredeni" %}
                         <tr data-href="{{ p.url }}" class="click-row">
                         <td class="datum">
                                 {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
