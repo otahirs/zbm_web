@@ -21,5 +21,18 @@ id: 20191213-38825361
 terrain: ''
 leader: ''
 note: ''
+routes:
+    -
+        name: D
+        link: 'http://3drerun.worldofo.com/?id=-636475&type=info'
+    -
+        name: H
+        link: 'http://3drerun.worldofo.com/?id=-636476&type=info'
+    -
+        name: '1.rok dorost'
+        link: 'http://3drerun.worldofo.com/?id=-636479&type=info'
+    -
+        name: HDD
+        link: 'http://3drerun.worldofo.com/?id=-636481&type=info'
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
