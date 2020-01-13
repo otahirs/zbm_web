@@ -6,11 +6,11 @@ taxonomy:
 type: M
 start: '2019-12-20'
 end: '2019-12-20'
-title: 'noční mapový trénink'
+title: 'VáNoční mapový trénink'
 place: 'Brno, Myslivna'
 gps: '49.18794, 16.55234'
 meetTime: '16:00'
-meetPlace: 'hotel Myslivna'
+meetPlace: 'parkoviště u zastávky Myslivna'
 transport: 'bus: 68'
 startTime: '16:30'
 eventTypeDescription: 'Hromadný start s vánočním bonusem'
@@ -21,5 +21,15 @@ id: 20191220-32fbfb1e
 terrain: ''
 leader: ''
 note: ''
+routes:
+    -
+        name: H
+        link: 'http://3drerun.worldofo.com/index.php?id=-636744&type=info'
+    -
+        name: D
+        link: 'http://3drerun.worldofo.com/index.php?type=info&id=-636743'
+    -
+        name: HDD
+        link: 'http://3drerun.worldofo.com/index.php?id=-636745&type=info'
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.

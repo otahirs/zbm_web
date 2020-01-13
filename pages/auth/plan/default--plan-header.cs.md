@@ -9,7 +9,7 @@ planTemplate: winter
 plan:
     monday:
         1:
-            name: 'běžecký trénink (světlo sebou) '
+            name: 'výběhy (světlo s sebou)'
             place: 'Hala Rosnička, Horákova 7'
             meetup: '16:30'
             group:
@@ -22,12 +22,6 @@ plan:
             group:
                     - zaci1
                     - zaci2
-        2:
-            name: 'běžecké posilování'
-            place: 'ZŠ Kotlářská'
-            meetup: '20:00'
-            group:
-                    - dorost
     wednesday:
         1:
             name: 'výprava za OB'
@@ -76,12 +70,30 @@ plan:
             group:
                     - zaci1
         3:
+            name: 'kompenzační cvičení'
+            place: 'ZŠ Kotlářská'
+            meetup: '17:30'
+            group:
+                    - dorost
+        4:
+            name: 'volejbal (po domluvě)'
+            place: 'ZŠ Kotlářská'
+            meetup: '19:30'
+            group:
+                    - dorost
+        5:
             name: 'běžecký trénink'
             place: 'Hala Rosnička, Horákova 7'
             meetup: '16:30'
             group:
                     - zaci2
-    friday: null
+    friday:
+        1:
+            name: 'florbal, basket (po domluvě)'
+            place: 'ZŠ Kotlářská'
+            meetup: '18:00'
+            group:
+                    - dorost
     saturday: null
     sunday: null
 ---
