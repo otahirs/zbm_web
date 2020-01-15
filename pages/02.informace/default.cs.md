@@ -98,7 +98,7 @@ Osobní účty vede Věra Mádlová, aktuální stav je on-line v „Členské s
 - Finance z vašeho oddílového účtu lze použít zejména na zaplacení oddílových příspěvků, soustředění, startovného na nedotované závody (např. prázdninové vícedení závody, LOB, MTBO) či oddílového oblečení. Finance jednou poskytnuté na oddílový účet již nelze poslat zpět na účet soukromý.
 
 ---
-## Oddílové příspěvky <a class ="fix-topbar-offset" name="prispevky"></a>
+## Oddílové příspěvky 2019<a class ="fix-topbar-offset" name="prispevky"></a>
 
 Oddílové příspěvky  je  potřeba zaplatit  nejpozději  do 15.  března  2019 na váš oddílový účet.  Vyučtování  předchozího  roku  vidíte aktuálně  v členské  sekci. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, nebudou přihlašováni na závody!
 
