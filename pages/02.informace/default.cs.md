@@ -8,7 +8,7 @@ date: '2018-07-10'
 <h3>Základní informace</h3>
 <ul>
  <li><a href="#vedeni">Vedení oddílu</a></li>
- <li><a href="#zabiny">Emailová skupina</a></li>
+
 </ul>
 </div>
 <div class="col-sm-6 col-lg-3">
@@ -35,17 +35,22 @@ date: '2018-07-10'
  <li><a href="#poradani">Pořádání závodů</a></li>
 </ul>
 </div>
+<div class="col-sm-6 col-lg-3">
+<ul>
+<h3>Ostatní</h3>
+ <li><a href="#zabiny">Emailová skupina</a></li>
+ </ul>
+</div>
 </div>
 
 ---
 ## Vedení oddílu   <a class ="fix-topbar-offset" name="vedeni"></a>
-připravujeme
-<!--
-**Předseda:** Aleš Finstrle
+
+**Předseda:** Jan Fiala
 **Trenér dorostu:** Jan Zháňal
 **Trenér žactva:** Andrea Firešová
 **Pořadatel závodů:** Jan Drábek
-**Koordinátor:** Otakar Hirš
+**Koordinátor:** Aleš Finstrle
 
 
 
@@ -57,34 +62,9 @@ připravujeme
 **správa oddílových stránek:** Otakar Hirš 
 **správa členské sekce:** Richard Pátek
 **oddílové oblečení:** Barbora Zháňalová
--->
-<!--
+
+
 **stanovy**: Oddíl se řídí svými stanovami, které jsou stejně jako zápisy z členských schůzi a ze schůzí vedení dostupné v členské sekci.
-**vedení oddílu:**  Vedení oddílu má 5 členů a volí na členské schůzi. Vedení oddílu se stará o jeho pravidelný chod a na základě komunikace s dalšími členy řídí další směřování oddílu. Pokud máte jakékoliv datazy či připomínky, nebojte se obrátit na kohokoliv z vedení.
--->
-
----
-## Emailová skupina Žabiny <a class ="fix-topbar-offset" name="zabiny"></a>
-Emailová skupina **zabiny@googlegroups.com** je jednoduchý nástroj pro hromadné rozesílání emailů. Při odeslání emailu na adresu, která označuje emailovou skupinu, se poslaný email rozešle všem lidem zaregistrovaným v této skupině. Přihlášení do skupiny je však dobrovolné, všechny důležité věci budou na webu.  
-
-<form action="https://groups.google.com/forum/#!forum/zabiny/join" target="_blank">
-<button onclick="https://groups.google.com/forum/#!forum/zabiny/join">Přihlásit se do skupiny Žabiny</button>
-</form>
-Klikněte na tlačítko, zadejte email a odešlete žádost o připojení ke skupině. Žádost je poslána administrátorovi skupiny, ten ji potvrdí a potom vám přijde oznámení o úspěšné registraci adresy do skupiny. 
-
-#### Co se zde objevuje?
-- potvrzení soupisek na štafety
-- diskuze k oddílovém oblečení
-- pozvánky na další závody
-- ztráty a nálezy
-- _a další.._
-
- 
-#### Jak posílat e-maily do skupiny?
-Email se posílá na adresu: _zabiny@googlegroups.com_. Email následně dorazí všem členům skupiny. 
-#### Jak se odhlásit ze skupiny?
-Posláním prázdného emailu na adresu _zabiny+unsubscribe@googlegroups.com_ bude adresa odesílatele vyškrtnuta z emailové skupiny.
-
 
 ---
 ## Financování a osobní účty <a class ="fix-topbar-offset" name="finance"></a>
@@ -92,17 +72,18 @@ Posláním prázdného emailu na adresu _zabiny+unsubscribe@googlegroups.com_ bu
 Osobní účty vede Věra Mádlová, aktuální stav je on-line v „Členské sekci".
 
 #### Plnění osobních účtů
-- Bezhotovostně na účet u České spořitelny 4067843369/0800, v.s. xxxx (xxxx = registrační číslo). Částka bude připsána na váš osobní oddílový účet. <!-- V případě, že chcete naplnit svůj účet darem (který můžete odečíst ze základu daně při ročním zúčtování daně z příjmu), kontaktujte předem Libora Zřídkaveselého (_zr@sky.cz_). Darovaná částka nesmí být nižší než 1 000,– Kč a maximální možnost odečtu ze základu daně je 10%. -->  
+- Bezhotovostně na účet u České spořitelny 4067843369/0800, v.s. xxxx (xxxx = registrační číslo). Do poznámky vždy připište pouze: "Členské příspěvky". Částka bude připsána na váš osobní oddílový účet. V případě, že chcete naplnit svůj účet darem (který můžete odečíst ze základu daně při ročním zúčtování daně z příjmu), kontaktujte předem Aleše (_alfik76@centrum.cz_). Darovaná částka nesmí být nižší než 1 000,– Kč. Maximální možnost odečtu ze základu daně je 15%.
 
 #### Čerpání z osobního účtu
-- Finance z vašeho oddílového účtu lze použít zejména na zaplacení oddílových příspěvků, soustředění, startovného na nedotované závody (např. prázdninové vícedení závody, LOB, MTBO) či oddílového oblečení. Finance jednou poskytnuté na oddílový účet již nelze poslat zpět na účet soukromý.
+- Finance z vašeho oddílového účtu lze použít zejména na zaplacení oddílových příspěvků, soustředění, startovného na nedotované závody (např. prázdninové vícedení závody, LOB, MTBO) či oddílového oblečení. "Členské příspěvky" jednou poskytnuté na oddílový účet již nelze poslat zpět na účet soukromý.
 
+<!--
 ---
 ## Oddílové příspěvky <a class ="fix-topbar-offset" name="prispevky"></a>
 
-Oddílové příspěvky  je  potřeba zaplatit  nejpozději  do 15.  března  2019 na váš oddílový účet.  Vyučtování  předchozího  roku  vidíte aktuálně  v členské  sekci. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, nebudou přihlašováni na závody!
+Oddílové příspěvky  je  potřeba zaplatit  nejpozději  do 15.  března  2020 na váš oddílový účet.  Vyučtování  předchozího  roku  vidíte online  v členské  sekci. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, nebudou přihlašováni na závody a posléze jim může být členství ukončeno!
 
-Součástí všech příspěvků je i příspěvek do SK ve výši 300,– Kč a registrace ČSOS ve výši 100,– Kč (to jsou peníze, které jen převedeme někomu jinému).
+Součástí všech příspěvků je i příspěvek do SK ve výši 300,– Kč a registrace ČSOS ve výši 100,– Kč.
 
 | typ příspěvků | částka | závody hrazené oddílem |
 | --- | --- | --- |
@@ -130,7 +111,7 @@ Součástí všech příspěvků je i příspěvek do SK ve výši 300,– Kč a
 
 - Soustředění  se  řídí  pokyny  vydanými  ke  každému  soustředění  a  oddíl  na  ně  přispívá částkou  v rozmezí  10  až  50%,  podle  účelu  a  typu  soustředění.  V případě  neúčasti  na soustředění  a  neodhlášení  se  do  data  uzavření  přihlášek  je  člen  povinen  uhradit  část nákladů, které oddíl musel vynaložit. Maximální  částka  je  70%  z ceny celého soustředění
 
-
+-->
 <!--
 ---
 
@@ -193,7 +174,7 @@ Přihlašování na závody i soustředění probíhá výhradně přes [člensk
 
 V případdech, že pravidelně jezdíte na závody mimo naší oblast, kontaktujte Ríšu Pátka, Honzu Drábka a domluvte se na individuální způsobu přihlašování přímo v sytému ORIS.
 
-V krajní nouzi pak můžete využít některé z telefonnch linek.
+V krajní nouzi pak můžete využít některého z telefonů.
 
 Kontakt: Richard Pátek, e-mail – _arnost.p@centrum.cz_   mobil – 721 111 301
 Kontakt: Honza Drábek, e-mail – _prihlasky.zbm@eob.cz_  mobil – 608 477 026 
@@ -218,11 +199,10 @@ Všichni závodnicí kategorií D,H-20, 21 se mohou přihlásit na kterýkoliv z
 ---
 ## Vedoucí na závodech <a class ="fix-topbar-offset" name="vedouci"></a>
 Pokud budete určeni jako vedoucí na závodech, proveďte prosím následující úkony:  
-- Vyzvedněte si u Honzy Drábka (_prihlasky.zbm@eob.cz_) kopii přihlášky na závody.
-- U Honzy Drábka si vyzvedněte kopii dokladu o zaplacení (výpis on-line převodu). 
+- Zkontrolujte, že máte potvrzení o zaplacení v e-mailu, v opačném případě kontaktujte Věrku
 - Na závodech odprezentujte oddíl. 
 - Při dopravě autobusem na dva dny nezapomeňte zjistit, kde je ubytování a zejména, kde je ubytován řidič autobusu (u pořadatelů vyžadujte plánek jeho ubytování).
-- Po závodech dodejte doklady k vuúčtování.
+- Po závodech dodejte doklady k vyúčtování.
 
 
 ---
@@ -235,11 +215,34 @@ V letošním roce pořádáme 3 závody Jihomoravské ligy a Finále ligy škol 
 5.  června  2019  –  Finále  ligy  škol  v orientačním  běhu  –  Lesná  –  sprint  –  ředitel:  Libor Zřídkaveselý   
 5. června 2019 – M Jihomoravského kraje ve sprintových štafetách – Lesná – sprint – ředitel: Libor Zřídkaveselý   
 12. října 2019 – 11. Jihomoravská liga – Komín – krátká trať – ředitel: Luděk Finstrle   
--->
+
 
 #### Odměna za pořádání:
 
 - Při  pořádání oblastních, krajských a celostátních závodů bude každému, kdo se aktivně zúčastní pořádníní připsáno na oddílový účet 200,– Kč za každý pořádací den. 
+-->
+
+---
+## Emailová skupina Žabiny <a class ="fix-topbar-offset" name="zabiny"></a>
+Emailová skupina **zabiny@googlegroups.com** je jednoduchý nástroj pro hromadné rozesílání emailů. Při odeslání emailu na adresu, která označuje emailovou skupinu, se poslaný email rozešle všem lidem zaregistrovaným v této skupině. Přihlášení do skupiny je však dobrovolné, všechny důležité věci budou na webu.  
+
+<form action="https://groups.google.com/forum/#!forum/zabiny/join" target="_blank">
+<button onclick="https://groups.google.com/forum/#!forum/zabiny/join">Přihlásit se do skupiny Žabiny</button>
+</form>
+Klikněte na tlačítko, zadejte email a odešlete žádost o připojení ke skupině. Žádost je poslána administrátorovi skupiny, ten ji potvrdí a potom vám přijde oznámení o úspěšné registraci adresy do skupiny. 
+
+#### Co se zde objevuje?
+- potvrzení soupisek na štafety
+- diskuze k oddílovém oblečení
+- pozvánky na další závody
+- ztráty a nálezy
+- _a další.._
+
+ 
+#### Jak posílat e-maily do skupiny?
+Email se posílá na adresu: _zabiny@googlegroups.com_. Email následně dorazí všem členům skupiny. 
+#### Jak se odhlásit ze skupiny?
+Posláním prázdného emailu na adresu _zabiny+unsubscribe@googlegroups.com_ bude adresa odesílatele vyškrtnuta z emailové skupiny.
 
 ---
 
