@@ -11,7 +11,8 @@ Připravujeme
     <li><i class="fa-li fa fa-envelope"></i>zr@sky.cz</li>
     <li><i class="fa-li fa fa-home"></i>Skorkovského 153<br>Brno, 636 00</li>
 </ul>
-
+-->
+<h2>Osoby zodpovědné za chod oddílu</h2>
 <hr>
 <div class="row">
     <div class="col-lg-6">  
@@ -27,9 +28,14 @@ Připravujeme
             </ul>
     </div>
     <div class="col-lg-6">
-        <h4>IT - Richard Pátek</h4>
+        <h3>IT</h3>
+            <h4>Richard Pátek</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>arnost.p@centrum.cz</li>
+            </ul>
+            <h4>Otakar Hirš</h4>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-envelope"></i>otakar.hirs@gmail.com</li>
             </ul>
     </div>
     <div class="col-lg-6">
@@ -60,10 +66,10 @@ Připravujeme
         <div class="contact--divInner">
         <h3>Pulci 1</h3>
             <em>začátečníci od 6 let</em>
-            <h4>Aleš Finstrle</h4>
+            <h4>Hanka Nedbálková</h4>
             <ul class="fa-ul">
-                <li><i class="fa-li fa fa-phone"></i>603 523 183</li>
-                <li><i class="fa-li fa fa-envelope"></i>alfik76@centrum.cz</li>
+                <li><i class="fa-li fa fa-envelope"></i>hana.nedbalkova@seznam.cz</li>
+            </ul>
             </ul>
             <h4>Lenka Kočová</h4>
             <ul class="fa-ul">
@@ -81,10 +87,9 @@ Připravujeme
                 <li><i class="fa-li fa fa-phone"></i>737 353 537</li>
                 <li><i class="fa-li fa fa-envelope"></i>japkoLenka@gmail.com</li>
             </ul>
-            <h4>Kamila Tachovská</h4>
+            <h4>Alena Finstrlová</h4>
             <ul class="fa-ul">
-                <li><i class="fa-li fa fa-phone"></i>778 527 047</li>
-                <li><i class="fa-li fa fa-envelope"></i>k.tachovska@gmail.com</li>
+                <li><i class="fa-li fa fa-envelope"></i>finstrlova@centrum.cz</li>
             </ul>          
             </div>
     </div>
@@ -92,10 +97,9 @@ Připravujeme
        <div class="contact--divInner">
         <h3>Žáci 1</h3>
             <em>pokročilejší od 10 let</em>
-            <h4>Luděk Finstrle</h4>
+            <h4>Pavel Zelený</h4>
             <ul class="fa-ul">
-                <li><i class="fa-li fa fa-phone"></i>603 874 687</li>
-                <li><i class="fa-li fa fa-envelope"></i>luf@seznam.cz</li>
+                <li><i class="fa-li fa fa-envelope"></i>pzeleny@post.cz</li>
             </ul>
             <h4>Andrea Firešová</h4>
             <ul class="fa-ul">
@@ -108,15 +112,18 @@ Připravujeme
        <div class="contact--divInner">
         <h3>Žáci 2</h3>
             <em>pokročilí od 12 let</em>
-            <h4>Jitka Kabáthová</h4>
+            <h4>Luděk Finstrle</h4>
             <ul class="fa-ul">
-                <li><i class="fa-li fa fa-phone"></i>602 201 917</li>
-                <li><i class="fa-li fa fa-envelope"></i>jitka.kabathova@yahoo.com</li>
+                <li><i class="fa-li fa fa-phone"></i>+420 603 874 687</li>
+                <li><i class="fa-li fa fa-envelope"></i>luf@seznam.cz</li>
             </ul>
-            <h4>Libor Zřídkaveselý</h4>
+            <h4>Pavel Rotek</h4>
             <ul class="fa-ul">
-                <li><i class="fa-li fa fa-phone"></i>604 996 773</li>
-                <li><i class="fa-li fa fa-envelope"></i>zr@sky.cz</li>
+                <li><i class="fa-li fa fa-envelope"></i>pavel.rotek@gmail.com</li>
+            </ul>
+            <h4>Daniel Hájek</h4>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-envelope"></i>daniel@hajci.cz</li>
             </ul>
             </div>
     </div>
@@ -129,10 +136,17 @@ Připravujeme
                 <li><i class="fa-li fa fa-phone"></i>725 258 326</li>
                 <li><i class="fa-li fa fa-envelope"></i>jenda.zh@gmail.com</li>
             </ul>
-            <h4>Libor Zřídkaveselý</h4>
+            <h4>Barbora Zháňalová</h4>
             <ul class="fa-ul">
-                <li><i class="fa-li fa fa-phone"></i>604 996 773</li>
-                <li><i class="fa-li fa fa-envelope"></i>zr@sky.cz</li>
+                <li><i class="fa-li fa fa-envelope"></i>barborazhanalova@gmail.com</li>
+            </ul>
+            <h4>Stanislav Mokrý</h4>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-envelope"></i>mokry.stanislav@gmail.com</li>
+            </ul>
+            <h4>Otakar Hirš</h4>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-envelope"></i>otakar.hirs@gmail.com</li>
             </ul>
         </div>
     </div>
