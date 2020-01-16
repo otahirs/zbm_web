@@ -2,7 +2,7 @@
 title: Informace
 date: '2018-07-10'
 ---
-
+ <!--
 <div class="row">
 <div class="col-sm-6 col-lg-3">
 <h3>Základní informace</h3>
@@ -18,7 +18,7 @@ date: '2018-07-10'
  <li><a href="#prispevky">Oddílové příspěvky</a></li>
  <!--
  <li><a href="#vrcholovy">Vrcholový fond ZBM</a></li>
- <li><a href="#trenersky">Trenérský fond ZBM</a></li> -->
+ <li><a href="#trenersky">Trenérský fond ZBM</a></li>
  </ul>
 </div>
 <div class="col-sm-6 col-lg-3">
@@ -42,7 +42,18 @@ date: '2018-07-10'
  </ul>
 </div>
 </div>
+ -->
 
+
+<h3>Obsah</h3>
+<ul>
+ <li><a href="#vedeni">Vedení oddílu</a></li>
+ <li><a href="#finance">Finance</a></li>
+ <li><a href="#zavody">Přihlašování na závody</a></li>
+ <li><a href="#vedouci">Vedoucí na závodech</a></li>
+ <li><a href="#zabiny">Emailová skupina</a></li>
+</ul>
+ 
 ---
 ## Vedení oddílu   <a class ="fix-topbar-offset" name="vedeni"></a>
 
@@ -204,10 +215,10 @@ Pokud budete určeni jako vedoucí na závodech, proveďte prosím následujíc�
 - Při dopravě autobusem na dva dny nezapomeňte zjistit, kde je ubytování a zejména, kde je ubytován řidič autobusu (u pořadatelů vyžadujte plánek jeho ubytování).
 - Po závodech dodejte doklady k vyúčtování.
 
-
+<!--
 ---
 ## Pořádání závodů <a class ="fix-topbar-offset" name="poradani"></a>
-<!--
+
 
 V letošním roce pořádáme 3 závody Jihomoravské ligy a Finále ligy škol v orientačním běhu. Prosím tedy všechny členy oddílu, aby počítali s následujícími termíny:   
 27. dubna 2019 – 3. Jihomoravská liga – Mikulov – sprint – ředitel: Libor Zřídkaveselý  
