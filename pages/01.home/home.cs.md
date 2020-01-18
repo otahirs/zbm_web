@@ -46,7 +46,7 @@ content:
                     {% if img.ratio * 2 <= 12  %}
                       {% set img_mobile = img.ratio * 2 %}
                     {% endif %}
-                    <div class="newsIMG col-md-{{img.ratio}} col-sm-{{img_mobile}}" data-name="{{img.name}}" data-ratio="{{ img.ratio }}">
+                    <div class="newsIMG col-md-{{img.ratio}} col-{{img_mobile}}" data-name="{{img.name}}" data-ratio="{{ img.ratio }}">
                       <a href="/data/news/{{p.header.date|slice(0,4)}}/{{p.header.id}}/img/{{img.name}}" target="_blank" title="Zobrazit originální obrázek">
                         <picture>
                           {# časem WebP #}
