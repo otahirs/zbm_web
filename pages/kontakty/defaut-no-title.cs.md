@@ -66,16 +66,16 @@ Připravujeme
         <div class="contact--divInner">
         <h3>Pulci 1</h3>
             <em>začátečníci od 6 let</em>
-            <h4>Hanka Nedbálková</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>hana.nedbalkova@seznam.cz</li>
-            </ul>
-            </ul>
             <h4>Lenka Kočová</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-phone"></i>777 631 615</li>
                 <li><i class="fa-li fa fa-envelope"></i>kocovalenka@gmail.com</li>
-            </ul>            
+            </ul>  
+            <h4>Hanka Nedbálková</h4>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-envelope"></i>hana.nedbalkova@seznam.cz</li>
+            </ul>
+                      
             </div>
     </div>
     <div class="divOuter col-lg-6" id="pulci2">
@@ -151,7 +151,7 @@ Připravujeme
         </div>
     </div>
 </div>
-    -->
+    
 <hr>
 <h2>Údaje sportovního klubu</h2>
 <h4>Sportovní klub Brno - Žabovřesky z.s.</h4>
