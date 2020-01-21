@@ -3,7 +3,12 @@ title: Kontakty
 date: '2018-10-28'
 ---
 <h2>Vedení oddílu</h2>
-Připravujeme
+
+**Předseda:** Jan Fiala - predseda@zabiny.club
+**Trenér dorostu:** Jan Zháňal - dorost@zabiny.club
+**Trenér žactva:** Andrea Firešová - zactvo@zabiny.club
+**Pořadatel závodů:** Jan Drábek - poradatel@zabiny.club
+**Koordinátor:** Aleš Finstrle - koordinator@zabiny.club
 <!--
 <h4>Libor Zřídkaveselý - předseda</h4>
 <ul class="fa-ul">
@@ -12,9 +17,15 @@ Připravujeme
     <li><i class="fa-li fa fa-home"></i>Skorkovského 153<br>Brno, 636 00</li>
 </ul>
 -->
-<h2>Osoby zodpovědné za chod oddílu</h2>
 <hr>
+<h2>Další užitečné kontakty</h2>
+**Finance:** Věra Mádlová - vera.madlova@centrum.cz
+**Přihlášky na závody:** Jan Drábek - drbca@centrum.cz
+**IT - členská sekce:** Richard Pátek - arnost.p@centrum.cz 
+**IT - web:** Otakar Hirš - otakar.hirs@gmail.com
+**Sklad:** Štěpán Zimmermann - stepazdepa@seznam.cz
 <div class="row">
+    <!--
     <div class="col-lg-6">  
         <h4>Finance - Věra Mádlová</h4>
             <ul class="fa-ul">
@@ -43,8 +54,8 @@ Připravujeme
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>stepazdepa@seznam.cz</li>
             </ul>
-    </div>
-    <div class="col-12">
+    </div>-->
+    <div class="col-12"> 
     <hr>
     <h1>Trenéři</h1>
     </div>
@@ -56,7 +67,7 @@ Připravujeme
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>ales.finstrle@gmail.com</li>
             </ul>
-            <h4>Bohumila Alešová</h4>
+            <h4>Bohumila Klangová</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>bohca@bohca.cz</li>
             </ul>  
