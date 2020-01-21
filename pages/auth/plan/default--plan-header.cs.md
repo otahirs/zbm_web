@@ -9,7 +9,7 @@ planTemplate: winter
 plan:
     monday:
         1:
-            name: 'výběhy (světlo s sebou)'
+            name: 'kopce (světlo s sebou)'
             place: 'Hala Rosnička, Horákova 7'
             meetup: '16:30'
             group:
@@ -22,35 +22,41 @@ plan:
             group:
                     - zaci1
                     - zaci2
+        2:
+            name: 'běžecké posilování'
+            place: 'SPŠ Purkyňova, Purkyňova 2832/97'
+            meetup: '17:30'
+            group:
+                    - dorost
     wednesday:
         1:
             name: 'výprava za OB'
-            place: 'ZŠ Milénova'
+            place: 'ZŠ Novoměstská, Novoměstská 1887/21'
             meetup: '16:00'
             group:
                     - zabicky
         2:
             name: 'hry + mapa'
-            place: 'ZŠ Milénova'
+            place: 'ZŠ Novoměstská, Novoměstská 1887/21'
             meetup: '16:00'
             group:
                     - pulci1
                     - pulci2
         3:
             name: 'mapa + teorie'
-            place: 'ZŠ Milénova'
+            place: 'ZŠ Novoměstská, Novoměstská 1887/21'
             meetup: '16:00'
             group:
                     - zaci1
         4:
             name: 'běžecký trénink + teorie'
-            place: 'ZŠ Milénova'
+            place: 'ZŠ Novoměstská, Novoměstská 1887/21'
             meetup: '16:30'
             group:
                     - zaci2
         5:
             name: 'tempové intervaly a teorie'
-            place: 'ZŠ Milénova'
+            place: 'ZŠ Novoměstská, Novoměstská 1887/21'
             meetup: '16:30'
             group:
                     - dorost
@@ -71,7 +77,7 @@ plan:
                     - zaci1
         3:
             name: 'kompenzační cvičení'
-            place: 'ZŠ Kotlářská'
+            place: 'bude upřesněno'
             meetup: '17:30'
             group:
                     - dorost
