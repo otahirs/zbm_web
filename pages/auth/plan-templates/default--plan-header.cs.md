@@ -102,8 +102,8 @@ winter:
     thursday:
         1:
             name: 'tělocvična'
-            place: 'ZŠ Kotlářská'
-            meetup: '16:00'
+            place: 'ZŠ Merhautova'
+            meetup: '16:30'
             group:
                     - pulci1
                     - pulci2
