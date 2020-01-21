@@ -65,7 +65,7 @@ date: '2018-07-10'
 
 
 
-**trenéři:**	Jan Drábek, Dobra Janotová, Jitka Kabáthová, Lenka Kočová,  Aleš a Luděk Finstrle, Andrea Firešová, Lenka Hrušková, Bohumila Klangová, Hana Nedbálková, Petr Přikryl, Kamila Tachovská, Markéta Uhanavá, Pavel Zelený, Jan Zháňal, Štěpán Zimmermann, Daniel Hájek
+**trenéři:** Jan Drábek, Aleš a Luděk Finstrle, Andrea Firešová, Daniel Hájek, Lenka Hrušková, Dobra Janotová, Jitka Kabáthová, Lenka Kočová, Bohumila Klangová, Hana Nedbálková, Pavel Zelený, Jan Zháňal, Štěpán Zimmermann
 
 **skladník:** Štěpán Zimmermann  
 **areály pevných kontrol:** Vladimír Kelbl  
