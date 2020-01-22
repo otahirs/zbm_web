@@ -24,6 +24,7 @@ date: '2018-10-28'
 **IT - členská sekce:** Richard Pátek - arnost.p@centrum.cz 
 **IT - web:** Otakar Hirš - otakar.hirs@gmail.com
 **Sklad:** Štěpán Zimmermann - stepazdepa@seznam.cz
+**Spráce map:** Stanislav Mokrý - mokry.stanislav@gmail.com
 <div class="row">
     <!--
     <div class="col-lg-6">  
@@ -135,6 +136,10 @@ date: '2018-10-28'
             <h4>Daniel Hájek</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>daniel@hajci.cz</li>
+            </ul>
+            <h4>Štěpán Zimmermann</h4>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-envelope"></i>stepazdepa@seznam.cz</li>
             </ul>
             </div>
     </div>
