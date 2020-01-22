@@ -15,5 +15,11 @@ terrain: 'Občanská zástavba, sídliště, park, kousek lesa'
 transport: ''
 leader: ''
 note: ''
+taxonomy:
+    skupina:
+        1: pulci2
+        2: zaci1
+        3: zaci2
+        4: pulci1
 ---
 * **sraz**: {{page.header.meetTime}}

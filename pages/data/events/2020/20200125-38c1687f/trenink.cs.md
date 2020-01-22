@@ -11,9 +11,9 @@ start: '2020-01-25'
 end: '2020-01-25'
 title: 'BBP - Rájecká desítka'
 place: 'Rájec, Gymnázium'
-meetTime: '9:30'
+meetTime: ''
 transport: 'auty, domlouvejte se mezi sebou, nebo pište na skupinu!'
-startTime: '15:30'
+startTime: ''
 template: trenink
 date: '2020-01-11'
 id: 20200125-38c1687f
