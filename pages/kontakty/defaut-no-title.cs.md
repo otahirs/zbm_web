@@ -24,7 +24,7 @@ date: '2018-10-28'
 **IT - členská sekce:** Richard Pátek - arnost.p@centrum.cz 
 **IT - web:** Otakar Hirš - otakar.hirs@gmail.com
 **Sklad:** Štěpán Zimmermann - stepazdepa@seznam.cz
-**Spráce map:** Stanislav Mokrý - mokry.stanislav@gmail.com
+**Správce map:** Stanislav Mokrý - mokry.stanislav@gmail.com
 **Oddílové oblečení:** Barbora Zháňalová - barborazhanalova@gmail.com
 <div class="row">
     <!--
