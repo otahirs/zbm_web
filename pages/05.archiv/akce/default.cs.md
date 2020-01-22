@@ -13,13 +13,7 @@ content:
 <input type="text" style="display:inline" class="search" placeholder="Hledat.." />&nbsp;<a class="button" id="reset_btn"><i class="fa fa-refresh" aria-hidden="true"></i></a>&nbsp;<a class="button special" id="filter_btn">zobrazit filtr</a>
 <br><br>
 <div id="filter_program" class="row" style="display: none">
-  <div class="col-sm-6 col-md-3" >
-    <fieldset>
-    <label>Filtr data</label>
-    <button data-toggle="datepicker" type="button" style="height: 2.75em;font-size: 1em;line-height: 2.9em;"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;nyní</button>
-    </fieldset>
-  </div>
-  <div class="col-sm-6 col-md-3">
+   <div class="col-sm-6 col-md-3">
     <fieldset>
     <label>Typ události</label>
     <input class="filter-all" type="radio" value="all" name="type" id="type-all" checked />
@@ -62,6 +56,12 @@ content:
       </div>	
     <div>
 	  </fieldset>
+  </div>
+  <div class="col-sm-6 col-md-3" >
+    <fieldset>
+    <label>Filtr data</label>
+    <button data-toggle="datepicker" type="button" style="height: 2.75em;font-size: 1em;line-height: 2.9em;color:inherit !important; box-shadow:none;"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;nyní</button>
+    </fieldset>
   </div>
  </div>
 {#tabulka#}
@@ -164,23 +164,25 @@ content:
 
 	var options = {
     valueNames: [ 'datum', 'nazev', 'misto', 'skupina', 'type', 'startMonth', 'endMonth', 'start', 'end' ],
-    page: 10,
+    page: 9,
     pagination: true
 	};
 
   var userList = new List('program', options);
+
+  function showCurrent(item) {
+    if (item.values().start >= now || item.values().end > (now - 5*3600*24)) {
+      return true;
+    }
+    return false;
+  } 
+  
   
   function resetList(){
   	userList.search();
     userList.sort('start', { order: "asc" });
-  	userList.filter(function (item) {
-      if (item.values().start >= now || item.values().end > (now - 5*3600*24)) {
-        return true;
-      } else {
-        return false;
-      }
-    }); 
-  	userList.update();
+  	userList.filter(showCurrent); 
+  	//userList.update();
   	$(".filter-all").prop('checked', true);
   	$('.filter').prop('checked', false);
     $('.search').val('');
@@ -215,11 +217,14 @@ content:
 
       if($datepicker.html() == bnt_text)
       {
-        dateFilter = true;
+        dateFilter = showCurrent(item);
       } else {
         dateFilter = item.values().startMonth.indexOf(value_datepicker) >= 0 || item.values().endMonth.indexOf(value_datepicker) >= 0;
       }
-      
+
+      if (item.elm.className == "program--now" && dateFilter) {
+        return true;
+      }
   		return typeFilter && skupinaFilter && dateFilter;
   	});
   	userList.update();
