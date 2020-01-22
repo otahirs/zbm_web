@@ -102,8 +102,8 @@ winter:
     thursday:
         1:
             name: 'tělocvična'
-            place: 'ZŠ Kotlářská'
-            meetup: '16:00'
+            place: 'ZŠ Merhautova'
+            meetup: '16:30'
             group:
                     - pulci1
                     - pulci2
@@ -162,7 +162,7 @@ winter:
             {% set listOfSeasons = ["summer", "winter"] %}
             {% for season in listOfSeasons %}
                 <table id="table-{{season}}" {% if page.header.currentSeason != season %} style="display: none;" {% endif %}>
-                {% set CZweek = ["Pondělí","Úterý","Středa","Čtvertek","Pátek","Sobota","Neděle"] %}
+                {% set CZweek = ["Pondělí","Úterý","Středa","Čtvrtek","Pátek","Sobota","Neděle"] %}
                 {% set numberOfEvents = 0 %}
                 {% for day in attribute(attribute(page, "header"), season) %}
                     {% set day_index = loop.index -1 %}
