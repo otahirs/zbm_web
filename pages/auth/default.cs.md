@@ -50,6 +50,12 @@ access:
     </div>
 </div>
 <hr>
+<h2>Changelog</h2>
+<ul>
+    <li>Nyní lze filtrovat  <a href="https://zabiny.club/auth/events">události</a> se zachováním aktuálního data. Filtr již nezpůsobí zobrazení všech událostí od počátku věků.</li>
+</ul>
+
+<hr>
     <div>
         <p>Chyby na opravu zde:
             <ul>
