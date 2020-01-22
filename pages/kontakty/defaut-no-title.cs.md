@@ -25,6 +25,7 @@ date: '2018-10-28'
 **IT - web:** Otakar Hirš - otakar.hirs@gmail.com
 **Sklad:** Štěpán Zimmermann - stepazdepa@seznam.cz
 **Spráce map:** Stanislav Mokrý - mokry.stanislav@gmail.com
+**Oddílové oblečení:** Barbora Zháňalová - barborazhanalova@gmail.com
 <div class="row">
     <!--
     <div class="col-lg-6">  
