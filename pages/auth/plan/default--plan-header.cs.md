@@ -63,8 +63,8 @@ plan:
     thursday:
         1:
             name: 'tělocvična'
-            place: 'ZŠ Kotlářská'
-            meetup: '16:00'
+            place: 'ZŠ Merhautova'
+            meetup: '16:30'
             group:
                     - pulci1
                     - pulci2
@@ -76,8 +76,8 @@ plan:
             group:
                     - zaci1
         3:
-            name: 'kompenzační cvičení'
-            place: 'bude upřesněno'
+            name: 'kompenzační cvičení, vemte si karimatku'
+            place: 'Podzimní 21'
             meetup: '17:30'
             group:
                     - dorost
