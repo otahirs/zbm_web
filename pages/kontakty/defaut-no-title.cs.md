@@ -67,12 +67,9 @@ date: '2018-10-28'
             <em>nejmenši děti do 6 let</em>
             <h4>Aleš Finstrle</h4>
             <ul class="fa-ul">
+                <li><i class="fa-li fa fa-phone"></i>603 523 183</li>
                 <li><i class="fa-li fa fa-envelope"></i>ales.finstrle@gmail.com</li>
             </ul>
-            <h4>Bohumila Klangová</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>bohca@bohca.cz</li>
-            </ul>  
         </div>      
     </div>
     <div class="divOuter col-lg-6" id="pulci1">
