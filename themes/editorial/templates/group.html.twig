@@ -160,7 +160,7 @@
         </div>
 
         <div id="routes" class="tab-content">
-            {% for p in collection if p.header.routes|length %}
+            {% for p in collection.order('header.start','desc') if p.header.routes|length %}
                 <h4>
                     {{ p.header.title }}&nbsp;|&nbsp;
                     {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
