@@ -47,7 +47,6 @@ date: '2018-07-10'
 
 <h3>Obsah</h3>
 <ul>
- <li><a href="#vedeni">Vedení oddílu</a></li>
  <li><a href="#finance">Finance</a></li>
  <li><a href="#zavody">Přihlašování na závody</a></li>
  <li><a href="#vedouci">Vedoucí na závodech</a></li>
@@ -55,29 +54,7 @@ date: '2018-07-10'
 </ul>
  
 ---
-## Vedení oddílu   <a class ="fix-topbar-offset" name="vedeni"></a>
 
-**Předseda:** Jan Fiala
-**Trenér dorostu:** Jan Zháňal
-**Trenér žactva:** Andrea Firešová
-**Pořadatel závodů:** Jan Drábek
-**Koordinátor:** Aleš Finstrle
-
-
-
-**trenéři:** Jan Drábek, Aleš a Luděk Finstrle, Andrea Firešová, Daniel Hájek, Lenka Hrušková, Dobra Janotová, Jitka Kabáthová, Lenka Kočová, Hana Nedbálková, Pavel Zelený, Jan Zháňal, Štěpán Zimmermann
-
-**skladník:** Štěpán Zimmermann  
-**areály pevných kontrol:** Vladimír Kelbl  
-**přihlášky:** Jan Drábek   
-**správa oddílových stránek:** Otakar Hirš 
-**správa členské sekce:** Richard Pátek
-**oddílové oblečení:** Barbora Zháňalová
-
-
-**stanovy**: Oddíl se řídí svými stanovami, které jsou stejně jako zápisy z členských schůzi a ze schůzí vedení dostupné v členské sekci.
-
----
 ## Financování a osobní účty <a class ="fix-topbar-offset" name="finance"></a>
 
 Osobní účty vede Věra Mádlová, aktuální stav je on-line v „Členské sekci".
@@ -254,12 +231,5 @@ Klikněte na tlačítko, zadejte email a odešlete žádost o připojení ke sku
 Email se posílá na adresu: _zabiny@googlegroups.com_. Email následně dorazí všem členům skupiny. 
 #### Jak se odhlásit ze skupiny?
 Posláním prázdného emailu na adresu _zabiny+unsubscribe@googlegroups.com_ bude adresa odesílatele vyškrtnuta z emailové skupiny.
-
----
-
-
-<br>
-
-**Přejeme Vám mnoho úspěchů!!**
 
 
