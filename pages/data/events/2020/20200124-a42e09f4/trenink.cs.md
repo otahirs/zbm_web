@@ -21,5 +21,9 @@ id: 20200124-a42e09f4
 terrain: ''
 leader: Jenda
 note: '[Místo srazu](https://en.mapy.cz/s/cacajojavo)'
+results:
+    -
+        name: 'WinSplits - všechny kategorie'
+        link: 'http://obasen.orientering.se/winsplits/online/en/default.asp?page=classes&databaseId=67841&ct=true'
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
