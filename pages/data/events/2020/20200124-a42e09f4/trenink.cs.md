@@ -21,6 +21,19 @@ id: 20200124-a42e09f4
 terrain: ''
 leader: Jenda
 note: '[Místo srazu](https://en.mapy.cz/s/cacajojavo)'
+routes:
+    -
+        name: H
+        link: '3drerun.worldofo.com/index.php?id=-16759458&type=info&fbclid=IwAR1GASB9VBH53-Egx2UbE3QMqvITz-1CGPodTOJiXUEYoVaBoJBan385SnQ'
+    -
+        name: D
+        link: 'http://3drerun.worldofo.com/index.php?id=-16759459&type=info'
+    -
+        name: MEZI
+        link: 'http://3drerun.worldofo.com/index.php?id=-16759460&type=info'
+    -
+        name: Linie
+        link: 'http://3drerun.worldofo.com/index.php?id=-16759455&type=info'
 results:
     -
         name: 'WinSplits - všechny kategorie'
