@@ -58,8 +58,12 @@ content:
               </div>
               {% endif %}
               <section class="newsText">
-                {{p.content}}
-		
+                  {% if p.content|length > 300 %}
+                    <div class="summary" title="Kliknutím zobrazíte celou novinku">{{p.content|safe_truncate(300)}}</div>
+                    <div style="display:none;">{{p.content}}</div>
+                  {% else %}
+                    {{p.content}}
+                  {% endif %}
                 <div class="row justify-content-between">
                   <div class="author col-auto"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;{{p.header.user}}</div>
                   <a class="comment-count col-auto" href="{{p.url ~ "#commento"}}"> <i class="fa fa-comments-o" aria-hidden="true"></i></a>
@@ -71,6 +75,14 @@ content:
         {% endfor %}
         </section>
       </div>      
+      <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            $('.summary').on('click', function(){
+              this.nextElementSibling.style.display='block';
+              this.style.display='none';
+            });
+        });  
+      </script>
   </div> <!--  novinky -->
 
 
