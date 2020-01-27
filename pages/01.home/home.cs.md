@@ -59,7 +59,7 @@ content:
               {% endif %}
               <section class="newsText">
                   {% if p.content|length > 300 %}
-                    <div class="summary" title="Kliknutím zobrazíte celou novinku">{{p.content|safe_truncate(300)}}</div>
+                    <div class="summary" style="cursor:pointer" title="Kliknutím zobrazíte celou novinku">{{p.content|safe_truncate(300)}}</div>
                     <div style="display:none;">{{p.content}}</div>
                   {% else %}
                     {{p.content}}
