@@ -128,6 +128,11 @@
                     {% endfor %}
                 </table>
             {% endfor %}
+            {% if page.header.group == "dorost" %}
+                <h4>Tréninkový plán</h4>
+                <a href="https://docs.google.com/spreadsheets/d/1kNrDthPJq-VYlolrUuIv7PfRa7Qx2WWfA-ijMi0VX1M/edit?usp=sharing">D</a>
+                <a href="https://docs.google.com/spreadsheets/d/1EF8Y_OKSFwrC0p5LWzQX9oXIA5uN5znvFvCToaVur5w/edit?usp=sharing">H</a>
+            {% endif %}
         </div>
 
         <div id="soustredeni" class="tab-content">
