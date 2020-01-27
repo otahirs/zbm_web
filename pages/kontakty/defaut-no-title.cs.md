@@ -56,26 +56,26 @@ date: '2018-10-28'
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>stepazdepa@seznam.cz</li>
             </ul>
-    </div>-->
+    </div>
+    **Trenéři:** Jan Drábek, Alena Finstrlová, Aleš Finstrle, Luděk Finstrle, Andrea Firešová, Daniel Hájek, Lenka Hrušková, Dobra Janotová, Jitka Kabáthová, Lenka Kočová, Hana Nedbálková, Pavel Zelený, Jan Zháňal, Štěpán Zimmermann
+    -->
     <div class="col-12"> 
     <hr>
     <h1>Trenéři</h1>
     </div>
     <div class="divOuter col-lg-6" id="zabicky">
         <div class="contact--divInner">
-        <h3>Žabičky</h3>
-            <em>nejmenši děti do 6 let</em>
+        <h3>Žabičky - do 6 let</h3>
             <h4>Aleš Finstrle</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-phone"></i>603 523 183</li>
                 <li><i class="fa-li fa fa-envelope"></i>ales.finstrle@gmail.com</li>
             </ul>
-        </div>      
+        </div>  
     </div>
     <div class="divOuter col-lg-6" id="pulci1">
         <div class="contact--divInner">
-        <h3>Pulci 1</h3>
-            <em>začátečníci od 6 let</em>
+        <h3>Pulci 1 - od 6 let</h3>
             <h4>Lenka Kočová</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-phone"></i>777 631 615</li>
@@ -84,14 +84,12 @@ date: '2018-10-28'
             <h4>Hanka Nedbálková</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>hana.nedbalkova@seznam.cz</li>
-            </ul>
-                      
-            </div>
+            </ul>      
+        </div>
     </div>
     <div class="divOuter col-lg-6" id="pulci2">
         <div class="contact--divInner">
-        <h3>Pulci 2</h3>
-            <em>mírně pokročilí od 8 let</em>
+        <h3>Pulci 2 - od 8 let</h3>
             <h4>Lenka Hrušková</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-phone"></i>737 353 537</li>
@@ -105,8 +103,7 @@ date: '2018-10-28'
     </div>
     <div class="divOuter col-lg-6" id="zaci1">
        <div class="contact--divInner">
-        <h3>Žáci 1</h3>
-            <em>pokročilejší od 10 let</em>
+        <h3>Žáci 1 - od 10 let</h3>
             <h4>Pavel Zelený</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>pzeleny@post.cz</li>
@@ -120,8 +117,7 @@ date: '2018-10-28'
     </div>
     <div class="divOuter col-lg-6" id="zaci2">
        <div class="contact--divInner">
-        <h3>Žáci 2</h3>
-            <em>pokročilí od 12 let</em>
+        <h3>Žáci 2 - od 12 let</h3>
             <h4>Luděk Finstrle</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-phone"></i>+420 603 874 687</li>
@@ -139,12 +135,11 @@ date: '2018-10-28'
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>stepazdepa@seznam.cz</li>
             </ul>
-            </div>
+        </div>
     </div>
     <div class="divOuter col-lg-6" id="dorost">
         <div class="contact--divInner">
-        <h3>Dorost+</h3>
-            <em>pořád se učí, od 15 let</em>
+        <h3>Dorost+ - od 15 let</h3>
             <h4>Jan Zháňal</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-phone"></i>725 258 326</li>
