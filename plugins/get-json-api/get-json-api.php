@@ -31,10 +31,12 @@ class GetJSONAPIPlugin extends Plugin
         $data = json_decode($body, true);
 
         foreach( $data["Data"] as $event){
-            $entries[$event["Entry1"]][] = [
-                "name" => $event["Name"],
-                "date" => $event["Date1"]
-            ];
+            if (array_key_exists("Entry1", $event)) {
+                $entries[$event["Entry1"]][] = [
+                    "name" => $event["Name"],
+                    "date" => $event["Date1"]
+                ];
+            }
         }
         return $entries;
         }
