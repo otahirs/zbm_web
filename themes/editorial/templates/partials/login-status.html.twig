@@ -1,0 +1,5 @@
+<span class="login-status">
+    {% if grav.user.authenticated %}
+        <em>{{ grav.user.fullname ?: grav.user.username }}</em>, <a class="logout" href="{{ uri.addNonce((base_url_relative ~ uri.path)|trim('/') ~ '/task' ~ config.system.param_sep ~ 'login.logout', 'logout-form', 'logout-nonce')|e }}">{{ 'PLUGIN_LOGIN.BTN_LOGOUT'|t }}</a>
+    {% endif %}
+</span>

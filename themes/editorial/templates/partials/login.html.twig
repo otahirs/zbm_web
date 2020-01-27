@@ -5,13 +5,9 @@
 
 <section>
   {% if config.plugins.login.enabled and grav.user.authorize('site.login') %}
-    <a href="/auth"> EDITOVAT <i class="fa fa-pencil-square-o" aria-hidden="true"></i></i></a>
-  {% endif %}
-
-
-  {% if config.plugins.login.enabled and grav.user.authorize('site.login') %}
+     <a href="/auth"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editovat</a>
      {% include 'partials/login-status.html.twig' %}
   {% else %}
-      <a href="{{base_url}}/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Přihlásit se</a>
+      <a href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Editovat</a>
   {% endif %}
 </section>
