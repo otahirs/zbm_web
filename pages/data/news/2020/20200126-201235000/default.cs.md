@@ -33,10 +33,10 @@ Projednávalo se **soustředění o Velikonocích a prázdninový tábor**.
 
 Vedení se shodlo na tom, že **od letošního roku již nebudou vydávány PDF dokumenty**: dokument "Program 2020" bude nahrazen kalendářem na oddílových stránkách, dokument "ZBM2020" bude nahrazen sekcí Informace na oddílových stránkách.
 
-Nadále **chceme podporovat menší oddíly v oblasti**, proto vedení svolilo k (bezplatnému) použití mapy Rakovecké údolí pro závod ROB, pořádaný 14.3. oddílem RBK.
+Nadále **chceme podporovat menší oddíly v oblasti**, proto vedení svolilo k (bezplatnému) použití mapy Rakovecké údolí pro závod ROB, pořádaný 14.3. oddílem SK Radiosport z Bílovic nad Svitavou.
 
 V pátek **Dan Hájek** připravil další noční mapový trénink, **díky** za něj! O víkendu proběhlo školení rozhodčích 3. třídy, toho se zúčastnilo 7 Žabiňáků, kteří se snad již brzy zapojí jako stavitelé a hlavní rozhodčí do pořádání našich oblastních závodů.  
 V příštím týdnu mne čeká jednání s vedením SK a s Liborem ohledně převzetí agendy předsedy. Naše děti pak mají v příštím týdnu pololetní prázdniny, trenéři pro děti zorganizovali **soustředění ve Skleném**, kam se odjíždí již ve čtvrtek 30.1.
 
 Nehodlám takovéto články psát pravidelně, ale chci vás, členy oddílu, alespoň nějakým způsobem informovat, že nelenošíme, něco pro vás/nás děláme, zkrátka zlepšit informovanost dovnitř. Když tedy bude co napsat, napíši, a rád.  
-Všechny vás prosím, přicházejte s nápady, iniciativami, dejte nám vědět, pokud něco nefunguje nebo se dá zlepšit. A pokud budete chtít i pomoci, budeme moc rádi.  
+Všechny vás prosím, přicházejte s nápady, iniciativami, dejte nám vědět, pokud něco nefunguje nebo se dá zlepšit. A pokud budete chtít i pomoci, budeme moc rádi.
