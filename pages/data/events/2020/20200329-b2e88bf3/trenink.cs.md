@@ -1,7 +1,7 @@
 ---
 taxonomy:
     skupina:
-        - dorost
+        1: dorost
 type: T
 start: '2020-03-29'
 end: '2020-03-29'
@@ -14,5 +14,11 @@ thingsToTake: 'Věci na převlečení, na místě bude auto na věci'
 template: trenink
 date: '2020-01-13'
 id: 20200329-b2e88bf3
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+leader: ''
+note: 'Vemte si čaj s sebou, nevím, jestli se nám ho do Radostic podaří dostat.'
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.

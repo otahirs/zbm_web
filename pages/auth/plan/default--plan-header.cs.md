@@ -60,7 +60,13 @@ plan:
             meetup: '16:30'
             group:
                     - dorost
-    thursday: null
+    thursday:
+        1:
+            name: 'Bazén - plavání'
+            place: 'Bazén Kraví hora'
+            meetup: '16:45'
+            group:
+                    - zaci2
     friday: null
     saturday: null
     sunday: null
