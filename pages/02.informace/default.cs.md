@@ -56,10 +56,11 @@ date: '2018-07-10'
 </ul>
  
 ---
-## Důležité kontakty <a class ="fix-topbar-offset" name="kontakty"></a>
+## Kontakty <a class ="fix-topbar-offset" name="kontakty"></a>
 
-Všechny důležité kontakty najdete na <a href="./kontakty"> vlastní stránce</a> (také v pravém horního rohu obrazovky). Potřebujete-li se spojit s ostatními členy oddílu, můžete si údaje najít po přihlášení v <a href="https://members.eob.cz/zbm" target="_blank">členské sekci</a>.
+Všechny důležité kontakty najdete na <a href="./kontakty"> vlastní stránce Kontakty</a> (odkaz také v pravém horního rohu obrazovky). Potřebujete-li se spojit s ostatními členy oddílu, můžete si údaje najít v adresáři po přihlášení v <a href="https://members.eob.cz/zbm" target="_blank">členské sekci</a>.
 
+---
 ## Financování a osobní účty <a class ="fix-topbar-offset" name="finance"></a>
 
 Osobní účty vede Věra Mádlová, aktuální stav je on-line v „Členské sekci".
