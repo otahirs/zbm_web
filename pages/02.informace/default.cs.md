@@ -1,5 +1,6 @@
 ---
-title: Informace
+title: 'Informace pro členy klubu'
+menu: 'Informace'
 date: '2018-07-10'
 ---
  <!--
