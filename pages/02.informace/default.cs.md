@@ -48,6 +48,7 @@ date: '2018-07-10'
 
 <h3>Obsah</h3>
 <ul>
+ <li><a href="#kontakty">Kontakty</a></li>
  <li><a href="#finance">Finance</a></li>
  <li><a href="#zavody">Přihlašování na závody</a></li>
  <li><a href="#vedouci">Vedoucí na závodech</a></li>
@@ -55,6 +56,9 @@ date: '2018-07-10'
 </ul>
  
 ---
+## Důležité kontakty <a class ="fix-topbar-offset" name="kontakty"></a>
+
+Všechny důležité kontakty najdete na <a href="./kontakty"> vlastní stránce</a> (také v pravém horního rohu obrazovky). Potřebujete-li se spojit s ostatními členy oddílu, můžete si údaje najít po přihlášení v <a href="https://members.eob.cz/zbm" target="_blank">členské sekci</a>.
 
 ## Financování a osobní účty <a class ="fix-topbar-offset" name="finance"></a>
 
