@@ -66,7 +66,7 @@ Všechny důležité kontakty najdete na <a href="./kontakty"> vlastní stránce
 Osobní účty vede Věra Mádlová, aktuální stav je on-line v „Členské sekci".
 
 #### Plnění osobních účtů
-- Bezhotovostně na účet u České spořitelny 4067843369/0800, v.s. xxxx (xxxx = registrační číslo). Do poznámky vždy připište pouze: "Členské příspěvky". Částka bude připsána na váš osobní oddílový účet. V případě, že chcete naplnit svůj účet darem (který můžete odečíst ze základu daně při ročním zúčtování daně z příjmu), kontaktujte předem Aleše (_alfik76@centrum.cz_). Darovaná částka nesmí být nižší než 1 000,– Kč. Maximální možnost odečtu ze základu daně je 15%.
+- Bezhotovostně na účet u Raiffeisenbank 4067843369/5500 (změna - jiné číslo banky než minulé roky), v.s. xxxx (xxxx = registrační číslo). Do poznámky vždy připište pouze: "Členské příspěvky". Částka bude připsána na váš osobní oddílový účet. V případě, že chcete naplnit svůj účet darem (který můžete odečíst ze základu daně při ročním zúčtování daně z příjmu), kontaktujte předem Honzu (predseda@zabiny.club). Darovaná částka nesmí být nižší než 1 000,– Kč. Maximální možnost odečtu ze základu daně je 15%.
 
 #### Čerpání z osobního účtu
 - Finance z vašeho oddílového účtu lze použít zejména na zaplacení oddílových příspěvků, soustředění, startovného na nedotované závody (např. prázdninové vícedenní závody, LOB, MTBO) či oddílového oblečení. "Členské příspěvky" jednou poskytnuté na oddílový účet již nelze poslat zpět na účet soukromý.
