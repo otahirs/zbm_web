@@ -58,7 +58,7 @@ date: '2018-07-10'
 ---
 ## Kontakty <a class ="fix-topbar-offset" name="kontakty"></a>
 
-Všechny důležité kontakty najdete na <a href="./kontakty"> vlastní stránce Kontakty</a> (odkaz také v pravém horního rohu obrazovky). Potřebujete-li se spojit s ostatními členy oddílu, můžete si údaje najít v adresáři po přihlášení v <a href="https://members.eob.cz/zbm" target="_blank">členské sekci</a>.
+Všechny důležité kontakty najdete na <a href="./kontakty"> vlastní stránce Kontakty</a> (odkaz také v pravém horním rohu obrazovky). Potřebujete-li se spojit s ostatními členy oddílu, můžete si údaje najít v adresáři po přihlášení v <a href="https://members.eob.cz/zbm" target="_blank">členské sekci</a>.
 
 ---
 ## Financování a osobní účty <a class ="fix-topbar-offset" name="finance"></a>
@@ -69,7 +69,7 @@ Osobní účty vede Věra Mádlová, aktuální stav je on-line v „Členské s
 - Bezhotovostně na účet u České spořitelny 4067843369/0800, v.s. xxxx (xxxx = registrační číslo). Do poznámky vždy připište pouze: "Členské příspěvky". Částka bude připsána na váš osobní oddílový účet. V případě, že chcete naplnit svůj účet darem (který můžete odečíst ze základu daně při ročním zúčtování daně z příjmu), kontaktujte předem Aleše (_alfik76@centrum.cz_). Darovaná částka nesmí být nižší než 1 000,– Kč. Maximální možnost odečtu ze základu daně je 15%.
 
 #### Čerpání z osobního účtu
-- Finance z vašeho oddílového účtu lze použít zejména na zaplacení oddílových příspěvků, soustředění, startovného na nedotované závody (např. prázdninové vícedení závody, LOB, MTBO) či oddílového oblečení. "Členské příspěvky" jednou poskytnuté na oddílový účet již nelze poslat zpět na účet soukromý.
+- Finance z vašeho oddílového účtu lze použít zejména na zaplacení oddílových příspěvků, soustředění, startovného na nedotované závody (např. prázdninové vícedenní závody, LOB, MTBO) či oddílového oblečení. "Členské příspěvky" jednou poskytnuté na oddílový účet již nelze poslat zpět na účet soukromý.
 
 <!--
 ---
@@ -164,38 +164,38 @@ Finanční prostředky lze čerpat na: sportovní soustředění, materiální v
 
 ---
 ## Přihlašování na závody <a class ="fix-topbar-offset" name="zavody"></a>
-Přihlašování na závody i soustředění probíhá výhradně přes [členskou sekci](https://members.eob.cz/zbm/). Přihlašování na závody má na starost Honza Drábek. V případě že závod, kterého se chcete zúčastnit, není zadán, pište na kontaktní e-mail _prihlasky.zbm@eob.cz_. Pokud Vám nefunguje vaše přístupové jméno a heslo do naší „Členské sekce", kontaktujte Richarda Pátka, který vám tyto údaje poskytne.
+Přihlašování na závody i soustředění probíhá výhradně přes [členskou sekci](https://members.eob.cz/zbm/). Přihlašování na závody má na starost Honza Drábek. V případě že závod, kterého se chcete zúčastnit, není zadán, pište na kontaktní e-mail _prihlasky.zbm@eob.cz_. Pokud vám nefunguje vaše přístupové jméno a heslo do naší „Členské sekce", kontaktujte Richarda Pátka, který vám tyto údaje poskytne.
 
-V případdech, že pravidelně jezdíte na závody mimo naší oblast, kontaktujte Ríšu Pátka, Honzu Drábka a domluvte se na individuální způsobu přihlašování přímo v sytému ORIS.
+V případě, že pravidelně jezdíte na závody mimo naši oblast, kontaktujte Honzu Drábka nebo Ríšu Pátka a domluvte se na individuálním způsobu přihlašování přímo v systému ORIS.
 
-V krajní nouzi pak můžete využít některého z telefonů.
+V krajní nouzi pak můžete využít některého z následujících kontaktů:
 
-Kontakt: Richard Pátek, e-mail – _arnost.p@centrum.cz_   mobil – 721 111 301
 Kontakt: Honza Drábek, e-mail – _prihlasky.zbm@eob.cz_  mobil – 608 477 026 
+Kontakt: Richard Pátek, e-mail – _arnost.p@centrum.cz_   mobil – 721 111 301
 
 ### Dohlášky 
-držujte prosím data přihlášek a pokud možno se na závody nepřihlašujte individuálně, ale vždy prostřednictvím oddílu:
+doržujte prosím data přihlášek a pokud možno se na závody nepřihlašujte individuálně, ale vždy prostřednictvím oddílu:
 
-1. Je-li možné se na závod dohlásit ještě přes ORIS, kontaktovat Honzu Drábka (e-mailem, telefonicky)
-2. Po uzavření přihlášek pořadateli, kontaktovat pořadatele (v kopii poslat informaci o dohlášce Honzovi Drábkovi)
-3. Přihlášku na místě řeší každý sám s vedoucím akce přímo s pořadateli u prezentace. 
+1. Je-li možné se na závod dohlásit ještě přes ORIS, kontaktujte Honzu Drábka (e-mailem, telefonicky)
+2. Po uzavření přihlášek pořadateli, kontaktujte pořadatele (v kopii pošlete informaci o dohlášce Honzu Drábkovi)
+3. Přihlášku na místě řeší každý sám, přímo s pořadateli u prezentace. 
 
 
 ---
 ## Kdo se může a kam přihlásit <a class ="fix-topbar-offset" name="kdoakam"></a>
 
 - oblastní žebříček a vícedenní závody – všichni (i úplní začátečníci)
-- žebříček B-Morava – držitelé licence A,B a veteráni
+- žebříček B-Morava – držitelé licence A, B a veteráni
 - žebříček A – držitelé licence A
 
-Všichni závodnicí kategorií D,H-20, 21 se mohou přihlásit na kterýkoliv závod v ČR mimo Mistrovství ČR (dle pořadí v Rankingu) a v případě, že v tomto závodě bude více podkategorií (E, A, B, C, D), uveďte v přihlášce do poznámky, do jaké podkategorie chcete přihlásit. Na oblastních závodech bude vypsána kategorie D21D, H21D (zkrácená trať).
+Všichni závodníci kategorií D, H-20, 21 se mohou přihlásit na kterýkoliv závod v ČR mimo Mistrovství ČR (dle pořadí v Rankingu). V případě, že v tomto závodě bude více podkategorií (E, A, B, C, D), uveďte v přihlášce do poznámky, do jaké podkategorie chcete přihlásit. Na oblastních závodech bude vypsána kategorie D21D, H21D (zkrácená trať).
 
 ---
 ## Vedoucí na závodech <a class ="fix-topbar-offset" name="vedouci"></a>
 Pokud budete určeni jako vedoucí na závodech, proveďte prosím následující úkony:  
 - Zkontrolujte, že máte potvrzení o zaplacení v e-mailu, v opačném případě kontaktujte Věrku
 - Na závodech odprezentujte oddíl. 
-- Při dopravě autobusem na dva dny nezapomeňte zjistit, kde je ubytování a zejména, kde je ubytován řidič autobusu (u pořadatelů vyžadujte plánek jeho ubytování).
+- Při dopravě autobusem na dva dny nezapomeňte zjistit, kde je ubytování a zejména, kde je ubytován řidič autobusu (u pořadatelů vyžadujte plánek jeho ubytování). Je dobré si vzít na řidiče telefon.
 - Po závodech dodejte doklady k vyúčtování.
 
 <!--
