@@ -1558,14 +1558,18 @@ table.plan td {
   padding: 0 1.5rem;
   background-color: #f76555; }
   #soon section {
-    padding: 1.5rem;
-    margin: 1.5rem;
+    padding: 2.5rem;
+    margin: 2.5rem;
     position: relative;
     left: 1rem;
     border: 1px dashed black; }
     #soon section.event {
       border: 1px solid black;
       background-color: white; }
+    @media screen and (max-width: 1680px) {
+      #soon section {
+        padding: 1.5rem;
+        margin: 1.5rem; } }
 
 .soon--date {
   padding-top: 1.5rem; }
@@ -1748,11 +1752,6 @@ ul.tabs li.group-icon {
   padding-bottom: 0.8em; }
 
 #calendar .row {
-  /*
-        override these from bootstrap:
-        margin-right: -15px;
-        margin-left: -15px;
-        */
   margin: 0; }
 
 #calendar .calendar-controls {
