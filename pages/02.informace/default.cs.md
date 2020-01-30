@@ -166,7 +166,7 @@ Finanční prostředky lze čerpat na: sportovní soustředění, materiální v
 ## Přihlašování na závody <a class ="fix-topbar-offset" name="zavody"></a>
 Přihlašování na závody i soustředění probíhá výhradně přes [členskou sekci](https://members.eob.cz/zbm/). Přihlašování na závody má na starost Honza Drábek. V případě že závod, kterého se chcete zúčastnit, není zadán, pište na kontaktní e-mail _prihlasky.zbm@eob.cz_. Pokud vám nefunguje vaše přístupové jméno a heslo do naší „Členské sekce", kontaktujte Richarda Pátka, který vám tyto údaje poskytne.
 
-V případě, že pravidelně jezdíte na závody mimo naši oblast, kontaktujte Honzu Drábka nebo Ríšu Pátka a domluvte se na individuálním způsobu přihlašování přímo v systému ORIS.
+Pakliže pravidelně jezdíte na závody mimo naši oblast, kontaktujte Honzu Drábka nebo Ríšu Pátka a domluvte se na individuálním způsobu přihlašování přímo v systému ORIS (nezapomeňte si poté vzřešit vyúčtování).
 
 V krajní nouzi pak můžete využít některého z následujících kontaktů:
 
