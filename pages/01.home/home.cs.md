@@ -58,11 +58,12 @@ content:
               </div>
               {% endif %}
               <section class="newsText">
-                  {% if p.content|length > 300 %}
-                    <div class="summary" style="cursor:pointer" title="Kliknutím zobrazíte celou novinku">{{p.content|safe_truncate(300)}}</div>
-                    <div style="display:none;">{{p.content}}</div>
+                  {% set summary = p.content|safe_truncate_html(70) %}
+                  {% if p.content != summary %}
+                    <div class="newsText--summary" style="cursor:pointer" title="Kliknutím zobrazíte celou novinku">{{summary}}</div>
+                    <div class="newsText--content" style="display:none;">{{p.content}}</div>
                   {% else %}
-                    {{p.content}}
+                    <div class="newsText--content">{{p.content}}</div>
                   {% endif %}
                 <div class="row justify-content-between">
                   <div class="author col-auto"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;{{p.header.user}}</div>
@@ -77,7 +78,7 @@ content:
       </div>      
       <script>
         window.addEventListener('DOMContentLoaded', () => {
-            $('.summary').on('click', function(){
+            $('.newsText--summary').on('click', function(){
               this.nextElementSibling.style.display='block';
               this.style.display='none';
             });
