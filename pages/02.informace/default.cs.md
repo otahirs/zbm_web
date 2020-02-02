@@ -67,8 +67,8 @@ Osobní účty vede Věra Mádlová, aktuální stav je on-line v „Členské s
 
 #### Členské příspěvky a dary oddílu
 - Zasílejte výhradně bezhotovostně na účet u Raiffeisenbank 4067843369/5500 (změna - jiné číslo banky než minulé roky), v.s. xxxx (xxxx = registrační číslo).
-- Do poznámky vždy připište: "Členské příspěvky" nebo "Dar".
-- V případě, že chcete přispět oddílu darem (který lze odečíst ze základu daně při ročním zúčtování daně z příjmu), kontaktujte předem Honzu (predseda@zabiny.club). Darovaná částka nesmí být nižší než 1 000,– Kč. Maximální možnost odečtu ze základu daně je 15%.Čerpání financí
+- Do poznámky vždy připište: "Členské příspěvky", případně "Dar".
+- V případě, že chcete přispět oddílu darem (který lze odečíst ze základu daně při ročním zúčtování daně z příjmu), kontaktujte předem Honzu (predseda@zabiny.club). Darovaná částka nesmí být nižší než 1 000,– Kč. Maximální možnost odečtu ze základu daně je 15%.
 
 #### Čerpání financí
 - Finance z oddílového účtu lze použít zejména na zaplacení oddílových příspěvků, soustředění, startovného na nedotované závody (např. prázdninové vícedenní závody, LOB, MTBO) či oddílového oblečení. Členské příspěvky a dary poskytnuté na oddílový účet již nelze poslat zpět na účet soukromý.
