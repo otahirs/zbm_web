@@ -90,7 +90,7 @@ winter:
         4:
             name: 'běžecký trénink + teorie'
             place: 'ZŠ Novoměstská, Novoměstská 1887/21'
-            meetup: '16:30'
+            meetup: '16:00'
             group:
                     - zaci2
         5:
