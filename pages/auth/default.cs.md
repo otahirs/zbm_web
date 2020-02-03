@@ -52,6 +52,7 @@ access:
 <hr>
 <h2>Changelog</h2>
 <ul>
+    <li>U <a href="https://zabiny.club/auth/events">seznamu událostí</a> lze nyní ve filtru zaškrtnout "zobrazit již uplynulé" události. U akcí z let minulých se zobrzí i příslušný rok.</li>
     <li>Nyní lze filtrovat  <a href="https://zabiny.club/auth/events">události</a> se zachováním aktuálního data. Filtr již nezpůsobí zobrazení všech událostí od počátku věků.</li>
 </ul>
 
