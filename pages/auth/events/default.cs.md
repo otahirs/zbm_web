@@ -78,6 +78,9 @@ content:
     <fieldset>
     <label>Filtr data</label>
     <button data-toggle="datepicker" type="button" style="height: 2.75em;font-size: 1em;line-height: 2.9em;color:inherit !important; box-shadow:none;"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;nyní</button>
+    <br>
+    <input id="include-older" type="checkbox"/>
+    <label for="include-older">zobrazit již uplynulé</label>
     </fieldset>
   </div>
  </div>
@@ -93,14 +96,17 @@ content:
             {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
             {# HELP |localizeddate http://twig-extensions.readthedocs.io/en/latest/intl.html#}
             {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
-            {% if p.header.start|localizeddate('medium', 'none','cs','Europe/Prague', 'M') != p.header.end|localizeddate('medium', 'none','cs','Europe/Prague', 'M')%}
+            {% if p.header.start|date('m') != p.header.end|date('m') %}
               {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
             {# pokud neni stejny den - format 6.-8. cerven #}
-            {% elseif p.header.start|localizeddate('medium', 'none') != p.header.end|localizeddate('medium', 'none')%}
+            {% elseif p.header.start != p.header.end %}
               {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
             {% else %}
             {# pokud stejny den - format 6. cerven #}
               {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+            {% endif %}
+            {% if p.header.end|date("Y") != "now"|date("Y") %}
+              {{ p.header.end|date("Y") }}
             {% endif %}
           </td>
           <td class="nazev show"><b>{{ p.title }}</b></td>
@@ -231,13 +237,15 @@ content:
   	$('.filter').prop('checked', false);
     $('.search').val('');
     $datepicker.html(bnt_text);
+    $("#include-older").prop("checked", false);
   	//console.log('Reset Successfully!');
   };
 
   function updateList(){
     var values_skupina = $("input[name=skupina]:checked").val();
   	var values_type = $("input[name=type]:checked").val();
-    var value_datepicker = $datepicker.datepicker('getDate', true) 
+    var value_datepicker = $datepicker.datepicker('getDate', true);
+    var include_old = $("#include-older").prop("checked");
   	//console.log(values_skupina, values_type);
 
   	userList.filter(function (item) {
@@ -259,8 +267,9 @@ content:
   			typeFilter = item.values().type.indexOf(values_type) >= 0;
       }
 
-      if($datepicker.html() == bnt_text)
-      {
+      if(include_old) {
+        dateFilter = true;
+      } else if($datepicker.html() == bnt_text) {
         dateFilter = showCurrent(item);
       } else {
         dateFilter = item.values().startMonth.indexOf(value_datepicker) >= 0 || item.values().endMonth.indexOf(value_datepicker) >= 0;
@@ -278,6 +287,7 @@ content:
     //updateList();
     $("input[name=skupina]").change(updateList);
     $('input[name=type]').change(updateList);
+    $("#include-older").change(updateList);
     $datepicker.on('pick.datepicker', function () {
         updateList();
     });
