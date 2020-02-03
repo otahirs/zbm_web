@@ -56,8 +56,8 @@ winter:
     tuesday:
         1:
             name: 'běžecké posilování'
-            place: 'ZŠ Kotlářská'
-            meetup: '16:45'
+            place: 'BiGy, Barvičova 85'
+            meetup: '16:00'
             group:
                     - zaci1
                     - zaci2
