@@ -4,8 +4,8 @@ taxonomy:
         1: dorost
         2: zaci2
 type: M
-start: '2020-02-14'
-end: '2020-02-14'
+start: '2020-02-28'
+end: '2020-02-28'
 title: 'noční mapový trénink'
 place: Přeckov
 gps: '49.27841, 15.91716'
