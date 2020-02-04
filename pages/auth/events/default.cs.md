@@ -91,29 +91,40 @@ content:
     
   {% for p in collection %}
   
-      <tr data-href="{{ p.url }}" style="cursor: pointer;">
-          <td class="datum show">
-            {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
-            {# HELP |localizeddate http://twig-extensions.readthedocs.io/en/latest/intl.html#}
-            {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
-            {% if p.header.start|date('m') != p.header.end|date('m') %}
-              {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
-            {# pokud neni stejny den - format 6.-8. cerven #}
-            {% elseif p.header.start != p.header.end %}
-              {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
-            {% else %}
-            {# pokud stejny den - format 6. cerven #}
-              {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
-            {% endif %}
-            {% if p.header.end|date("Y") != "now"|date("Y") %}
-              {{ p.header.end|date("Y") }}
-            {% endif %}
-          </td>
-          <td class="nazev show"><b>{{ p.title }}</b></td>
-          <td class="misto show">{{p.header.place}}</td>
-          <td class="edit">
+      <tr>
+          <td class="datum edit" title="Upravit událost">
             <a href="/auth/events/edit?event={{ p.header.id[:4] }}/{{ p.header.id }}" target="_blank">
-              Upravit&nbsp;&nbsp;<i class="fa fa-pencil" aria-hidden="true"></i>
+              {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
+              {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
+              {% if p.header.start|date('m') != p.header.end|date('m') %}
+                {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+              {# pokud neni stejny den - format 6.-8. cerven #}
+              {% elseif p.header.start != p.header.end %}
+                {{p.header.start|date("j.") ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+              {% else %}
+              {# pokud stejny den - format 6. cerven #}
+                {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+              {% endif %}
+              {# pokud minule roky, zobrazi rok #}
+              {% if p.header.end|date("Y") != "now"|date("Y") %}
+                {{ p.header.end|date("Y") }}
+              {% endif %}
+            </a>
+          </td>
+          <td class="nazev edit" title="Upravit událost">
+            <a href="/auth/events/edit?event={{ p.header.id[:4] }}/{{ p.header.id }}" target="_blank">
+              <b>{{ p.title }}</b>
+            </a>
+          </td>
+          <td class="misto edit" title="Upravit událost">
+            <a href="/auth/events/edit?event={{ p.header.id[:4] }}/{{ p.header.id }}" target="_blank">
+              {{p.header.place}}
+            </a>
+          </td>
+          
+          <td class="view">
+            <a href="{{p.url}}" target="_blank" title="Zobrazit stránku události">
+              <i class="fa fa-eye" aria-hidden="true"></i>
             </a>
           </td>
 
@@ -177,16 +188,9 @@ content:
       location.href = "/auth/events/edit?new=" + e.target.value;
   })
 
-  // links
-	$('[data-href]').click(function (e) {
-		if($(e.target).hasClass("show")){
-		window.location = $(this).data("href");
-		}
-	});
-  $("table td").hover(
-    function (e) { 
-      if($(e.target).hasClass("show")){
-        $(this).parent().find("td:not(.edit)").addClass('backgroundAccent') }}, 
+  // links hover background
+  $(".edit").hover( 
+    function () { $(this).parent().find("td:not(.view)").addClass('backgroundAccent') },     
     function () { $(this).parent().find("td:not(:last-child)").removeClass('backgroundAccent') }
   );
 
@@ -232,7 +236,6 @@ content:
   	userList.search();
     userList.sort('start', { order: "asc" });
   	userList.filter(showCurrent); 
-  	//userList.update();
   	$(".filter-all").prop('checked', true);
   	$('.filter').prop('checked', false);
     $('.search').val('');
@@ -284,13 +287,11 @@ content:
   };
   
   
-    //updateList();
+  //updateList();
     $("input[name=skupina]").change(updateList);
     $('input[name=type]').change(updateList);
     $("#include-older").change(updateList);
-    $datepicker.on('pick.datepicker', function () {
-        updateList();
-    });
+    $datepicker.on('pick.datepicker', updateList);
 
 /* pokud neni zaznam zobrazi hlasku*/
   	userList.on('updated', function (list) {
@@ -302,7 +303,8 @@ content:
     });
 
     
-    resetList();
+  
+  resetList();
 	$("#reset_btn").click(resetList);
 	
 

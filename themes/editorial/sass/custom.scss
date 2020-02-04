@@ -70,8 +70,8 @@ table.plan td {
     background-color: _palette(accent);
     
     section {
-        padding: 2.5rem;
-        margin: 2.5rem;
+            padding: 2.5rem;
+            margin: 2.5rem;
         
         position: relative;
         left: 1rem;
@@ -266,19 +266,25 @@ tr.program--now {
 #program .backgroundAccent{
     background-color: _palette(accent);
 }
+#program td.view {
+    padding: 0;
+    text-align: center;
+    a {
+        border-bottom: none;
+        padding: 0.75em 0.75em; 
+        color: _palette(fg) !important;
+    }
+    &:hover {
+        background-color: _palette(accent); 
+    }
+}
 #program td.edit{
     padding: 0;
     a {
         border-bottom: none;
         display: block;
         padding: 0.75em 0.75em;
-    }
-    &:hover {
-        background-color: _palette(accent);
-        a {
-            color: _palette(fg) !important;
-        }
-        
+        color: _palette(fg) !important;
     }
 }
 
