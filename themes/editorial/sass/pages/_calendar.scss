@@ -136,17 +136,18 @@
    }
 }
 
-#cal-events-content {
+#cal-events-list {
+    list-style: disclosure-closed;
+
     a {
         border-bottom: none;
         color: black;
-    }
-    ul {
-        list-style: disclosure-closed;
+        display: block;
+        padding: 0.5em 1em;
     }
     li {
         margin-bottom: 1em;
-        padding: 0.5em 1em; 
+        padding: 0; 
     }
     .cal-list-groups {
         font-size: smaller;
