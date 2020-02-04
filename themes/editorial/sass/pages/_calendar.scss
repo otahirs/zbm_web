@@ -144,6 +144,14 @@
     ul {
         list-style: disclosure-closed;
     }
+    li {
+        margin-bottom: 1em;
+        padding: 0.5em 1em; 
+    }
+    .cal-list-groups {
+        font-size: smaller;
+    }
+    
 }
 .Z  { // závod
     background-color: #ef8585;
