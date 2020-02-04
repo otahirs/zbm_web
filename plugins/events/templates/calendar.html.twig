@@ -1,174 +1,253 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-<section id="calendar">
-
-	<div class="calendar-content">{{ page.content }}</div>
-	{% set todayUrl = page.url ~ '/year:' ~ "now"|date('Y') ~ '/month:' ~ "now"|date('m') %}
+    {% set todayUrl = page.url ~ '/year:' ~ "now"|date('Y') ~ '/month:' ~ "now"|date('m') %}
     {% set prevMonthUrl = page.url ~ '/year:' ~ calendar.prevMonth|date('Y') ~ '/month:' ~ calendar.prevMonth|date('m') %}
     {% set nextMonthUrl = page.url ~ '/year:' ~ calendar.nextMonth|date('Y') ~ '/month:' ~ calendar.nextMonth|date('m') %}
 
+	<div class="calendar-content">{{ page.content }}</div>
+	
+    <div class="row">
+    <div class="cal col-sm-8 col-12">
+        
+        
+        <div class="cal-container-outer">
+        <div class="cal-container-inner">
+        <div class="cal-controls row justify-content-center no-gutters">
+        
 
-    <div class="row no-gutters calendar-controls justify-content-md-center">
-        <div class="col-xs-10 col">
-            <a href="{{ prevMonthUrl }}" class="calendar-button">&lsaquo;</a>
+        <div class="col-7">
+            <a href="{{ prevMonthUrl }}" data-url="{{ prevMonthUrl }}" class="cal-link cal-button">&lsaquo;</a>
             <span class="month-title">{{ calendar.selectedMonth|localizeddate('medium', 'none', 'cs','Europe/Prague', 'LLLL Y') }}</span>
-            <a href="{{ nextMonthUrl }}" class="calendar-button">&rsaquo;</a>
+            <a href="{{ nextMonthUrl }}" data-url="{{ nextMonthUrl }}" class="cal-link cal-button">&rsaquo;</a>
         </div>
-        <div class="col-auto col-xs-2">
-			 <a href="{{ todayUrl }}">
-                <span class="key">dnes</span>
-                <span class="calendar-day-tag calendar-today">{{ "now"|date('j') }}</span>
+        <div class="col-auto">
+			 <a href="{{ todayUrl }}" data-url="{{ todayUrl}}" class="cal-link">
+                <span class="cal-button">dnes</span>
+                <span class="calendar-day-tag cal-today" data-date="{{"now"|date("U")}}"  data-events='{{calendar.events["now"|date("U")]|json_encode()}}'</span>
              </a>
 			
         </div>
-    </div>
-    <div class="row calendar-week-header">
-		<div class="col-xs-1 calendar-cell d-none d-sm-block">{{ 'GRAV.DAYS_OF_THE_WEEK'|ta(0) }}</div>
-		<div class="col-xs-1 calendar-cell d-none d-sm-block">{{ 'GRAV.DAYS_OF_THE_WEEK'|ta(1) }}</div>
-		<div class="col-xs-1 calendar-cell d-none d-sm-block">{{ 'GRAV.DAYS_OF_THE_WEEK'|ta(2) }}</div>
-		<div class="col-xs-1 calendar-cell d-none d-sm-block">{{ 'GRAV.DAYS_OF_THE_WEEK'|ta(3) }}</div>
-		<div class="col-xs-1 calendar-cell d-none d-sm-block">{{ 'GRAV.DAYS_OF_THE_WEEK'|ta(4) }}</div>
-		<div class="col-xs-1 calendar-cell d-none d-sm-block">{{ 'GRAV.DAYS_OF_THE_WEEK'|ta(5) }}</div>
-		<div class="col-xs-1 calendar-cell d-none d-sm-block">{{ 'GRAV.DAYS_OF_THE_WEEK'|ta(6) }}</div>
-        <div class="col-xs-1 calendar-cell d-sm-none d-block">Po</div>
-		<div class="col-xs-1 calendar-cell d-sm-none d-block">Út</div>
-		<div class="col-xs-1 calendar-cell d-sm-none d-block">St</div>
-		<div class="col-xs-1 calendar-cell d-sm-none d-block">Čt</div>
-		<div class="col-xs-1 calendar-cell d-sm-none d-block">Pá</div>
-		<div class="col-xs-1 calendar-cell d-sm-none d-block">So</div>
-		<div class="col-xs-1 calendar-cell d-sm-none d-block">Ne</div>
-	</div>
-    {% set currentDay = calendar.startDay %}
-    {% for week in range(1, calendar.weekCount) %}
-        
-        <div class="row">
-        {% for day in 1..7 %}
-            <div class="col-xs-1 calendar-cell">
-                <div class="calendar-day {% if calendar.selectedMonth|date("m") != currentDay|date("m") %} diff-month {% endif %}">
-                    <div class="grid-day calendar-day-tag{% if currentDay|date("dmY") == "now"|date("dmY") %} calendar-today {% endif %}" {% if calendar.events[currentDay|date("U")] != null %} style="cursor:pointer" {% endif %}>{{currentDay|date("j")}}</div>
-                    {% if calendar.events[currentDay|date("U")] != null %}
-                    <div class="calendar-list">
-                        <ul data-date="{{currentDay|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc | d. MMMM')}}">
-                            {% for event in calendar.events[currentDay|date("U")] %}
-                                {{dump(event)}}
-                                <li class="event" title="{{ event.header.title }}" data-name="{{event.header.title}}" data-href="{{event.header.url}}" data-groups="{% for g in event.header.taxonomy.skupina %}{{g}}{% endfor %}">
-                                    <i class="fa fa-caret-right" aria-hidden="true"></i><span class="event-title">
-                                        <a href="{{ event.header.url }}" class="p-name u-url">
-                                            <span>{{ event.header.title }}</span>
-                                        </a>
-                                    </span>
-                                </li>                         
-                            {% endfor %}
-                        </ul>
-                    </div>
+        </div>
+        <div class="cal-header">
+            <div class="cal-header-day">Po</div>
+            <div class="cal-header-day">Út</div>
+            <div class="cal-header-day">St</div>
+            <div class="cal-header-day">Čt</div>
+            <div class="cal-header-day">Pá</div>
+            <div class="cal-header-day">So</div>
+            <div class="cal-header-day">Ne</div>
+        </div>
+        <div class="cal-table">
+        {% set currentDay = calendar.startDay %}
+        {% for week in range(1, calendar.weekCount) %}
+            
+            
+            <div class="cal-row-outer">
+            <div class="cal-row-inner">
+            {% for day in 1..7 %}
+                
+                <div 
+                    {% if calendar.selectedMonth|date("m") == currentDay|date("m") %} 
+                        class="cal-day"
+                    {% else %}
+                        class="cal-day diff-month"
                     {% endif %}
+                    data-date="{{currentDay|date("U")}}" 
+                    data-events='{{calendar.events[currentDay|date("U")]|json_encode()}}'
+                    style="cursor:help"
+                    {{dump(calendar.events[currentDay|date("U")]|json_encode())}}
+                >
+                             
+                    <div class="cal-day-tag-outer">
+                        <h2 class="cal-day-tag-inner {% if currentDay|date("dmY") == "now"|date("dmY") %} cal-today {% endif %}">
+                            {{currentDay|date("j")}}
+                        </h2>
+                    </div>
+                    {% for event in calendar.events[currentDay|date("U")] %}
+                        <div class="event {{event.header.type ? event.header.type : "J" }}" data-groups="{% for g in event.header.taxonomy.skupina %}{{g}}{% endfor %}">
+                        {% switch event.header.type %}
+                        {% case 'Z' %}
+                            závod
+                        {% case 'T' %}
+                            trénink
+                        {% case 'M' %}
+                            mapový tr.
+                        {% case 'S' %}
+                            soustředění
+                        {% case 'BZL' %}
+                            BZL
+                        {% case 'BBP' %}
+                            běžecký záv.
+                        {% default %}
+                            {{event.header.template}}
+                        {% endswitch %}
+                        </div>                        
+                    {% endfor %}
+                
                 </div>
+                {% set currentDay = currentDay|date_modify("+1 day") %}
+            {% endfor %}
             </div>
-            {% set currentDay = currentDay|date_modify("+1 day") %}
+            </div>
+            
+
         {% endfor %}
         </div>
+        </div>
+        </div>
+        
+        </div>
+        <div class="col-sm-4 col-12">
 
-    {% endfor %}
-    <br>
-    <hr>
-    <h4>Filtr akcí dle plánu pro tréninkové skupiny:</h4>
-     <div class="row">
-        <div class="col">
-            <input class="filter" type="radio" value="all" name="skupina" id="skupina-all" checked />
-			<label for="skupina-all">Vše</label>
-        </div>
-        <div class="col">
-			<input class="filter" type="radio" value="zabicky" name="skupina" id="skupina-zabicky" />
-			<label for="skupina-zabicky">Žabičky</label>
-        </div>
-        <div class="col">
-			<input class="filter" type="radio" value="pulci1" name="skupina" id="skupina-pulci1" />
-			<label for="skupina-pulci1">Pulci 1</label>
-        </div>
-        <div class="col">
-			<input class="filter" type="radio" value="pulci2" name="skupina" id="skupina-pulci2" />
-			<label for="skupina-pulci2">Pulci 2</label>
-        </div>
-        <div class="col">
-			<input class="filter" type="radio" value="dorost" name="skupina" id="skupina-dorost" />
-			<label for="skupina-dorost">Dorost+</label>
-        </div>
-        <div class="col">
-			<input class="filter" type="radio" value="zaci1" name="skupina" id="skupina-zaci1" />
-			<label for="skupina-zaci1">Žáci 1</label>
-        </div>
-        <div class="col">
-			<input class="filter" type="radio" value="zaci2" name="skupina" id="skupina-zaci2" />
-			<label for="skupina-zaci2">Žáci 2</label>
-        </div>
-    </div>
-    <br><br>        
-    
-		<div id="calendar-modal" style="display:none">
-		  <div id="calendar-modal-inner">
-				<div id="calendar-modal-close"><i class="fa fa-times" aria-hidden="true"></i></div>
-				<h2 id="calendar-modal-title"></h2>
-				<div id="calendar-modal-content"></div>
+		<div id="cal-events-outer">
+		  <div id="cal-events-inner">
+				<h2 id="cal-events-title"></h2>
+				<div id="cal-events-content"></div>
 			</div>
 		</div>
-
-</section><!--.calendar-container-->
-<script>
-    var modal = document.getElementById("calendar-modal"),
-        modal_inner = document.getElementById("calendar-modal-inner"),
-        modal_title = document.getElementById("calendar-modal-title"),
-        modal_content = document.getElementById("calendar-modal-content"),
-        modal_close = document.getElementById("calendar-modal-close");
-
-    $('.calendar-day-tag').click( (e) => {
-        if (!e.target.nextElementSibling) return;
-
-        var list = e.target.nextElementSibling.firstElementChild; 
+        <hr>
+        <h5>Filtr akcí dle skupiny:</h5>
         
-        modal_title.innerHTML = list.getAttribute('data-date');
-        $(list).children().each( function() {  
-            if (this.style.display == "none") return;          
-            var a = document.createElement('a');
-            a.innerHTML = this.getAttribute("data-name");
-            a.href = this.getAttribute("data-href");
+                <input type="checkbox" value="all" id="filter-all" checked />
+                <label for="filter-all">Vše</label><br>
+                <input class="filter" type="checkbox" value="zabicky" id="filter-zabicky" />
+                <label for="filter-zabicky">Žabičky</label>
+                <input class="filter" type="checkbox" value="pulci1" id="filter-pulci1" />
+                <label for="filter-pulci1">Pulci 1</label>
+                <input class="filter" type="checkbox" value="pulci2" id="filter-pulci2" />
+                <label for="filter-pulci2">Pulci 2</label>
+                <input class="filter" type="checkbox" value="zaci1" id="filter-zaci1" />
+                <label for="filter-zaci1">Žáci 1</label>
+                <input class="filter" type="checkbox" value="zaci2" id="filter-zaci2" />
+                <label for="filter-zaci2">Žáci 2</label>
+                <input class="filter" type="checkbox" value="dorost" id="filter-dorost" />
+                <label for="filter-dorost">Dorost+</label>
 
-            var div = document.createElement('div');
-            div.appendChild(a);
-            modal_content.appendChild(div);
-        });
-        if (modal_content.childElementCount < 1) return;
-        modal_inner.style.marginTop = window.pageYOffset + "px";
-        bodyScrollLock.disableBodyScroll(modal);
-        modal.style.display = "block";
-    })
+    <br><br>        
+    </div>
+    </div>
+		
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+
+
+    var date_opt = { day: "numeric", month: "long", year: "numeric"};
     
-    function close() {
-        modal_content.innerHTML = "";
-        bodyScrollLock.enableBodyScroll(modal);
-        modal.style.display = "none";
-    }
-    window.addEventListener('click', function(e){
-        if (e.target == modal) {
-          close();
-        }
-    })
 
-    modal_close.addEventListener('click', close);
+    var calbox = document.getElementById("cal-events-inner"),
+        title = document.getElementById("cal-events-title"),
+        content = document.getElementById("cal-events-content"),
+        filter_all = document.getElementById('filter-all');
+        
+
+    function checkEmptyContent(){
+        if (content.innerHTML == "") {
+           content.innerHTML = "žádné akce";
+        }
+    }
+
+    function showEvents(e){
+        if(e.type == "click") {
+            e = e.currentTarget;
+        }
+        content.innerHTML = "";
+        date = new Date(e.getAttribute('data-date')* 1000);
+        events = JSON.parse(e.getAttribute('data-events'));
+        
+        title.innerHTML = date.toLocaleDateString('cs-CZ', date_opt);
+        if (events == null) {
+            checkEmptyContent();
+            return
+        }
+        var ul = document.createElement('ul');
+        $(events).each( function() {  
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            a.innerHTML = this.header.title;
+            a.href = this.header.url;
+            a.setAttribute('target', '_blank');
+            li.classList.add(this.header.type ? this.header.type : "J");
+            li.appendChild(a);  
+            li.classList.add("event");
+            li.setAttribute('data-groups', this.header.taxonomy ? Object.values(this.header.taxonomy.skupina).join('') : "");
+            if (!filter_all.checked) {
+                li.style.display = "none";
+                $('.filter').each(function(){
+                    if (this.checked && li.getAttribute('data-groups').indexOf(this.defaultValue) >= 0) {
+                        li.style.display = "block";
+                    }
+                })
+            }
+            ul.appendChild(li);     
+                  
+        });
+        content.appendChild(ul);
+    }
+
+    $('.cal-day').click(showEvents);
+
+    function fixLinks(){
+        var urlExt = "/groups:"
+        $(".filter:checked").each(function(){
+            urlExt += this.value + ",";
+        })
+        urlExt = urlExt == "/groups:" ? "" : urlExt.slice(0, -1);
+        
+        
+        $(".cal-link").each(function(){
+            this.href = this.getAttribute("data-url") + urlExt;
+        })
+    }
 
     $('.filter').on('change', function(){
-        var checked = $("input[name=skupina]:checked").val();
-        $('.event').each(function(){
-            console.log(checked);
-            console.log(this.dataset.groups);
-            if (checked == "all" || this.dataset.groups.indexOf(checked) >= 0) {
-                this.style.display = "block";
-            }
-            else {
-                this.style.display = "none";
-            }
-        })
+        filter_all.checked = false;
+        filter();
     })
-</script>
 
+    $(filter_all).on('change', function(){
+        $('.filter').prop("checked", false);
+        fixLinks();
+        if (filter_all.checked) {
+            $('.event').show();
+            return;
+        }
+        $('.event').hide();
+    })
+
+    function filter(){
+        if (filter_all.checked) {
+            $('.event').show();
+            return;
+        }
+        $('.event').hide();
+        $(".filter:checked").each(function(){
+            var checked = this.value;
+            $('.event').each(function(){
+                if (this.dataset.groups.indexOf(checked) >= 0) {
+                    this.style.display = "block";
+                }
+            })
+        });  
+        fixLinks()
+    }
+
+    showEvents($('.cal-today')[0]);
+
+    var groups = '{{ grav.uri.param("groups") }}';
+    if (groups) {
+        $('.filter').prop("checked", false);
+        filter_all.checked = false;
+
+        groups.split(",").forEach(g => {
+            $(".filter").each(function(){
+                if(this.value == g) {
+                    this.checked = true;
+                }
+            });  
+        })
+        filter()
+    };
+});
+</script>
 {% endblock %}
