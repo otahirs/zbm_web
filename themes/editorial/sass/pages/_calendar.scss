@@ -1,0 +1,174 @@
+.cal {
+    min-height: 34em;
+}
+.cal-container-outer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.cal-container-inner {
+    height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+}
+.cal-header {
+    margin: 0;
+    align-items: stretch;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-box-flex: none;
+    flex: none;
+    height: 20px;
+}
+.cal-header-day {
+    border-right: #dadce0 1px solid;
+    -moz-box-flex: 1 1 0%;
+    flex: 1 1 0%;
+    text-align: center;
+    text-transform:uppercase;
+    font-size: 12px;
+}
+.cal-table {
+    margin: 0;
+    overflow: hidden;
+    -moz-box-flex: 1 1 0%;
+    flex: 1 1 0%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+}
+.cal-row-outer {
+    position: relative;
+    overflow: hidden;
+    border-bottom:
+    #dadce0 1px solid;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-box-flex: 1 1 0%;
+    flex: 1 1 0%;
+}
+.cal-row-inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.cal-day {
+    font-size: 14px;
+    border-right: #dadce0 1px solid;
+    color: #70757a;
+    -moz-box-flex: 1 1 0%;
+    flex: 1 1 0%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .event {
+        text-align: center;
+        white-space: nowrap;
+        color: black !important;
+    }
+}
+.cal-day-tag-outer {
+    width: 100%;
+    text-align: center;
+}
+.cal-day-tag-inner {
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .3px;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    width: max-content;
+    min-width: 24px;
+    color: #70757a;
+    line-height: 16px;
+}
+.cal-today {
+    margin-top: 3px;
+    height: 24px;
+    line-height: 24px;
+    color: #fff;
+    background-color: _palette(accent);
+    -moz-border-radius: 20%;
+    border-radius: 20%;
+}
+.cal-button {
+    margin-bottom: 2em;
+    display: inline-block;
+    color:black;
+    line-height: 1.5rem;
+    background-color: #eee;
+    border-radius: 2px;
+    padding: 0.2em 0.5em;
+    border-bottom: black 1px dotted;
+
+   a {
+       color: black;
+   }
+   
+   &:hover {
+       transition: background-color 0.2s ease;
+       background-color: #ddd;
+       color: _palette(accent);
+   }
+}
+
+#cal-events-content {
+    a {
+        border-bottom: none;
+        color: black;
+    }
+    ul {
+        list-style: disclosure-closed;
+    }
+}
+.Z  { // závod
+    background-color: red;
+}
+
+.M  { // mapový trénink
+    background-color: orange;
+}
+
+.T  { // trénink
+    background-color: blue;
+}
+
+.S  { // soustředění
+    background-color: green;
+}
+
+.BZL {  // zimní mapové ligy
+    background-color: yellow;
+}
+
+.BBP {  // běžecké závody jako BBP
+    background-color: violet;
+}
+
+.J  { // jiné
+    background-color: grey;
+}

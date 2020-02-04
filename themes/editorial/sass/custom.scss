@@ -146,13 +146,6 @@ table.plan td {
 }
 
 /****************
-*** Calendar ****
-****************/
-table.calendar tr {
-    background-color: inherit !important;
-}
-
-/****************
 **** Program ****
 ****************/
 #program tr {
@@ -335,125 +328,6 @@ ul.tabs li.group-icon {
 }
 .soon-deadline > .title {
     padding-bottom: 0.8em;
-}
-
-
-
-
-#calendar {
-    
-    .row {
-        /*
-        override these from bootstrap:
-        margin-right: -15px;
-        margin-left: -15px;
-        */
-        margin: 0;
-    }
-    .calendar-controls {
-        text-align: center;
-        margin-bottom: 1em;
-        .month-title {
-            min-width: 8em;
-            display: inline-block;
-        }
-        .calendar-button {
-            display: inline-block;
-            width: 1.5rem;
-            color: black;
-            line-height: 1.5rem;
-            background-color: #eee;
-            border-radius: 2px;
-            margin: 0 0.05em 0.5rem;
-            a {
-                color: black;
-            }
-        
-            &:hover {
-                transition: background-color 0.2s ease;
-                background-color: #ddd;
-            }
-        }
-        .calendar-day-tag {
-            display: inline-block;
-            position: initial;
-        }
-    }
-    .calendar-week-header {
-        text-align: center;
-    }
-    
-    .calendar-day {
-        background-color: #eee;
-        height: 100%;
-        padding-right: 10px;
-        min-height: 3em;
-        border: 10px solid #fff;
-        @include breakpoint(medium) {
-            border-left-width: 5px;
-        }
-        &:before {
-            content: "";
-            display: block;
-            padding-top: 100%;
-            float: left;
-        }
-        .calendar-list {
-          display: flex;
-          width: 100%;
-          white-space: nowrap;
-          overflow: hidden;
-          ul {
-              padding: 0;
-              padding-top: 2em;
-              margin: 0;
-          }
-          li {
-              list-style: none;
-              padding-left: 0;
-          }
-          a {
-              color: black;
-              border-bottom: none;
-          }
-          .fa-caret-right {
-              color: black;
-          }
-        }
-        &.diff-month {
-          opacity: 0.4;
-        }
-        .event-title {
-          font-size: small;
-          padding: 5px;
-          position: relative;
-          top: -2px;
-        }
-    }
-        
-    .calendar-day-tag {
-        right: 10px;
-        top: 10px;
-        position: absolute;
-        background: #dbdbdb;
-        width: 1.75rem;
-        height: 1.75rem;
-        line-height: 1.75rem;
-        font-size: .75rem;
-        text-align: center;
-        &.calendar-today {
-            background-color: _palette(accent);
-            color: black !important;
-        }
-    }
-        
-    .calendar-cell {
-      float: left;
-      min-height: 1px;
-      padding: 0;
-      position: relative;
-      width: percentage(1/7);
-    }
 }
 
 .logs-output {
