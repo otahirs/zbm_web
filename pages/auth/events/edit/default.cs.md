@@ -242,8 +242,14 @@ access:
 
 <script>
 window.addEventListener('DOMContentLoaded', function () {
-    var simplemde = new SimpleMDE({ 
+    var smde_note = new SimpleMDE({ 
         element: document.getElementById("note"), //misto textarea nacte markdown editor
+        spellChecker: false,
+        status: false,
+        hideIcons: ["side-by-side", "fullscreen"],
+    });
+    var smde_program = new SimpleMDE({ 
+        element: document.getElementById("program"), //misto textarea nacte markdown editor
         spellChecker: false,
         status: false,
         hideIcons: ["side-by-side", "fullscreen"],
@@ -261,16 +267,13 @@ window.addEventListener('DOMContentLoaded', function () {
     /**** autoresize textareas ***/
         $.fn.extend({
             autoresize: function () {
-            $(this).on("change keyup keydown paste cut", function () {
-            $(this).height(0).height(this.scrollHeight);
-            }).change();
+                $(this).on("change keyup keydown paste cut", function () {
+                    $(this).height(0).height(this.scrollHeight);
+                }).change();
             }
         });
-        $("textarea").autoresize();
         // trigger resize on load
-        $("textarea").each(function(){
-            $(this).height( this.scrollHeight);
-        });
+        $("textarea").autoresize();
 
     /*** delete <br> tags from textareas ***/ 
         String.prototype.replaceAll = function (find, replace) {
@@ -288,18 +291,21 @@ window.addEventListener('DOMContentLoaded', function () {
 
     /*** tabs ***/
     $('ul.tabs li').click(function(){
-            var tab_id = $(this).attr('data-tab');
+        var tab_id = $(this).attr('data-tab');
 
-            $('ul.tabs li').removeClass('current');
-            $('.tab-content').removeClass('current');
+        $('ul.tabs li').removeClass('current');
+        $('.tab-content').removeClass('current');
 
-            $(this).addClass('current');
-            $("#"+tab_id).addClass('current');
-            //resize textarea
-            $("textarea").each(function(){
-            $(this).height( this.scrollHeight);
+        $(this).addClass('current');
+        $("#"+tab_id).addClass('current');
+
+        //resize textarea
+        $("textarea").each(function(){
+            $(this).height( this.scrollHeight);   
         });
-        })
+        //refresh simplemde editors
+        smde_program.codemirror.refresh();
+    })
 
     /*** addRoute ***/
     $("#addRoute").click(function(){
@@ -333,13 +339,26 @@ window.addEventListener('DOMContentLoaded', function () {
         id = document.querySelector("[name='id']"),
         formResponse = document.getElementById("formResponse");
 
+    function ajaxError(xhr, desc, err) {
+        if (xhr.responseText) {
+            formResponse.innerHTML = xhr.responseText;
+        } else {
+            formResponse.innerHTML = "<br>Chyba, zkontrolujte console log";
+        }
+        formResponse.style.color = "red";
+        console.log(err);
+        console.log(desc);
+        console.log(xhr);
+    }
+
     save_btn.onclick = function(e){
         e.preventDefault();
         //check if form is valid
         if(form.checkValidity()){
 
             var formData = new FormData(form);
-            formData.append('note', simplemde.value() );
+            formData.append('note', smde_note.value() );
+            formData.append('program', smde_program.value() );
             $.ajax({
                 url: "/php/editevent",
                 type: "POST",
@@ -361,19 +380,7 @@ window.addEventListener('DOMContentLoaded', function () {
                     
                     //window.location.replace(location.href);
                 },
-                error: function (xhr, desc, err){
-
-                    if(xhr.responseText){
-                        formResponse.innerHTML = xhr.responseText;
-                    }
-                    else{
-                        formResponse.innerHTML = "<br>Chyba, zkontrolujte console log";
-                    }
-                    formResponse.style.color = "red";
-                    console.log(err);
-                    console.log(desc);
-                    console.log(xhr);
-                }
+                error: ajaxError
             });
 
         }
@@ -405,19 +412,7 @@ window.addEventListener('DOMContentLoaded', function () {
                     formResponse.style.color = "red";
                     //window.location.replace(location.href);
                 },
-                error: function (xhr, desc, err){
-
-                    if(xhr.responseText){
-                        formResponse.innerHTML = xhr.responseText;
-                    }
-                    else{
-                        formResponse.innerHTML = "<br>Chyba, zkontrolujte console log";
-                    }
-                    formResponse.style.color = "red";
-                    console.log(err);
-                    console.log(desc);
-                    console.log(xhr);
-                }
+                error: ajaxError
             });
         }
     }
