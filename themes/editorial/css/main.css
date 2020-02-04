@@ -1706,16 +1706,23 @@ tr.program--now {
 #program .backgroundAccent {
   background-color: #f76555; }
 
+#program td.view {
+  padding: 0;
+  text-align: center; }
+  #program td.view a {
+    border-bottom: none;
+    padding: 0.75em 0.75em;
+    color: #333 !important; }
+  #program td.view:hover {
+    background-color: #f76555; }
+
 #program td.edit {
   padding: 0; }
   #program td.edit a {
     border-bottom: none;
     display: block;
-    padding: 0.75em 0.75em; }
-  #program td.edit:hover {
-    background-color: #f76555; }
-    #program td.edit:hover a {
-      color: #333 !important; }
+    padding: 0.75em 0.75em;
+    color: #333 !important; }
 
 @media screen and (max-width: 1280px) {
   #sidebar, #nav-links {
