@@ -102,7 +102,7 @@
 		<div id="cal-events-outer">
 		  <div id="cal-events-inner">
 				<h2 id="cal-events-title"></h2>
-				<div id="cal-events-content"></div>
+				<ul id="cal-events-list"></ul>
 			</div>
 		</div>
         <hr>
@@ -136,13 +136,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
     var calbox = document.getElementById("cal-events-inner"),
         title = document.getElementById("cal-events-title"),
-        content = document.getElementById("cal-events-content"),
+        list = document.getElementById("cal-events-list"),
         filter_all = document.getElementById('filter-all');
         
 
-    function checkEmptyContent(){
-        if (content.innerHTML == "") {
-           content.innerHTML = "žádné akce";
+    function checkEmptyList(){
+        if (list.innerHTML === "") {
+           list.innerHTML = "<p>žádné akce</p>";
+        } else if ($(list).children('li:visible').length === 0) {
+            list.innerHTML = "<p>žádné akce pro zvolené skupiny</p>";
         }
     }
 
@@ -150,25 +152,19 @@ window.addEventListener('DOMContentLoaded', () => {
         if(e.type == "click") {
             e = e.currentTarget;
         }
-        content.innerHTML = "";
+        list.innerHTML = "";
         date = new Date(e.getAttribute('data-date')* 1000);
         events = JSON.parse(e.getAttribute('data-events'));
         
         title.innerHTML = date.toLocaleDateString('cs-CZ', date_opt);
-        if (events == null) {
-            checkEmptyContent();
-            return
-        }
-        var ul = document.createElement('ul');
         $(events).each( function() {  
             var li = document.createElement('li');
-            var a = document.createElement('a');
-            a.innerHTML = this.header.title + '<br><span class="cal-list-groups">' + (this.header.taxonomy ? Object.values(this.header.taxonomy.skupina).join(', ') : "") + '</span>';
-            a.href = this.header.url;
-            a.setAttribute('target', '_blank');
-            li.classList.add(this.header.type ? this.header.type : "J");
-            li.appendChild(a);  
+            li.innerHTML =  '<a href="' + this.header.url + '" target="_blank">' +
+                                this.header.title + '<br>' +
+                                '<span class="cal-list-groups">' + (this.header.taxonomy ? Object.values(this.header.taxonomy.skupina).join(', ') : "") + '</span>' +
+                            '</a>';
             li.classList.add("event");
+            li.classList.add(this.header.type ? this.header.type : "J");
             li.setAttribute('data-groups', this.header.taxonomy ? Object.values(this.header.taxonomy.skupina).join('') : "");
             if (!filter_all.checked) {
                 li.style.display = "none";
@@ -178,10 +174,9 @@ window.addEventListener('DOMContentLoaded', () => {
                     }
                 })
             }
-            ul.appendChild(li);     
-                  
+            list.appendChild(li);      
         });
-        content.appendChild(ul);
+        checkEmptyList();
     }
 
     $('.cal-day').click(showEvents);
@@ -244,9 +239,9 @@ window.addEventListener('DOMContentLoaded', () => {
                     this.checked = true;
                 }
             });  
-        })
-        filter()
+        })   
     };
+    filter()
 });
 </script>
 {% endblock %}

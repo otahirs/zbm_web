@@ -1935,19 +1935,18 @@ ul.tabs li.group-icon {
     background-color: #ddd;
     color: #f76555; }
 
-#cal-events-content a {
-  border-bottom: none;
-  color: black; }
-
-#cal-events-content ul {
+#cal-events-list {
   list-style: disclosure-closed; }
-
-#cal-events-content li {
-  margin-bottom: 1em;
-  padding: 0.5em 1em; }
-
-#cal-events-content .cal-list-groups {
-  font-size: smaller; }
+  #cal-events-list a {
+    border-bottom: none;
+    color: black;
+    display: block;
+    padding: 0.5em 1em; }
+  #cal-events-list li {
+    margin-bottom: 1em;
+    padding: 0; }
+  #cal-events-list .cal-list-groups {
+    font-size: smaller; }
 
 .Z {
   background-color: #ef8585; }
