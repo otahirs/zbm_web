@@ -1942,6 +1942,13 @@ ul.tabs li.group-icon {
 #cal-events-content ul {
   list-style: disclosure-closed; }
 
+#cal-events-content li {
+  margin-bottom: 1em;
+  padding: 0.5em 1em; }
+
+#cal-events-content .cal-list-groups {
+  font-size: smaller; }
+
 .Z {
   background-color: #ef8585; }
 
