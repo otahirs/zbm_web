@@ -23,8 +23,7 @@
         </div>
         <div class="col-auto">
 			 <a href="{{ todayUrl }}" data-url="{{ todayUrl}}" class="cal-link">
-                <span class="cal-button">dnes</span>
-                <span class="calendar-day-tag cal-today" data-date="{{"now"|date("U")}}"  data-events='{{calendar.events["now"|date("U")]|json_encode()}}'</span>
+                <span class="cal-button cal-today"  data-date="{{"now"|date("U")}}"  data-events='{{calendar.events["now"|date("U")]|json_encode()}}'>dnes</span>
              </a>
 			
         </div>
@@ -164,7 +163,7 @@ window.addEventListener('DOMContentLoaded', () => {
         $(events).each( function() {  
             var li = document.createElement('li');
             var a = document.createElement('a');
-            a.innerHTML = this.header.title;
+            a.innerHTML = this.header.title + '<br><span class="cal-list-groups">' + (this.header.taxonomy ? Object.values(this.header.taxonomy.skupina).join(', ') : "") + '</span>';
             a.href = this.header.url;
             a.setAttribute('target', '_blank');
             li.classList.add(this.header.type ? this.header.type : "J");
@@ -175,7 +174,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 li.style.display = "none";
                 $('.filter').each(function(){
                     if (this.checked && li.getAttribute('data-groups').indexOf(this.defaultValue) >= 0) {
-                        li.style.display = "block";
+                        li.style.display = "list-item";
                     }
                 })
             }
@@ -225,7 +224,7 @@ window.addEventListener('DOMContentLoaded', () => {
             var checked = this.value;
             $('.event').each(function(){
                 if (this.dataset.groups.indexOf(checked) >= 0) {
-                    this.style.display = "block";
+                    $(this).show();
                 }
             })
         });  
