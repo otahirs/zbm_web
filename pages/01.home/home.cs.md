@@ -11,11 +11,12 @@ content:
 ---
 
 <div class="row no-gutters" style="height:100%"> {# cela stranka | je pouzit css framework purecss.io grids #}
-  
+ 
   <div id="novinky" class="col-md-8"> <!-- plan + novinky vlevo -->
       <div class="inner">
         <header id="header">
             <h1>Novinky</h1>
+            <a href="#soon" id="hop" style="text-align:right;border-bottom:none;"><h1>hop<i class="fa fa-level-down" aria-hidden="true"></i></h1></a>
         </header>
         <section>
         {% set news_collection = page.collection().ofType('novinka').order('p.header.id','desc') %}
