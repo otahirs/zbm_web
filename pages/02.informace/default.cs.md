@@ -245,6 +245,6 @@ Posláním prázdného emailu na adresu _zabiny+unsubscribe@googlegroups.com_ bu
 
 ---
 ## Zásady zpracování osobních údajů (GDPR) <a class="fix-topbar-offset" name="gdpr"></a>
-Sportovní klub pro náplň své činnost uchovává a dále zpracovává některé Vaše osobní údaje. Část údajů dále předává třetím stranám, např. sportovnímu svazu, příslušným orgánům státní správy či účetní společnosti. Celé znění Zásad zpracování osobních údajů ve Sportovním klubu Brno – Žabovřesky z.s. si můžete přečíst <a href="{{page.url}}/Zasady_zpracovani_OU_SKZabovresky.pdf" target="_blank">zde</a>.
+Sportovní klub pro náplň své činnosti uchovává a dále zpracovává některé Vaše osobní údaje. Část údajů dále předává třetím stranám, např. sportovnímu svazu, příslušným orgánům státní správy či účetní společnosti. Celé znění Zásad zpracování osobních údajů ve Sportovním klubu Brno – Žabovřesky z.s. si můžete přečíst <a href="{{page.url}}/Zasady_zpracovani_OU_SKZabovresky.pdf" target="_blank">zde</a>.
 
 
