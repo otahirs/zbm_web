@@ -1,8 +1,10 @@
 ---
 title: 'Informace pro členy klubu'
-menu: 'Informace'
+media_order: Zasady_zpracovani_OU_SKZabovresky.pdf
 date: '2018-07-10'
+menu: Informace
 ---
+
  <!--
 <div class="row">
 <div class="col-sm-6 col-lg-3">
@@ -53,15 +55,16 @@ date: '2018-07-10'
  <li><a href="#zavody">Přihlašování na závody</a></li>
  <li><a href="#vedouci">Vedoucí na závodech</a></li>
  <li><a href="#zabiny">Emailová skupina</a></li>
+ <li><a href="#gdpr">Ochrana osobních údajů (GDPR)</a></li>
 </ul>
  
 ---
-## Kontakty <a class ="fix-topbar-offset" name="kontakty"></a>
+## Kontakty <a class="fix-topbar-offset" name="kontakty"></a>
 
 Všechny důležité kontakty najdete na <a href="./kontakty"> vlastní stránce Kontakty</a> (odkaz také v pravém horním rohu obrazovky). Potřebujete-li se spojit s ostatními členy oddílu, můžete si údaje najít v adresáři po přihlášení v <a href="https://members.eob.cz/zbm" target="_blank">členské sekci</a>.
 
 ---
-## Financování a osobní účty <a class ="fix-topbar-offset" name="finance"></a>
+## Financování a osobní účty <a class="fix-topbar-offset" name="finance"></a>
 
 Osobní účty vede Věra Mádlová, aktuální stav je on-line v „Členské sekci".
 
@@ -165,7 +168,7 @@ Finanční prostředky lze čerpat na: sportovní soustředění, materiální v
 
 
 ---
-## Přihlašování na závody <a class ="fix-topbar-offset" name="zavody"></a>
+## Přihlašování na závody <a class="fix-topbar-offset" name="zavody"></a>
 Přihlašování na závody i soustředění probíhá výhradně přes [členskou sekci](https://members.eob.cz/zbm/). Přihlašování na závody má na starost Honza Drábek. V případě že závod, kterého se chcete zúčastnit, není zadán, pište na kontaktní e-mail _prihlasky.zbm@eob.cz_. Pokud vám nefunguje vaše přístupové jméno a heslo do naší „Členské sekce", kontaktujte Richarda Pátka, který vám tyto údaje poskytne.
 
 V případě, že pravidelně jezdíte na závody mimo naši oblast, kontaktujte Honzu Drábka nebo Ríšu Pátka a domluvte se na individuálním způsobu přihlašování přímo v systému ORIS.
@@ -184,7 +187,7 @@ doržujte prosím data přihlášek a pokud možno se na závody nepřihlašujte
 
 
 ---
-## Kdo se může a kam přihlásit <a class ="fix-topbar-offset" name="kdoakam"></a>
+## Kdo se může a kam přihlásit <a class="fix-topbar-offset" name="kdoakam"></a>
 
 - oblastní žebříček a vícedenní závody – všichni (i úplní začátečníci)
 - žebříček B-Morava – držitelé licence A, B a veteráni
@@ -193,7 +196,7 @@ doržujte prosím data přihlášek a pokud možno se na závody nepřihlašujte
 Všichni závodníci kategorií D, H-20, 21 se mohou přihlásit na kterýkoliv závod v ČR mimo Mistrovství ČR (dle pořadí v Rankingu). V případě, že v tomto závodě bude více podkategorií (E, A, B, C, D), uveďte v přihlášce do poznámky, do jaké podkategorie chcete přihlásit. Na oblastních závodech bude vypsána kategorie D21D, H21D (zkrácená trať).
 
 ---
-## Vedoucí na závodech <a class ="fix-topbar-offset" name="vedouci"></a>
+## Vedoucí na závodech <a class="fix-topbar-offset" name="vedouci"></a>
 Pokud budete určeni jako vedoucí na závodech, proveďte prosím následující úkony:  
 - Zkontrolujte, že máte potvrzení o zaplacení v e-mailu, v opačném případě kontaktujte Věrku
 - Na závodech odprezentujte oddíl. 
@@ -219,7 +222,7 @@ V letošním roce pořádáme 3 závody Jihomoravské ligy a Finále ligy škol 
 -->
 
 ---
-## Emailová skupina Žabiny <a class ="fix-topbar-offset" name="zabiny"></a>
+## Emailová skupina Žabiny <a class="fix-topbar-offset" name="zabiny"></a>
 Emailová skupina **zabiny@googlegroups.com** je jednoduchý nástroj pro hromadné rozesílání emailů. Při odeslání emailu na adresu, která označuje emailovou skupinu, se poslaný email rozešle všem lidem zaregistrovaným v této skupině. Přihlášení do skupiny je však dobrovolné, všechny důležité věci budou na webu.  
 
 <form action="https://groups.google.com/forum/#!forum/zabiny/join" target="_blank">
@@ -239,5 +242,9 @@ Klikněte na tlačítko, zadejte email a odešlete žádost o připojení ke sku
 Email se posílá na adresu: _zabiny@googlegroups.com_. Email následně dorazí všem členům skupiny. 
 #### Jak se odhlásit ze skupiny?
 Posláním prázdného emailu na adresu _zabiny+unsubscribe@googlegroups.com_ bude adresa odesílatele vyškrtnuta z emailové skupiny.
+
+---
+## Zásady zpracování osobních údajů (GDPR) <a class="fix-topbar-offset" name="gdpr"></a>
+Sportovní klub pro náplň své činnost uchovává a dále zpracovává některé Vaše osobní údaje. Část údajů dále předává třetím stranám, např. sportovnímu svazu, příslušným orgánům státní správy či účetní společnosti. Celé znění Zásad zpracování osobních údajů ve Sportovním klubu Brno – Žabovřesky z.s. si můžete přečíst <a href="{{page.url}}/Zasady_zpracovani_OU_SKZabovresky.pdf" target="_blank">zde</a>.
 
 
