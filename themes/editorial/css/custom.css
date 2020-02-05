@@ -488,3 +488,9 @@ img {
 #soon form {
     margin: 0;
 }
+
+@media screen and (min-width: 736px) {
+    #hop {
+        display: none; 
+    }
+}
