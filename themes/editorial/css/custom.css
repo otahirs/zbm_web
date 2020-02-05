@@ -490,7 +490,7 @@ img {
 }
 
 @media screen and (min-width: 736px) {
-    #hop {
+    #hop, #hip {
         display: none; 
     }
 }
