@@ -16,7 +16,7 @@ content:
       <div class="inner">
         <header id="header">
             <h1>Novinky</h1>
-            <a href="#soon" id="hop" style="text-align:right;border-bottom:none;"><h1>hop<i class="fa fa-level-down" aria-hidden="true"></i></h1></a>
+            <a href="#soon" id="hip" style="text-align:right;border-bottom:none;"><h1>hip<i class="fa fa-level-down" aria-hidden="true"></i></h1></a>
         </header>
         <section>
         {% set news_collection = page.collection().ofType('novinka').order('p.header.id','desc') %}
@@ -173,7 +173,7 @@ content:
        
 
 
-
+  <a href="#novinky" id="hop" style="text-align:right;border-bottom:none;"><h1>hop<i class="fa fa-level-up" aria-hidden="true"></i></h1></a>
   </div> <!-- blizi se -->
 
 </div> <!-- uzavira celou stranku , pure-g -->
