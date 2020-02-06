@@ -635,26 +635,29 @@ class PhpTwigExtension extends \Twig_Extension
 //******************************************************************************************************/
     //nahravani programu z CSV souboru
     function parse_csv(){
-        $file_name = $_FILES['file']['tmp_name'];
         $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
         if ($extension != "csv"){ //pokud soubor neni csv vrati error
-          http_response_code(415);
-          die();
+            $this->return_ERROR("Nahraný soubor musí být formátu CSV.");
         }
-
-        $rows = array_map('str_getcsv', file($file_name)); 
+        if (($handle = fopen($_FILES['file']['tmp_name'], "r")) === FALSE) {
+            $this->return_ERROR("Nepodařilo se otevřít soubor");
+        }
 
         //= zahlavi tabulky csv souboru
         $csv_scheme = ["type", "start", "end", "title", "place", "gps", "meetTime", "meetPlace", "transport", "leader", "note", "zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost", "accomodation", "food", "startTime", "eventTypeDescription", "map", "terrain", "return", "price", "program", "thingsToTake", "signups", "doWeOrganize"];
         $approved = ["Z", "M", "T", "S", "BZL", "BBP", "TABOR", "L", "J"]; //ignoruje poznamky
 
-        foreach($rows as $event_num => $data){   //prochazi vsechny radky
-            if(in_array(trim($data[0]), $approved)){ //parsuje jen spravne zaznamy
+        $num = 0;
+        while (($event = fgetcsv($handle)) !== FALSE) {
+            if(in_array(trim($event[0]), $approved)){ //parsuje jen spravne zaznamy
                 foreach($csv_scheme as $att_index => $attribute){ //prochazi sloupce a uklada do array
-                    $event_list[$event_num][$attribute] = array_key_exists($att_index, $data) ? $data[$att_index] : "";
+                    $event_list[$num][$attribute] = array_key_exists($att_index, $event) ? $event[$att_index] : "";
                 }
             }
+            $num += 1;
         }
+
+        fclose($handle);
         return $event_list;
     }
 
