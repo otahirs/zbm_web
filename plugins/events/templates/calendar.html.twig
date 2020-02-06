@@ -133,7 +133,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     var date_opt = { day: "numeric", month: "long", year: "numeric"};
-    
+
+    var sortOrder = ['zabicky','pulci1','pulci2','zaci1','zaci2','dorost'];
 
     var calbox = document.getElementById("cal-events-inner"),
         title = document.getElementById("cal-events-title"),
@@ -165,7 +166,7 @@ window.addEventListener('DOMContentLoaded', () => {
             var li = document.createElement('li');
             li.innerHTML =  '<a href="' + this.header.url + '" target="_blank">' +
                                 this.header.title + '<br>' +
-                                '<span class="cal-list-groups">' + (this.header.taxonomy ? Object.values(this.header.taxonomy.skupina).join(', ') : "") + '</span>' +
+                                '<span class="cal-list-groups">' + (this.header.taxonomy ? Object.values(this.header.taxonomy.skupina).sort((a, b) => sortOrder.indexOf(a) - sortOrder.indexOf(b)).join(', ') : "") + '</span>' +
                             '</a>';
             li.classList.add("event");
             li.classList.add(this.header.type ? this.header.type : "J");
