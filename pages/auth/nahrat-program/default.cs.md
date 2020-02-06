@@ -8,8 +8,8 @@ access:
 
 <ul>
     <li>nahrát lze pouze soubory formátu .csv</li>
-    <li>řádek musí být zakončen posloupností symbolů <code>";"</code></li>
-    <li>script počítá s defaultním kódováním <em>Windows-1250</em></li>
+    <li>podporován je pouze oddělovač <code>,</code></li>
+    <li>script počítá s defaultním kódováním <em>UTF-8</em></li>
     <li>každý event musí mít min. <em>název</em> a <em>počáteční datum</em></li>
 </ul>
 <form id="uploadProgramForm" method="post" action="" enctype="multipart/form-data">
@@ -47,12 +47,12 @@ $("#uploadProgramForm").on('submit',(function(e) {
                 formResponse.style.color = "red";
             }
             else{
-            formResponse.innerHTML = "<br>Chyba, zkontrolujte console log";
+            formResponse.innerHTML = xhr.responseText;
             formResponse.style.color = "red";
             }
             console.log(err);
             console.log(desc);
-            console.log(xhr.response);
+            console.log(xhr);
         }
     });          
 }));
