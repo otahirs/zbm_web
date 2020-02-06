@@ -102,6 +102,7 @@
 		<div id="cal-events-outer">
 		  <div id="cal-events-inner">
 				<h2 id="cal-events-title"></h2>
+                <p id="cal-events-empty"></p>
 				<ul id="cal-events-list"></ul>
 			</div>
 		</div>
@@ -137,14 +138,17 @@ window.addEventListener('DOMContentLoaded', () => {
     var calbox = document.getElementById("cal-events-inner"),
         title = document.getElementById("cal-events-title"),
         list = document.getElementById("cal-events-list"),
+        empty = document.getElementById("cal-events-empty"),
         filter_all = document.getElementById('filter-all');
         
 
     function checkEmptyList(){
         if (list.innerHTML === "") {
-           list.innerHTML = "<p>žádné akce</p>";
+            empty.innerHTML = "<p>žádné akce</p>";
         } else if ($(list).children('li:visible').length === 0) {
-            list.innerHTML = "<p>žádné akce pro zvolené skupiny</p>";
+            empty.innerHTML = "<p>žádné akce pro zvolené skupiny</p>";
+        } else {
+            empty.innerHTML = "";
         }
     }
 
@@ -182,15 +186,14 @@ window.addEventListener('DOMContentLoaded', () => {
     $('.cal-day').click(showEvents);
 
     function fixLinks(){
-        var urlExt = "/groups:"
-        $(".filter:checked").each(function(){
-            urlExt += this.value + ",";
-        })
-        urlExt = urlExt == "/groups:" ? "" : urlExt.slice(0, -1);
-        
+        var urlExt = $(".filter:checked")
+            .map( function(){ 
+                return this.value;  
+            }).get().join();
         
         $(".cal-link").each(function(){
-            this.href = this.getAttribute("data-url") + urlExt;
+            this.href = this.getAttribute("data-url");
+            this.href += urlExt ? ("/groups:" + urlExt) : "";
         })
     }
 
@@ -201,12 +204,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     $(filter_all).on('change', function(){
         $('.filter').prop("checked", false);
-        fixLinks();
         if (filter_all.checked) {
             $('.event').show();
-            return;
+        } else {
+            $('.event').hide();
         }
-        $('.event').hide();
+        checkEmptyList();
+        fixLinks();
     })
 
     function filter(){
@@ -222,10 +226,12 @@ window.addEventListener('DOMContentLoaded', () => {
                     $(this).show();
                 }
             })
-        });  
-        fixLinks()
+        });
+        checkEmptyList();
+        fixLinks();
     }
 
+    // onload
     showEvents($('.cal-today')[0]);
 
     var groups = '{{ grav.uri.param("groups") }}';
