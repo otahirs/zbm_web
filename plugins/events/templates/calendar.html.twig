@@ -23,9 +23,8 @@
         </div>
         <div class="col-auto">
 			 <a href="{{ todayUrl }}" data-url="{{ todayUrl}}" class="cal-link">
-                <span class="cal-button cal-today"  data-date="{{"now"|date("U")}}"  data-events='{{calendar.events["now"|date("U")]|json_encode()}}'>dnes</span>
+                <span class="cal-button cal-today"  data-date="{{"today"|date("U")}}"  data-events='{{calendar.events["today"|date("U")]|json_encode()}}'>dnes</span>
              </a>
-			
         </div>
         </div>
         <div class="cal-header">
@@ -136,12 +135,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     var sortOrder = ['zabicky','pulci1','pulci2','zaci1','zaci2','dorost'];
 
-    var calbox = document.getElementById("cal-events-inner"),
-        title = document.getElementById("cal-events-title"),
+    var title = document.getElementById("cal-events-title"),
         list = document.getElementById("cal-events-list"),
         empty = document.getElementById("cal-events-empty"),
-        filter_all = document.getElementById('filter-all');
-        
+        filter_all = document.getElementById('filter-all'),
+        filters = document.querySelectorAll(".filter");
 
     function checkEmptyList(){
         if (list.innerHTML === "") {
@@ -159,32 +157,38 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         list.innerHTML = "";
         date = new Date(e.getAttribute('data-date')* 1000);
+        title.innerHTML = date.toLocaleDateString('cs-CZ', date_opt);
         events = JSON.parse(e.getAttribute('data-events'));
         
-        title.innerHTML = date.toLocaleDateString('cs-CZ', date_opt);
-        $(events).each( function() {  
-            var li = document.createElement('li');
-            li.innerHTML =  '<a href="' + this.header.url + '" target="_blank">' +
-                                this.header.title + '<br>' +
-                                '<span class="cal-list-groups">' + (this.header.taxonomy ? Object.values(this.header.taxonomy.skupina).sort((a, b) => sortOrder.indexOf(a) - sortOrder.indexOf(b)).join(', ') : "") + '</span>' +
-                            '</a>';
-            li.classList.add("event");
-            li.classList.add(this.header.type ? this.header.type : "J");
-            li.setAttribute('data-groups', this.header.taxonomy ? Object.values(this.header.taxonomy.skupina).join('') : "");
-            if (!filter_all.checked) {
-                li.style.display = "none";
-                $('.filter').each(function(){
-                    if (this.checked && li.getAttribute('data-groups').indexOf(this.defaultValue) >= 0) {
-                        li.style.display = "list-item";
-                    }
-                })
-            }
-            list.appendChild(li);      
-        });
+        if (events) {
+            events.forEach( event => {  
+                var li = document.createElement('li');
+                li.innerHTML =  '<a href="' + event.header.url + '" target="_blank">' +
+                                    event.header.title + '<br>' +
+                                    '<span class="cal-list-groups">' + 
+                                        (event.header.taxonomy ? 
+                                            Object.values(event.header.taxonomy.skupina)
+                                                .sort((a, b) => sortOrder.indexOf(a) - sortOrder.indexOf(b))
+                                                .join(', ') 
+                                            : "") + 
+                                    '</span>' +
+                                '</a>';
+                li.classList.add("event");
+                li.classList.add(event.header.type ? event.header.type : "J");
+                li.setAttribute('data-groups', event.header.taxonomy ? Object.values(event.header.taxonomy.skupina).join('') : "");
+                if (!filter_all.checked) {
+                    li.style.display = "none";
+                    filters.forEach( f => {
+                        if (f.checked && li.getAttribute('data-groups').indexOf(f.value) >= 0) {
+                            li.style.display = "list-item";
+                        }
+                    })
+                }
+                list.appendChild(li);      
+            });
+        } 
         checkEmptyList();
     }
-
-    $('.cal-day').click(showEvents);
 
     function fixLinks(){
         var urlExt = $(".filter:checked")
@@ -198,57 +202,94 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     }
 
-    $('.filter').on('change', function(){
-        filter_all.checked = false;
-        filter();
-    })
-
-    $(filter_all).on('change', function(){
-        $('.filter').prop("checked", false);
-        if (filter_all.checked) {
-            $('.event').show();
-        } else {
-            $('.event').hide();
-        }
-        checkEmptyList();
-        fixLinks();
-    })
-
     function filter(){
+        let events = document.querySelectorAll(".event");
         if (filter_all.checked) {
-            $('.event').show();
-            return;
-        }
-        $('.event').hide();
-        $(".filter:checked").each(function(){
-            var checked = this.value;
-            $('.event').each(function(){
-                if (this.dataset.groups.indexOf(checked) >= 0) {
-                    $(this).show();
+            events.forEach(event => {
+                if (event.nodeName === "LI") {
+                    event.style.display = "list-item";
+                } else {
+                    event.style.display = "block";
                 }
             })
+            return;
+        }
+        curr_filter = [];
+        filters.forEach(f => {
+            if (f.checked) {
+                curr_filter.push(f);
+            }
+        })
+        events.forEach(event => {
+            event.style.display = "none";
+            curr_filter.forEach(f => {
+                if (event.dataset.groups.indexOf(f.value) >= 0) {
+                    if (event.nodeName === "LI") {
+                        event.style.display = "list-item";
+                    } else {
+                        event.style.display = "block";
+                    }
+                }
+            });
         });
         checkEmptyList();
         fixLinks();
     }
 
-    // onload
-    showEvents($('.cal-today')[0]);
+    filters.forEach(f => {
+        f.addEventListener("change", function(){
+            filter_all.checked = false;
+            filter();
+        })
+    })
 
+    filter_all.addEventListener('change', function(){
+        let events = document.querySelectorAll(".event");
+        filters.forEach(f => {
+            f.checked = false;
+        })
+        if (filter_all.checked) {
+            events.forEach(event => {
+                if (event.nodeName === "LI") {
+                    event.style.display = "list-item";
+                } else {
+                    event.style.display = "block";
+                }
+            })
+        } else {
+           events.forEach(event => {
+                event.style.display = "none";
+            })
+        }
+        checkEmptyList();
+        fixLinks();
+    })
+
+    // onload
     var groups = '{{ grav.uri.param("groups") }}';
     if (groups) {
-        $('.filter').prop("checked", false);
+        filters.forEach(f => {
+            f.checked = false;
+        })
         filter_all.checked = false;
 
-        groups.split(",").forEach(g => {
-            $(".filter").each(function(){
-                if(this.value == g) {
-                    this.checked = true;
+        groups.split(",").forEach(group => {
+            filters.forEach(f => {
+                if(f.value == group) {
+                    f.checked = true;
                 }
             });  
         })   
     };
-    filter()
+
+    showEvents(document.querySelector('.cal-today'));
+    filter();
+    document.querySelectorAll('.cal-day').forEach( day => {
+        day.addEventListener('click', showEvents);
+    })
+        
+    
+    
 });
 </script>
 {% endblock %}
