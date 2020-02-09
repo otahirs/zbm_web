@@ -30,19 +30,7 @@ summer:
             meetup: '16:00'
             group:
                     - dorost
-        2:
-            name: 'tělocvična - volejbal'
-            place: 'ZŠ Kotlářská'
-            meetup: '19:30'
-            group:
-                    - dorost
-    friday:
-        1:
-            name: 'tělocvična - florbal, basketbal'
-            place: 'ZŠ Kotlářská'
-            meetup: '18:00'
-            group:
-                    - dorost
+    friday: null
     saturday: null
     sunday: null
 winter:
@@ -115,30 +103,12 @@ winter:
             group:
                     - zaci1
         3:
-            name: 'kompenzační cvičení'
-            place: 'bude upřesněno'
-            meetup: '17:30'
-            group:
-                    - dorost
-        4:
-            name: 'volejbal (po domluvě)'
-            place: 'ZŠ Kotlářská'
-            meetup: '19:30'
-            group:
-                    - dorost
-        5:
             name: 'běžecký trénink'
             place: 'Hala Rosnička, Horákova 7'
             meetup: '16:30'
             group:
                     - zaci2
-    friday:
-        1:
-            name: 'florbal, basket (po domluvě)'
-            place: 'ZŠ Kotlářská'
-            meetup: '18:00'
-            group:
-                    - dorost
+    friday: null
     saturday: null
     sunday: null
 ---
