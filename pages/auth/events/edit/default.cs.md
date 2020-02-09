@@ -242,18 +242,25 @@ access:
 
 <script>
 window.addEventListener('DOMContentLoaded', function () {
-    var smde_note = new SimpleMDE({ 
-        element: document.getElementById("note"), //misto textarea nacte markdown editor
-        spellChecker: false,
-        status: false,
-        hideIcons: ["side-by-side", "fullscreen"],
-    });
-    var smde_program = new SimpleMDE({ 
-        element: document.getElementById("program"), //misto textarea nacte markdown editor
-        spellChecker: false,
-        status: false,
-        hideIcons: ["side-by-side", "fullscreen"],
-    });
+
+    // markdown editors
+    var text_editors = {};
+
+    function initMarkdownEditor(id) {
+        var smde = new SimpleMDE({ 
+            element: document.getElementById(id), //misto textarea nacte markdown editor
+            spellChecker: false,
+            status: false,
+            hideIcons: ["side-by-side", "fullscreen"],
+        });
+        text_editors[id] = smde;
+    }
+
+    initMarkdownEditor("note");
+
+    {% if event.template == "soustredeni" %}      
+        initMarkdownEditor("program");
+    {% endif %}
 
     /**** prevent submit on enter ***/
         $(document).on("keypress", "input", function (e) {
@@ -304,7 +311,8 @@ window.addEventListener('DOMContentLoaded', function () {
             $(this).height( this.scrollHeight);   
         });
         //refresh simplemde editors
-        smde_program.codemirror.refresh();
+        for (var name in text_editors)
+            text_editors[name].codemirror.refresh();
     })
 
     /*** addRoute ***/
@@ -357,8 +365,9 @@ window.addEventListener('DOMContentLoaded', function () {
         if(form.checkValidity()){
 
             var formData = new FormData(form);
-            formData.append('note', smde_note.value() );
-            formData.append('program', smde_program.value() );
+            for (var name in text_editors) {
+                formData.append(name, text_editors[name].value() );
+            }
             $.ajax({
                 url: "/php/editevent",
                 type: "POST",
