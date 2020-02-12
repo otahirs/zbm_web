@@ -18,7 +18,7 @@ template: trenink
 date: '2020-01-13'
 id: 20200228-ae0772a1
 terrain: ''
-leader: ''
+leader: Standa
 note: ''
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
