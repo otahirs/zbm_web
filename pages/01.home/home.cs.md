@@ -173,7 +173,7 @@ content:
        
 
 
-  <a href="#novinky" id="hop" style="text-align:right;border-bottom:none;"><h1>hop<i class="fa fa-level-up" aria-hidden="true"></i></h1></a>
+  <a href="#top" id="hop" style="text-align:right;border-bottom:none;"><h1>hop<i class="fa fa-level-up" aria-hidden="true"></i></h1></a>
   </div> <!-- blizi se -->
 
 </div> <!-- uzavira celou stranku , pure-g -->
