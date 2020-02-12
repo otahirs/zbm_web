@@ -9,7 +9,7 @@ planTemplate: winter
 plan:
     monday:
         1:
-            name: 'kopce (světlo s sebou)'
+            name: 'kopce (světlo a buzola s sebou, kvůli větru i boty na cesty)'
             place: 'Hala Rosnička, Horákova 7'
             meetup: '16:30'
             group:
@@ -76,6 +76,12 @@ plan:
             group:
                     - zaci1
         3:
+            name: 'kompenzační cvičení'
+            place: 'bude upřesněno'
+            meetup: '17:30'
+            group:
+                    - dorost
+        4:
             name: 'běžecký trénink'
             place: 'Hala Rosnička, Horákova 7'
             meetup: '16:30'
