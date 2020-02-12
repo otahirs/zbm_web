@@ -22,5 +22,12 @@ terrain: ''
 leader: ''
 note: ''
 gps: '49.10988, 16.17636'
+routes:
+    -
+        name: H
+        link: 'http://3drerun.worldofo.com/index.php?id=-16761605&type=info'
+    -
+        name: D
+        link: 'http://3drerun.worldofo.com/index.php?id=-16761606&type=info'
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
