@@ -60,12 +60,12 @@ menu: Informace
 </ul>
  
 ---
-## Kontakty <a class="fix-topbar-offset" name="kontakty"></a>
+## Kontakty <a name="kontakty"></a>
 
 Všechny důležité kontakty najdete na <a href="./kontakty"> vlastní stránce Kontakty</a> (odkaz také v pravém horním rohu obrazovky). Potřebujete-li se spojit s ostatními členy oddílu, můžete si údaje najít v adresáři po přihlášení v <a href="https://members.eob.cz/zbm" target="_blank">členské sekci</a>.
 
 ---
-## Financování a osobní účty <a class="fix-topbar-offset" name="finance"></a>
+## Financování a osobní účty <a name="finance"></a>
 
 Osobní účty vede Věra Mádlová, aktuální stav je on-line v „Členské sekci".
 
@@ -78,7 +78,7 @@ Osobní účty vede Věra Mádlová, aktuální stav je on-line v „Členské s
 - Finance z oddílového účtu lze použít zejména na zaplacení oddílových příspěvků, soustředění, startovného na nedotované závody (např. prázdninové vícedenní závody, LOB, MTBO) či oddílového oblečení. Členské příspěvky a dary poskytnuté na oddílový účet již nelze poslat zpět na účet soukromý.
 
 ---
-## Oddílové příspěvky 2020 <a class ="fix-topbar-offset" name="prispevky"></a>
+## Oddílové příspěvky 2020 <a name="prispevky"></a>
 Členské příspěvky je potřeba zaplatit **nejpozději do 26.&nbsp;2.&nbsp;2020**. Zároveň v členské sekci vyplňte “závod” - _Oddílové příspěvky 2020 - evidence_, dle příslušného typu příspěvku.
 
 Platby proveďte bezhotovostně na účet SK Brno-Žabovřesky u Raifeisenbank 4067843369/5500, vs. xxxx (kde xxxx = registrační číslo).
@@ -129,7 +129,7 @@ I na tyto akce se lze většinou přihlásit pomocí členské sekce. Při úča
 
 
 
-## Vrcholový fond ZBM <a class ="fix-topbar-offset" name="vrcholovy"></a>
+## Vrcholový fond ZBM <a name="vrcholovy"></a>
 
 Tento fond je určen pro podporu talentů a úspěšných závodníků našeho oddílu.  
 - Při prvním získání licence E, A odbrží závodník od oddílu nový dres.
@@ -182,7 +182,7 @@ Finanční prostředky lze čerpat na: sportovní soustředění, materiální v
 
 
 ---
-## Přihlašování na závody <a class="fix-topbar-offset" name="zavody"></a>
+## Přihlašování na závody <a name="zavody"></a>
 Přihlašování na závody i soustředění probíhá výhradně přes [členskou sekci](https://members.eob.cz/zbm/). Přihlašování na závody má na starost Honza Drábek. V případě že závod, kterého se chcete zúčastnit, není zadán, pište na kontaktní e-mail _prihlasky.zbm@eob.cz_. Pokud vám nefunguje vaše přístupové jméno a heslo do naší „Členské sekce", kontaktujte Richarda Pátka, který vám tyto údaje poskytne.
 
 V případě, že pravidelně jezdíte na závody mimo naši oblast, kontaktujte Honzu Drábka nebo Ríšu Pátka a domluvte se na individuálním způsobu přihlašování přímo v systému ORIS.
@@ -201,7 +201,7 @@ doržujte prosím data přihlášek a pokud možno se na závody nepřihlašujte
 
 
 ---
-## Kdo se může a kam přihlásit <a class="fix-topbar-offset" name="kdoakam"></a>
+## Kdo se může a kam přihlásit <a name="kdoakam"></a>
 
 - oblastní žebříček a vícedenní závody – všichni (i úplní začátečníci)
 - žebříček B-Morava – držitelé licence A, B a veteráni
@@ -210,7 +210,7 @@ doržujte prosím data přihlášek a pokud možno se na závody nepřihlašujte
 Všichni závodníci kategorií D, H-20, 21 se mohou přihlásit na kterýkoliv závod v ČR mimo Mistrovství ČR (dle pořadí v Rankingu). V případě, že v tomto závodě bude více podkategorií (E, A, B, C, D), uveďte v přihlášce do poznámky, do jaké podkategorie chcete přihlásit. Na oblastních závodech bude vypsána kategorie D21D, H21D (zkrácená trať).
 
 ---
-## Vedoucí na závodech <a class="fix-topbar-offset" name="vedouci"></a>
+## Vedoucí na závodech <a name="vedouci"></a>
 Pokud budete určeni jako vedoucí na závodech, proveďte prosím následující úkony:  
 - Zkontrolujte, že máte potvrzení o zaplacení v e-mailu, v opačném případě kontaktujte Věrku
 - Na závodech odprezentujte oddíl. 
@@ -219,7 +219,7 @@ Pokud budete určeni jako vedoucí na závodech, proveďte prosím následujíc�
 
 <!--
 ---
-## Pořádání závodů <a class ="fix-topbar-offset" name="poradani"></a>
+## Pořádání závodů <a name="poradani"></a>
 
 
 V letošním roce pořádáme 3 závody Jihomoravské ligy a Finále ligy škol v orientačním běhu. Prosím tedy všechny členy oddílu, aby počítali s následujícími termíny:   
@@ -236,7 +236,7 @@ V letošním roce pořádáme 3 závody Jihomoravské ligy a Finále ligy škol 
 -->
 
 ---
-## Emailová skupina Žabiny <a class="fix-topbar-offset" name="zabiny"></a>
+## Emailová skupina Žabiny <a name="zabiny"></a>
 Emailová skupina **zabiny@googlegroups.com** je jednoduchý nástroj pro hromadné rozesílání emailů. Při odeslání emailu na adresu, která označuje emailovou skupinu, se poslaný email rozešle všem lidem zaregistrovaným v této skupině. Přihlášení do skupiny je však dobrovolné, všechny důležité věci budou na webu.  
 
 <form action="https://groups.google.com/forum/#!forum/zabiny/join" target="_blank">
@@ -258,7 +258,7 @@ Email se posílá na adresu: _zabiny@googlegroups.com_. Email následně dorazí
 Posláním prázdného emailu na adresu _zabiny+unsubscribe@googlegroups.com_ bude adresa odesílatele vyškrtnuta z emailové skupiny.
 
 ---
-## Zásady zpracování osobních údajů (GDPR) <a class="fix-topbar-offset" name="gdpr"></a>
+## Zásady zpracování osobních údajů (GDPR) <a name="gdpr"></a>
 Sportovní klub pro náplň své činnosti uchovává a dále zpracovává některé Vaše osobní údaje. Část údajů dále předává třetím stranám, např. sportovnímu svazu, příslušným orgánům státní správy či účetní společnosti. Celé znění Zásad zpracování osobních údajů ve Sportovním klubu Brno – Žabovřesky z.s. si můžete přečíst <a href="{{page.url}}/Zasady_zpracovani_OU_SKZabovresky.pdf" target="_blank">zde</a>.
 
 

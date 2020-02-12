@@ -304,33 +304,7 @@
 
 				// close on main menu manipulation
 				slideout.on('translatestart', () => { linksMore.style.display = "none" });
-
-		// fix offset for anchors due to fixed header
-			var offset = 95;
-			$('a[href*="#"]:not([href="#"], #sidebar)').click(function() {
-				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-			
-				var target = $(this.hash);
-				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-				if (target.length) {
-					$('html,body').animate({
-					scrollTop: target.offset().top - offset //offsets for fixed header
-					}, 500);
-					return false;
-				}
-				}
-			});
-			//Executed on page load with URL containing an anchor tag.
-			if($(location.href.split("#")[1])) {
-				var target = $('[name='+ location.href.split("#")[1] +']');
-				if (target.length) {
-					$('html,body').animate({
-					scrollTop: target.offset().top - offset //offset height of header here too.
-					}, 500);
-					return false;
-				}
-			}
-
+				
 	});
 
 	
