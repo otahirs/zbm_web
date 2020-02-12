@@ -322,7 +322,7 @@
 			});
 			//Executed on page load with URL containing an anchor tag.
 			if($(location.href.split("#")[1])) {
-				var target = $('#'+location.href.split("#")[1]);
+				var target = $('[name='+ location.href.split("#")[1] +']');
 				if (target.length) {
 					$('html,body').animate({
 					scrollTop: target.offset().top - offset //offset height of header here too.
