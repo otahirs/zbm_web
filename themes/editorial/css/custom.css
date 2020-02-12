@@ -1,5 +1,10 @@
 /*# sourceMappingURL=custom.css.map */
 
+/* fix offset for anchors due to fixed header */
+html, body {
+    scroll-padding-top: 70px; /* height of sticky header */
+}
+
 /*************************/
 /*******  home ***********/
 /*************************/
