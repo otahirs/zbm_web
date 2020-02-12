@@ -52,6 +52,7 @@ menu: Informace
 <ul>
  <li><a href="#kontakty">Kontakty</a></li>
  <li><a href="#finance">Finance</a></li>
+ <li><a href="#prispevky">Oddílové příspěvky</a></li>
  <li><a href="#zavody">Přihlašování na závody</a></li>
  <li><a href="#vedouci">Vedoucí na závodech</a></li>
  <li><a href="#zabiny">Emailová skupina</a></li>
@@ -76,43 +77,56 @@ Osobní účty vede Věra Mádlová, aktuální stav je on-line v „Členské s
 #### Čerpání financí
 - Finance z oddílového účtu lze použít zejména na zaplacení oddílových příspěvků, soustředění, startovného na nedotované závody (např. prázdninové vícedenní závody, LOB, MTBO) či oddílového oblečení. Členské příspěvky a dary poskytnuté na oddílový účet již nelze poslat zpět na účet soukromý.
 
-<!--
 ---
-## Oddílové příspěvky 2019<a class ="fix-topbar-offset" name="prispevky"></a>
+## Oddílové příspěvky 2020 <a class ="fix-topbar-offset" name="prispevky"></a>
+Členské příspěvky je potřeba zaplatit **nejpozději do 26.&nbsp;2.&nbsp;2020**. Zároveň v členské sekci vyplňte “závod” - _Oddílové příspěvky 2020 - evidence_, dle příslušného typu příspěvku.
 
-Oddílové příspěvky  je  potřeba zaplatit  nejpozději  do 15.  března  2020 na váš oddílový účet.  Vyučtování  předchozího  roku  vidíte online  v členské  sekci. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, nebudou přihlašováni na závody a posléze jim může být členství ukončeno!
+Platby proveďte bezhotovostně na účet SK Brno-Žabovřesky u Raifeisenbank 4067843369/5500, vs. xxxx (kde xxxx = registrační číslo).
 
-Součástí všech příspěvků je i příspěvek do SK ve výši 300,– Kč a registrace ČSOS ve výši 100,– Kč.
+Ve všech typech příspěvků jsou již zahrnuty povinné odvody SK ve výši 300,–&nbsp;Kč a registrace ČSOS ve výši 100,–&nbsp;Kč.
+
+Vyúčtování předchozího roku vidíte aktuálně v členské sekci. Veškeré **dluhy** z minulosti je potřeba vyrovnat taktéž nejpozději **do 26.&nbsp;2.&nbsp;2020**. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, **nebudou přihlašováni na závody!**
+
+### Kolik zaplatím?
 
 | typ příspěvků | částka | závody hrazené oddílem |
 | --- | --- | --- |
-| Základní příspěvek = nikam nejezdím nebo málo | 600,– Kč | žádné |
-| Žabičky (3 až 6 let) | 600,– Kč | JmL |
-| Pulci (7 až 10 let) | 1 700,– Kč | JmL |
-| Žáci (11 až 14 let) | 2 200,– Kč | ŽB, JmL |
-| Dorost - licence B (15 až 18 let) | 2 200,– Kč | ŽB, JmL |
-| Reprezentant ČR, licence A a E | 1 700,– Kč | ŽA, ŽB, JmL |
-| Licence R | 2 200,– Kč | ŽA, ŽB, JmL |
-| Ostatní = jezdím jen na Jihomoravskou ligu | 2 400,– Kč | JmL |
-| Ostatní = jezdím Jihomoravskou ligu a ŽB-M | 2 900,– Kč | ŽB, JmL |
-| Ostatní = jezdím všude | 3 500,– Kč | ŽA, ŽB, JmL |
+| Žabičky (3 až 6 let) | 1000,– Kč | JmL |
+| Pulci (7 až 10 let) | 1 900,– Kč | JmL |
+| Žáci (11 až 14 let) | 2 500,– Kč | ŽB, JmL |
+| Dorost (15 až 18 let) - licence B, C | 3 000,– Kč | ŽB, JmL |
+| Dorost (15 až 18 let) - licence A <br> Ostatní - Reprezentant ČR, licence E | 2 700,– Kč | ŽA, ŽB, JmL |
+| Ostatní - Licence R | 3 200,– Kč | ŽA, ŽB, JmL |
+| Ostatní - nejezdím nikam nebo málo | 1000,– Kč | --- |
+| Ostatní - jezdím jen na Jihomoravskou ligu | 2 600,– Kč | JmL |
+| Ostatní - jezdím na Jihomoravskou ligu a ŽB | 3 500,– Kč | ŽB, JmL |
+| Ostatní - jezdím všude | 4 500,– Kč | ŽA, ŽB, JmL |
 
+Sourozenci (Žabičky, Pulci, Žáci) – druhý a další sourozenec sleva 30&nbsp;%.
 
-- Oddíl  hradí  vklady,  dopravu,  ubytování  na uvedené závody (mimo individuální dopravy) v plné výši všem, kteří zaplatili oddílové příspěvky. Pokud se spí na postelích, může být vyžadována drobná spoluúčast.
+Členové oddílu, kteří nebydlí v Brně nebo jeho blízkém okolí, případně v Brně nestudují, mají slevu 500,–&nbsp;Kč (platí pro závodníky s licencí B a vyšší).
 
-- Členové,  kteří  mají  uhrazen  _základní  příspěvek_  ve  výši  600,–  Kč,  se  mohou  účastnit jakéhokoliv  typu  závodu  na  vlastní  náklady – musí však následně vyrovnat případnou dlužnou  částku  za  první  pololetí k 30.   červnu   a   za   druhé pololetí k 30. listopadu.   Pokud   nebudou   dlužné   částky vyrovnány, nebudou  v dalším období přihlašováni na závody! 
+### Povinnosti oddílu
+- Oddíl hradí vklady a dopravu (mimo individuální dopravy) na závody ČSOS dle typu zaplacených oddílových příspěvků.
+- Oddíl pravidelně přispívá na vybraná soustředění až do výše 50&nbsp;%. 
+- Oddíl dle možností přispívá na ubytování při štafetách a mistrovských závodech.
 
-- Prázdninové závody, závody LOB a MTBO si financuje každý člen v plné výši. Při  účasti  na  závodech,  které  nejsou  součástí  zaplacených  oddílových  příspěvků,  se  na osobním účtu po absolvovaném závodu objeví náklady s tímto závodem spojené (vklady, ubytování, doprava, ...). Tyto náklady si pak účastník hradí sám v plné výši.
+### Povinnosti člena
+- Do stanoveného data zaplatit oddílové příspěvky.
+- Pokud se člen nezúčastní závodu, na který se dříve přihlásil v členské sekci, je povinen uhradit část nákladů, která tím oddílu vzniká: Jml = 100,–&nbsp;Kč, ŽB = 200,–&nbsp;Kč, ŽA + MČR = 250,–&nbsp;Kč. Částka bude odečtena z osobního účtu. 
+Členové přihlášení na společnou dopravu, kteří ji následně nevyužijí, jsou povinni uhradit příslušnou část nákladů. Částka bude odečtena z osobního účtu.
+- V případě neúčasti na soustředění a neodhlášení se do data uzavření přihlášek je člen povinen uhradit část nákladů, které oddíl musel vynaložit. Částka bude odečtena z osobního účtu.
 
-- Sourozenci (Žabičky, Pulci, Žáci) – druhý a další sourozenec sleva 50% z členských příspěvků. Členové oddílu, kteří nebydlí v Brně nebo jeho blízkém okolí nebo v Brně nestudují, mají slevu 600, – Kč (platí pro závodníky ŽA, ŽB)
+### Oddíl neplatí náklady na tyto akce:
+- závody mimo závodní sezónu (např. závody o letních prázdninách)
+- akce mimo ČSOS (např. zimní liga)
+- závody LOB a MTBO
+- závody přesahující zvolený typ členských příspěvků
 
-- Pokud se člen neodhlásí do data uzavření přihlášek ze závodu, kde je účast dodovaná oddílem, a nemůže na  něj  jet,  je  povinen  uhradit  část vzniklých nákladů:  Jml  = 100,–  Kč,  ŽB  =  200,–  Kč,  ŽA MČR  = 250,–  Kč.  Příslušná  částka  mu  bude  odečtena  z osobního  účtu. 
+I na tyto akce se lze většinou přihlásit pomocí členské sekce. Při účasti na těchto závodech se na osobním účtu objeví náklady klubu s tímto závodem spojené (vklady, ubytování, doprava, ...), které je třeba vyrovnat.
 
-- Soustředění  se  řídí  pokyny  vydanými  ke  každému  soustředění  a  oddíl  na  ně  přispívá částkou  v rozmezí  10  až  50%,  podle  účelu  a  typu  soustředění.  V případě  neúčasti  na soustředění  a  neodhlášení  se  do  data  uzavření  přihlášek  je  člen  povinen  uhradit  část nákladů, které oddíl musel vynaložit. Maximální  částka  je  70%  z ceny celého soustředění
-
--->
 <!--
----
+
 
 
 ## Vrcholový fond ZBM <a class ="fix-topbar-offset" name="vrcholovy"></a>
