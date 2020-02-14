@@ -23,7 +23,7 @@ Chceme letos nastavit pro placení oddílových příspěvků dřívější datu
 
 Ve čtvrtek proběhla schůzka s Liborem, snahou bylo převzetí agendy předsedy. Jen krátké shrnutí - oddíl údajně neměl pokladnu, proto nebyly předány žádné peníze v hotovosti. Oddílové krabičky nebyly udržovány, bude nutno v nich vyměnit baterie. Nepodařilo se dohledat platbu za malé tréninkové krabičky a stojany na ně, proto si je nechává Libor. Podařilo se dohledat platbu za 10x SIAC čip a tiskárnu na mezičasy, připojitelnou k mobilu; tento materiál Libor předá v průběhu týdne.
 
-Oddíl po domluvě převezme některé závazky a zaplatí za zmapování sprintové mapy v Komíně, domapování části prostoru Zadní Hády a přemapování hřebene Babího lomu.
+Oddíl po domluvě převezme některé závazky a zaplatí za zmapování sprintové mapy v Komíně a domapování části prostoru Zadní Hády.
 
 Vyjasnili jsme si stav příprav MČR klasika 2020, mj. za mapu zaplatíme cca 300 tisíc Kč. Na OB Tábor v Doksech nejspíš nepojedeme, Libor jej hodlá využít pro svůj nový oddíl.  
 Bavili jsme se i o fungování TSM v roce 2020 - TSM Jižní Morava je zřízeno při ZBM, proto veškeré finance jdou na účet ZBM. Do TSM je v roce 2020 zařazeno 9 nadějí, celkový objem finančních prostředků TSM Jižní Morava pro letošní rok je 132 tisíc Kč.
