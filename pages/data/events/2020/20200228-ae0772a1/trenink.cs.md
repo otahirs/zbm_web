@@ -20,5 +20,15 @@ id: 20200228-ae0772a1
 terrain: ''
 leader: Standa
 note: ''
+routes:
+    -
+        name: D
+        link: 'http://3drerun.worldofo.com/?id=-16762148&type=info'
+    -
+        name: H
+        link: 'http://3drerun.worldofo.com/?id=-16762157&type=info'
+    -
+        name: HDD
+        link: 'http://3drerun.worldofo.com/?id=-16762161&type=info'
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
