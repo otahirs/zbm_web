@@ -1,0 +1,22 @@
+{{phpCalendarHeaders(page.folder)}}
+{% set group = page.collection %}
+{% set events = page.collection({'items':{'@page.descendants': '/data/events/'}}) %}
+{% set collection = group is not empty ? events.intersect(group) : events %}
+{# icalendar start #}
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:{{page.id}}/v1/zabiny.club//cs-CZ
+{# icalendar events #}
+{% for event in collection if event.header.id %}
+BEGIN:VEVENT
+UID:{{event.header.id}}
+DTSTAMP:{{event.modified|date("Ymd") ~ "T" ~ event.modified|date("His") ~ "Z"}}
+DTSTART;VALUE=DATE:{{event.header.start|date("Ymd")}}
+DTEND;VALUE=DATE:{{event.header.end|date("Ymd")}}
+SUMMARY:{{event.header.title}}
+LOCATION:{{event.header.place}}
+URL:{{event.url(true)}}
+END:VEVENT
+{% endfor %}
+{# icalendar end #}
+END:VCALENDAR

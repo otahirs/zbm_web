@@ -25,11 +25,17 @@ class PhpTwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('phpTest', [$this, 'Test']),      
             new \Twig_SimpleFunction('phpSaveMapT', [$this, 'SaveMapT']),  
             new \Twig_SimpleFunction('phpDeleteMapT', [$this, 'DeleteMapT']),    
-            new \Twig_SimpleFunction('collectionToEventsByDate', [$this, 'collectionToEventsByDate']),  
+            new \Twig_SimpleFunction('collectionToEventsByDate', [$this, 'collectionToEventsByDate']), 
+            new \Twig_SimpleFunction('phpCalendarHeaders', [$this, 'calendarHeaders']),   
         
         ];
     }
 
+    function calendarHeaders($name){
+        header('Content-type: text/calendar; charset=utf-8');
+        header('Content-Disposition: download; filename=zbm_calendar_'. $name .'.ics');
+    }
+   
 // pomocne fce
     function return_ERROR($errMsg){
         http_response_code(500); // 500 - Internal server error
