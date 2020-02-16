@@ -33,7 +33,7 @@ class PhpTwigExtension extends \Twig_Extension
 
     function calendarHeaders($name){
         header('Content-type: text/calendar; charset=utf-8');
-        header('Content-Disposition: download; filename=zbm_calendar_'. $name .'.ics');
+        header('Content-Disposition: attachment; filename=zbm_calendar_'. $name .'.ics');
     }
    
 // pomocne fce
