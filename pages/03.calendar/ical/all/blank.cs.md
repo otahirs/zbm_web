@@ -1,12 +1,14 @@
 ---
 content:
     items:
-      '@page.descendants': '/data/events/'
+        '@page.descendants': /data/events/
 process:
     markdown: false
 ---
+
 {# icalendar start #}
 BEGIN:VCALENDAR
+X-WR-CALNAME: ZBM - vše
 VERSION:2.0
 PRODID:test/zabiny.club//cs-CZ
 {# icalendar events #}
