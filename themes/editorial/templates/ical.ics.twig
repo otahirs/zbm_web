@@ -1,4 +1,3 @@
-{{phpCalendarHeaders(page.folder)}}
 {% set group = page.collection %}
 {% set events = page.collection({'items':{'@page.descendants': '/data/events/'}}) %}
 {% set collection = group is not empty ? events.intersect(group) : events %}
@@ -20,3 +19,4 @@ END:VEVENT
 {% endfor %}
 {# icalendar end #}
 END:VCALENDAR
+{{phpCalendarHeaders(page.folder)}}
