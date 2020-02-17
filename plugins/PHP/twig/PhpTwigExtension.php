@@ -26,14 +26,41 @@ class PhpTwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('phpSaveMapT', [$this, 'SaveMapT']),  
             new \Twig_SimpleFunction('phpDeleteMapT', [$this, 'DeleteMapT']),    
             new \Twig_SimpleFunction('collectionToEventsByDate', [$this, 'collectionToEventsByDate']), 
-            new \Twig_SimpleFunction('phpCalendarHeaders', [$this, 'calendarHeaders']),   
+            new \Twig_SimpleFunction('phpCalendarExport', [$this, 'calendarExport']),   
         
         ];
     }
 
-    function calendarHeaders($name){
+    function calendarExport(){
+        $page = Grav::instance()['page'];
+        $name = $page->value("folder");
+        $collection = $page->evaluate(['@page.descendants' => '/data/events'])->routable();
+        if($name != "all") {
+            $group = $page->evaluate(['@taxonomy.skupina' => $name]);
+            $collection->intersect($group);
+        }
+
+
         header('Content-type: text/calendar; charset=utf-8');
-        header('Content-Disposition: attachment; filename=zbm_calendar_'. $name .'.ics');
+        header('Content-Disposition: atachment; filename=zbm_calendar_'. $name .'.ics');
+
+        echo "BEGIN:VCALENDAR\r\n";
+        echo "VERSION:2.0\r\n";
+        echo "PRODID:". $page->id() ."/v1/zabiny.club//cs-CZ\r\n";
+
+        foreach ($collection as $event) {
+            echo "BEGIN:VEVENT\r\n";
+            echo "UID:". $event->value("header.id") ."\r\n";
+            echo "DTSTAMP:". date('Ymd\THis', $event->modified()) ."\r\n";
+            echo "DTSTART;VALUE=DATE:". date("Ymd", strtotime($event->value("header.start")))."\r\n";
+            echo "DTEND;VALUE=DATE:". date("Ymd", strtotime($event->value("header.end")))."\r\n";
+            echo "SUMMARY:". $event->value("header.title") ."\r\n";
+            echo "LOCATION:". $event->value("header.place") ."\r\n";
+            echo "URL:". $event->url() ."\r\n";
+            echo "END:VEVENT\r\n";
+        }
+        echo "END:VCALENDAR\r\n";
+        
     }
    
 // pomocne fce
