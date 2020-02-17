@@ -7,12 +7,12 @@ Na výběr je buď kalendář se všemi událostmi, případně kalendáře s ud
 
 | typ kalendáře | odkaz |
 | ---|---|
-|   všechny události| `https://zabiny.club/calendar/ical/all`       |
-|   žabičky         | `https://zabiny.club/calendar/ical/zabicky`   |
-|   pulci 1         | `https://zabiny.club/calendar/ical/pulci1`    |
-|   pulci 2         | `https://zabiny.club/calendar/ical/pulci2`    |
-|   žáci 1          | `https://zabiny.club/calendar/ical/zaci1`     |
-|   žáci 2          | `https://zabiny.club/calendar/ical/zaci2`     |
-|   dorost+         | `https://zabiny.club/calendar/ical/dorost`    |
+|   všechny události| `{{base_url_absolute}}/calendar/ical/all`       |
+|   žabičky         | `{{base_url_absolute}}/calendar/ical/zabicky`   |
+|   pulci 1         | `{{base_url_absolute}}/calendar/ical/pulci1`    |
+|   pulci 2         | `{{base_url_absolute}}/calendar/ical/pulci2`    |
+|   žáci 1          | `{{base_url_absolute}}/calendar/ical/zaci1`     |
+|   žáci 2          | `{{base_url_absolute}}/calendar/ical/zaci2`     |
+|   dorost+         | `{{base_url_absolute}}/calendar/ical/dorost`    |
 
 
