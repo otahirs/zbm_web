@@ -1,5 +1,5 @@
 ---
-title: Export a synchronizace kalendáře
+title: 'Export a synchronizace kalendáře'
 ---
 Všechny žabiňácké události zobrazené v kalendáři, případně pouze události vybrané skupiny si nyní můžete stáhnout ve fromě <a href="https://cs.wikipedia.org/wiki/ICalendar" target="_blank">iCalendar</a> souboru. Pokud odkaz na stažení vložíte do své oblíbené kalendářové aplikace, budou se vám události průběžně synchornizovat. Například pro přidání do kalendáře google si zkopírujte vybranou adresu níže do <a href="https://calendar.google.com/calendar/r/settings/addbyurl" target="_blank">nastavení google kalendářů zde</a>.
 
