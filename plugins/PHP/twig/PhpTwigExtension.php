@@ -53,7 +53,7 @@ class PhpTwigExtension extends \Twig_Extension
             echo "UID:". $event->value("header.id") ."\r\n";
             echo "DTSTAMP:". date('Ymd\THis', $event->modified()) ."\r\n";
             echo "DTSTART;VALUE=DATE:". date("Ymd", strtotime($event->value("header.start")))."\r\n";
-            echo "DTEND;VALUE=DATE:". date("Ymd", strtotime($event->value("header.end")))."\r\n";
+            echo "DTEND;VALUE=DATE:". date("Ymd", strtotime($event->value("header.end") . "+ 1 day"))."\r\n";
             echo "SUMMARY:". $event->value("header.title") ."\r\n";
             echo "LOCATION:". $event->value("header.place") ."\r\n";
             echo "URL:". $event->url() ."\r\n";
