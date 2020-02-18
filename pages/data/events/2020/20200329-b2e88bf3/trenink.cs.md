@@ -3,8 +3,8 @@ taxonomy:
     skupina:
         1: dorost
 type: T
-start: '2020-03-29'
-end: '2020-03-29'
+start: '2020-03-28'
+end: '2020-03-28'
 title: 'Běh s mapou do Radostic'
 place: Žebětín
 meetTime: '9:36'
