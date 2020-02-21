@@ -270,12 +270,12 @@ content:
   			typeFilter = item.values().type.indexOf(values_type) >= 0;
       }
 
-      if(include_old) {
-        dateFilter = true;
-      } else if($datepicker.html() == bnt_text) {
-        dateFilter = showCurrent(item);
-      } else {
+      if($datepicker.html() != bnt_text) {
         dateFilter = item.values().startMonth.indexOf(value_datepicker) >= 0 || item.values().endMonth.indexOf(value_datepicker) >= 0;
+      } else if(include_old) {
+        dateFilter = true;
+      } else {
+        dateFilter = showCurrent(item);
       }
 
       if (item.elm.className == "program--now" && dateFilter) {
