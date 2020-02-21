@@ -7,13 +7,18 @@ content:
         dir: asc
     pagination: false
 ---
-
 {% set collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']) %}
 <div id="program" >
-<input type="text" style="display:inline" class="search" placeholder="Hledat.." />&nbsp;<a class="button" id="reset_btn"><i class="fa fa-refresh" aria-hidden="true"></i></a>&nbsp;<a class="button special" id="filter_btn">zobrazit filtr</a>
-<br><br>
+<div class="row">
+  <div class="col">
+    <input type="text" style="display:inline" class="search" placeholder="Hledat.." />&nbsp;
+    <a class="button" id="reset_btn"><i class="fa fa-refresh" aria-hidden="true"></i></a>&nbsp;
+    <a class="button special" id="filter_btn">zobrazit filtr</a>
+  </div>
+</div>
+<br>
 <div id="filter_program" class="row" style="display: none">
-   <div class="col-sm-6 col-md-3">
+  <div class="col-sm-6 col-md-3">
     <fieldset>
     <label>Typ události</label>
     <input class="filter-all" type="radio" value="all" name="type" id="type-all" checked />
@@ -29,38 +34,40 @@ content:
   <div class="col-md-6">
     <fieldset>
     <label>Skupina</label>
-    <div class="row">
-      <div class="col-6">
-        <input class="filter-all" type="radio" value="all" name="skupina" id="skupina-all" checked />
-        <label for="skupina-all" style="display:none;">Vše</label>
-        <input class="filter" type="radio" value="zabicky" name="skupina" id="skupina-zabicky" />
-        <label for="skupina-zabicky">Žabičky</label>
-        <br>
-        <input class="filter" type="radio" value="pulci1" name="skupina" id="skupina-pulci1" />
-        <label for="skupina-pulci1">Pulci 1</label>
-        <br>
-        <input class="filter" type="radio" value="pulci2" name="skupina" id="skupina-pulci2" />
-        <label for="skupina-pulci2">Pulci 2</label>
-        <br>
-      </div>
-      <div class="col-6">
-        <input class="filter" type="radio" value="dorost" name="skupina" id="skupina-dorost" />
-        <label for="skupina-dorost">Dorost+</label>
-        <br>
-        <input class="filter" type="radio" value="zaci1" name="skupina" id="skupina-zaci1" />
-        <label for="skupina-zaci1">Žáci 1</label>
-        <br>
-        <input class="filter" type="radio" value="zaci2" name="skupina" id="skupina-zaci2" />
-        <label for="skupina-zaci2">Žáci 2</label>
-        <br>
-      </div>	
-    <div>
-	  </fieldset>
+	<div class="row">
+		<div class="col-md-6">
+			<input class="filter-all" type="radio" value="all" name="skupina" id="skupina-all" checked />
+			<label for="skupina-all" style="display:none;">Vše</label>
+			<input class="filter" type="radio" value="zabicky" name="skupina" id="skupina-zabicky" />
+			<label for="skupina-zabicky">Žabičky</label>
+			<br>
+			<input class="filter" type="radio" value="pulci1" name="skupina" id="skupina-pulci1" />
+			<label for="skupina-pulci1">Pulci 1</label>
+			<br>
+			<input class="filter" type="radio" value="pulci2" name="skupina" id="skupina-pulci2" />
+			<label for="skupina-pulci2">Pulci 2</label>
+			<br>
+		</div>
+		<div class="col-md-6">
+			<input class="filter" type="radio" value="dorost" name="skupina" id="skupina-dorost" />
+			<label for="skupina-dorost">Dorost+</label>
+      <br>
+			<input class="filter" type="radio" value="zaci1" name="skupina" id="skupina-zaci1" />
+			<label for="skupina-zaci1">Žáci 1</label>
+			<br>
+			<input class="filter" type="radio" value="zaci2" name="skupina" id="skupina-zaci2" />
+			<label for="skupina-zaci2">Žáci 2</label>
+		</div>	
+	<div>
+	</fieldset>
   </div>
   <div class="col-sm-6 col-md-3" >
     <fieldset>
     <label>Filtr data</label>
     <button data-toggle="datepicker" type="button" style="height: 2.75em;font-size: 1em;line-height: 2.9em;color:inherit !important; box-shadow:none;"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;nyní</button>
+    <br>
+    <input id="include-older" type="checkbox"/>
+    <label for="include-older">zobrazit již uplynulé</label>
     </fieldset>
   </div>
  </div>
@@ -71,23 +78,36 @@ content:
     
   {% for p in collection %}
   
-      <tr data-href="{{ p.url }}" class="click-row">
-          <td class="datum">
-            {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
-            {# HELP |localizeddate http://twig-extensions.readthedocs.io/en/latest/intl.html#}
-            {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
-            {% if p.header.start|localizeddate('medium', 'none','cs','Europe/Prague', 'M') != p.header.end|localizeddate('medium', 'none','cs','Europe/Prague', 'M')%}
-              {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
-            {# pokud neni stejny den - format 6.-8. cerven #}
-            {% elseif p.header.start|localizeddate('medium', 'none') != p.header.end|localizeddate('medium', 'none')%}
-              {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
-            {% else %}
-            {# pokud stejny den - format 6. cerven #}
-              {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
-            {% endif %}
+      <tr>
+          <td class="datum edit" title="Upravit událost">
+            <a href="/data/events/{{ p.header.id[:4] }}/{{ p.header.id }}" target="_blank">
+              {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
+              {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
+              {% if p.header.start|date('m') != p.header.end|date('m') %}
+                {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+              {# pokud neni stejny den - format 6.-8. cerven #}
+              {% elseif p.header.start != p.header.end %}
+                {{p.header.start|date("j.") ~ ' — '~ p.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+              {% else %}
+              {# pokud stejny den - format 6. cerven #}
+                {{p.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}
+              {% endif %}
+              {# pokud minule roky, zobrazi rok #}
+              {% if p.header.end|date("Y") != "now"|date("Y") %}
+                {{ p.header.end|date("Y") }}
+              {% endif %}
+            </a>
           </td>
-          <td class="nazev"><b>{{ p.title }}</b></td>
-          <td class="misto">{{p.header.place}}</td>
+          <td class="nazev edit" title="Upravit událost">
+            <a href="/data/events/{{ p.header.id[:4] }}/{{ p.header.id }}" target="_blank">
+              <b>{{ p.title }}</b>
+            </a>
+          </td>
+          <td class="misto edit" title="Upravit událost">
+            <a href="/data/events/{{ p.header.id[:4] }}/{{ p.header.id }}" target="_blank">
+              {{p.header.place}}
+            </a>
+          </td>
           <td class="skupina" style="display: none !important;"> 
             {% set all = true %}
             {% for s in p.header.taxonomy.skupina %} 
@@ -114,7 +134,7 @@ content:
       </tr>
   {% endfor %}
   {# oddelovaci cara #}
-    <tr class="program--now" title="Dnes - {{'today'|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM Y')}}">
+    <tr class="program--now" title="Dnes - {{"today"|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM Y')}}">
           <td class="datum"></td>
           <td class="nazev"></td>
           <td class="misto"></td>
@@ -138,10 +158,14 @@ content:
 
 <script>
  window.addEventListener('DOMContentLoaded', function () {
-  $('[data-href]').click(function () {
-    window.location = $(this).data("href");
-  });
+   
+  // links hover background
+  $(".edit").hover( 
+    function () { $(this).parent().find("td").addClass('backgroundAccent') },     
+    function () { $(this).parent().find("td").removeClass('backgroundAccent') }
+  );
 
+  // show/hide filter
   var filter_div = document.getElementById('filter_program');
   $('#filter_btn').click( function(){
     if (filter_div.style.display === "none") {
@@ -153,6 +177,7 @@ content:
     }
   });
 
+  // datepicker
   var $datepicker = $('[data-toggle="datepicker"]'),
     bnt_text = $datepicker.html();
     now = Math.floor(Date.now() / 1000);
@@ -168,32 +193,33 @@ content:
     pagination: true
 	};
 
+  // list.js
   var userList = new List('program', options);
-
+  
   function showCurrent(item) {
     if (item.values().start >= now || item.values().end > (now - 5*3600*24)) {
       return true;
     }
     return false;
   } 
-  
-  
+
   function resetList(){
   	userList.search();
     userList.sort('start', { order: "asc" });
   	userList.filter(showCurrent); 
-  	//userList.update();
   	$(".filter-all").prop('checked', true);
   	$('.filter').prop('checked', false);
     $('.search').val('');
     $datepicker.html(bnt_text);
+    $("#include-older").prop("checked", false);
   	//console.log('Reset Successfully!');
   };
 
   function updateList(){
     var values_skupina = $("input[name=skupina]:checked").val();
   	var values_type = $("input[name=type]:checked").val();
-    var value_datepicker = $datepicker.datepicker('getDate', true) 
+    var value_datepicker = $datepicker.datepicker('getDate', true);
+    var include_old = $("#include-older").prop("checked");
   	//console.log(values_skupina, values_type);
 
   	userList.filter(function (item) {
@@ -215,13 +241,14 @@ content:
   			typeFilter = item.values().type.indexOf(values_type) >= 0;
       }
 
-      if($datepicker.html() == bnt_text)
-      {
-        dateFilter = showCurrent(item);
-      } else {
+      if($datepicker.html() != bnt_text) {
         dateFilter = item.values().startMonth.indexOf(value_datepicker) >= 0 || item.values().endMonth.indexOf(value_datepicker) >= 0;
+      } else if(include_old) {
+        dateFilter = true;
+      } else {
+        dateFilter = showCurrent(item);
       }
-
+      
       if (item.elm.className == "program--now" && dateFilter) {
         return true;
       }
@@ -231,26 +258,26 @@ content:
   };
   
   
-    //updateList();
+  //updateList();
     $("input[name=skupina]").change(updateList);
     $('input[name=type]').change(updateList);
-    $datepicker.on('pick.datepicker', function () {
-        updateList();
-    });
+    $("#include-older").change(updateList);
+    $datepicker.on('pick.datepicker', updateList);
 
 /* pokud neni zaznam zobrazi hlasku*/
   	userList.on('updated', function (list) {
-  		if (list.matchingItems.length > 0) {
-  			$('.no-result').hide()
-  		} else {
-  			$('.no-result').show()
-  		}
-  	 });
-     
-   
-    
-    resetList();
-    $("#reset_btn").click(resetList);
+        if (list.matchingItems.length > 0) {
+          $('.no-result').hide()
+        } else {
+          $('.no-result').show()
+        } 
+    });
 
-}); // onload
+    
+  
+  resetList();
+	$("#reset_btn").click(resetList);
+	
+
+}, false); // onload  
 </script>
