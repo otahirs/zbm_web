@@ -47,6 +47,10 @@ class PhpTwigExtension extends \Twig_Extension
         echo "BEGIN:VCALENDAR\r\n";
         echo "VERSION:2.0\r\n";
         echo "PRODID:". $page->id() ."/v1/zabiny.club//cs-CZ\r\n";
+        echo "CALSCALE:GREGORIAN\r\n";
+        echo "X-WR-TIMEZONE:Europe/Prague\r\n";
+        echo "X-PUBLISHED-TTL:PT1H\r\n";
+        echo "REFRESH-INTERVAL;VALUE=DURATION:P1H\r\n";
 
         foreach ($collection as $event) {
             echo "BEGIN:VEVENT\r\n";
