@@ -1,6 +1,6 @@
 ---
 title: Sponzoři
-media_order: 'Brno.svg,gpsCentrum.svg,BadgerMeterEuropa.svg,Revos.svg,JMK.svg,sanasport.svg,nsm.svg,mcae.svg,cad.png,tredos.jpg,kotlarska.png'
+media_order: 'Brno.svg,gpsCentrum.svg,BadgerMeterEuropa.svg,Revos.svg,JMK.svg,sanasport.svg,nsm.svg,mcae.svg,cad.png'
 date: '2018-10-29'
 ---
 
@@ -41,21 +41,6 @@ date: '2018-10-29'
         </a>
         <a href="https://www.mcae.cz/cs/uvod/" target="_blank">
         <img class="pure-img sponsors--img" src="{{page.relativePagePath()}}/mcae.svg" style="padding-top: 3%;">
-        </a>
-    </div>
-    <div class="pure-u-1 pure-u-md-1-3">
-        <a href="https://www.cadblansko.cz/cze/" target="_blank">
-        <img class="pure-img sponsors--img" src="{{page.relativePagePath()}}/cad.png">
-        </a>
-    </div>
-    <div class="pure-u-1 pure-u-md-1-3">
-        <a href="http://www.kotlarska.cz/" target="_blank">
-        <img class="pure-img sponsors--img" src="{{page.relativePagePath()}}/kotlarska.png" style="height: 70%;">
-        </a>
-    </div>
-    <div class="pure-u-1 pure-u-md-1-3">
-        <a href="https://www.tredos.cz/" target="_blank">
-        <img class="pure-img sponsors--img" src="{{page.relativePagePath()}}/tredos.jpg">
         </a>
     </div>
 </div>
