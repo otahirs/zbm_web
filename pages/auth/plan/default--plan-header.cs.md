@@ -7,6 +7,83 @@ access:
         plan: true
 planTemplate: winter
 plan:
+    monday:
+        1:
+            name: 'kopce (světlo a buzola s sebou)'
+            place: 'Hala Rosnička, Horákova 7'
+            meetup: '16:30'
+            group:
+                - dorost
+    tuesday:
+        1:
+            name: 'běžecké posilování'
+            place: 'BiGy, Barvičova 85'
+            meetup: '16:00'
+            group:
+                - zaci1
+                - zaci2
+        2:
+            name: 'běžecké posilování'
+            place: 'SPŠ Purkyňova, Purkyňova 2832/97'
+            meetup: '17:30'
+            group:
+                - dorost
+    wednesday:
+        1:
+            name: 'výprava za OB'
+            place: 'ZŠ Novoměstská, Novoměstská 1887/21'
+            meetup: '16:00'
+            group:
+                - zabicky
+        2:
+            name: 'hry + mapa'
+            place: 'ZŠ Novoměstská, Novoměstská 1887/21'
+            meetup: '16:00'
+            group:
+                - pulci1
+                - pulci2
+        3:
+            name: 'mapa + teorie'
+            place: 'ZŠ Novoměstská, Novoměstská 1887/21'
+            meetup: '16:00'
+            group:
+                - zaci1
+        4:
+            name: 'běžecký trénink + teorie'
+            place: 'ZŠ Novoměstská, Novoměstská 1887/21'
+            meetup: '16:00'
+            group:
+                - zaci2
+        5:
+            name: 'tempové intervaly a teorie'
+            place: 'ZŠ Novoměstská, Novoměstská 1887/21'
+            meetup: '16:30'
+            group:
+                - dorost
+    thursday:
+        1:
+            name: tělocvična
+            place: 'ZŠ Merhautova'
+            meetup: '16:30'
+            group:
+                - pulci1
+                - pulci2
+                - zaci1
+        2:
+            name: 'běžecký trénink (žáci 1 druhým rokem)'
+            place: 'Hala Rosnička, Horákova 7'
+            meetup: '16:30'
+            group:
+                - zaci1
+        3:
+            name: 'běžecký trénink'
+            place: 'Hala Rosnička, Horákova 7'
+            meetup: '16:30'
+            group:
+                - zaci2
+    friday: null
+    saturday: null
+    sunday: null
 ---
 
 <div id="planEdit">
