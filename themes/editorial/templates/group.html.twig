@@ -24,8 +24,9 @@
             <li data-tab="mapt" class="tab-link group-icon"><i class="fa fa-map" aria-hidden="true"></i></li>
         </ul>
 
-    {% set collection = taxonomy.findTaxonomy({'skupina':page.header.group}).order('header.start','desc')  %} 
-    {% set collection = collection.ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']) %}
+    {% set collection_group = taxonomy.findTaxonomy({'skupina':page.header.group})  %} 
+    {% set collection_events = page.collection({'items': {'@page.descendants': '/data/events'}, 'filter': {'routable': 'true'}}) %}
+    {% set collection = collection_group.intersect(collection_events) %}
     <section>
 
         <div id="info" class="tab-content">

@@ -5,14 +5,17 @@ access:
     site:
         edit-event: true
 content:
-    items: '@root.descendants'
+    items:
+        @page.descendants:
+            '/data/events'
+    filter: 
+        routable: true
     order:
         by: header.start
         dir: asc
-    pagination: false
 ---
 
-{% set collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']) %}
+{% set collection = page.collection() %}
 <div id="program" >
 <div class="row">
   <div class="col">
