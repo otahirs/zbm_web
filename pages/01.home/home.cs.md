@@ -172,7 +172,7 @@ news:
 
           {% if currdate in entries|keys %}
             <section class="soon-deadline">
-              <div class="title"><i class="fa fa-bell-o" aria-hidden="true"></i> Přihlášky <br></div>
+              <div class="title"><i class="fa fa-bell-o" aria-hidden="true"></i> Končící přihlášky <br></div>
 
               {% for event in attribute(entries, currdate) %}
                 <div class="entry{% if loop.last %} last{% endif %}">
