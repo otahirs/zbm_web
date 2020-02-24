@@ -87,7 +87,7 @@ plan:
 ---
 
 <div id="planEdit">
-        {% set plan_collection = page.collection({'items':'@root.descendants','order': {'by': 'default', 'dir': 'asc'}}).ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']) %}
+        {% set plan_collection = page.collection({'items': {'@page.descendants': '/data/events'}, 'filter': {'routable': 'true'},'order': {'by': 'default', 'dir': 'asc'}}) %}
         
         {# ziska array s pravidelnymi treninky #}
         {% set pravidelne_treninky = page.header.plan %}

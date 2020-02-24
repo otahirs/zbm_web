@@ -8,10 +8,23 @@ access:
         login: true
 never_cache_twig: true
 content:
-    items: '@root.descendants'
+    items:
+        @page.descendants:
+            '/data/events'
+    filter: 
+        routable: true
     order:
-        by: date
+        by: header.start
         dir: asc
+news:
+    items:
+        @page.descendants:
+            '/data/news'
+    filter: 
+        routable: true
+    order:
+        by: header.id
+        dir: desc
 ---
 
 <div class="row no-gutters" style="height: 100%;"> {# cela stranka | je pouzit css framework purecss.io grids #}
@@ -24,7 +37,7 @@ content:
         <section>
     
 
-      {% set news_collection = page.collection().ofType('novinka').order('header.id','desc') %}
+      {% set news_collection = page.collection('news') %}
 
       {% for p in news_collection if ( p.header.date|date('Y-m-d') >= strtotime("today -30 day")|date('Y-m-d') ) %}
           <article id="{{ p.header.id }}" data-author="{{p.header.user}}">
@@ -71,7 +84,7 @@ content:
       <h4>Kliknutím upravíte náhled události</h4>
     
       <div id="soon--timeline"></div>
-      {% set soon_collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']).order('header.start','asc') %}
+      {% set soon_collection = page.collection() %}
       {% set currdate = strtotime("today")|date('Y-m-d') %}
 
       {% for p in soon_collection %}

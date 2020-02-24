@@ -4,10 +4,23 @@ process:
     twig: true
     markdown: false
 content:
-    items: '@root.descendants'
+    items:
+        @page.descendants:
+            '/data/events'
+    filter: 
+        routable: true
     order:
-        by: date
+        by: header.start
         dir: asc
+news:
+    items:
+        @page.descendants:
+            '/data/news'
+    filter: 
+        routable: true
+    order:
+        by: header.id
+        dir: desc
 ---
 
 <div class="row no-gutters" style="height:100%"> {# cela stranka | je pouzit css framework purecss.io grids #}
@@ -19,7 +32,7 @@ content:
             <a href="#soon" id="hip" style="text-align:right;border-bottom:none;"><h1>hip<i class="fa fa-level-down" aria-hidden="true"></i></h1></a>
         </header>
         <section>
-        {% set news_collection = page.collection().ofType('novinka').order('p.header.id','desc') %}
+        {% set news_collection = page.collection('news') %}
 
         <article>
               <h4 class="news--header row justify-content-between">
@@ -90,7 +103,7 @@ content:
 
   <div id="soon" class="col-md-4">
       
-      {% set soon_collection = page.collection().ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']).order('header.start','asc') %}
+      {% set soon_collection = page.collection() %}
 
       {# further filter the collection #}
       {% for p in soon_collection %}
