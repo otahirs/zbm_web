@@ -164,7 +164,7 @@
         // nacteni mapy
             var alt = {{ page.header.gps|split(',')|first }};
             var lng = {{ page.header.gps|split(',')|last }};
-
+        
             var center = SMap.Coords.fromWGS84( lng,alt );
             var m = new SMap(JAK.gel("map"), center, 10);
             m.addDefaultLayer(SMap.DEF_BASE).enable();
@@ -197,6 +197,8 @@
                     controls[i].configure(SMap.MOUSE_PAN | SMap.MOUSE_ZOOM);
                 }
             }
+    // zobrazení linku na mapy.cz
+    <a href="https://mapy.cz/zakladni?x=' + lng + '&y=' + alt + '&z=17&source=coor&id=' + lng + '%2C' + alt + '" target="_blank">Otevřít na mapy.cz</a>
     });
     </script>
     {% endif %}
