@@ -129,7 +129,7 @@
          <dl>
             {% if page.header.price %}
                 <dt>Cena</dt>
-                <dd>{{page.header.price}}</dd>
+                <dd>{{page.header.price|markdown}}</dd>
             {% endif %}
 
             {% if page.header.return %}
@@ -144,7 +144,7 @@
 
             {% if page.header.thingsToTake %}
                 <dt>S sebou</dt>
-                <dd>{{page.header.thingsToTake}}</dd>
+                <dd>{{page.header.thingsToTake|markdown}}</dd>
             {% endif %}
         </dl>
 
