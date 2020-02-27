@@ -9,10 +9,10 @@ end: '2020-02-28'
 title: 'noční mapový trénink'
 place: Přeckov
 gps: '49.27841, 15.91716'
-meetTime: '17:00'
+meetTime: '16:45'
 meetPlace: 'STK Nový Lískovec'
 transport: 'tram: 6, 8, Nový Lískovec'
-startTime: '18:15'
+startTime: '18:00'
 eventTypeDescription: 'Krátká trať'
 map: Kuchyňka
 signups: 'V členské sekci'
