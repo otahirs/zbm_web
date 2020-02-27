@@ -260,6 +260,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
     {% if event.template == "soustredeni" %}      
         initMarkdownEditor("program");
+        initMarkdownEditor("price");
+        initMarkdownEditor("thingsToTake");
     {% endif %}
 
     /**** prevent submit on enter ***/
