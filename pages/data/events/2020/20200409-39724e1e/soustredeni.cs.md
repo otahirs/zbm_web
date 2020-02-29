@@ -18,13 +18,13 @@ accomodation: 'na posteli'
 food: 'plná penze'
 return: '17:00'
 price: '2400 Kč'
-program: "Mapové tréninky:\r\n- čtvrtek: kombotech\r\n- pátek: vrstevnicovka, NOB- sobota: starty nebo semtamy,  sprint??\r\n- neděle: E3 Velikonoce ve skalách\r\n- pondělí: štafety"
+program: "Mapové tréninky:\r\n- čtvrtek: kombotech\r\n- pátek: vrstevnicovka, NOB\r\n- sobota: starty nebo semtamy,  sprint??\r\n- neděle: E3 Velikonoce ve skalách\r\n- pondělí: štafety"
 template: soustredeni
 date: '2020-02-06'
 id: 20200409-39724e1e
 note: ''
 thingsToTake: 'Věci na orienťák, plavky'
-signups: 'V členské sekci'
+signups: ''
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
 * **ubytování**: {{page.header.accomodation}}

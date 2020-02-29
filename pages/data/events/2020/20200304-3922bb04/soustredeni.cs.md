@@ -16,9 +16,9 @@ accomodation: 'na posteli'
 food: polopenze
 return: '21:00'
 price: '4000'
-program: "* středa: odjezd do Slovinska\r\n* čtvrtek: 2 lesní tréninky (bude upřesněno)\r\n* pátek: sprintový a lesní trénink\r\n* sobota a neděle - účast na závodech Lipica Open"
+program: "* středa: odjezd do Slovinska\r\n* čtvrtek: \r\n\t* seznamovací trénink (Vilenica)\r\n\t* COB (Vilenica)\r\n* pátek: \r\n * sprint (Muggia nebo Terst)\r\n * věšák-sběrák (Pliskovica)\r\n* sobota a neděle - účast na závodech Lipica Open"
 thingsToTake: 'Věci na běhání (teplota v okolí Terstu v tomto období je okolo 15 až 20°C přes den, v noci méně a loni bylo chladněji), plavky (na ubyování je bazén se slanou vodou).'
-signups: 'v členské sekci'
+signups: ''
 template: soustredeni
 date: '2020-01-13'
 id: 20200304-3922bb04
