@@ -76,7 +76,7 @@
 }
 
 .cal-day {
-    font-size: 14px;
+    font-size: 16px;
     border-right: #dadce0 1px solid;
     color: #70757a;
     -moz-box-flex: 1 1 0%;
@@ -114,12 +114,14 @@
     background-color: _palette(accent);
     -moz-border-radius: 20%;
     border-radius: 20%;
+    margin-bottom: 9px;
 }
 .cal-button {
     margin-bottom: 2em;
     display: inline-block;
     color:black;
     line-height: 1.5rem;
+    height: inherit;
     background-color: #eee;
     border-radius: 2px;
     padding: 0.2em 0.5em;

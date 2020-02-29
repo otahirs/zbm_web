@@ -35,23 +35,22 @@ news:
         {% set news_collection = page.collection('news') %}
 
         <article>
-              <h4 class="news--header row justify-content-between">
+              <h3 class="news--header row justify-content-between">
                   <span class="news--header_left col"> Plán na tento týden </span> 
-                  <span class="news--header_right col-auto"><i class="fa fa-star" aria-hidden="true"></i> </span>
-              </h4>
+              </h3>
               
               <section class="newsText">
-                Aktuální plán na tento týden naleznete vždy po rozkliknutí své tréninkové skupiny v levém menu.
+                Aktuální plán na tento týden naleznete po rozkliknutí své tréninkové skupiny v levém menu.
               </section>
             </article>
-        <hr width="62.11%">
+        <hr>
 
         {% for p in news_collection if  ( p.header.date|date('Y-m-d') >= strtotime("today -30 day")|date('Y-m-d') ) %}
             <article id="{{ p.header.id }}">
-              <h4 class="news--header row justify-content-between">
+              <h3 class="news--header row justify-content-between">
                   <span class="news--header_left col"> {{ p.header.title }} </span> 
                   <span class="news--header_right col-auto"> {{p.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }}</span>
-              </h4>
+              </h3>
               {% if p.header.pictures|length > 0 %}
               <div class="row newsPictures">
                   {% for img in p.header.pictures %}
@@ -79,13 +78,13 @@ news:
                   {% else %}
                     <div class="newsText--content">{{p.content}}</div>
                   {% endif %}
-                <div class="row justify-content-between">
-                  <div class="author col-auto"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;{{p.header.user}}</div>
+                <div class="newsText--footer row justify-content-between no-gutters">
+                  <div class="author col-auto"><em>{{p.header.user}}</em></div>
                   <a class="comment-count col-auto" href="{{p.url ~ "#commento"}}"> <i class="fa fa-comments-o" aria-hidden="true"></i></a>
                 </div> 
               </section>
             </article>
-            <hr width="62.11%">
+            <hr>
 
         {% endfor %}
         </section>
@@ -128,11 +127,8 @@ news:
           {% set currdate = strtotime("today +" ~ i ~ " day")|date('Y-m-d') %}
 
           {% if currdate in events|keys or currdate in entries|keys or currdate == "now"|date('Y-m-d') %}
-            <h6 class="soon--date">
-              <span class="soon--dot {% if currdate == "now"|date('Y-m-d') %} soon--dot-now {% endif %}"></span> &nbsp;
-              <span class="soon--day"> 
-                {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
-              </span>
+            <h4 class="soon--date">
+              <span class="soon--dot {% if currdate == "now"|date('Y-m-d') %} soon--dot-now {% endif %}"></span> &nbsp;      
               <span class="soon--countdown">
                 {% if i == 0 %}
                   dnes
@@ -144,16 +140,19 @@ news:
                   za {{i}} dní
                 {% endif %}
               </span>
-            </h6>
+              <span class="soon--day"> 
+                {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc d.M.') }}
+              </span>
+            </h4>
           {% endif %}
           
           {# ongoing events that started before today #}
           {% for p in attribute(events, currdate) if currdate in events|keys %}      
               <a href="{{p.url}}">
               <section class="event" title="Klikni pro více informací">
-                <h4 class="soon-title">
+                <h3 class="soon-title">
                     {{ p.header.title ~' '~ p.header.event.location }} 
-                </h4>
+                </h3>
                 <em>
                     {% set group = p.header.taxonomy.skupina %}
                     {% if group|length > 0 and group|length < 6 %}
@@ -176,7 +175,7 @@ news:
 
               {% for event in attribute(entries, currdate) %}
                 <div class="entry{% if loop.last %} last{% endif %}">
-                  {{event.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM')}} | {{event.name}}
+                  {{event.name}} <br>{{event.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM')}}
                 </div>
               {% endfor %}
             </section>
