@@ -1599,13 +1599,13 @@ table.plan td {
   position: relative; }
 
 #soon--timeline {
+  position: absolute;
+  float: left;
   border: 2px #202020 solid;
   width: 0;
-  height: calc(100% - 40px);
-  float: left;
   left: 46px;
   margin-top: 56px;
-  position: absolute; }
+  height: calc(100% - 56px); }
 
 /****************
 **** Program ****
