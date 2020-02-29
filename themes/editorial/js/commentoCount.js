@@ -54,6 +54,8 @@
         if (paths[i] in resp.commentCounts) {
           count = resp.commentCounts[paths[i]];
         }
+        if (count == 0) 
+          count = '';
 
         var useCustomCommentsText = doms[i].getAttribute("data-custom-comments-text") !== null;
 
