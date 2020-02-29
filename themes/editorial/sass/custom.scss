@@ -122,13 +122,13 @@ table.plan td {
 }
 
 #soon--timeline {
+    position: absolute;
+    float: left;
     border: 2px _palette(bg-alt) solid;
     width: 0;
-    height: calc(100% - 40px);
-    float: left;
     left: 46px;
     margin-top: 56px;
-    position: absolute;
+    height: calc(100% - 56px);
 }
 
 /****************
