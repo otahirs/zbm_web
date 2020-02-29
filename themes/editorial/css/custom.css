@@ -17,9 +17,9 @@ html, body {
 
 .active:last-child {
     margin-right: -3em;
-    background-color: #ffffff;
-    padding: 10px !important;
-    margin-left: -10px;
+    background-color: #fff;
+    padding: 0.8em!important;
+    margin-left: -0.8em;
 }
 
 
@@ -33,9 +33,6 @@ html, body {
     border-bottom: none;
 }
 
-.news--header{
-    margin-bottom: 0.3em;
-}
 .news--Pictures{
     margin-bottom: 0.5em;
     margin-top: 0.5em;
@@ -68,7 +65,7 @@ html, body {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    max-width: 700px;
+    max-width: 900px;
     margin-bottom: 100px;
 }
 
@@ -353,17 +350,17 @@ dd {
 
 #topbar {
     position: fixed;
-    height: 3rem;
     width: 100%;
     top: 0px;
-    background: #EEE;
+    background: #2B2B2B;
     box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
-    line-height: 3rem;
+    line-height: 3.5rem;
+    height: 3.5rem;
     text-align: center;
     z-index: 2;
 }
 #main, #sidebar {
-    top: 3rem;
+    top: 3.5rem;
 }
 #main {
     position: relative;
@@ -371,21 +368,27 @@ dd {
 #topbar a {
     text-decoration: none;
     font-family: Overpass;
-    color: black;
+    color: #eee;
     border-bottom: none;
     text-transform: uppercase;
     font-weight: bold;
-}
-#topbar a:hover {
-    outline: 1px dotted black;
-    outline-offset: -1px;
 }
 .topbar--title{
     font-size: 24px;
     left: 0;
     padding: 0 18px;
     position: fixed;
-    top: 2px;
+    padding-top: 8px;
+}
+#topbar .topbar--title:hover {
+    outline: none;
+}
+.topbar--title span {
+    display: inline-block;
+}
+.topbar--title object {
+    position: relative; 
+    z-index: -1
 }
 
 
@@ -498,4 +501,18 @@ img {
     #hop, #hip {
         display: none; 
     }
+}
+
+p + ul {
+    margin-top: -1em;
+}
+ul {
+    margin: 0 0 1em 0;
+}
+p {
+    margin: 0 0 1em 0;
+}
+
+#sidebar a.sneaky{
+    color: #555
 }

@@ -64,7 +64,7 @@ news:
               {{p.content}}
             </section>
           </article>
-          <hr width="62.11%">
+          <hr>
       {% endfor %}
     
     <script>

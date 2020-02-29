@@ -45,7 +45,7 @@
 			'box-shadow 0.5s ease'
 		));
 		*/
-		background-color: _palette(bg-alt);
+		background-color: _palette(bg-alt-dark);
 		font-size: 0.9em;
 		position: relative;
 		width: _size(sidebar-width);
@@ -227,7 +227,7 @@
 		width: 0;
 		height: 0;
 		z-index: 1;
-		border-top: 1em solid _palette(accent);
+		border-top: 0.5em solid _palette(accent);
 		border-right: _size(sidebar-width) solid transparent;
 
 		@include breakpoint(xlarge) {

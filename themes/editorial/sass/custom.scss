@@ -66,8 +66,8 @@ table.plan td {
 }
 /* home - soon */
 #soon {
-    padding: 0 1.5rem;
-    background-color: _palette(accent);
+    padding: 0 2.5rem;
+    background-color: _palette(bg-alt-light);
     
     section {
             padding: 2.5rem;
@@ -90,36 +90,22 @@ table.plan td {
 }
 
 .soon--date {
-    padding-top: 1.5rem;
+    padding-top: 2.5rem;
 }
-.soon-content {
-
-    font-size: 0.9em;
-
-}
-.soon-title {
-
-    font-size: 1em;
-
-}
-
-
 #soon section > article > ul {
     margin: 0;
 }
 
-.soon--date-now {
-    padding-top: 1.5rem;
-}
+
 #soon a, #soon a:hover {
     text-decoration: none;
     color: _palette(bg-alt) !important;
 }
 
 .soon--dot {
-    height: 15px;
-    width: 15px;
-    background-color: _palette(accent);
+    height: 16px;
+    width: 16px;
+    background-color: _palette(bg-alt-light);
     border-radius: 50%;
     display: inline-block;
     top: 3px;
@@ -129,7 +115,7 @@ table.plan td {
 .soon--dot-now{
     background-color: _palette(bg-alt);
 }
-.soon--countdown {
+.soon--day {
     float: right;
     top: 3px;
     position: relative;
@@ -140,8 +126,8 @@ table.plan td {
     width: 0;
     height: calc(100% - 40px);
     float: left;
-    left: 30px;
-    margin-top: 40px;
+    left: 46px;
+    margin-top: 2.8em;
     position: absolute;
 }
 
@@ -187,7 +173,7 @@ tr.program--now {
 
 #nav-links {
     position: relative;
-    width: calc(100% - 20em);
+    width: calc(100% - 40em);
     float: right;
     white-space: nowrap;
 		
@@ -219,16 +205,20 @@ tr.program--now {
     }
 	
 	a {
-		color: _palette(fg);
+		color: _palette(bg-alt-light);
         text-decoration: none;
         font-family: Overpass;
         border-bottom: none;
         font-size: 1rem;
-        padding: 1rem;
+        padding: 0 1rem;
+        display: inline-block;
+        &:hover {
+            color: _palette(accent); 
+        }
 	}
 	
 	ul ul {
-		background: _palette(fg-white);
+		background: _palette(bg-alt-dark);
 		display: none;
         list-style: none;
 		padding: 0;
@@ -246,12 +236,18 @@ tr.program--now {
         
 	}	
 }
-#links-more-btn i{
-    padding: 1rem;
-    font-size: 1rem;
-    position: relative;
-    top: -2px;
+#links-more-btn {
+    background-color: _palette(bg-alt-dark) !important;
+    cursor: pointer;
+    i {
+        color: _palette(bg-alt-light);
+        padding: 1rem;
+        font-size: 1rem;
+        position: relative;
+        top: -2px;
+    }
 }
+    
 #links-more-ul {
     box-shadow: 0 3px 2px rgba(0,0,0,.2);
 }
@@ -394,4 +390,16 @@ ul.tabs li.group-icon {
 .comment-count {
     color: inherit;
     border-bottom: none;
+}
+
+#novinky hr {
+    border-bottom: solid 2px _palette(bg-alt-dark);
+}
+
+
+#sidebar a.sneaky{
+    color: #555;
+    &:hover {
+        color: _palette(accent);
+    }
 }
