@@ -22,5 +22,12 @@ id: 20200214-19c395e6
 terrain: ''
 leader: Jenda
 note: ''
+routes:
+    -
+        name: D
+        link: 'http://3drerun.worldofo.com/index.php?id=-16766961&type=info'
+    -
+        name: H
+        link: 'http://3drerun.worldofo.com/index.php?id=-16766960&type=info'
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
