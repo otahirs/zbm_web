@@ -151,9 +151,9 @@ news:
               <a href="{{p.url}}">
               <section class="event" title="Klikni pro více informací">
                 <h3 class="soon-title">
-                    {{ p.header.title ~' '~ p.header.event.location }} 
-                </h3>
-                <em>
+                  {{ p.header.title ~' '~ p.header.event.location }} 
+                  <br>
+                  <em style="font-weight:normal;font-size: 1rem;">
                     {% set group = p.header.taxonomy.skupina %}
                     {% if group|length > 0 and group|length < 6 %}
                     {% if "zabicky" in group %} žabičky {% endif %} 
@@ -162,6 +162,8 @@ news:
                     {% if "dorost" in group %} dorost+ {% endif %}
                     {% endif %}
                   </em>
+                </h3>
+                
                 <article class="soon-content" data-id="{{p.header.id}}" data-template="{{p.header.template}}">
                   {{p.content}}
                 </article>
