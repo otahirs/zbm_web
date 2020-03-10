@@ -6,4 +6,12 @@ id: '20200310-105125000'
 user: 'Jan Zháňal'
 pictures:
 ---
- V souvislosti s viry zatím prosím nepanikařte, víme o tom a usilovně pracujeme na tom, jak dále a samozřejmě dáme vědět co nejdřív.
+Protože respektujeme nařízení státu a samozřejmě nechceme ohrozit zdraví nikoho z nás, musíme udělat **změny v našem plánu**.
+
+*   **úterý** - **tréninky dle plánu** pro žáky i dorost (vemte prosím na vědomí, že 95% dorostenců bylo na soustředění ve Slovinsku, kde jsme potkali i Italy)
+*   **středa** - dorost+ na rosničče v 16:30, včetně teorie, **žáci každý sám** souvislý běh: 14ky 30', 12ky 20', mladší dle chuti :-)
+
+Zároveň bude smutnou novinkou **zrušení nedělní BZL,** kterou naši dorostenci tak poctivě chystali (nebojte se o závod nepřijdete, bude buď v létě nebo v příští zimní sezóně).  
+Taktéž **zrušené je sobotní BBP**.
+
+Taky můžu slíbit, že další informace se budeme snažit dodat v nejrychlejším možném čase.
