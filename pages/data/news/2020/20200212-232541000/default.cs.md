@@ -6,5 +6,5 @@ id: '20200212-232541000'
 user: 'Aleš Finstrle'
 pictures:
 ---
-V členské sekci byly strženy platby za objednané oddílové oblečení. Nezapomeňte si zkontrolovat svoje finance v členské sekci..  
+V přihláškovém systému byly strženy platby za objednané oddílové oblečení. Nezapomeňte si zkontrolovat svoje finance v přihláškovém systému.  
 Kdo si ještě nevyzvedl, spojte se s Bárou po 15.2.2020

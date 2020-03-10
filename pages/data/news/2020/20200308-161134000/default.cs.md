@@ -14,8 +14,8 @@ Dále pět přestupů do Tesly, mj. Káťa Chromá, a pak již jen jednotlivé p
 Ohledně příchodů - posílili jsme o Elišku Tomanovou, Aničku Janíkovou, a z ASU k nám přišli Kamča Mesiarkinová a Mišmen Šrubař.  
 Také jsme zaregistrovali několik nováčků a na hostování do dorostenecké štafety a družstva se znovu domluvili s Marky Mulíčkovou.
 
-Všichni odcházející byli požádáni o podepsání formuláře o vystoupení z SK, srovnání stavu konta v členské sekci na nulu a přístup do ČS jim byl po přestupu uzamknut.  
-Většina lidí s tím neměla problém, ale někteří formulář podepsat odmítli. Jeden speciální případ je pak Jirka Zelinka, který nás chtěl poslat za uzamčení účtu v členské sekci před  
+Všichni odcházející byli požádáni o podepsání formuláře o vystoupení z SK, srovnání stavu konta v Přihláškovém systému na nulu a přístup do ČS jim byl po přestupu uzamknut.  
+Většina lidí s tím neměla problém, ale někteří formulář podepsat odmítli. Jeden speciální případ je pak Jirka Zelinka, který nás chtěl poslat za uzamčení účtu v přihláškovém systému před  
 disciplinární komisi svazu, dát to k soudu a celkově jsme si na dané téma vyměnili 13 mailů, kdy nakonec musel reagovat i prezident SK.
 
 Při ZBM je zřízeno Tréninkové středisko mládeže (TSM) Jižní Morava. V listopadu byli nadějní závodníci zařazeni do jednotlivých TSM, a měly vzniknout projekty TSM na rok 2020.  
