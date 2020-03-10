@@ -50,10 +50,14 @@ class PHPPlugin extends Plugin
     
     public function onSchedulerInitialized(Event $e)
     {
-        
+        require_once(__DIR__ . '/twig/PhpTwigExtension.php');
         $scheduler = $e['scheduler'];
         $job = $scheduler->addFunction('\Grav\Plugin\PHPPlugin::shiftPlan', [], 'shift-plan-for-this-week');
         $job->at('0 0 * * 1'); // every monday at 00:00
+
+        
+        $job = $scheduler->addFunction('Grav\Plugin\PhpTwigExtension::importRacesFromMembers', [], 'import-races-from-members');
+        $job->at('0 0 * * *'); 
     }
 
     // nastavi "pristi tyden" jako "tento tyden" a do "pristi tyden" nacte predchozi pouzitou sablonu - potreba CRON/ task scheduler 
