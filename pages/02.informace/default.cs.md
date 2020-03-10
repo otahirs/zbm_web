@@ -62,12 +62,12 @@ menu: Informace
 ---
 ## Kontakty <a name="kontakty"></a>
 
-Všechny důležité kontakty najdete na <a href="./kontakty"> vlastní stránce Kontakty</a> (odkaz také v pravém horním rohu obrazovky). Potřebujete-li se spojit s ostatními členy oddílu, můžete si údaje najít v adresáři po přihlášení v <a href="https://members.eob.cz/zbm" target="_blank">členské sekci</a>.
+Všechny důležité kontakty najdete na <a href="./kontakty"> vlastní stránce Kontakty</a> (odkaz také v pravém horním rohu obrazovky). Potřebujete-li se spojit s ostatními členy oddílu, můžete si údaje najít v adresáři po přihlášení v <a href="https://members.eob.cz/zbm" target="_blank">Přihláškovém systému</a>.
 
 ---
 ## Financování a osobní účty <a name="finance"></a>
 
-Osobní účty vede Věra Mádlová, aktuální stav je on-line v „Členské sekci".
+Osobní účty vede Věra Mádlová, aktuální stav je on-line v „Přihláškovém systému".
 
 #### Členské příspěvky a dary oddílu
 - Zasílejte výhradně bezhotovostně na účet u Raiffeisenbank 4067843369/5500 (změna - jiné číslo banky než minulé roky), v.s. xxxx (xxxx = registrační číslo).
@@ -79,13 +79,13 @@ Osobní účty vede Věra Mádlová, aktuální stav je on-line v „Členské s
 
 ---
 ## Oddílové příspěvky 2020 <a name="prispevky"></a>
-Členské příspěvky je potřeba zaplatit **nejpozději do 26.&nbsp;2.&nbsp;2020**. Zároveň v členské sekci vyplňte “závod” - _Oddílové příspěvky 2020 - evidence_, dle příslušného typu příspěvku.
+Členské příspěvky je potřeba zaplatit **nejpozději do 26.&nbsp;2.&nbsp;2020**. Zároveň v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2020 - evidence_, dle příslušného typu příspěvku.
 
 Platby proveďte bezhotovostně na účet SK Brno-Žabovřesky u Raifeisenbank 4067843369/5500, vs. xxxx (kde xxxx = registrační číslo).
 
 Ve všech typech příspěvků jsou již zahrnuty povinné odvody SK ve výši 300,–&nbsp;Kč a registrace ČSOS ve výši 100,–&nbsp;Kč.
 
-Vyúčtování předchozího roku vidíte aktuálně v členské sekci. Veškeré **dluhy** z minulosti je potřeba vyrovnat taktéž nejpozději **do 26.&nbsp;2.&nbsp;2020**. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, **nebudou přihlašováni na závody!**
+Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému. Veškeré **dluhy** z minulosti je potřeba vyrovnat taktéž nejpozději **do 26.&nbsp;2.&nbsp;2020**. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, **nebudou přihlašováni na závody!**
 
 ### Kolik zaplatím?
 
@@ -113,7 +113,7 @@ Sourozenci (Žabičky, Pulci, Žáci) – druhý a další sourozenec sleva 30&n
 
 ### Povinnosti člena
 - Do stanoveného data zaplatit oddílové příspěvky.
-- Pokud se člen nezúčastní závodu, na který se dříve přihlásil v členské sekci, je povinen uhradit část nákladů, která tím oddílu vzniká: Jml = 100,–&nbsp;Kč, ŽB = 200,–&nbsp;Kč, ŽA + MČR = 250,–&nbsp;Kč. Částka bude odečtena z osobního účtu. 
+- Pokud se člen nezúčastní závodu, na který se dříve přihlásil v Přihláškovém systému, je povinen uhradit část nákladů, která tím oddílu vzniká: Jml = 100,–&nbsp;Kč, ŽB = 200,–&nbsp;Kč, ŽA + MČR = 250,–&nbsp;Kč. Částka bude odečtena z osobního účtu. 
 Členové přihlášení na společnou dopravu, kteří ji následně nevyužijí, jsou povinni uhradit příslušnou část nákladů. Částka bude odečtena z osobního účtu.
 - V případě neúčasti na soustředění a neodhlášení se do data uzavření přihlášek je člen povinen uhradit část nákladů, které oddíl musel vynaložit. Částka bude odečtena z osobního účtu.
 
@@ -123,7 +123,7 @@ Sourozenci (Žabičky, Pulci, Žáci) – druhý a další sourozenec sleva 30&n
 - závody LOB a MTBO
 - závody přesahující zvolený typ členských příspěvků
 
-I na tyto akce se lze většinou přihlásit pomocí členské sekce. Při účasti na těchto závodech se na osobním účtu objeví náklady klubu s tímto závodem spojené (vklady, ubytování, doprava, ...), které je třeba vyrovnat.
+I na tyto akce se lze většinou přihlásit pomocí Přihláškového systému. Při účasti na těchto závodech se na osobním účtu objeví náklady klubu s tímto závodem spojené (vklady, ubytování, doprava, ...), které je třeba vyrovnat.
 
 <!--
 
@@ -183,13 +183,13 @@ Finanční prostředky lze čerpat na: sportovní soustředění, materiální v
 
 ---
 ## Přihlašování na závody <a name="zavody"></a>
-Přihlašování na závody i soustředění probíhá výhradně přes [členskou sekci](https://members.eob.cz/zbm/). Přihlašování na závody má na starost Honza Drábek. V případě že závod, kterého se chcete zúčastnit, není zadán, pište na kontaktní e-mail _prihlasky@zbmob.cz_. V případě, že pravidelně jezdíte na závody mimo naši oblast, kontaktujte Honzu Drábka a domluvte se na individuálním způsobu přihlašování přímo v systému ORIS.
+Přihlašování na závody i soustředění probíhá výhradně přes [Přihláškový systém](https://members.eob.cz/zbm/). Přihlašování na závody má na starost Honza Drábek. V případě že závod, kterého se chcete zúčastnit, není zadán, pište na kontaktní e-mail _prihlasky@zbmob.cz_. V případě, že pravidelně jezdíte na závody mimo naši oblast, kontaktujte Honzu Drábka a domluvte se na individuálním způsobu přihlašování přímo v systému ORIS.
 
 V krajní nouzi pak můžete využít některého z následujících kontaktů:
 * Honza Drábek, e-mail – _prihlasky@zbmob.cz_  mobil – 608 477 026 
 * Peťa Koporová, e-mail – _prihlasky@zbmob.cz_ 
 
-Pokud vám nefunguje vaše přístupové jméno a heslo do naší „Členské sekce", kontaktujte Richarda Pátka - _arnost.p@centrum.cz_, který vám tyto údaje poskytne.
+Pokud vám nefunguje vaše přístupové jméno a heslo do našeho „Přihláškového systému", kontaktujte Richarda Pátka - _arnost.p@centrum.cz_, který vám tyto údaje poskytne.
 <br>
 ### Dohlášky 
 doržujte prosím data přihlášek a pokud možno se na závody nepřihlašujte individuálně, ale vždy prostřednictvím oddílu:
