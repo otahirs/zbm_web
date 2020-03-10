@@ -823,10 +823,11 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
         }
         $time = time();
         $num = 0;
-        foreach( $data["Data"] as $event) {
+        foreach( $data["Data"] as $id => $event) {
             if ($event["Type"] != "Z" || $event["Cancelled"] == "1") {
                 continue;
             }
+            $event_list[$num]["id"] = date_format(date_create($event["Date1"]), "Ymd") . "-" . $id;
             $event_list[$num]["start"] = $event["Date1"];
             $event_list[$num]["end"] = array_key_exists("Date2", $event) ? $event["Date2"] : $event["Date1"];
             $event_list[$num]["title"] = $event["Name"];
@@ -897,7 +898,7 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
             $event['date'] = date("Y-m-d");
             $event['start'] = PhpTwigExtension::format_date($event['start']);
             $event['end'] = PhpTwigExtension::format_date($event['end']);
-            $event['id'] = PhpTwigExtension::create_event_id($event['template'], $event['title'], $event['start']);
+            $event['id'] = $event['id'] ? $event['id'] : PhpTwigExtension::create_event_id($event['template'], $event['title'], $event['start']);
             $year = substr($event["start"], 0, 4);
 
             $path = "./user/pages/data/events/". $year ."/". $event["id"] ."/". $event['template'] .".cs.md";
