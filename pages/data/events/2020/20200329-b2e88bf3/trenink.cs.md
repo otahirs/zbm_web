@@ -8,7 +8,7 @@ end: '2020-03-28'
 title: 'Běh s mapou do Radostic'
 place: Žebětín
 meetTime: '9:36'
-meetPlace: 'Žebětín, Borovník (zastávka MHD)'
+meetPlace: 'Žebětín, Křivánkovo náměstí (MHD 51, 52)'
 transport: 'vlakem zpět'
 thingsToTake: 'Věci na převlečení, na místě bude auto na věci'
 template: trenink
@@ -18,7 +18,7 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-leader: ''
-note: 'Vemte si čaj s sebou, nevím, jestli se nám ho do Radostic podaří dostat.'
+leader: Saša
+note: 'Přijeďte v běhacím, s věcmi na převlečení v batohu (pojedou autem). Čaj s sebou, nočákové termosky budou mít žáci.'
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
