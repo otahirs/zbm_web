@@ -118,7 +118,7 @@ news:
           {% set entries = "https://members.eob.cz/zbm/api_racelist.php"|getJsonZbmEntries %}
       {% catch %}
         <div class="notices red">
-          <p>Chyba připojení na členskou sekci, nejsou zobrazeny blížící se přihlášky.</p>
+          <p>Chyba připojení na přihláškov systém, nejsou zobrazeny blížící se přihlášky.</p>
         </div>
       {% endcatch %}
 
