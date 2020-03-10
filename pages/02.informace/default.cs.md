@@ -183,15 +183,14 @@ Finanční prostředky lze čerpat na: sportovní soustředění, materiální v
 
 ---
 ## Přihlašování na závody <a name="zavody"></a>
-Přihlašování na závody i soustředění probíhá výhradně přes [členskou sekci](https://members.eob.cz/zbm/). Přihlašování na závody má na starost Honza Drábek. V případě že závod, kterého se chcete zúčastnit, není zadán, pište na kontaktní e-mail _prihlasky.zbm@eob.cz_. Pokud vám nefunguje vaše přístupové jméno a heslo do naší „Členské sekce", kontaktujte Richarda Pátka, který vám tyto údaje poskytne.
-
-V případě, že pravidelně jezdíte na závody mimo naši oblast, kontaktujte Honzu Drábka nebo Ríšu Pátka a domluvte se na individuálním způsobu přihlašování přímo v systému ORIS.
+Přihlašování na závody i soustředění probíhá výhradně přes [členskou sekci](https://members.eob.cz/zbm/). Přihlašování na závody má na starost Honza Drábek. V případě že závod, kterého se chcete zúčastnit, není zadán, pište na kontaktní e-mail _prihlasky@zbmob.cz_. V případě, že pravidelně jezdíte na závody mimo naši oblast, kontaktujte Honzu Drábka a domluvte se na individuálním způsobu přihlašování přímo v systému ORIS.
 
 V krajní nouzi pak můžete využít některého z následujících kontaktů:
+* Honza Drábek, e-mail – _prihlasky@zbmob.cz_  mobil – 608 477 026 
+* Peťa Koporová, e-mail – _prihlasky@zbmob.cz_ 
 
-Kontakt: Honza Drábek, e-mail – _prihlasky.zbm@eob.cz_  mobil – 608 477 026 
-Kontakt: Richard Pátek, e-mail – _arnost.p@centrum.cz_   mobil – 721 111 301
-
+Pokud vám nefunguje vaše přístupové jméno a heslo do naší „Členské sekce", kontaktujte Richarda Pátka - _arnost.p@centrum.cz_, který vám tyto údaje poskytne.
+<br>
 ### Dohlášky 
 doržujte prosím data přihlášek a pokud možno se na závody nepřihlašujte individuálně, ale vždy prostřednictvím oddílu:
 
