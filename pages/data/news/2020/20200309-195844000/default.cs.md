@@ -8,4 +8,4 @@ pictures:
     - name: '1583780315853_2020_Pozvánka_ples.png'
       ratio: '6'
 ---
-
+Vstupenky lze rezervovat na adrese plesob@seznam.cz
