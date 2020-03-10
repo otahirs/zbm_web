@@ -3,7 +3,8 @@ namespace Grav\Plugin;
 use Symfony\Component\Yaml\Yaml as Yaml;
 use Grav\Common\Grav;
 use Grav\Common\Cache as Cache;
-class PhpTwigExtension extends \Twig_Extension
+use Grav\Common\GPM\Response;
+class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
 {
     public function getName()
     {
@@ -26,11 +27,11 @@ class PhpTwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('phpSaveMapT', [$this, 'SaveMapT']),  
             new \Twig_SimpleFunction('phpDeleteMapT', [$this, 'DeleteMapT']),    
             new \Twig_SimpleFunction('collectionToEventsByDate', [$this, 'collectionToEventsByDate']), 
-            new \Twig_SimpleFunction('phpCalendarExport', [$this, 'calendarExport']),   
+            new \Twig_SimpleFunction('phpCalendarExport', [$this, 'calendarExport']),  
         
         ];
     }
-
+    
     function calendarExport(){
         $page = Grav::instance()['page'];
         $name = $page->value("folder");
@@ -68,7 +69,7 @@ class PhpTwigExtension extends \Twig_Extension
     }
    
 // pomocne fce
-    function return_ERROR($errMsg){
+    static function return_ERROR($errMsg){
         http_response_code(500); // 500 - Internal server error
         echo $errMsg;
         die();
@@ -116,6 +117,10 @@ class PhpTwigExtension extends \Twig_Extension
         return $str;
     }
 
+    static function startsWith ($string, $startString) { 
+        $len = strlen($startString); 
+        return (substr($string, 0, $len) === $startString); 
+    } 
 
     function format_date($date){
         $newdate = date_create_from_format('d.m.Y', $date);
@@ -155,7 +160,7 @@ class PhpTwigExtension extends \Twig_Extension
     
     function parse_file_frontmatter_only($path_to_file){
         if(!file_exists($path_to_file)){
-            $this->return_ERROR('Cannot parse file, "'. $path_to_file. '" do not match any file.');
+            PhpTwigExtension::return_ERROR('Cannot parse file, "'. $path_to_file. '" do not match any file.');
         }
         $txt_file    = file_get_contents($path_to_file); //nacte soubor
         $rows        = explode("\n", $txt_file); //rozdeli na radky
@@ -172,7 +177,7 @@ class PhpTwigExtension extends \Twig_Extension
     
     function parse_file_content_only($path_to_file){
         if(!file_exists($path_to_file)){
-            $this->return_ERROR('Cannot parse file, "'. $path_to_file. '" do not match any file.');
+            PhpTwigExtension::return_ERROR('Cannot parse file, "'. $path_to_file. '" do not match any file.');
         }
         $txt_file    = file_get_contents($path_to_file); //nacte soubor
         $rows        = explode("\n", $txt_file); //rozdeli na radky
@@ -203,7 +208,7 @@ class PhpTwigExtension extends \Twig_Extension
     }
 
     function get_frontmatter_as_array($path_to_file){
-        $frontmatter_yaml = $this->parse_file_frontmatter_only($path_to_file);
+        $frontmatter_yaml = PhpTwigExtension::parse_file_frontmatter_only($path_to_file);
         return Yaml::parse($frontmatter_yaml);
         // https://symfony.com/doc/current/components/yaml.html 
     }
@@ -298,7 +303,7 @@ class PhpTwigExtension extends \Twig_Extension
 
         $news = htmlspecialchars($news, ENT_NOQUOTES, 'UTF-8');
         //probehne vytvoreni slozky a ulozeni souboru
-        $this->file_force_contents("./user/pages/data/news/" . $year . "/". $data['id'] . "/default.cs.md", $news);
+        PhpTwigExtension::file_force_contents("./user/pages/data/news/" . $year . "/". $data['id'] . "/default.cs.md", $news);
     }
 
     /******************************************************
@@ -427,7 +432,7 @@ class PhpTwigExtension extends \Twig_Extension
             $ext=pathinfo($file_name,PATHINFO_EXTENSION);
             if(!in_array($ext,$extension))
             {
-                $this->return_ERROR("<em>" . $file_name . "</em>není podporovaný typ obrázku");
+                PhpTwigExtension::return_ERROR("<em>" . $file_name . "</em>není podporovaný typ obrázku");
             }
                 
         }
@@ -444,7 +449,7 @@ class PhpTwigExtension extends \Twig_Extension
                 $saveImagePath = $storeFolder . $file_name;
                 $savePreviewPath = $saveImagePath . "_preview.jpg";
                 move_uploaded_file($file_tmp=$_FILES["file"]["tmp_name"][$key], $saveImagePath);
-                $this->createThumbnail($saveImagePath, $savePreviewPath, $previewWidthInPx, $targetHeight = null);
+                PhpTwigExtension::createThumbnail($saveImagePath, $savePreviewPath, $previewWidthInPx, $targetHeight = null);
             };
         }
     }
@@ -454,7 +459,7 @@ class PhpTwigExtension extends \Twig_Extension
             $objects = scandir($dir);
             foreach ($objects as $object) {
             if ($object != "." && $object != "..") {
-                if (filetype($dir."/".$object) == "dir") $this->rrmdir($dir."/".$object); else unlink($dir."/".$object);
+                if (filetype($dir."/".$object) == "dir") PhpTwigExtension::rrmdir($dir."/".$object); else unlink($dir."/".$object);
             }
             }
             reset($objects);
@@ -472,9 +477,9 @@ class PhpTwigExtension extends \Twig_Extension
             $data['img'] = $_POST['img'];
         }
 
-        $this->news_to_file($data, $year);
+        PhpTwigExtension::news_to_file($data, $year);
         if (!empty($_FILES)) {
-            $this->process_files($data['id'], 1000, $year);
+            PhpTwigExtension::process_files($data['id'], 1000, $year);
         }
         
         
@@ -487,21 +492,21 @@ class PhpTwigExtension extends \Twig_Extension
                     $id = date("Ymd-Hisv");
                     $date = date("Y-m-d");
                     $year = substr($date, 0 , 4);
-                    $this->save_news($user, $id, $date, $year);
-                    $this->log_grav($user . " | NEWS created | " . $id);
+                    PhpTwigExtension::save_news($user, $id, $date, $year);
+                    PhpTwigExtension::log_grav($user . " | NEWS created | " . $id);
                 }
                 elseif( $_POST["POST_type"] == "updateNews" ){
                     $id = $_POST["id"];
                     $date = date( "Y-m-d", strtotime(str_replace(' ','', $_POST["date"])) );
                     $year = substr($date, 0 , 4);
                     $author = $_POST["author"];
-                    $this->save_news($author, $id, $date, $year);
-                    $this->log_grav($user . " | NEWS edited | " . $id);
+                    PhpTwigExtension::save_news($author, $id, $date, $year);
+                    PhpTwigExtension::log_grav($user . " | NEWS edited | " . $id);
                 }
                 elseif( $_POST["POST_type"] == "deleteNews" ){
                     $year = substr($_POST["id"], 0 , 4);
-                    $this->rrmdir("./user/pages/data/news/" . $year . "/". $_POST['id'] . "/");
-                    $this->log_grav($user . " | NEWS removed | " . $_POST["id"]);
+                    PhpTwigExtension::rrmdir("./user/pages/data/news/" . $year . "/". $_POST['id'] . "/");
+                    PhpTwigExtension::log_grav($user . " | NEWS removed | " . $_POST["id"]);
                 }
                 Cache::clearCache('cache-only');
             }
@@ -515,18 +520,18 @@ class PhpTwigExtension extends \Twig_Extension
         $template = $_POST['template'];
         $path = "./user/pages/data/events/". $year ."/". $_POST["id"] ."/". $template. ".cs.md";
 
-        $frontmatter = $this->parse_file_frontmatter_only($path);
+        $frontmatter = PhpTwigExtension::parse_file_frontmatter_only($path);
         
         if(isset($_POST["regenerate"]) && $_POST["regenerate"]){
            
-            $content = $this->generate_content(Yaml::parse($frontmatter));
+            $content = PhpTwigExtension::generate_content(Yaml::parse($frontmatter));
             
         }
         else{
             $content = $_POST["content"];
         }
 
-        $page = $this->combine_frontmatter_with_content($frontmatter, $content);
+        $page = PhpTwigExtension::combine_frontmatter_with_content($frontmatter, $content);
 
         file_put_contents($path, $page);
         Cache::clearCache('cache-only');
@@ -538,7 +543,7 @@ class PhpTwigExtension extends \Twig_Extension
     
 
     function get_plan_template($path_to_file){
-        $frontmatter = $this->get_frontmatter_as_array($path_to_file);
+        $frontmatter = PhpTwigExtension::get_frontmatter_as_array($path_to_file);
         $template = $frontmatter["planTemplate"];
         return $template;
     }
@@ -589,16 +594,16 @@ class PhpTwigExtension extends \Twig_Extension
                 "currentSeason: " . $_POST["season"]  . PHP_EOL .
                 "summer:" . PHP_EOL;
         if(isset($_POST['summer'])){
-            $data = $this->add_season_to_string("summer",$data);
+            $data = PhpTwigExtension::add_season_to_string("summer",$data);
         }
         $data .= "winter:" . PHP_EOL;
         if(isset($_POST['winter'])){
-            $data = $this->add_season_to_string("winter",$data);
+            $data = PhpTwigExtension::add_season_to_string("winter",$data);
         }
         $data .= "---" . PHP_EOL;
-        $data .= $this->parse_file_content_only($_POST["filePath"]);
+        $data .= PhpTwigExtension::parse_file_content_only($_POST["filePath"]);
 
-        $this->file_force_contents($_POST["filePath"], $data);
+        PhpTwigExtension::file_force_contents($_POST["filePath"], $data);
         Cache::clearCache('cache-only');
                
     }
@@ -618,12 +623,12 @@ class PhpTwigExtension extends \Twig_Extension
                 "planTemplate: " . $_POST["template"] . PHP_EOL .
                 "plan:" . PHP_EOL;
         if(isset($_POST['data'])){
-            $data = $this->add_season_to_string("data",$data);
+            $data = PhpTwigExtension::add_season_to_string("data",$data);
         }
         $data .= "---" . PHP_EOL;
-        $data .= $this->parse_file_content_only($_POST["filePath"]);
+        $data .= PhpTwigExtension::parse_file_content_only($_POST["filePath"]);
 
-        $this->file_force_contents($_POST["filePath"], $data);
+        PhpTwigExtension::file_force_contents($_POST["filePath"], $data);
         Cache::clearCache('cache-only');
     
     }
@@ -634,7 +639,7 @@ class PhpTwigExtension extends \Twig_Extension
         }
 
         $templates_path = "./user/pages/auth/plan-templates/default--plan-header.cs.md";
-        $frontmatter = $this->get_frontmatter_as_array($templates_path);
+        $frontmatter = PhpTwigExtension::get_frontmatter_as_array($templates_path);
 
         // retun plan as array
         return $frontmatter[$template]; 
@@ -649,19 +654,19 @@ class PhpTwigExtension extends \Twig_Extension
             $template = $_POST["template"];
 
             // alternate frontmatter
-            $frontmatter = $this->get_frontmatter_as_array($page_path);             
+            $frontmatter = PhpTwigExtension::get_frontmatter_as_array($page_path);             
             $frontmatter['planTemplate'] = $template;                               // set last used template to the chosen one
-            $frontmatter['plan'] = $this->get_plan_from_template($template);        // get chosen plan from page plan-templates
+            $frontmatter['plan'] = PhpTwigExtension::get_plan_from_template($template);        // get chosen plan from page plan-templates
             $frontmatter = Yaml::dump($frontmatter, 10);                            // make string from array 
 
             // get page content
-            $content = $this->parse_file_content_only($page_path);
+            $content = PhpTwigExtension::parse_file_content_only($page_path);
 
             // build page
-            $page = $this->combine_frontmatter_with_content($frontmatter, $content);
+            $page = PhpTwigExtension::combine_frontmatter_with_content($frontmatter, $content);
            
             // save page
-            $this->file_force_contents($page_path, $page);
+            PhpTwigExtension::file_force_contents($page_path, $page);
             Cache::clearCache('cache-only');
 
     }
@@ -670,95 +675,11 @@ class PhpTwigExtension extends \Twig_Extension
 
 
 //******************************************************************************************************/
-    //nahravani programu z CSV souboru
-    function parse_csv(){
-        $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
-        if ($extension != "csv"){ //pokud soubor neni csv vrati error
-            $this->return_ERROR("Nahraný soubor musí být formátu CSV.");
-        }
-        if (($handle = fopen($_FILES['file']['tmp_name'], "r")) === FALSE) {
-            $this->return_ERROR("Nepodařilo se otevřít soubor");
-        }
-
-        //= zahlavi tabulky csv souboru
-        $csv_scheme = ["type", "start", "end", "title", "place", "gps", "meetTime", "meetPlace", "transport", "leader", "note", "zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost", "accomodation", "food", "startTime", "eventTypeDescription", "map", "terrain", "return", "price", "program", "thingsToTake", "signups", "doWeOrganize"];
-        $approved = ["Z", "M", "T", "S", "BZL", "BBP", "TABOR", "L", "J"]; //ignoruje poznamky
-
-        $num = 0;
-        while (($event = fgetcsv($handle)) !== FALSE) {
-            if(in_array(trim($event[0]), $approved)){ //parsuje jen spravne zaznamy
-                foreach($csv_scheme as $att_index => $attribute){ //prochazi sloupce a uklada do array
-                    $event_list[$num][$attribute] = array_key_exists($att_index, $event) ? $event[$att_index] : "";
-                }
-            }
-            $num += 1;
-        }
-
-        fclose($handle);
-        return $event_list;
-    }
-
+    
     function create_event_id($template, $title, $start){
         $hashStr = $template.$title.$start;
         $date = date_create($start);
         return date_format($date, "Ymd") ."-". hash('crc32', $hashStr);
-    }
-
-    public function phpUploadProgram(){
-        $parsed_csv = $this->parse_csv();
-        
-        $groups = ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost"];
-        
-        foreach($parsed_csv as $event){
-     
-            $event['template'] = $this->get_event_template($event["type"]);;
-            $event['date'] = date("Y-m-d");
-            $event['start'] = $this->format_date($event['start']);
-            $event['end'] = $this->format_date($event['end']);
-            $event['id'] = $this->create_event_id($event['template'], $event['title'], $event['start']);
-            $year = substr($event["start"], 0, 4);
-
-            $path = "./user/pages/data/events/". $year ."/". $event["id"] ."/". $event['template'] .".cs.md";
-
-            // if file exist, load data
-            if(file_exists($path)){
-                $frontmatter = $this->get_frontmatter_as_array($path);
-            }
-
-            // init taxonomy array if does not exist
-            if(!isset($frontmatter['taxonomy']['skupina'])){
-                $frontmatter['taxonomy']['skupina'] = array();
-            }
-                 
-            foreach($event as $key => $attribute){
-                // add group to taxonomy
-                if(in_array($key, $groups) && $attribute == "1"){
-                    if(!in_array($key, $frontmatter['taxonomy']['skupina'])){
-                        $frontmatter['taxonomy']['skupina'][] = $key;
-                    }
-                    continue;
-                }
-                // if no info set, overwrite from given file
-                if(empty($frontmatter[$key]) && $attribute){
-                    $frontmatter[$key] = $attribute;
-                }
-            }
-            
-            if(!empty($event["gps"])){
-                $gps = $this->normalize_GPS($event["gps"]);
-                if($gps){
-                    $frontmatter["gps"] = $gps;
-                }
-            }
-
-            $content = $this->generate_content($frontmatter);
-            $page = $this->combine_frontmatter_with_content(Yaml::dump($frontmatter, 10), $content);
-
-            $this->file_force_contents($path, $page); 
-            unset($frontmatter);
-        }
-        Cache::clearCache('cache-only');
-        
     }
 
     /*
@@ -856,8 +777,8 @@ class PhpTwigExtension extends \Twig_Extension
         $lat = $arr[0]; // Latitude of Brno: 49.195060
         $lng = $arr[1]; // Longitude of Brno: 16.606837
 
-        $lat = $this->convertDMSToDecimal($lat);
-        $lng = $this->convertDMSToDecimal($lng);
+        $lat = PhpTwigExtension::convertDMSToDecimal($lat);
+        $lng = PhpTwigExtension::convertDMSToDecimal($lng);
 
         if($lat && $lng){
             return ($lat . ", " . $lng);
@@ -865,27 +786,194 @@ class PhpTwigExtension extends \Twig_Extension
         return False;
     }
 
+    //nahravani programu z CSV souboru
+    function parse_uploaded_csv(){
+        $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+        if ($extension != "csv"){ //pokud soubor neni csv vrati error
+            PhpTwigExtension::return_ERROR("Nahraný soubor musí být formátu CSV.");
+        }
+        if (($handle = fopen($_FILES['file']['tmp_name'], "r")) === FALSE) {
+            PhpTwigExtension::return_ERROR("Nepodařilo se otevřít soubor");
+        }
+
+        //= zahlavi tabulky csv souboru
+        $csv_scheme = ["type", "start", "end", "title", "place", "gps", "meetTime", "meetPlace", "transport", "leader", "note", "zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost", "accomodation", "food", "startTime", "eventTypeDescription", "map", "terrain", "return", "price", "program", "thingsToTake", "signups", "doWeOrganize"];
+        $approved = ["Z", "M", "T", "S", "BZL", "BBP", "TABOR", "L", "J"]; //ignoruje poznamky
+
+        $num = 0;
+        while (($event = fgetcsv($handle)) !== FALSE) {
+            if(in_array(trim($event[0]), $approved)){ //parsuje jen spravne zaznamy
+                foreach($csv_scheme as $att_index => $attribute){ //prochazi sloupce a uklada do array
+                    $event_list[$num][$attribute] = array_key_exists($att_index, $event) ? $event[$att_index] : "";
+                }
+            }
+            $num += 1;
+        }
+
+        fclose($handle);
+        return $event_list;
+    }
+
+    public static function importRacesFromMembers() {
+        $body = Response::get("https://members.eob.cz/zbm/api_racelist.php");
+        $data = json_decode($body, true);
+        if(!array_key_exists("Status", $data) || !array_key_exists("Data", $data) || $data["Status"] != "OK") {
+            //mail("otakar.hirs@egmail.com","JSON error zbmob.cz", "Nacteni dat z clenske sekce pres JSON neskoncilo OK, mel bys to asi zkontrolovat. \n Ota - 2018");
+            PhpTwigExtension::return_ERROR("Cannot fetch API data from members");
+        }
+        $time = time();
+        $num = 0;
+        foreach( $data["Data"] as $event) {
+            if ($event["Type"] != "Z" || $event["Cancelled"] == "1") {
+                continue;
+            }
+            $event_list[$num]["start"] = $event["Date1"];
+            $event_list[$num]["end"] = array_key_exists("Date2", $event) ? $event["Date2"] : $event["Date1"];
+            $event_list[$num]["title"] = $event["Name"];
+            //$event_list[$num][""] = $event["Club"];
+            $link = $event["Link"];
+            if (!PhpTwigExtension::startsWith($link, "http")) {
+                $link = "https://" . $link;
+            }
+            $event_list[$num]["link"] = $link;
+            if(PhpTwigExtension::startsWith($link, "https://oris.orientacnisporty.cz/Zavod?id=" )) {
+                $event_list[$num]["orisid"] = substr($link, strlen("https://oris.orientacnisporty.cz/Zavod?id="));
+            }
+            $event_list[$num]["place"] = $event["Place"];
+            $event_list[$num]["type"] = $event["Type"];
+            //$event_list[$num][""] = $event["Sport"];
+            $rank = (int)$event["Rankings"];
+            /* 
+            "1": "Celostátní",
+            "2": "Morava",
+            "4": "Čechy",
+            "8": "Oblastní",
+            "16": "Mistrovství",
+            "32": "Štafety",
+            "128": "Veřejný"         
+            */
+
+            if ($rank & 1 || $rank & 2 || $rank & 8 || $rank & 16 || $rank & 32) {
+                $event_list[$num]["dorost"] = "1";
+            }
+
+            if ($rank & 2 || $rank & 8 || $rank & 32) {
+                $event_list[$num]["zaci2"] = "1";
+                $event_list[$num]["zaci1"] = "1";
+            }
+
+            if ($rank & 8) {
+                $event_list[$num]["pulci2"] = "1";
+                $event_list[$num]["pulci1"] = "1";
+                $event_list[$num]["zabicky"] = "1";
+            }
+
+            //$event_list[$num][""] = $event["Rank21"];
+            $event_list[$num]["note"] = $event["Note"];
+            if (array_key_exists("Transport", $event) && strpos($event["Transport"], "Ano") !== false) {   
+                $event_list[$num]["transport"] = "společná doprava";
+            }
+            if (array_key_exists("Accomodation", $event) && strpos($event["Accomodation"], "Ano") !== false) {   
+                $event_list[$num]["accomodation"] = "společné ubytování";
+            }
+            $num++;
+        }
+        //print_r($event_list);
+        PhpTwigExtension::phpUploadProgram($event_list, "members");
+    }
+
+    // nahrat program
+    public static function phpUploadProgram($event_list=null, $type="csv"){
+        if(!$event_list) {
+            $event_list = PhpTwigExtension::parse_uploaded_csv();
+        }
+        
+        $groups = ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost"];
+        $time = time();
+        
+        foreach($event_list as $event){
+
+            $event['template'] = PhpTwigExtension::get_event_template($event["type"]);;
+            $event['date'] = date("Y-m-d");
+            $event['start'] = PhpTwigExtension::format_date($event['start']);
+            $event['end'] = PhpTwigExtension::format_date($event['end']);
+            $event['id'] = PhpTwigExtension::create_event_id($event['template'], $event['title'], $event['start']);
+            $year = substr($event["start"], 0, 4);
+
+            $path = "./user/pages/data/events/". $year ."/". $event["id"] ."/". $event['template'] .".cs.md";
+
+            $changed = true;
+            // if file exist, load data
+            if(file_exists($path)){
+                $frontmatter = PhpTwigExtension::get_frontmatter_as_array($path);
+                $changed = false;
+            }
+
+            // init taxonomy array if does not exist
+            if(!isset($frontmatter['taxonomy']['skupina'])){
+                $frontmatter['taxonomy']['skupina'] = array();
+            }
+                 
+            foreach($event as $key => $attribute){
+                // add group to taxonomy
+                if(in_array($key, $groups) && $attribute == "1"){
+                    if(!in_array($key, $frontmatter['taxonomy']['skupina'])){
+                        $frontmatter['taxonomy']['skupina'][] = $key;
+                        $changed = true;
+                    }
+                    continue;
+                }
+                // if no info set, overwrite from given file
+                if(empty($frontmatter[$key]) && $attribute){
+                    $frontmatter[$key] = $attribute;
+                    $changed = true;
+                }
+            }
+            
+            if(!empty($event["gps"])){
+                $gps = PhpTwigExtension::normalize_GPS($event["gps"]);
+                if($gps){
+                    $frontmatter["gps"] = $gps;
+                    $changed = true;
+                }
+            }
+
+            if($changed) {
+                $frontmatter["import"]["type"] = $type;
+                $frontmatter["import"]["time"] = $time;
+            }
+            $content = PhpTwigExtension::generate_content($frontmatter);
+            $page = PhpTwigExtension::combine_frontmatter_with_content(Yaml::dump($frontmatter, 10), $content);
+
+            PhpTwigExtension::file_force_contents($path, $page); 
+            unset($frontmatter);
+        }
+        Cache::clearCache('cache-only');
+        
+    }
+
+
     public function phpSaveEditedEvent($user){
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(isset($_POST["POST_type"])){
             if( $_POST["POST_type"] == "editEvent" ){
                 // kontrola doručení potřebných údajů
                 if(empty($_POST["template"])){
-                    $this->return_ERROR('CHYBA!!, nebyl obdržen typ události [template]');
+                    PhpTwigExtension::return_ERROR('CHYBA!!, nebyl obdržen typ události [template]');
                 }
                 if(empty($_POST["title"])){
-                    $this->return_ERROR('Není vyplněn "Název"');
+                    PhpTwigExtension::return_ERROR('Není vyplněn "Název"');
                 }
                 if(empty($_POST["start"])){
-                    $this->return_ERROR('Není vyplněno "Datum"');
+                    PhpTwigExtension::return_ERROR('Není vyplněno "Datum"');
                 }
                 if(empty($_POST["place"])){
-                    $this->return_ERROR('Není vyplněno "Místo"');
+                    PhpTwigExtension::return_ERROR('Není vyplněno "Místo"');
                 }
                 if(isset($_POST["delete"])){
                     $path = "./user/pages/data/events/". substr($_POST["id"], 0 , 4) ."/". $_POST["id"] ;
-                    $this->rrmdir($path);
-                    $this->log_grav($user . " | EVENT removed | " . $_POST["id"]);
+                    PhpTwigExtension::rrmdir($path);
+                    PhpTwigExtension::log_grav($user . " | EVENT removed | " . $_POST["id"]);
                     die(); 
                 }
                 
@@ -894,7 +982,7 @@ class PhpTwigExtension extends \Twig_Extension
                 $group_arr = ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost"];
                 
                 
-                $id = empty($_POST["id"]) ? $this->create_event_id($_POST['template'], $_POST['title'], $_POST['start']) : $_POST["id"];
+                $id = empty($_POST["id"]) ? PhpTwigExtension::create_event_id($_POST['template'], $_POST['title'], $_POST['start']) : $_POST["id"];
                 $year = substr($id, 0 , 4);
                 $path = "./user/pages/data/events/". $year ."/". $id ."/". $_POST['template'] .".cs.md";
 
@@ -904,7 +992,7 @@ class PhpTwigExtension extends \Twig_Extension
                     $frontmatter["id"] = $id;
                 }
                 else {              
-                    $frontmatter = $this->get_frontmatter_as_array($path);   //rozparsuje existujici soubor  
+                    $frontmatter = PhpTwigExtension::get_frontmatter_as_array($path);   //rozparsuje existujici soubor  
                 }
 
                 foreach($data as $attribute){
@@ -934,12 +1022,12 @@ class PhpTwigExtension extends \Twig_Extension
 
                 // normalize GPS
                 if(!empty($_POST["GPS"])){
-                    $gps = $this->normalize_GPS($_POST["GPS"]);
+                    $gps = PhpTwigExtension::normalize_GPS($_POST["GPS"]);
                     if($gps){
                         $frontmatter["gps"] = $gps;
                     }
                     else{
-                        $this->return_ERROR('<br>Nepodporovaný formát GPS: hodnoty zem. šířky a délky musí být odděleny čárkou. <br>např 50°42\'38.9"N<b>,</b> 15°36\'56.6"E');
+                        PhpTwigExtension::return_ERROR('<br>Nepodporovaný formát GPS: hodnoty zem. šířky a délky musí být odděleny čárkou. <br>např 50°42\'38.9"N<b>,</b> 15°36\'56.6"E');
                     }
                 }
 
@@ -967,28 +1055,28 @@ class PhpTwigExtension extends \Twig_Extension
                 
                 //combine
                 if ($new) {
-                    $content = $this->generate_content($frontmatter);
+                    $content = PhpTwigExtension::generate_content($frontmatter);
                 }
                 else {
-                    $content = $this->parse_file_content_only($path);
+                    $content = PhpTwigExtension::parse_file_content_only($path);
                 }
                 
                 $frontmatter = Yaml::dump($frontmatter, 10);
-                $page = $this->combine_frontmatter_with_content($frontmatter, $content);
+                $page = PhpTwigExtension::combine_frontmatter_with_content($frontmatter, $content);
                 //print_r($_POST);
                 //print_r($frontmatter);
 
-                $this->file_force_contents($path, $page);
+                PhpTwigExtension::file_force_contents($path, $page);
                 if ($new) {
-                    $content = $this->generate_content($frontmatter);
-                    $this->log_grav($user . " | EVENT created | " . $id);
+                    $content = PhpTwigExtension::generate_content($frontmatter);
+                    PhpTwigExtension::log_grav($user . " | EVENT created | " . $id);
                     $result = array("id" => $id);
                     echo json_encode($result);
 
                 }
                 else {
-                    $content = $this->parse_file_content_only($path);
-                    $this->log_grav($user . " | EVENT edited | " . $id);
+                    $content = PhpTwigExtension::parse_file_content_only($path);
+                    PhpTwigExtension::log_grav($user . " | EVENT edited | " . $id);
                 }
                 Cache::clearCache('cache-only');
             }
@@ -1017,7 +1105,7 @@ class PhpTwigExtension extends \Twig_Extension
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         $mime = finfo_file($finfo, $_FILES['PDF']['tmp_name']);
         if ($mime != 'application/pdf') {
-            $this->return_ERROR('Nahraný soubor není PDF!');
+            PhpTwigExtension::return_ERROR('Nahraný soubor není PDF!');
         }
         if(!is_dir($savePath)){
             mkdir($savePath);
@@ -1026,14 +1114,14 @@ class PhpTwigExtension extends \Twig_Extension
         move_uploaded_file($file_tmp=$_FILES["PDF"]["tmp_name"], $saveFilesPath);
 
         if($makeThumbnail){
-            $this->make_jpeg_thumbnail($saveFilesPath, $saveFilesPath . ".jpg");
+            PhpTwigExtension::make_jpeg_thumbnail($saveFilesPath, $saveFilesPath . ".jpg");
         }
     }
 
     public function SavePolaris(){ 
 
         if(empty($_FILES["PDF"]["tmp_name"])){
-            $this->return_ERROR("Nahrání PDF souboru se nezdařilo.");
+            PhpTwigExtension::return_ERROR("Nahrání PDF souboru se nezdařilo.");
         }
 
         // init vars
@@ -1044,11 +1132,11 @@ class PhpTwigExtension extends \Twig_Extension
         $fileTitle = "Polaris_" . $_POST['year'] . "_" . $_POST['cislo'] . ".pdf" ;
 
         //get frontmatter
-        $frontmatter = $this->get_frontmatter_as_array($pagePath);
+        $frontmatter = PhpTwigExtension::get_frontmatter_as_array($pagePath);
 
         // add polaris to frontmatter
         if(isset($frontmatter['polaris'][$polarisYear]) && in_array($fileTitle, $frontmatter['polaris'][$polarisYear])){
-            $this->return_ERROR("Už je nahrané stejné číslo Polarisu.");
+            PhpTwigExtension::return_ERROR("Už je nahrané stejné číslo Polarisu.");
         }
 
         $frontmatter['polaris'][$polarisYear][$polarisNumber] = $fileTitle;
@@ -1056,12 +1144,12 @@ class PhpTwigExtension extends \Twig_Extension
         krsort($frontmatter['polaris'][$polarisYear]);
 
         // save pdf and jpeg thumbnail
-        $this->save_PDF($savePath, $fileTitle);
+        PhpTwigExtension::save_PDF($savePath, $fileTitle);
         
         // build page
         $pageFrontmatter = Yaml::dump($frontmatter, 10);
-        $pagecontent = $this->parse_file_content_only($pagePath);
-        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
+        $pagecontent = PhpTwigExtension::parse_file_content_only($pagePath);
+        $page = PhpTwigExtension::combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
 
         // save page to file
         file_put_contents($pagePath, $page);
@@ -1077,7 +1165,7 @@ class PhpTwigExtension extends \Twig_Extension
         $filePath = './user/pages/data/polaris/' . $_POST['year']. "/" . $_POST['pdf'];
         
         // get frontmatter
-        $frontmatter = $this->get_frontmatter_as_array($pagePath);
+        $frontmatter = PhpTwigExtension::get_frontmatter_as_array($pagePath);
 
         // remove polaris from frontmatter
         unset($frontmatter['polaris'][$polarisYear][$polarisNumber]);
@@ -1094,8 +1182,8 @@ class PhpTwigExtension extends \Twig_Extension
 
         // build page
         $pageFrontmatter = Yaml::dump($frontmatter, 10);
-        $pagecontent = $this->parse_file_content_only($pagePath);
-        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
+        $pagecontent = PhpTwigExtension::parse_file_content_only($pagePath);
+        $page = PhpTwigExtension::combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
 
         // save page to file
         file_put_contents($pagePath, $page);
@@ -1111,11 +1199,11 @@ class PhpTwigExtension extends \Twig_Extension
         $savePath = './user/pages/data/maptheory/' . $maptGroup;
 
         //get frontmatter
-        $frontmatter = $this->get_frontmatter_as_array($pagePath);
+        $frontmatter = PhpTwigExtension::get_frontmatter_as_array($pagePath);
 
         // add maptheory to frontmatter
         if(isset($frontmatter['maptheory'][$maptGroup]) && in_array ( $fileTitle , $frontmatter['maptheory'][$maptGroup] ) ){
-            $this->return_ERROR("Už je nahrana mapova teorie se stejnym datem a skupinou");
+            PhpTwigExtension::return_ERROR("Už je nahrana mapova teorie se stejnym datem a skupinou");
         }
         else{
             $frontmatter['maptheory'][$maptGroup][] = $fileTitle;
@@ -1123,12 +1211,12 @@ class PhpTwigExtension extends \Twig_Extension
         } 
 
         // save pdf and jpeg thumbnail
-        $this->save_PDF($savePath, $fileTitle, $makeThumbnail=False);
+        PhpTwigExtension::save_PDF($savePath, $fileTitle, $makeThumbnail=False);
         
         // build page
         $pageFrontmatter = Yaml::dump($frontmatter, 10);
-        $pagecontent = $this->parse_file_content_only($pagePath);
-        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
+        $pagecontent = PhpTwigExtension::parse_file_content_only($pagePath);
+        $page = PhpTwigExtension::combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
 
         // save page to file
         file_put_contents($pagePath, $page);
@@ -1144,7 +1232,7 @@ class PhpTwigExtension extends \Twig_Extension
         $filePath = './user/pages/data/maptheory/' . $maptGroup . '/' . $maptName;
         
         // get frontmatter
-        $frontmatter = $this->get_frontmatter_as_array($pagePath);
+        $frontmatter = PhpTwigExtension::get_frontmatter_as_array($pagePath);
         var_dump($frontmatter);
 
         // remove maptheory from frontmatter
@@ -1159,8 +1247,8 @@ class PhpTwigExtension extends \Twig_Extension
 
         // build page
         $pageFrontmatter = Yaml::dump($frontmatter, 10);
-        $pagecontent = $this->parse_file_content_only($pagePath);
-        $page = $this->combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
+        $pagecontent = PhpTwigExtension::parse_file_content_only($pagePath);
+        $page = PhpTwigExtension::combine_frontmatter_with_content($pageFrontmatter, $pagecontent);
 
         // save page to file
         file_put_contents($pagePath, $page);
