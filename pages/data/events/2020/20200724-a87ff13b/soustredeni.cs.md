@@ -8,7 +8,7 @@ place: 'Eskilstuna, Švédsko'
 meetTime: '8:00'
 meetPlace: 'Nový Lískovec, STK'
 transport: 'Mikrobusy a osobními auty. Přes moře trajektem'
-leader: Jenda
+leader: 'Jenda, Gába'
 note: 'Čas odjezdu bude uřesněn dle rozpisu odjezdu trajektů. Protože se jedná o Stacionární kemp ČSOS bude místo ubytování upřesněno až svaz dodá oficiální rozpis. Neoficiální zatím [zde](http://www.orientacnisporty.cz/upload/STK/Rozpis%20Svedsko.pdf)'
 return: 'V noci z pondělí na úterý, upřesním dle trajeku'
 price: '8000 Kč'

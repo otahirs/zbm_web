@@ -41,7 +41,6 @@ routes:
         name: '03 - sprint - B'
         link: 'http://3drerun.worldofo.com/index.php?id=-16768252&type=info'
 ---
-  
 V sobotu a v neděli pokračuje naše soustředění účastí na závodech Lipica Open.
 
-![](http://www.lipicaopen.com/wp-content/uploads/2019/09/banner1.jpg)
+![](https://www.lipicaopen.com/wp-content/uploads/2019/09/banner1.jpg)
