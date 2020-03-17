@@ -166,11 +166,11 @@ date: '2018-10-28'
 <h4>Sportovní klub Brno - Žabovřesky z.s.</h4>
 <ul class="fa-ul">
     <li>IČO: 00214272</li>
+    <li><i class="fa-li fa fa-map-marker"></i>Horákova 3080/7<br>Brno, 616 00</li>
     <li>prezident SK: Ing. Petr Hájek</li>
     <li>ředitel: JUDr. Petr Vrážel</li>
     <li><i class="fa-li fa fa-phone"></i>549 248 986</li>
     <li><i class="fa-li fa fa-envelope"></i>reditel@skzabovresky.cz</li>
-    <li><i class="fa-li fa fa-map-marker"></i>Horákova 3080/7<br>Brno, 616 00</li>
 </ul>
 
 
