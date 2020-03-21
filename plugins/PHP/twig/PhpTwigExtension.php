@@ -975,6 +975,7 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
                     $path = "./user/pages/data/events/". substr($_POST["id"], 0 , 4) ."/". $_POST["id"] ;
                     PhpTwigExtension::rrmdir($path);
                     PhpTwigExtension::log_grav($user . " | EVENT removed | " . $_POST["id"]);
+                    Cache::clearCache('cache-only');
                     die(); 
                 }
                 
