@@ -8,12 +8,12 @@ place: Žebětín
 meetTime: kdykoli
 meetPlace: 'Žebětín, viz GPS'
 eventTypeDescription: ''
-startTime: ''
+startTime: 'https://mapy.cz/s/kadugezof'
 map: ''
 terrain: ''
 transport: 'Vlastními auty nebo na kole (nejezděte MHD)'
 leader: Saša
-note: "Budou připraveny 4 tratě pro dospělé, D,H14, a DH12  (DH10, když bude zájem). Mapy pošlu ve formátu pdf a každý si ji vytiskne dle svých možností (v případě největší jsme schopni vytisknout).\r\nNásledně prosím každého účastníka aby své postupy nahrál na 3D rerun a třeba je i probral se svým trenérem.\r\nPřihlášky v členské sekci.\r\n\r\nkat,délka,přeýšení, kontroly\r\nXL\t10,2\t420\t16\r\nL\t8,7 \t390\t17\r\nM\t6,5 \t250\t11\r\nS\t4,6 \t170\t11\r\nXS\t3,6 \t155\t8\r\nH14\t5,3\t    \t11\r\nD14\t4,2\t    \t9\r\nDH12 3,4\t\t7\r\nDH10 když bude zájem"
+note: "Budou připraveny 4 tratě pro dospělé, D,H14, a DH12  (DH10, když bude zájem). Mapy ve formátu pdf najdete [zde](https://www.dropbox.com/s/vogz5enz3pyh1ep/trate.zip?dl=0) a každý si ji vytiskne dle svých možností (v případě největší nouze jsme schopni vytisknout).\r\nSvé příjezdy zapisujte do [tabulky](https://docs.google.com/spreadsheets/d/17Rph9jPJ9I2MBzAtPCv9Fs3uwyDs5JvaFpY7L2YUIQc/edit#gid=0), tak ať se nás tam nesejde moc.\r\n\r\nNásledně prosím každého účastníka aby své postupy nahrál na 3D rerun a třeba je i probral se svým trenérem.\r\n\r\nkat,délka,přeýšení, kontroly\r\nXL\t10,2\t420\t16\r\nL\t8,7 \t390\t17\r\nM\t6,5 \t250\t11\r\nS\t4,6 \t170\t11\r\nXS\t3,6 \t155\t8\r\nH14\t5,3\t    \t11\r\nD14\t4,2\t    \t9\r\nDH12 3,4\t\t7\r\nDH10 když bude zájem"
 taxonomy:
     skupina:
         1: pulci2
@@ -24,6 +24,32 @@ taxonomy:
 accomodation: ''
 food: ''
 gps: '49.21133, 16.48432'
+routes:
+    -
+        name: DH12
+        link: 'http://3drerun.worldofo.com/index.php?id=-16771137&type=info'
+    -
+        name: H14
+        link: 'http://3drerun.worldofo.com/index.php?id=-16771136&type=info'
+    -
+        name: D14
+        link: 'http://3drerun.worldofo.com/index.php?id=-16771135&type=info'
+    -
+        name: XS
+        link: 'http://3drerun.worldofo.com/index.php?id=-16771134&type=info'
+    -
+        name: S
+        link: 'http://3drerun.worldofo.com/index.php?id=-16771133&type=info'
+    -
+        name: M
+        link: 'http://3drerun.worldofo.com/index.php?id=-16771130&type=info'
+    -
+        name: L
+        link: 'http://3drerun.worldofo.com/index.php?id=-16771129&type=info'
+    -
+        name: XL
+        link: 'http://3drerun.worldofo.com/index.php?id=-16771128&type=info'
 ---
-{{page.header.note}}
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+Budou připraveny 4 tratě pro dospělé, D,H14, a DH12 (DH10, když bude zájem). Mapy ve formátu pdf najdete [zde](https://www.dropbox.com/s/vogz5enz3pyh1ep/trate.zip?dl=0%5D%28https%3A%2F%2Fwww.dropbox.com%2Fs%2Fvogz5enz3pyh1ep%2Ftrate.zip%3Fdl%3D0%29) a každý si ji vytiskne dle svých možností (v případě největší nouze jsme schopni vytisknout). Své příjezdy zapisujte do [tabulky](https://docs.google.com/spreadsheets/d/17Rph9jPJ9I2MBzAtPCv9Fs3uwyDs5JvaFpY7L2YUIQc/edit#gid=0), tak ať se nás tam nesejde moc. Následně prosím každého účastníka aby své postupy nahrál na 3D rerun a třeba je i probral se svým trenérem. kat,délka,přeýšení, kontroly XL 10,2 420 16 L 8,7 390 17 M 6,5 250 11 S 4,6 170 11 XS 3,6 155 8 H14 5,3 11 D14 4,2 9 DH12 3,4 7 DH10 když bude zájem
+
+*   **sraz**: kdykoli Žebětín, viz GPS. Doprava Vlastními auty nebo na kole (nejezděte MHD).
