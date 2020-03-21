@@ -11,7 +11,7 @@ access:
 ---
 
 {% if uri.query('event') %}
-    {% set event = page.find('/data/events/' ~ uri.query('event')) %}
+    {% set event = page.find('/data/events/' ~ uri.query('event')|lower) %}
     {% if event.header is null %} {% set error = "header" %} {% endif %}
 {% elseif uri.query('new') %}
     {% set event = []|merge({'template': uri.query('new')})  %}
