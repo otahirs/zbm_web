@@ -165,7 +165,7 @@ news:
                 </h3>
                 
                 <article class="soon-content" data-id="{{p.header.id}}" data-template="{{p.header.template}}">
-                  {{p.content}}
+                  {{p.content|markdown}}
                 </article>
               </section>
               </a>
