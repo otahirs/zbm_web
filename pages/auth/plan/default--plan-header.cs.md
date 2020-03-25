@@ -9,20 +9,12 @@ planTemplate: winter
 plan:
     monday:
         1:
-            name: 'výběhy'
-            place: 'každý sám'
-            meetup: '9:00'
+            name: 'kolo'
+            place: 'kam chcete'
+            meetup: 'kdykoli'
             group:
                     - dorost
-    tuesday:
-        1:
-            name: 'běžecké posilování'
-            place: 'individuálně'
-            meetup: '9:00'
-            group:
-                    - zaci1
-                    - zaci2
-                    - dorost
+    tuesday: null
     wednesday: null
     thursday: null
     friday: null
