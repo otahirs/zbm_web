@@ -3,7 +3,7 @@ title: Archiv
 date: '2019-05-20'
 ---
 
-Zde nelaznete veškeré starší informace, které se již nedostaly na hlavní stránky:
+Zde naleznete veškeré starší informace, které se již nedostaly na hlavní stránky:
 * <a href="archiv/akce">události</a>  
 * novinky  - _bude_
 * postupy  - _bude_
