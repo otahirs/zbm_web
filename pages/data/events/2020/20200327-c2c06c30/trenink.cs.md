@@ -24,6 +24,31 @@ taxonomy:
 accomodation: ''
 food: ''
 gps: '49.24382, 16.71305'
+routes:
+    -
+        name: XS
+        link: 'http://3drerun.worldofo.com/index.php?id=-16772280&type=info'
+    -
+        name: DH12
+        link: 'http://3drerun.worldofo.com/index.php?id=-16772269&type=info'
+    -
+        name: DH14
+        link: 'http://3drerun.worldofo.com/index.php?id=-16772274&type=info'
+    -
+        name: '2. část S'
+        link: 'http://3drerun.worldofo.com/index.php?id=-16772277&type=info'
+    -
+        name: '3. část M'
+        link: 'http://3drerun.worldofo.com/index.php?id=-16772275&type=info'
+    -
+        name: '2. část ML'
+        link: 'http://3drerun.worldofo.com/index.php?id=-16772276&type=info'
+    -
+        name: '1. část SML'
+        link: 'http://3drerun.worldofo.com/index.php?id=-16772279&type=info'
+    -
+        name: '3. část L'
+        link: 'http://3drerun.worldofo.com/index.php?id=-16772185&type=info'
 ---
 {{page.header.note}}
  {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
