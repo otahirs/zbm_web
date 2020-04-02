@@ -1,5 +1,5 @@
 ---
-title: Seznam událostí
+title: Archiv událostí
 content:
     items:
         @page.descendants:
@@ -67,9 +67,9 @@ content:
   <div class="col-sm-6 col-md-3" >
     <fieldset>
     <label>Filtr data</label>
-    <button data-toggle="datepicker" type="button" style="height: 2.75em;font-size: 1em;line-height: 2.9em;color:inherit !important; box-shadow:none;"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;nyní</button>
+    <button data-toggle="datepicker" type="button" style="height: 2.75em;font-size: 1em;line-height: 2.9em;color:inherit !important; box-shadow:none;"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;vše</button>
     <br>
-    <input id="include-older" type="checkbox"/>
+    <input id="include-older" type="checkbox" checked/>
     <label for="include-older">zobrazit již uplynulé</label>
     </fieldset>
   </div>
@@ -207,14 +207,16 @@ content:
   } 
 
   function resetList(){
-  	userList.search();
+  	//userList.search();
     userList.sort('start', { order: "asc" });
-  	userList.filter(showCurrent); 
+  	//userList.filter(showCurrent); 
   	$(".filter-all").prop('checked', true);
   	$('.filter').prop('checked', false);
     $('.search').val('');
     $datepicker.html(bnt_text);
-    $("#include-older").prop("checked", false);
+    $("#include-older").prop("checked", true); //false
+
+  	updateList();
   	//console.log('Reset Successfully!');
   };
 
