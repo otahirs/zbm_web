@@ -7,19 +7,19 @@ access:
         plan: true
 planTemplate: winter
 plan:
-    monday:
-        1:
-            name: 'kolo'
-            place: 'kam chcete'
-            meetup: 'kdykoli'
-            group:
-                    - dorost
+    monday: null
     tuesday: null
     wednesday: null
     thursday: null
     friday: null
     saturday: null
-    sunday: null
+    sunday:
+        1:
+            name: 'Teorie'
+            place: 'https://meet.jit.si/ZBM'
+            meetup: '20:00'
+            group:
+                    - dorost
 ---
 
 <div id="planEdit">
