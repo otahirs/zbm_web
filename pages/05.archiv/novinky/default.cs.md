@@ -1,13 +1,12 @@
 ---
-title: Archiv novinek
+title: 'Archiv novinek'
 process:
     twig: true
     markdown: false
 news:
     items:
-        @page.descendants:
-            '/data/news'
-    filter: 
+        '@page.descendants': /data/news
+    filter:
         routable: true
     order:
         by: header.id
