@@ -34,6 +34,7 @@ news:
         <section>
         {% set news_collection = page.collection('news') %}
 
+        <!--
         <article>
               <h3 class="news--header row justify-content-between">
                   <span class="news--header_left col"> Plán na tento týden </span> 
@@ -44,6 +45,7 @@ news:
               </section>
             </article>
         <hr>
+        -->
 
         {% for p in news_collection if  ( p.header.date|date('Y-m-d') >= strtotime("today -30 day")|date('Y-m-d') ) %}
             <article id="{{ p.header.id }}">
