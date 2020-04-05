@@ -6,9 +6,8 @@ access:
         edit-event: true
 content:
     items:
-        @page.descendants:
-            '/data/events'
-    filter: 
+        '@page.descendants': /data/events
+    filter:
         routable: true
     order:
         by: header.start
