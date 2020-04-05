@@ -7,7 +7,7 @@ end: '2020-04-05'
 place: Bukovinka
 meetTime: ''
 meetPlace: 'Bukovinka, křižovatka u hřiště,  kvůli virům doporučujeme neparkovat ve vesnici'
-link: ''
+link: 'http://3drerun.worldofo.com/index.php?id=-16773127&type=info'
 eventTypeDescription: "H,\r\nD = H s koncem na 4. kontrole druhého kola,\r\nDH14,\r\nDH12,\r\nDH10,"
 startTime: ''
 map: ''
