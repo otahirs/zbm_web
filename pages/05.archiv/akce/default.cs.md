@@ -1,15 +1,15 @@
 ---
-title: Archiv událostí
+title: 'Archiv událostí'
 content:
     items:
-        @page.descendants:
-            '/data/events'
-    filter: 
+        '@page.descendants': /data/events
+    filter:
         routable: true
     order:
         by: header.start
         dir: asc
 ---
+
 {% set collection = page.collection() %}
 <div id="program" >
 <div class="row">

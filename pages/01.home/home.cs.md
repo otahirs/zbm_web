@@ -5,18 +5,16 @@ process:
     markdown: false
 content:
     items:
-        @page.descendants:
-            '/data/events'
-    filter: 
+        '@page.descendants': /data/events
+    filter:
         routable: true
     order:
         by: header.start
         dir: asc
 news:
     items:
-        @page.descendants:
-            '/data/news'
-    filter: 
+        '@page.descendants': /data/news
+    filter:
         routable: true
     order:
         by: header.id
