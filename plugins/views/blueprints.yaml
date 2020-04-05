@@ -1,0 +1,43 @@
+name: Views
+version: 1.0.1
+description: Simple View tracking and reporting
+icon: eye
+author:
+  name: Trilby Media
+  email: hello@trilby.media
+homepage: https://github.com/trilbymedia/grav-plugin-views
+demo: http://demo.yoursite.com
+keywords: grav, plugin, etc
+bugs: https://github.com/trilbymedia/grav-plugin-views/issues
+docs: https://github.com/trilbymedia/grav-plugin-views/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0-beta.6' }
+  - { name: database, version: '>=1.0.0' }
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    autotrack:
+      type: toggle
+      label: Auto Track Views
+      help: Will automatically track views for all pages. When 'false' you will have to manually track views via PHP or Twig
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool

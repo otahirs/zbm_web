@@ -21,7 +21,8 @@
 {% endfor %}
 
 {% set action = form.action ?: page.route ~ uri.params %}
-{% set action = action starts with 'http' ? action : base_url ~ action %}
+
+{% set action = (action starts with 'http') or (action starts with '#') ? action : base_url ~ action %}
 
 {% if (action == base_url_relative) %}
     {% set action = base_url_relative ~ '/' ~ page.slug %}
@@ -137,7 +138,11 @@
         {% block embed_button_core %}
           {% if button.id %}id="{{ button.id }}"{% endif %}
           {% if button.disabled %}disabled="disabled"{% endif %}
-          {% if button.task %}name="task" value="{{ button.task }}"{% endif %}
+          {% if button.name %}
+            name="{{ button.name }}"
+          {% else %}
+            {% if button.task %}name="task" value="{{ button.task }}"{% endif %}
+          {% endif %}
           type="{{ button.type|default('submit') }}"
         {% endblock %}
 
