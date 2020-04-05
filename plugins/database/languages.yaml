@@ -1,0 +1,7 @@
+en:
+  PLUGIN_DATABASE:
+    DATABASE: Database
+    
+ru:
+  PLUGIN_DATABASE:
+    DATABASE: База данных

@@ -1,0 +1,24 @@
+<table class="views-list">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Type</th>
+      <th>Views Count</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for view in views %}
+    <tr class="row">
+      <td>
+        <a href="{{ url(view.id) }}" target="_blank">{{ view.id }}</a>
+      </td>
+      <td>
+        <span>{{ view.type }}</span>
+      </td>
+      <td>
+        <span class="badge">{{ view.count }}</span>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
