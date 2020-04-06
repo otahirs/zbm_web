@@ -16,3 +16,4 @@ import:
     type: members
     time: 1583866502
 ---
+Končí přihlášky do žebříčku A na rok 2020.
