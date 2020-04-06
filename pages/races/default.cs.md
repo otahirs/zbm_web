@@ -18,7 +18,7 @@ process:
 {% try %}
     {% set oris = "https://oris.orientacnisporty.cz/API/?format=json&method=getEventList&club=205&datefrom=1970-01-01"|getJson %}
     {% set year = 0 %}
-    {% for race in oris.Data|reverse %}
+    {% for race in oris.Data|reverse if race.Cancelled != "1" %}
         {% if race.Date[0:4] != year %}
             {% set year = race.Date[0:4] %}
             {% if not loop.first %} </div><br><br> {% endif %}
