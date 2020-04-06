@@ -6,8 +6,8 @@ content:
     filter:
         routable: true
     order:
-        by: header.start
-        dir: asc
+        by: header.end
+        dir: desc
 ---
 
 {% set collection = page.collection() %}
@@ -69,8 +69,8 @@ content:
     <label>Filtr data</label>
     <button data-toggle="datepicker" type="button" style="height: 2.75em;font-size: 1em;line-height: 2.9em;color:inherit !important; box-shadow:none;"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;vše</button>
     <br>
-    <input id="include-older" type="checkbox" checked/>
-    <label for="include-older">zobrazit již uplynulé</label>
+    <input id="include-future" type="checkbox"/>
+    <label for="include-future">zobrazit budoucí</label>
     </fieldset>
   </div>
  </div>
@@ -200,7 +200,7 @@ content:
   var userList = new List('program', options);
   
   function showCurrent(item) {
-    if (item.values().start >= now || item.values().end > (now - 5*3600*24)) {
+    if (item.values().end <= now || item.values().start < (now + 5*3600*24)) {
       return true;
     }
     return false;
@@ -208,13 +208,13 @@ content:
 
   function resetList(){
   	//userList.search();
-    userList.sort('start', { order: "asc" });
+    userList.sort('start', { order: "desc" });
   	//userList.filter(showCurrent); 
   	$(".filter-all").prop('checked', true);
   	$('.filter').prop('checked', false);
     $('.search').val('');
     $datepicker.html(bnt_text);
-    $("#include-older").prop("checked", true); //false
+    $("#include-future").prop("checked", false); //false
 
   	updateList();
   	//console.log('Reset Successfully!');
@@ -224,7 +224,7 @@ content:
     var values_skupina = $("input[name=skupina]:checked").val();
   	var values_type = $("input[name=type]:checked").val();
     var value_datepicker = $datepicker.datepicker('getDate', true);
-    var include_old = $("#include-older").prop("checked");
+    var include_future = $("#include-future").prop("checked");
   	//console.log(values_skupina, values_type);
 
   	userList.filter(function (item) {
@@ -248,7 +248,7 @@ content:
 
       if($datepicker.html() != bnt_text) {
         dateFilter = item.values().startMonth.indexOf(value_datepicker) >= 0 || item.values().endMonth.indexOf(value_datepicker) >= 0;
-      } else if(include_old) {
+      } else if(include_future) {
         dateFilter = true;
       } else {
         dateFilter = showCurrent(item);
@@ -266,7 +266,7 @@ content:
   //updateList();
     $("input[name=skupina]").change(updateList);
     $('input[name=type]').change(updateList);
-    $("#include-older").change(updateList);
+    $("#include-future").change(updateList);
     $datepicker.on('pick.datepicker', updateList);
 
 /* pokud neni zaznam zobrazi hlasku*/
