@@ -7,32 +7,8 @@ process:
 access:
     site:
         plan: true
-currentSeason: winter
+currentSeason: summer
 summer:
-    monday: null
-    tuesday:
-        1:
-            name: 'dráha'
-            place: 'G Matyáše Lercha '
-            meetup: '16:15'
-            group:
-        2:
-            name: 'dráha'
-            place: 'ZŠ Horní'
-            meetup: '17:00'
-            group:
-                    - dorost
-    wednesday: null
-    thursday:
-        1:
-            name: 'dráha'
-            place: 'G Matyáše Lercha '
-            meetup: '16:00'
-            group:
-                    - dorost
-    friday: null
-    saturday: null
-    sunday: null
 winter:
     monday:
         1:
