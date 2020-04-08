@@ -16,4 +16,4 @@ import:
     type: members
     time: 1583866502
 ---
-Končí přihlášky do žebříčku A na rok 2020.
+Končí termín přihlášek do žebříčku A pro HD16, HD18, HD20.
