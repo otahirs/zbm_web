@@ -1,7 +1,7 @@
 ---
 id: 20200430-2874727d
 template: soustredeni
-title: 'Květnové - ladící - Milovy'
+title: 'Mapový víkend'
 start: '2020-05-01'
 end: '2020-05-03'
 place: Milovy
