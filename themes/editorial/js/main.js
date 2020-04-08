@@ -94,11 +94,13 @@
 		// Sidebar.
 			
 			// Menu swipe support
+			  var main = document.getElementById('main');
 			  var slideout = new Slideout({
-			    'panel': document.getElementById('main'),
+			    'panel': main,
 					'menu': document.getElementById('sidebar'),
 					'padding': $sidebar.css("width").slice(0, -2),
-					'easing': 'ease-in-out'
+					'easing': 'ease-in-out',
+					'tolerance': 100
 				});		
 				
 				// resize padding because sidebar width is dynamic
@@ -108,6 +110,17 @@
 							slideout.padding = $sidebar.css("width").slice(0, -2);
 						}
 					}, 100);					
+				});
+
+				// prevent menu opening when touch is further from screen edge than slideout._tolerance
+				main.addEventListener('touchstart', function(eve) {
+					let offset = eve.touches[0].pageX;
+				
+					if (slideout._orientation !== 1) {
+						offset = window.innerWidth - offset;
+					}
+				
+					slideout._preventOpen = slideout._preventOpen || (offset > slideout._tolerance && !slideout.isOpen());
 				});
 
 			  // Toggle button
