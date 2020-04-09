@@ -1,39 +1,3 @@
-/* overpass-regular - latin_latin-ext */
-@font-face {
-  font-family: 'Overpass';
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: local("Overpass Regular"), local("Overpass-Regular"), url("../fonts/overpass-v4-latin_latin-ext-regular.woff2") format("woff2"), url("../fonts/overpass-v4-latin_latin-ext-regular.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ }
-
-/* overpass-italic - latin_latin-ext */
-@font-face {
-  font-family: 'Overpass';
-  font-style: italic;
-  font-weight: 400;
-  font-display: block;
-  src: local("Overpass Italic"), local("Overpass-Italic"), url("../fonts/overpass-v4-latin_latin-ext-italic.woff2") format("woff2"), url("../fonts/overpass-v4-latin_latin-ext-italic.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ }
-
-/* overpass-700 - latin_latin-ext */
-@font-face {
-  font-family: 'Overpass';
-  font-style: normal;
-  font-weight: 700;
-  font-display: block;
-  src: local("Overpass Bold"), local("Overpass-Bold"), url("../fonts/overpass-v4-latin_latin-ext-700.woff2") format("woff2"), url("../fonts/overpass-v4-latin_latin-ext-700.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ }
-
-/* overpass-700italic - latin_latin-ext */
-@font-face {
-  font-family: 'Overpass';
-  font-style: italic;
-  font-weight: 700;
-  font-display: block;
-  src: local("Overpass Bold Italic"), local("Overpass-BoldItalic"), url("../fonts/overpass-v4-latin_latin-ext-700italic.woff2") format("woff2"), url("../fonts/overpass-v4-latin_latin-ext-700italic.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ }
-
 /*
 	Editorial by HTML5 UP
 	html5up.net | @ajlkn
@@ -75,7 +39,7 @@ body {
 /* Type */
 body, input, select, textarea {
   color: #222;
-  font-family: "Helvetica", sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 15pt;
   font-weight: 400;
   line-height: 1.65; }
@@ -115,7 +79,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   color: #222;
-  font-family: "Overpass", sans-serif;
+  font-family: "Arial", sans-serif;
   font-weight: 700;
   line-height: 1.5;
   margin: 0 0 1em 0; }
@@ -220,7 +184,7 @@ section.special, article.special {
   text-align: center; }
 
 header p {
-  font-family: "Overpass", sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 1em;
   font-weight: 400;
   letter-spacing: 0.075em;
@@ -711,7 +675,7 @@ button,
   color: #e65a51 !important;
   cursor: pointer;
   display: inline-block;
-  font-family: "Overpass", sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 0.8em;
   font-weight: 700;
   height: 3.5em;
@@ -1313,7 +1277,7 @@ button,
   #header .logo {
     border-bottom: 0;
     color: inherit;
-    font-family: "Overpass", sans-serif;
+    font-family: "Arial", sans-serif;
     font-size: 1.125em; }
   #header .icons {
     text-align: right; }
@@ -1424,7 +1388,7 @@ button,
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Overpass", sans-serif;
+  font-family: "Arial", sans-serif;
   font-family: 400;
   letter-spacing: 0.075em;
   list-style: none;
@@ -1660,7 +1624,6 @@ tr.program--now {
   #nav-links a {
     color: #DDD;
     text-decoration: none;
-    font-family: Overpass;
     border-bottom: none;
     font-size: 1rem;
     padding: 0 1rem;
