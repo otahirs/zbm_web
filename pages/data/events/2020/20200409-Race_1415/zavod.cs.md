@@ -16,4 +16,3 @@ import:
     type: members
     time: 1583866502
 ---
-Končí termín přihlášek do žebříčku A pro HD16, HD18, HD20.
