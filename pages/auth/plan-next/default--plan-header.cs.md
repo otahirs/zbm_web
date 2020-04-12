@@ -6,7 +6,20 @@ access:
     site:
         plan: true
 planTemplate: None
-plan: null
+plan:
+    monday: null
+    tuesday:
+        1:
+            name: 'Mapová teorie'
+            place: 'https://meet.jit.si/ZBM'
+            meetup: '20:00'
+            group:
+                    - dorost
+    wednesday: null
+    thursday: null
+    friday: null
+    saturday: null
+    sunday: null
 ---
 
 {# ************************************************************#}
