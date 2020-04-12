@@ -17,15 +17,16 @@
 	});
 
 
-	$(function() {
+	window.addEventListener('DOMContentLoaded', () => {
 
 		// vars
 		var	$window = $(window),
 			$head = $('head'),
 			$body = $('body'),
 			$main = $('#main'),
-			$sidebar = $('#sidebar'),
-			$links = $('#nav-links');
+			$links = $('#nav-links'),
+			main = document.getElementById('main'),
+			sidebar = document.getElementById('sidebar');
 
 		// Disable animations/transitions ...
 
@@ -54,10 +55,6 @@
 						}, 100);
 
 				});
-			// 
-			$window.on('load', () => {
-				$sidebar.css("opacity", "1");
-			})
 
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();
@@ -94,22 +91,24 @@
 		// Sidebar.
 			
 			// Menu swipe support
-			  var main = document.getElementById('main');
 			  var slideout = new Slideout({
 			    'panel': main,
 					'menu': document.getElementById('sidebar'),
-					'padding': $sidebar.css("width").slice(0, -2),
+					'padding': $(sidebar).css("width").slice(0, -2),
 					'easing': 'ease-in-out',
 					'tolerance': 20
 				});		
-				
+
 				// resize padding because sidebar width is dynamic
-				$(window).on('resize',function(){
-					setTimeout(function(){
-						if(skel.breakpoint("large").active){
-							slideout.padding = $sidebar.css("width").slice(0, -2);
-						}
-					}, 100);					
+				window.addEventListener('resize', () => {
+					slideout._padding = $(sidebar).css("width").slice(0, -2);
+					slideout._translateTo = slideout._padding;
+					if (!skel.breakpoint('large').active) {
+						slideout.close();
+					}
+					if (slideout.isOpen()) {
+						slideout._translateXTo(slideout._translateTo);
+					}
 				});
 
 				// prevent menu opening when touch is further from screen edge than touchWidth
@@ -151,86 +150,6 @@
 						$dim.fadeOut(200); 
 					});
 
-			
-			
-				
-			// Scroll lock.
-			// Note: If you do anything to change the height of the sidebar's content, be sure to
-			// trigger 'resize.sidebar-lock' on $window so stuff doesn't get out of sync.			
-		/*		
-				var  $sidebar_inner = $sidebar.children('.inner');
-				$window.on('load.sidebar-lock', function() {
-
-					var sh, wh, st;
-
-					// Reset scroll position to 0 if it's 1.
-						if ($window.scrollTop() == 1)
-							$window.scrollTop(0);
-
-					$window
-						.on('scroll.sidebar-lock', function() {
-
-							var x, y;
-
-							// IE<10? Bail.
-								if (skel.vars.IEVersion < 10)
-									return;
-
-							// <=large? Bail.
-								if (skel.breakpoint('large').active) {
-
-									$sidebar_inner
-										.data('locked', 0)
-										.css('position', '')
-										.css('top', '');
-
-									return;
-
-								}
-
-							// Calculate positions.
-								x = Math.max(sh - wh, 0);
-								y = Math.max(0, $window.scrollTop() - x);
-
-							// Lock/unlock.
-								if ($sidebar_inner.data('locked') == 1) {
-
-									if (y <= 0)
-										$sidebar_inner
-											.data('locked', 0)
-											.css('position', '')
-											.css('top', '');
-									else
-										$sidebar_inner
-											.css('top', -1 * x);
-
-								}
-								else {
-
-									if (y > 0)
-										$sidebar_inner
-											.data('locked', 1)
-											.css('position', 'fixed')
-											.css('top', -1 * x);
-
-								}
-
-						})
-						.on('resize.sidebar-lock', function() {
-
-							// Calculate heights.
-								wh = $window.height();
-								sh = $sidebar_inner.outerHeight() + 30;
-
-							// Trigger scroll.
-								$window.trigger('scroll.sidebar-lock');
-
-						})
-						.trigger('resize.sidebar-lock');
-
-					});
-		*/
-
 		// Menu.
 			var $menu = $('#menu'),
 				$menu_openers = $menu.children('ul').find('.opener');
@@ -256,69 +175,67 @@
 
 				});
 
-		// Autohide navlinks to submenu				
-				function calcWidth() {
+		// Autohide navlinks to submenu	
+				const linksContainer = document.querySelector(".links");
+				const visibleUl = document.querySelector(".links__visible");
+				const hiddenUl = document.querySelector(".links__hidden");
+				const showHiddenBtn = document.querySelector(".links__show-hidden-btn");
+
+				function calcHideLinks() {
 					var navwidth = 0; 
-					$('#links > li').each(function() {
-						navwidth += $(this).outerWidth( true );
+					showHiddenBtn.style.display = 'block';
+					[...visibleUl.children].forEach(link => {
+						navwidth += link.offsetWidth;
 					});
 					
-					var availablespace = $('#nav-links').width() - 10;
-					
-					if (navwidth > availablespace && !$('#links > li').first().hasClass("more")) {
-						var lastItem = $('#links > li:not(.more)').last();
-						lastItem.attr('data-width', lastItem.outerWidth(true));
-						lastItem.prependTo($('#links .more ul'));
-						calcWidth();
-					} else {	
-						var firstMoreElement = $('#links li.more li').first();
-						while(navwidth + firstMoreElement.data('width') < availablespace) {
-							firstMoreElement.insertBefore($('#links .more'));
-							navwidth += firstMoreElement.data('width');
-							firstMoreElement = $('#links li.more li').first();		
+					var availablespace = linksContainer.offsetWidth;
+					if (navwidth > availablespace && !visibleUl.firstElementChild.classList.contains('links__show-hidden-btn')) { //skip if more btn only
+						var lastItem = visibleUl.lastElementChild.previousElementSibling; // get item before more btn
+						lastItem.dataset.width = lastItem.offsetWidth; // remember item width
+						hiddenUl.prepend(lastItem); // hide
+						calcHideLinks();
+					} else {
+						while(hiddenUl.hasChildNodes() && availablespace > navwidth + parseInt(hiddenUl.firstElementChild.dataset.width)) {
+							var firstMoreItem = hiddenUl.firstElementChild;
+							visibleUl.insertBefore(firstMoreItem, showHiddenBtn);
+							navwidth += firstMoreItem.dataset.width;	
 						}
 					}
 				  
-					if ($('.more li').length > 0) {
-						$('.more').css('display','block');
-					} else {
-						$('.more').css('display','none');
+					if (!hiddenUl.hasChildNodes()) {
+						showHiddenBtn.style.display = 'none';
 					}
 				}
-				
-				$(window).on('load',function(){
-					calcWidth();
-					$links.css("opacity", "1");
-				});
-				$(window).on('resize',function(){
-					calcWidth()
-					setTimeout(calcWidth, 300);
-				});
-				
 
-				var linksBtn = document.getElementById('links-more-btn'),
-						linksMore = document.getElementById('links-more-ul');   
+				// on load
+				calcHideLinks();
+				linksContainer.style.opacity = "1";
 
+				['resize','orientationchange'].forEach( evt => 
+					window.addEventListener(evt, calcHideLinks, false)
+				);
+				
 				// open nad close on button click
-				linksBtn.addEventListener('click', () => {
-					if(linksMore.style.display == "block"){
-						linksMore.style.display = "none";
+				showHiddenBtn.addEventListener('click', () => {
+					if(hiddenUl.style.display == "block"){
+						hiddenUl.style.display = "none";
 					}
 					else{
-						linksMore.style.display = "block";
+						hiddenUl.style.display = "block";
 					}
 				})
 
 				// close when clicked outside button
 				document.addEventListener('click', (e) => {
-					if(!linksBtn.contains(e.target)){
-						linksMore.style.display = "none";
+					if(!showHiddenBtn.contains(e.target)){
+						hiddenUl.style.display = "none";
 					}
 				});
 
 				// close on main menu manipulation
-				slideout.on('translatestart', () => { linksMore.style.display = "none" });
+				slideout.on('translatestart', () => { hiddenUl.style.display = "none" });
 				
+		
 	});
 
 	
