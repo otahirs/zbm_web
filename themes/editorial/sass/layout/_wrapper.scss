@@ -8,6 +8,6 @@
 
 	#wrapper {
 		@include vendor('display', 'flex');
-		@include vendor('flex-direction', 'row-reverse');
+		@include vendor('flex-direction', 'row');
 		min-height: 100vh;
 	}
