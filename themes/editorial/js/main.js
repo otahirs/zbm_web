@@ -28,6 +28,9 @@
 			main = document.getElementById('main'),
 			sidebar = document.getElementById('sidebar');
 
+		// display none in css on large breakpoint, prevent flash on load
+		sidebar.style.display = "block";
+
 		// Disable animations/transitions ...
 
 			// ... until the page has loaded.
