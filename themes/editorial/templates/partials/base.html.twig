@@ -48,7 +48,9 @@
 
     {% block topbar %}
     <div id="topbar">
-        <a href="/" class="topbar--title">SK Brno Žabovřesky</a>
+        <a href="/" class="topbar--title">
+            <span ><object style="height:1.5em" data="{{url('theme://images/skzabovresky.svg')}}" type="image/svg+xml"></object></span>
+        </a>
         <div  class="links">
             
           <ul class="links__visible">
@@ -109,7 +111,7 @@
 {% block bottom %}
     {{ assets.js('bottom') }}
 
-<!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
+<!-- Fathom - simple website analytics - https://github.com/usefathom/fathom 
 <script>
 (function(f, a, t, h, o, m){
 	a[h]=a[h]||function(){
