@@ -24,5 +24,15 @@ taxonomy:
         5: pulci1
 accomodation: ''
 food: ''
+routes:
+    -
+        name: Křižánky
+        link: 'http://3drerun.worldofo.com/index.php?id=-16775117&type=info'
+    -
+        name: Rudice
+        link: 'http://3drerun.worldofo.com/index.php?id=-16775110&type=info'
+    -
+        name: Březina
+        link: 'http://3drerun.worldofo.com/index.php?id=-16775092&type=info'
 ---
 Ve spolupráci s TBM a RBK jsme připravili několik tréninkových map. Čekají vás skály a kameny na Vysočině (Chlébské a Křižánky), krásný a rozmanitý kus lesa u Rudic i jednobarevná mapa u Babic.
