@@ -1018,10 +1018,10 @@ button,
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  -moz-flex-direction: row-reverse;
-  -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
+  -moz-flex-direction: row;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   min-height: 100vh; }
 
 /* Main */
@@ -1152,6 +1152,7 @@ button,
           width: calc(100% + 3.33333em); } }
   @media screen and (max-width: 1280px) {
     #sidebar {
+      display: none;
       box-shadow: 0 0 5em 0 rgba(0, 0, 0, 0.175);
       height: 100%;
       left: 0;
