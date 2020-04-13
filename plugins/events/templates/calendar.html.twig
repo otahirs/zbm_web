@@ -4,6 +4,7 @@
     {% set todayUrl = page.url ~ '/year:' ~ "now"|date('Y') ~ '/month:' ~ "now"|date('m') %}
     {% set prevMonthUrl = page.url ~ '/year:' ~ calendar.prevMonth|date('Y') ~ '/month:' ~ calendar.prevMonth|date('m') %}
     {% set nextMonthUrl = page.url ~ '/year:' ~ calendar.nextMonth|date('Y') ~ '/month:' ~ calendar.nextMonth|date('m') %}
+    {% set jsonEncodeOptions = constant('JSON_HEX_TAG') b-or constant('JSON_HEX_QUOT') b-or constant('JSON_HEX_AMP') b-or constant('JSON_HEX_APOS') %}
 
 	<div class="calendar-content">{{ page.content }}</div>
 	
@@ -23,7 +24,7 @@
         </div>
         <div class="col-auto">
 			 <a href="{{ todayUrl }}" data-url="{{ todayUrl}}" class="cal-link">
-                <span class="cal-button cal-today"  data-date="{{"today"|date("U")}}"  data-events='{{calendar.events["today"|date("U")]|json_encode()}}'>dnes</span>
+                <span class="cal-button cal-today"  data-date="{{"today"|date("U")}}"  data-events='{{calendar.events["today"|date("U")]|json_encode(jsonEncodeOptions)}}'>dnes</span>
              </a>
         </div>
         </div>
@@ -52,9 +53,8 @@
                         class="cal-day diff-month"
                     {% endif %}
                     data-date="{{currentDay|date("U")}}" 
-                    data-events='{{calendar.events[currentDay|date("U")]|json_encode()}}'
+                    data-events='{{calendar.events[currentDay|date("U")]|json_encode(jsonEncodeOptions)}}'
                     style="cursor:help"
-                    {{dump(calendar.events[currentDay|date("U")]|json_encode())}}
                 >
                              
                     <div class="cal-day-tag-outer">
