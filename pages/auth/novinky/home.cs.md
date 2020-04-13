@@ -118,7 +118,7 @@ news:
                 {% endif %}
               </em>
             </h4>
-            <article class="soon-content" data-id="{{p.header.id}}" data-template="{{p.header.template}}">
+            <article class="soon-content" data-id="{{p.header.id}}">
               {{p.content}}
             </article>
           </section>
@@ -476,7 +476,6 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
       content.innerHTML = '<form method="post" action="/php/blizise">' +  //nahradi text blizi se formularem na upravu
                             '<input name="POST_type" type="hidden" value="editBliziSe">' +
                             '<input name="id" type="hidden" value="'+ content.getAttribute("data-id") +'">' +
-                            '<input name="template" type="hidden" value="'+ content.getAttribute("data-template") +'">' +
                             '<textarea name="content"></textarea>' +
                             '<button class="saveBlizise special fit" type="submit" style="margin-top: 1em">Uložit</button>' +
                             '<div class="row">' +
