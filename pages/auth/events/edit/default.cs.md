@@ -35,7 +35,6 @@ access:
 <form id="editEvent" method="post" action="">
         <input name="POST_type" type="hidden" value="editEvent">
         <input name="id" type="hidden" value="{{ event.header.id }}">
-        <input name="template" id="template" type="hidden" value="{{ event.template }}">
         {{ event.header.id }}
         <ul class="tabs">
             <li data-tab="info" class="tab-link current">Základní informace</li>
@@ -57,6 +56,26 @@ access:
             {% endif %}
         </ul>
         <div id="info" class="tab-content current">
+            <label for="event-type">Kategorie / Typ</label>
+            <select name="type" id="event-type" autocomplete="off">
+                <optgroup label="Závody">
+                    <option value="Z" {% if event.header.type == "Z" %} selected {% endif %}>Závod</option>
+                    <option value="BZL" {% if event.header.type == "BZL" %} selected {% endif %}>BZL</option>
+                    <option value="BBP" {% if event.header.type == "BBP" %} selected {% endif %}>Bežecký závod (BBP)</option>
+                </optgroup>
+                <optgroup label="Tréninky">
+                    <option value="M" {% if event.header.type == "M" %} selected {% endif %}>Mapový trénink</option>
+                    <option value="T" {% if event.header.type == "T" %} selected {% endif %}>Trénink</option>
+                </optgroup>
+                <optgroup label="Soustředění">
+                    <option value="S" {% if event.header.type == "S" %} selected {% endif %}>Soustředění</option>
+                    <option value="TABOR" {% if event.header.type == "TABOR" %} selected {% endif %}>Tábor</option>
+                </optgroup>
+                <optgroup label="Jiné">
+                    <option value="L" {% if event.header.type == "L" %} selected {% endif %}>Liga škol</option>
+                    <option value="J" {% if event.header.type not in ["Z", "M", "T", "S", "BZL", "BBP", "TABOR", "L"] %} selected {% endif %}>Nezařazeno</option>
+                </optgroup>
+            </select>
             <div class="row">
             <div class="col-6">
                 <div class="row">
