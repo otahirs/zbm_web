@@ -96,7 +96,7 @@
 			// Menu swipe support
 			  var slideout = new Slideout({
 			    'panel': main,
-					'menu': document.getElementById('sidebar'),
+					'menu': sidebar,
 					'padding': $(sidebar).css("width").slice(0, -2),
 					'easing': 'ease-in-out',
 					'tolerance': 20
