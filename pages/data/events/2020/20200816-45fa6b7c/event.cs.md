@@ -26,5 +26,6 @@ taxonomy:
 accomodation: ''
 food: ''
 gps: '49.99411, 13.46256'
+type: TABOR
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.

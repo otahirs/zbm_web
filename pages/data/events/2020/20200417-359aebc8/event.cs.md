@@ -21,6 +21,9 @@ taxonomy:
         3: zaci2
         4: dorost
         5: pulci1
+type: M
+accomodation: ''
+food: ''
 ---
 {{page.header.note}}
  Doprava {{page.header.transport}}.

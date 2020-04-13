@@ -25,6 +25,7 @@ taxonomy:
 gps: '49.29306, 16.81425'
 accomodation: ''
 food: ''
+type: Z
 ---
 {{page.header.note}}
  {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
