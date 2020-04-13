@@ -237,8 +237,16 @@
 
 				// close on main menu manipulation
 				slideout.on('translatestart', () => { hiddenUl.style.display = "none" });
-				
 		
+		// open external links in new windows
+		var links = main.getElementsByTagName("a");
+		for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+			if (links[i].hostname != window.location.hostname) {
+				links[i].target = '_blank';
+				links[i].classList.add('external-link');
+			} 
+		}
+				
 	});
 
 	
