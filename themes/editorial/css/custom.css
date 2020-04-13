@@ -430,7 +430,7 @@ width: 0px; /*For Chrome, Safari and Opera*/
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   z-index: 0;
-  display: none;
+  display: none !important;
 }
 
 .slideout-menu-left {
@@ -456,7 +456,7 @@ width: 0px; /*For Chrome, Safari and Opera*/
 }
 
 .slideout-open .slideout-menu {
-  display: block;
+  display: block !important;
 }
 @media screen and (min-width: 1280px) {
   .slideout-panel {
@@ -464,7 +464,7 @@ width: 0px; /*For Chrome, Safari and Opera*/
   }
 
   .slideout-menu {
-    display: block;
+    display: block !important;
   }
 }
 
