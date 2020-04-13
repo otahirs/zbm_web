@@ -241,7 +241,7 @@
 		// open external links in new windows
 		var links = main.getElementsByTagName("a");
 		for (var i = 0, linksLength = links.length; i < linksLength; i++) {
-			if (links[i].hostname != window.location.hostname) {
+			if (links[i].hasAttribute("href") && links[i].hostname != window.location.hostname) {
 				links[i].target = '_blank';
 				links[i].classList.add('external-link');
 			} 
