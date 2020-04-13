@@ -20,6 +20,7 @@ taxonomy:
         1: dorost
 accomodation: ''
 food: ''
+type: S
 ---
 {{page.header.note}}
  Doprava {{page.header.transport}}.

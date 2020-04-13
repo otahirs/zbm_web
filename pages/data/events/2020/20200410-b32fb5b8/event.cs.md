@@ -24,6 +24,7 @@ taxonomy:
         5: pulci1
 accomodation: ''
 food: ''
+type: S
 routes:
     -
         name: Křižánky

@@ -16,8 +16,9 @@ leader: Jenda
 note: "[Mapa H](http://woc2008.orientacnisporty.cz/files/images/scontent/maps/longF/longF_MEN.gif)\r\n[Mapa D](http://woc2008.orientacnisporty.cz/files/images/scontent/maps/longF/longF_WOMEN.gif)"
 taxonomy:
     skupina:
-        - dorost
+        1: dorost
 gps: '49.56104, 16.79903'
+type: T
 ---
 [Mapa H](http://woc2008.orientacnisporty.cz/files/images/scontent/maps/longF/longF_MEN.gif)
 
