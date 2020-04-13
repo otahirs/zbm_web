@@ -517,8 +517,7 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
     //updatuje kontent zobrazovany v Blizi se
     public function editBliziSeFunction($user){
         $year = substr($_POST["id"], 0, 4);
-        $template = $_POST['template'];
-        $path = "./user/pages/data/events/". $year ."/". $_POST["id"] ."/". $template. ".cs.md";
+        $path = "./user/pages/data/events/". $year ."/". $_POST["id"] ."/event.cs.md";
 
         $frontmatter = PhpTwigExtension::parse_file_frontmatter_only($path);
         
@@ -894,14 +893,14 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
         
         foreach($event_list as $event){
 
-            $event['template'] = PhpTwigExtension::get_event_template($event["type"]);;
+            $event['template'] = PhpTwigExtension::get_event_template($event["type"]);
             $event['date'] = date("Y-m-d");
             $event['start'] = PhpTwigExtension::format_date($event['start']);
             $event['end'] = PhpTwigExtension::format_date($event['end']);
             $event['id'] = $event['id'] ? $event['id'] : PhpTwigExtension::create_event_id($event['template'], $event['title'], $event['start']);
             $year = substr($event["start"], 0, 4);
 
-            $path = "./user/pages/data/events/". $year ."/". $event["id"] ."/". $event['template'] .".cs.md";
+            $path = "./user/pages/data/events/". $year ."/". $event["id"] ."/event.cs.md";
 
             $changed = true;
             // if file exist, load data
@@ -959,9 +958,6 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
         if(isset($_POST["POST_type"])){
             if( $_POST["POST_type"] == "editEvent" ){
                 // kontrola doručení potřebných údajů
-                if(empty($_POST["template"])){
-                    PhpTwigExtension::return_ERROR('CHYBA!!, nebyl obdržen typ události [template]');
-                }
                 if(empty($_POST["title"])){
                     PhpTwigExtension::return_ERROR('Není vyplněn "Název"');
                 }
@@ -980,13 +976,13 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
                 }
                 
                 
-                $data = ["template","title", "start", "end",  "place", "meetTime", "meetPlace", "link", "eventTypeDescription", "startTime", "map", "terrain", "transport", "accomodation", "food", "leader", "doWeOrganize", "note", "return", "price", "program", "thingsToTake", "signups"];
+                $data = ["type", "title", "start", "end",  "place", "meetTime", "meetPlace", "link", "eventTypeDescription", "startTime", "map", "terrain", "transport", "accomodation", "food", "leader", "doWeOrganize", "note", "return", "price", "program", "thingsToTake", "signups"];
                 $group_arr = ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost"];
                 
                 
-                $id = empty($_POST["id"]) ? PhpTwigExtension::create_event_id($_POST['template'], $_POST['title'], $_POST['start']) : $_POST["id"];
+                $id = empty($_POST["id"]) ? PhpTwigExtension::create_event_id($_POST['type'], $_POST['title'], $_POST['start']) : $_POST["id"];
                 $year = substr($id, 0 , 4);
-                $path = "./user/pages/data/events/". $year ."/". $id ."/". $_POST['template'] .".cs.md";
+                $path = "./user/pages/data/events/". $year ."/". $id ."/event.cs.md";
 
                 $new = file_exists($path) ? false : true;
 
@@ -996,6 +992,7 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
                 else {              
                     $frontmatter = PhpTwigExtension::get_frontmatter_as_array($path);   //rozparsuje existujici soubor  
                 }
+                $frontmatter['template'] = PhpTwigExtension::get_event_template($_POST['type']);
 
                 foreach($data as $attribute){
                     if(isset($_POST[$attribute])){
@@ -1067,17 +1064,14 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
                 $page = PhpTwigExtension::combine_frontmatter_with_content($frontmatter, $content);
                 //print_r($_POST);
                 //print_r($frontmatter);
-
                 PhpTwigExtension::file_force_contents($path, $page);
                 if ($new) {
-                    $content = PhpTwigExtension::generate_content($frontmatter);
                     PhpTwigExtension::log_grav($user . " | EVENT created | " . $id);
                     $result = array("id" => $id);
                     echo json_encode($result);
 
                 }
                 else {
-                    $content = PhpTwigExtension::parse_file_content_only($path);
                     PhpTwigExtension::log_grav($user . " | EVENT edited | " . $id);
                 }
                 Cache::clearCache('cache-only');
