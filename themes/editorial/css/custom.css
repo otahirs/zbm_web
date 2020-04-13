@@ -514,3 +514,11 @@ p {
 #sidebar a.sneaky{
     color: #555
 }
+
+.external-link:after {
+    content: "\f08e";
+    font-family: FontAwesome;
+    display: inline-block;
+    font-size: smaller;
+    padding-left: 5px;
+  }
