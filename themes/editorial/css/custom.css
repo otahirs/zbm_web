@@ -491,9 +491,7 @@ img {
     height: auto;
 }   
 
-#soon form {
-    margin: 0;
-}
+
 
 @media screen and (min-width: 736px) {
     #hop, #hip {
