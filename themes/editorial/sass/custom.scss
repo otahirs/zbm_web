@@ -55,6 +55,10 @@ table.plan td {
 ***** HOME ******
 ****************/
 /* home - news */
+#novinky hr {
+    border-bottom: solid 2px _palette(bg-alt-dark);
+}
+
 .newsPictures {
     margin: 1em 0 0 0;
 }
@@ -65,58 +69,14 @@ table.plan td {
     text-align: justify;
 }
 /* home - soon */
+
+
 #soon {
-    padding: 0 2.5rem;
+    padding: 0 2.5rem; 
     background-color: _palette(bg-alt-light);
-    
-    section {
-        padding: 3rem;
-        margin: 3rem;
-        position: relative;
-        left: 1rem;
-        background-color: white;
-        border-radius: 5px;
-
-        @include breakpoint(xlarge) {
-            padding: 1.5rem;
-            margin: 1.5rem;
-        }            
-    }
 }
 
-.soon--date {
-    padding-top: 2.5rem;
-}
-#soon section > article > ul {
-    margin: 0;
-}
-
-
-#soon a, #soon a:hover {
-    text-decoration: none;
-    color: _palette(bg-alt) !important;
-}
-
-.soon--dot {
-    height: 16px;
-    width: 16px;
-    background-color: _palette(bg-alt-light);
-    border-radius: 50%;
-    display: inline-block;
-    top: 3px;
-    position: relative;
-    border: solid;
-  }
-.soon--dot-now{
-    background-color: _palette(bg-alt);
-}
-.soon--day {
-    float: right;
-    top: 3px;
-    position: relative;
-}
-
-#soon--timeline {
+.soon__timeline {
     position: absolute;
     float: left;
     border: 2px _palette(bg-alt) solid;
@@ -126,6 +86,66 @@ table.plan td {
     height: calc(100% - 56px);
 }
 
+.soon__event, .soon__deadline {
+    padding: 3rem;
+    margin: 3rem;
+    position: relative;
+    left: 1rem;
+    background-color: white;
+    border-radius: 5px;
+
+    @include breakpoint(xlarge) {
+        padding: 1.5rem;
+        margin: 1.5rem;
+    }    
+}
+
+.soon__dot {
+    height: 16px;
+    width: 16px;
+    background-color: _palette(bg-alt-light);
+    border-radius: 50%;
+    display: inline-block;
+    top: 3px;
+    position: relative;
+    border: solid;
+}
+.soon__dot--now{
+    background-color: _palette(bg-alt);
+}
+
+.soon__date {
+    padding-top: 2.5rem;
+}
+.soon section > article > ul {
+    margin: 0;
+}
+
+.soon a, .soon a:hover {
+    text-decoration: none;
+    color: _palette(bg-alt) !important;
+}
+
+.soon__day {
+    float: right;
+    top: 3px;
+    position: relative;
+}
+
+.soon__deadline > .entry {
+    border-top: 1px dashed;
+    padding: 1em 0;
+    &.last {
+        padding-bottom: 0;
+    }
+}
+.soon__deadline > .title {
+    padding-bottom: 0.8em;
+}
+
+.soon form {
+    margin: 0;
+}
 /****************
 **** Program ****
 ****************/
@@ -293,16 +313,6 @@ ul.tabs li.group-icon {
     }
 }
 
-.soon-deadline > .entry {
-    border-top: 1px dashed;
-    padding: 1em 0;
-    &.last {
-        padding-bottom: 0;
-    }
-}
-.soon-deadline > .title {
-    padding-bottom: 0.8em;
-}
 
 .logs-output {
     table.noflex {
@@ -370,9 +380,6 @@ ul.tabs li.group-icon {
     border-bottom: none;
 }
 
-#novinky hr {
-    border-bottom: solid 2px _palette(bg-alt-dark);
-}
 
 
 #sidebar a.sneaky{

@@ -77,11 +77,11 @@ news:
    </div> <!-- plan + novinky -->
 
 
-    <div id="soon" class="col-md-4">
+    <div id="soon" class="soon col-md-4">
     <br>
       <h4>Kliknutím upravíte náhled události</h4>
     
-      <div id="soon--timeline"></div>
+      <div id="soon__timeline"></div>
       {% set soon_collection = page.collection() %}
       {% set currdate = strtotime("today")|date('Y-m-d') %}
 
@@ -89,7 +89,7 @@ news:
         {% if  (  p.header.start|date('Y-m-d') <= strtotime("today +10 day")|date('Y-m-d') and p.header.end|date('Y-m-d') >= strtotime("today")|date('Y-m-d') ) %}
 
           {% if first is not defined %}
-              <h6 class="soon--date soon--date-now"><span class="soon--dot soon--dot-now"></span> &nbsp;
+              <h6 class="soon__date soon__date--now"><span class="soon__dot soon__dot--now"></span> &nbsp;
               {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
               </h6>
             {% set first = 1 %}
@@ -97,14 +97,14 @@ news:
 
           {% if p.header.start > currdate %}
             {% set currdate = p.header.start %}
-            <h6 class="soon--date"><span class="soon--dot"></span> &nbsp;
+            <h6 class="soon__date"><span class="soon__dot"></span> &nbsp;
               {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
             </h6>
           {% endif %}
 
           
           <section class="editBliziSeButton" style="cursor: pointer; background-color:white">
-            <h4 class="soon-title">
+            <h4 class="soon__title">
               {{ p.header.title ~' '~ p.header.event.location }} 
           
               <br>
@@ -118,7 +118,7 @@ news:
                 {% endif %}
               </em>
             </h4>
-            <article class="soon-content" data-id="{{p.header.id}}">
+            <article class="soon__content" data-id="{{p.header.id}}">
               {{p.content}}
             </article>
           </section>

@@ -100,7 +100,7 @@ news:
   </div> <!--  novinky -->
 
 
-  <div id="soon" class="col-md-4">
+  <div id="soon" class="soon col-md-4">
       
       {% set soon_collection = page.collection() %}
 
@@ -122,14 +122,14 @@ news:
         </div>
       {% endcatch %}
 
-      <div id="soon--timeline"></div>
+      <div class="soon__timeline"></div>
       {% for i in 0..10 %}
           {% set currdate = strtotime("today +" ~ i ~ " day")|date('Y-m-d') %}
 
           {% if currdate in events|keys or currdate in entries|keys or currdate == "now"|date('Y-m-d') %}
-            <h4 class="soon--date">
-              <span class="soon--dot {% if currdate == "now"|date('Y-m-d') %} soon--dot-now {% endif %}"></span> &nbsp;      
-              <span class="soon--countdown">
+            <h4 class="soon__date">
+              <span class="soon__dot {% if currdate == "now"|date('Y-m-d') %} soon__dot--now {% endif %}"></span> &nbsp;      
+              <span class="soon__countdown">
                 {% if i == 0 %}
                   dnes
                 {% elseif i == 1 %}
@@ -140,7 +140,7 @@ news:
                   za {{i}} dní
                 {% endif %}
               </span>
-              <span class="soon--day"> 
+              <span class="soon__day"> 
                 {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc d.M.') }}
               </span>
             </h4>
@@ -149,8 +149,8 @@ news:
           {# ongoing events that started before today #}
           {% for p in attribute(events, currdate) if currdate in events|keys %}      
               <a href="{{p.url}}">
-              <section class="event" title="Klikni pro více informací">
-                <h3 class="soon-title">
+              <section class="soon__event" title="Klikni pro více informací">
+                <h3 class="soon__title">
                   {{ p.header.title ~' '~ p.header.event.location }} 
                   <br>
                   <em style="font-weight:normal;font-size: 1rem;">
@@ -164,7 +164,7 @@ news:
                   </em>
                 </h3>
                 
-                <article class="soon-content" data-id="{{p.header.id}}" data-template="{{p.header.template}}">
+                <article class="soon__content" data-id="{{p.header.id}}" data-template="{{p.header.template}}">
                   {{p.content|markdown}}
                 </article>
               </section>
@@ -172,7 +172,7 @@ news:
           {% endfor %}
 
           {% if currdate in entries|keys %}
-            <section class="soon-deadline">
+            <section class="soon__deadline">
               <div class="title"><i class="fa fa-bell-o" aria-hidden="true"></i> Končící přihlášky <br></div>
 
               {% for event in attribute(entries, currdate) %}

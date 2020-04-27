@@ -1506,6 +1506,9 @@ table.plan td {
 ***** HOME ******
 ****************/
 /* home - news */
+#novinky hr {
+  border-bottom: solid 2px #2B2B2B; }
+
 .newsPictures {
   margin: 1em 0 0 0; }
 
@@ -1519,29 +1522,29 @@ table.plan td {
 #soon {
   padding: 0 2.5rem;
   background-color: #DDD; }
-  #soon section {
-    padding: 3rem;
-    margin: 3rem;
-    position: relative;
-    left: 1rem;
-    background-color: white;
-    border-radius: 5px; }
-    @media screen and (max-width: 1680px) {
-      #soon section {
-        padding: 1.5rem;
-        margin: 1.5rem; } }
 
-.soon--date {
-  padding-top: 2.5rem; }
+.soon__timeline {
+  position: absolute;
+  float: left;
+  border: 2px #202020 solid;
+  width: 0;
+  left: 46px;
+  margin-top: 56px;
+  height: calc(100% - 56px); }
 
-#soon section > article > ul {
-  margin: 0; }
+.soon__event, .soon__deadline {
+  padding: 3rem;
+  margin: 3rem;
+  position: relative;
+  left: 1rem;
+  background-color: white;
+  border-radius: 5px; }
+  @media screen and (max-width: 1680px) {
+    .soon__event, .soon__deadline {
+      padding: 1.5rem;
+      margin: 1.5rem; } }
 
-#soon a, #soon a:hover {
-  text-decoration: none;
-  color: #202020 !important; }
-
-.soon--dot {
+.soon__dot {
   height: 16px;
   width: 16px;
   background-color: #DDD;
@@ -1551,22 +1554,35 @@ table.plan td {
   position: relative;
   border: solid; }
 
-.soon--dot-now {
+.soon__dot--now {
   background-color: #202020; }
 
-.soon--day {
+.soon__date {
+  padding-top: 2.5rem; }
+
+.soon section > article > ul {
+  margin: 0; }
+
+.soon a, .soon a:hover {
+  text-decoration: none;
+  color: #202020 !important; }
+
+.soon__day {
   float: right;
   top: 3px;
   position: relative; }
 
-#soon--timeline {
-  position: absolute;
-  float: left;
-  border: 2px #202020 solid;
-  width: 0;
-  left: 46px;
-  margin-top: 56px;
-  height: calc(100% - 56px); }
+.soon__deadline > .entry {
+  border-top: 1px dashed;
+  padding: 1em 0; }
+  .soon__deadline > .entry.last {
+    padding-bottom: 0; }
+
+.soon__deadline > .title {
+  padding-bottom: 0.8em; }
+
+.soon form {
+  margin: 0; }
 
 /****************
 **** Program ****
@@ -1693,15 +1709,6 @@ ul.tabs li.group-icon {
     ul.tabs li.group-icon {
       flex: 1; } }
 
-.soon-deadline > .entry {
-  border-top: 1px dashed;
-  padding: 1em 0; }
-  .soon-deadline > .entry.last {
-    padding-bottom: 0; }
-
-.soon-deadline > .title {
-  padding-bottom: 0.8em; }
-
 .logs-output table.noflex td.level .badge.error, .logs-output table.noflex td.level .badge.critical, .logs-output table.noflex td.level .badge.alert {
   background-color: #DC3023;
   color: #fff; }
@@ -1754,9 +1761,6 @@ ul.tabs li.group-icon {
 .comment-count {
   color: inherit;
   border-bottom: none; }
-
-#novinky hr {
-  border-bottom: solid 2px #2B2B2B; }
 
 #sidebar a.sneaky {
   color: #555; }
