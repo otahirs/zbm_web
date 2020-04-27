@@ -20,4 +20,6 @@ Až od září je naděje na akce pro max. 500 osob, jsou plány na změny organ
 Kvůli uzavření hranic byly zrušeny stacionární tréninkové kempy, takže o prázdninách se do Švédska nepojede - na začátku července chystáme namísto Švédska soustředění na Vysočině - určitě pro dorost+, ohledně žactva ještě není jasno, bude záležet na počtu přihlášek a případně povoleném limitu počtu účastníků.  
 Koncem prázdnin plánujeme pro TSM i oddíl soustředění u Jablonce či Liberce, a určitě stále počítáme s tím, že uděláme v srpnu tábor, jen bereme v úvahu předpokládaný počet max. 100 účastníků.
 
+Na závěr mi dovolte poděkovat skupince našich dorostenců, která se ujala tvorby a vydávání Polarisu - minimálně Klárce, Adamovi, Pepovi, Aničce, ale i všem ostatním. Skvělá práce!
+
 Díky těm, kdo pomáhají, přeju všem krásné Velikonoce a hlavně zůstaňme zdraví, abychom se brzy potkali u toho, co nás tak baví a naplňuje - na opravdových závodech a soustředěních!
