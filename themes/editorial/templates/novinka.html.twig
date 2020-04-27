@@ -7,9 +7,9 @@
 {% block header %}
   <header id="header">
 		<h2>
-      {{page.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }}
-      &nbsp; &nbsp; 
       {{ page.header.title }}
+      &nbsp; &nbsp; 
+      {{page.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }}
     </h2>
   </header><!-- End #header -->
 {% endblock %}
