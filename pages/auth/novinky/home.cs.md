@@ -81,7 +81,7 @@ news:
     <br>
       <h4>Kliknutím upravíte náhled události</h4>
     
-      <div id="soon__timeline"></div>
+      <div class="soon__timeline"></div>
       {% set soon_collection = page.collection() %}
       {% set currdate = strtotime("today")|date('Y-m-d') %}
 
@@ -103,7 +103,7 @@ news:
           {% endif %}
 
           
-          <section class="editBliziSeButton" style="cursor: pointer; background-color:white">
+          <section class="soon__event editBliziSeButton" style="cursor: pointer; background-color:white">
             <h4 class="soon__title">
               {{ p.header.title ~' '~ p.header.event.location }} 
           
