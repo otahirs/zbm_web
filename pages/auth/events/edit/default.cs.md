@@ -32,7 +32,7 @@ access:
     </div>
 {% else %}
 
-<form id="editEvent" method="post" action="">
+<form id="editEvent" method="post" action="" autocomplete="off">
         <input name="POST_type" type="hidden" value="editEvent">
         <input name="id" type="hidden" value="{{ event.header.id }}">
         {{ event.header.id }}
@@ -57,7 +57,7 @@ access:
         </ul>
         <div id="info" class="tab-content current">
             <label for="event-type">Kategorie / Typ</label>
-            <select name="type" id="event-type" autocomplete="off">
+            <select name="type" id="event-type">
                 <optgroup label="Závody">
                     <option value="Z" {% if event.header.type == "Z" %} selected {% endif %}>Závod</option>
                     <option value="BZL" {% if event.header.type == "BZL" %} selected {% endif %}>BZL</option>
