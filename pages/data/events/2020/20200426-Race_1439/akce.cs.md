@@ -6,10 +6,9 @@ id: 20200426-Race_1439
 start: '2020-04-26'
 end: '2020-04-26'
 title: 'Bezkontaktní testování'
-link: 'https://'
 place: 'Brno, Líšeň'
-type: Z
-template: zavod
+type: M
+template: trenink
 date: '2020-04-21'
 import:
     type: members
@@ -24,6 +23,14 @@ transport: 'Když dorazíte na kole, pohlídám ho.'
 leader: Jenda
 note: "Intervalový start, SI v air modu. Rozdílné tratě pro D a H, intervaly 5 minut\r\n\r\nUrčeno pro dorostence  a případně i eliťáky ZBM (aby nás nebylo moc). Pokud byste mohli jen odpoledne, napište to do přihlášky v členské sekci."
 gps: '49.23024, 16.70108'
+results:
+    -
+        name: Výsledky
+        link: 'https://docs.google.com/spreadsheets/d/1xO6e_kV6YGVTunUQKD3f5vAyD_RicK7UKbNI2yZbVlo/edit#gid=0'
+    -
+        name: Mezičasy
+        link: 'https://drive.google.com/file/d/1-1iKsXDQN-3ClS2AWQ7qHA1PcPmT_tQS/view?usp=sharing'
 ---
+
 {{page.header.note}}
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
