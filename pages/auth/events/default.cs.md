@@ -95,7 +95,7 @@ content:
   
       <tr>
           <td class="datum edit" title="Upravit událost">
-            <a href="/auth/events/edit?event={{ p.header.id[:4] }}/{{ p.header.id }}" target="_blank">
+            <a href="/auth/events/edit?event={{ p.header.id[:4] }}/{{ p.header.id|lower }}" target="_blank">
               {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
               {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
               {% if p.header.start|date('m') != p.header.end|date('m') %}
@@ -114,12 +114,12 @@ content:
             </a>
           </td>
           <td class="nazev edit" title="Upravit událost">
-            <a href="/auth/events/edit?event={{ p.header.id[:4] }}/{{ p.header.id }}" target="_blank">
+            <a href="/auth/events/edit?event={{ p.header.id[:4] }}/{{ p.header.id|lower }}" target="_blank">
               <b>{{ p.title }}</b>
             </a>
           </td>
           <td class="misto edit" title="Upravit událost">
-            <a href="/auth/events/edit?event={{ p.header.id[:4] }}/{{ p.header.id }}" target="_blank">
+            <a href="/auth/events/edit?event={{ p.header.id[:4] }}/{{ p.header.id|lower }}" target="_blank">
               {{p.header.place}}
             </a>
           </td>
