@@ -167,36 +167,43 @@
 
             var center = SMap.Coords.fromWGS84( lng,alt );
             var m = new SMap(JAK.gel("map"), center, 10);
-            m.addDefaultLayer(SMap.DEF_BASE).enable();
+            m.addDefaultLayer(SMap.DEF_TURIST).enable();
             m.addDefaultControls();	 
+            
         
         // marker    
             var layer = new SMap.Layer.Marker();
             m.addLayer(layer);
             layer.enable();
-
-            var card = new SMap.Card();
-            card.getHeader().innerHTML = "<strong>{{page.header.title}}</strong>";
-            card.getBody().innerHTML = '<a href="https://mapy.cz/zakladni?x=' + lng + '&y=' + alt + '&z=17&source=coor&id=' + lng + '%2C' + alt + '" target="_blank">otevřít na mapy.cz</a>';
-  
-            var options = { 
-                title: "Místo tréninku"
-            };
-            var marker = new SMap.Marker(center, "myMarker", options);
-            marker.decorate(SMap.Marker.Feature.Card, card);
-            layer.addMarker(marker);     
+            var marker = new SMap.Marker(center, "myMarker");
+            layer.addMarker(marker);    
+            
 
         // autorezize
             var sync = new SMap.Control.Sync();
             m.addControl(sync);      
 
-        // zakázání scrollovacího zoomování
+        
             var controls = m.getControls();
             for (var i=0;i<controls.length;i++) {
+                // zakázání scrollovacího zoomování
                 if (controls[i] instanceof SMap.Control.Mouse) {
                     controls[i].configure(SMap.MOUSE_PAN | SMap.MOUSE_ZOOM);
                 }
+                // remove compass
+                if (controls[i] instanceof SMap.Control.Compass) {
+                    m.removeControl(controls[i]);
+                }
             }
+
+            var lnt = "Zobrazit na Mapy.cz";
+            var link = 'https://mapy.cz/zakladni?x=' + lng + '&y=' + alt + '&z=15&source=coor&id=' + lng + '%2C' + alt;
+            var lnd = JAK.mel("a", {href: link, target:"_blank", innerHTML:lnt});
+            lnd.style.cssText = "position:absolute;left:8px; bottom:54px;"+
+            "display:block; padding:4px 8px; background-color:#e65a51; border:medium none;"+
+            "border-radius:3px; box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3);"+
+            "text-decoration:none; color:#fff;";
+            m.getContainer().appendChild(lnd);
     });
     </script>
     {% endif %}
