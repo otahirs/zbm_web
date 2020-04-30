@@ -6,7 +6,32 @@ access:
     site:
         plan: true
 planTemplate: None
-plan: null
+plan:
+    monday: null
+    tuesday:
+        1:
+            name: 'Teorie'
+            place: 'https://meet.jit.si/ZBM'
+            meetup: '20:00'
+            group:
+                    - dorost
+        2:
+            name: 'Intervaly Soběšice'
+            place: 'https://mapy.cz/s/lonapacopo'
+            meetup: '17:15'
+            group:
+                    - dorost
+    wednesday:
+        1:
+            name: 'Vytrvalost Kohoutovice'
+            place: 'https://mapy.cz/s/gutebutano'
+            meetup: '17:30'
+            group:
+                    - dorost
+    thursday: null
+    friday: null
+    saturday: null
+    sunday: null
 ---
 
 <div id="planEdit">
