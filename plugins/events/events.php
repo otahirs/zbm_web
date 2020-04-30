@@ -156,10 +156,10 @@ class EventsPlugin extends Plugin
 	{
 		// setup
 		$page = 			$this->grav['page'];
-		$pages = 			$this->grav['pages'];
-		$collection = $pages->all()->ofOneOfTheseTypes(['zavod', 'trenink', 'soustredeni', 'tabor']);
+		$collection = $page->evaluate(['@page.descendants' => '/data/events'])->routable();
+		//$pages = 			$this->grav['pages'];
 		$twig = 			$this->grav['twig'];
-		$assets = 		$this->grav['assets'];
+		//$assets = 		$this->grav['assets'];
 
 		// only load the vars if calendar page
 		if ($page->template() == 'calendar')
