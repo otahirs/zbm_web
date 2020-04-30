@@ -1563,7 +1563,7 @@ table.plan td {
 .soon section > article > ul {
   margin: 0; }
 
-.soon a, .soon a:hover {
+.soon__link-to-event, .soon__link-to-event:hover {
   text-decoration: none;
   color: #202020 !important; }
 

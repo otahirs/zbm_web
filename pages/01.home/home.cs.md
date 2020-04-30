@@ -150,7 +150,7 @@ news:
           {% for p in attribute(events, currdate) if currdate in events|keys %}      
               
               <section class="soon__event">
-                <a href="{{p.url}}" title="Klikni pro všechny informace">
+                <a href="{{p.url}}" title="Klikni pro všechny informace"  class="soon__link-to-event">
                   <h3 class="soon__title">
                     {{ p.header.title ~' '~ p.header.event.location }} 
                     <br>
