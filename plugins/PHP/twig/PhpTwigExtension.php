@@ -154,6 +154,29 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
         return $template;
     }
 
+    function rcopy($src, $dst) {  
+        // open the source directory 
+        $dir = opendir($src);  
+        // Make the destination directory if not exist 
+        @mkdir($dst);  
+        // Loop through the files in source directory 
+        while( $file = readdir($dir) ) {
+            if (( $file != '.' ) && ( $file != '..' )) {  
+                if ( is_dir($src . '/' . $file) )  
+                {  
+                    // Recursively calling custom copy function 
+                    // for sub directory  
+                    PhpTwigExtension::rcopy($src . '/' . $file, $dst . '/' . $file);  
+      
+                }  
+                else {  
+                    copy($src . '/' . $file, $dst . '/' . $file);  
+                }  
+            }  
+        }  
+        closedir($dir); 
+    }  
+
     /**********************************************
     **      fce pro parsovani stranek            **
     **********************************************/
@@ -823,10 +846,20 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
         $time = time();
         $num = 0;
         foreach( $data["Data"] as $id => $event) {
-            if ($event["Type"] != "Z" || $event["Cancelled"] == "1") {
+            if ($event["Type"] != "Z") 
+                continue;
+            $event_id = date_format(date_create($event["Date1"]), "Ymd") . "-" . $id;
+            if ($event["Cancelled"] == "1") {
+                $year = substr($event["Date1"], 0, 4);
+                $path = "./user/pages/data/events/". $year ."/". $event_id;
+                if (file_exists($path)) {
+                    $trashpath = "./user/pages/data/trashbin/events/" . $event_id ;
+                    PhpTwigExtension::rcopy($path, $trashpath);
+                    PhpTwigExtension::rrmdir($path);
+                }
                 continue;
             }
-            $event_list[$num]["id"] = date_format(date_create($event["Date1"]), "Ymd") . "-" . $id;
+            $event_list[$num]["id"] = $event_id;
             $event_list[$num]["start"] = $event["Date1"];
             $event_list[$num]["end"] = array_key_exists("Date2", $event) ? $event["Date2"] : $event["Date1"];
             $event_list[$num]["title"] = $event["Name"];
@@ -969,6 +1002,8 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
                 }
                 if(isset($_POST["delete"])){
                     $path = "./user/pages/data/events/". substr($_POST["id"], 0 , 4) ."/". $_POST["id"] ;
+                    $trashpath = "./user/pages/data/trashbin/events/" . $_POST["id"];
+                    PhpTwigExtension::rcopy($path, $trashpath);
                     PhpTwigExtension::rrmdir($path);
                     PhpTwigExtension::log_grav($user . " | EVENT removed | " . $_POST["id"]);
                     Cache::clearCache('cache-only');
