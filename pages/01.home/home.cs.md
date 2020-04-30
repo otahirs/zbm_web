@@ -148,27 +148,28 @@ news:
           
           {# ongoing events that started before today #}
           {% for p in attribute(events, currdate) if currdate in events|keys %}      
-              <a href="{{p.url}}">
-              <section class="soon__event" title="Klikni pro více informací">
-                <h3 class="soon__title">
-                  {{ p.header.title ~' '~ p.header.event.location }} 
-                  <br>
-                  <em style="font-weight:normal;font-size: 1rem;">
-                    {% set group = p.header.taxonomy.skupina %}
-                    {% if group|length > 0 and group|length < 6 %}
-                    {% if "zabicky" in group %} žabičky {% endif %} 
-                    {% if "pulci1" in group and "pulci2" in group %} pulci {% elseif "pulci1" in group %} pulci1 {% elseif "pulci2" in group %} pulci2 {% endif %} 
-                    {% if "zaci1" in group and "zaci2" in group %} žáci {% elseif "zaci1" in group %} žáci1 {% elseif "zaci2" in group %} žáci2 {% endif %} 
-                    {% if "dorost" in group %} dorost+ {% endif %}
-                    {% endif %}
-                  </em>
-                </h3>
-                
+              
+              <section class="soon__event">
+                <a href="{{p.url}}" title="Klikni pro všechny informace">
+                  <h3 class="soon__title">
+                    {{ p.header.title ~' '~ p.header.event.location }} 
+                    <br>
+                    <em style="font-weight:normal;font-size: 1rem;">
+                      {% set group = p.header.taxonomy.skupina %}
+                      {% if group|length > 0 and group|length < 6 %}
+                      {% if "zabicky" in group %} žabičky {% endif %} 
+                      {% if "pulci1" in group and "pulci2" in group %} pulci {% elseif "pulci1" in group %} pulci1 {% elseif "pulci2" in group %} pulci2 {% endif %} 
+                      {% if "zaci1" in group and "zaci2" in group %} žáci {% elseif "zaci1" in group %} žáci1 {% elseif "zaci2" in group %} žáci2 {% endif %} 
+                      {% if "dorost" in group %} dorost+ {% endif %}
+                      {% endif %}
+                    </em>
+                  </h3>
+                </a>
                 <article class="soon__content" data-id="{{p.header.id}}" data-template="{{p.header.template}}">
                   {{p.content|markdown}}
                 </article>
               </section>
-              </a>
+              
           {% endfor %}
 
           {% if currdate in entries|keys %}
