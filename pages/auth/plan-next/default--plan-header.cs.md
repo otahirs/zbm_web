@@ -6,32 +6,7 @@ access:
     site:
         plan: true
 planTemplate: None
-plan:
-    monday: null
-    tuesday:
-        1:
-            name: 'Výběhy Holedná - terénem'
-            place: 'https://mapy.cz/s/botevudege'
-            meetup: '17:00'
-            group:
-                    - dorost
-        2:
-            name: 'Teorie'
-            place: 'https://meet.jit.si/ZBM'
-            meetup: '20:00'
-            group:
-                    - dorost
-    wednesday:
-        1:
-            name: 'Vytrvalost Medlánky'
-            place: 'https://mapy.cz/s/nukamonupe'
-            meetup: '17:15'
-            group:
-                    - dorost
-    thursday: null
-    friday: null
-    saturday: null
-    sunday: null
+plan: null
 ---
 
 {# ************************************************************#}
