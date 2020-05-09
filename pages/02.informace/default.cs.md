@@ -189,7 +189,7 @@ V krajní nouzi pak můžete využít některého z následujících kontaktů:
 * Honza Drábek, e-mail – _prihlasky@zbmob.cz_  mobil – 608 477 026 
 * Peťa Koporová, e-mail – _prihlasky@zbmob.cz_ 
 
-Pokud vám nefunguje vaše přístupové jméno a heslo do našeho „Přihláškového systému", kontaktujte Richarda Pátka - _arnost.p@centrum.cz_, který vám tyto údaje poskytne.
+Pokud vám nefunguje vaše přístupové jméno a heslo do našeho „Přihláškového systému", kontaktujte Lukáše Königa - _kenia@seznam.cz_, který vám tyto údaje poskytne.
 <br>
 ### Dohlášky 
 doržujte prosím data přihlášek a pokud možno se na závody nepřihlašujte individuálně, ale vždy prostřednictvím oddílu:
