@@ -846,7 +846,7 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
         $time = time();
         $num = 0;
         foreach( $data["Data"] as $id => $event) {
-            if ($event["Type"] != "Z") 
+            if (!in_array($event["Type"], ["Z", "S", "T", "V"])) // zavod, soustredeni, trenink, vysetreni
                 continue;
             $event_id = date_format(date_create($event["Date1"]), "Ymd") . "-" . $id;
             if ($event["Cancelled"] == "1") {
