@@ -57,7 +57,7 @@ class PHPPlugin extends Plugin
 
         
         $job = $scheduler->addFunction('Grav\Plugin\PhpTwigExtension::importRacesFromMembers', [], 'import-races-from-members');
-        $job->at('0 0 * * *'); 
+        $job->at('* * * * *'); 
     }
 
     // nastavi "pristi tyden" jako "tento tyden" a do "pristi tyden" nacte predchozi pouzitou sablonu - potreba CRON/ task scheduler 
