@@ -21,7 +21,7 @@ date: '2018-10-28'
 <h2>Další užitečné kontakty</h2>
 **Finance:** Věra Mádlová - vera.madlova@centrum.cz
 **Přihlášky na závody:** Jan Drábek - drbca@centrum.cz
-**IT - přihláškový systém:** Richard Pátek - arnost.p@centrum.cz 
+**IT - přihláškový systém:** Lukáš König - kenia@seznam.cz  
 **IT - web:** Otakar Hirš - otakar.hirs@gmail.com
 **Sklad:** Štěpán Zimmermann - stepazdepa@seznam.cz
 **Správce map:** Stanislav Mokrý - mokry.stanislav@gmail.com
