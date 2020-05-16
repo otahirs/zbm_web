@@ -6,7 +6,25 @@ access:
     site:
         plan: true
 planTemplate: None
-plan: null
+plan:
+    monday: null
+    tuesday: null
+    wednesday:
+        1:
+            name: 'Vytrvalost Hády'
+            place: 'Podzimní 21'
+            meetup: '17:00'
+            group:
+                    - dorost
+    thursday:
+        1:
+            name: 'Posilování'
+            place: 'bude li hezky, u někoho na zahradě'
+            meetup: '17:00'
+            group:
+    friday: null
+    saturday: null
+    sunday: null
 ---
 
 {# ************************************************************#}
