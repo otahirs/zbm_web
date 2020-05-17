@@ -5,23 +5,24 @@ process:
 access:
     site:
         plan: true
-planTemplate: None
+planTemplate: summer
 plan:
-    monday: null
-    tuesday: null
-    wednesday:
+    monday:
         1:
-            name: 'Vytrvalost Hády'
-            place: 'Podzimní 21'
+            name: 'Kolo'
+            place: 'https://en.mapy.cz/s/pojafabaha'
+            meetup: '11:00'
+            group:
+                    - dorost
+    tuesday:
+        1:
+            name: 'Intervalový trénink'
+            place: 'PPV - https://en.mapy.cz/s/fokanejepe'
             meetup: '17:00'
             group:
                     - dorost
-    thursday:
-        1:
-            name: 'Posilování'
-            place: 'bude li hezky, u někoho na zahradě'
-            meetup: '17:00'
-            group:
+    wednesday: null
+    thursday: null
     friday: null
     saturday: null
     sunday: null
