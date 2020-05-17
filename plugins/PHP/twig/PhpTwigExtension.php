@@ -865,7 +865,7 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
             $event_list[$num]["title"] = $event["Name"];
             //$event_list[$num][""] = $event["Club"];
             $link = $event["Link"];
-            if (!PhpTwigExtension::startsWith($link, "http")) {
+            if (!empty($link) && !PhpTwigExtension::startsWith($link, "http")) {
                 $link = "https://" . $link;
             }
             $event_list[$num]["link"] = $link;
