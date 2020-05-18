@@ -5,7 +5,7 @@ id: 20200624-Race_1455
 start: '2020-06-24'
 end: '2020-06-24'
 title: 'Dorost+ - mapový trénink Stropešín'
-link: 'https://'
+link: ''
 place: Stropešín
 type: T
 note: Hagaby

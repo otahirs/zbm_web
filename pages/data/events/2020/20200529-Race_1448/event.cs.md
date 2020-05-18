@@ -6,7 +6,7 @@ id: 20200529-Race_1448
 start: '2020-05-29'
 end: '2020-05-31'
 title: 'Utkání nadějí brněnského TSM/SCM a pardubického TSM/SCM'
-link: 'https://'
+link: ''
 place: 'dráha Brno, Vysočina'
 type: Z
 template: zavod
