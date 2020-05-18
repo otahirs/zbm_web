@@ -6,7 +6,7 @@ id: 20200725-Race_1441
 start: '2020-07-25'
 end: '2020-08-01'
 title: 'Prázdninové soustředění Liberecko'
-link: 'https://'
+link: ''
 place: 'Karlov (Josefův důl)'
 type: S
 template: soustredeni

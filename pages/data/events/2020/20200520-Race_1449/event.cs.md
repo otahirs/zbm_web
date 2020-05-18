@@ -6,7 +6,7 @@ id: 20200520-Race_1449
 start: '2020-05-20'
 end: '2020-05-20'
 title: 'Dorost+ - mapový trénink Březina'
-link: 'https://'
+link: ''
 place: Březina
 type: T
 template: trenink

@@ -10,7 +10,7 @@ id: 20200513-Race_1447
 start: '2020-05-13'
 end: '2020-05-13'
 title: 'Žákovský mapový trénink, Vytrvalost D+'
-link: 'https://'
+link: ''
 place: 'Útěchov, U buku'
 type: T
 template: trenink

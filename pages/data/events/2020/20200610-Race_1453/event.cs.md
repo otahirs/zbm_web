@@ -5,7 +5,7 @@ id: 20200610-Race_1453
 start: '2020-06-10'
 end: '2020-06-10'
 title: 'Dorost+ - mapový trénink Velká Roudka'
-link: 'https://'
+link: ''
 place: 'Velká Roudka'
 type: T
 note: 'krátká trať'

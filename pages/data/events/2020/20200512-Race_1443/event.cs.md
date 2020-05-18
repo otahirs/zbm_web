@@ -6,7 +6,7 @@ id: 20200512-Race_1443
 start: '2020-05-12'
 end: '2020-05-12'
 title: 'Mapové intervaly Bystrc'
-link: 'https://'
+link: ''
 place: 'Brno, Bystrc'
 type: T
 template: trenink

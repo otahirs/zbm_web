@@ -5,7 +5,7 @@ id: 20200603-Race_1452
 start: '2020-06-03'
 end: '2020-06-03'
 title: "Dorost+ - mapový trénink Valchov\t"
-link: 'https://'
+link: ''
 place: Valchov
 type: T
 note: 'neúpná mapa -> buzola'

@@ -10,7 +10,7 @@ id: 20200701-Race_1440
 start: '2020-07-01'
 end: '2020-07-05'
 title: 'Mapové Soustředění Vysočina'
-link: 'https://'
+link: ''
 place: Svratouch
 type: S
 template: soustredeni

@@ -5,7 +5,7 @@ id: 20200617-Race_1454
 start: '2020-06-17'
 end: '2020-06-17'
 title: 'Dorost+ - mapový trénink Kladoruby'
-link: 'https://'
+link: ''
 place: 'Kladoruby - Andělka'
 type: T
 note: klasika

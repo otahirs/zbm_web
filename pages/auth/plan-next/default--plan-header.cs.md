@@ -6,26 +6,7 @@ access:
     site:
         plan: true
 planTemplate: summer
-plan:
-    monday:
-        1:
-            name: 'Kolo'
-            place: 'https://en.mapy.cz/s/pojafabaha'
-            meetup: '11:00'
-            group:
-                    - dorost
-    tuesday:
-        1:
-            name: 'Intervalový trénink'
-            place: 'PPV - https://en.mapy.cz/s/fokanejepe'
-            meetup: '17:00'
-            group:
-                    - dorost
-    wednesday: null
-    thursday: null
-    friday: null
-    saturday: null
-    sunday: null
+plan: null
 ---
 
 {# ************************************************************#}

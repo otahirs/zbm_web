@@ -5,7 +5,7 @@ id: 20200527-Race_1451
 start: '2020-05-27'
 end: '2020-05-27'
 title: 'Dorost+ - mapový trénink Kuničky'
-link: 'https://'
+link: ''
 place: Kuničky
 type: T
 note: 'První úsek štafet'
