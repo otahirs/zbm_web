@@ -6,7 +6,20 @@ access:
     site:
         plan: true
 planTemplate: summer
-plan: null
+plan:
+    monday: null
+    tuesday:
+        1:
+            name: 'Dráha Pod Palackého vrchem'
+            place: 'https://en.mapy.cz/s/netuhomubo'
+            meetup: '16:30'
+            group:
+                    - dorost
+    wednesday: null
+    thursday: null
+    friday: null
+    saturday: null
+    sunday: null
 ---
 
 {# ************************************************************#}

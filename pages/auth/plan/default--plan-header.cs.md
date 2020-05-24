@@ -7,22 +7,48 @@ access:
         plan: true
 planTemplate: summer
 plan:
-    monday:
-        1:
-            name: 'Kolo'
-            place: 'https://en.mapy.cz/s/pojafabaha'
-            meetup: '11:00'
-            group:
-                    - dorost
+    monday: null
     tuesday:
         1:
-            name: 'Intervalový trénink'
-            place: 'PPV - https://en.mapy.cz/s/fokanejepe'
-            meetup: '17:00'
+            name: 'dráha'
+            place: 'stadion Pod Palackého vrchem'
+            meetup: '16:00'
+            group:
+                    - zaci1
+                    - zaci2
+        2:
+            name: 'Intervaly po cestách nebo dráha Pod Palackého vrchem'
+            place: 'https://en.mapy.cz/s/netuhomubo'
+            meetup: '16:30'
             group:
                     - dorost
-    wednesday: null
-    thursday: null
+    wednesday:
+        1:
+            name: 'mapový trénink'
+            place: 'Žebětín - fáborky na start ze zastávky Ríšova'
+            meetup: '16:15'
+            group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+    thursday:
+        1:
+            name: 'běžecký trénink'
+            place: 'Rosnička'
+            meetup: '16:00'
+            group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+        2:
+            name: 'posilování'
+            place: 'Podzimní 21, na zahradě'
+            meetup: '16:30'
+            group:
+                    - dorost
     friday: null
     saturday: null
     sunday: null

@@ -5,6 +5,7 @@ taxonomy:
         2: pulci2
         3: zaci1
         4: dorost
+        5: zaci2
 id: 20200816-Race_1434
 start: '2020-08-16'
 end: '2020-08-23'
