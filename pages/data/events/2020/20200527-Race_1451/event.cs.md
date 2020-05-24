@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - dorost
 id: 20200527-Race_1451
 start: '2020-05-27'
 end: '2020-05-27'
@@ -14,5 +15,13 @@ date: '2020-05-15'
 import:
     type: members
     time: 1589493601
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+leader: ''
 ---
 {{page.header.note}}
