@@ -866,7 +866,7 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
             //$event_list[$num][""] = $event["Club"];
             $link = $event["Link"];
             if (!empty($link) && !PhpTwigExtension::startsWith($link, "http")) {
-                $link = "https://" . $link;
+                $link = "http://" . $link;
             }
             $event_list[$num]["link"] = $link;
             if(PhpTwigExtension::startsWith($link, "https://oris.orientacnisporty.cz/Zavod?id=" )) {
