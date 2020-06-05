@@ -7,48 +7,50 @@ access:
         plan: true
 planTemplate: summer
 plan:
-    monday: null
+    monday:
+        1:
+            name: 'Seznámení se s novým programem a pozávodní pohybové aktivity'
+            place: 'https://www.muni.cz/mapa/budova-788'
+            meetup: 'sraz 13:55, 14:00 (seznámení se), 15:00 lehký trénink '
+            group:
+                    - dorost
     tuesday:
         1:
-            name: 'dráha'
-            place: 'stadion Pod Palackého vrchem'
-            meetup: '16:00'
+            name: 'Běžecké posilování'
+            place: 'stadion pod Palackého vrchem'
+            meetup: '16:00 - 17:45'
             group:
                     - zaci1
                     - zaci2
-        2:
-            name: 'Intervaly po cestách nebo dráha Pod Palackého vrchem'
-            place: 'https://en.mapy.cz/s/netuhomubo'
-            meetup: '16:30'
-            group:
-                    - dorost
     wednesday:
         1:
-            name: 'mapový trénink'
-            place: 'Žebětín - fáborky na start ze zastávky Ríšova'
-            meetup: '16:15'
-            group:
-                    - zabicky
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-    thursday:
-        1:
-            name: 'běžecký trénink'
-            place: 'Rosnička'
-            meetup: '16:00'
-            group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-        2:
-            name: 'posilování'
-            place: 'Podzimní 21, na zahradě'
-            meetup: '16:30'
+            name: 'Silová příprava'
+            place: 'Kampus Bohunice'
+            meetup: '14:30'
             group:
                     - dorost
+    thursday:
+        1:
+            name: 'Dráha nebo intervaly po cestách'
+            place: 'Areál VUT pod Palackého vrchem'
+            meetup: '17:00'
+            group:
+                    - dorost
+        2:
+            name: 'Běžecký trénink'
+            place: 'hala Rosnička (sraz) a okolí'
+            meetup: '16:00 - 17:45 (P1 + P2 + Z1 prvním rokem)'
+            group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+        3:
+            name: 'Běžecký trénink'
+            place: 'hala Rosnička (sraz) a okolí'
+            meetup: '16:00 - 18:00 (Z1 druhým rokem + Z2)'
+            group:
+                    - zaci1
+                    - zaci2
     friday: null
     saturday: null
     sunday: null
