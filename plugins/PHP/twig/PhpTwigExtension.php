@@ -848,7 +848,7 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
         foreach( $data["Data"] as $id => $event) {
             if (!in_array($event["Type"], ["Z", "S", "T", "V"])) // zavod, soustredeni, trenink, vysetreni
                 continue;
-            $event_id = date_format(date_create($event["Date1"]), "Ymd") . "-" . $id;
+            $event_id = date_format(date_create($event["Date1"]), "Y") . "-" . $id;
             if ($event["Cancelled"] == "1") {
                 $year = substr($event["Date1"], 0, 4);
                 $path = "./user/pages/data/events/". $year ."/". $event_id;
