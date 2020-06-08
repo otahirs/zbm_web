@@ -6,54 +6,7 @@ access:
     site:
         plan: true
 planTemplate: summer
-plan:
-    monday:
-        1:
-            name: 'Posilovna'
-            place: 'Bohunice, kampus, FSpS'
-            meetup: '17:30'
-            group:
-                    - dorost
-    tuesday:
-        1:
-            name: 'Běžecké posilování'
-            place: 'Stadion pod Palackého vrchem'
-            meetup: '16:00 – 17:45'
-            group:
-                    - zaci1
-                    - zaci2
-    wednesday:
-        1:
-            name: 'Posilovna'
-            place: 'Bohunice, kampus, FSpS'
-            meetup: '14:30'
-            group:
-                    - dorost
-    thursday:
-        1:
-            name: 'Běžecký trénink'
-            place: 'hala Rosnička (sraz) a okolí'
-            meetup: '16:00 – 17:45 (P1 + P2 + Z1 prvním rokem)'
-            group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
-        2:
-            name: 'Běžecký trénink'
-            place: 'hala Rosnička (sraz) a okolí'
-            meetup: '16:00 – 18:00 (Z1 druhým rokem + Z2)'
-            group:
-                    - zaci1
-                    - zaci2
-        3:
-            name: 'Dráha'
-            place: 'Areál VUT, pPv'
-            meetup: '17:00'
-            group:
-                    - dorost
-    friday: null
-    saturday: null
-    sunday: null
+plan: null
 ---
 
 {# ************************************************************#}

@@ -26,3 +26,4 @@ leader: 'Andrea, doprava Adam U.'
 gps: '49.36620, 17.77326'
 ---
 {{page.header.note}}
+* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.

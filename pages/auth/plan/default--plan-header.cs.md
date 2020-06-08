@@ -9,48 +9,48 @@ planTemplate: summer
 plan:
     monday:
         1:
-            name: 'Seznámení se s novým programem a pozávodní pohybové aktivity'
-            place: 'https://www.muni.cz/mapa/budova-788'
-            meetup: 'sraz 13:55, 14:00 (seznámení se), 15:00 lehký trénink '
+            name: 'Posilovna'
+            place: 'Bohunice, kampus, FSpS'
+            meetup: '14:30'
             group:
                     - dorost
     tuesday:
         1:
             name: 'Běžecké posilování'
-            place: 'stadion pod Palackého vrchem'
-            meetup: '16:00 - 17:45'
+            place: 'Stadion pod Palackého vrchem'
+            meetup: '16:00 – 17:45'
             group:
                     - zaci1
                     - zaci2
     wednesday:
         1:
-            name: 'Silová příprava'
-            place: 'Kampus Bohunice'
+            name: 'Posilovna'
+            place: 'Bohunice, kampus, FSpS'
             meetup: '14:30'
             group:
                     - dorost
     thursday:
         1:
-            name: 'Dráha nebo intervaly po cestách'
-            place: 'Areál VUT pod Palackého vrchem'
-            meetup: '17:00'
-            group:
-                    - dorost
-        2:
             name: 'Běžecký trénink'
             place: 'hala Rosnička (sraz) a okolí'
-            meetup: '16:00 - 17:45 (P1 + P2 + Z1 prvním rokem)'
+            meetup: '16:00 – 17:45 (P1 + P2 + Z1 prvním rokem)'
             group:
                     - pulci1
                     - pulci2
                     - zaci1
-        3:
+        2:
             name: 'Běžecký trénink'
             place: 'hala Rosnička (sraz) a okolí'
-            meetup: '16:00 - 18:00 (Z1 druhým rokem + Z2)'
+            meetup: '16:00 – 18:00 (Z1 druhým rokem + Z2)'
             group:
                     - zaci1
                     - zaci2
+        3:
+            name: 'Dráha'
+            place: 'Areál VUT, pPv'
+            meetup: '17:00'
+            group:
+                    - dorost
     friday: null
     saturday: null
     sunday: null
