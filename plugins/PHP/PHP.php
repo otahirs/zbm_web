@@ -55,6 +55,8 @@ class PHPPlugin extends Plugin
         $job = $scheduler->addFunction('\Grav\Plugin\PHPPlugin::shiftPlan', [], 'shift-plan-for-this-week');
         $job->at('0 0 * * 1'); // every monday at 00:00
 
+        $job = $scheduler->addFunction('\Grav\Plugin\PHPPlugin::shiftPlan2', [], 'shift-plan2-for-this-week');
+        $job->at('0 0 * * 1'); // every monday at 00:00
         
         $job = $scheduler->addFunction('Grav\Plugin\PhpTwigExtension::importRacesFromMembers', [], 'import-races-from-members');
         $job->at('0 0 * * *'); 
@@ -84,18 +86,36 @@ class PHPPlugin extends Plugin
         $frontmatter = $php->get_frontmatter_as_array($plan_next_path);             
         $frontmatter['planTemplate'] = $template;                               // set last used template to the chosen one
         $frontmatter['plan'] = $php->get_plan_from_template($template);        // get chosen plan from page plan-templates
-        $frontmatter = Yaml::dump($frontmatter, 10);                            // make string from array 
-        // get page content
-        $content = $php->parse_file_content_only($plan_next_path);
-        // build page
-        $page = $php->combine_frontmatter_with_content($frontmatter, $content); 
-        // save page
-        $php->file_force_contents($plan_next_path, $page);
+        
+        $php->save_page_with_edited_frontmatter($plan_next_path, $frontmatter);
 
         $php->log_grav("Plan shifted");
 
         Cache::clearCache('cache-only');        
     }
+
+    public static function shiftPlan2(){
+        require_once(__DIR__ . '/twig/PhpTwigExtension.php');
+        $php = new PhpTwigExtension();
+
+        $plan_path = "./user/pages/auth/plan2/blank.md";
+        $plan_frontmatter = $php->get_frontmatter_as_array($plan_path);
+        $template_frontmatter = $php->get_frontmatter_as_array("./user/pages/auth/plan2/templates/blank.md");
+
+        $default_template = $template_frontmatter["defaultTemplate"];
+        $plan_frontmatter["plan"]["thisWeek"] = $plan_frontmatter["plan"]["nextWeek"];
+        $plan_frontmatter["plan"]["nextWeek"] = $template_frontmatter["templates"][$default_template]["plan"];
+
+        $php->save_page_with_edited_frontmatter($plan_path, $plan_frontmatter);
+
+        $php->log_grav("Plan2 shifted");
+
+        Cache::clearCache('cache-only');        
+    }
+
+
+
+    
 
 }
 ?>
