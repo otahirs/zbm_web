@@ -22,7 +22,13 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
             new \Twig_SimpleFunction('phpSavePolaris', [$this, 'SavePolaris']),
             new \Twig_SimpleFunction('phpDeletePolaris', [$this, 'DeletePolaris']),
             new \Twig_SimpleFunction('phpSavePlan', [$this, 'SavePlan']),
+            new \Twig_SimpleFunction('phpSavePlan2', [$this, 'SavePlan2']),
+            new \Twig_SimpleFunction('phpLoadPlanFromTemplate', [$this, 'LoadPlanFromTemplate']),
             new \Twig_SimpleFunction('phpSavePlanTemplate', [$this, 'SavePlanTemplate']), 
+            new \Twig_SimpleFunction('phpSavePlan2Template', [$this, 'SavePlan2Template']),
+            new \Twig_SimpleFunction('phpCreatePlanTemplate', [$this, 'CreatePlanTemplate']),
+            new \Twig_SimpleFunction('phpDeletePlanTemplate', [$this, 'DeletePlanTemplate']),
+            new \Twig_SimpleFunction('phpSetDefaultTemplate', [$this, 'SetDefaultTemplate']),
             new \Twig_SimpleFunction('phpTest', [$this, 'Test']),      
             new \Twig_SimpleFunction('phpSaveMapT', [$this, 'SaveMapT']),  
             new \Twig_SimpleFunction('phpDeleteMapT', [$this, 'DeleteMapT']),    
@@ -234,6 +240,21 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
         $frontmatter_yaml = PhpTwigExtension::parse_file_frontmatter_only($path_to_file);
         return Yaml::parse($frontmatter_yaml);
         // https://symfony.com/doc/current/components/yaml.html 
+    }
+
+    function save_page_with_edited_frontmatter($path, $frontmatter) {
+        // get page content
+        $content = $this->parse_file_content_only($path);
+
+        // arr to string
+        if (is_array($frontmatter)) {
+            $frontmatter = Yaml::dump($frontmatter, 10);
+        }
+        // build page
+        $page = $this->combine_frontmatter_with_content($frontmatter, $content);
+        
+        // save page
+        $this->file_force_contents($path, $page);
     }
 
     function generate_content($race){
@@ -632,6 +653,114 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
 /********************************************************
 ***** tento tyden, pristi tyden / plan, plan-next *******
 *********************************************************/
+
+function SavePlan2Template(){
+    if (empty($_POST["template"])) return;
+    $path = "./user/pages/auth/plan2/templates/blank.md";
+
+
+    $template_name = key($_POST["template"]);
+    $template = $_POST["template"][$template_name];
+
+    $frontmatter = $this->get_frontmatter_as_array($path);             
+    $frontmatter["templates"][$template_name] = $template;                 
+
+    $this->save_page_with_edited_frontmatter($path, $frontmatter);
+    Cache::clearCache('cache-only');
+}
+
+function SavePlan2(){
+    if (empty($_POST["plan"])) return;
+    $path = "./user/pages/auth/plan2/blank.md";
+    $frontmatter = $this->get_frontmatter_as_array($path);
+    $frontmatter["plan"] = $_POST["plan"];
+
+    $this->save_page_with_edited_frontmatter($path, $frontmatter);
+    Cache::clearCache('cache-only');
+}
+
+function LoadPlanFromTemplate(){
+    if (empty($_POST["week"]) || empty($_POST["template"])) return;
+    $plan_path = "./user/pages/auth/plan2/blank.md";
+    $plan_frontmatter = $this->get_frontmatter_as_array($plan_path);
+    $template_frontmatter = $this->get_frontmatter_as_array("./user/pages/auth/plan2/templates/blank.md");
+
+    $week = $_POST["week"];
+    $template = $_POST["template"];
+    $plan_frontmatter["plan"][$week] = $template_frontmatter["templates"][$template];
+
+   $this->save_page_with_edited_frontmatter($plan_path, $plan_frontmatter);
+   Cache::clearCache('cache-only');
+}
+
+// function ShiftPlan2() {
+//     $plan_path = "./user/pages/auth/plan2/blank.md";
+//     $plan_frontmatter = $this->get_frontmatter_as_array($plan_path);
+//     $template_frontmatter = $this->get_frontmatter_as_array("./user/pages/auth/plan2/templates/blank.md");
+
+//     $default_template = $template_frontmatter["defaultTemplate"];
+//     $plan_frontmatter["plan"]["thisWeek"] = $plan_frontmatter["plan"]["nextWeek"];
+//     $plan_frontmatter["plan"]["nextWeek"] = $template_frontmatter["templates"][$default_template]["plan"];
+
+//    $this->save_page_with_edited_frontmatter($plan_path, $plan_frontmatter);
+// }
+
+function DeletePlanTemplate() {
+    if (empty($_POST["deletedTemplate"])) return;
+    $del_template = $_POST["deletedTemplate"];
+
+    $path = "./user/pages/auth/plan2/templates/blank.md";
+    $frontmatter = $this->get_frontmatter_as_array($path);
+
+    unset($frontmatter["templates"][$del_template]);
+
+    $this->save_page_with_edited_frontmatter($path, $frontmatter);
+    Cache::clearCache('cache-only');
+}
+
+function SetDefaultTemplate() {
+    if (empty($_POST["defaultTemplate"])) return;
+    $path = "./user/pages/auth/plan2/templates/blank.md";
+    $frontmatter = $this->get_frontmatter_as_array($path);
+
+    $frontmatter["defaultTemplate"] = $_POST["defaultTemplate"];
+
+    $this->save_page_with_edited_frontmatter($path, $frontmatter);
+    Cache::clearCache('cache-only');
+}
+
+
+function TemplateNameExist($name, $templates) {
+    foreach($templates as $template => $_) {
+        if ($template == $name) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function CreatePlanTemplate() {
+    if (empty($_POST["templateName"])) return;
+    $template_name = $this->trim_all($_POST["templateName"]);
+
+    $path = "./user/pages/auth/plan2/templates/blank.md";
+    $frontmatter = $this->get_frontmatter_as_array($path);
+
+    $counter = 0;
+    $new_template_name = $template_name;
+    while ($this->TemplateNameExist($new_template_name, $frontmatter["templates"])) {
+        $counter++;
+        $new_template_name = $template_name . "(". $counter .")";
+    }
+
+    $frontmatter["templates"][$new_template_name] = array();
+
+   $this->save_page_with_edited_frontmatter($path, $frontmatter);
+   Cache::clearCache('cache-only');
+   header('Content-type:application/json;charset=utf-8');
+   echo json_encode($new_template_name);
+}
+
     // ulozit plan
     function SavePlan(){
 
