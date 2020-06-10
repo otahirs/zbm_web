@@ -10,112 +10,71 @@ plan:
     thisWeek:
         monday:
             1:
-                name: Posilovna
-                place: 'Bohunice, kampus, FSpS'
-                meetup: '14:30'
                 group:
                     - dorost
+                name: Posilovna
+                time: '14:30'
+                place: 'Bohunice, kampus, FSpS'
         tuesday:
             1:
-                name: 'Běžecké posilování'
-                place: 'Stadion pod Palackého vrchem'
-                meetup: '16:00 – 17:45'
                 group:
                     - zaci1
                     - zaci2
+                name: 'Běžecké posilování'
+                time: '16:00 – 17:45'
+                place: 'Stadion pod Palackého vrchem'
         wednesday:
             1:
-                name: Posilovna
-                place: 'Bohunice, kampus, FSpS'
-                meetup: '14:30'
                 group:
                     - dorost
+                name: Posilovna
+                time: '14:30'
+                place: 'Bohunice, kampus, FSpS'
         thursday:
             1:
-                name: 'Běžecký trénink'
-                place: 'hala Rosnička (sraz) a okolí'
-                meetup: '16:00 – 17:45 (P1 + P2 + Z1 prvním rokem)'
                 group:
                     - pulci1
                     - pulci2
                     - zaci1
-            2:
                 name: 'Běžecký trénink'
+                time: '16:00 – 17:45'
                 place: 'hala Rosnička (sraz) a okolí'
-                meetup: '16:00 – 18:00 (Z1 druhým rokem + Z2)'
+            2:
                 group:
                     - zaci1
                     - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 – 18:00'
+                place: 'hala Rosnička (sraz) a okolí'
             3:
-                name: Dráha
-                place: 'Areál VUT, pPv'
-                meetup: '17:00'
                 group:
                     - dorost
-        friday: null
-        saturday: null
-        sunday: null
+                name: Dráha
+                time: '17:00'
+                place: 'Areál VUT, pPv'
+        friday:
+            1591815629:
+                name: ''
+                time: ''
+                place: ''
     nextWeek:
         monday:
-            1591643170881:
-                name: ''
-                time: ''
-                place: ''
-            1591643173148:
-                name: ''
-                time: ''
-                place: ''
-        tuesday:
-            1591643170892:
-                name: ''
-                time: ''
-                place: ''
-            1591643173156:
-                name: ''
-                time: ''
-                place: ''
-        wednesday:
-            1591643170897:
-                name: ''
-                time: ''
-                place: ''
-            1591643173161:
-                name: ''
-                time: ''
-                place: ''
-        thursday:
-            1591643170902:
-                name: ''
-                time: ''
-                place: ''
-            1591643173165:
+            1591818627:
                 name: ''
                 time: ''
                 place: ''
         friday:
-            1591643170906:
-                name: ''
-                time: ''
-                place: ''
-            1591643173169:
+            1591818627:
                 name: ''
                 time: ''
                 place: ''
         saturday:
-            1591643170911:
-                name: ''
-                time: ''
-                place: ''
-            1591643173174:
+            1591818627:
                 name: ''
                 time: ''
                 place: ''
         sunday:
-            1591643170916:
-                name: ''
-                time: ''
-                place: ''
-            1591643173181:
+            1591818627:
                 name: ''
                 time: ''
                 place: ''
@@ -130,7 +89,7 @@ plan:
         padding: 0px;
     }
     .multiselect-wrapper, .multiselect-input-div, .group {
-        width: 130px;
+        width: 140px;
         background-color: inherit;
     }
     table.plan .day, table.plan .delete {
@@ -211,7 +170,8 @@ table.plan .event.group {
             {% for p in day_collection %}
                 <tr class="{% if day_num % 2 == 0 %} plan--lichyDen  {% else %} plan--sudyDen {% endif %}" data-week={{week}} data-day={{day}}>
                     <td class="group">
-                        <select class="multi" multiple disabled name="events[{{p.header.id}}]{{week}} {{day}}][group]">
+                         {% if p.header.start == datum_dne_v_tydnu %}
+                        <select class="multi" multiple name="events[{{p.header.id}}][]">
                             {% set group = p.header.taxonomy.skupina %}
                             <option value="zabicky" {% if "zabicky" in group %} selected {% endif %}>Žabičky</option>
                             <option value="pulci1" {% if "pulci1" in group %} selected {% endif %}>Pulci 1</option>
@@ -220,6 +180,7 @@ table.plan .event.group {
                             <option value="zaci2" {% if "zaci2" in group %} selected {% endif %}>Žáci 2</option>
                             <option value="dorost" {% if "dorost" in group %} selected {% endif %}>Dorost+</option>
                         </select>  
+                        {% endif %}
                     </td>
                     <td class="link event" colspan="4"> 
                         <a href="{{ p.url }}" target="_blank">{{ p.title }}</a> &nbsp;&nbsp;&nbsp;
@@ -252,15 +213,15 @@ table.plan .event.group {
                 {% set timestamp = 'now'|date('U') %}
                 <tr {% if day_num % 2 == 0 %} class="plan--lichyDen"  {% else %} class="plan--sudyDen" {% endif %} data-week={{week}} data-day={{day}}>
                     <td class="group">
-                            <select class="multi" multiple  name="plan[{{week}}][{{day}}][{{timestamp}}][group][]">
-                                <option value="zabicky">Žabičky</option>
-                                <option value="pulci1">Pulci 1</option>
-                                <option value="pulci2">Pulci 2</option>
-                                <option value="zaci1">Žáci 1</option>
-                                <option value="zaci2">Žáci 2</option>
-                                <option value="dorost">Dorost+</option>
-                            </select>
-                        </td>
+                        <select class="multi" multiple  name="plan[{{week}}][{{day}}][{{timestamp}}][group][]">
+                            <option value="zabicky">Žabičky</option>
+                            <option value="pulci1">Pulci 1</option>
+                            <option value="pulci2">Pulci 2</option>
+                            <option value="zaci1">Žáci 1</option>
+                            <option value="zaci2">Žáci 2</option>
+                            <option value="dorost">Dorost+</option>
+                        </select>
+                    </td>
                     <td class="name"> <input type="text" size="25" name="plan[{{week}}][{{day}}][{{timestamp}}][name]" placeholder="název"></td>     
                     <td class="time"> <input type="text" size="5" name="plan[{{week}}][{{day}}][{{timestamp}}][time]" placeholder="čas"> </td>
                     <td class="place"> <input type="text" size="40" name="plan[{{week}}][{{day}}][{{timestamp}}][place]" placeholder="místo"> </td>  
@@ -307,10 +268,15 @@ table.plan .event.group {
 </div> <!-- modal -->
 
 <script>
-    document.addEventListener('DOMContentLoaded', function(){
+    window.addEventListener('DOMContentLoaded', function(){
         
         // init multiselects for group selection
         $('.multi').multiselect();
+
+        resetMultiselects = () => {
+            removeAllMultiselects();
+            $('.multi').multiselect();
+        }
 
         // append row to day
         function createNewRowForDay(otherTr){
@@ -399,14 +365,16 @@ table.plan .event.group {
                 let day = row.dataset.day;
                 let rowsInDay = document.querySelectorAll(`[data-week="${week}"][data-day="${day}"]`).length;
                 if ( rowsInDay > 1 &&
-                    !row.querySelector(".group").firstElementChild.value &&
+                    !row.querySelector(".group")?.firstElementChild?.value &&
                     !row.querySelector(".name")?.firstElementChild.value  &&
                     !row.querySelector(".time")?.firstElementChild.value  &&
-                    !row.querySelector(".place")?.firstElementChild.value) 
+                    !row.querySelector(".place")?.firstElementChild.value &&
+                    !row.querySelector(".event")) 
                 {
                     row.parentNode?.removeChild(row);
                 }
             })
+            resetMultiselects();
             rebuiltDayNames();
         }
         removeEmptyRows();
@@ -422,6 +390,7 @@ table.plan .event.group {
                 createNewRowForDay(row);
             }
             row.parentNode.removeChild(row);
+            resetMultiselects();
             rebuiltDayNames();            
         }
 

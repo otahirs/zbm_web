@@ -669,11 +669,26 @@ function SavePlan2Template(){
     Cache::clearCache('cache-only');
 }
 
+function edit_events_groups($events) {
+    if (empty($events)) return;
+    foreach($events as $id => $groups) {
+        $year = substr($id, 0, 4);
+        $path = "./user/pages/data/events/". $year ."/". $id ."/event.cs.md";
+
+        $frontmatter = $this->get_frontmatter_as_array($path);
+        $frontmatter["taxonomy"]["skupina"] = $groups;
+
+        $this->save_page_with_edited_frontmatter($path, $frontmatter);
+    }
+}
+
 function SavePlan2(){
     if (empty($_POST["plan"])) return;
     $path = "./user/pages/auth/plan2/blank.md";
     $frontmatter = $this->get_frontmatter_as_array($path);
     $frontmatter["plan"] = $_POST["plan"];
+
+    $this->edit_events_groups($_POST["events"]);
 
     $this->save_page_with_edited_frontmatter($path, $frontmatter);
     Cache::clearCache('cache-only');
