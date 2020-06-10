@@ -68,7 +68,7 @@ templates:
         padding: 0px;
     }
     .multiselect-wrapper, .multiselect-input-div, .group {
-        width: 130px;
+        width: 140px;
         background-color: inherit;
     }
     table.plan .day, table.plan .delete {
@@ -198,10 +198,15 @@ table.plan .event.group {
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function(){
+    window.addEventListener('DOMContentLoaded', function(){
         
         // init multiselects for group selection
         $('.multi').multiselect();
+
+        resetMultiselects = () => {
+            removeAllMultiselects();
+            $('.multi').multiselect();
+        }
 
         // append row to day
         function createNewRowForDay(otherTr){
@@ -290,6 +295,7 @@ table.plan .event.group {
                     row.parentNode?.removeChild(row);
                 }
             })
+            resetMultiselects();
             rebuiltDayNames();
         }
         removeEmptyRows();
@@ -304,6 +310,7 @@ table.plan .event.group {
                 createNewRowForDay(row);
             }
             row.parentNode.removeChild(row);
+            resetMultiselects();
             rebuiltDayNames();            
         }
 
