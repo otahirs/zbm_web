@@ -35,7 +35,7 @@
         {% do assets.addJs('theme://js/turndown.js', {'group':'defer'}) %}
         {% do assets.addJs('theme://js/dropzone.js', {'group':'defer'}) %}   
 	    {% do assets.addJs('theme://js/simplemde.min.js', {'group':'defer'}) %}
-	    {% do assets.addJs('theme://js/multiselect.min.js', {'group':'defer'}) %}
+	  {#  {% do assets.addJs('theme://js/multiselect.min.js', {'group':'defer'}) %} #}
     {% endblock %}
     {{ assets.js()|raw }}
     {{ assets.js('defer',{'loading':'defer'})|raw }}

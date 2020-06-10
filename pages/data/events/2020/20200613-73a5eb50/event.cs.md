@@ -14,7 +14,7 @@ startTime: '10:00'
 map: 'Ryndovka 1:10 000'
 terrain: ''
 transport: "Společně individuální osobními auty\r\n(domluvíme se na organizaci jízd, můžete se přihlásit i ti bez aut)"
-leader: ''
+leader: 'Pro žáky: Lenka Hrušková'
 note: "Neoficiální OB závod - klasická trať\r\nTermín přihlášek: 9.6.2020 na email: **prihlasky@zbmob.cz**\r\nV Orisu do: 10.6.2020"
 taxonomy:
     skupina:
