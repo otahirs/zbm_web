@@ -19,7 +19,7 @@ date: '2018-10-28'
 -->
 <hr>
 <h2>Další užitečné kontakty</h2>
-**Finance:** Věra Mádlová - vera.madlova@centrum.cz
+**Finance:** Aleš Finstrle - koordinator@zabiny.club
 **Přihlášky na závody:** Jan Drábek - drbca@centrum.cz
 **IT - přihláškový systém:** Lukáš König - kenia@seznam.cz  
 **IT - web:** Otakar Hirš - otakar.hirs@gmail.com
