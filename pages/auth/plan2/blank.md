@@ -10,6 +10,56 @@ plan:
     thisWeek:
         monday:
             1:
+                group:
+                    - dorost
+                name: 13Posilovna
+                time: Coggg
+                place: 'GghgdBohunice, kampus, FSpS'
+        tuesday:
+            1:
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecké posilování'
+                time: ''
+                place: 'Stadion pod Palackého vrchem'
+        wednesday:
+            1:
+                group:
+                    - dorost
+                name: Posilovna
+                time: ''
+                place: 'Bohunice, kampus, FSpS'
+        thursday:
+            1:
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                name: 'Běžecký trénink'
+                time: ''
+                place: 'hala Rosnička (sraz) a okolí'
+            2:
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: ''
+                place: 'hala Rosnička (sraz) a okolí'
+            3:
+                group:
+                    - dorost
+                name: TtzuugdDráha
+                time: ''
+                place: 'Areál VUT, pPv'
+        friday:
+            1591645398:
+                name: ''
+                time: ''
+                place: ''
+    nextWeek:
+        monday:
+            1:
                 name: Posilovna
                 place: 'Bohunice, kampus, FSpS'
                 meetup: '14:30'
@@ -55,70 +105,6 @@ plan:
         friday: null
         saturday: null
         sunday: null
-    nextWeek:
-        monday:
-            1591643170881:
-                name: ''
-                time: ''
-                place: ''
-            1591643173148:
-                name: ''
-                time: ''
-                place: ''
-        tuesday:
-            1591643170892:
-                name: ''
-                time: ''
-                place: ''
-            1591643173156:
-                name: ''
-                time: ''
-                place: ''
-        wednesday:
-            1591643170897:
-                name: ''
-                time: ''
-                place: ''
-            1591643173161:
-                name: ''
-                time: ''
-                place: ''
-        thursday:
-            1591643170902:
-                name: ''
-                time: ''
-                place: ''
-            1591643173165:
-                name: ''
-                time: ''
-                place: ''
-        friday:
-            1591643170906:
-                name: ''
-                time: ''
-                place: ''
-            1591643173169:
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            1591643170911:
-                name: ''
-                time: ''
-                place: ''
-            1591643173174:
-                name: ''
-                time: ''
-                place: ''
-        sunday:
-            1591643170916:
-                name: ''
-                time: ''
-                place: ''
-            1591643173181:
-                name: ''
-                time: ''
-                place: ''
 ---
 <style>
     .plan input {
