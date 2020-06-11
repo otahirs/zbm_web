@@ -1,0 +1,125 @@
+.edit-plan__odd-day {
+    background-color: _palette(fg-white) !important;
+}
+.edit-plan__even-day {
+    background-color: inherit !important;
+}
+
+.edit-plan {
+
+    input {
+        border-radius: 0px;
+        background-color: inherit;
+    }
+
+    td {
+        padding: 0px;
+    }
+
+    .day, .delete {
+        padding: 0 1em;
+        border: solid 1px rgba(210, 215, 217, 0.75);
+    }
+
+    .event {
+        height: 2.75em;
+        padding: 0 0.9em;
+        border: solid 1px rgba(210, 215, 217, 0.75);
+    }
+}
+.edit-plan-modal__close-button {
+    float: right;
+}
+
+/* plan multiselect */
+.multiselect-wrapper {
+	width: 140px;
+	display: inline-block;
+	white-space: nowrap;
+}
+
+.multiselect-wrapper .multiselect-input {
+	width: 100%;
+    padding-right: 50px;
+    display: inline-block;
+}
+
+.multiselect-wrapper .multiselect-list {
+	z-index: 1;
+	position: absolute;
+	display: none;
+	background-color: white;
+	border: 1px solid grey;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	margin-top: -2px;
+}
+
+	.multiselect-wrapper .multiselect-list.multiselect-active {
+		display: block;
+	}
+
+    .multiselect-wrapper .multiselect-list.multiselect-active li {
+        padding: 0px;
+    }
+
+	.multiselect-wrapper .multiselect-list .multiselect-checkbox {
+		margin-right: 2px;
+	}
+
+.multiselect-wrapper .multiselect-list {
+	padding: 5px;
+	min-width: 150px;
+}
+
+.multiselect-wrapper .multiselect-list label {
+    cursor: pointer;
+    color: #222;
+    display: block;
+    font-weight: normal;
+    margin: 0.5em 0 0 0;
+}
+
+.multiselect-wrapper ul {
+	list-style: none;
+	display: block;
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+	.multiselect-wrapper ul li {
+		padding-right: 20px;
+		display: block;
+	}
+
+		.multiselect-wrapper ul li.multiselect-active {
+            background-color: #e65a51;
+            color: #fff;
+        }
+        
+.multiselect-count {
+	position: relative;
+	text-align: center;
+	border-radius: 2px;
+	display: inline-block !important;
+	padding: 2px 7px;
+    left: -45px;
+    background-color: #2b2b2b;
+    color: white;
+    font-size: 12px;
+}
+
+.multiselect-wrapper.disabled .multiselect-dropdown-arrow {
+	border-top: 5px solid lightgray;
+}
+
+.multiselect-wrapper.disabled .multiselect-count {
+	background-color: lightgray;
+}
+
+.multiselect-dropdown-arrow {
+	display: none;
+}
