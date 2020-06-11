@@ -24,8 +24,8 @@ access:
         </a>
     </div>
     <div class="col-sm-6 col-md-4">
-        <a href="/auth/plan">
-            <h2>Plán na tento týden</h2>
+        <a href="/auth/plan2">
+            <h2>Týdenní plán</h2>
         </a>
     </div>
     <div class="col-sm-6 col-md-4">
