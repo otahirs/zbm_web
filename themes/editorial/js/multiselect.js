@@ -1,3 +1,6 @@
+/* based on https://github.com/mneofit/multiselect
+   edited	 */
+
 if (!m_helper)
 {
 	var m_helper = {
@@ -129,11 +132,11 @@ if (!m_helper)
 		},
 		
 		setActive : function(element) {
-			element.classList.add('active');
+			element.classList.add('multiselect-active');
 		},
 		
 		setUnactive : function(element) {
-			element.classList.remove('active');
+			element.classList.remove('multiselect-active');
 		},
 		
 		select :function (element) {
@@ -221,7 +224,8 @@ Multiselect.prototype = {
 			id : this._getInputFieldIdentifier(),
 			class : 'multiselect-input',
 			attributes : {
-				autocomplete: 'off'
+				autocomplete: 'off',
+				readonly: 'readonly'
 			}
 		}),
 		label = m_helper.label({
@@ -265,14 +269,10 @@ Multiselect.prototype = {
 			checkBox.dataset.multiselectElement = JSON.stringify(e);
 		});
 
-		var selectAll = this._createItem('span', -1, 'Všichni');
 		var result = m_helper.div({
 			id : this._getItemListIdentifier(),
 			class : 'multiselect-list'
 		});
-
-		result.appendChild(selectAll);
-		result.appendChild(m_helper.create({tag : 'hr' }));
 		result.appendChild(list);
 
 		return result;
@@ -373,21 +373,6 @@ Multiselect.prototype = {
 		}		
 	},
 
-	selectAll: function (val) {
-		var selectAllChkBox = document.querySelector('#' + this._getIdentifier() + ' .multiselect-checkbox');
-		m_helper.check(selectAllChkBox);
-		this._onCheckBoxChange(selectAllChkBox, this);
-		
-		this._updateText(this);
-	},
-	
-	deselectAll : function() {
-		var selectAllChkBox = document.querySelector('#' + this._getIdentifier() + ' .multiselect-checkbox');
-		m_helper.uncheck(selectAllChkBox);
-		this._onCheckBoxChange(selectAllChkBox, this);
-		
-		this._updateText(this);
-	},
 
 	_checkboxClickEvents: {},
 	setCheckBoxClick(id, handler) {
@@ -438,50 +423,13 @@ Multiselect.prototype = {
 					self._onCheckBoxChange(e, self, event);
 				});
 			});
-
-		var onInput = function () {
-			var text = this.value.toLowerCase();
-			if (!text || text == '') {
-				m_helper.show(document.querySelector('#' + self._getItemListIdentifier() + ' > span'));
-				m_helper.show(document.querySelector('#' + self._getItemListIdentifier() + ' > hr'));
-				m_helper.showAll(document.querySelectorAll('#' + self._getItemListIdentifier() + ' li'));
-			} else {
-				m_helper.hide(document.querySelector('#' + self._getItemListIdentifier() + ' > span'));
-				m_helper.hide(document.querySelector('#' + self._getItemListIdentifier() + ' > hr'));
-
-				var array = Array.prototype.filter.call(document.querySelectorAll('#' + self._getItemListIdentifier() + ' li span'), 
-				function (obj) {
-					return obj.innerHTML.toLowerCase().indexOf(text) > -1;
-				});
-				
-				m_helper.hideAll(document.querySelectorAll('#' + self._getItemListIdentifier() + ' li'));
-
-				m_helper.each(array, function(e) {
-					m_helper.show(e.parentElement.parentElement);
-				});
-			}
-		}
-		
-		document.getElementById(self._getInputFieldIdentifier()).addEventListener('propertychange', onInput);
-		document.getElementById(self._getInputFieldIdentifier()).addEventListener('input', onInput);
 	},
 
 	_onCheckBoxChange: function (checkbox, self, event) {
-		if (!checkbox.dataset.multiselectElement) {
-			var checkedState = self._performSelectAll(checkbox, self);
-
-			if (typeof self._checkboxClickEvents["checkboxAll"] === "function") {
-				self._checkboxClickEvents["checkboxAll"](checkbox, { checked: checkedState});
-			}
-		}
-		else {
 			var checkedState = self._performSelectItem(checkbox, self);
 			if (typeof self._checkboxClickEvents[checkedState.id] === "function") {
 				self._checkboxClickEvents[checkedState.id](checkbox, checkedState);
 			}
-
-			self._updateSelectAll(self);
-		}
 
 		self._forceUpdate();
 	},
@@ -503,43 +451,11 @@ Multiselect.prototype = {
 		return { id: item.id, checked: false };
 	},
 	
-	_performSelectAll : function(checkbox, self) {
-		var items = self._getItems();
-
-		if (checkbox.checked) {
-			self._itemCounter = items.length;
-			m_helper.each(items, function(e) {
-				m_helper.setActive(e.multiselectElement.parentElement.parentElement);
-				m_helper.select(self._item.options[e.index]);
-				m_helper.check(e.multiselectElement);
-			});
-			return true;
-		}
-
-		self._itemCounter = 0;
-		m_helper.each(items, function(e) {
-			e.multiselectElement.parentElement.parentElement.classList.remove('active');
-			m_helper.deselect(self._item.options[e.index]);
-			m_helper.uncheck(e.multiselectElement);
-		});
-		return false;
-	},
 	
-	_updateSelectAll :function(self) {
-		var allChkBox = document.getElementById(self._getItemListIdentifier()).querySelector('input[type=checkbox]');
-		if (self._itemCounter == self._getItems().length) {
-			allChkBox.checked = true;
-		}
-		else if (allChkBox.checked) {
-			allChkBox.checked = false;
-		}
-	},
 	
 	_hideList: function (context, event) {
 		m_helper.setUnactive(document.getElementById(context._getItemListIdentifier()));
 		
-		m_helper.show(document.getElementById(context._getItemListIdentifier()).querySelector('span'));
-		m_helper.show(document.getElementById(context._getItemListIdentifier()).querySelector('hr'));
 		m_helper.showAll(document.getElementById(context._getItemListIdentifier()).querySelectorAll('li'));
 
 		context._updateText(context);
@@ -549,7 +465,7 @@ Multiselect.prototype = {
 	},
 	
 	_updateText : function(context) {
-		var activeItems = document.getElementById(context._getItemListIdentifier()).querySelectorAll('ul .active');
+		var activeItems = document.getElementById(context._getItemListIdentifier()).querySelectorAll('ul .multiselect-active');
 		if (activeItems.length > 0) {
 			var val = '';
 			for (var i = 0; i < (activeItems.length < 5 ? activeItems.length : 5) ; i++) {
