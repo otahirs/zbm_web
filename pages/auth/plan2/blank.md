@@ -53,96 +53,94 @@ plan:
                 time: '17:00'
                 place: 'Areál VUT, pPv'
         friday:
-            1591815629:
+            1591898992135:
                 name: ''
                 time: ''
                 place: ''
     nextWeek:
         monday:
-            1591818627:
-                name: ''
-                time: ''
-                place: ''
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '14:30'
+                place: 'Bohunice, kampus, FSpS'
+        tuesday:
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecké posilování'
+                time: '16:00 – 17:45'
+                place: 'Stadion pod Palackého vrchem'
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '14:30'
+                place: 'Bohunice, kampus, FSpS'
+        thursday:
+            -
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                name: 'Běžecký trénink (P1 + P2 + Z1 prvním rokem)'
+                time: '16:00 – 17:45'
+                place: 'hala Rosnička (sraz) a okolí'
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink (Z1 druhým rokem + Z2)'
+                time: '16:00 – 18:00'
+                place: 'hala Rosnička (sraz) a okolí'
+            -
+                group:
+                    - dorost
+                name: Dráha
+                time: '17:00'
+                place: 'Areál VUT, pPv'
         friday:
-            1591818627:
+            1591898992138:
                 name: ''
                 time: ''
                 place: ''
         saturday:
-            1591818627:
+            1591898992138:
                 name: ''
                 time: ''
                 place: ''
         sunday:
-            1591818627:
+            1591898992140:
                 name: ''
                 time: ''
                 place: ''
 ---
-<style>
-    .plan input {
-        width: 100%;
-        border-radius: 0px;
-        background-color: inherit;
-    }
-    table.plan td {
-        padding: 0px;
-    }
-    .multiselect-wrapper, .multiselect-input-div, .group {
-        width: 140px;
-        background-color: inherit;
-    }
-    table.plan .day, table.plan .delete {
-        padding: 0 1em;
-        border: solid 1px rgba(210, 215, 217, 0.75);
-    }
-    .multiselect-count {
-        background-color: #2b2b2b;
-        color: white;
-    }
-.multiselect-wrapper ul li.active, .multiselect-wrapper ul li:hover {
-    background-color: #e65a51;
-    color: #fff;
-}
-li.active:last-child {
-
-    padding: inherit !important;
-    margin: inherit;
-
-}
-.multiselect-wrapper .multiselect-list .multiselect-checkbox {
-    margin-right: -132px;
-}
-table.plan .event {
-    height: 2.75em;
-    padding: 0 0.9em;
-    border: solid 1px rgba(210, 215, 217, 0.75);
-}
-table.plan .event.group {
-    cursor: default;
-}
-.multiselect-list.active li {
-    padding: 0px;
-}
-
-</style>
-<input type="checkbox" value="all"  id="filter-all" checked />
-<label for="filter-all">Vše</label>
-<input class="filter" type="checkbox" value="zabicky" id="filter-zabicky" />
-<label for="filter-zabicky">Žabičky</label>
-<input class="filter" type="checkbox" value="pulci1" id="filter-pulci1" />
-<label for="filter-pulci1">Pulci 1</label>
-<input class="filter" type="checkbox" value="pulci2" id="filter-pulci2" />
-<label for="filter-pulci2">Pulci 2</label>
-<input class="filter" type="checkbox" value="zaci1" id="filter-zaci1" />
-<label for="filter-zaci1">Žáci 1</label>
-<input class="filter" type="checkbox" value="zaci2" id="filter-zaci2" />
-<label for="filter-zaci2">Žáci 2</label>
-<input class="filter" type="checkbox" value="dorost" id="filter-dorost" />
-<label for="filter-dorost">Dorost+</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button id="plan--submit" type="button" class="button special">Uložit</button>
-<br><br>
+<div class="notices red" id="error" style="display:none">Při odesílání požadavku došlo k chybě. Pokud problém přetrvává, popište ho prosím na <i>web@zabiny.club</i><br> Ota</div>
+<div class="row justify-content-between"> 
+    <div class="col">
+        <input type="checkbox" value="all"  id="filter-all" checked />
+        <label for="filter-all">Vše</label>
+        <input class="filter" type="checkbox" value="zabicky" id="filter-zabicky" />
+        <label for="filter-zabicky">Žabičky</label>
+        <input class="filter" type="checkbox" value="pulci1" id="filter-pulci1" />
+        <label for="filter-pulci1">Pulci 1</label>
+        <input class="filter" type="checkbox" value="pulci2" id="filter-pulci2" />
+        <label for="filter-pulci2">Pulci 2</label>
+        <input class="filter" type="checkbox" value="zaci1" id="filter-zaci1" />
+        <label for="filter-zaci1">Žáci 1</label>
+        <input class="filter" type="checkbox" value="zaci2" id="filter-zaci2" />
+        <label for="filter-zaci2">Žáci 2</label>
+        <input class="filter" type="checkbox" value="dorost" id="filter-dorost" />
+        <label for="filter-dorost">Dorost+</label>
+    </div>
+    <div class="col-auto">
+        <button class="edit-plan__submit special" type="button">Uložit</button>
+    </div>
+</div>
+<br>
 {# inicializace poli urcujiciho den v tydnu #}
 {% set collection = page.collection({'items': {'@page.descendants': '/data/events'}, 'filter': {'routable': 'true'},'order': {'by': 'default', 'dir': 'asc'}}) %}
 
@@ -156,7 +154,7 @@ table.plan .event.group {
         <h4>Příští týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
     {% endif %}
     
-    <table class="plan">
+    <table class="edit-plan">
         {# inicializace promene urcujici jestli uz je v tabulce zapsany den v tydnu #}
         
         {% for day_num, day in ['monday','tuesday','wednesday','thursday','friday','saturday', 'sunday'] %}
@@ -168,7 +166,7 @@ table.plan .event.group {
             {% endfor %}
 
             {% for p in day_collection %}
-                <tr class="{% if day_num % 2 == 0 %} plan--lichyDen  {% else %} plan--sudyDen {% endif %}" data-week={{week}} data-day={{day}}>
+                <tr class="{% if day_num % 2 == 0 %} edit-plan__odd-day  {% else %}edit-plan__even-day {% endif %}" data-week={{week}} data-day={{day}}>
                     <td class="group">
                          {% if p.header.start == datum_dne_v_tydnu %}
                         <select class="multi" multiple name="events[{{p.header.id}}][]">
@@ -191,7 +189,7 @@ table.plan .event.group {
             
             {% set events = weekAr[day] %}
             {% for timestamp, event in events %}
-                <tr {% if day_num % 2 == 0 %} class="plan--lichyDen"  {% else %} class="plan--sudyDen" {% endif %} data-week={{week}} data-day={{day}}>
+                <tr {% if day_num % 2 == 0 %} class="edit-plan__odd-day"  {% else %} class="edit-plan__even-day" {% endif %} data-week={{week}} data-day={{day}}>
                     <td class="group">
                         <select class="multi" multiple  name="plan[{{week}}][{{day}}][{{timestamp}}][group][]">
                             <option value="zabicky" {% if "zabicky" in event.group %} selected {% endif %}>Žabičky</option>
@@ -203,7 +201,7 @@ table.plan .event.group {
                         </select>
                     </td>
                     <td class="name"> <input type="text" size="25" value="{{event.name}}" name="plan[{{week}}][{{day}}][{{timestamp}}][name]" placeholder="název"></td>     
-                    <td class="time"> <input type="text" size="5" value="{{event.time}}" name="plan[{{week}}][{{day}}][{{timestamp}}][time]" placeholder="čas"> </td>
+                    <td class="time"> <input type="text" size="9" value="{{event.time}}" name="plan[{{week}}][{{day}}][{{timestamp}}][time]" placeholder="čas"> </td>
                     <td class="place"> <input type="text" size="40" value="{{event.place}}" name="plan[{{week}}][{{day}}][{{timestamp}}][place]" placeholder="místo"> </td>  
                     <td class="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></td>                         
                 </tr>
@@ -211,7 +209,7 @@ table.plan .event.group {
 
             {% if events|length + day_collection|length == 0 %}
                 {% set timestamp = 'now'|date('U') %}
-                <tr {% if day_num % 2 == 0 %} class="plan--lichyDen"  {% else %} class="plan--sudyDen" {% endif %} data-week={{week}} data-day={{day}}>
+                <tr {% if day_num % 2 == 0 %} class="edit-plan__odd-day"  {% else %} class="edit-plan__even-day" {% endif %} data-week={{week}} data-day={{day}}>
                     <td class="group">
                         <select class="multi" multiple  name="plan[{{week}}][{{day}}][{{timestamp}}][group][]">
                             <option value="zabicky">Žabičky</option>
@@ -223,7 +221,7 @@ table.plan .event.group {
                         </select>
                     </td>
                     <td class="name"> <input type="text" size="25" name="plan[{{week}}][{{day}}][{{timestamp}}][name]" placeholder="název"></td>     
-                    <td class="time"> <input type="text" size="5" name="plan[{{week}}][{{day}}][{{timestamp}}][time]" placeholder="čas"> </td>
+                    <td class="time"> <input type="text" size="9" name="plan[{{week}}][{{day}}][{{timestamp}}][time]" placeholder="čas"> </td>
                     <td class="place"> <input type="text" size="40" name="plan[{{week}}][{{day}}][{{timestamp}}][place]" placeholder="místo"> </td>  
                     <td class="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></td>          
                 </tr>
@@ -260,10 +258,9 @@ table.plan .event.group {
             </select>
         </div>
         <hr>
-        <button type="button" class="special" id="News--submit-all">Nahradit</button>
-        <button type="button" id="News--close">Zrušit</button>
+        <button type="button" class="special edit-plan-modal__submit-button">Nahradit</button>
+        <button type="button" class="edit-plan-modal__close-button">Zrušit</button>
       </form>
-      <div id="News--responseText" style="color:red"></div>
     </div> <!-- modal content -->
 </div> <!-- modal -->
 
@@ -295,7 +292,7 @@ table.plan .event.group {
                             <option value="dorost">Dorost+</option>
                         </select>
                 <td class="name"> <input type="text" size="25" name="${formNamePrefix}[name]" placeholder="název"> </td>     
-                <td class="time"> <input type="text" size="5" name="${formNamePrefix}[time]" placeholder="čas"> </td>
+                <td class="time"> <input type="text" size="9" name="${formNamePrefix}[time]" placeholder="čas"> </td>
                 <td class="place"> <input type="text" size="40" name="${formNamePrefix}[place]" placeholder="místo"> </td>
                 <td class="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></td> `;
             
@@ -440,8 +437,12 @@ table.plan .event.group {
             removeEmptyRows();
         })
         
+        function showError() {
+            document.getElementById("error").style.display = "block";
+        }
+
         // submit form
-        const submitButton = document.getElementById("plan--submit");
+        const submitButton = document.querySelector(".edit-plan__submit");
         submitButton.addEventListener("click", (e) => {
             if (document.querySelector(".multiselect-list.active") !== null) return;
             e.preventDefault();
@@ -462,7 +463,7 @@ table.plan .event.group {
                 }, 2000);
              },
              error: function (xhr, desc, err){
-
+                 showError();
              }
             });
         })
@@ -476,10 +477,10 @@ table.plan .event.group {
             modal_content.style.marginTop = window.pageYOffset + "px";
             modal.style.display = "block";
         }
-        document.getElementById("News--close").onclick = function(e) {
+        document.querySelector(".edit-plan-modal__close-button").onclick = function(e) {
             modal.style.display = "none";
         }
-        document.getElementById("News--submit-all").addEventListener("click", (e) => {
+        document.querySelector(".edit-plan-modal__submit-button").addEventListener("click", (e) => {
             if (document.querySelector(".multiselect-list.active") !== null) return;
             e.preventDefault();
             var formData = new FormData(e.target.closest("form"));
@@ -493,7 +494,7 @@ table.plan .event.group {
                window.location.replace(location.href);
              },
              error: function (xhr, desc, err){
-
+                 showError()
              }
             });
         })
