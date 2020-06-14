@@ -670,7 +670,6 @@ function SavePlan2Template(){
 }
 
 function edit_events_groups($events) {
-    if (empty($events)) return;
     foreach($events as $id => $groups) {
         $year = substr($id, 0, 4);
         $path = "./user/pages/data/events/". $year ."/". $id ."/event.cs.md";
@@ -688,7 +687,9 @@ function SavePlan2(){
     $frontmatter = $this->get_frontmatter_as_array($path);
     $frontmatter["plan"] = $_POST["plan"];
 
-    $this->edit_events_groups($_POST["events"]);
+    if (!empty($_POST["events"])) {
+        $this->edit_events_groups($_POST["events"]);
+    }
 
     $this->save_page_with_edited_frontmatter($path, $frontmatter);
     Cache::clearCache('cache-only');
