@@ -52,6 +52,7 @@ access:
 <hr>
 <h2>Changelog</h2>
 <ul>
+    <li>2020-06-16 <br> Přihlášení na stránky nyní nepřesměrovává. Tedy pokud půjdete např na zabiny.club/auth/plan2, ale nebudete přihlášení, tak po následném přihlášení nebudete přesměrování na rozcestník, ale můžete pokračovat přímo na původní stránce.</li>
     <li>2020-06-11 <br> Plán na tento týden přepracován. Možnost filtrovat plán dle skupin. Rozšířené možnosti šablon.</li>
     <li>2020-04-30 <br>Závody zrušené v členské sekci jsou nyní na stránkách smazány. Záloha je uložena pro případnou obnovu. <br>Zálohovány jsou nyní i události smazané přes editaci.</li>
     <li>U <a href="https://zabiny.club/auth/events">seznamu událostí</a> lze nyní ve filtru zaškrtnout "zobrazit již uplynulé" události. U akcí z let minulých se zobrzí i příslušný rok.</li>
