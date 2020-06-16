@@ -13,3 +13,8 @@ ignore_accented_characters: false
 order:
     by: date
     dir: desc
+searchable_types:
+    title: true
+    content: true
+    taxonomy: true
+    header: false
