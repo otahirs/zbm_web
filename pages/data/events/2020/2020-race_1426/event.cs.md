@@ -20,13 +20,13 @@ import:
     type: members
     time: 1590616801
 meetTime: '15:50'
-meetPlace: 'Novolíšeňská, parkoviště naproti Bille (https://en.mapy.cz/s/bazujapoto)'
+meetPlace: 'Slatina, ul. Hviezdoslavova, zastávka Vozovna Slatina (https://mapy.cz/s/belozujuke)'
 eventTypeDescription: ''
 startTime: '17:30'
 map: ''
 terrain: ''
 transport: autobusem
 leader: Lenka
-note: ''
+note: '[Místo srazu na Mapy.cz](https://mapy.cz/s/belozujuke)'
 ---
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
