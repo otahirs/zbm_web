@@ -1,14 +1,46 @@
+# v4.0.10
+## 06/08/2020
+
+1. [](#improved)
+    * Updated languages
+1. [](#bugfix)
+    * Fixed redirect causing empty form on homepage forms with no action set
+
+# v4.0.9
+## 06/03/2020
+
+1. [](#bugfix)
+    * Fixed bad `id` attribute on `checkbox` field [#421](https://github.com/getgrav/grav-plugin-form/issues/421)
+    * Show the `description` span even for an empty description [#313](https://github.com/getgrav/grav-plugin-form/pull/313)
+
+# v4.0.8
+## 04/30/2020
+
+1. [](#bugfix)
+    * Fixed issue with `force_bool` in `toggle` field to be more robust
+
+# v4.0.7
+## 04/27/2020
+
+1. [](#new)
+    * Added ability to hide form fields in `data.html.twig` and `data.txt.twig` with `field.store: false`
+1. [](#improved)
+    * Updated node dependencies
+    * Added new `force_bool: true|false` option to `toggle` field to cast strings for use in BC situations
+1. [](#bugfix)
+    * Fix markdown links in changelog [#415](https://github.com/getgrav/grav-plugin-form/pull/415)
+
 # v4.0.6
 ## 03/19/2020
 1. [](#new)
     * CHANGE: Form labels are now displayed in `raw` format so you can use HTML in them
     * Added support for `name` attribute on buttons [#411](https://github.com/getgrav/grav-plugin-form/issues/411)
 1. [](#improved)
-    * Added support for `classes` option in `avatar` field 
+    * Added support for `classes` option in `avatar` field
     * Recompiled JS with latest NPM libraries
 1. [](#bugfix)
     * Fixed password field outputting the contents to HTML (will now always be empty when loading the page)
-    * Escape default output in `formdata.html.twig` [#384](https://github.com/getgrav/grav-plugin-form/issues 
+    * Escape default output in `formdata.html.twig` [#384](https://github.com/getgrav/grav-plugin-form/issues/384)
     * Better JS rendering of captcha field scripts for VueJS template compatibility
 
 # v4.0.5
@@ -29,7 +61,7 @@
 
 1. [](#new)
     * Pass phpstan level 1 tests
-   
+
 # v4.0.2
 ## 02/03/2020
 
@@ -38,7 +70,7 @@
 1. [](#bugfix)
     * Fixed `toggle` field not working with `toggleable: true`
     * Fixed fatal error when form type is disabled
-    
+
 # v4.0.1
 ## 01/02/2020
 
@@ -54,7 +86,7 @@
 
 1. [](#new)
     * Added `tabindex` to global attributes of default field
-    * Add ability to Sanitize SVGs on upload (Grav 1.7+ required)    
+    * Add ability to Sanitize SVGs on upload (Grav 1.7+ required)
 1. [](#improved)
     * Deprecate `select_optgroup` as `select` can handle optgroups now
     * Added missing tabindex checks
@@ -83,7 +115,7 @@
     * Change form save action location to `user-data://` stream [#353](https://github.com/getgrav/grav-plugin-form/issues/353)
     * Updated `eu`, `fr` and `pl` language
     * Make `Form::initialize()` chainable
-    * Added `folder` option to `save:` action with fallback 
+    * Added `folder` option to `save:` action with fallback
 1. [](#bugfix)
     * Fixed Submit & Redirect not working as expected [#355](https://github.com/getgrav/grav-plugin-form/issues/355)
     * Fixed oversensitive refresh prevention [#354](https://github.com/getgrav/grav-plugin-form/issues/354)
