@@ -17,14 +17,11 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
             new \Twig_SimpleFunction('phpUploadProgram', [$this, 'phpUploadProgram']),
             new \Twig_SimpleFunction('phpNews', [$this, 'NewsFunction']),
             new \Twig_SimpleFunction('phpEditBliziSe', [$this, 'editBliziSeFunction']),
-            new \Twig_SimpleFunction('phpSaveProgramTemplates', [$this, 'SaveProgramTemplates']),
             new \Twig_SimpleFunction('phpSaveEditedEvent', [$this, 'phpSaveEditedEvent']),
             new \Twig_SimpleFunction('phpSavePolaris', [$this, 'SavePolaris']),
             new \Twig_SimpleFunction('phpDeletePolaris', [$this, 'DeletePolaris']),
-            new \Twig_SimpleFunction('phpSavePlan', [$this, 'SavePlan']),
             new \Twig_SimpleFunction('phpSavePlan2', [$this, 'SavePlan2']),
             new \Twig_SimpleFunction('phpLoadPlanFromTemplate', [$this, 'LoadPlanFromTemplate']),
-            new \Twig_SimpleFunction('phpSavePlanTemplate', [$this, 'SavePlanTemplate']), 
             new \Twig_SimpleFunction('phpSavePlan2Template', [$this, 'SavePlan2Template']),
             new \Twig_SimpleFunction('phpCreatePlanTemplate', [$this, 'CreatePlanTemplate']),
             new \Twig_SimpleFunction('phpDeletePlanTemplate', [$this, 'DeletePlanTemplate']),
@@ -585,75 +582,6 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
     ********************************************************************************/
     
 
-    function get_plan_template($path_to_file){
-        $frontmatter = PhpTwigExtension::get_frontmatter_as_array($path_to_file);
-        $template = $frontmatter["planTemplate"];
-        return $template;
-    }
-
-    function add_season_to_string($season,$data){
-        $week = ["monday","tuesday","wednesday","thursday","friday","saturday", "sunday"];
-        $last_day_printed = 0;
-        foreach ($_POST[$season] as $day_num => $day){
-            while($day_num > $last_day_printed){
-                $data .= "    ".$week[$last_day_printed].": null". PHP_EOL;
-                $last_day_printed++;
-            }
-            $last_day_printed++;
-            $data .= "    ".$week[$day_num].":". PHP_EOL;
-            $i = 1;
-            foreach ($day as $event){
-                $data .= "        " . $i .":" . PHP_EOL .
-                        "            name: '"  . $event["name"] ."'". PHP_EOL .
-                        "            place: '"  . $event["place"] ."'". PHP_EOL .
-                        "            meetup: '"  . $event["meetup"] ."'". PHP_EOL .
-                        "            group:". PHP_EOL;
-                if(!empty($event["group"])) {
-                foreach($event["group"] as $group){
-                    $data .= "                    - " . $group . PHP_EOL;
-                }
-                }
-                $i++;
-            }
-        }
-        while($last_day_printed < 7){
-            $data .= "    ".$week[$last_day_printed].": null". PHP_EOL;
-            $last_day_printed++;
-        }
-        return $data;
-    }
-
-    // ulozit sablony
-    function SaveProgramTemplates(){
-        $data = "---" . PHP_EOL .
-                "title: 'Týdenní program'" . PHP_EOL .
-                "date: '2018-09-29'" . PHP_EOL .
-                "process:". PHP_EOL .
-                "    twig: true" . PHP_EOL .
-                "    markdown: false" . PHP_EOL .
-                "access:" . PHP_EOL .
-                "    site:" . PHP_EOL .
-                "        plan: true" . PHP_EOL .
-                "currentSeason: " . $_POST["season"]  . PHP_EOL .
-                "summer:" . PHP_EOL;
-        if(isset($_POST['summer'])){
-            $data = PhpTwigExtension::add_season_to_string("summer",$data);
-        }
-        $data .= "winter:" . PHP_EOL;
-        if(isset($_POST['winter'])){
-            $data = PhpTwigExtension::add_season_to_string("winter",$data);
-        }
-        $data .= "---" . PHP_EOL;
-        $data .= PhpTwigExtension::parse_file_content_only($_POST["filePath"]);
-
-        PhpTwigExtension::file_force_contents($_POST["filePath"], $data);
-        Cache::clearCache('cache-only');
-               
-    }
-/********************************************************
-***** tento tyden, pristi tyden / plan, plan-next *******
-*********************************************************/
-
 function SavePlan2Template(){
     if (empty($_POST["template"])) return;
     $path = "./user/pages/auth/plan2/templates/blank.md";
@@ -776,70 +704,6 @@ function CreatePlanTemplate() {
    header('Content-type:application/json;charset=utf-8');
    echo json_encode($new_template_name);
 }
-
-    // ulozit plan
-    function SavePlan(){
-
-        $data = "---" . PHP_EOL .
-                "process:". PHP_EOL .
-                "    twig: true" . PHP_EOL .
-                "    markdown: false" . PHP_EOL .
-                "access:" . PHP_EOL .
-                "    site:" . PHP_EOL .
-                "        plan: true" . PHP_EOL .
-                "planTemplate: " . $_POST["template"] . PHP_EOL .
-                "plan:" . PHP_EOL;
-        if(isset($_POST['data'])){
-            $data = PhpTwigExtension::add_season_to_string("data",$data);
-        }
-        $data .= "---" . PHP_EOL;
-        $data .= PhpTwigExtension::parse_file_content_only($_POST["filePath"]);
-
-        PhpTwigExtension::file_force_contents($_POST["filePath"], $data);
-        Cache::clearCache('cache-only');
-    
-    }
-
-    function get_plan_from_template($template){
-        if($template == "None"){
-            return;
-        }
-
-        $templates_path = "./user/pages/auth/plan-templates/default--plan-header.cs.md";
-        $frontmatter = PhpTwigExtension::get_frontmatter_as_array($templates_path);
-
-        // retun plan as array
-        return $frontmatter[$template]; 
-    }
-
-    // nacist sablonu
-    function SavePlanTemplate(){
-
-            $page_path = $_POST["filePath"];
-            $templates_path = str_replace(array('/plan/', '/plan-next/'), '/plan-templates/', $page_path);
-            // get last used teamplates
-            $template = $_POST["template"];
-
-            // alternate frontmatter
-            $frontmatter = PhpTwigExtension::get_frontmatter_as_array($page_path);             
-            $frontmatter['planTemplate'] = $template;                               // set last used template to the chosen one
-            $frontmatter['plan'] = PhpTwigExtension::get_plan_from_template($template);        // get chosen plan from page plan-templates
-            $frontmatter = Yaml::dump($frontmatter, 10);                            // make string from array 
-
-            // get page content
-            $content = PhpTwigExtension::parse_file_content_only($page_path);
-
-            // build page
-            $page = PhpTwigExtension::combine_frontmatter_with_content($frontmatter, $content);
-           
-            // save page
-            PhpTwigExtension::file_force_contents($page_path, $page);
-            Cache::clearCache('cache-only');
-
-    }
-
-
-
 
 //******************************************************************************************************/
     
