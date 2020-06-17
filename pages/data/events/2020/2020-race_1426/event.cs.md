@@ -29,4 +29,5 @@ transport: autobusem
 leader: Lenka
 note: '[Místo srazu na Mapy.cz](https://mapy.cz/s/belozujuke)'
 ---
+{{page.header.note}}
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
