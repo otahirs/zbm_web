@@ -26,8 +26,9 @@ news:
   <div id="novinky" class="col-md-8"> <!-- plan + novinky vlevo -->
       <div class="inner">
         <header id="header">
-            <h1>Novinky</h1>
-            <a href="#soon" id="hip" style="text-align:right;border-bottom:none;"><h1>hip<i class="fa fa-level-down" aria-hidden="true"></i></h1></a>
+            <h1>Novinky
+              <a href="#soon" id="hip" style="text-align:right;border-bottom:none;"><span style="float: right;"><i class="fa fa-level-down" aria-hidden="true"></i></span></a>
+            </h1>
         </header>
         <section>
         {% set news_collection = page.collection('news') %}
@@ -188,7 +189,7 @@ news:
        
 
 
-  <a href="#top" id="hop" style="text-align:right;border-bottom:none;"><h1>hop<i class="fa fa-level-up" aria-hidden="true"></i></h1></a>
+  <a href="#top" id="hop" style="text-align:right;border-bottom:none;"><h1><i class="fa fa-level-up" aria-hidden="true"></i></h1></a>
   </div> <!-- blizi se -->
 
 </div> <!-- uzavira celou stranku , pure-g -->
