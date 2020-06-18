@@ -70,7 +70,6 @@ templates:
                 time: ''
                 place: ''
     Zimní: {  }
-    aaa: {  }
 ---
 
 <div class="notices red" id="error" style="display:none">Při odesílání požadavku došlo k chybě. Pokud problém přetrvává, popište ho prosím na <i>web@zabiny.club</i><br> Ota</div>
