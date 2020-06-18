@@ -53,21 +53,31 @@ plan:
                 time: '17:00'
                 place: 'Areál VUT, pPv'
         friday:
-            1591898992138:
+            1592426499798:
                 name: ''
                 time: ''
                 place: ''
         saturday:
-            1591898992138:
+            1592426499800:
                 name: ''
                 time: ''
                 place: ''
-        sunday:
-            1591898992140:
+    nextWeek:
+        monday:
+            1592426499801:
                 name: ''
                 time: ''
                 place: ''
-    nextWeek: null
+        tuesday:
+            1592426499802:
+                name: ''
+                time: ''
+                place: ''
+        thursday:
+            1592426499803:
+                name: ''
+                time: ''
+                place: ''
 ---
 <div class="notices red" id="error" style="display:none">Při odesílání požadavku došlo k chybě. Pokud problém přetrvává, popište ho prosím na <i>web@zabiny.club</i><br> Ota</div>
 <div class="row justify-content-between"> 

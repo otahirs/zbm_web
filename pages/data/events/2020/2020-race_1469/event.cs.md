@@ -1,7 +1,7 @@
 ---
 taxonomy:
     skupina:
-        1: dorost
+        - dorost
 id: 2020-race_1469
 start: '2020-06-26'
 end: '2020-06-27'
