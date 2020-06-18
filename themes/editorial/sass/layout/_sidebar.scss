@@ -198,7 +198,7 @@
 
 			&:before {
 				color: _palette(fg);
-				margin-left: (-0.125em / 2);
+				margin-left: 1 + (-0.125em / 2);
 				margin-top: (-0.5em / 2);
 				font-size: 1.1rem;
 				z-index: 1;
@@ -209,7 +209,7 @@
 				border-radius: 2px;
 				content: '';
 				height: 3.5em;
-				left: 1em;
+				left: 2em;
 				position: absolute;
 				top: 1em;
 				width: 5em;

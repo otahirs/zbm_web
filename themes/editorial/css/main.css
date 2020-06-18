@@ -1227,7 +1227,7 @@ button,
       width: 7.25em; }
       #toggle:before {
         color: #222;
-        margin-left: -0.0625em;
+        margin-left: 0.9375em;
         margin-top: -0.25em;
         font-size: 1.1rem;
         z-index: 1; }
@@ -1236,7 +1236,7 @@ button,
         border-radius: 2px;
         content: '';
         height: 3.5em;
-        left: 1em;
+        left: 2em;
         position: absolute;
         top: 1em;
         width: 5em; } }
@@ -1277,7 +1277,7 @@ button,
       padding-top: 3em; } }
   @media screen and (max-width: 736px) {
     #header {
-      padding: 1.5em 0 1.5em 5em; }
+      padding: 1.5em 0 1.5em 6em; }
       #header .logo {
         font-size: 1.25em;
         margin: 0; }
