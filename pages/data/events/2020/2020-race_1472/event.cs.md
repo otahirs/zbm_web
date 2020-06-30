@@ -17,5 +17,6 @@ template: zavod
 date: '2020-06-18'
 import:
     type: members
-    time: 1592431202
+    time: 1593468001
+link: 'http://oris.orientacnisporty.cz/Zavod?id=6035'
 ---

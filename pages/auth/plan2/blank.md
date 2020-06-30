@@ -9,6 +9,28 @@ process:
 plan:
     thisWeek:
         monday:
+            1593413496727:
+                group:
+                    - dorost
+                name: Posilovna
+                time: '14:30'
+                place: 'Kampus, Bohunice'
+        tuesday:
+            1593413507946:
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecké posilování'
+                time: '16:00 - 17:45'
+                place: 'Stadion pod Palackého vrchem'
+            1593422863741:
+                group:
+                    - dorost
+                name: 'klus (doborvolný) + fotbal (organizuje Havran)'
+                time: '16:30'
+                place: 'nám. Svornosti'
+    nextWeek:
+        monday:
             -
                 group:
                     - dorost
@@ -16,13 +38,16 @@ plan:
                 time: '14:30'
                 place: 'Bohunice, kampus, FSpS'
         tuesday:
-            -
+            1593422787767:
                 group:
-                    - zaci1
-                    - zaci2
-                name: 'Běžecké posilování'
-                time: '16:00 – 17:45'
-                place: 'Stadion pod Palackého vrchem'
+                    - dorost
+                name: kopce
+                time: '16:30'
+                place: Rosnička
+            1593422803415:
+                name: ''
+                time: ''
+                place: ''
         wednesday:
             -
                 group:
@@ -31,53 +56,12 @@ plan:
                 time: '14:30'
                 place: 'Bohunice, kampus, FSpS'
         thursday:
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                name: 'Běžecký trénink (P1 + P2 + Z1 prvním rokem)'
-                time: '16:00 – 17:45'
-                place: 'hala Rosnička (sraz) a okolí'
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink (Z1 druhým rokem + Z2)'
-                time: '16:00 – 18:00'
-                place: 'hala Rosnička (sraz) a okolí'
-            -
+            2:
                 group:
                     - dorost
                 name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, pPv'
-        friday:
-            1592426499798:
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            1592426499800:
-                name: ''
-                time: ''
-                place: ''
-    nextWeek:
-        monday:
-            1592426499801:
-                name: ''
-                time: ''
-                place: ''
-        tuesday:
-            1592426499802:
-                name: ''
-                time: ''
-                place: ''
-        thursday:
-            1592426499803:
-                name: ''
-                time: ''
-                place: ''
 ---
 <div class="notices red" id="error" style="display:none">Při odesílání požadavku došlo k chybě. Pokud problém přetrvává, popište ho prosím na <i>web@zabiny.club</i><br> Ota</div>
 <div class="row justify-content-between"> 

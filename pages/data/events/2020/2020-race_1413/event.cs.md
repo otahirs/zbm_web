@@ -12,5 +12,6 @@ template: zavod
 date: '2020-03-10'
 import:
     type: members
-    time: 1583866502
+    time: 1592604002
+place: Hajnice
 ---
