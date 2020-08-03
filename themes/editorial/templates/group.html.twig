@@ -45,8 +45,8 @@
             {# inicializace poli urcujiciho den v tydnu #}
             {% set ENGweek = ['monday','tuesday','wednesday','thursday','friday','saturday', 'sunday'] %}
             {% set CZweek = [ 'PO', 'UT', 'ST', 'CT', 'PA', 'SO', 'NE'] %}
-
-            {% for week, weekAr in page.find('/auth/plan2').header.plan %}
+            {% set plan = page.find('/auth/plan2').header.plan %}
+            {% for week, weekAr in [plan.thisWeek, plan.nextWeek] %}
                 {% if loop.first %}
                     {% set start_day = date("monday this week") %}
                     <h4>Aktuální týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>

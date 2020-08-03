@@ -7,7 +7,7 @@ access:
 process:
     markdown: false
 plan:
-    nextWeek:
+    thisWeek:
         monday:
             1596484717:
                 group:
@@ -36,7 +36,7 @@ plan:
                 name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, pPv'
-    thisWeek:
+    nextWeek:
         monday:
             -
                 group:
@@ -93,7 +93,8 @@ plan:
 {% set collection = page.collection({'items': {'@page.descendants': '/data/events'}, 'filter': {'routable': 'true'},'order': {'by': 'default', 'dir': 'asc'}}) %}
 
 <form autocomplete="off" id="program"> 
-{% for week, weekAr in page.header.plan %}
+{% set plan = page.header.plan %}
+{% for week, weekAr in {"thisWeek": plan.thisWeek, "nextWeek" : plan.nextWeek} %}
     {% if loop.first %}
         {% set start_day = date("monday this week") %}
         <h4>Aktuální týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
