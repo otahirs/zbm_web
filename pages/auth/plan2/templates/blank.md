@@ -70,6 +70,50 @@ templates:
                 time: ''
                 place: ''
     Zimní: {  }
+    Prázdniny:
+        monday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '14:30'
+                place: 'Bohunice, kampus, FSpS'
+        tuesday:
+            -
+                group:
+                    - dorost
+                name: 'běh (dle víkendu)'
+                time: '16:30'
+                place: 'hala Rosnička (sraz) a okolí'
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '14:30'
+                place: 'Bohunice, kampus, FSpS'
+        thursday:
+            -
+                group:
+                    - dorost
+                name: Dráha
+                time: '17:00'
+                place: 'Areál VUT, pPv'
+        friday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        sunday:
+            -
+                name: ''
+                time: ''
+                place: ''
 ---
 
 <div class="notices red" id="error" style="display:none">Při odesílání požadavku došlo k chybě. Pokud problém přetrvává, popište ho prosím na <i>web@zabiny.club</i><br> Ota</div>

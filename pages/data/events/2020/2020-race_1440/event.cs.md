@@ -1,11 +1,11 @@
 ---
 taxonomy:
     skupina:
-        - pulci1
-        - pulci2
-        - zaci1
-        - zaci2
-        - dorost
+        1: pulci2
+        2: zaci1
+        3: zaci2
+        4: dorost
+        5: pulci1
 id: 2020-race_1440
 start: '2020-07-01'
 end: '2020-07-05'
@@ -27,7 +27,7 @@ leader: 'Andrea, Jenda'
 note: 'Cena soustředění 1.950,- Kč'
 return: 'v neděli odpoledne okolo 16h'
 price: ''
-program: 'Mapové a běžecké soustředění na Vysočině. Tréninky upřesníme v týdnu před akcí.'
+program: "* ST\n1. úvodní linie\n2. middle\n* ČT\n1. sem-tamy\n2. sudá - lichá, krátká\n* PÁ\n1. TT/vytrvalost\n2. kompenzační cv.\n* SO\n1. kombotech+odbočovák\n2. okruhy (vrstevnice+kameny)\n* NE\n1. štafety"
 thingsToTake: 'Nejlépe dvoje běhací oblečení a obutí, plavky, buzola, čip'
 signups: ''
 gps: '49.72448, 16.05057'
