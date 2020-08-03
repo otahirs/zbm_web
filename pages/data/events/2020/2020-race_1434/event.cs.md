@@ -1,12 +1,12 @@
 ---
 taxonomy:
     skupina:
-        1: pulci1
-        2: pulci2
-        3: zaci1
-        4: dorost
-        5: zaci2
-        6: zabicky
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - dorost
 id: 2020-race_1434
 start: '2020-08-16'
 end: '2020-08-23'
