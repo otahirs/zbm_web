@@ -7,7 +7,35 @@ access:
 process:
     markdown: false
 plan:
-    nextWeek: null
+    nextWeek:
+        monday:
+            1596484717:
+                group:
+                    - dorost
+                name: Posilovna
+                time: '14:30'
+                place: 'Bohunice, kampus, FSpS'
+        tuesday:
+            1596484717:
+                group:
+                    - dorost
+                name: 'běh po cestách'
+                time: '16:30'
+                place: 'u Barnatů, https://en.mapy.cz/s/cufatoderu'
+        wednesday:
+            1596484717:
+                group:
+                    - dorost
+                name: Posilovna
+                time: '14:30'
+                place: 'Bohunice, kampus, FSpS'
+        thursday:
+            1596484717:
+                group:
+                    - dorost
+                name: Dráha
+                time: '17:00'
+                place: 'Areál VUT, pPv'
     thisWeek:
         monday:
             -
