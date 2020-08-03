@@ -7,29 +7,8 @@ access:
 process:
     markdown: false
 plan:
+    nextWeek: null
     thisWeek:
-        monday:
-            1593413496727:
-                group:
-                    - dorost
-                name: Posilovna
-                time: '14:30'
-                place: 'Kampus, Bohunice'
-        tuesday:
-            1593413507946:
-                group:
-                    - zaci1
-                    - zaci2
-                name: 'Běžecké posilování'
-                time: '16:00 - 17:45'
-                place: 'Stadion pod Palackého vrchem'
-            1593422863741:
-                group:
-                    - dorost
-                name: 'klus (doborvolný) + fotbal (organizuje Havran)'
-                time: '16:30'
-                place: 'nám. Svornosti'
-    nextWeek:
         monday:
             -
                 group:
@@ -38,16 +17,12 @@ plan:
                 time: '14:30'
                 place: 'Bohunice, kampus, FSpS'
         tuesday:
-            1593422787767:
+            -
                 group:
                     - dorost
-                name: kopce
+                name: 'běh (dle víkendu)'
                 time: '16:30'
-                place: Rosnička
-            1593422803415:
-                name: ''
-                time: ''
-                place: ''
+                place: 'hala Rosnička (sraz) a okolí'
         wednesday:
             -
                 group:
@@ -56,7 +31,7 @@ plan:
                 time: '14:30'
                 place: 'Bohunice, kampus, FSpS'
         thursday:
-            2:
+            -
                 group:
                     - dorost
                 name: Dráha
