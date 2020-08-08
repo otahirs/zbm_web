@@ -22,7 +22,7 @@ food: "Plná penze.\r\nK dispozici bude barel s ionťákem i R2 po tréninku."
 leader: 'Jenda, Gába'
 note: '**POZOR**: počítáme s ubytkem až do soboty pro všechny (i ty co jedou na Sandstones), doprava zajištěna. V sobotu pak jedeme na závody všichni. Pokud by někdo ubytko nechtěl ozvěte se Jendovi co nejdřív.'
 return: 'V sobotu odpoledne.'
-price: '3 950 Kč'
+price: ''
 program: "25.7.\tso\t\t1\tSlovanka\tz ubytování\t\túvodní\r\n26.7.\tne\t\t2\t[Bedřichov](https://mapy.cz/s/batabepono)\t\t\tmiddle neměřený, na jistotu\r\n26.7.\tne\t\t3\t[Kořenov](\thttps://mapy.cz/s/damasemeku)\t\tseběhy\r\n27.7.\tpo\t\t4\t[Bedřichov](https://mapy.cz/s/mumememufo)\t\t\tvrstevnicovka s modrou a kameny\r\n27.7.\tpo\t\t\tposilko\t\t\t\r\n28.7.\tut\t\t5\t[Valdštejn](https://mapy.cz/s/kuruvurupe)\t\t\tskály - technika orientace\r\n28.7.\tut\t\t6\t[Valdštejn](https://mapy.cz/s/mojogovoru)\t\t\thagaby\r\n29.7.\tst\t\t7\t[Kořenov](https://mapy.cz/s/pasonaduku)\tměřený long\r\n29.7.\tst\t\t\tposilko\t\t\t\r\n30.7.\tct\t\t8\tSlovanka\tz ubytování\t\tštafetky\r\n30.7.\tct\t\t9\t[Bedřichov](https://mapy.cz/s/pasezasero)\t\t\tazimutové kombo\r\n31.7.\tpa\t\t10\t[Slovanka](https://mapy.cz/s/mahamuguzu)\r\n31.7.\tpa\t\t\tposilko\t\t\t\r\n1.8.\tso\t\t11\t[Sandstones\tDoksy](https://mapy.cz/s/henelahero)\t\tzávod"
 thingsToTake: 'Věci na OB, boty s hřeby i **špuntovky bez hřebů** do skal, plavky. Může být krásně okolo 27°C, ale může nám klidně celý týden pršet a být okolo 15°C, připravte se na to prosím.'
 signups: ''
