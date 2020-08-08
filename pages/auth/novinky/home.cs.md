@@ -351,7 +351,7 @@ var myDropzone = new Dropzone("div#NewsDropzone", {
                     appendForm(formData);
                     showLoader();
                     $.ajax({
-                        url: "/php/news",
+                        url: (News_POST_type.value == "updateNews" ? "/php/news/update" :  "/php/news/add"),
                         type: "POST",
                         data: formData,
                         processData: false,
@@ -366,6 +366,7 @@ var myDropzone = new Dropzone("div#NewsDropzone", {
               }
               // pokud jsou, odeslou se obrazky
               else {
+                  myDropzone.options.url = News_POST_type.value == "updateNews" ? "/php/news/update" :  "/php/news/add";
                   myDropzone.processQueue();
               }
             }
@@ -432,12 +433,11 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
     if( e.target.id = "deleteNewsButton"){
       if (confirm("Smazat novinku?") == true) {
         var deleteNewsForm = new FormData();
-          deleteNewsForm.append("POST_type", "deleteNews" );
           deleteNewsForm.append("id", News_id.value );
           showLoader();
           
           $.ajax({
-              url: "/php/news",
+              url: "/php/news/delete",
               type: "POST",
               data: deleteNewsForm,
               processData: false,
