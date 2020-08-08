@@ -57,7 +57,7 @@ access:
         responseDiv.style.color = "black";
           var polarisForm = new FormData(document.getElementById("polarisForm"));
           $.ajax({
-              url: "/php/polaris",
+              url: "/php/polaris/save",
               type: "POST",
               data: polarisForm,
               processData: false,
@@ -120,7 +120,7 @@ access:
             deletePolarisForm.append("cislo", this.getAttribute("data-cislo") );
             deletePolarisForm.append("pdf", this.getAttribute("data-pdf") );
             $.ajax({
-                url: "/php/deletepolaris",
+                url: "/php/polaris/delete",
                 type: "POST",
                 data: deletePolarisForm,
                 processData: false,
