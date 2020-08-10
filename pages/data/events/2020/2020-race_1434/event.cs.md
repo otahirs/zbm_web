@@ -34,5 +34,7 @@ signups: ''
 gps: '49.99411, 13.46256'
 ---
 
-{{page.header.note}}
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+[Informace v pdf a potvrzení ke stažení](https://drive.google.com/drive/folders/1ZOIp\_bIs-jAzLDr3OIRfBnsg5go6fTUc?usp=sharing) 
+Případné dotazy směřujte na Aleše (tel.: 724 037 688, e-mail: ales.finstrle@gmail.com)
+
+*   **sraz**: 6:00 Brno, hl. nádraží. Doprava vlakem, autobusem.
