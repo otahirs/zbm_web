@@ -93,7 +93,7 @@ access:
                     </div>
                     <div class="col-6">
                         <label for="place">Místo</label>
-                        <input id="place" name="place" type="text" value="{{ event.header.place }}">
+                        <input id="place" name="place" type="text" value="{{ event.header.place }}" required>
                     </div>
                     <div class="col-6">
                         <label for="GPS">GPS</label>
@@ -243,8 +243,6 @@ access:
         <div class="col-auto">
             <button id="saveEvent" type="submit" class="special">Uložit</button>
         </div>
-        <div class="col"  id="formResponse" style="line-height: 1em;">
-        </div>
         <div class="col-auto">
             <button id="deleteEvent" type="button"><i class="fa fa-trash-o" aria-hidden="true"></i></button> 
         </div>
@@ -262,6 +260,14 @@ access:
 <script>
 window.addEventListener('DOMContentLoaded', function () {
 
+    const notyf = new Notyf({
+        position: {
+            x: 'right',
+            y: 'top',
+        },
+        duration: 3500,
+    });
+    
     // markdown editors
     var text_editors = {};
 
@@ -363,18 +369,14 @@ window.addEventListener('DOMContentLoaded', function () {
     var save_btn = document.getElementById("saveEvent"),
         delete_btn = document.getElementById("deleteEvent"),
         form = document.getElementById("editEvent"),
+        title = document.getElementById("name"),
         date1 = document.getElementById("date1"),
         date2 = document.getElementById("date2"),
-        id = document.querySelector("[name='id']"),
-        formResponse = document.getElementById("formResponse");
+        place = document.getElementById("place"),
+        id = document.querySelector("[name='id']");
 
     function ajaxError(xhr, desc, err) {
-        if (xhr.responseText) {
-            formResponse.innerHTML = xhr.responseText;
-        } else {
-            formResponse.innerHTML = "<br>Chyba, zkontrolujte console log";
-        }
-        formResponse.style.color = "red";
+        notyf.error('Neočekávaná chyba');
         console.log(err);
         console.log(desc);
         console.log(xhr);
@@ -396,34 +398,29 @@ window.addEventListener('DOMContentLoaded', function () {
                 processData: false,
                 contentType: false,
                 success: function (response){   
-                    formResponse.innerHTML = "<br>Úspěšně uloženo.";
-                    formResponse.style.color = "green";
-                    setTimeout(function(){ 
-                        formResponse.innerHTML = ""; 
-                    }, 3000);
+                    notyf.success('Úspěšně uloženo!');
                     if (id.value == "") {
                         var json = $.parseJSON(response);
                         if (json.id) {
                             $("[name='id']").val(json.id);
                         }
                     }
-                    
-                    //window.location.replace(location.href);
                 },
                 error: ajaxError
             });
 
         }
         else{
-            form.reportValidity();
-            if($("#name").val().trim() == ""){
-                formResponse.innerHTML ='<br>Musí být vyplněn název události';
-                formResponse.style.color = "red";
+            if(!title.checkValidity()){
+                notyf.error('Musí být vyplněn "Název" události');
             }
             else if(!date1.checkValidity() || !date2.checkValidity()){
-                formResponse.innerHTML ='<br>Datum musí být ve formátu "yyyy-mm-dd"';
-                formResponse.style.color = "red";
+                notyf.error('Datum musí být ve formátu "yyyy-mm-dd"');
             }
+            else if(!place.checkValidity()) {
+                notyf.error('Musí být vyplněno "Místo"');
+            }
+            form.reportValidity();
         }
     }
     delete_btn.onclick = function(e){
@@ -438,9 +435,10 @@ window.addEventListener('DOMContentLoaded', function () {
                 processData: false,
                 contentType: false,
                 success: function (){   
-                    formResponse.innerHTML = "<br>Událost byla smazána, pokud jste si to rozmysleli, klikněte na tlačítko uložit";
-                    formResponse.style.color = "red";
-                    //window.location.replace(location.href);
+                    notyf.success({
+                        message: 'Událost byla smazána, pokud jste si to rozmysleli, klikněte na tlačítko uložit.',
+                        duration: 9000
+                    });
                 },
                 error: ajaxError
             });

@@ -4,6 +4,7 @@ use Grav\Common\Cache;
 use Grav\Plugin\Utils;
 use Grav\Common\Grav;
 use Grav\Common\Page\Page;
+use Grav\Common\Filesystem\Folder;
 
 require_once(__DIR__ . "/Utils.php");
 
@@ -52,11 +53,11 @@ class News extends \Grav\Common\Twig\TwigExtension
 
     public static function NewsDelete() {
         if ($_SERVER["REQUEST_METHOD"] !== "POST") return;
+        if(empty($_POST["id"])) return;
         $year = substr($_POST["id"], 0 , 4);
         $oldpath = "./user/pages/data/news/" . $year . "/". $_POST['id'];
         $newpath = "./user/pages/data/trashbin/news/" . $year . "/". $_POST['id'];
-        mkdir($newpath, 0777, true);
-        rename($oldpath, $newpath);
+        Folder::move($oldpath, $newpath);
         Utils::log("News | removed | " . $_POST["id"]);
         Cache::clearCache('cache-only');
     }

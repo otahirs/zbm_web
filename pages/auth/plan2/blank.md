@@ -66,7 +66,6 @@ plan:
                 time: '17:00'
                 place: 'Areál VUT, pPv'
 ---
-<div class="notices red" id="error" style="display:none">Při odesílání požadavku došlo k chybě. Pokud problém přetrvává, popište ho prosím na <i>web@zabiny.club</i><br> Ota</div>
 <div class="row justify-content-between"> 
     <div class="col">
         <input type="checkbox" value="all"  id="filter-all" checked />
@@ -215,6 +214,14 @@ plan:
 
 <script>
     window.addEventListener('DOMContentLoaded', function(){
+
+        const notyf = new Notyf({
+            position: {
+                x: 'right',
+                y: 'top',
+            },
+            duration: 3500,
+        });
         
         // init multiselects for group selection
         $('.multi').multiselect();
@@ -385,35 +392,27 @@ plan:
             })
             removeEmptyRows();
         })
-        
-        function showError() {
-            document.getElementById("error").style.display = "block";
-        }
 
         // submit form
         const submitButton = document.querySelector(".edit-plan__submit");
         submitButton.addEventListener("click", (e) => {
             if (document.querySelector(".multiselect-list.active") !== null) return;
             e.preventDefault();
-            var planForm = new FormData(document.getElementById("program"));
             $.ajax({
-             url: "/php/plan/saveplan",
-             type: "POST",
-             data: planForm,
-             processData: false,
-             contentType: false,
-             success: function (){ 
-                const initialText = submitButton.innerHTML;
-                submitButton.innerHTML = 'Uloženo <i class="fa fa-check" aria-hidden="true"></i>';
-                submitButton.style.backgroundColor = "green";
-                setTimeout( () => {
-                    submitButton.innerHTML = initialText;
-                    submitButton.style.backgroundColor = "";
-                }, 2000);
-             },
-             error: function (xhr, desc, err){
-                 showError();
-             }
+                url: "/php/plan/saveplan",
+                type: "POST",
+                data: new FormData(document.getElementById("program")),
+                processData: false,
+                contentType: false,
+                success: function (){ 
+                    notyf.success("Plán uložen!");
+                },
+                error: function (xhr, desc, err){
+                    notyf.error("Neočekávaná chyba");
+                    console.log(xhr);
+                    console.log(desc);
+                    console.log(err);
+                }
             });
         })
 
@@ -432,19 +431,23 @@ plan:
         document.querySelector(".edit-plan-modal__submit-button").addEventListener("click", (e) => {
             if (document.querySelector(".multiselect-list.active") !== null) return;
             e.preventDefault();
-            var formData = new FormData(e.target.closest("form"));
             $.ajax({
-             url: "/php/plan/loadfromtemplate",
-             type: "POST",
-             data: formData,
-             processData: false,
-             contentType: false,
-             success: function (){ 
-               window.location.replace(location.href);
-             },
-             error: function (xhr, desc, err){
-                 showError()
-             }
+                url: "/php/plan/loadfromtemplate",
+                type: "POST",
+                data: new FormData(e.target.closest("form")),
+                processData: false,
+                contentType: false,
+                success: function (){ 
+                    notyf.success("Šablona načtena!<br>Stránka se obnoví.");
+                    modal.style.display = "none";
+                    setTimeout(() => window.location.replace(location.href), 1000);
+                },
+                error: function (xhr, desc, err){
+                    notyf.error("Neočekávaná chyba");
+                    console.log(xhr);
+                    console.log(desc);
+                    console.log(err);
+                }
             });
         })
         
