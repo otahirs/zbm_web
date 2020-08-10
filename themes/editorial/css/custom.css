@@ -202,21 +202,6 @@ html, body {
         box-shadow: 0 2.5em 0 0;
     }
 }
-/* AJAX response*/
-/* error pri ajax odesilani novinek */
-.ajaxError{
-    color: #252d33 !important;
-    margin: 50px auto;
-    position: relative;
-    text-align: center;
-}
-.ajaxErrorText{
-    font-size: 1.5em;
-    font-weight: bold;
-}
-.ajaxErrorNote{
-    opacity: 0.6;
-}
 
 /*********************************/
 /**** pravidelne treninky ********/
@@ -520,3 +505,5 @@ p {
     font-size: smaller;
     padding-left: 5px;
   }
+
+.notyf { top: 3.5rem}

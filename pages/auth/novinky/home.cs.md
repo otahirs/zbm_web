@@ -164,7 +164,6 @@ ostatni data z formulare a odeslana dropzone.js prikazem "myDropzone.processQueu
         <button type="button" id="News--close">Zrušit</button>
         <span id="News--deleteButtonSpan"></span>
       </form>
-      <div id="News--responseText" style="color:red"></div>
     </div> <!-- modal content -->
   </div>
 </div> <!-- modal -->
@@ -183,6 +182,14 @@ var News_simplemde = new SimpleMDE({ element: document.getElementById("News--con
                                 spellChecker: false,
                                 status: false});
 
+const notyf = new Notyf({
+    position: {
+        x: 'right',
+        y: 'top',
+    },
+    duration: 3500,
+});
+
 /* vars*/
   var News_deleteButtonSpan = document.getElementById("News--deleteButtonSpan"),
       News_header = document.getElementById("News--header"),
@@ -194,7 +201,6 @@ var News_simplemde = new SimpleMDE({ element: document.getElementById("News--con
       News_pictures = document.getElementById("News--pictures"),
       News_modal = document.getElementById('NewsModal'),
       News_ModalContent = document.getElementById('NewsModalContent'),
-      News_responseText = document.getElementById('News--responseText'),
       News_ModalScroll = document.getElementById('NewsModalScroll');
 
 // pokud se klikne na zrusit, zavre se modal
@@ -204,7 +210,6 @@ var News_simplemde = new SimpleMDE({ element: document.getElementById("News--con
         News_pictures.innerHTML = "";//vymaze vsechny obrazky z modal
         News_simplemde.value(""); //vymaz textoveho editoru
         News_deleteButtonSpan.innerHTML = ""; //vymaze delete tlacitko
-        News_responseText.innerHTML = "";
     }
       
        // pokud se klikne mimo modal, zavre se 
@@ -292,15 +297,10 @@ $(".edit-news").click(function(){
   }
 
   function showError(xhr, desc, err){
-    News_ModalContent.innerHTML = '<div class="ajaxError">' +
-                                  '<div class="ajaxErrorText" >Něco se pokazilo..</div><hr><br>' +
-                                  '<button class="ajaxErrorButton"  type="button" onclick="window.location.replace(location.href)"><i class="fafa-refresh" aria-hidden="true"></i>&nbsp;Obnovit stránku</button><br><br>' +
-                                  '<div class="ajaxErrorNote">Zkontrolujte <i>console.log</i> nebo kontaktujte správce stránek.</div>' +
-                                  '</div>';
+    notyf.error("Neočekávaná chyba");
     console.log(err);
     console.log(desc);
     console.log(xhr);
-    console.log(xhr.responseText);
   }
 
   function appendForm(formData){
@@ -341,7 +341,8 @@ var myDropzone = new Dropzone("div#NewsDropzone", {
         document.getElementById("News--submit-all").onclick = function (e) {
 
             if( News_title.value == ''){ 
-              alert('Musí být vyplněn název novinky.');
+              News_title.focus();
+              notyf.error('Chybí název novinky.');
             }
             else{
               // pokud v dropzone nejsou soubory, odesle se formular
@@ -357,7 +358,10 @@ var myDropzone = new Dropzone("div#NewsDropzone", {
                         processData: false,
                         contentType: false,
                         success: function ()
-                        {  window.location.replace(location.href);
+                        {  
+                          notyf.success("Úspěšně uloženo!")
+                          News_modal.style.display = "none";
+                          window.location.replace(location.href);
                         },
                         error: function (xhr, desc, err){
                           showError(xhr, desc, err);
@@ -378,15 +382,17 @@ var myDropzone = new Dropzone("div#NewsDropzone", {
         });
 
         myDropzone.on("successmultiple", function() {
+            notyf.success("Úspěšně uloženo!")
+            News_modal.style.display = "none";
             window.location.replace(location.href);
         });
 
         myDropzone.on('error', function(file, errorMessage, xhr) {
           if(errorMessage){
-            News_responseText.innerHTML = "<br>" . errorMessage;
+            notyf.error(errorMessage);
           }
           else if(xhr.responseText){
-            News_responseText.innerHTML = "<br>" . xhr.responseText;
+            notyf.error(xhr.responseText);
           }
           else{
             showError(xhr, errorMessage, file); 
@@ -443,11 +449,13 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
               processData: false,
               contentType: false,
               success: function (){ 
+                notyf.success("Novinka smazána!")
+                News_modal.style.display = "none";
                 window.location.replace(location.href);
               },
               error: function (xhr, desc, err){
                 showError(xhr, desc, err);
-                 }
+              }
           });
 
       }
@@ -512,6 +520,7 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
               contentType: false,
               success: function ()
               { 
+                notyf.success("Náhled události uložen.");
                 soonEvent.classList.remove("edit-blizise-active"); 
                 window.location.replace(location.href);
               },
@@ -533,7 +542,9 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
               processData: false,
               contentType: false,
               success: function ()
-              {  soonEvent.classList.remove("edit-blizise-active");
+              {  
+                notyf.success("Náhled události obnoven do výchozí podoby.");
+                soonEvent.classList.remove("edit-blizise-active");
                 window.location.replace(location.href);  
               },
               error: function (xhr, desc, err){
