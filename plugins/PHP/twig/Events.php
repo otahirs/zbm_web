@@ -41,6 +41,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
             $page->content($_POST["content"]);
         }
         $page->save();
+        Cache::clearCache('cache-only');
     }
 
     
