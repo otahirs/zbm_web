@@ -52,6 +52,7 @@ access:
 <hr>
 <h2>Changelog</h2>
 <ul>
+    <li>2020-08-08 <br> Sjednocený způsob odpovědí ze serveru ve formě "notifikací". Opravena úprava náhledu blížících se událostí (nezpracování markdown, nevylití cache).</li>
     <li>2020-08-08 <br> Přepsána část kódu na serveru. Mohou se objevit nějaké chyby.</li>
     <li>2020-06-16 <br> Přihlášení na stránky nyní nepřesměrovává. Tedy pokud půjdete např na zabiny.club/auth/plan2, ale nebudete přihlášení, tak po následném přihlášení nebudete přesměrování na rozcestník, ale můžete pokračovat přímo na původní stránce.</li>
     <li>2020-06-11 <br> Plán na tento týden přepracován. Možnost filtrovat plán dle skupin. Rozšířené možnosti šablon.</li>
