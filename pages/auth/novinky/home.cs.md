@@ -119,7 +119,7 @@ news:
               </em>
             </h4>
             <article class="soon__content" data-id="{{p.header.id}}">
-              {{p.content}}
+              {{p.content|markdown}}
             </article>
           </section>
          
