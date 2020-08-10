@@ -64,36 +64,44 @@ access:
 
 
 <script>
+window.addEventListener('DOMContentLoaded', function () {
+    const notyf = new Notyf({
+        position: {
+            x: 'right',
+            y: 'top',
+        },
+        duration: 3500,
+    });
+
     $("#mapTheoryForm").submit(function(e){
         e.preventDefault(); 
         e.stopPropagation();
         var submitButton = document.getElementById("sendForm");
         var responseDiv = document.getElementById("response");
-        submitButton.style.display = "none";
-        responseDiv.innerHTML = '<br><i class="fa fa-spinner fa-pulse fa-3x" aria-hidden="true"></i> Náhrávám se soubor mapové teorie.';
-        responseDiv.style.color = "black";
-          var mapTheoryForm = new FormData(document.getElementById("mapTheoryForm"));
+        responseDiv.innerHTML = '<br><p><i class="fa fa-spinner fa-pulse fa-3x" aria-hidden="true"></i>  Soubor mapové teorie se zpracovává. </p>';
           $.ajax({
-              url: "/php/mapt/savemapt",
-              type: "POST",
-              data: mapTheoryForm,
-              processData: false,
-              contentType: false,
-              success: function (){
-                  responseDiv.innerHTML = "<br>Úspěšně uloženo";
-                  responseDiv.style.color = "green";
-                  setTimeout(function(){ 
-                     responseDiv.innerHTML = ""; 
-                     }, 3000);  window.location.replace(location.href);
-              },
-              error: function (xhr, desc, err){
-                submitButton.style.display = "block";
-                responseDiv.innerHTML = "<br>CHYBA!!<br>" + xhr.responseText;
-                responseDiv.style.color = "red";
-                console.log(err);
-                console.log(desc);
-                console.log(xhr);
-              }
+                url: "/php/mapt/savemapt",
+                type: "POST",
+                data: new FormData(document.getElementById("mapTheoryForm")),
+                processData: false,
+                contentType: false,
+                success: function (){
+                    responseDiv.innerHTML = "";
+                    notyf.success("Úpěšně uloženo!");
+                    setTimeout(() => window.location.replace(location.href), 1000);
+                },
+                error: function (xhr, desc, err){
+                    if(xhr.responseText) {
+                        notyf.error({message:xhr.responseText, duration: 9000, ripple: false});
+                    }
+                    else {
+                        notyf.error("Neočekávaná chyba");
+                    }
+                    console.log(err);
+                    console.log(desc);
+                    console.log(xhr);
+                    responseDiv.innerHTML = "";
+                }
           });
       });
 
@@ -112,9 +120,11 @@ access:
                 processData: false,
                 contentType: false,
                 success: function (){
-                    $(deleteLi).fadeOut(1000);      
+                    $(deleteLi).fadeOut(1000); 
+                    notyf.success("Soubor mapové teorie úspěšně smazán.");     
                 },
                 error: function (xhr, desc, err){
+                    notyf.error("Neočekávaná chyba");
                     console.log(err);
                     console.log(desc);
                     console.log(xhr);
@@ -124,5 +134,6 @@ access:
         
 
     })
+});
 </script>
 

@@ -115,38 +115,36 @@ templates:
                 time: ''
                 place: ''
 ---
+{% set curr_template = uri.query('template') ?? page.header.defaultTemplate %}
 
-<div class="notices red" id="error" style="display:none">Při odesílání požadavku došlo k chybě. Pokud problém přetrvává, popište ho prosím na <i>web@zabiny.club</i><br> Ota</div>
 <div class="row justify-content-between"> 
     <div class="col">
-        <input type="checkbox" value="all"  id="filter-all" checked />
-        <label for="filter-all">Vše</label>
-        <input class="filter" type="checkbox" value="zabicky" id="filter-zabicky" />
-        <label for="filter-zabicky">Žabičky</label>
-        <input class="filter" type="checkbox" value="pulci1" id="filter-pulci1" />
-        <label for="filter-pulci1">Pulci 1</label>
-        <input class="filter" type="checkbox" value="pulci2" id="filter-pulci2" />
-        <label for="filter-pulci2">Pulci 2</label>
-        <input class="filter" type="checkbox" value="zaci1" id="filter-zaci1" />
-        <label for="filter-zaci1">Žáci 1</label>
-        <input class="filter" type="checkbox" value="zaci2" id="filter-zaci2" />
-        <label for="filter-zaci2">Žáci 2</label>
-        <input class="filter" type="checkbox" value="dorost" id="filter-dorost" />
-        <label for="filter-dorost">Dorost+</label>
+        <select name="template" id="choose-template" autocomplete="off" style="display:inline">
+            {% for template_name, _ in page.header.templates %} 
+                <option value="{{template_name}}" {% if curr_template == template_name %} selected {% endif %}>{{template_name}}</option>
+            {% endfor %}
+        </select>
+        <button class="set-default-template" type="button" title='Výchozí šablona vyplňuje plán "příští týden" při posunu týdnů.' {% if curr_template == page.header.defaultTemplate %} disabled>Tato šablona je výchozí {% else %}>Nastavit jako výchozí {% endif %}</button> 
     </div>
     <div class="col-auto">
         <button id="edit-plan__submit" type="button" class="button special">Uložit</button>
     </div>
 </div>
 <br>
-{% set curr_template = uri.query('template') ?? page.header.defaultTemplate %}
-<label for="choose-template">Vybrat šablonu:</label>
-<select name="template" id="choose-template" autocomplete="off" style="display:inline">
-    {% for template_name, _ in page.header.templates %} 
-        <option value="{{template_name}}" {% if curr_template == template_name %} selected {% endif %}>{{template_name}}</option>
-    {% endfor %}
-</select>
-<button class="set-default-template" type="button" title='Výchozí šablona vyplňuje plán "příští týden" při posunu týdnů.' {% if curr_template == page.header.defaultTemplate %} disabled>Tato šablona je výchozí {% else %}>Nastavit jako výchozí {% endif %}</button> 
+<input type="checkbox" value="all"  id="filter-all" checked />
+<label for="filter-all">Vše</label>
+<input class="filter" type="checkbox" value="zabicky" id="filter-zabicky" />
+<label for="filter-zabicky">Žabičky</label>
+<input class="filter" type="checkbox" value="pulci1" id="filter-pulci1" />
+<label for="filter-pulci1">Pulci 1</label>
+<input class="filter" type="checkbox" value="pulci2" id="filter-pulci2" />
+<label for="filter-pulci2">Pulci 2</label>
+<input class="filter" type="checkbox" value="zaci1" id="filter-zaci1" />
+<label for="filter-zaci1">Žáci 1</label>
+<input class="filter" type="checkbox" value="zaci2" id="filter-zaci2" />
+<label for="filter-zaci2">Žáci 2</label>
+<input class="filter" type="checkbox" value="dorost" id="filter-dorost" />
+<label for="filter-dorost">Dorost+</label>
 <br><br>
 {# inicializace poli urcujiciho den v tydnu #}
 {% set collection = page.collection({'items': {'@page.descendants': '/data/events'}, 'filter': {'routable': 'true'},'order': {'by': 'default', 'dir': 'asc'}}) %}
@@ -227,6 +225,14 @@ templates:
 
 <script>
     window.addEventListener('DOMContentLoaded', function(){
+
+        const notyf = new Notyf({
+            position: {
+                x: 'right',
+                y: 'top',
+            },
+            duration: 3500,
+        });
         
         // init multiselects for group selection
         $('.multi').multiselect();
@@ -397,30 +403,26 @@ templates:
         
         submitButton.addEventListener("click", (e) => {
             e.preventDefault();
-            var planForm = new FormData(document.getElementById("program"));
             $.ajax({
-             url: "/php/plan/savetemplate",
-             type: "POST",
-             data: planForm,
-             processData: false,
-             contentType: false,
-             success: function (){ 
-                const initialText = submitButton.innerHTML;
-                submitButton.innerHTML = 'Uloženo <i class="fa fa-check" aria-hidden="true"></i>';
-                submitButton.style.backgroundColor = "green";
-                setTimeout( () => {
-                    submitButton.innerHTML = initialText;
-                    submitButton.style.backgroundColor = "";
-                }, 2000);
-             },
-             error: function (xhr, desc, err){
-                  showError();
-             }
+                url: "/php/plan/savetemplate",
+                type: "POST",
+                data: new FormData(document.getElementById("program")),
+                processData: false,
+                contentType: false,
+                success: function (){ 
+                    notyf.success("Šablona uložena!");
+                },
+                error: function (xhr, desc, err){
+                    notyf.error("Neočekávaná chyba");
+                    console.log(xhr);
+                    console.log(desc);
+                    console.log(err);
+                }
             });
         })
 
         document.querySelector(".create-new-template__button").addEventListener("click", (e) => {
-            if (!confirm("Neuložené změny v plánu budou ztraceny, chcete pokračovat?")) {
+            if (!confirm("Neuložené změny v současné šabloně budou ztraceny, chcete pokračovat?")) {
                 return
             }
             e.preventDefault();
@@ -435,16 +437,25 @@ templates:
                 contentType: false,
                 success: function (response){ 
                     templateName = JSON.parse(response);
-                    location.href = `{{page.url}}?template=${templateName}`;
+                    notyf.success("Šablona vytvořena!<br>Stránka se obnoví.");
+                    setTimeout(() => {
+                        location.href = `{{page.url}}?template=${templateName}`
+                    }, 1000);
                 },
                 error: function (xhr, desc, err){
-                    showError();
+                    notyf.error("Neočekávaná chyba");
+                    console.log(xhr);
+                    console.log(desc);
+                    console.log(err);
                 }
             });
         })
 
-        document.querySelector(".delete-template").addEventListener("click", (e) => {
-            if (!confirm("Neuložené změny v plánu budou ztraceny, chcete pokračovat?")) {
+
+        let deleteTemplateBtn = document.querySelector(".delete-template");
+
+        deleteTemplateBtn.addEventListener("click", (e) => {
+            if (!confirm("Opravdu chcete tuto šablonu smazat?")) {
                 return
             }
             e.preventDefault();
@@ -460,15 +471,18 @@ templates:
                     location.href = `{{page.url}}`;
                 },
                 error: function (xhr, desc, err){
-                    showError();
+                    notyf.error("Neočekávaná chyba");
+                    console.log(xhr);
+                    console.log(desc);
+                    console.log(err);
                 }
             });
         })
 
-        document.querySelector(".set-default-template").addEventListener("click", (e) => {
-            if (!confirm("Neuložené změny v plánu budou ztraceny, chcete pokračovat?")) {
-                return
-            } 
+
+        let defaultTemplateBtn = document.querySelector(".set-default-template");
+
+        defaultTemplateBtn.addEventListener("click", (e) => {
             e.preventDefault();
             var setDefaultTemplateFormData = new FormData();
             setDefaultTemplateFormData.append("defaultTemplate", "{{curr_template}}");
@@ -478,18 +492,27 @@ templates:
                 data: setDefaultTemplateFormData,
                 processData: false,
                 contentType: false,
-                success: function (response){ 
-                    location.href = `{{page.url}}`;
+                success: function (){ 
+                    notyf.success("Šablona nastavena jako výchozí.");
+                    deleteTemplateBtn.disabled = true;
+                    deleteTemplateBtn.innerHTML = "Nelze odstranit výchozí šablonu";
+                    defaultTemplateBtn.disabled = true;
+                    defaultTemplateBtn.innerHTML = "Tato šablona je výchozí";
+                    
                 },
                 error: function (xhr, desc, err){
-                    showError();
+                    notyf.error("Neočekávaná chyba");
+                    console.log(xhr);
+                    console.log(desc);
+                    console.log(err);
                 }
             });
         })
 
 
         document.querySelector("#choose-template").addEventListener("change", (select) => {
-            if (!confirm("Neuložené změny v plánu budou ztraceny, chcete pokračovat?")) {
+            if (!confirm("Neuložené změny v současné šabloně budou ztraceny, chcete pokračovat?")) {
+                select.target.value = "{{curr_template}}";
                 return
             }
             location.href = `{{page.url}}?template=${select.target.value}`;
