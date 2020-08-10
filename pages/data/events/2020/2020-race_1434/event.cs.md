@@ -25,7 +25,7 @@ transport: 'vlakem, autobusem'
 accomodation: ''
 food: ''
 leader: Aleš
-note: "Přihlášky do 30. dubna 2020 přes přihlašovací systém ZBM, nebo Aleši Finstrle (tel.: 724 037 688, e-mail: ales.finstrle@gmail.com)\r\n\r\n[Informace v pdf a potvrzení ke stažení](https://drive.google.com/drive/folders/1ZOIp_bIs-jAzLDr3OIRfBnsg5go6fTUc?usp=sharing)"
+note: "[Informace v pdf a potvrzení ke stažení](https://drive.google.com/drive/folders/1ZOIp_bIs-jAzLDr3OIRfBnsg5go6fTUc?usp=sharing)\r\nPřípadné dotazy na Aleš Finstrle (tel.: 724 037 688, e-mail: ales.finstrle@gmail.com)"
 return: '18:19 hod Brno, Hlavní nádraží'
 price: ''
 program: "* tréninky orientačního běhu ([program skupiny D+](https://docs.google.com/spreadsheets/d/165VZLKDBnJsjGbmNKYqyDZ06g3NvAFmUyxD2oZYes2c/edit?usp=sharing))\r\n* hry\r\n* soutěže\r\n* koupání\r\n* výlet\r\n\r\n**Středeční výlet – 19. srpna 2020**\r\nVe středu 19. srpna máme připravený výlet. Pulci a Žáci I budou mít klasický pěší výlet. Žáci II a starší budou mít výlet formou splutí části řeky Berounky z Chrástu do Liblína. Pro výlet na lodi si vezměte oblečení do lodě, které rychle uschne. V případě teplého počasí – plavky, tričko, opalovací krém. V případě nepříznivého počasí nejlépe elasťáky, propocovák a vršek overalu nebo šusťákovou bundu + pláštěnka. Zatím to spíše vypadá na něco mezi podle předpovědi počasí."
@@ -33,5 +33,6 @@ thingsToTake: "**Seznam věcí(nejlépe podepsané): **\r\n* oblečení na běh�
 signups: ''
 gps: '49.99411, 13.46256'
 ---
+
 {{page.header.note}}
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
