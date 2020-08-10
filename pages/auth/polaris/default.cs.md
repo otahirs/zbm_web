@@ -47,38 +47,7 @@ access:
         <hr>
 
 <script>
-    $("#polarisForm").submit(function(e){
-        e.preventDefault(); 
-        e.stopPropagation();
-        var submitButton = document.getElementById("sendPolaris");
-        var responseDiv = document.getElementById("response");
-        submitButton.style.display = "none";
-        responseDiv.innerHTML = '<br><i class="fa fa-spinner fa-pulse fa-3x" aria-hidden="true"></i> Náhrávám se polaris a vytváří se náhled.';
-        responseDiv.style.color = "black";
-          var polarisForm = new FormData(document.getElementById("polarisForm"));
-          $.ajax({
-              url: "/php/polaris/save",
-              type: "POST",
-              data: polarisForm,
-              processData: false,
-              contentType: false,
-              success: function (){
-                  responseDiv.innerHTML = "<br>Úspěšně uloženo";
-                  responseDiv.style.color = "green";
-                  setTimeout(function(){ 
-                     responseDiv.innerHTML = ""; 
-                     }, 3000);  window.location.replace(location.href);
-              },
-              error: function (xhr, desc, err){
-                submitButton.style.display = "block";
-                responseDiv.innerHTML = "<br>CHYBA!!<br>" + xhr.responseText;
-                responseDiv.style.color = "red";
-                console.log(err);
-                console.log(desc);
-                console.log(xhr);
-              }
-          });
-      });
+    
 </script>
 
 
@@ -111,6 +80,48 @@ access:
 
 
 <script>
+window.addEventListener('DOMContentLoaded', function () {
+
+    const notyf = new Notyf({
+        position: {
+            x: 'right',
+            y: 'top',
+        },
+        duration: 3500,
+    });
+
+    $("#polarisForm").submit(function(e){
+        e.preventDefault(); 
+        e.stopPropagation();
+        var submitButton = document.getElementById("sendPolaris");
+        var responseDiv = document.getElementById("response");
+        responseDiv.innerHTML = '<br><p><i class="fa fa-spinner fa-pulse fa-3x" aria-hidden="true"></i>  Soubor polarisu se zpracovává. </p>';
+        $.ajax({
+            url: "/php/polaris/save",
+            type: "POST",
+            data: new FormData(document.getElementById("polarisForm")),
+            processData: false,
+            contentType: false,
+            success: function (){
+                responseDiv.innerHTML = "";
+                notyf.success("Úpěšně uloženo!");
+                setTimeout(() => window.location.replace(location.href), 1000);
+            },
+            error: function (xhr, desc, err){
+                if(xhr.responseText) {
+                    notyf.error({message:xhr.responseText, duration: 9000, ripple: false});
+                }
+                else {
+                    notyf.error("Neočekávaná chyba");
+                }
+                console.log(err);
+                console.log(desc);
+                console.log(xhr);
+                responseDiv.innerHTML = "";
+            }
+        });
+    });
+
     $(".polaris--delete").click( function(e){
         e.stopPropagation();
         if (confirm("Odstranit Polaris?") == true) {
@@ -127,17 +138,18 @@ access:
                 contentType: false,
                 success: function (){
                     $(deleteDiv).fadeOut(1000);      
+                    notyf.success("Polaris úspěšně smazán.");   
                 },
                 error: function (xhr, desc, err){
+                    notyf.error("Neočekávaná chyba");
                     console.log(err);
                     console.log(desc);
                     console.log(xhr);
                 }
             });
         }
-        
-
     })
+});
 </script>
 
 

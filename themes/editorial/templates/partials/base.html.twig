@@ -18,6 +18,7 @@
 	    {% do assets.addCss('theme://css/datepicker.css', 90) %}
 	    {% do assets.addCss('theme://css/simplemde.min.css', 10) %}
 	    {% do assets.addCss('theme://css/dropzone.css', 10) %}
+	    {% do assets.addCss('theme://css/notyf.min.css', 10) %}
         {% do assets.addCss('theme://css/custom.css', 1) %}
 
     {% endblock %}
@@ -35,6 +36,7 @@
         {% do assets.addJs('theme://js/dropzone.js', {'group':'defer'}) %}   
 	    {% do assets.addJs('theme://js/simplemde.min.js', {'group':'defer'}) %}
 	    {% do assets.addJs('theme://js/multiselect.js', {'group':'defer'}) %}
+        {% do assets.addJs('theme://js/notyf.min.js', {'group':'defer'}) %}
     {% endblock %}
     {{ assets.js()|raw }}
     {{ assets.js('defer',{'loading':'defer'})|raw }}
