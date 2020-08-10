@@ -4,6 +4,7 @@ use Grav\Common\Cache;
 use Grav\Plugin\Utils;
 use Grav\Common\Grav;
 use Grav\Common\Page\Page;
+use Grav\Common\Filesystem\Folder;
 
 require_once(__DIR__ . "/Utils.php");
 
@@ -353,10 +354,9 @@ class Events extends \Grav\Common\Twig\TwigExtension
     static function trashEvent($id) {
         if(empty($id)) return;
         $oldpath = "./user/pages/data/events/". substr($id, 0 , 4) ."/". $id ;
-        if(!file_exists($oldpath)) return;
         $newpath = "./user/pages/data/trashbin/events/". substr($id, 0 , 4) ."/". $id ;
-        mkdir($newpath, 0777, true);
-        rename($oldpath, $newpath);
+        Folder::delete($newpath);
+        Folder::move($oldpath, $newpath);
         Utils::log("EVENT | removed | " . $id);
     }
 
