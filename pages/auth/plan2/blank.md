@@ -36,36 +36,8 @@ plan:
                 name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, pPv'
-    nextWeek:
-        monday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '14:30'
-                place: 'Bohunice, kampus, FSpS'
-        tuesday:
-            -
-                group:
-                    - dorost
-                name: 'běh (dle víkendu)'
-                time: '16:30'
-                place: 'hala Rosnička (sraz) a okolí'
-        wednesday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '14:30'
-                place: 'Bohunice, kampus, FSpS'
-        thursday:
-            -
-                group:
-                    - dorost
-                name: Dráha
-                time: '17:00'
-                place: 'Areál VUT, pPv'
 ---
+
 <div class="row justify-content-between"> 
     <div class="col">
         <input type="checkbox" value="all"  id="filter-all" checked />
