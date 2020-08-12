@@ -21,7 +21,7 @@ plan:
                     - dorost
                 name: 'běh po cestách'
                 time: '16:30'
-                place: 'u Barnatů, https://en.mapy.cz/s/cufatoderu'
+                place: Rosnička
         wednesday:
             1596484717:
                 group:
@@ -33,7 +33,7 @@ plan:
             1596484717:
                 group:
                     - dorost
-                name: Dráha
+                name: 'o-400, berte tužky!'
                 time: '17:00'
                 place: 'Areál VUT, pPv'
 ---
