@@ -9,33 +9,67 @@ process:
 plan:
     thisWeek:
         monday:
-            1596484717:
+            -
                 group:
                     - dorost
                 name: Posilovna
                 time: '14:30'
                 place: 'Bohunice, kampus, FSpS'
         tuesday:
-            1596484717:
+            -
                 group:
                     - dorost
-                name: 'běh po cestách'
+                name: 'běh (dle víkendu)'
                 time: '16:30'
-                place: Rosnička
+                place: 'hala Rosnička (sraz) a okolí'
         wednesday:
-            1596484717:
+            -
                 group:
                     - dorost
                 name: Posilovna
                 time: '14:30'
                 place: 'Bohunice, kampus, FSpS'
         thursday:
-            1596484717:
+            -
                 group:
                     - dorost
-                name: 'o-400, berte tužky!'
+                name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, pPv'
+    nextWeek:
+        monday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '14:30'
+                place: 'Bohunice, kampus, FSpS'
+        tuesday:
+            -
+                group:
+                    - dorost
+                name: 'běh (volně)'
+                time: '16:30'
+                place: 'hala Rosnička (sraz) a okolí'
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '14:30'
+                place: 'Bohunice, kampus, FSpS'
+        thursday:
+            -
+                group:
+                    - dorost
+                name: Dráha
+                time: '17:00'
+                place: 'Areál VUT, pPv'
+        friday:
+            1598253005:
+                name: ''
+                time: ''
+                place: ''
 ---
 
 <div class="row justify-content-between"> 
