@@ -1,12 +1,12 @@
 ---
 taxonomy:
     skupina:
-        - dorost
-        - zaci2
-        - zaci1
-        - pulci2
-        - pulci1
         - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - dorost
 id: 2020-race_1481
 start: '2020-09-05'
 end: '2020-09-05'
@@ -20,3 +20,4 @@ import:
     type: members
     time: 1596578401
 ---
+

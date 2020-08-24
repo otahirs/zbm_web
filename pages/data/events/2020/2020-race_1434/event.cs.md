@@ -36,6 +36,25 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
+routes:
+    -
+        name: '1. uvodní azimuťáka'
+        link: 'http://3drerun.worldofo.com/?id=-16801846&type=info'
+    -
+        name: '3. vrstevnicovka'
+        link: 'http://3drerun.worldofo.com/index.php?id=-16801715&type=info'
+    -
+        name: '4. sudá-lichá'
+        link: 'http://3drerun.worldofo.com/?id=-16801846&type=info'
+    -
+        name: '5. NOB - Dorost+'
+        link: 'http://3drerun.worldofo.com/?id=-16802243&type=info'
+    -
+        name: '6. NOB - žáci a mladší'
+        link: 'http://3drerun.worldofo.com/?id=-16802319&type=info'
+    -
+        name: '7. Sprintové štafety'
+        link: bude
 ---
 
 [Informace v pdf a potvrzení ke stažení](https://drive.google.com/drive/folders/1ZOIp\_bIs-jAzLDr3OIRfBnsg5go6fTUc?usp=sharing) 
