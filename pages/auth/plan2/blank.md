@@ -9,35 +9,6 @@ process:
 plan:
     thisWeek:
         monday:
-            1596484717:
-                group:
-                    - dorost
-                name: Posilovna
-                time: '14:30'
-                place: 'Bohunice, kampus, FSpS'
-        tuesday:
-            1596484717:
-                group:
-                    - dorost
-                name: 'běh po cestách'
-                time: '16:30'
-                place: 'u Barnatů, https://en.mapy.cz/s/cufatoderu'
-        wednesday:
-            1596484717:
-                group:
-                    - dorost
-                name: Posilovna
-                time: '14:30'
-                place: 'Bohunice, kampus, FSpS'
-        thursday:
-            1596484717:
-                group:
-                    - dorost
-                name: Dráha
-                time: '17:00'
-                place: 'Areál VUT, pPv'
-    nextWeek:
-        monday:
             -
                 group:
                     - dorost
@@ -65,7 +36,42 @@ plan:
                 name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, pPv'
+    nextWeek:
+        monday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '14:30'
+                place: 'Bohunice, kampus, FSpS'
+        tuesday:
+            -
+                group:
+                    - dorost
+                name: 'běh (volně)'
+                time: '16:30'
+                place: 'hala Rosnička (sraz) a okolí'
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '14:30'
+                place: 'Bohunice, kampus, FSpS'
+        thursday:
+            -
+                group:
+                    - dorost
+                name: Dráha
+                time: '17:00'
+                place: 'Areál VUT, pPv'
+        friday:
+            1598253005:
+                name: ''
+                time: ''
+                place: ''
 ---
+
 <div class="row justify-content-between"> 
     <div class="col">
         <input type="checkbox" value="all"  id="filter-all" checked />
