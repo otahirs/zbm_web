@@ -47,7 +47,7 @@ class News extends \Grav\Common\Twig\TwigExtension
         if (!empty($_FILES)) {
             self::process_files($id, 1000, substr($date, 0 , 4));
         }
-        Utils::log(" | NEWS | edited | " . $id);
+        Utils::log("NEWS | edited | " . $id);
         Cache::clearCache('cache-only');
     }
 

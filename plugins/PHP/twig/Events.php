@@ -5,6 +5,7 @@ use Grav\Plugin\Utils;
 use Grav\Common\Grav;
 use Grav\Common\Page\Page;
 use Grav\Common\Filesystem\Folder;
+use Grav\Common\GPM\Response;
 
 require_once(__DIR__ . "/Utils.php");
 
@@ -214,10 +215,10 @@ class Events extends \Grav\Common\Twig\TwigExtension
                 if(!$page->exists()) {
                     $content = self::generate_content($frontmatter);
                     $page->content($content);
-                    Utils::log("event imported | {$type} | {$event['id']}");
+                    Utils::log("event imported | from {$type} | {$event['id']}");
                 }
                 else {
-                    Utils::log("event edited | {$type} | {$event['id']}");
+                    Utils::log("event edited | from {$type} | {$event['id']}");
                 }
                 
                 $page->save();
