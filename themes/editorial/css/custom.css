@@ -357,11 +357,11 @@ dd {
     font-weight: bold;
 }
 .topbar--title{
-    font-size: 24px;
+    font-size: 22px;
     left: 0;
     padding: 0 18px;
     position: fixed;
-    padding-top: 8px;
+    padding-top: 7px;
 }
 #topbar .topbar--title:hover {
     outline: none;
