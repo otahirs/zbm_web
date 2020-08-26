@@ -14,6 +14,17 @@ date: '2020-03-10'
 import:
     type: members
     time: 1591999202
-note: '16.6.2020 6.30! '
+note: ''
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
 ---
+
 {{page.header.note}}
