@@ -40,7 +40,7 @@ body {
 body, input, select, textarea {
   color: #222;
   font-family: "Arial", sans-serif;
-  font-size: 14pt;
+  font-size: 13pt;
   font-weight: 400;
   line-height: 1.65; }
   @media screen and (max-width: 1680px) {
