@@ -1497,7 +1497,7 @@ table.plan td {
 ****************/
 /* home - news */
 #novinky hr {
-  border-bottom: solid 2px #2B2B2B; }
+  border-bottom: dashed 1px #2B2B2B; }
 
 .newsPictures {
   margin: 1em 0 0 0; }
