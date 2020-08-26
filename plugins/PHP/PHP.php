@@ -68,7 +68,6 @@ class PHPPlugin extends Plugin
     /********************/
     public function onSchedulerInitialized(Event $e)
     {
-        require_once(__DIR__ . '/twig/PhpTwigExtension.php');
         require_once(__DIR__ . '/twig/Events.php');
         $scheduler = $e['scheduler'];
 
@@ -94,7 +93,7 @@ class PHPPlugin extends Plugin
 
         $default_template = $template_frontmatter["defaultTemplate"];
         $plan_frontmatter["plan"]["thisWeek"] = $plan_frontmatter["plan"]["nextWeek"];
-        $plan_frontmatter["plan"]["nextWeek"] = $template_frontmatter["templates"][$default_template]["plan"];
+        $plan_frontmatter["plan"]["nextWeek"] = $template_frontmatter["templates"][$default_template];
 
         $page->header($plan_frontmatter);
         $page->save();

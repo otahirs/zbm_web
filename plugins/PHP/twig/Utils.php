@@ -62,11 +62,12 @@ class Utils
 
 
     public static function log($msg){
-        if (!is_null($user = Grav::instance()['session']->user)) {
-            $username = $user->fullname ?? $user->username;
+        $user = Grav::instance()['session']->user;
+        if ($user->authenticated) {
+            $username = !empty($user->fullname) ? $user->fullname : $user->username;
         }
         else {
-            $username = "system";
+            $username = "System";
         }
         $log_msg = "{$username} | {$msg}";
         Grav::instance()['log']->info($log_msg);
