@@ -55,6 +55,10 @@ routes:
     -
         name: '7. Sprintové štafety'
         link: bude
+results:
+    -
+        name: 'Nočák - žáci'
+        link: 'http://obasen.orientering.se/winsplits/online/en/default.asp?page=classes&databaseId=70856&ct=true'
 ---
 
 [Informace v pdf a potvrzení ke stažení](https://drive.google.com/drive/folders/1ZOIp\_bIs-jAzLDr3OIRfBnsg5go6fTUc?usp=sharing) 
