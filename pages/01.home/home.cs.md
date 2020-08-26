@@ -32,21 +32,7 @@ news:
         </header>
         <section>
         {% set news_collection = page.collection('news') %}
-
-        <!--
-        <article>
-              <h3 class="news--header row justify-content-between">
-                  <span class="news--header_left col"> Plán na tento týden </span> 
-              </h3>
-              
-              <section class="newsText">
-                Aktuální plán na tento týden naleznete po rozkliknutí své tréninkové skupiny v levém menu.
-              </section>
-            </article>
-        <hr>
-        -->
-
-        {% for p in news_collection if  ( p.header.date|date('Y-m-d') >= strtotime("today -30 day")|date('Y-m-d') ) %}
+        {% for p in news_collection if  ( p.header.date|date('Y-m-d') >= strtotime("today -45 day")|date('Y-m-d') ) %}
             <article id="{{ p.header.id }}">
               <h3 class="news--header row justify-content-between">
                   <span class="news--header_left col"> {{ p.header.title }} </span> 
@@ -87,6 +73,16 @@ news:
             </article>
             <hr>
 
+        {% endfor %}
+        <div style="margin-top: -1em;"></div>
+        {% for p in news_collection if  ( p.header.date|date('Y-m-d') >= strtotime("today -135 day")|date('Y-m-d') and p.header.date|date('Y-m-d') < strtotime("today -45 day")|date('Y-m-d') ) %}
+            <article id="{{ p.header.id }}">
+              <h3 class="news--header row justify-content-between">
+                  <span class="news--header_left col"> <a href="{{p.url}}" style="border-bottom: none;">{{ p.header.title }}</a> </span> 
+                  <span class="news--header_right col-auto"> {{p.header.date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. M. Y')|upper }}</span>
+              </h3>
+            </article>
+            <hr style="margin: 1em 0;">
         {% endfor %}
         </section>
       </div>      
