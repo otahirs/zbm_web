@@ -40,18 +40,18 @@ body {
 body, input, select, textarea {
   color: #222;
   font-family: "Arial", sans-serif;
-  font-size: 15pt;
+  font-size: 14pt;
   font-weight: 400;
   line-height: 1.65; }
   @media screen and (max-width: 1680px) {
     body, input, select, textarea {
-      font-size: 13pt; } }
+      font-size: 12pt; } }
   @media screen and (max-width: 1280px) {
     body, input, select, textarea {
-      font-size: 12pt; } }
+      font-size: 11pt; } }
   @media screen and (max-width: 360px) {
     body, input, select, textarea {
-      font-size: 11pt; } }
+      font-size: 10pt; } }
 a {
   -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
@@ -1250,6 +1250,10 @@ button,
   @media screen and (max-width: 1680px) {
     #triangle-topleft {
       border-right: 16em solid transparent; } }
+.cookies {
+  color: #555;
+  font-size: 0.9em; }
+
 /* Header */
 #header {
   display: -moz-flex;
@@ -1430,8 +1434,7 @@ button,
         transform: rotate(-180deg); }
 
 #menu > ul > li {
-  margin: 0.5em 0 0 0;
-  padding: 0.5em 0 0 0; }
+  margin: 0.5em 0 0 0; }
   #menu > ul > li > ul {
     color: #555;
     display: none;
@@ -1622,7 +1625,7 @@ tr.program--now {
     color: #DDD;
     text-decoration: none;
     border-bottom: none;
-    font-size: 1rem;
+    font-size: 0.85rem;
     padding: 0 1rem;
     display: inline-block; }
     .links a:hover {
