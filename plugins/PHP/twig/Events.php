@@ -147,6 +147,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
         }
         //print_r($event_list);
         self::ImportEvents($event_list, "members");
+        Utils::log("members import");
     }
 
     // nahrat program
