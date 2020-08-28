@@ -168,7 +168,9 @@ class Events extends \Grav\Common\Twig\TwigExtension
 
             $changed = false;
 
-            $page = Grav::instance()['page']->find($page_url);
+            $pages = Grav::instance()['pages'];
+            $pages->init();
+            $page = $pages->find($page_url);
             if ($page == null) {
                 $page = new Page();
                 $page->filePath("./user/pages{$page_url}/event.md");
