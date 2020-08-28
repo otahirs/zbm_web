@@ -1934,9 +1934,10 @@ ul.tabs li.group-icon {
 .edit-plan__even-day {
   background-color: inherit !important; }
 
-.edit-plan input {
+.edit-plan input:not(.multiselect-checkbox) {
   border-radius: 0px;
-  background-color: inherit; }
+  background-color: inherit;
+  width: 100%; }
 
 .edit-plan td {
   padding: 0px; }
@@ -1950,12 +1951,14 @@ ul.tabs li.group-icon {
   padding: 0 0.9em;
   border: solid 1px rgba(210, 215, 217, 0.75); }
 
+.edit-plan .group {
+  width: 10em; }
+
 .edit-plan-modal__close-button {
   float: right; }
 
 /* plan multiselect */
 .multiselect-wrapper {
-  width: 140px;
   display: inline-block;
   white-space: nowrap; }
 

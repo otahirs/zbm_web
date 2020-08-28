@@ -7,9 +7,10 @@
 
 .edit-plan {
 
-    input {
+    input:not(.multiselect-checkbox) {
         border-radius: 0px;
-        background-color: inherit;
+		background-color: inherit;
+		width: 100%;
     }
 
     td {
@@ -25,7 +26,10 @@
         height: 2.75em;
         padding: 0 0.9em;
         border: solid 1px rgba(210, 215, 217, 0.75);
-    }
+	}
+	.group {
+		width: 10em;
+	}
 }
 .edit-plan-modal__close-button {
     float: right;
@@ -33,7 +37,6 @@
 
 /* plan multiselect */
 .multiselect-wrapper {
-	width: 140px;
 	display: inline-block;
 	white-space: nowrap;
 }
