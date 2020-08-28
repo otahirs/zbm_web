@@ -23,7 +23,6 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
     }
     
     static function Test() {
-                
         echo date("Y-m-d", strtotime(str_replace(' ','', "7. 9. 2020")));
     }
        
