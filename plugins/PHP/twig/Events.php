@@ -78,6 +78,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
     }
 
     public static function importRacesFromMembers() {
+        Grav::instance()['twig']->init(); // fix function crash if runned from scheduler
         $body = Response::get("https://members.eob.cz/zbm/api_racelist.php");
         $data = json_decode($body, true);
         if(!array_key_exists("Status", $data) || !array_key_exists("Data", $data) || $data["Status"] != "OK") {
@@ -147,7 +148,6 @@ class Events extends \Grav\Common\Twig\TwigExtension
         }
         //print_r($event_list);
         self::ImportEvents($event_list, "members");
-        Utils::log("members import");
     }
 
     // nahrat program
