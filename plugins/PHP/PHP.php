@@ -76,8 +76,8 @@ class PHPPlugin extends Plugin
         $job->at('0 0 * * 1'); 
 
         // import events from members.eob.cz/zbm/ once a day at 00:00  
-        $job = $scheduler->addFunction('\Grav\Plugin\Events::importRacesFromMembers', [], 'import-races-from-members');
-        $job->at('0 * * * *'); 
+	$job = $scheduler->addFunction('\Grav\Plugin\Events::importRacesFromMembers', [], 'import-races-from-members');
+	$job->at('* * * * *'); 
     }
 
 

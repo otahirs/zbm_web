@@ -47,10 +47,11 @@ plan:
         tuesday:
             -
                 group:
-                    - dorost
-                name: 'běh (volně)'
-                time: '16:30'
-                place: 'hala Rosnička (sraz) a okolí'
+                    - zaci1
+                    - zaci2
+                name: 'Běžecké posilování'
+                time: '16:00 – 17:45'
+                place: 'Stadion pod Palackého vrchem'
         wednesday:
             -
                 group:
@@ -61,12 +62,37 @@ plan:
         thursday:
             -
                 group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                name: 'Běžecký trénink (P1 + P2 + Z1 prvním rokem)'
+                time: '16:00 – 17:45'
+                place: 'hala Rosnička (sraz) a okolí'
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink (Z1 druhým rokem + Z2)'
+                time: '16:00 – 18:00'
+                place: 'hala Rosnička (sraz) a okolí'
+            -
+                group:
                     - dorost
                 name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, pPv'
         friday:
-            1598253005:
+            -
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        sunday:
+            -
                 name: ''
                 time: ''
                 place: ''
