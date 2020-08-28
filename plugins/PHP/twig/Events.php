@@ -190,14 +190,14 @@ class Events extends \Grav\Common\Twig\TwigExtension
                 if(in_array($key, ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost"]) && $attribute == "1"){
                     if(!in_array($key, $frontmatter['taxonomy']['skupina'])){
                         $frontmatter['taxonomy']['skupina'][] = $key;
-             //           $changed = true;
+                        $changed = true;
                     }
                     continue;
                 }
                 // if no info set, overwrite from given file
                 if(empty($frontmatter[$key]) && $attribute){
                     $frontmatter[$key] = $attribute;
-            //        $changed = true;
+                    $changed = true;
                 }
             }
             
@@ -205,7 +205,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
                 $gps = self::normalize_GPS($event["gps"]);
                 if($gps){
                     $frontmatter["gps"] = $gps;
-           //         $changed = true;
+                    $changed = true;
                 }
             }
 
