@@ -166,11 +166,12 @@ class Events extends \Grav\Common\Twig\TwigExtension
 
             $page_url = "/data/events/". substr($event["id"], 0, 4) ."/". $event["id"];
 
-	    $changed = false;
-	    $pages = Grav::instance()['pages'];
-	    $pages->init();
+            $changed = false;
+
+            $pages = Grav::instance()['pages'];
+            $pages->init();
             $page = $pages->find($page_url);
-	    if ($page == null) {
+            if ($page == null) {
                 $page = new Page();
                 $page->filePath("./user/pages{$page_url}/event.md");
                 $changed = true;
@@ -209,12 +210,9 @@ class Events extends \Grav\Common\Twig\TwigExtension
             }
 
             if($changed) {
-                $frontmatter["import"]["type"] = $type;
-                $frontmatter["import"]["time"] = time();
-                
-                $page->header($frontmatter);
-
                 if(!$page->exists()) {
+                    $frontmatter["import"]["type"] = $type;
+                    $frontmatter["import"]["time"] = time();
                     $content = self::generate_content($frontmatter);
                     $page->content($content);
                     Utils::log("event imported | from {$type} | {$event['id']}");
@@ -222,7 +220,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
                 else {
                     Utils::log("event edited | from {$type} | {$event['id']}");
                 }
-                
+                $page->header($frontmatter);
                 $page->save();
             }
             unset($frontmatter);
