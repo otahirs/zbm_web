@@ -210,12 +210,9 @@ class Events extends \Grav\Common\Twig\TwigExtension
             }
 
             if($changed) {
-                $frontmatter["import"]["type"] = $type;
-                $frontmatter["import"]["time"] = time();
-                
-                $page->header($frontmatter);
-
                 if(!$page->exists()) {
+                    $frontmatter["import"]["type"] = $type;
+                    $frontmatter["import"]["time"] = time();
                     $content = self::generate_content($frontmatter);
                     $page->content($content);
                     Utils::log("event imported | from {$type} | {$event['id']}");
@@ -223,7 +220,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
                 else {
                     Utils::log("event edited | from {$type} | {$event['id']}");
                 }
-                
+                $page->header($frontmatter);
                 $page->save();
             }
             unset($frontmatter);
