@@ -10,7 +10,6 @@ access:
         edit-event: true
 ---
 <span id="back-btn" class="button small"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> zpět na seznam událostí</span>
-<br><br>
 <script>
     document.querySelector('#back-btn').onclick = () => {
         if((document.referrer).endsWith('/auth/events')  && "{{uri.query('event')}}" !== "" ) {
@@ -27,7 +26,13 @@ access:
     {% if uri.query('event') != "new" %}
         {% set year = uri.query('event')[:4] %}
         {% set event = page.find('/data/events/' ~ year ~ "/" ~ uri.query('event')|lower) %}
-        {% if event.header is null %} {% set error = "header" %} {% endif %}
+        {% if event.header is null %} 
+            {% set error = "header" %} 
+        {% else %}
+            <button onClick="javascript:window.open('{{event.url}}', '_blank');" type="button" class="small">náhled</button>
+        {% endif %}
+    {% else %}
+        <button id="preview-btn" title="odkaz na náhled se zpřístupní po prvním uložení události" style="pointer-events: auto;" disabled type="button" class="small">náhled</button>
     {% endif %}
 {% else %}
     {% set error = "parram" %}
@@ -43,6 +48,7 @@ access:
     </div>
 {% else %}
 
+<br><br>
 <form id="editEvent" method="post" action="" autocomplete="off">
         <input name="POST_type" type="hidden" value="editEvent">
         <input name="id" type="hidden" value="{{ event.header.id }}">
@@ -466,6 +472,9 @@ window.addEventListener('DOMContentLoaded', function () {
                         if (json.id) {
                             $("[name='id']").val(json.id);
                             history.replaceState({}, '', "{{page.url}}?event=" + json.id);
+                            let p = document.querySelector('#preview-btn');
+                            p.onclick = () => window.open(`{{base_url}}/data/events/${json.id.substr(0, 4)}/${json.id}`, '_blank');
+                            p.disabled = false;
                         }
                     }
                 },
