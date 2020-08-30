@@ -20,11 +20,13 @@ templates:
         tuesday:
             -
                 group:
+                    - pulci1
+                    - pulci2
                     - zaci1
                     - zaci2
-                name: 'Běžecké posilování'
-                time: '16:00 – 17:45'
-                place: 'Stadion pod Palackého vrchem'
+                name: 'Mapový trénink'
+                time: '16:00 – 18:00'
+                place: ''
         wednesday:
             -
                 group:
@@ -33,22 +35,16 @@ templates:
                 time: '14:30'
                 place: 'Bohunice, kampus, FSpS'
         thursday:
-            -
+            0:
                 group:
                     - pulci1
                     - pulci2
                     - zaci1
-                name: 'Běžecký trénink (P1 + P2 + Z1 prvním rokem)'
-                time: '16:00 – 17:45'
-                place: 'hala Rosnička (sraz) a okolí'
-            -
-                group:
-                    - zaci1
                     - zaci2
-                name: 'Běžecký trénink (Z1 druhým rokem + Z2)'
+                name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
-                place: 'hala Rosnička (sraz) a okolí'
-            -
+                place: 'Stadion pod Palackého vrchem'
+            2:
                 group:
                     - dorost
                 name: Dráha
@@ -115,6 +111,7 @@ templates:
                 time: ''
                 place: ''
 ---
+
 {% set curr_template = uri.query('template') ?? page.header.defaultTemplate %}
 
 <div class="row justify-content-between"> 
