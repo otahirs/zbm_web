@@ -101,7 +101,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
             //$event_list[$num][""] = $event["Club"];
             $link = $event["Link"];
             if (!empty($link) && !Utils::startsWith($link, "http")) {
-                $link = "http://" . $link;
+                $link = "https://" . $link;
             }
             $event_list[$num]["link"] = $link;
             if(Utils::startsWith($link, "https://oris.orientacnisporty.cz/Zavod?id=" )) {
