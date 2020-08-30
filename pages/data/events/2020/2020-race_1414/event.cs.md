@@ -14,4 +14,21 @@ import:
     type: members
     time: 1594677602
 place: 'Nejdek, Vysoká Jedle'
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
+
