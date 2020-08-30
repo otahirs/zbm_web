@@ -162,7 +162,7 @@ news:
                     </em>
                   </h3>
                 </a>
-                <article class="soon__content" data-id="{{p.header.id}}" data-template="{{p.header.template}}">
+                <article class="soon__content" data-id="{{p.header.id}}" data-template="{{p.header.template}}" data-orisid="{{p.header.orisid}}">
                   {{p.content|markdown}}
                 </article>
               </section>
@@ -189,3 +189,34 @@ news:
   </div> <!-- blizi se -->
 
 </div> <!-- uzavira celou stranku , pure-g -->
+<script>
+Array.from(document.querySelectorAll(".soon__content")).forEach((content) => {
+  let orisid = content.dataset.orisid;
+  if(orisid) {
+    url = 'https://cors-anywhere.herokuapp.com/https://oris.orientacnisporty.cz/API/?format=json&method=getEventStartLists&eventid=' + orisid;
+    fetch(url, {headers:{'Content-Type': 'application/json'}})
+      .then(response => response.json())
+      .then(function(oris){
+        if(oris.Data.constructor === Object){
+          span = document.createElement('span');
+          span.innerHTML = `<p><a href='https://oris.orientacnisporty.cz/Startovky?id=${orisid}' target="_blank">startovky</a></p>`;
+          content.append(span);
+
+        }  
+        url = 'https://cors-anywhere.herokuapp.com/https://oris.orientacnisporty.cz/API/?format=json&method=getEventResults&eventid=' + orisid;
+        fetch(url, {headers:{'Content-Type': 'application/json'}})
+          .then(response => response.json())
+          .then(function(oris){
+            if(oris.Data.constructor === Object){
+              span = document.createElement('span');
+              span.innerHTML = `<p><a href='https://oris.orientacnisporty.cz/Vysledky?id=${orisid}' target="_blank">výsledky</a></p>`;
+              content.append(span);
+
+            }          
+          }
+        )        
+      }
+    )
+  }
+});
+</script>
