@@ -23,12 +23,7 @@ content:
     <a class="button special" id="filter_btn">zobrazit filtr</a>
   </div>
   <div class="col-auto">
-    <select id="create-event">
-        <option value="0" selected="true" disabled="disabled" hidden="true">Vytvořit nový</option>
-        <option value="trenink">Trénink</option>
-        <option value="zavod">Závod</option>
-        <option value="soustredeni">Soustředění</option>
-    </select>
+    <a class="button" href="/auth/events/edit?event=new">Vytvořit událost</a>
   </div>
 </div>
 <br>
@@ -95,7 +90,7 @@ content:
   
       <tr>
           <td class="datum edit" title="Upravit událost">
-            <a href="/auth/events/edit?event={{ p.header.id[:4] }}/{{ p.header.id|lower }}" target="_blank">
+            <a href="/auth/events/edit?event={{ p.header.id }}">
               {# HELP formaty casu http://userguide.icu-project.org/formatparse/datetime #}
               {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
               {% if p.header.start|date('m') != p.header.end|date('m') %}
@@ -114,12 +109,12 @@ content:
             </a>
           </td>
           <td class="nazev edit" title="Upravit událost">
-            <a href="/auth/events/edit?event={{ p.header.id[:4] }}/{{ p.header.id|lower }}" target="_blank">
+            <a href="/auth/events/edit?event={{ p.header.id }}">
               <b>{{ p.title }}</b>
             </a>
           </td>
           <td class="misto edit" title="Upravit událost">
-            <a href="/auth/events/edit?event={{ p.header.id[:4] }}/{{ p.header.id|lower }}" target="_blank">
+            <a href="/auth/events/edit?event={{ p.header.id }}">
               {{p.header.place}}
             </a>
           </td>
@@ -182,14 +177,6 @@ content:
 <script>
  window.addEventListener('DOMContentLoaded', function () {
    
-  // create event
-  var createEvent = document.getElementById("create-event");
-  createEvent.value = "0";
-  createEvent.addEventListener("change", (e) => {
-      e.preventDefault;
-      location.href = "/auth/events/edit?new=" + e.target.value;
-  })
-
   // links hover background
   $(".edit").hover( 
     function () { $(this).parent().find("td:not(.view)").addClass('backgroundAccent') },     
