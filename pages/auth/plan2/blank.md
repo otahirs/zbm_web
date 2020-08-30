@@ -44,14 +44,6 @@ plan:
                 name: Posilovna
                 time: '14:30'
                 place: 'Bohunice, kampus, FSpS'
-        tuesday:
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: 'Běžecké posilování'
-                time: '16:00 – 17:45'
-                place: 'Stadion pod Palackého vrchem'
         wednesday:
             -
                 group:
@@ -60,38 +52,22 @@ plan:
                 time: '14:30'
                 place: 'Bohunice, kampus, FSpS'
         thursday:
-            -
+            1:
                 group:
                     - pulci1
                     - pulci2
                     - zaci1
-                name: 'Běžecký trénink (P1 + P2 + Z1 prvním rokem)'
-                time: '16:00 – 17:45'
-                place: 'hala Rosnička (sraz) a okolí'
-            -
-                group:
-                    - zaci1
                     - zaci2
-                name: 'Běžecký trénink (Z1 druhým rokem + Z2)'
+                name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
-                place: 'hala Rosnička (sraz) a okolí'
-            -
+                place: 'Stadion pod Palackého vrchem'
+            2:
                 group:
                     - dorost
                 name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, pPv'
         friday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        sunday:
             -
                 name: ''
                 time: ''
