@@ -138,7 +138,7 @@ plan:
                     </td>
                     <td class="link event" colspan="4"> 
                         <a href="{{ p.url }}" target="_blank">{{ p.title }}</a> &nbsp;&nbsp;&nbsp;
-                        <a href="/auth/events/edit?event={{ p.header.id[:4] }}/{{ p.header.id|lower }}" target="_blank"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                        <a href="/auth/events/edit?event={{ p.header.id }}" target="_blank"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                     </td>
                 </tr>
             {% endfor %}
