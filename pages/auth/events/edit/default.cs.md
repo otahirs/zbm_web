@@ -9,13 +9,26 @@ access:
     site:
         edit-event: true
 ---
+<span id="back-btn" class="button small"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> zpět na seznam událostí</span>
+<br><br>
+<script>
+    document.querySelector('#back-btn').onclick = () => {
+        if((document.referrer).endsWith('/auth/events')  && "{{uri.query('event')}}" !== "" ) {
+            // if no new event was created, go back in history to keep search results on events page
+            history.back();
+        }
+        else {
+            location.href = "{{base_url}}/auth/events";
+        }
+    }
+</script>
 
 {% if uri.query('event') %}
-    {% set event = page.find('/data/events/' ~ uri.query('event')|lower) %}
-    {% if event.header is null %} {% set error = "header" %} {% endif %}
-{% elseif uri.query('new') %}
-    {% set event = []|merge({'template': uri.query('new')})  %}
-    {% if event.template not in ['zavod', 'soustredeni', 'trenink'] %} {% set error = "new" %} {% endif %}
+    {% if uri.query('event') != "new" %}
+        {% set year = uri.query('event')[:4] %}
+        {% set event = page.find('/data/events/' ~ year ~ "/" ~ uri.query('event')|lower) %}
+        {% if event.header is null %} {% set error = "header" %} {% endif %}
+    {% endif %}
 {% else %}
     {% set error = "parram" %}
 {% endif %}
@@ -24,8 +37,6 @@ access:
     <div class="notices red">
         {% if error == "header" %} 
         <p> CHYBA: Událost nenalezena </p>
-        {% elseif error == "new" %}
-        <p> CHYBA: Pokus o vytvoření neznámého typu události</p>
         {% else %}
         <p> CHYBA: Není zadán žádný požadavek</p>
         {% endif %}
@@ -35,25 +46,26 @@ access:
 <form id="editEvent" method="post" action="" autocomplete="off">
         <input name="POST_type" type="hidden" value="editEvent">
         <input name="id" type="hidden" value="{{ event.header.id }}">
-        {{ event.header.id }}
         <ul class="tabs">
             <li data-tab="info" class="tab-link current">Základní informace</li>
-            {% if event.template == "zavod" or event.template == "trenink" %} 
-                <li data-tab="zt" class="tab-link">
-                    {% if event.template == "zavod" %}
-                        Závod
-                    {% else %}
-                        Trénink
-                    {% endif %}
-                </li> 
-            {% endif %}
-            {% if event.template == "soustredeni" %}
-                <li data-tab="soustredeni" class="tab-link">Soustředění</li> 
-            {% endif %}
-            {% if event.template == "soustredeni" or event.template == "trenink" %}
-                <li data-tab="routes" class="tab-link">Postupy</li>
-                <li data-tab="results" class="tab-link">Výsledky</li>
-            {% endif %}
+            
+            <li data-tab="zt" class="tab-link" {% if not (event.template == "zavod" or event.template == "trenink") %} style="display:none;" {% endif %} >
+                {% if event.template == "zavod" %}
+                    Závod
+                {% else %}
+                    Trénink
+                {% endif %}
+            </li> 
+            <li data-tab="soustredeni" class="tab-link" {% if not (event.template == "soustredeni") %} style="display:none;" {% endif %}>
+                Soustředění
+            </li> 
+            <li data-tab="routes" class="tab-link" {% if not (event.template == "soustredeni" or event.template == "trenink") %} style="display:none;" {% endif %}>
+                Postupy
+            </li>
+            <li data-tab="results" class="tab-link" {% if not (event.template == "soustredeni" or event.template == "trenink") %} style="display:none;" {% endif %}>
+                Výsledky
+            </li>
+            
         </ul>
         <div id="info" class="tab-content current">
             <label for="event-type">Kategorie / Typ</label>
@@ -145,69 +157,65 @@ access:
                 <textarea id="note" name="note" rows="1">{{ event.header.note }}</textarea>
             </div>
         </div>
-        {% if event.header.start != event.header.end %}
-            <hr>
-            <div class="row">
-                <div class="col-6">
-                    <label for="accomodation">Ubytování</label>
-                    <textarea id="accomodation" name="accomodation" type="text" rows="1">{{ event.header.accomodation }}</textarea>
-                </div>
-                <div class="col-6">
-                    <label for="food">Strava</label>
-                    <textarea id="food" name="food" type="text" rows="1">{{ event.header.food }}</textarea>
-                </div> 
-            </div> <!-- row -->
-        {% endif %}
+            <div id="foodAndAccommodation" {% if event.header.start == event.header.end %} style="display:none" {% endif %}>
+                <hr>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="accomodation">Ubytování</label>
+                        <textarea id="accomodation" name="accomodation" type="text" rows="1">{{ event.header.accomodation }}</textarea>
+                    </div>
+                    <div class="col-6">
+                        <label for="food">Strava</label>
+                        <textarea id="food" name="food" type="text" rows="1">{{ event.header.food }}</textarea>
+                    </div> 
+                </div> <!-- row -->
+            </div>
         </div>
    
         
 
 
     <div id="zt" class="tab-content">
-        {% if event.template == "zavod" %}
+        <div id="zt-link" {% if not (event.template == "zavod") %} style="display:none;" {% endif %} >
             <label for="link">Odkaz na ORIS / stránky závodu</label>
             <input id="link" name="link" type="text" value="{{ event.header.link }}">
             <hr>
-        {% endif %}
-    
-        {% if event.template == "zavod" or event.template == "trenink" %}
-            <div class="row">
-                <div class="col-6">
-                    <label for="startTime">Start</label>
-                    <input id="startTime" name="startTime" type="text" value="{{ event.header.startTime }}">
-                
-                    <label for="eventTypeDescription">Tratě</label>
-                    <textarea id="eventTypeDescription" name="eventTypeDescription" type="text" rows="1">{{ event.header.eventTypeDescription }}</textarea>
-                </div>
-                <div class="col-6">
-                    <label for="map">Mapa</label>
-                    <input id="map" name="map" type="text" value="{{ event.header.map }}">
-                
-                    <label for="terrain">Terén</label>
-                    <textarea id="terrain" name="terrain" type="text" rows="3">{{ event.header.terrain }}</textarea>
-                </div>
-            </div> <!-- row -->
-        {% endif %}
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <label for="startTime">Start</label>
+                <input id="startTime" name="startTime" type="text" value="{{ event.header.startTime }}">
+            
+                <label for="eventTypeDescription">Tratě</label>
+                <textarea id="eventTypeDescription" name="eventTypeDescription" type="text" rows="1">{{ event.header.eventTypeDescription }}</textarea>
+            </div>
+            <div class="col-6">
+                <label for="map">Mapa</label>
+                <input id="map" name="map" type="text" value="{{ event.header.map }}">
+            
+                <label for="terrain">Terén</label>
+                <textarea id="terrain" name="terrain" type="text" rows="3">{{ event.header.terrain }}</textarea>
+            </div>
+        </div> <!-- row -->
     </div>
 
-    {% if event.template == "soustredeni" %}
-        <div id="soustredeni" class="tab-content">
-            <label for="signups">Přihlášky</label>
-            <input id="signups" name="signups" type="text" value="{{ event.header.singups }}">
-            
-            <label for="price">Cena</label>
-            <textarea id="price" name="price">{{ event.header.price }}</textarea>
+    <div id="soustredeni" class="tab-content">
+        <label for="signups">Přihlášky</label>
+        <input id="signups" name="signups" type="text" value="{{ event.header.singups }}">
         
-            <label for="return">Návrat</label>
-            <textarea id="return" name="return">{{ event.header.return }}</textarea>
-        
-            <label for="program">Náplň / program</label>
-            <textarea id="program" name="program">{{ event.header.program }}</textarea>
-        
-            <label for="thingsToTake">S sebou</label>
-            <textarea id="thingsToTake" name="thingsToTake">{{ event.header.thingsToTake }}</textarea>
-        </div><!-- id="soustredeni" -->
-    {% endif %}
+        <label for="price">Cena</label>
+        <textarea id="price" name="price">{{ event.header.price }}</textarea>
+    
+        <label for="return">Návrat</label>
+        <textarea id="return" name="return">{{ event.header.return }}</textarea>
+    
+        <label for="program">Náplň / program</label>
+        <textarea id="program" name="program">{{ event.header.program }}</textarea>
+    
+        <label for="thingsToTake">S sebou</label>
+        <textarea id="thingsToTake" name="thingsToTake">{{ event.header.thingsToTake }}</textarea>
+    </div><!-- id="soustredeni" -->
+    
     <div id="routes" class="tab-content">
         {% for route in event.header.routes %}
         <fieldset>
@@ -364,7 +372,57 @@ window.addEventListener('DOMContentLoaded', function () {
                         '</div>' +
                        '</div></fieldset>');
     })
-        
+
+    // change displayed tabs on event type change
+    var zt = $('[data-tab="zt"]');
+    var link = $('#zt-link');
+    var soustredeni = $('[data-tab="soustredeni"]');
+    var routes = $('[data-tab="routes"]');
+    var results = $('[data-tab="results"]');
+    $("#event-type").change(function(){
+        zt.hide()
+        link.hide();
+        soustredeni.hide();
+        routes.hide();
+        results.hide();
+        switch(this.value){
+            case  "Z":
+            case "BZL":
+            case "BBP":
+                zt.html('Závod');
+                zt.show();
+                link.show();
+                break;
+            case "M":
+            case "T":
+                zt.html('Trénink');
+                zt.show();
+                routes.show();
+                results.show();
+                break;
+            case "S":
+            case "TABOR":
+                soustredeni.show();
+                routes.show();
+                results.show();
+                break;
+        }
+    })
+    // show food and accommodation if dates differ
+    var date1 = document.querySelector("#date1");
+    var date2 = document.querySelector("#date2");
+    var foodAndAccommodation = document.querySelector("#foodAndAccommodation");
+    function toggleFoodAndAccommodation() {
+        if(date1.checkValidity() && date2.checkValidity() && date1.value < date2.value){
+            foodAndAccommodation.style.display = "inherit";
+            $("textarea").autoresize();
+        }
+        else {
+            foodAndAccommodation.style.display = "none";
+        }
+    }
+    date1.addEventListener('change', toggleFoodAndAccommodation);
+    date2.addEventListener('change', toggleFoodAndAccommodation);
     /* submit */
     var save_btn = document.getElementById("saveEvent"),
         delete_btn = document.getElementById("deleteEvent"),
@@ -386,6 +444,10 @@ window.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
         //check if form is valid
         if(form.checkValidity()){
+            if(date2.value && date1.value > date2.value) {
+                notyf.error('Datum "Do" je později než datum "Od".');
+                return;
+            }
 
             var formData = new FormData(form);
             for (var name in text_editors) {
@@ -403,6 +465,7 @@ window.addEventListener('DOMContentLoaded', function () {
                         var json = $.parseJSON(response);
                         if (json.id) {
                             $("[name='id']").val(json.id);
+                            history.replaceState({}, '', "{{page.url}}?event=" + json.id);
                         }
                     }
                 },
@@ -444,7 +507,7 @@ window.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
-        
+
     })
     </script>
 {% endif %}
