@@ -52,6 +52,7 @@ access:
 <hr>
 <h2>Changelog</h2>
 <ul>
+    <li>2020-08-30 <br> Vylepšené vytváření a úprava událostí. Typ události lze měnit přímo během editace. Editace neotvírá nové okno. Přidáno tlačítko pro návrat k seznamu událostí. Reload stránky po uložení vytvářené události nyní znovu načte její editaci místo vytvoření nové události.</li>
     <li>2020-08-08 <br> Sjednocený způsob odpovědí ze serveru ve formě "notifikací". Opravena úprava náhledu blížících se událostí (nezpracování markdown, nevylití cache).</li>
     <li>2020-08-08 <br> Přepsána část kódu na serveru. Mohou se objevit nějaké chyby.</li>
     <li>2020-06-16 <br> Přihlášení na stránky nyní nepřesměrovává. Tedy pokud půjdete např na zabiny.club/auth/plan2, ale nebudete přihlášení, tak po následném přihlášení nebudete přesměrování na rozcestník, ale můžete pokračovat přímo na původní stránce.</li>
