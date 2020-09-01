@@ -87,7 +87,9 @@ class PHPPlugin extends Plugin
     public static function shiftPlan2(){
         require_once(__DIR__ . '/twig/WeeklyPlan.php');
 
-        $page = Grav::instance()['page']->find(WeeklyPlan::PLAN_URL);
+        $pages = Grav::instance()['pages'];
+        $pages->init();
+        $page = $pages->find(WeeklyPlan::PLAN_URL);
         $plan_frontmatter = (array)$page->header();
         $template_frontmatter = (array)$page->find(WeeklyPlan::PLAN_TEMPLATES_URL)->header();
 
