@@ -27,8 +27,15 @@ map: 'U Buku 2020'
 terrain: ''
 transport: 'Vlastní nebo s využitím přibližovacích srazů'
 leader: ''
-note: "**Přibližovací srazy:** - pokud chcete tyto srazy využít, dejte prosím dopředu vědět!!!\r\n1. odjezd **9:15** Halasovo náměstí (Luf - 603 874 687) - autobusem 57 na zastávku Rozárka\r\n2. odjezd **9:10** Královo Pole - nádraží (Lenka - 737 353 537) - autobusem 43 na zastávku Rozárka"
+note: "**Přibližovací srazy:** - pokud chcete tyto srazy využít, dejte prosím dopředu vědět!!!\r\n1. odjezd **9:15** Halasovo náměstí (Luf - 603 874 687) - autobusem 57 na zastávku Rozárka\r\n2. odjezd **9:10** Královo Pole - nádraží (Alča - 605 440 445) - autobusem 43 na zastávku Rozárka"
 gps: '49.2543, 16.6227'
 orisid: '6050'
+accomodation: ''
+food: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 

@@ -15,27 +15,34 @@ plan:
                 name: Posilovna
                 time: '14:30'
                 place: 'Bohunice, kampus, FSpS'
-        tuesday:
-            -
-                group:
-                    - dorost
-                name: 'běh (dle víkendu)'
-                time: '16:30'
-                place: 'hala Rosnička (sraz) a okolí'
         wednesday:
             -
                 group:
                     - dorost
                 name: Posilovna
-                time: '14:30'
+                time: '16:30'
                 place: 'Bohunice, kampus, FSpS'
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, pPv'
+            1598857039162:
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 - 18:00'
+                place: 'Stadion pod Palackého vrchem'
+        friday:
+            1598856733:
+                name: ''
+                time: ''
+                place: ''
     nextWeek:
         monday:
             -
@@ -69,6 +76,11 @@ plan:
                 place: 'Areál VUT, pPv'
         friday:
             -
+                name: ''
+                time: ''
+                place: ''
+        sunday:
+            1598856733:
                 name: ''
                 time: ''
                 place: ''
