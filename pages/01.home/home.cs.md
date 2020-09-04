@@ -199,7 +199,7 @@ Array.from(document.querySelectorAll(".soon__content")).forEach((content) => {
       .then(function(oris){
         if(oris.Data.constructor === Object){
           span = document.createElement('span');
-          span.innerHTML = `<p><a href='https://oris.orientacnisporty.cz/Startovky?id=${orisid}' target="_blank">startovky</a></p>`;
+          span.innerHTML = `<p><a href='https://oris.orientacnisporty.cz/Startovka?id=${orisid}' target="_blank">startovky</a></p>`;
           content.append(span);
 
         }  
