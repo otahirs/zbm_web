@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Arial-Rounded';
+  src: url(../fonts/Arial-Rounded-MT-W04-Regular.woff); }
+
+@font-face {
+  font-family: 'Arial-Rounded';
+  src: url(../fonts/Arial-Rounded-MT-W04-Bold.woff);
+  font-weight: bold; }
+
 /*
 	Editorial by HTML5 UP
 	html5up.net | @ajlkn
@@ -39,7 +48,7 @@ body {
 /* Type */
 body, input, select, textarea {
   color: #222;
-  font-family: "Arial", sans-serif;
+  font-family: "Arial-Rounded", "Arial", sans-serif;
   font-size: 13pt;
   font-weight: 400;
   line-height: 1.65; }
@@ -78,7 +87,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   color: #222;
-  font-family: "Arial", sans-serif;
+  font-family: "Arial-Rounded", "Arial", sans-serif;
   font-weight: 700;
   line-height: 1.5;
   margin: 0 0 1em 0; }
@@ -183,7 +192,7 @@ section.special, article.special {
   text-align: center; }
 
 header p {
-  font-family: "Arial", sans-serif;
+  font-family: "Arial-Rounded", "Arial", sans-serif;
   font-size: 1em;
   font-weight: 400;
   letter-spacing: 0.075em;
@@ -673,7 +682,7 @@ button,
   color: #e65a51 !important;
   cursor: pointer;
   display: inline-block;
-  font-family: "Arial", sans-serif;
+  font-family: "Arial-Rounded", "Arial", sans-serif;
   font-size: 0.8em;
   font-weight: 700;
   height: 3.5em;
@@ -1272,7 +1281,7 @@ button,
   #header .logo {
     border-bottom: 0;
     color: inherit;
-    font-family: "Arial", sans-serif;
+    font-family: "Arial-Rounded", "Arial", sans-serif;
     font-size: 1.125em; }
   #header .icons {
     text-align: right; }
@@ -1381,7 +1390,7 @@ button,
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: "Arial", sans-serif;
+  font-family: "Arial-Rounded", "Arial", sans-serif;
   font-family: 400;
   letter-spacing: 0.075em;
   list-style: none;
