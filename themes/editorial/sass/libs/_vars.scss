@@ -20,9 +20,19 @@
 	);
 
 // Font
+	@font-face{ 
+		font-family: 'Arial-Rounded';
+		src: url(../fonts/Arial-Rounded-MT-W04-Regular.woff);
+	}
+	@font-face{ 
+		font-family: 'Arial-Rounded';
+		src: url(../fonts/Arial-Rounded-MT-W04-Bold.woff);
+		font-weight: bold;
+	}
+
 	$font: (
-		family:			('Arial', sans-serif),
-		family-heading:		('Arial', sans-serif),
+		family:			('Arial-Rounded', 'Arial', sans-serif),
+		family-heading:		('Arial-Rounded', 'Arial', sans-serif),
 		family-fixed:		('Courier New', monospace),
 		weight:			400,
 		weight-bold:		600,
