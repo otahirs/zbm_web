@@ -20,5 +20,21 @@ import:
     type: members
     time: 1596578401
 orisid: '6051'
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: 'Tam: Společná autobusem, sraz 7:50 Brno, hlavní nádraží (pod smyčkou trolejbusů) - GPS: 49.1920731N, 16.6135669E'
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
