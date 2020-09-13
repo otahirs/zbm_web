@@ -15,27 +15,35 @@ templates:
                 group:
                     - dorost
                 name: Posilovna
-                time: '14:30'
+                time: '16:30'
                 place: 'Bohunice, kampus, FSpS'
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: Tělocvična
+                time: '16:30 – 18:00'
+                place: 'hala Rosnička'
         tuesday:
             -
                 group:
+                    - zabicky
                     - pulci1
                     - pulci2
                     - zaci1
                     - zaci2
                 name: 'Mapový trénink'
                 time: '16:00 – 18:00'
-                place: ''
+                place: 'okolí Brna'
         wednesday:
             -
                 group:
                     - dorost
                 name: Posilovna
-                time: '14:30'
+                time: '16:30'
                 place: 'Bohunice, kampus, FSpS'
         thursday:
-            0:
+            -
                 group:
                     - pulci1
                     - pulci2
@@ -44,7 +52,7 @@ templates:
                 name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
                 place: 'Stadion pod Palackého vrchem'
-            2:
+            -
                 group:
                     - dorost
                 name: Dráha
@@ -65,7 +73,54 @@ templates:
                 name: ''
                 time: ''
                 place: ''
-    Zimní: {  }
+    Zimní:
+        monday:
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: Tělocvična
+                time: '16:30 – 18:00'
+                place: 'hala Rosnička'
+        tuesday:
+            -
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                name: 'Mapový trénink'
+                time: '16:00 – 18:00'
+                place: ''
+        wednesday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        thursday:
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 – 18:00'
+                place: 'hala Rosnička'
+        friday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        sunday:
+            -
+                name: ''
+                time: ''
+                place: ''
     Prázdniny:
         monday:
             -
