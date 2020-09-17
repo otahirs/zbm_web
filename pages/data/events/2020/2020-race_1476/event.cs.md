@@ -4,7 +4,6 @@ taxonomy:
         1: pulci2
         2: zaci1
         3: zaci2
-        4: dorost
         5: pulci1
 id: 2020-race_1476
 start: '2020-09-26'
