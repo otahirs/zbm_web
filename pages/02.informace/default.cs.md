@@ -55,7 +55,7 @@ menu: Informace
  <li><a href="#prispevky">Oddílové příspěvky</a></li>
  <li><a href="#zavody">Přihlašování na závody</a></li>
  <li><a href="#vedouci">Vedoucí na závodech</a></li>
- <li><a href="#zabiny">Emailová skupina</a></li>
+ <li><a href="#zabiny">Emailová a Facebooková skupina</a></li>
  <li><a href="#gdpr">Ochrana osobních údajů (GDPR)</a></li>
 </ul>
  
@@ -235,26 +235,31 @@ V letošním roce pořádáme 3 závody Jihomoravské ligy a Finále ligy škol 
 -->
 
 ---
-## Emailová skupina Žabiny <a name="zabiny"></a>
-Emailová skupina **zabiny@googlegroups.com** je jednoduchý nástroj pro hromadné rozesílání emailů. Při odeslání emailu na adresu, která označuje emailovou skupinu, se poslaný email rozešle všem lidem zaregistrovaným v této skupině. Přihlášení do skupiny je však dobrovolné, všechny důležité věci budou na webu.  
-
-<form action="https://groups.google.com/forum/#!forum/zabiny/join" target="_blank">
-<button onclick="https://groups.google.com/forum/#!forum/zabiny/join">Přihlásit se do skupiny Žabiny</button>
-</form>
-Klikněte na tlačítko, zadejte email a odešlete žádost o připojení ke skupině. Žádost je poslána administrátorovi skupiny, ten ji potvrdí a potom vám přijde oznámení o úspěšné registraci adresy do skupiny. 
-
-#### Co se zde objevuje?
-- potvrzení soupisek na štafety
+## Emailová a Facebooková skupina <a name="zabiny"></a>
+- informace k pořádání
+- soupisky na štafety
 - diskuze k oddílovém oblečení
 - pozvánky na další závody
 - ztráty a nálezy
 - _a další.._
 
+### Emailová skupina
+Emailová skupina **zabiny@googlegroups.com** slouží pro pro hromadné rozesílání emailů. Při odeslání na adresu emailové skupiny, se poslaný mail rozešle všem lidem zaregistrovaným v této skupině. Pro zaregistrování do skupiny, přijímání a posílání mailů není potřeba mít google účet. Pokud chceš aby ti neuniklo nic z klubového dění a zajímáš se o informace, které již nepatří na web, doporučujeme se přidat.
+<form action="https://groups.google.com/forum/#!forum/zabiny/join" target="_blank">
+<button>Přihlásit se do skupiny Žabiny</button>
+</form>
+Klikněte na tlačítko, zadejte email a odešlete žádost o připojení ke skupině. Žádost je poslána administrátorovi skupiny, ten ji potvrdí a potom vám přijde oznámení o úspěšné registraci adresy do skupiny. 
  
-#### Jak posílat e-maily do skupiny?
-Email se posílá na adresu: _zabiny@googlegroups.com_. Email následně dorazí všem členům skupiny. 
-#### Jak se odhlásit ze skupiny?
-Posláním prázdného emailu na adresu _zabiny+unsubscribe@googlegroups.com_ bude adresa odesílatele vyškrtnuta z emailové skupiny.
+Hromadné emaily všem členům skupiny můžete následně zasílat na adresu  _zabiny@googlegroups.com_
+
+Pokud by jste chtěli skupinu opustit, stačí zaslat prázdný email na _zabiny+unsubscribe@googlegroups.com_ 
+
+### Facebook
+Další komunikační kanál, který používáme je privátní skupina na facebooku.  
+Zde je prostor pro nezávazné diskuze, fotky a vše co už se nevejde ani do mailu.
+<form action="https://www.facebook.com/groups/124140560991571" target="_blank">
+<button>Přidat se na Facebooku</button>
+</form>
 
 ---
 ## Zásady zpracování osobních údajů (GDPR) <a name="gdpr"></a>
