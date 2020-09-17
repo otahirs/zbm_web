@@ -20,13 +20,13 @@ import:
     type: members
     time: 1596578401
 orisid: '6051'
-meetTime: ''
-meetPlace: ''
+meetTime: '7:50'
+meetPlace: 'Brno, hlavní nádraží (pod smyčkou trolejbusů)'
 eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: 'Tam: Společná autobusem, sraz 7:50 Brno, hlavní nádraží (pod smyčkou trolejbusů) - GPS: 49.1920731N, 16.6135669E'
+transport: "Společná autobusem <br>\r\nTam: sraz 7:50 Brno, hlavní nádraží (pod smyčkou trolejbusů) - GPS: 49.1920731N, 16.6135669E <br>\r\nZpět: příjezd do Brna 16:00, Bohéma (ul. Roosveltova u Janáčkova divadla)"
 accomodation: ''
 food: ''
 leader: ''
@@ -36,5 +36,6 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.1736, 16.4214'
 ---
 
