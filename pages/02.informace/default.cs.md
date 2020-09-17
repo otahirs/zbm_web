@@ -244,7 +244,7 @@ V letošním roce pořádáme 3 závody Jihomoravské ligy a Finále ligy škol 
 - _a další.._
 
 ### Emailová skupina
-Emailová skupina **zabiny@googlegroups.com** slouží pro pro hromadné rozesílání emailů. Při odeslání na adresu emailové skupiny, se poslaný mail rozešle všem lidem zaregistrovaným v této skupině. Pro zaregistrování do skupiny, přijímání a posílání mailů není potřeba mít google účet. Pokud chceš aby ti neuniklo nic z klubového dění a zajímáš se o informace, které již nepatří na web, doporučujeme se přidat.
+Emailová skupina **zabiny@googlegroups.com** slouží pro pro hromadné rozesílání emailů. Při odeslání na adresu emailové skupiny, se poslaný mail rozešle všem lidem zaregistrovaným v této skupině. Pro zaregistrování do skupiny, přijímání a posílání mailů není potřeba mít google účet. Pokud chceš, aby ti neuniklo nic z klubového dění a zajímáš se o informace, které již nepatří na web, doporučujeme se přidat.
 <form action="https://groups.google.com/forum/#!forum/zabiny/join" target="_blank">
 <button>Přihlásit se do skupiny Žabiny</button>
 </form>
@@ -255,7 +255,7 @@ Hromadné emaily všem členům skupiny můžete následně zasílat na adresu  
 Pokud by jste chtěli skupinu opustit, stačí zaslat prázdný email na _zabiny+unsubscribe@googlegroups.com_ 
 
 ### Facebook
-Další komunikační kanál, který používáme je privátní skupina na facebooku.  
+Další komunikační kanál, který používáme, je privátní skupina na facebooku.  
 Zde je prostor pro nezávazné diskuze, fotky a vše co už se nevejde ani do mailu.
 <form action="https://www.facebook.com/groups/124140560991571" target="_blank">
 <button>Přidat se na Facebooku</button>
