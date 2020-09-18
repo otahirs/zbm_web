@@ -20,5 +20,22 @@ import:
     type: members
     time: 1596578401
 orisid: '6053'
+meetTime: '8:30'
+meetPlace: 'Královo Pole nádraží, parkoviště pod mostem'
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: auty
+accomodation: ''
+food: ''
+leader: Andrea
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.543, 16.2933'
 ---
 
