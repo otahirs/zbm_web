@@ -25,10 +25,10 @@ class Utils
         return (substr($string, 0, $len) === $startString); 
     }
     
-    public static function make_jpeg_thumbnail($source, $target){
+    private static function make_jpeg_thumbnail($source, $target){
         $source = realpath($source);
         $im = new \Imagick();
-        $im->setResolution(595, 842);    // set loaded resolution
+        $im->setResolution(300,300);    // set loaded resolution
         $im->readImage($source."[0]");    // 0-first page, 1-second page
         $im->transformimagecolorspace(\Imagick::COLORSPACE_SRGB);     //CMYK to RGB
         $im->setImageBackgroundColor('#ffffff');                      //prevents black background
