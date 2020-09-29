@@ -12,23 +12,16 @@ plan:
             -
                 group:
                     - dorost
-                name: Posilovna
-                time: '16:30'
-                place: 'Bohunice, kampus, FSpS'
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: Tělocvična
-                time: '16:30 – 18:00'
-                place: 'hala Rosnička'
+                name: 'Posilování '
+                time: '10:00'
+                place: 'Lužánky, auto na věci přistavím a sraz bude: https://mapy.cz/s/cujobemubo'
         wednesday:
             -
                 group:
                     - dorost
                 name: Posilovna
-                time: '16:30'
-                place: 'Bohunice, kampus, FSpS'
+                time: '15:45'
+                place: 'Šumavská 31, Sraz tady: https://bit.ly/33OGRYN (kdo nestíhá, zavolá Jendovi, pustí ho dovnitř)'
         thursday:
             -
                 group:
@@ -45,11 +38,6 @@ plan:
                 name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, pPv'
-        friday:
-            -
-                name: ''
-                time: ''
-                place: ''
     nextWeek:
         monday:
             -
