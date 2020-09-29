@@ -1,10 +1,10 @@
 ---
 taxonomy:
     skupina:
-        1: pulci2
-        2: zaci1
-        3: zaci2
-        5: pulci1
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
 id: 2020-race_1476
 start: '2020-09-26'
 end: '2020-09-28'

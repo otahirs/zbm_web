@@ -1,12 +1,12 @@
 ---
 taxonomy:
     skupina:
-        - dorost
-        - zaci2
-        - zaci1
-        - pulci2
-        - pulci1
         - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - dorost
 id: 2020-race_1484
 start: '2020-09-28'
 end: '2020-09-28'
@@ -20,5 +20,23 @@ import:
     type: members
     time: 1596578401
 orisid: '6036'
+meetTime: '7:50'
+meetPlace: Bohéma
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: 'společná autobusem, pouze pro přihlášené. Objednán malý autobus pro 19 cestujících. Vedoucí SD je Mira Beránek.'
+accomodation: ''
+food: ''
+leader: 'Alča Finstrlová'
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.6841, 16.0628'
 ---
 
+* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
