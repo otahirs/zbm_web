@@ -98,6 +98,33 @@ news:
 
 
   <div id="soon" class="soon col-md-4">
+
+    <div class="soon__history">
+      <div class="history__timeline"></div>
+      <h4 class="soon__date"><span class="history__dot"></span> &nbsp; <span class="soon__countdown">dříve</span></h4>
+      {% set history_collection = page.collection() %}
+      {% for p in history_collection.order('header.end', 'desc') if not ( p.header.end|date('Y-m-d') < strtotime("today")|date('Y-m-d') ) %}
+          {% set history_collection = history_collection.remove() %}
+      {% endfor %}
+      {% for p in history_collection.slice(0,3).order('header.end') %}
+        <section class="history__event">
+          <a href="{{p.url}}" title="Klikni pro všechny informace"  class="history__link-to-event">
+            <h3 class="history__title">
+              {{ p.header.title ~' '~ p.header.event.location }} 
+              <em style="font-weight:normal;font-size: 1rem;">
+                {% set group = p.header.taxonomy.skupina %}
+                {% if group|length > 0 and group|length < 6 %}
+                {% if "zabicky" in group %} žabičky {% endif %} 
+                {% if "pulci1" in group and "pulci2" in group %} pulci {% elseif "pulci1" in group %} pulci1 {% elseif "pulci2" in group %} pulci2 {% endif %} 
+                {% if "zaci1" in group and "zaci2" in group %} žáci {% elseif "zaci1" in group %} žáci1 {% elseif "zaci2" in group %} žáci2 {% endif %} 
+                {% if "dorost" in group %} dorost+ {% endif %}
+                {% endif %}
+              </em>
+            </h3>
+          </a>
+        </section>
+      {% endfor %}
+    </div>
       
       {% set soon_collection = page.collection() %}
 
