@@ -1,8 +1,8 @@
 ---
 taxonomy:
     skupina:
-        1: dorost
-        2: zaci2
+        - zaci2
+        - dorost
 id: 2020-race_1473
 start: '2020-09-18'
 end: '2020-09-20'

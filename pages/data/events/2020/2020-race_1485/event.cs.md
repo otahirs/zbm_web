@@ -1,12 +1,12 @@
 ---
 taxonomy:
     skupina:
-        - dorost
-        - zaci2
-        - zaci1
-        - pulci2
-        - pulci1
         - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - dorost
 id: 2020-race_1485
 start: '2020-10-04'
 end: '2020-10-04'
@@ -20,5 +20,24 @@ import:
     type: members
     time: 1596578401
 orisid: '5662'
+meetTime: '8:35'
+meetPlace: 'Brno hlavní nádraží - vestibul'
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: 'společná - vlak'
+accomodation: ''
+food: ''
+leader: Jitka
+note: 'Na sraz doražte včas, vlak nečeká. Předpokládaný návrat kolem 15:30 hod na Brno hlavní nádraží.'
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.1633, 16.4938'
 ---
 
+{{page.header.note}}
+* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
