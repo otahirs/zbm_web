@@ -1,5 +1,5 @@
 ---
-title: Login
+title: Editorská sekce
 expires: 0
 
 login_redirect_here: false
@@ -39,4 +39,4 @@ forms:
           placeholder: PLUGIN_LOGIN.2FA_CODE_INPUT
 ---
 
-# User Login
+# Přihlášení
