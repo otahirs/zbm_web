@@ -9,35 +9,57 @@ process:
 plan:
     thisWeek:
         monday:
-            -
+            1603791682734:
                 group:
-                    - dorost
-                name: 'Posilování '
-                time: '10:00'
-                place: 'Lužánky, auto na věci přistavím a sraz bude: https://mapy.cz/s/cujobemubo'
-        wednesday:
-            -
+                    - zaci2
+                name: samostatně
+                time: ''
+                place: 'Cvičení dle plánu'
+        tuesday:
+            1603791682738:
                 group:
-                    - dorost
-                name: Posilovna
-                time: '15:45'
-                place: 'Šumavská 31, Sraz tady: https://bit.ly/33OGRYN (kdo nestíhá, zavolá Jendovi, pustí ho dovnitř)'
-        thursday:
-            -
+                    - zaci2
+                name: samostatně
+                time: ''
+                place: 'Výběhy kopců'
+            1603810617731:
                 group:
                     - pulci1
                     - pulci2
                     - zaci1
                     - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 – 18:00'
-                place: 'Stadion pod Palackého vrchem'
-            -
+                name: 'On-line mapová teorie'
+                time: '17:00 - 18:00'
+                place: 'Google Classroom'
+        wednesday:
+            1603810617731:
+                name: ''
+                time: ''
+                place: ''
+        thursday:
+            1603791682746:
                 group:
-                    - dorost
-                name: Dráha
-                time: '17:00'
-                place: 'Areál VUT, pPv'
+                    - zaci2
+                name: samostatně
+                time: ''
+                place: Intervaly
+        friday:
+            1603810617733:
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            1603791682754:
+                group:
+                    - zaci2
+                name: samostatně
+                time: 'so nebo ne'
+                place: 'Pohyb, ať COB, proběhnutí nebo kolo'
+        sunday:
+            1603810617734:
+                name: ''
+                time: ''
+                place: ''
     nextWeek:
         monday:
             -
