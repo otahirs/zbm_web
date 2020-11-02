@@ -23,7 +23,7 @@ map: ''
 terrain: ''
 transport: 'auty v pátek'
 accomodation: "na posteli, vzal bych spacák\r\nhttp://www.cztip.cz/cs/8163-penzion-pod-jedlovou-a-chata-ruzena"
-food: doplním
+food: 'objednána večeře i snídaně na ubytování'
 leader: Jenda
 note: ''
 return: ''
