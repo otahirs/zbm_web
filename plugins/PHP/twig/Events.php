@@ -358,7 +358,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
         $oldpath = "./user/pages/data/events/". substr($id, 0 , 4) ."/". $id ;
         $newpath = "./user/pages/data/trashbin/events/". substr($id, 0 , 4) ."/". $id ;
         Folder::delete($newpath);
-        rename($oldpath, $newpath);
+	rename($oldpath, $newpath);
         Utils::log("EVENT | removed | " . $id);
     }
 

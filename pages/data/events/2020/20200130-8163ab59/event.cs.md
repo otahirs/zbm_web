@@ -19,15 +19,21 @@ leader: Andrea
 accomodation: 'Na posteli'
 food: 'od páteční snídaně'
 return: '2.2. 17:40 na hlavní nádraží'
-price: '1200'
+price: ''
 program: 'Běh nebo lyže'
 thingsToTake: 'maratonky, orientky a lyže (pokud bude sníh), hry  na večer'
-signups: 'v členské sekci'
+signups: ''
 template: soustredeni
 date: '2020-01-13'
 id: 20200130-8163ab59
 note: ''
+link: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
 ---
+
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
 * **ubytování**: {{page.header.accomodation}}
 * **strava**: {{page.header.food}}
