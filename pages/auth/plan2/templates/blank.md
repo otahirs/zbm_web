@@ -165,6 +165,64 @@ templates:
                 name: ''
                 time: ''
                 place: ''
+    Korona:
+        monday:
+            -
+                group:
+                    - dorost
+                name: Posilování
+                time: ''
+                place: Samostatně
+        tuesday:
+            0:
+                group:
+                    - dorost
+                name: 'Běh dle plánu'
+                time: ''
+                place: Samostatně
+            1604429978731:
+                group:
+                    - zaci2
+                name: Kopce
+                time: ''
+                place: Samostatně
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: 'Posilování + Běh dle plánu'
+                time: ''
+                place: Samostatně
+        thursday:
+            0:
+                group:
+                    - dorost
+                name: 'Běh dle plánu'
+                time: ''
+                place: Samostatně
+            1604430004178:
+                group:
+                    - zaci2
+                name: Intervaly
+                time: ''
+                place: Samostatně
+        friday:
+            -
+                group:
+                    - dorost
+                name: Kompenzace
+                time: ''
+                place: Samostatně
+        saturday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        sunday:
+            -
+                name: ''
+                time: ''
+                place: ''
 ---
 
 {% set curr_template = uri.query('template') ?? page.header.defaultTemplate %}

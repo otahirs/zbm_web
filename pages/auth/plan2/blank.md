@@ -9,57 +9,52 @@ process:
 plan:
     thisWeek:
         monday:
-            1603791682734:
+            -
                 group:
-                    - zaci2
-                name: samostatně
+                    - dorost
+                name: Posilování
                 time: ''
-                place: 'Cvičení dle plánu'
+                place: Samostatně
         tuesday:
-            1603791682738:
+            0:
                 group:
-                    - zaci2
-                name: samostatně
+                    - dorost
+                name: 'Běh dle plánu'
                 time: ''
-                place: 'Výběhy kopců'
-            1603810617731:
+                place: Samostatně
+            1604429978731:
                 group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
                     - zaci2
-                name: 'On-line mapová teorie'
-                time: '17:00 - 18:00'
-                place: 'Google Classroom'
+                name: Kopce
+                time: ''
+                place: Samostatně
         wednesday:
-            1603810617731:
-                name: ''
+            -
+                group:
+                    - dorost
+                name: 'Posilování + Běh dle plánu'
                 time: ''
-                place: ''
+                place: Samostatně
         thursday:
-            1603791682746:
+            0:
+                group:
+                    - dorost
+                name: 'Běh dle plánu'
+                time: ''
+                place: Samostatně
+            1604430004178:
                 group:
                     - zaci2
-                name: samostatně
+                name: Intervaly
                 time: ''
-                place: Intervaly
+                place: Samostatně
         friday:
-            1603810617733:
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            1603791682754:
+            -
                 group:
-                    - zaci2
-                name: samostatně
-                time: 'so nebo ne'
-                place: 'Pohyb, ať COB, proběhnutí nebo kolo'
-        sunday:
-            1603810617734:
-                name: ''
+                    - dorost
+                name: Kompenzace
                 time: ''
-                place: ''
+                place: Samostatně
     nextWeek:
         monday:
             -

@@ -1,10 +1,10 @@
 ---
 taxonomy:
     skupina:
-        - pulci1
-        - pulci2
-        - zaci1
-        - zaci2
+        1: pulci2
+        2: zaci1
+        3: zaci2
+        4: pulci1
 id: 2020-race_1476
 start: '2020-09-26'
 end: '2020-09-28'
@@ -29,7 +29,7 @@ accomodation: 'Světlá nad Sázavou'
 food: 'Plná penze'
 leader: 'Andrea Firešová'
 return: 'Pondělí 28.9. 2020 okolo 16:00'
-price: '1950,- Kč'
+price: ''
 program: '5 mapových tréninků na mapě z MČR.'
 thingsToTake: ''
 signups: ''

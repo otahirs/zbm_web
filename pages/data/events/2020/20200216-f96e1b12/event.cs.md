@@ -13,7 +13,7 @@ transport: 'Autobusem, letecky'
 accomodation: 'Na posteli, je třeba vzít lehký spacák a prostěradlo'
 food: 'vaříme si sami'
 return: '19:00'
-price: '3500 + letenka + jídlo'
+price: ''
 program: 'mapové tréninky viz rozpis v pdf'
 thingsToTake: 'teplé oblečení, může být od +5 do +25 °C'
 signups: ''
@@ -22,6 +22,11 @@ date: '2020-01-13'
 id: 20200216-f96e1b12
 leader: Jenda
 note: '[Plný rozpis](https://docs.google.com/document/d/1_mfyvCDJcRV-D_cg4dSf6XPP3lkOrR81NqLtq-2blfs/edit?usp=sharing)'
+link: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
 routes:
     -
         name: '1. tandemy'
@@ -51,6 +56,7 @@ routes:
         name: '9. intervaly'
         link: 'http://3drerun.worldofo.com/?id=-16764841&type=info'
 ---
+
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
 * **ubytování**: {{page.header.accomodation}}
 * **strava**: {{page.header.food}}
