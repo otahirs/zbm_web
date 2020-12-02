@@ -37,7 +37,7 @@ date: '2018-10-29'
     </div>
     <div class="col-md-6">
         <a href="https://www.obnadace.cz/" target="_blank">
-        <img class="sponsors--img" src="{{page.relativePagePath()}}/nadace.png">
+        <img class="sponsors--img" src="http://www.orientacnisporty.cz/upload/ilustracni-obrazky/nadaceob.PNG">
         </a>
     </div>
 </div>
