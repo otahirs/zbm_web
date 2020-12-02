@@ -67,7 +67,7 @@ Všechny důležité kontakty najdete na <a href="./kontakty"> vlastní stránce
 ---
 ## Financování a osobní účty <a name="finance"></a>
 
-Osobní účty vede Věra Mádlová, aktuální stav je on-line v „Přihláškovém systému".
+Aktuální stav je on-line v „Přihláškovém systému".
 
 #### Členské příspěvky a dary oddílu
 - Zasílejte výhradně bezhotovostně na účet u Raiffeisenbank 4067843369/5500 (změna - jiné číslo banky než minulé roky), v.s. xxxx (xxxx = registrační číslo).
