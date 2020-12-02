@@ -7,7 +7,7 @@ access:
 process:
     markdown: false
 cache_enable: false
-defaultTemplate: Letní
+defaultTemplate: Korona
 templates:
     Letní:
         monday:
@@ -167,25 +167,34 @@ templates:
                 place: ''
     Korona:
         monday:
-            -
+            0:
                 group:
                     - dorost
                 name: Posilování
                 time: ''
                 place: Samostatně
+            1606855385022:
+                group:
+                    - zaci2
+                name: Kopce
+                time: '16:30'
+                place: 'viz Google Classroom'
         tuesday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-            1604429978731:
+            -
                 group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
                     - zaci2
-                name: Kopce
-                time: ''
-                place: Samostatně
+                name: 'Online teorie'
+                time: '17:00'
+                place: 'Google Classroom po skupinách'
         wednesday:
             -
                 group:
@@ -194,18 +203,18 @@ templates:
                 time: ''
                 place: Samostatně
         thursday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-            1604430004178:
+            -
                 group:
                     - zaci2
                 name: Intervaly
-                time: ''
-                place: Samostatně
+                time: '16:30'
+                place: Rosnička
         friday:
             -
                 group:
@@ -220,9 +229,11 @@ templates:
                 place: ''
         sunday:
             -
-                name: ''
-                time: ''
-                place: ''
+                group:
+                    - dorost
+                name: Teorie
+                time: '20:00'
+                place: 'https://meet.jit.si/ZBM'
 ---
 
 {% set curr_template = uri.query('template') ?? page.header.defaultTemplate %}
