@@ -9,25 +9,40 @@ process:
 plan:
     thisWeek:
         monday:
-            -
+            0:
                 group:
                     - dorost
                 name: Posilování
+                time: ''
+                place: Samostatně
+            1606454780324:
+                group:
+                    - zaci2
+                name: Posilování/Protahování
                 time: ''
                 place: Samostatně
         tuesday:
             0:
                 group:
                     - dorost
-                name: 'Běh dle plánu'
-                time: ''
-                place: Samostatně
-            1604429978731:
+                name: 'Běh po cestách'
+                time: '16:30'
+                place: 'Kr. Pole, Tech. park, konečná tram 12, k dispozici budou auta na převlečení skupinek dle aktuálních nařízení'
+            1:
                 group:
                     - zaci2
                 name: Kopce
                 time: ''
                 place: Samostatně
+            1606454837601:
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                name: 'Online teorie'
+                time: '17:00'
+                place: 'Google Classroom po skupinách'
         wednesday:
             -
                 group:
@@ -36,18 +51,82 @@ plan:
                 time: ''
                 place: Samostatně
         thursday:
+            -
+                group:
+                    - dorost
+                name: Výběhy
+                time: '17:00'
+                place: 'Holedná, sraz a auta: https://mapy.cz/s/mofasobebe'
+            -
+                group:
+                    - zaci2
+                name: Intervaly
+                time: '16:30'
+                place: Rosnička
+        saturday:
+            -
+                group:
+                    - dorost
+                name: 'Kompenzace + Běh dle plánu'
+                time: ''
+                place: Samostatně
+        sunday:
+            -
+                group:
+                    - dorost
+                name: Teorie
+                time: '20:00'
+                place: 'https://meet.jit.si/ZBM'
+    nextWeek:
+        monday:
             0:
+                group:
+                    - dorost
+                name: Posilování
+                time: ''
+                place: Samostatně
+            1606855271384:
+                group:
+                    - zaci2
+                name: Kopce
+                time: '16:30'
+                place: 'Rosnička (viz Google Classroom)'
+        tuesday:
+            -
                 group:
                     - dorost
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-            1604430004178:
+            -
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                name: 'Online teorie'
+                time: '17:00'
+                place: 'Google Classroom po skupinách'
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: 'Posilování + Běh dle plánu'
+                time: ''
+                place: Samostatně
+        thursday:
+            -
+                group:
+                    - dorost
+                name: 'Běh dle plánu'
+                time: ''
+                place: Samostatně
+            -
                 group:
                     - zaci2
                 name: Intervaly
-                time: ''
-                place: Samostatně
+                time: '16:30'
+                place: Rosnička
         friday:
             -
                 group:
@@ -55,70 +134,13 @@ plan:
                 name: Kompenzace
                 time: ''
                 place: Samostatně
-    nextWeek:
-        monday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '16:30'
-                place: 'Bohunice, kampus, FSpS'
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: Tělocvična
-                time: '16:30 – 18:00'
-                place: 'hala Rosnička'
-        tuesday:
-            -
-                group:
-                    - zabicky
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-                name: 'Mapový trénink'
-                time: '16:00 – 18:00'
-                place: 'okolí Brna'
-        wednesday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '16:30'
-                place: 'Bohunice, kampus, FSpS'
-        thursday:
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 – 18:00'
-                place: 'Stadion pod Palackého vrchem'
-            -
-                group:
-                    - dorost
-                name: Dráha
-                time: '17:00'
-                place: 'Areál VUT, pPv'
-        friday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            -
-                name: ''
-                time: ''
-                place: ''
         sunday:
             -
-                name: ''
-                time: ''
-                place: ''
+                group:
+                    - dorost
+                name: Teorie
+                time: '20:00'
+                place: 'https://meet.jit.si/ZBM'
 ---
 
 <div class="row justify-content-between"> 
