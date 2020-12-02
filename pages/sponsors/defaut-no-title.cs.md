@@ -35,4 +35,9 @@ date: '2018-10-29'
         <img class="sponsors--img" src="{{page.relativePagePath()}}/sanasport.svg">
         </a>
     </div>
+    <div class="col-md-6">
+        <a href="https://www.obnadace.cz/" target="_blank">
+        <img class="sponsors--img" src="http://www.orientacnisporty.cz/upload/ilustracni-obrazky/nadaceob.PNG">
+        </a>
+    </div>
 </div>
