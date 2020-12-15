@@ -15,26 +15,20 @@ plan:
                 name: Posilování
                 time: ''
                 place: Samostatně
-            1606454780324:
+            1606855385022:
                 group:
                     - zaci2
-                name: Posilování/Protahování
-                time: ''
-                place: Samostatně
+                name: Běhání
+                time: '16:30'
+                place: 'viz Google Classroom'
         tuesday:
-            0:
+            -
                 group:
                     - dorost
-                name: 'Běh po cestách'
+                name: 'Běh dle plánu'
                 time: '16:30'
-                place: 'Kr. Pole, Tech. park, konečná tram 12, k dispozici budou auta na převlečení skupinek dle aktuálních nařízení'
-            1:
-                group:
-                    - zaci2
-                name: Kopce
-                time: ''
-                place: Samostatně
-            1606454837601:
+                place: 'Lesná, https://mapy.cz/s/lonuhasoco'
+            -
                 group:
                     - pulci1
                     - pulci2
@@ -54,22 +48,27 @@ plan:
             -
                 group:
                     - dorost
-                name: Výběhy
+                name: 'Výběhy Holedná'
                 time: '17:00'
-                place: 'Holedná, sraz a auta: https://mapy.cz/s/mofasobebe'
+                place: 'Kamenolom, auta tady: https://mapy.cz/s/helokovuhe'
             -
                 group:
                     - zaci2
-                name: Intervaly
-                time: '16:30'
+                name: Běhání
+                time: '16:15'
                 place: Rosnička
-        saturday:
+        friday:
             -
                 group:
                     - dorost
-                name: 'Kompenzace + Běh dle plánu'
+                name: Kompenzace
                 time: ''
                 place: Samostatně
+        saturday:
+            -
+                name: ''
+                time: ''
+                place: ''
         sunday:
             -
                 group:
@@ -79,18 +78,18 @@ plan:
                 place: 'https://meet.jit.si/ZBM'
     nextWeek:
         monday:
-            0:
+            -
                 group:
                     - dorost
                 name: Posilování
                 time: ''
                 place: Samostatně
-            1606855271384:
+            -
                 group:
                     - zaci2
-                name: Kopce
+                name: Běhání
                 time: '16:30'
-                place: 'Rosnička (viz Google Classroom)'
+                place: 'viz Google Classroom'
         tuesday:
             -
                 group:
@@ -124,8 +123,8 @@ plan:
             -
                 group:
                     - zaci2
-                name: Intervaly
-                time: '16:30'
+                name: Běhání
+                time: '16:15'
                 place: Rosnička
         friday:
             -
@@ -134,6 +133,11 @@ plan:
                 name: Kompenzace
                 time: ''
                 place: Samostatně
+        saturday:
+            -
+                name: ''
+                time: ''
+                place: ''
         sunday:
             -
                 group:
