@@ -167,16 +167,16 @@ templates:
                 place: ''
     Korona:
         monday:
-            0:
+            -
                 group:
                     - dorost
                 name: Posilování
                 time: ''
                 place: Samostatně
-            1606855385022:
+            -
                 group:
                     - zaci2
-                name: Kopce
+                name: Běhání
                 time: '16:30'
                 place: 'viz Google Classroom'
         tuesday:
@@ -212,8 +212,8 @@ templates:
             -
                 group:
                     - zaci2
-                name: Intervaly
-                time: '16:30'
+                name: Běhání
+                time: '16:15'
                 place: Rosnička
         friday:
             -
