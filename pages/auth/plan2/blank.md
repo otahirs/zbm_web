@@ -9,26 +9,26 @@ process:
 plan:
     thisWeek:
         monday:
-            0:
+            -
                 group:
                     - dorost
                 name: Posilování
                 time: ''
                 place: Samostatně
-            1606855385022:
+            -
                 group:
                     - zaci2
-                name: Běhání
-                time: '16:30'
-                place: 'viz Google Classroom'
+                name: 'Cvičení dle plánu'
+                time: ''
+                place: Samostatně
         tuesday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Běh dle plánu'
-                time: '16:30'
-                place: 'Lesná, https://mapy.cz/s/lonuhasoco'
-            -
+                time: ''
+                place: Samostatně
+            1:
                 group:
                     - pulci1
                     - pulci2
@@ -37,6 +37,12 @@ plan:
                 name: 'Online teorie'
                 time: '17:00'
                 place: 'Google Classroom po skupinách'
+            1608045973929:
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: Samostatně
         wednesday:
             -
                 group:
@@ -48,24 +54,21 @@ plan:
             -
                 group:
                     - dorost
-                name: 'Výběhy Holedná'
-                time: '17:00'
-                place: 'Kamenolom, auta tady: https://mapy.cz/s/helokovuhe'
+                name: 'Běh dle plánu'
+                time: ''
+                place: Samostatně
             -
                 group:
                     - zaci2
-                name: Běhání
-                time: '16:15'
-                place: Rosnička
-        friday:
-            -
-                group:
-                    - dorost
-                name: Kompenzace
+                name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
         saturday:
-            -
+            1611825339258:
+                name: ''
+                time: ''
+                place: ''
+            1611825341760:
                 name: ''
                 time: ''
                 place: ''
@@ -87,17 +90,17 @@ plan:
             -
                 group:
                     - zaci2
-                name: Běhání
-                time: '16:30'
-                place: 'viz Google Classroom'
+                name: 'Cvičení dle plánu'
+                time: ''
+                place: Samostatně
         tuesday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-            -
+            1:
                 group:
                     - pulci1
                     - pulci2
@@ -106,6 +109,12 @@ plan:
                 name: 'Online teorie'
                 time: '17:00'
                 place: 'Google Classroom po skupinách'
+            1608045973929:
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: Samostatně
         wednesday:
             -
                 group:
@@ -123,9 +132,9 @@ plan:
             -
                 group:
                     - zaci2
-                name: Běhání
-                time: '16:15'
-                place: Rosnička
+                name: 'Běh dle plánu'
+                time: ''
+                place: Samostatně
         friday:
             -
                 group:
