@@ -176,17 +176,17 @@ templates:
             -
                 group:
                     - zaci2
-                name: Běhání
-                time: '16:30'
-                place: 'viz Google Classroom'
+                name: 'Cvičení dle plánu'
+                time: ''
+                place: Samostatně
         tuesday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-            -
+            1:
                 group:
                     - pulci1
                     - pulci2
@@ -195,6 +195,12 @@ templates:
                 name: 'Online teorie'
                 time: '17:00'
                 place: 'Google Classroom po skupinách'
+            1608045973929:
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: Samostatně
         wednesday:
             -
                 group:
@@ -212,9 +218,9 @@ templates:
             -
                 group:
                     - zaci2
-                name: Běhání
-                time: '16:15'
-                place: Rosnička
+                name: 'Běh dle plánu'
+                time: ''
+                place: Samostatně
         friday:
             -
                 group:
