@@ -63,12 +63,15 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-        saturday:
-            1611825339258:
-                name: ''
+        friday:
+            -
+                group:
+                    - dorost
+                name: Kompenzace
                 time: ''
-                place: ''
-            1611825341760:
+                place: Samostatně
+        saturday:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -78,15 +81,15 @@ plan:
                     - dorost
                 name: Teorie
                 time: '20:00'
-                place: 'https://meet.jit.si/ZBM'
+                place: meet.google.com/itp-ahmx-bjz
     nextWeek:
         monday:
             -
                 group:
                     - dorost
                 name: Posilování
-                time: ''
-                place: Samostatně
+                time: '19:00'
+                place: 'Online, odkaz dodáme'
             -
                 group:
                     - zaci2
@@ -153,7 +156,7 @@ plan:
                     - dorost
                 name: Teorie
                 time: '20:00'
-                place: 'https://meet.jit.si/ZBM'
+                place: meet.google.com/itp-ahmx-bjz
 ---
 
 <div class="row justify-content-between"> 
