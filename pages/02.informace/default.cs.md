@@ -101,8 +101,9 @@ Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému
 | Ostatní - jezdím jen na Jihomoravskou ligu | 2 600,– Kč | JmL |
 | Ostatní - jezdím na Jihomoravskou ligu a ŽB | 3 500,– Kč | ŽB, JmL |
 | Ostatní - jezdím všude | 4 500,– Kč | ŽA, ŽB, JmL |
+| Ostatní - registrace za jiný klub OB | 3500 Kč | --- |
 
-Sourozenci (Žabičky, Pulci, Žáci) – druhý a další sourozenec sleva 30&nbsp;%.
+Sourozenci (Žabičky, Pulci, Žáci, Dorost) – druhý a další sourozenec sleva 30&nbsp;%.
 
 Členové oddílu, kteří nebydlí v Brně nebo jeho blízkém okolí, případně v Brně nestudují, mají slevu 500,–&nbsp;Kč (platí pro závodníky s licencí B a vyšší).
 
