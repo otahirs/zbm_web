@@ -180,13 +180,13 @@ templates:
                 time: ''
                 place: Samostatně
         tuesday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-            1:
+            -
                 group:
                     - pulci1
                     - pulci2
@@ -195,7 +195,7 @@ templates:
                 name: 'Online teorie'
                 time: '17:00'
                 place: 'Google Classroom po skupinách'
-            1608045973929:
+            -
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
@@ -239,7 +239,7 @@ templates:
                     - dorost
                 name: Teorie
                 time: '20:00'
-                place: 'https://meet.jit.si/ZBM'
+                place: meet.google.com/itp-ahmx-bjz
 ---
 
 {% set curr_template = uri.query('template') ?? page.header.defaultTemplate %}

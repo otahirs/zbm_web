@@ -63,25 +63,18 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-        friday:
+        saturday:
             -
                 group:
                     - dorost
                 name: Kompenzace
                 time: ''
                 place: Samostatně
-        saturday:
-            -
+        sunday:
+            1612983663117:
                 name: ''
                 time: ''
                 place: ''
-        sunday:
-            -
-                group:
-                    - dorost
-                name: Teorie
-                time: '20:00'
-                place: meet.google.com/itp-ahmx-bjz
     nextWeek:
         monday:
             -
