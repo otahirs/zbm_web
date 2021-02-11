@@ -78,14 +78,14 @@ Aktuální stav je on-line v „Přihláškovém systému".
 - Finance z oddílového účtu lze použít zejména na zaplacení oddílových příspěvků, soustředění, startovného na nedotované závody (např. prázdninové vícedenní závody, LOB, MTBO) či oddílového oblečení. Členské příspěvky a dary poskytnuté na oddílový účet již nelze poslat zpět na účet soukromý.
 
 ---
-## Oddílové příspěvky 2020 <a name="prispevky"></a>
-Členské příspěvky je potřeba zaplatit **nejpozději do 26.&nbsp;2.&nbsp;2020**. Zároveň v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2020 - evidence_, dle příslušného typu příspěvku.
+## Oddílové příspěvky 2021 <a name="prispevky"></a>
+Členské příspěvky je potřeba zaplatit **nejpozději do 26.&nbsp;2.&nbsp;2021**. Zároveň v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2021 - evidence_, dle příslušného typu příspěvku.
 
 Platby proveďte bezhotovostně na účet SK Brno-Žabovřesky u Raifeisenbank 4067843369/5500, vs. xxxx (kde xxxx = registrační číslo).
 
 Ve všech typech příspěvků jsou již zahrnuty povinné odvody SK ve výši 300,–&nbsp;Kč a registrace ČSOS ve výši 100,–&nbsp;Kč.
 
-Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému. Veškeré **dluhy** z minulosti je potřeba vyrovnat taktéž nejpozději **do 26.&nbsp;2.&nbsp;2020**. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, **nebudou přihlašováni na závody!**
+Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému. Veškeré **dluhy** z minulosti je potřeba vyrovnat taktéž nejpozději **do 26.&nbsp;2.&nbsp;2021**. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, **nebudou přihlašováni na závody!**
 
 ### Kolik zaplatím?
 
