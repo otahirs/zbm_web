@@ -1,0 +1,11 @@
+state: enabled
+email: test@test.com
+fullname: 'Test account'
+title: 'Test account'
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$wK94yj/9EdNiv/gLnwbdIuBauARVOrhGWCADAwJ42622mm.mkFrwu
