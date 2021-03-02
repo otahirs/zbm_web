@@ -9,3 +9,5 @@ access:
   site:
     login: true
 hashed_password: $2y$10$wK94yj/9EdNiv/gLnwbdIuBauARVOrhGWCADAwJ42622mm.mkFrwu
+groups:
+  - 'site - plná práva'

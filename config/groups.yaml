@@ -133,35 +133,35 @@ edit-static-sites:
   groupname: 'site - plná práva'
   access:
     site:
-      login: 'true'
-      novinky: 'true'
-      blizise: 'true'
-      plan: 'true'
-      nahrat-program: 'true'
-      polaris: 'true'
-      edit-event: 'true'
-      edit-static-sites: 'true'
-      maptheory: 'true'
+      login: true
+      novinky: true
+      blizise: true
+      plan: true
+      nahrat-program: true
+      polaris: true
+      edit-event: true
+      edit-static-sites: true
+      maptheory: true
     admin:
-      super: 'false'
-      login: 'false'
-      cache: 'false'
-      configuration: 'false'
-      configuration_system: 'false'
-      configuration_site: 'false'
-      configuration_media: 'false'
-      configuration_info: 'false'
-      settings: 'false'
-      pages: 'false'
-      maintenance: 'false'
-      statistics: 'false'
-      plugins: 'false'
-      themes: 'false'
-      users: 'false'
+      login: false
+      super: false
+      cache: false
+      configuration: false
+      pages: false
+      maintenance: false
+      statistics: false
+      plugins: false
+      themes: false
+      users: false
+      configuration_system: false
+      configuration_site: false
+      configuration_media: false
+      configuration_info: false
+      settings: false
     admin-addon-user-manager:
-      users: 'false'
-      groups: 'false'
-      users_expert: 'false'
+      users: false
+      groups: false
+      users_expert: false
 maptheory:
   groupname: maptheory
   readableName: 'Mapová teorie'
