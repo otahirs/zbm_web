@@ -22,13 +22,13 @@ plan:
                 time: ''
                 place: Samostatně
         tuesday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-            1:
+            -
                 group:
                     - pulci1
                     - pulci2
@@ -37,7 +37,7 @@ plan:
                 name: 'Online teorie'
                 time: '17:00'
                 place: 'Google Classroom po skupinách'
-            1608045973929:
+            -
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
@@ -63,26 +63,33 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-        saturday:
+        friday:
             -
                 group:
                     - dorost
                 name: Kompenzace
                 time: ''
                 place: Samostatně
-        sunday:
-            1612983663117:
+        saturday:
+            -
                 name: ''
                 time: ''
                 place: ''
+        sunday:
+            -
+                group:
+                    - dorost
+                name: Teorie
+                time: '20:00'
+                place: meet.google.com/itp-ahmx-bjz
     nextWeek:
         monday:
             -
                 group:
                     - dorost
                 name: Posilování
-                time: '19:00'
-                place: 'Online, odkaz dodáme'
+                time: ''
+                place: Samostatně
             -
                 group:
                     - zaci2
@@ -90,13 +97,13 @@ plan:
                 time: ''
                 place: Samostatně
         tuesday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-            1:
+            -
                 group:
                     - pulci1
                     - pulci2
@@ -105,7 +112,7 @@ plan:
                 name: 'Online teorie'
                 time: '17:00'
                 place: 'Google Classroom po skupinách'
-            1608045973929:
+            -
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
