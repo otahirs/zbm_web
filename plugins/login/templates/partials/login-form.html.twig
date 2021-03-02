@@ -36,7 +36,7 @@
                         {% include ["forms/fields/#{field.type}/#{field.type}.html.twig", 'forms/fields/text/text.html.twig'] %}
                     {% endif %}
                 {% endfor %}
-                <br>
+
                 <div class="{{ form_button_outer_classes ?: 'form-actions secondary-accent' }}">
                     {% if config.plugins.login.rememberme.enabled and page.header.form.login.rememberme ?? true %}
                         <div class="form-data rememberme" data-grav-default="null" data-grav-disabled="true" data-grav-field="checkbox">
@@ -46,13 +46,12 @@
                             </div>
                         </div>
                     {% endif %}
-                    
-                    <button class="{{ form_button_classes ?: 'button primary' }}" type="submit"  name="task" value="login.login"><i class="fa fa-sign-in"></i> {{ 'PLUGIN_LOGIN.BTN_LOGIN'|t }}</button>
-                    
+
                     {% if page.header.form.login.forgot_button ?? true %}
-                    <hr>
                     <a class="{{ form_button_classes ?: 'button secondary' }}" href="{{ base_url_relative }}{{ config.plugins.login.route_forgot }}"><i class="fa fa-exclamation-circle"></i> {{ 'PLUGIN_LOGIN.BTN_FORGOT'|t }}</a>
                     {% endif %}
+
+                    <button class="{{ form_button_classes ?: 'button primary' }}" type="submit"  name="task" value="login.login"><i class="fa fa-sign-in"></i> {{ 'PLUGIN_LOGIN.BTN_LOGIN'|t }}</button>
                 </div>
 
                 {{ nonce_field('login-form', 'login-form-nonce')|raw }}

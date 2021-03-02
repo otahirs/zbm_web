@@ -1,6 +1,6 @@
 ---
-title: Editorská sekce
-expires: 0
+title: Login
+cache_control: private, no-cache, must-revalidate
 
 login_redirect_here: false
 
@@ -39,4 +39,4 @@ forms:
           placeholder: PLUGIN_LOGIN.2FA_CODE_INPUT
 ---
 
-# Přihlášení
+# User Login

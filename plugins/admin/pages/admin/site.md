@@ -1,7 +1,9 @@
 ---
 title: Site Settings
 template: config
+expires: 0
+
 access:
-    admin.settings: true
+    admin.configuration.site: true
     admin.super: true
 ---
