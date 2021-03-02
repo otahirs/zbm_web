@@ -1,5 +1,5 @@
 # Webovky SK Brno - Žabovřesky
-Staré stránky již klepali bačkorama, tak jsem se vrhnul na nové a po pár letech vzniklo toto. Začal jsem v první roce nástupu na MUNI FI bakaláře, kdy jsem neznal ani PHP ani Javascript (popravdě jsem ani nevěděl, že je to něco jiného než Java), takže to podle toho taky občas vypadá. Ale s plynoucímy roky, nepočítaně hodin a nikdy nekončícím refaktoringem už to nějak funguje. :D 
+Staré stránky již klepaly bačkorama, tak jsem se vrhnul na nové a po pár letech vzniklo toto. Začal jsem v první roce nástupu na MUNI FI bakaláře, kdy jsem neznal ani PHP ani Javascript (popravdě jsem ani nevěděl, že je to něco jiného než Java), takže to podle toho taky občas vypadá. Ale s plynoucímy roky, nepočítaně hodin a nikdy nekončícím refaktoringem už to nějak funguje. :D 
 
 
 **Veškeré připomínky, návrhy a nalezené chyby pište zde do _Issues_.**  
