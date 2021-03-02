@@ -44,3 +44,8 @@ Stránky jako novinky a události však obsahují většinou pouze YAML data a v
 
 Na vykreslování stránek a šalon se používá trochu víc fancy PHP aka [Twig](https://twig.symfony.com/doc/3.x/templates.html).  
 Občas bylo třeba zašpinit si ruce vlastním PHP kódem, ten se nachází [zde](plugins/PHP/twig/).
+
+#### rozdíly oproti nasazené verzi
+* kešování je vynuto
+* `test` účet místo běžných uživatelských účtů
+* nenastavena synchronizace s gitem a spojení na mailový server
