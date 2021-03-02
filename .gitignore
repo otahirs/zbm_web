@@ -1,9 +1,10 @@
 /accounts/*
 
-/config/*
-!config/site.yaml
-!config/system.yaml
-!config/groups.yaml
+/config/backups.yaml
+/config/scheduler.yaml
+/config/security.yaml
+/config/plugins/git-sync.yaml
+/config/plugins/email.yaml
 
 /data/*
 

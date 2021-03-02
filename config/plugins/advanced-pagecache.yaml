@@ -1,0 +1,17 @@
+enabled: false
+disabled_with_params: false
+disabled_with_query: false
+disabled_on_login: false
+per_user_caching: true
+disabled_extensions:
+  - rss
+  - xml
+  - json
+whitelist:
+  - /cache-this-page
+blacklist:
+  - '/auth/*'
+  - /login
+  - /error
+  - /random
+  - /dont-cache-this-page
