@@ -1,0 +1,180 @@
+'Trenéři žactvo':
+  groupname: 'Trenéři žactvo'
+  readableName: 'Trenéři žactvo'
+  access:
+    site: {  }
+    admin: {  }
+    admin-addon-user-manager: {  }
+'Trenéři Pulci 1':
+  groupname: 'Trenéři Pulci 1'
+  readableName: 'Trenéři Pulci 1'
+  access:
+    site: {  }
+    admin: {  }
+    admin-addon-user-manager: {  }
+'Trenéři Pulci 2':
+  groupname: 'Trenéři Pulci 2'
+  readableName: 'Trenéři Pulci 2'
+  access:
+    site: {  }
+    admin: {  }
+    admin-addon-user-manager: {  }
+'Trenéři Žáci 1':
+  groupname: 'Trenéři Žáci 1'
+  readableName: 'Trenéři Žáci 1'
+  access:
+    site:
+      login: 'true'
+    admin: {  }
+    admin-addon-user-manager: {  }
+'Trenéři Žáci 2':
+  groupname: 'Trenéři Žáci 2'
+  readableName: 'Trenéři Žáci 2'
+  access:
+    site: {  }
+    admin: {  }
+    admin-addon-user-manager: {  }
+'Trenéři Dorost':
+  groupname: 'Trenéři Dorost'
+  readableName: 'Trenéři Dorost'
+  access:
+    site:
+      login: 'true'
+    admin:
+      super: 'false'
+      login: 'false'
+      cache: 'false'
+      configuration: 'false'
+      configuration_system: 'false'
+      configuration_site: 'false'
+      configuration_media: 'false'
+      configuration_info: 'false'
+      settings: 'false'
+      pages: 'false'
+      maintenance: 'false'
+      statistics: 'false'
+      plugins: 'false'
+      themes: 'false'
+      users: 'false'
+    admin-addon-user-manager:
+      users: 'false'
+      groups: 'false'
+      users_expert: 'false'
+novinky:
+  groupname: novinky
+  readableName: Novinky
+  description: 'Může upravovat a přidávat novinky na hlavní stránce'
+  icon: 'newspaper-o '
+  access:
+    site:
+      login: 'true'
+      novinky: 'true'
+    admin: {  }
+    admin-addon-user-manager: {  }
+blizise:
+  groupname: blizise
+  readableName: 'Blíží se'
+  description: 'Může upravovat zobrazený text u sekce "Blíží se" na hlavní stránce'
+  icon: hourglass-half
+  access:
+    site:
+      login: 'true'
+      blizise: 'true'
+    admin: {  }
+    admin-addon-user-manager: {  }
+plan:
+  groupname: plan
+  readableName: 'Upravit týdenní plán'
+  description: 'Umožňuje upravovat pravidelní tréninky, které se zobrazují v "Plánu na tento týden".'
+  icon: tasks
+  access:
+    site:
+      login: 'true'
+      plan: 'true'
+    admin: {  }
+    admin-addon-user-manager: {  }
+nahrat-program:
+  groupname: nahrat-program
+  readableName: 'Nahrát program'
+  access:
+    site:
+      login: 'true'
+      nahrat-program: 'true'
+    admin: {  }
+    admin-addon-user-manager: {  }
+polaris:
+  groupname: polaris
+  readableName: Polaris
+  access:
+    site:
+      login: 'true'
+      polaris: 'true'
+    admin: {  }
+    admin-addon-user-manager: {  }
+edit-event:
+  groupname: edit-event
+  readableName: 'Upravit akci'
+  access:
+    site:
+      login: 'true'
+      edit-event: 'true'
+    admin: {  }
+    admin-addon-user-manager: {  }
+edit-static-sites:
+  groupname: edit-static-sites
+  readableName: 'Upravovat statické stránky ve frontendu'
+  access:
+    site:
+      login: 'true'
+      edit-static-sites: 'true'
+    admin: {  }
+    admin-addon-user-manager: {  }
+'site - plná práva':
+  groupname: 'site - plná práva'
+  access:
+    site:
+      login: 'true'
+      novinky: 'true'
+      blizise: 'true'
+      plan: 'true'
+      nahrat-program: 'true'
+      polaris: 'true'
+      edit-event: 'true'
+      edit-static-sites: 'true'
+      maptheory: 'true'
+    admin:
+      super: 'false'
+      login: 'false'
+      cache: 'false'
+      configuration: 'false'
+      configuration_system: 'false'
+      configuration_site: 'false'
+      configuration_media: 'false'
+      configuration_info: 'false'
+      settings: 'false'
+      pages: 'false'
+      maintenance: 'false'
+      statistics: 'false'
+      plugins: 'false'
+      themes: 'false'
+      users: 'false'
+    admin-addon-user-manager:
+      users: 'false'
+      groups: 'false'
+      users_expert: 'false'
+maptheory:
+  groupname: maptheory
+  readableName: 'Mapová teorie'
+  access:
+    site:
+      login: 'true'
+      maptheory: 'true'
+    admin: {  }
+    admin-addon-user-manager: {  }
+'žádná práva':
+  groupname: 'žádná práva'
+  access:
+    site:
+      login: 'true'
+    admin: {  }
+    admin-addon-user-manager: {  }

@@ -1,0 +1,29 @@
+---
+taxonomy:
+    skupina:
+        1: dorost
+id: 2020-race_1439
+start: '2020-04-26'
+end: '2020-04-26'
+title: 'Bezkontaktní testování'
+link: ''
+place: 'Brno, Líšeň'
+type: Z
+template: zavod
+date: '2020-04-21'
+import:
+    type: members
+    time: 1587592801
+meetTime: ''
+meetPlace: 'U lomu Kalcit'
+eventTypeDescription: 'Délka je limitována časem.'
+startTime: ''
+map: 'Kalcit, 1: 10 000, e = 5m, stav zima 2020'
+terrain: 'Těžký mapově, fyzicky i podložkou.'
+transport: 'Když dorazíte na kole, pohlídám ho.'
+leader: Jenda
+note: "Intervalový start, SI v air modu:\r\nH18: 10:00\r\nH16: 10:15\r\nD16: 10:35\r\nD18: 10:50\r\nUrčeno pro dorostence  a případně i eliťáky ZBM (aby nás nebylo moc). Pokud byste mohli jen odpoledne, napište to do přihlášky v členské sekci."
+gps: '49.23024, 16.70108'
+---
+{{page.header.note}}
+ {{page.header.meetPlace}}. Doprava {{page.header.transport}}.

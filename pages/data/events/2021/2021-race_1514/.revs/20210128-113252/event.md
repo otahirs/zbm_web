@@ -1,0 +1,35 @@
+---
+taxonomy:
+    skupina:
+        - dorost
+id: 2021-race_1514
+start: '2021-02-12'
+end: '2021-02-12'
+title: 'NOB: Žebětín'
+place: Žebětín
+type: T
+note: ''
+template: trenink
+date: '2020-11-09'
+import:
+    type: members
+    time: 1604902808
+meetTime: ''
+meetPlace: ''
+link: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+---
+
+{{page.header.note}}
