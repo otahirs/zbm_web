@@ -1,6 +1,5 @@
 absolute_urls: false
 timezone: null
-default_locale: null
 param_sep: ':'
 wrapped_site: false
 reverse_proxy_setup: false
@@ -20,16 +19,18 @@ languages:
     - cs
   default_lang: null
   include_default_lang: false
-  pages_fallback_only: false
+  include_default_lang_file_extension: true
   translations: true
   translations_fallback: true
   session_store_active: true
   http_accept_language: false
   override_locale: false
+  pages_fallback_only: false
 home:
   alias: /home
   hide_in_urls: true
 pages:
+  type: regular
   theme: editorial
   order:
     by: default
@@ -95,7 +96,7 @@ pages:
       - form
       - forms
 cache:
-  enabled: true
+  enabled: false
   check:
     method: none
   driver: auto
@@ -110,9 +111,10 @@ cache:
   allow_webserver_gzip: false
   redis:
     socket: null
+    password: null
+    database: null
     server: null
     port: null
-    password: null
   memcache:
     server: null
     port: null
@@ -150,6 +152,8 @@ log:
     facility: local6
 debugger:
   enabled: false
+  provider: clockwork
+  censored: false
   shutdown:
     close_connection: true
   twig: true
@@ -160,12 +164,14 @@ images:
   debug: false
   auto_fix_orientation: true
   seofriendly: true
+  defaults:
+    loading: auto
 media:
   enable_media_timestamp: false
   unsupported_inline_types: null
   allowed_fallback_types: null
   auto_metadata_exif: false
-  upload_limit: 33554432
+  upload_limit: 134217728
 session:
   enabled: true
   initialize: true
@@ -174,7 +180,9 @@ session:
   uniqueness: path
   secure: true
   httponly: true
+  samesite: Lax
   split: true
+  domain: null
   path: /
 gpm:
   releases: stable
@@ -183,8 +191,19 @@ gpm:
   verify_peer: true
   official_gpm_only: true
 accounts:
-  type: data
+  type: regular
   storage: file
+flex:
+  cache:
+    index:
+      enabled: true
+      lifetime: 60
+    object:
+      enabled: true
+      lifetime: 600
+    render:
+      enabled: true
+      lifetime: 600
 strict_mode:
   yaml_compat: true
   twig_compat: true
