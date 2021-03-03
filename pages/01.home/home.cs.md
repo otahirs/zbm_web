@@ -60,7 +60,7 @@ news:
               <section class="newsText">
                   {% set summary = p.content|safe_truncate_html(70) %}
                   {% if p.content != summary %}
-                    <div class="newsText--summary" style="cursor:pointer" title="Kliknutím zobrazíte celou novinku">{{summary}}</div>
+                    <div class="newsText--summary">{{summary}} <span class="newsText--show-all" style="cursor:pointer" title="Kliknutím zobrazíte celou novinku">zobrazit vše</span></div>
                     <div class="newsText--content" style="display:none;">{{p.content}}</div>
                   {% else %}
                     <div class="newsText--content">{{p.content}}</div>
@@ -88,9 +88,9 @@ news:
       </div>      
       <script>
         window.addEventListener('DOMContentLoaded', () => {
-            $('.newsText--summary').on('click', function(){
-              this.nextElementSibling.style.display='block';
-              this.style.display='none';
+            $('.newsText--show-all').on('click', function(){
+              this.parentElement.nextElementSibling.style.display='block';
+              this.parentElement.style.display='none';
             });
         });  
       </script>
