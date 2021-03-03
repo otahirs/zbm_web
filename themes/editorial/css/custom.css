@@ -38,8 +38,19 @@ html, body {
     margin-top: 0.5em;
 }
 
+.newsText--show-all {
+    cursor: pointer;
+    margin-bottom: 2em;
+    display: inline-block;
+    border: solid 1px black;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    transition: 300ms;
+}
 
-
+.newsText--show-all:hover {
+    background-color: #e65a51;
+}
 
 
 /* The Modal (background) */
