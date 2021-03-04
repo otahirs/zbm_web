@@ -4,7 +4,8 @@ process:
     twig: true
     markdown: false
 ---
-
+<p>kontakt: <em>polaris@zabiny.club</em></p>
+<hr>
 {% set p = page.find('/data/polaris') %}
 {% for rok, year in p.header.polaris %}
     <section>
