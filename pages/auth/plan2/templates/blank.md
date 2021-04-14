@@ -238,7 +238,7 @@ templates:
                 group:
                     - dorost
                 name: Teorie
-                time: '20:00'
+                time: '19:00'
                 place: meet.google.com/itp-ahmx-bjz
 ---
 
