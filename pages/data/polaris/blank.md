@@ -2,6 +2,8 @@
 routable: false
 visible: false
 polaris:
+    2021:
+        p01: Polaris_2021_01.pdf
     2020:
         p04: Polaris_2020_04.pdf
         p03: Polaris_2020_03.pdf

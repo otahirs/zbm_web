@@ -13,8 +13,8 @@ plan:
                 group:
                     - dorost
                 name: Posilování
-                time: ''
-                place: Samostatně
+                time: '17:00'
+                place: 'ZŠ nám. Svornosti, https://en.mapy.cz/s/jezoseluhu'
             -
                 group:
                     - zaci2
@@ -51,37 +51,27 @@ plan:
                 time: ''
                 place: Samostatně
         thursday:
-            -
-                group:
-                    - dorost
-                name: 'Běh dle plánu'
-                time: ''
-                place: Samostatně
-            -
+            1:
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
         friday:
-            -
-                group:
-                    - dorost
-                name: Kompenzace
+            1617782747230:
+                name: ''
                 time: ''
-                place: Samostatně
+                place: ''
         saturday:
             -
                 name: ''
                 time: ''
                 place: ''
         sunday:
-            -
-                group:
-                    - dorost
-                name: Teorie
-                time: '20:00'
-                place: meet.google.com/itp-ahmx-bjz
+            1617782748513:
+                name: ''
+                time: ''
+                place: ''
     nextWeek:
         monday:
             -
@@ -155,7 +145,7 @@ plan:
                 group:
                     - dorost
                 name: Teorie
-                time: '20:00'
+                time: '19:00'
                 place: meet.google.com/itp-ahmx-bjz
 ---
 
