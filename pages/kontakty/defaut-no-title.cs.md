@@ -85,6 +85,10 @@ date: '2018-10-28'
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>hana.nedbalkova@seznam.cz</li>
             </ul>      
+            <h4>Jan Drábek</h4>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-envelope"></i>drbca@centrum.cz</li>
+            </ul>      
         </div>
     </div>
     <div class="divOuter col-lg-6" id="pulci2">
