@@ -5,6 +5,7 @@ polaris:
     2021:
         p01: Polaris_2021_01.pdf
     2020:
+        p99: Polaris_2020_99.pdf
         p04: Polaris_2020_04.pdf
         p03: Polaris_2020_03.pdf
         p02: Polaris_2020_02.pdf
