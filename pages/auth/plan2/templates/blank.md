@@ -171,8 +171,8 @@ templates:
                 group:
                     - dorost
                 name: Posilování
-                time: ''
-                place: Samostatně
+                time: '16:45'
+                place: 'nám Svornosti, https://en.mapy.cz/s/namovudojo'
             -
                 group:
                     - zaci2
@@ -180,13 +180,7 @@ templates:
                 time: ''
                 place: Samostatně
         tuesday:
-            -
-                group:
-                    - dorost
-                name: 'Běh dle plánu'
-                time: ''
-                place: Samostatně
-            -
+            1:
                 group:
                     - pulci1
                     - pulci2
@@ -195,7 +189,7 @@ templates:
                 name: 'Online teorie'
                 time: '17:00'
                 place: 'Google Classroom po skupinách'
-            -
+            2:
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
@@ -206,15 +200,15 @@ templates:
                 group:
                     - dorost
                 name: 'Posilování + Běh dle plánu'
-                time: ''
-                place: Samostatně
+                time: '16:30'
+                place: 'Rosnička, https://en.mapy.cz/s/resafolera'
         thursday:
             -
                 group:
                     - dorost
-                name: 'Běh dle plánu'
-                time: ''
-                place: Samostatně
+                name: 'Intervalový trénink'
+                time: '17:00'
+                place: Podzimní
             -
                 group:
                     - zaci2
