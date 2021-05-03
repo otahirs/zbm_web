@@ -39,6 +39,7 @@
 {% endblock %}
 
 {% block topbar %}
+    {% if user.authorize('admin.super') %}
     <form id="admin-mode-toggle">
         {% set normalText = 'PLUGIN_ADMIN.NORMAL'|tu %}
         {% set expertText = 'PLUGIN_ADMIN.EXPERT'|tu %}
@@ -54,6 +55,7 @@
             <a></a>
         </div>
     </form>
+    {% endif %}
 {% endblock topbar %}
 
 {% block content %}
@@ -79,10 +81,10 @@
 
         {% do page.modifyHeader('http_response_code', 404) %}
         <div class="error-block">
-            <h1>Error 404</h1>
+            <h1>{{ 'PLUGIN_ADMIN.ERROR'|tu }} 404</h1>
             <div class="padding">
                 <p>
-                    Woops! Looks like this page doesn't exist.
+                    {{ 'PLUGIN_FLEX_OBJECTS.ERROR.PAGE_NOT_EXIST'|tu }}
                 </p>
             </div>
         </div>
