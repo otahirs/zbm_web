@@ -1,3 +1,22 @@
+# v5.0.2
+## 04/23/2021
+
+1. [](#improved)
+   * Better message for invalid nonce [#513](https://github.com/getgrav/grav-plugin-form/issues/513)
+   * Better error if `Form::getPage()` gets called too early [#518](https://github.com/getgrav/grav-plugin-form/issues/518)
+   * Added support for custom Toggle id
+
+# v5.0.1
+## 03/17/2021
+
+1. [](#improved)
+   * Updated `de` language [#510](https://github.com/getgrav/grav-plugin-form/pull/510)
+   * Better field type definitions for avatar and file fields
+1. [](#bugfix)
+   * Fixed toggle highlight when there's no value
+   * Fixed wrong selected values in `select` field with integer and boolean values
+   * Fixed changelog display [#502](https://github.com/getgrav/grav-plugin-form/pull/502)
+
 # v5.0.0
 ## 02/17/2021
 
@@ -116,6 +135,7 @@
 
 # v4.0.6
 ## 03/19/2020
+
 1. [](#new)
     * CHANGE: Form labels are now displayed in `raw` format so you can use HTML in them
     * Added support for `name` attribute on buttons [#411](https://github.com/getgrav/grav-plugin-form/issues/411)

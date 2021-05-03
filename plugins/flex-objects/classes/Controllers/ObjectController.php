@@ -79,11 +79,11 @@ class ObjectController extends AbstractController
             return $this->createDisplayResponse();
         }
 
-        // TODO: is there a better way to do this?
+        // FIXME: make it conditional
         $grav = $this->grav;
         $grav->fireEvent('gitsync');
 
-        $this->setMessage($this->translate('PLUGIN_FLEX_OBJECTS.CREATED_SUCCESSFULLY'), 'info');
+        $this->setMessage($this->translate('PLUGIN_FLEX_OBJECTS.STATE.CREATED_SUCCESSFULLY'), 'info');
 
         $redirect = $request->getAttribute('redirect', (string)$request->getUri());
 
@@ -128,11 +128,11 @@ class ObjectController extends AbstractController
             return $this->createDisplayResponse();
         }
 
-        // TODO: is there a better way to do this?
+        // FIXME: make it conditional
         $grav = $this->grav;
         $grav->fireEvent('gitsync');
 
-        $this->setMessage($this->translate('PLUGIN_FLEX_OBJECTS.UPDATED_SUCCESSFULLY'), 'info');
+        $this->setMessage($this->translate('PLUGIN_FLEX_OBJECTS.STATE.UPDATED_SUCCESSFULLY'), 'info');
 
         $redirect = $request->getAttribute('redirect', (string)$request->getUri()->getPath());
 
@@ -156,8 +156,9 @@ class ObjectController extends AbstractController
 
         $object->delete();
 
-        $this->setMessage($this->translate('PLUGIN_FLEX_OBJECTS.DELETED_SUCCESSFULLY'), 'info');
+        $this->setMessage($this->translate('PLUGIN_FLEX_OBJECTS.STATE.DELETED_SUCCESSFULLY'), 'info');
 
+        // FIXME: make it conditional
         $grav = $this->grav;
         $grav->fireEvent('gitsync');
 

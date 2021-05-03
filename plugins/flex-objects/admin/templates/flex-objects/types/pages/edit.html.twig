@@ -1,12 +1,14 @@
 {% extends 'flex-objects/types/default/edit.html.twig' %}
 
-{% set form = form ?? object.form(admin.session.expert != '0' ? 'raw') %}
+{% set form = form ?? object.form(user.authorize('admin.super') and admin.session.expert != '0' ? 'raw') %}
+
 {% set title = title ?? form.getValue('header.title') ?? object.title ?? key %}
 {% set parent = object.parent %}
-{% set can_read = can_read ?? (object.exists ? object.isAuthorized('read', 'admin', user) : parent.isAuthorized('create', 'admin', user))|bool %}
+{% set can_read = can_read ?? (object.exists ? object.isAuthorized('read', 'admin', user) : object.isAuthorized('create', 'admin', user))|bool %}
 {% set can_copy = can_copy ?? (parent.exists and parent.isAuthorized('create', 'admin', user)) %}
 {% set can_create = can_create ?? (object.exists and object.isAuthorized('create', 'admin', user)) %}
-{% set can_save = can_save ?? (object.exists ? object.isAuthorized('update', 'admin', user) : parent.isAuthorized('create', 'admin', user))|bool %}
+{% set can_save = can_save ?? (object.exists ? object.isAuthorized('update', 'admin', user) : object.isAuthorized('create', 'admin', user))|bool %}
+{% set can_move = can_move ?? can_save and form.blueprint.schema.property('route').type is same as('parents') %}
 {% set can_translate = can_translate ?? (admin.multilang and object.hasFlexFeature('page-translate') and not object.root()) %}
 
 {% macro spanToggle(input, length) %}
@@ -68,7 +70,7 @@
     {% if can_copy %}
     {% include ['flex-objects/types/' ~ target ~ '/buttons/copy.html.twig', 'flex-objects/types/pages/buttons/copy.html.twig'] %}
     {% endif %}
-    {% if can_save %}
+    {% if can_move %}
     {% include ['flex-objects/types/' ~ target ~ '/buttons/move.html.twig', 'flex-objects/types/pages/buttons/move.html.twig'] %}
     {% endif %}
     {% endif %}
@@ -87,12 +89,12 @@
     {% endif %}
     {% if object.exists and form.flash.exists %}
         <div class="alert secondary-accent">
-            <i class="fa fa-lightbulb-o"></i> You are editing a saved draft. <button class="button button-link" type="submit" name="task" value="reset" form="blueprints">{{ "PLUGIN_ADMIN.RESET"|tu }}</button>
+            <i class="fa fa-lightbulb-o"></i> {{ 'PLUGIN_FLEX_OBJECTS.STATE.EDITING_DRAFT'|tu }} <button class="button button-link" type="submit" name="task" value="reset" form="blueprints">{{ "PLUGIN_ADMIN.RESET"|tu }}</button>
         </div>
     {% endif %}
     {% if not object.exists %}
         <div class="alert secondary-accent">
-            <i class="fa fa-lightbulb-o"></i> This page will not exist until it is saved.
+            <i class="fa fa-lightbulb-o"></i> {{ 'PLUGIN_FLEX_OBJECTS.STATE.NOT_CREATED_YET'|tu }}
         </div>
     {% elseif can_translate %}
         {% set is_default = language is same as(default_language) %}
@@ -100,27 +102,30 @@
             {% if not translate_include_default and object.property('lang') %}
             {# Handle default language extension #}
             <div class="alert secondary-accent">
-                Using <strong>{{ all_languages[object_language] ?? object_language }}</strong> language override.
-                {{ object.hasTranslation('', false) ? 'Unused <strong>Default</strong> language file also exists.'|raw }}
+                {% set overrideLanguage = all_languages[object_language] ?? object_language %}
+                {{ 'PLUGIN_FLEX_OBJECTS.LANGUAGE.USING_OVERRIDE'|tu(overrideLanguage, null)|raw }}
+                {{ object.hasTranslation('', false) ? 'PLUGIN_FLEX_OBJECTS.LANGUAGE.UNUSED_DEFAULT'|tu|raw }}
             </div>
             {% elseif translate_include_default %}
                 {%  if not object.property('lang') %}
                     <div class="alert secondary-accent">
-                        Using <strong>Default</strong> language file.
+                        {{ 'PLUGIN_FLEX_OBJECTS.LANGUAGE.USING_DEFAULT'|tu|raw }}
                     </div>
                 {% elseif object.hasTranslation('', false) %}
                     <div class="alert secondary-accent">
-                        Unused <strong>Default</strong> language file also exists.
+                        {{ 'PLUGIN_FLEX_OBJECTS.LANGUAGE.UNUSED_DEFAULT'|tu|raw }}
                     </div>
                 {% endif %}
             {% endif %}
         {% elseif not has_translation %}
         <div class="alert warning">
-            This page has not been translated to <i class="fa fa-flag-o"></i> <strong>{{ all_languages[language] ?? language }}</strong> language yet!
+            {% set overrideLanguage = all_languages[language] ?? object_language %}
+            {{ 'PLUGIN_FLEX_OBJECTS.LANGUAGE.NOT_TRANSLATED_YET'|tu(overrideLanguage, null)|raw }}
             {% if language == object_language %}
-                No fallback translations found.
+                {{ 'PLUGIN_FLEX_OBJECTS.LANGUAGE.NO_FALLBACK_FOUND'|tu|raw }}
             {% else %}
-                Falling back to <strong>{{ all_languages[object_language] ?? object_language }}</strong> language.
+                {% set overrideLanguage = all_languages[object_language] ?? object_language %}
+                {{ 'PLUGIN_FLEX_OBJECTS.LANGUAGE.FALLING_BACK'|tu(overrideLanguage, null)|raw }}
             {% endif %}
         </div>
         {% endif %}
@@ -151,6 +156,7 @@
         </div>
     {% endif %}
 
+    {% if user.authorize('admin.super') %}
     <form id="admin-mode-toggle">
         {% set normalText = 'PLUGIN_ADMIN.NORMAL'|tu %}
         {% set expertText = 'PLUGIN_ADMIN.EXPERT'|tu %}
@@ -160,12 +166,13 @@
 
         <div class="switch-toggle switch-grav">
             <input type="radio" value="normal" data-leave-url="{{ route.withGravParam('mode', 'normal').toString(true) }}" id="normal" name="mode-switch" class="highlight" {% if admin.session.expert == '0' %} checked="checked"{% endif %}>
-            <label for="normal">{{ normalText|raw }}</label>
+            <label for="normal">{{ normalText }}</label>
             <input type="radio" value="expert" data-leave-url="{{ route.withGravParam('mode', 'expert').toString(true) }}" id="expert" name="mode-switch" class="highlight" {% if admin.session.expert == '1' %} checked="checked"{% endif %}>
-            <label for="expert">{{ expertText|raw }}</label>
+            <label for="expert">{{ expertText }}</label>
             <a></a>
         </div>
     </form>
+    {% endif %}
 {% endblock topbar %}
 
 {% block edit %}
@@ -183,7 +190,7 @@
             name: object.header.child_type ?? null
         }) %}
 
-        <div class="remodal" data-remodal-id="modal" data-remodal-options="hashTracking: false">
+        <div class="remodal" data-remodal-id="modal" data-remodal-options="hashTracking: false, closeOnOutsideClick: false">
             {% include 'partials/blueprints-new.html.twig' with { form: null, blueprints: admin.blueprints('admin/pages/new'), data: modal_data, form_id: 'new-page' } %}
         </div>
 
@@ -191,8 +198,12 @@
             {% include 'partials/blueprints-new-folder.html.twig' with { form: null, blueprints: admin.blueprints('admin/pages/new_folder'), data: modal_data, form_id: 'new-folder' } %}
         </div>
 
-        <div class="remodal" data-remodal-id="module" data-remodal-options="hashTracking: false">
+        <div class="remodal" data-remodal-id="module" data-remodal-options="hashTracking: false, closeOnOutsideClick: false">
             {% include 'partials/blueprints-new.html.twig' with { form: null, blueprints: admin.blueprints('admin/pages/modular_new'), data: modal_data, form_id: 'new-module' } %}
+        </div>
+
+        <div class="remodal" data-remodal-id="modal-page-copy" data-remodal-options="hashTracking: false, closeOnOutsideClick: false">
+            {% include 'partials/blueprints-copy.html.twig' with { blueprints: admin.blueprints('admin/pages/copy'), data: data({ title: object.title ~ ' (Copy)', folder: object.slug ~ '-copy' }), form_id: 'copy' } %}
         </div>
     {% endif %}
 
@@ -200,8 +211,8 @@
 
     <div class="remodal parents-container" data-remodal-id="parents" data-remodal-options="hashTracking: false, stack: true">
         <form>
-            <h1>Parents</h1>
-            <div class="grav-loading"><div class="grav-loader">Loading...</div></div>
+            <h1>{{ 'PLUGIN_FLEX_OBJECTS.PARENTS'|tu }}</h1>
+            <div class="grav-loading"><div class="grav-loader">{{ 'PLUGIN_FLEX_OBJECTS.STATE.LOADING'|tu }}</div></div>
             <div class="parents-content"></div>
             <div class="button-bar">
                 <a class="button secondary remodal-cancel" data-remodal-action="cancel" href="#"><i class="fa fa-fw fa-close"></i> {{ "PLUGIN_ADMIN.CANCEL"|tu }}</a>

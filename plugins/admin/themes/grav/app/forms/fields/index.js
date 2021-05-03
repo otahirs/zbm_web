@@ -6,6 +6,7 @@ import DateTimeField, { Instance as DateTimeFieldInstance } from './datetime';
 import EditorField, { Instance as EditorFieldInstance } from './editor';
 import ColorpickerField, { Instance as ColorpickerFieldInstance } from './colorpicker';
 import FilesField, { Instance as FilesFieldInstance } from './files';
+import FolderFieldInstance from './folder';
 import SelectUniqueField, { Instance as SelectUniqueInstance } from './selectunique';
 import IconpickerField, { Instance as IconpickerInstance } from './iconpicker';
 import CronField, { Instance as CronFieldInstance } from './cron';
@@ -17,6 +18,7 @@ import './indeterminate';
 import './mediapicker';
 import './multilevel';
 import './text';
+import './range';
 
 export default {
     FilepickerField: {
@@ -51,6 +53,9 @@ export default {
         FilesField,
         Instance: FilesFieldInstance
     },
+    FolderField: {
+        Regenerate: FolderFieldInstance
+    },
     SelectUniqueField: {
         SelectUniqueField,
         Instance: SelectUniqueInstance
@@ -68,4 +73,3 @@ export default {
         Instance: ParentsFieldInstance
     }
 };
-

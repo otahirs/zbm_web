@@ -27,25 +27,24 @@
       {% set maxLen = max(translation|length, maxLen) %}
     {% endfor %}
 
-    {% set value = value|string %}
+    {# Value falls back to highlight instead of default #}
+    {% set highlight = field.highlight|string %}
+    {% set value = (value ?? default ?? highlight)|string %}
+
     {% for key, text in field.options %}
       {% set key = key|string %}
-      {% set id = "toggle_" ~ field.name ~ key %}
+      {% set id = (field.id ?? ("toggle_" ~ field.name)) ~ key %}
       {% set translation = text|t|trim %}
 
       <input type="radio"
              value="{{ key }}"
              id="{{ id }}"
              name="{{ (scope ~ field.name)|fieldName }}"
-          {% if field.highlight is defined %}
-            class="{{ field.highlight|string is same as(key) ? 'highlight' : '' }}"
-          {% endif %}
-          {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}
-          {% if key is same as(value) %}
-            checked="checked"
-          {% endif %}
-          {% if required %}required="required"{% endif %}
-          {% if field.tabindex %}tabindex="{{ field.tabindex }}"{% endif %}
+             {% if highlight is same as(key) %}class="highlight"{% endif %}
+             {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}
+             {% if key is same as(value) %}checked="checked"{% endif %}
+             {% if required %}required="required"{% endif %}
+             {% if field.tabindex %}tabindex="{{ field.tabindex }}"{% endif %}
       />
       <label for="{{ id }}">{{ (macro.spanToggle(translation, maxLen)|trim)|raw }}</label>
     {% endfor %}
