@@ -20,46 +20,14 @@ date: '2018-10-28'
 <hr>
 <h2>Další užitečné kontakty</h2>
 **Finance:** Aleš Finstrle - koordinator@zabiny.club
-**Přihlášky na závody:** Jan Drábek - drbca@centrum.cz
+**Přihlášky na závody:** Jan Drábek - prihlasky@zabiny.club
 **IT - přihláškový systém:** Lukáš König - kenia@seznam.cz  
-**IT - web:** Otakar Hirš - otakar.hirs@gmail.com
+**IT - web:** Otakar Hirš - web@zabiny.club
 **Sklad:** Štěpán Zimmermann - stepazdepa@seznam.cz
-**Správce map:** Stanislav Mokrý - mokry.stanislav@gmail.com
+**Správce map:** Stanislav Mokrý - mapy@zabiny.club
 **Oddílové oblečení:** Barbora Zháňalová - barborazhanalova@gmail.com
 <div class="row">
-    <!--
-    <div class="col-lg-6">  
-        <h4>Finance - Věra Mádlová</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>vera.madlova@centrum.cz</li>
-            </ul>
-    </div>
-    <div class="col-lg-6">
-        <h4>Přihlášky na závody + Polaris - Jan Drábek</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>drbca@centrum.cz</li>
-            </ul>
-    </div>
-    <div class="col-lg-6">
-        <h3>IT</h3>
-            <h4>Richard Pátek</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>arnost.p@centrum.cz</li>
-            </ul>
-            <h4>Otakar Hirš</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>otakar.hirs@gmail.com</li>
-            </ul>
-    </div>
-    <div class="col-lg-6">
-        <h4>Sklad - Štěpán Zimmermann</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>stepazdepa@seznam.cz</li>
-            </ul>
-    </div>
-    **Trenéři:** Jan Drábek, Alena Finstrlová, Aleš Finstrle, Luděk Finstrle, Andrea Firešová, Daniel Hájek, Lenka Hrušková, Dobra Janotová, Jitka Kabáthová, Lenka Kočová, Hana Nedbálková, Pavel Zelený, Jan Zháňal, Štěpán Zimmermann
-    -->
-    <div class="col-12"> 
+  <div class="col-12"> 
     <hr>
     <h1>Trenéři</h1>
     </div>
