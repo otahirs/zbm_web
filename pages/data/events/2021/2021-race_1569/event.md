@@ -1,7 +1,7 @@
 ---
 taxonomy:
     skupina:
-        - dorost
+        1: dorost
 id: 2021-race_1569
 start: '2021-05-04'
 end: '2021-05-04'
@@ -30,5 +30,6 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.20840, 16.44749'
 ---
 
