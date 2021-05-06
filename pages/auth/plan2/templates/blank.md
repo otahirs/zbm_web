@@ -180,21 +180,15 @@ templates:
                 time: ''
                 place: Samostatně
         tuesday:
-            1:
+            -
                 group:
                     - pulci1
                     - pulci2
                     - zaci1
                     - zaci2
-                name: 'Online teorie'
-                time: '17:00'
-                place: 'Google Classroom po skupinách'
-            2:
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: Samostatně
+                name: 'Mapový trénink'
+                time: '16:00'
+                place: 'Po skupinách'
         wednesday:
             -
                 group:
@@ -203,18 +197,26 @@ templates:
                 time: '16:30'
                 place: 'Rosnička, https://en.mapy.cz/s/resafolera'
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Intervalový trénink'
                 time: '17:00'
                 place: Podzimní
-            -
+            1:
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
+            1620242502462:
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                name: 'Běžecký trénink'
+                time: '16:00'
+                place: 'Pod Palackého vrchem'
         friday:
             -
                 group:
