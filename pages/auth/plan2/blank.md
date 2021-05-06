@@ -28,15 +28,9 @@ plan:
                     - pulci2
                     - zaci1
                     - zaci2
-                name: 'Online teorie'
-                time: '17:00'
-                place: 'Google Classroom po skupinách'
-            2:
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: Samostatně
+                name: 'Mapový trénink'
+                time: '16:00'
+                place: 'Po skupinách'
         wednesday:
             -
                 group:
@@ -45,18 +39,32 @@ plan:
                 time: '16:30'
                 place: 'Rosnička, https://en.mapy.cz/s/resafolera'
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Intervalový trénink'
                 time: '17:00'
                 place: Podzimní
-            -
+            1:
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
+            1620242672280:
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                name: 'Běžecký trénink po skupinách'
+                time: '16:00'
+                place: 'Pod Palackého vrchem'
+            1620298677756:
+                group:
+                    - dorost
+                name: 'Příprava na sprint'
+                time: '20:00'
+                place: meet.google.com/itp-ahmx-bjz
         friday:
             -
                 group:
@@ -85,9 +93,9 @@ plan:
                     - pulci2
                     - zaci1
                     - zaci2
-                name: 'Online teorie'
-                time: '17:00'
-                place: 'Google Classroom po skupinách'
+                name: 'Mapový trénink'
+                time: '16:00'
+                place: 'Po skupinách'
             2:
                 group:
                     - zaci2
@@ -102,18 +110,26 @@ plan:
                 time: '16:30'
                 place: 'Rosnička, https://en.mapy.cz/s/resafolera'
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Intervalový trénink'
                 time: '17:00'
                 place: Podzimní
-            -
+            1:
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
+            1620242786017:
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                name: 'Běžecký trénink'
+                time: '16:00'
+                place: 'Pod Palackého vrchem'
         friday:
             -
                 group:
@@ -121,11 +137,6 @@ plan:
                 name: Kompenzace
                 time: ''
                 place: Samostatně
-        saturday:
-            -
-                name: ''
-                time: ''
-                place: ''
         sunday:
             -
                 group:

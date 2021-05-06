@@ -1,6 +1,10 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
 id: 2021-race_1565
 start: '2021-05-08'
 end: '2021-05-08'
