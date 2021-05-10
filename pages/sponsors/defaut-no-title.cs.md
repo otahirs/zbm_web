@@ -20,21 +20,16 @@ date: '2018-10-29'
         <img class="sponsors--img" src="{{page.relativePagePath()}}/Revos.svg">
         </a>
     </div>
-    <div class="col-md-4">
+<!--    <div class="col-md-4">
         <a href="http://www.falton.cz" target="_blank">
         <img class="sponsors--img" src="http://www.falton.cz/img/logo.png">
-        </a>
-    </div>
-    <div class="col-md-4">
-        <a href="https://www.gpscentrum.cz/" target="_blank">
-        <img class="sponsors--img" src="{{page.relativePagePath()}}/gpsCentrum.svg">
         </a>
     </div>
     <div class="col-md-6">
         <a href="https://www.sanasport.cz/" target="_blank">
         <img class="sponsors--img" src="{{page.relativePagePath()}}/sanasport.svg">
         </a>
-    </div>
+    </div>-->
 <!-- Nadace OB neprispela
      <div class="col-md-6">
         <a href="https://www.obnadace.cz/" target="_blank">
