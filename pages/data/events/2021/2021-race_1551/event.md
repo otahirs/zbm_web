@@ -1,9 +1,9 @@
 ---
 taxonomy:
     skupina:
-        - dorost
-        - zaci2
         - zaci1
+        - zaci2
+        - dorost
 id: 2021-race_1551
 start: '2021-05-23'
 end: '2021-05-23'
