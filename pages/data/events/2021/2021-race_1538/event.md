@@ -14,5 +14,6 @@ import:
     type: members
     time: 1609746603
 note: "Populární třídenní závod H.S.H. Vysočina cup bude mít v roce 2021 na pořadu již 28. ročník. Pořadatelé z SK Chrast zatím přesné místo konání tají. Ale určitě bude rozložení etap stejné jako v minulých ročnících - v pátek odpoledne krátká trať, v sobotu klasická trať a v neděli zkrácená klasika s handicapovým startem.\r\n\r\n"
+place: Budislav
 ---
 

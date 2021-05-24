@@ -65,9 +65,11 @@ templates:
                 place: ''
         saturday:
             -
-                name: ''
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
                 time: ''
-                place: ''
+                place: Samostatně
         sunday:
             -
                 name: ''
@@ -113,9 +115,11 @@ templates:
                 place: ''
         saturday:
             -
-                name: ''
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
                 time: ''
-                place: ''
+                place: Samostatně
         sunday:
             -
                 name: ''
@@ -175,10 +179,11 @@ templates:
                 place: 'nám Svornosti, https://en.mapy.cz/s/namovudojo'
             -
                 group:
+                    - zaci1
                     - zaci2
-                name: 'Cvičení dle plánu'
-                time: ''
-                place: Samostatně
+                name: Tělocvična
+                time: '16:30 - 18:00'
+                place: 'hala Rosnička'
         tuesday:
             -
                 group:
@@ -187,7 +192,7 @@ templates:
                     - zaci1
                     - zaci2
                 name: 'Mapový trénink'
-                time: '16:00'
+                time: '16:00 - 18:00'
                 place: 'Po skupinách'
         wednesday:
             -
@@ -197,19 +202,19 @@ templates:
                 time: '16:30'
                 place: 'Rosnička, https://en.mapy.cz/s/resafolera'
         thursday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Intervalový trénink'
                 time: '17:00'
                 place: Podzimní
-            1:
+            -
                 group:
                     - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: Samostatně
-            1620242502462:
+                name: 'Běžecký trénink'
+                time: '16:00 - 18:00'
+                place: 'viz Google Classroom'
+            -
                 group:
                     - pulci1
                     - pulci2
@@ -226,9 +231,11 @@ templates:
                 place: Samostatně
         saturday:
             -
-                name: ''
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
                 time: ''
-                place: ''
+                place: Samostatně
         sunday:
             -
                 group:

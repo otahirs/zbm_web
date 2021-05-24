@@ -1,10 +1,11 @@
 ---
 taxonomy:
     skupina:
-        - pulci1
-        - pulci2
-        - zaci1
-        - zaci2
+        1: pulci2
+        2: zaci1
+        3: zaci2
+        4: pulci1
+        5: dorost
 id: 2021-race_1572
 start: '2021-05-15'
 end: '2021-05-15'
@@ -19,6 +20,21 @@ date: '2021-05-03'
 import:
     type: members
     time: 1620036002
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
 {{page.header.note}}

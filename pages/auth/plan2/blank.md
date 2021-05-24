@@ -9,69 +9,57 @@ process:
 plan:
     thisWeek:
         monday:
-            0:
+            -
                 group:
                     - dorost
-                name: Posilování
+                name: Fotbal
                 time: '16:45'
                 place: 'nám Svornosti, https://en.mapy.cz/s/namovudojo'
-            1:
+            -
                 group:
+                    - zaci1
                     - zaci2
-                name: 'Cvičení dle plánu'
-                time: ''
-                place: Samostatně
-            1620638160097:
-                name: ''
-                time: ''
-                place: ''
+                name: Tělocvična
+                time: '16:30 - 18:00'
+                place: 'hala Rosnička'
         tuesday:
-            1:
+            0:
                 group:
+                    - zabicky
                     - pulci1
                     - pulci2
                     - zaci1
                     - zaci2
                 name: 'Mapový trénink'
-                time: '16:00'
+                time: '16:00 - 18:00'
                 place: 'Po skupinách'
-            2:
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: Samostatně
-            1620638104194:
-                group:
-                    - zabicky
-                name: 'Mapový trénink'
-                time: '16:00'
-                place: ''
-        wednesday:
-            0:
-                group:
-                    - dorost
-                name: 'Posilování + Běh dle plánu'
-                time: '16:30'
-                place: 'Rosnička, https://en.mapy.cz/s/resafolera'
-            1620638160098:
-                name: ''
-                time: ''
-                place: ''
-        thursday:
-            0:
+            1621784430617:
                 group:
                     - dorost
                 name: 'Intervalový trénink'
                 time: '17:00'
                 place: Podzimní
-            1:
+        wednesday:
+            -
                 group:
-                    - zaci2
+                    - dorost
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-            1620242786017:
+        thursday:
+            -
+                group:
+                    - dorost
+                name: 'Dráhový test'
+                time: '18:30'
+                place: 'stadion AC Moravská Slavia Brno'
+            -
+                group:
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 - 18:00'
+                place: 'viz Google Classroom'
+            -
                 group:
                     - pulci1
                     - pulci2
@@ -79,96 +67,59 @@ plan:
                 name: 'Běžecký trénink'
                 time: '16:00'
                 place: 'Pod Palackého vrchem'
-            1620638160099:
-                name: ''
-                time: ''
-                place: ''
-        friday:
-            0:
+        saturday:
+            -
                 group:
-                    - dorost
-                name: Kompenzace
+                    - zaci2
+                name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-            1620638160099:
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            1620638160100:
-                name: ''
-                time: ''
-                place: ''
-        sunday:
-            0:
-                group:
-                    - dorost
-                name: Teorie
-                time: '19:00'
-                place: meet.google.com/itp-ahmx-bjz
-            1620638160102:
-                name: ''
-                time: ''
-                place: ''
     nextWeek:
         monday:
-            0:
+            -
                 group:
                     - dorost
                 name: Posilování
                 time: '16:45'
                 place: 'nám Svornosti, https://en.mapy.cz/s/namovudojo'
-            1:
+            -
                 group:
+                    - zaci1
                     - zaci2
-                name: 'Cvičení dle plánu'
-                time: ''
-                place: Samostatně
-            1620638160102:
-                name: ''
-                time: ''
-                place: ''
+                name: Tělocvična
+                time: '16:30 - 18:00'
+                place: 'hala Rosnička'
         tuesday:
-            0:
+            -
                 group:
                     - pulci1
                     - pulci2
                     - zaci1
                     - zaci2
                 name: 'Mapový trénink'
-                time: '16:00'
+                time: '16:00 - 18:00'
                 place: 'Po skupinách'
-            1620638160103:
-                group:
-                    - zabicky
-                name: 'Mapový trénink'
-                time: '16:00'
-                place: ''
         wednesday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Posilování + Běh dle plánu'
                 time: '16:30'
                 place: 'Rosnička, https://en.mapy.cz/s/resafolera'
-            1620638160104:
-                name: ''
-                time: ''
-                place: ''
         thursday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Intervalový trénink'
                 time: '17:00'
                 place: Podzimní
-            1:
+            -
                 group:
                     - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: Samostatně
-            1620242502462:
+                name: 'Běžecký trénink'
+                time: '16:00 - 18:00'
+                place: 'viz Google Classroom'
+            -
                 group:
                     - pulci1
                     - pulci2
@@ -176,37 +127,27 @@ plan:
                 name: 'Běžecký trénink'
                 time: '16:00'
                 place: 'Pod Palackého vrchem'
-            1620638160105:
-                name: ''
-                time: ''
-                place: ''
         friday:
-            0:
+            -
                 group:
                     - dorost
                 name: Kompenzace
                 time: ''
                 place: Samostatně
-            1620638160105:
-                name: ''
-                time: ''
-                place: ''
         saturday:
-            1620638160106:
-                name: ''
+            -
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
                 time: ''
-                place: ''
+                place: Samostatně
         sunday:
-            0:
+            -
                 group:
                     - dorost
                 name: Teorie
                 time: '19:00'
                 place: meet.google.com/itp-ahmx-bjz
-            1620638160107:
-                name: ''
-                time: ''
-                place: ''
 ---
 
 <div class="row justify-content-between"> 
