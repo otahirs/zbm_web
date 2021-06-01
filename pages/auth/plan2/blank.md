@@ -12,7 +12,7 @@ plan:
             -
                 group:
                     - dorost
-                name: Fotbal
+                name: Posilování
                 time: '16:45'
                 place: 'nám Svornosti, https://en.mapy.cz/s/namovudojo'
             -
@@ -25,7 +25,6 @@ plan:
         tuesday:
             0:
                 group:
-                    - zabicky
                     - pulci1
                     - pulci2
                     - zaci1
@@ -33,26 +32,26 @@ plan:
                 name: 'Mapový trénink'
                 time: '16:00 - 18:00'
                 place: 'Po skupinách'
-            1621784430617:
+            1622317773545:
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '16:30'
+                place: 'Kohoutovice, https://mapy.cz/s/ladegenupu'
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: 'Posilování + Běh dle plánu'
+                time: '17:00'
+                place: 'Rosnička, https://en.mapy.cz/s/resafolera'
+        thursday:
+            -
                 group:
                     - dorost
                 name: 'Intervalový trénink'
                 time: '17:00'
                 place: Podzimní
-        wednesday:
-            -
-                group:
-                    - dorost
-                name: 'Běh dle plánu'
-                time: ''
-                place: Samostatně
-        thursday:
-            -
-                group:
-                    - dorost
-                name: 'Dráhový test'
-                time: '18:30'
-                place: 'stadion AC Moravská Slavia Brno'
             -
                 group:
                     - zaci2
@@ -67,6 +66,13 @@ plan:
                 name: 'Běžecký trénink'
                 time: '16:00'
                 place: 'Pod Palackého vrchem'
+        friday:
+            -
+                group:
+                    - dorost
+                name: Kompenzace
+                time: ''
+                place: Samostatně
         saturday:
             -
                 group:
@@ -74,6 +80,13 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
+        sunday:
+            -
+                group:
+                    - dorost
+                name: Teorie
+                time: '19:00'
+                place: meet.google.com/itp-ahmx-bjz
     nextWeek:
         monday:
             -
@@ -104,7 +117,7 @@ plan:
                 group:
                     - dorost
                 name: 'Posilování + Běh dle plánu'
-                time: '16:30'
+                time: '17:00'
                 place: 'Rosnička, https://en.mapy.cz/s/resafolera'
         thursday:
             -
