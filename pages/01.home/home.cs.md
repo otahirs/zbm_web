@@ -27,7 +27,7 @@ news:
       <div class="inner">
         <header id="header">
             <h1>Novinky
-              <a href="#soon" id="hip" style="text-align:right;border-bottom:none;"><span style="float: right;"><i class="fa fa-level-down" aria-hidden="true"></i></span></a>
+              <a href="#right_box" id="hip" style="text-align:right;border-bottom:none;"><span style="float: right;"><i class="fa fa-level-down" aria-hidden="true"></i></span></a>
             </h1>
         </header>
         <section>
