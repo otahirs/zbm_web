@@ -31,7 +31,7 @@
 			'color #{_duration(transition)} ease-in-out',
 			'border-bottom-color #{_duration(transition)} ease-in-out'
 		));
-		border-bottom: dotted 1px;
+		//border-bottom: solid 1px;
 		color: _palette(accent);
 		text-decoration: none;
 

@@ -55,9 +55,6 @@ table.plan td {
 ***** HOME ******
 ****************/
 /* home - news */
-#novinky hr {
-    border-bottom: dashed 1px _palette(bg-alt-dark);
-}
 
 .newsPictures {
     margin: 1em 0 0 0;
@@ -68,12 +65,29 @@ table.plan td {
 .newsText {
     text-align: justify;
 }
+
+.news--header_right {
+    font-weight: normal;
+}
 /* home - soon */
 
 
-#soon {
-    padding: 0 2.5rem; 
+#right_box {
     background-color: _palette(bg-alt-light);
+    height: 100%;
+    padding: 2rem 2.5rem 0 2.5rem;
+
+    & > div:not(:first-child) {
+        margin-top: 2em;
+    }
+}
+
+.home__link {
+    padding-right: 1em;
+}
+
+.soon__history {
+    margin-top: 2em;
 }
 
 .soon__timeline {
@@ -82,45 +96,47 @@ table.plan td {
     border: 2px _palette(bg-alt) solid;
     width: 0;
     left: 46px;
-    margin-top: 56px;
-    height: calc(100% - 56px);
+    margin-top: 38px;
+    height: calc(100% - 249px);
 }
 
 .history__timeline {
     position: absolute;
     float: left;
-    border: 2px _palette(bg-alt) dotted;
-    width: 0;
+    width: 4px;
     left: 46px;
-    height: calc(100% - 56px);
+    height: 300px;
+    background: linear-gradient(to top, _palette(bg-alt), _palette(bg-alt-light));
 }
 
-.soon__event, .soon__deadline {
-    padding: 3rem;
-    margin: 3rem;
+.soon__event {
+    padding: 1rem;
+    margin: 1rem;
     position: relative;
     left: 1rem;
     background-color: white;
-    border-radius: 5px;
-
-    @include breakpoint(xlarge) {
-        padding: 1.5rem;
-        margin: 1.5rem;
-    }    
+    border-radius: 5px; 
 }
+
+.soon__deadline { 
+    padding: 0 1rem;
+    margin: 2rem 1rem 0 1rem;
+    position: relative;
+    left: 1rem;
+}
+
+.soon__deadline > .entry { 
+    margin: 1rem 0;
+}
+
 
 .history__event {
-    padding: 0.5rem 3rem;
-    margin: 1.5rem 3rem;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
     position: relative;
     left: 1rem;
     background-color: white;
-    border-radius: 5px;
-    
-    @include breakpoint(xlarge) {
-        padding: 0.5rem 1.5rem;
-        margin: 1.5rem;
-    }  
+    border-radius: 5px;  
 }
 .history__title {
     margin-bottom: 0;
@@ -136,23 +152,14 @@ table.plan td {
     position: relative;
     border: solid;
 }
-.history__dot {
-    height: 16px;
-    width: 16px;
-    background-color: _palette(bg-alt-light);
-    border-radius: 50%;
-    display: inline-block;
-    top: 3px;
-    position: relative;
-    border: double;
-}
 
 .soon__dot--now{
     background-color: _palette(bg-alt);
 }
 
 .soon__date {
-    padding-top: 2.5rem;
+    padding-top: 1.5rem;
+    font-weight: normal;
 }
 .soon section > article > ul {
     margin: 0;
@@ -167,17 +174,6 @@ table.plan td {
     float: right;
     top: 3px;
     position: relative;
-}
-
-.soon__deadline > .entry {
-    border-top: 1px dashed;
-    padding: 1em 0;
-    &.last {
-        padding-bottom: 0;
-    }
-}
-.soon__deadline > .title {
-    padding-bottom: 0.8em;
 }
 
 .soon form {
@@ -213,81 +209,6 @@ tr.program--now {
     cursor: pointer;
     &:hover {
         background-color: _palette(accent);
-    }
-}
-
-
-
-
-
-// NAV-LINKS
-.links__visible {
-    float: right;
-    list-style: none;
-	margin: 0;
-	padding: 0;
-    z-index: 5;
-    
-    > li {
-        float: left;
-        position: relative;
-        padding: 0;
-        
-    }
-}
-
-.links{
-    opacity: 0; //changed by js on load
-    position: relative;
-    width: calc(100% - 40em);
-    float: right;
-    white-space: nowrap;
-	
-	a {
-        color: _palette(bg-alt-light);
-        text-decoration: none;
-        border-bottom: none;
-        font-size: 0.85rem;
-        padding: 0 1rem;
-        display: inline-block;
-        &:hover {
-            color: _palette(accent); 
-        }
-    }	  
-}
-.links__hidden {
-    display: none;
-    position: fixed;
-    right: 0;
-    top: 3rem;
-    padding: 0;
-    background: _palette(bg-alt-dark);
-    list-style: none;
-    box-shadow: 0 3px 2px rgba(0,0,0,.2);
-    
-    > li {
-        padding: 0;
-    }
-	a {
-        display: block;
-        padding: 0 1rem;
-    }
-}
-.links__show-hidden-btn {
-    display: none;
-    background-color: _palette(bg-alt-dark);
-    cursor: pointer;
-    i {
-        color: _palette(bg-alt-light);
-        padding: 1rem;
-        font-size: 1rem;
-        position: relative;
-        top: -2px;
-    }
-    &:hover {
-        .links__hidden {
-            display: block;
-        }
     }
 }
 

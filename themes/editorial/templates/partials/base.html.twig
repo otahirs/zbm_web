@@ -43,33 +43,9 @@
 
 {% endblock head%}
 </head>
-<body id="top" class="{{ page.header.body_classes }}">
+<body class="{{ page.header.body_classes }}">
 
 <div id="wrapper">
-
-    {% block topbar %}
-    <div id="topbar">
-        <a href="/" class="topbar--title">
-            <span ><object style="height:1.5em" data="{{url('theme://images/skzabovresky.svg')}}" type="image/svg+xml"></object></span>
-        </a>
-        <div  class="links">
-            
-          <ul class="links__visible">
-            <li><a href="https://zacitorientak.cz/brno/co-to-je/190" target="_blank">Co je to orientační běh? <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-            <li><a href="https://tsm.zabiny.club" target="_blank">TSM <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-            <li><a href="/about">Kdo jsme?</a></li>
-            <li><a href="/arealy">Pevné kontroly</a></li>
-            <li><a href="/races">Závody</a></li>
-            <li><a href="/sponsors">Partneři</a></li>
-            <li><a href="/kontakty">Kontakty</a></li>
-            <li class="links__show-hidden-btn">
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                <ul class="links__hidden"></ul>
-            </li>
-        </ul>
-        </div>
-    </div>    
-    {% endblock %}
 
     {% block sidebar %}
         {%  include 'partials/sidebar.html.twig' %}

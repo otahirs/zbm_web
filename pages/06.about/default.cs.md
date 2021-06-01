@@ -1,7 +1,9 @@
 ---
-title: 'Kdo jsme?'
+title: 'O nás'
 date: '2019-10-09'
+primaryImage: {  }
 ---
+
 <style>
 p {
   text-align: justify;

@@ -1,10 +1,5 @@
 /*# sourceMappingURL=custom.css.map */
 
-/* fix offset for anchors due to fixed header */
-html, body {
-    scroll-padding-top: 70px; /* height of sticky header */
-}
-
 /*************************/
 /*******  home ***********/
 /*************************/
@@ -16,7 +11,7 @@ html, body {
 }
 
 .active:last-child {
-    margin-right: -3em;
+    margin-right: -4em;
     background-color: #fff;
     padding: 0.8em!important;
     margin-left: -0.8em;
@@ -25,7 +20,6 @@ html, body {
 
 #sidebar nav a, #sidebar section a {
     text-transform: uppercase;
-    font-size: 1em;
     font-weight: 700;
     letter-spacing: 0.1em;
     padding: 0.625em 0;
@@ -49,7 +43,7 @@ html, body {
 }
 
 .newsText--show-all:hover {
-    background-color: #e65a51;
+    background-color: #da1200;
 }
 
 
@@ -342,47 +336,8 @@ dd {
 	box-shadow: none;
 }
 
-
-
-#topbar {
-    position: fixed;
-    width: 100%;
-    top: 0px;
-    background: #2B2B2B;
-    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
-    line-height: 3.5rem;
-    height: 3.5rem;
-    text-align: center;
-    z-index: 2;
-}
-#main, #sidebar {
-    top: 3.5rem;
-}
 #main {
     position: relative;
-}
-#topbar a {
-    text-decoration: none;
-    border-bottom: none;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-.topbar--title{
-    font-size: 22px;
-    left: 0;
-    padding: 0 18px;
-    position: fixed;
-    padding-top: 7px;
-}
-#topbar .topbar--title:hover {
-    outline: none;
-}
-.topbar--title span {
-    display: inline-block;
-}
-.topbar--title object {
-    position: relative; 
-    z-index: -1
 }
 
 
@@ -414,6 +369,10 @@ dd {
 
 #sidebar > .inner::-webkit-scrollbar {
 width: 0px; /*For Chrome, Safari and Opera*/
+}
+
+#sidebar hr {
+    margin: 1.2em 0;
 }
 
 /* swipe */

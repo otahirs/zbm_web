@@ -20,14 +20,10 @@
 	);
 
 // Font
-	@font-face{ 
-		font-family: 'Arial-Rounded';
-		src: url(../fonts/Arial-Rounded-MT-W04-Regular.woff);
-	}
 
 	$font: (
-		family:			('Arial-Rounded', 'Arial', sans-serif),
-		family-heading:		('Arial-Rounded', 'Arial', sans-serif),
+		family:			('Arial', sans-serif),
+		family-heading:		('Arial', sans-serif),
 		family-fixed:		('Courier New', monospace),
 		weight:			400,
 		weight-bold:		600,
@@ -48,5 +44,5 @@
 		fg-white:			#EEE, // none
 		border:				rgba(210,215,217,0.75),
 		border-bg:			transparentize(#e6ebed, 0.75),
-		accent:			#e65a51//	#ff4d4d //#f57162//	#f76555 //#e65646//#e24747 // //#f56a6a
+		accent:			#e03a35//#e65a51//	#ff4d4d //#f57162//	#f76555 //#e65646//#e24747 // //#f56a6a
 	);

@@ -1,6 +1,8 @@
 <div id="sidebar">
-    <div id="triangle-topleft"></div>
     <div class="inner">
+        <a href="/">
+          <img src="{{url('theme://images/ZBM_logo.svg')}}"/>
+        </a>
 
         <!-- Search -->
         {# % include 'partials/simplesearch_searchbox.html.twig' %} #}
@@ -8,24 +10,6 @@
 
         <nav id="menu">
           {% include 'partials/navigation.html.twig' %}
-        </nav>
-        
-
-        <nav class="alt">
-          <div id="home--groups">
-            <a href="/skupiny/dorost" class="home--groups-text">Dorost&nbsp;&amp;&nbsp;dospělí</a>
-            <div style="display:flex;">
-              <div style="flex:50%;">
-                <a href="/skupiny/zaci2" class="home--groups-text">Žáci&nbsp;2</a>
-                <a href="/skupiny/pulci2" class="home--groups-text">Pulci&nbsp;2</a>
-                <a href="/skupiny/zabicky" class="home--groups-text">Žabičky</a>  
-              </div>
-              <div style="flex:50%;">
-                <a href="/skupiny/zaci1" class="home--groups-text">Žáci&nbsp;1</a>
-                <a href="/skupiny/pulci1" class="home--groups-text">Pulci&nbsp;1</a>
-              </div>
-            </div>
-          </div>
         </nav>
 	<!-- Login Section -->
         {% include 'partials/login.html.twig' %}

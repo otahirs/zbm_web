@@ -2,6 +2,7 @@
 title: 'Areály pevných kontrol'
 media_order: 'kohoutovice.png,sobesice.png,rosnicka.png,kohoutovice.pdf,sobesice.pdf,rosnicka.pdf'
 date: '2019-06-19'
+primaryImage: {  }
 ---
 
 <p>Vítejte na&nbsp;stránkách brněnských areálů pevných kontrol, které mají za&nbsp;cíl přiblížit přírodu lidem a&nbsp;lidi přírodě. S&nbsp;pomocí speciální mapy, kterou využívají příznivci orientačních sportů, se&nbsp;můžete dostat do&nbsp;míst, kam by Vás běžné putování lesem asi nezavedlo. V&nbsp;každém lese je pro vás připraveno mezi 10&nbsp;až&nbsp;15 kontrolními stanovišti, ke&nbsp;kterým se můžete 'promapovat'. Vyzkoušejte si to, kvůli čemu příznivci orientačních sportů brázdí svět.</p>

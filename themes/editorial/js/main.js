@@ -177,66 +177,6 @@
 					});
 
 				});
-
-		// Autohide navlinks to submenu	
-				const linksContainer = document.querySelector(".links");
-				const visibleUl = document.querySelector(".links__visible");
-				const hiddenUl = document.querySelector(".links__hidden");
-				const showHiddenBtn = document.querySelector(".links__show-hidden-btn");
-
-				function calcHideLinks() {
-					var navwidth = 0; 
-					showHiddenBtn.style.display = 'block';
-					[...visibleUl.children].forEach(link => {
-						navwidth += link.offsetWidth;
-					});
-					
-					var availablespace = linksContainer.offsetWidth;
-					if (navwidth > availablespace && !visibleUl.firstElementChild.classList.contains('links__show-hidden-btn')) { //skip if more btn only
-						var lastItem = visibleUl.lastElementChild.previousElementSibling; // get item before more btn
-						lastItem.dataset.width = lastItem.offsetWidth; // remember item width
-						hiddenUl.prepend(lastItem); // hide
-						calcHideLinks();
-					} else {
-						while(hiddenUl.hasChildNodes() && availablespace > navwidth + parseInt(hiddenUl.firstElementChild.dataset.width)) {
-							var firstMoreItem = hiddenUl.firstElementChild;
-							visibleUl.insertBefore(firstMoreItem, showHiddenBtn);
-							navwidth += firstMoreItem.dataset.width;	
-						}
-					}
-				  
-					if (!hiddenUl.hasChildNodes()) {
-						showHiddenBtn.style.display = 'none';
-					}
-				}
-
-				// on load
-				calcHideLinks();
-				linksContainer.style.opacity = "1";
-
-				['resize','orientationchange'].forEach( evt => 
-					window.addEventListener(evt, calcHideLinks, false)
-				);
-				
-				// open nad close on button click
-				showHiddenBtn.addEventListener('click', () => {
-					if(hiddenUl.style.display == "block"){
-						hiddenUl.style.display = "none";
-					}
-					else{
-						hiddenUl.style.display = "block";
-					}
-				})
-
-				// close when clicked outside button
-				document.addEventListener('click', (e) => {
-					if(!showHiddenBtn.contains(e.target)){
-						hiddenUl.style.display = "none";
-					}
-				});
-
-				// close on main menu manipulation
-				slideout.on('translatestart', () => { hiddenUl.style.display = "none" });
 		
 		// open external links in new windows
 		var links = main.getElementsByTagName("a");
