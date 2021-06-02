@@ -2,6 +2,7 @@
 taxonomy:
     skupina:
         - dorost
+        - hobby
 id: 2021-race_1594
 start: '2021-09-05'
 end: '2021-09-05'
