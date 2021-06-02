@@ -177,7 +177,7 @@ news:
         {% endcatch %}
   
         <div class="soon__timeline"></div>
-        {% for i in 0..10 %}
+        {% for i in 0..14 %}
             {% set currdate = strtotime("today +" ~ i ~ " day")|date('Y-m-d') %}
   
             {% if currdate in events|keys or currdate in entries|keys or currdate == "now"|date('Y-m-d') %}
