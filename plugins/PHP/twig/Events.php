@@ -357,9 +357,10 @@ class Events extends \Grav\Common\Twig\TwigExtension
     static function trashEvent($id) {
         if(empty($id)) return;
         $oldpath = "./user/pages/data/events/". substr($id, 0 , 4) ."/". $id ;
+        if(!is_dir($oldpath)) return;
         $newpath = "./user/pages/data/trashbin/events/". substr($id, 0 , 4) ."/". $id ;
         Folder::delete($newpath);
-	rename($oldpath, $newpath);
+	    rename($oldpath, $newpath);
         Utils::log("EVENT | removed | " . $id);
     }
 
