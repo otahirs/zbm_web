@@ -33,7 +33,9 @@
             <div>
             {{ page.header.description }}
             <hr>
-            <a href="/kontakty#{{page.header.group}}">Kontakty na trenéry</a>
+            {% if page.header.group != 'hobby' %}
+                <a href="/kontakty#{{page.header.group}}">Kontakty na trenéry</a>
+            {% endif %}
             <!--
             <div id="commento"></div>
             <script defer src="https://cdn.commento.io/js/commento.js"></script>
