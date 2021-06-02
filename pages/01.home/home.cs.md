@@ -99,11 +99,10 @@ news:
   <div id="right_box" class="col-md-4">
     <div>
       <h4>Odkazy</h4>
-    
-        <a class="home__link" href="http://www.lpu.cz/beda/">Jak&nbsp;to&nbsp;vidí&nbsp;Béďa</a> 
-        <a class="home__link" href="https://reprezentace.orientacnibeh.cz/">Reprezentace&nbsp;OB</a> </br>
         <a class="home__link" href="https://www.orientacnisporty.cz/">Český&nbsp;svaz&nbsp;orientačních&nbsp;sportů</a>
         <a class="home__link" href="https://oris.orientacnisporty.cz/">ORIS</a> </br>
+        <a class="home__link" href="http://www.lpu.cz/beda/">Jak&nbsp;to&nbsp;vidí&nbsp;Béďa</a> 
+        <a class="home__link" href="https://reprezentace.orientacnibeh.cz/">Reprezentace&nbsp;OB</a> </br>
         <a class="home__link" href="https://tsm.zabiny.club">TSM&nbsp;Jižní&nbsp;Morava</a>
         <a class="home__link" href="https://mapy.orientacnisporty.cz/cs/clubs/zbm">Vydané&nbsp;mapy</a>
     </div>
