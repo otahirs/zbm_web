@@ -124,6 +124,8 @@
                 <label for="filter-zaci2">Žáci 2</label>
                 <input class="filter" type="checkbox" value="dorost" id="filter-dorost" />
                 <label for="filter-dorost">Dorost+</label>
+                <input class="filter" type="checkbox" value="hobby" id="filter-hobby" />
+                <label for="filter-hobby">Hobby</label>
         <hr>
         <a href="/calendar/ical"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Export a synchronizace kalendáře</a>
 
@@ -137,7 +139,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     var date_opt = { day: "numeric", month: "long", year: "numeric"};
 
-    var sortOrder = ['zabicky','pulci1','pulci2','zaci1','zaci2','dorost'];
+    var sortOrder = ['zabicky','pulci1','pulci2','zaci1','zaci2','dorost', 'hobby'];
 
     var title = document.getElementById("cal-events-title"),
         list = document.getElementById("cal-events-list"),

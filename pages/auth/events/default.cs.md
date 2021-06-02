@@ -45,29 +45,33 @@ content:
     <fieldset>
     <label>Skupina</label>
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-3">
 			<input class="filter-all" type="radio" value="all" name="skupina" id="skupina-all" checked />
 			<label for="skupina-all" style="display:none;">Vše</label>
-			<input class="filter" type="radio" value="zabicky" name="skupina" id="skupina-zabicky" />
-			<label for="skupina-zabicky">Žabičky</label>
-			<br>
-			<input class="filter" type="radio" value="pulci1" name="skupina" id="skupina-pulci1" />
-			<label for="skupina-pulci1">Pulci 1</label>
-			<br>
-			<input class="filter" type="radio" value="pulci2" name="skupina" id="skupina-pulci2" />
-			<label for="skupina-pulci2">Pulci 2</label>
-			<br>
-		</div>
-		<div class="col-md-6">
-			<input class="filter" type="radio" value="dorost" name="skupina" id="skupina-dorost" />
+      <input class="filter" type="radio" value="dorost" name="skupina" id="skupina-dorost" />
 			<label for="skupina-dorost">Dorost+</label>
       <br>
+      <input class="filter" type="radio" value="hobby" name="skupina" id="skupina-hobby" />
+			<label for="skupina-hobby">Hobby</label>
+		</div>
+    <div class="col-md-3">
 			<input class="filter" type="radio" value="zaci1" name="skupina" id="skupina-zaci1" />
 			<label for="skupina-zaci1">Žáci 1</label>
 			<br>
 			<input class="filter" type="radio" value="zaci2" name="skupina" id="skupina-zaci2" />
 			<label for="skupina-zaci2">Žáci 2</label>
-		</div>	
+		</div>
+		<div class="col-md-3">
+			<input class="filter" type="radio" value="pulci1" name="skupina" id="skupina-pulci1" />
+			<label for="skupina-pulci1">Pulci 1</label>
+			<br>
+			<input class="filter" type="radio" value="pulci2" name="skupina" id="skupina-pulci2" />
+			<label for="skupina-pulci2">Pulci 2</label>
+		</div>
+    <div class="col-md-3">
+      <input class="filter" type="radio" value="zabicky" name="skupina" id="skupina-zabicky" />
+			<label for="skupina-zabicky">Žabičky</label>
+		</div>
 	<div>
 	</fieldset>
   </div>

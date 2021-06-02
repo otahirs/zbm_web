@@ -275,6 +275,8 @@ templates:
 <label for="filter-zaci2">Žáci 2</label>
 <input class="filter" type="checkbox" value="dorost" id="filter-dorost" />
 <label for="filter-dorost">Dorost+</label>
+<input class="filter" type="checkbox" value="hobby" id="filter-hobby" />
+<label for="filter-hobby">Hobby</label>
 <br><br>
 {# inicializace poli urcujiciho den v tydnu #}
 {% set collection = page.collection({'items': {'@page.descendants': '/data/events'}, 'filter': {'routable': 'true'},'order': {'by': 'default', 'dir': 'asc'}}) %}
@@ -304,6 +306,7 @@ templates:
                             <option value="zaci1" {% if "zaci1" in event.group %} selected {% endif %}>Žáci 1</option>
                             <option value="zaci2" {% if "zaci2" in event.group %} selected {% endif %}>Žáci 2</option>
                             <option value="dorost" {% if "dorost" in event.group %} selected {% endif %}>Dorost+</option>
+                            <option value="hobby" {% if "hobby" in event.group %} selected {% endif %}>Hobby</option>
                         </select>
                     </td>
                     <td class="name"> <input type="text" size="25" value="{{event.name}}" name="template[{{curr_template}}][{{day}}][{{n}}][name]" placeholder="název"></td>     
@@ -324,6 +327,7 @@ templates:
                                 <option value="zaci1">Žáci 1</option>
                                 <option value="zaci2">Žáci 2</option>
                                 <option value="dorost">Dorost+</option>
+                                <option value="hobby">Hobby</option>
                             </select>
                         </td>
                     <td class="name"> <input type="text" size="25" name="template[{{curr_template}}][{{day}}][0][name]" placeholder="název"></td>     
@@ -387,6 +391,7 @@ templates:
                             <option value="zaci1">Žáci 1</option>
                             <option value="zaci2">Žáci 2</option>
                             <option value="dorost">Dorost+</option>
+                            <option value="hobby">Hobby</option>
                         </select>
                 <td class="name"> <input type="text" size="25" name="${formNamePrefix}[name]" placeholder="název"> </td>     
                 <td class="time"> <input type="text" size="9" name="${formNamePrefix}[time]" placeholder="čas"> </td>

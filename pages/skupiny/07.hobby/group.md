@@ -6,5 +6,3 @@ process:
 group: hobby
 description: 'TBD'
 ---
-
-bude

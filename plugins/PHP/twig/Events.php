@@ -123,6 +123,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
 
             if ($rank & 1 || $rank & 2 || $rank & 8 || $rank & 16 || $rank & 32) {
                 $event_list[$num]["dorost"] = "1";
+                $event_list[$num]["hobby"] = "1";
             }
 
             if ($rank & 2 || $rank & 8 || $rank & 32) {
@@ -187,7 +188,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
                  
             foreach($event as $key => $attribute){
                 // add group to taxonomy
-                if(in_array($key, ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost"]) && $attribute == "1"){
+                if(in_array($key, ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost", "hobby"]) && $attribute == "1"){
                     if(!in_array($key, $frontmatter['taxonomy']['skupina'])){
                         $frontmatter['taxonomy']['skupina'][] = $key;
                         $changed = true;
@@ -250,7 +251,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
         }
 
         $data = ["type", "title", "start", "end",  "place", "meetTime", "meetPlace", "link", "eventTypeDescription", "startTime", "map", "terrain", "transport", "accomodation", "food", "leader", "doWeOrganize", "note", "return", "price", "program", "thingsToTake", "signups"];
-        $group_arr = ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost"];
+        $group_arr = ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost", "hobby"];
 
         $id = empty($_POST["id"]) ? self::create_event_id($_POST['type'], $_POST['title'], $_POST['start']) : $_POST["id"];
         $year = substr($id, 0 , 4);

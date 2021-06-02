@@ -135,26 +135,34 @@ access:
                 <br>
                 <fieldset>
                     <legend>Skupiny:</legend>
-                    <input name="zabicky" type="hidden" value="0">
-                    <input id="zabicky" type="checkbox" name="zabicky" value="1" {% if "zabicky" in event.header.taxonomy.skupina %} checked {% endif %}>
-                        <label for="zabicky"> žabičky </label> <br>
-                    <input name="pulci1" type="hidden" value="0">
-                    <input id="pulci1" type="checkbox" name="pulci1" value="1" {% if "pulci1" in event.header.taxonomy.skupina %} checked {% endif %}>
-                        <label for="pulci1"> pulci 1 </label> <br>
-                    <input name="pulci2" type="hidden" value="0">
-                    <input id="pulci2" type="checkbox" name="pulci2" value="1" {% if "pulci2" in event.header.taxonomy.skupina %} checked {% endif %}>
-                        <label for="pulci2"> pulci 2 </label> <br>
-                    <input name="zaci1" type="hidden" value="0">
-                    <input id="zaci1" type="checkbox" name="zaci1" value="1" {% if "zaci1" in event.header.taxonomy.skupina %} checked {% endif %}>
-                        <label for="zaci1"> žáci 1 </label> <br>
-                    <input name="zaci2" type="hidden" value="0">
-                    <input id="zaci2" type="checkbox" name="zaci2" value="1" {% if "zaci2" in event.header.taxonomy.skupina %} checked {% endif %}>
-                        <label for="zaci2"> žáci 2 </label> <br>
-                    <input name="dorost" type="hidden" value="0">
-                    <input id="dorost" type="checkbox" name="dorost" value="1" {% if "dorost" in event.header.taxonomy.skupina %} checked {% endif %}>
-                        <label for="dorost"> dorost+ </label>
+                    <div class="row">
+                        <div class="col-6">
+                            <input name="dorost" type="hidden" value="0">
+                            <input id="dorost" type="checkbox" name="dorost" value="1" {% if "dorost" in event.header.taxonomy.skupina %} checked {% endif %}>
+                                <label for="dorost"> dorost+ </label> <br>
+                            <input name="zaci2" type="hidden" value="0">
+                            <input id="zaci2" type="checkbox" name="zaci2" value="1" {% if "zaci2" in event.header.taxonomy.skupina %} checked {% endif %}>
+                                <label for="zaci2"> žáci 2 </label> <br>
+                            <input name="zaci1" type="hidden" value="0">
+                            <input id="zaci1" type="checkbox" name="zaci1" value="1" {% if "zaci1" in event.header.taxonomy.skupina %} checked {% endif %}>
+                                <label for="zaci1"> žáci 1 </label> <br>
+                            <input name="hobby" type="hidden" value="0">
+                            <input id="hobby" type="checkbox" name="hobby" value="1" {% if "hobby" in event.header.taxonomy.skupina %} checked {% endif %}>
+                                <label for="hobby"> hobby </label> <br>
+                        </div>
+                        <div class="col-6">
+                            <input name="pulci2" type="hidden" value="0">
+                            <input id="pulci2" type="checkbox" name="pulci2" value="1" {% if "pulci2" in event.header.taxonomy.skupina %} checked {% endif %}>
+                                <label for="pulci2"> pulci 2 </label> <br>
+                            <input name="pulci1" type="hidden" value="0">
+                            <input id="pulci1" type="checkbox" name="pulci1" value="1" {% if "pulci1" in event.header.taxonomy.skupina %} checked {% endif %}>
+                                <label for="pulci1"> pulci 1 </label> <br>
+                            <input name="zabicky" type="hidden" value="0">
+                            <input id="zabicky" type="checkbox" name="zabicky" value="1" {% if "zabicky" in event.header.taxonomy.skupina %} checked {% endif %}>
+                                <label for="zabicky"> žabičky </label> <br>     
+                        </div>
+                    </div>                
                 </fieldset>
-
                 <label for="leader">Vedoucí</label>
                 <input id="leader" name="leader" type="text" value="{{ event.header.leader }}">
             </div> 

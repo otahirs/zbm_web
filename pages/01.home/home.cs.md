@@ -147,6 +147,7 @@ news:
                   {% if "pulci1" in group and "pulci2" in group %} pulci {% elseif "pulci1" in group %} pulci1 {% elseif "pulci2" in group %} pulci2 {% endif %} 
                   {% if "zaci1" in group and "zaci2" in group %} žáci {% elseif "zaci1" in group %} žáci1 {% elseif "zaci2" in group %} žáci2 {% endif %} 
                   {% if "dorost" in group %} dorost+ {% endif %}
+                  {% if "hobby" in group %} hobby {% endif %}
                   {% endif %}
                 </em>
               </h3>
@@ -214,6 +215,7 @@ news:
                         {% if "pulci1" in group and "pulci2" in group %} pulci {% elseif "pulci1" in group %} pulci1 {% elseif "pulci2" in group %} pulci2 {% endif %} 
                         {% if "zaci1" in group and "zaci2" in group %} žáci {% elseif "zaci1" in group %} žáci1 {% elseif "zaci2" in group %} žáci2 {% endif %} 
                         {% if "dorost" in group %} dorost+ {% endif %}
+                        {% if "hobby" in group %} hobby {% endif %}
                         {% endif %}
                       </em>
                     </h3>
