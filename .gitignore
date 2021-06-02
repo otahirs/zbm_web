@@ -9,5 +9,7 @@
 /data/*
 
 /plugins/git-sync
+/plugins/git-sync/*
 
-.revs/
+**/.revs
+**/.revs/*
