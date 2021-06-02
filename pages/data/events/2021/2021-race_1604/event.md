@@ -7,6 +7,7 @@ taxonomy:
         - pulci2
         - pulci1
         - zabicky
+        - hobby
 id: 2021-race_1604
 start: '2021-06-19'
 end: '2021-06-19'
