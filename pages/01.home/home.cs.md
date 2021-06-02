@@ -149,8 +149,9 @@ news:
                   {% if "hobby" in group %} hobby {% endif %}
                   {% endif %}
                 </em>
-              </h3>
+              </h4>
             </a>
+            <article class="soon__content" data-orisid="{{p.header.orisid}}" data-history="true"></article>
           </section>
         {% endfor %}
       </div>
@@ -217,7 +218,7 @@ news:
                         {% if "hobby" in group %} hobby {% endif %}
                         {% endif %}
                       </em>
-                    </h3>
+                    </h4>
                   </a>
                   <article class="soon__content" data-id="{{p.header.id}}" data-template="{{p.header.template}}" data-orisid="{{p.header.orisid}}">
                     {{p.content|markdown}}
@@ -247,16 +248,16 @@ news:
 <script>
 Array.from(document.querySelectorAll(".soon__content")).forEach((content) => {
   let orisid = content.dataset.orisid;
+  let isHistory = content.dataset.history == "true";
   if(orisid) {
     url = 'https://cors.zabiny.club/https://oris.orientacnisporty.cz/API/?format=json&method=getEventStartLists&eventid=' + orisid;
     fetch(url, {headers:{'Content-Type': 'application/json'}})
       .then(response => response.json())
       .then(function(oris){
-        if(oris.Data.constructor === Object){
+        if(oris.Data.constructor === Object && !isHistory){
           span = document.createElement('span');
-          span.innerHTML = `<p><a href='https://oris.orientacnisporty.cz/Startovka?id=${orisid}' target="_blank">startovky</a></p>`;
+          span.innerHTML = `<a class="external-link" href='https://oris.orientacnisporty.cz/Startovka?id=${orisid}' target="_blank">startovky</a>`;
           content.append(span);
-
         }  
         url = 'https://cors.zabiny.club/https://oris.orientacnisporty.cz/API/?format=json&method=getEventResults&eventid=' + orisid;
         fetch(url, {headers:{'Content-Type': 'application/json'}})
@@ -264,9 +265,8 @@ Array.from(document.querySelectorAll(".soon__content")).forEach((content) => {
           .then(function(oris){
             if(oris.Data.constructor === Object){
               span = document.createElement('span');
-              span.innerHTML = `<p><a href='https://oris.orientacnisporty.cz/Vysledky?id=${orisid}' target="_blank">výsledky</a></p>`;
+              span.innerHTML = `<a class="external-link" href='https://oris.orientacnisporty.cz/Vysledky?id=${orisid}' target="_blank">výsledky</a>`;
               content.append(span);
-
             }          
           }
         )        
