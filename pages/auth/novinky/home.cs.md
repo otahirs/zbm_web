@@ -77,7 +77,8 @@ news:
    </div> <!-- plan + novinky -->
 
 
-    <div id="soon" class="soon col-md-4">
+    <div id="right_box" class="col-md-4">
+    <div>
     <br>
       <h4>Kliknutím upravíte náhled události</h4>
     
@@ -126,7 +127,7 @@ news:
          
         {% endif %}
       {% endfor %}
-
+    </div>
     </div> <!-- blizi se -->
 
 </div> <!-- uzavira celou stranku , row -->
