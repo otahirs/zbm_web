@@ -7,6 +7,7 @@ taxonomy:
         - zaci1
         - zaci2
         - dorost
+        - hobby
 id: 2021-race_1607
 start: '2021-06-05'
 end: '2021-06-05'
