@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - hobby
 id: 2021-race_1609
 start: '2021-06-02'
 end: '2021-06-02'
