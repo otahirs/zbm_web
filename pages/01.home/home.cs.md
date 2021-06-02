@@ -248,7 +248,7 @@ news:
 Array.from(document.querySelectorAll(".soon__content")).forEach((content) => {
   let orisid = content.dataset.orisid;
   if(orisid) {
-    url = 'https://oris.orientacnisporty.cz/API/?format=json&method=getEventStartLists&eventid=' + orisid;
+    url = 'https://cors.zabiny.club/https://oris.orientacnisporty.cz/API/?format=json&method=getEventStartLists&eventid=' + orisid;
     fetch(url, {headers:{'Content-Type': 'application/json'}})
       .then(response => response.json())
       .then(function(oris){
@@ -258,7 +258,7 @@ Array.from(document.querySelectorAll(".soon__content")).forEach((content) => {
           content.append(span);
 
         }  
-        url = 'https://oris.orientacnisporty.cz/API/?format=json&method=getEventResults&eventid=' + orisid;
+        url = 'https://cors.zabiny.club/https://oris.orientacnisporty.cz/API/?format=json&method=getEventResults&eventid=' + orisid;
         fetch(url, {headers:{'Content-Type': 'application/json'}})
           .then(response => response.json())
           .then(function(oris){
