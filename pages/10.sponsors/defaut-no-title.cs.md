@@ -5,7 +5,7 @@ date: '2018-10-29'
 primaryImage: {  }
 ---
 
-<div class="row">
+<div class="row align-items-center">
     <div class="col-md-6">
         <a href="https://www.brno.cz/uvodni-strana/" target="_blank">
         <img class="sponsors--img" src="{{page.route()}}/Brno.svg">
