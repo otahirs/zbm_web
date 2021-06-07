@@ -237,12 +237,10 @@ templates:
                 time: ''
                 place: Samostatně
         sunday:
-            -
-                group:
-                    - dorost
-                name: Teorie
-                time: '19:00'
-                place: meet.google.com/itp-ahmx-bjz
+            1622979796349:
+                name: ''
+                time: ''
+                place: ''
 ---
 
 {% set curr_template = uri.query('template') ?? page.header.defaultTemplate %}

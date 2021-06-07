@@ -25,11 +25,11 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        - zabicky
-        - pulci1
-        - pulci2
-        - zaci1
-        - zaci2
+        1: pulci1
+        2: pulci2
+        3: zaci1
+        4: zaci2
+        5: zabicky
 gps: '49.26436, 16.56469'
 ---
 

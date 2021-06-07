@@ -23,7 +23,7 @@ plan:
                 time: '16:30 - 18:00'
                 place: 'hala Rosnička'
         tuesday:
-            0:
+            -
                 group:
                     - pulci1
                     - pulci2
@@ -32,18 +32,12 @@ plan:
                 name: 'Mapový trénink'
                 time: '16:00 - 18:00'
                 place: 'Po skupinách'
-            1622317773545:
-                group:
-                    - dorost
-                name: 'Běžecký trénink'
-                time: '16:30'
-                place: 'Kohoutovice, https://mapy.cz/s/ladegenupu'
         wednesday:
             -
                 group:
                     - dorost
                 name: 'Posilování + Běh dle plánu'
-                time: '17:00'
+                time: '16:30'
                 place: 'Rosnička, https://en.mapy.cz/s/resafolera'
         thursday:
             -
@@ -80,13 +74,6 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-        sunday:
-            -
-                group:
-                    - dorost
-                name: Teorie
-                time: '19:00'
-                place: meet.google.com/itp-ahmx-bjz
     nextWeek:
         monday:
             -
@@ -113,18 +100,12 @@ plan:
                 time: '16:00 - 18:00'
                 place: 'Po skupinách'
         wednesday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Posilování + Běh dle plánu'
-                time: '17:00'
+                time: '16:30'
                 place: 'Rosnička, https://en.mapy.cz/s/resafolera'
-            1622632689088:
-                group:
-                    - hobby
-                name: 'Trailtour: Drahanská vysočina http://www.trailtour.cz/2021/etapy-cz/cz-etapa18-adamov-drahanska-vrchovina/'
-                time: '17:30'
-                place: Adamov
         thursday:
             -
                 group:
@@ -161,12 +142,10 @@ plan:
                 time: ''
                 place: Samostatně
         sunday:
-            -
-                group:
-                    - dorost
-                name: Teorie
-                time: '19:00'
-                place: meet.google.com/itp-ahmx-bjz
+            1622979796349:
+                name: ''
+                time: ''
+                place: ''
 ---
 
 <div class="row justify-content-between"> 
