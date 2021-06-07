@@ -8,9 +8,7 @@ primaryImage: {  }
 ---
 
 <div class="row">
-    <div class="col-2"><a href="/races/zhustastr.html">Zhusta Cup</a></div>
     <div class="col-3"><a href="http://bzl.zbmob.cz/">Brněnská zimní liga</a></div>
-    <div class="col-3"><a href="/races/supersprint.html">Mistrovství Brna ve sprintu</a></div>
     <div class="col-4"><a href="http://zbm.eob.cz/op/op.htm">Oddílové přebory od roku 1981</a></div>
 </div>
 <hr>
