@@ -476,7 +476,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 success: function (response){   
                     notyf.success('Úspěšně uloženo!');
                     if (id.value == "") {
-                        var json = $.parseJSON(response);
+                        var json = $.parseJSON(response.replace(/(<([^>]+)>)/gi, "")); // strip <p>...</p> tags from json response
                         if (json.id) {
                             $("[name='id']").val(json.id);
                             history.replaceState({}, '', "{{page.url}}?event=" + json.id);
