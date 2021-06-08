@@ -32,13 +32,6 @@ plan:
                 name: 'Mapový trénink'
                 time: '16:00 - 18:00'
                 place: 'Po skupinách'
-        wednesday:
-            -
-                group:
-                    - dorost
-                name: 'Posilování + Běh dle plánu'
-                time: '16:30'
-                place: 'Rosnička, https://en.mapy.cz/s/resafolera'
         thursday:
             -
                 group:
@@ -76,13 +69,7 @@ plan:
                 place: Samostatně
     nextWeek:
         monday:
-            -
-                group:
-                    - dorost
-                name: Posilování
-                time: '16:45'
-                place: 'nám Svornosti, https://en.mapy.cz/s/namovudojo'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
@@ -100,12 +87,10 @@ plan:
                 time: '16:00 - 18:00'
                 place: 'Po skupinách'
         wednesday:
-            -
-                group:
-                    - dorost
-                name: 'Posilování + Běh dle plánu'
-                time: '16:30'
-                place: 'Rosnička, https://en.mapy.cz/s/resafolera'
+            1623182144645:
+                name: ''
+                time: ''
+                place: ''
         thursday:
             -
                 group:
@@ -141,11 +126,6 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-        sunday:
-            1622979796349:
-                name: ''
-                time: ''
-                place: ''
 ---
 
 <div class="row justify-content-between"> 

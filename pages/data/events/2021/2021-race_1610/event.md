@@ -1,7 +1,7 @@
 ---
 taxonomy:
     skupina:
-        1: dorost
+        - dorost
 id: 2021-race_1610
 start: '2021-06-08'
 end: '2021-06-08'
@@ -24,7 +24,7 @@ terrain: ''
 transport: společná
 accomodation: ''
 food: ''
-leader: ''
+leader: Saša
 return: ''
 price: ''
 program: ''
