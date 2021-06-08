@@ -192,6 +192,20 @@ V krajní nouzi pak můžete využít některého z následujících kontaktů:
 
 Pokud vám nefunguje vaše přístupové jméno a heslo do našeho „Přihláškového systému", kontaktujte Lukáše Königa - _kenia@seznam.cz_, který vám tyto údaje poskytne.
 <br>
+
+### Platba startovného
+JmL, ŽB Morava, letní a celostátní závody - hlídáme, platíme, strháváme z účtu.
+ŽB Čechy, oblastní závody mimo naši oblast lze řešit podle těchto schémat:
+- startovné členům kryjí oddílové příspěvky:
+  - napsat Alešovi, aby to zaplatil.
+  - zaplatit samostatně a Alešovi poslat link na oris, podle kterého jim to proplatí do systému.
+- startovné členům nekryjí oddílové příspěvky:
+  - startující se domluví mezi sebou, jde to "mimo" oddíl. Sami si zúčtují, neřeší s oddílem.
+  - startující se nedomluví, napíší Alešovi, aby to zaplatil. Podle typu příspěvků to rozúčtuje všem. (Ideálně je potřeba dát vědět i ostatním, aby věděli, že to bude platit oddíl.)
+I při velké účasti členů ZBM na závodě, je potřeba se raději ujistit, zda o tom Aleš ví a jestli bude platit.
+Alešovi prosím posílejte rovnou čú., vs, částku a link na oris se členy ZBM. 
+
+
 ### Dohlášky 
 doržujte prosím data přihlášek a pokud možno se na závody nepřihlašujte individuálně, ale vždy prostřednictvím oddílu:
 
