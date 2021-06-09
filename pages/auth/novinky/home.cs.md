@@ -81,7 +81,12 @@ news:
     <div id="right_box" class="col-md-4">
     <div>
     <br>
-      <h4>Kliknutím upravíte náhled události</h4>
+      <h4>
+        <i class="fa fa-arrow-left" aria-hidden="true"></i> <i class="fa fa-plus-square-o" aria-hidden="true"></i> přidej novinku <br> 
+       <i class="fa fa-arrow-left" aria-hidden="true"></i> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> uprav novinku <br>
+        ---<br>
+        <i class="fa fa-arrow-down" aria-hidden="true"></i> uprav náhled blížící se události
+      </h4>
     
       <div class="soon__timeline"></div>
       {% set soon_collection = page.collection() %}
