@@ -246,9 +246,9 @@ plan:
     </table>
 {% endfor %}
 </form>
-<button type="button" id="plan--load-template">Načíst ze šablony <i class="fa fa-window-maximize" aria-hidden="true"></i></button> 
+<button type="button" id="plan--load-template">Načíst ze šablony <i class="fa fa-upload" aria-hidden="true"></i></button> 
 
-<button type="button" onclick="window.open('./plan2/templates','_blank')">Spravovat šablony <i class="fa fa-external-link" aria-hidden="true"></i></button>
+<a href="/auth/plan2/templates" class="button">Spravovat šablony <i class="fa fa-th" aria-hidden="true"></i></a>
 
 
 
