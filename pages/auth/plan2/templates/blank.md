@@ -1,5 +1,5 @@
 ---
-title: 'Týdenní plán - šablony'
+title: 'Týdenní plán - úprava šablon'
 template: default
 access:
     site:
@@ -242,7 +242,7 @@ templates:
                 time: ''
                 place: ''
 ---
-
+<a href="/auth/plan2" id="back-btn" class="button small"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> týdenní plán</a> <br> <br>
 {% set curr_template = uri.query('template') ?? page.header.defaultTemplate %}
 
 <div class="row justify-content-between"> 
