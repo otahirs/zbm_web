@@ -30,7 +30,8 @@ news:
     <div id="novinky" class="col-md-8"> <!-- plan + novinky vlevo -->
     <div class="inner">
         <header id="header">
-            <h1>Novinky &nbsp;&nbsp;&nbsp;<span id="addNewsButton" class="button small special">Přidat&nbsp;<i class="fa fa-plus-square-o" aria-hidden="true"></i></span>  </h1>
+            <h1>Novinky</h1>
+            <span id="addNewsButton" class="button special">Přidat&nbsp;<i class="fa fa-plus-square-o" aria-hidden="true"></i></span>
         </header>
         <section>
     
@@ -80,53 +81,71 @@ news:
     <div id="right_box" class="col-md-4">
     <div>
     <br>
-      <h4>Kliknutím upravíte náhled události</h4>
+      <h4>
+        <i class="fa fa-arrow-left" aria-hidden="true"></i> <i class="fa fa-plus-square-o" aria-hidden="true"></i> přidej novinku <br> 
+       <i class="fa fa-arrow-left" aria-hidden="true"></i> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> uprav novinku <br>
+        ---<br>
+        <i class="fa fa-arrow-down" aria-hidden="true"></i> uprav náhled blížící se události
+      </h4>
     
       <div class="soon__timeline"></div>
       {% set soon_collection = page.collection() %}
-      {% set currdate = strtotime("today")|date('Y-m-d') %}
-
-      {% for p in soon_collection %}
-        {% if  (  p.header.start|date('Y-m-d') <= strtotime("today +10 day")|date('Y-m-d') and p.header.end|date('Y-m-d') >= strtotime("today")|date('Y-m-d') ) %}
-
-          {% if first is not defined %}
-              <h6 class="soon__date soon__date--now"><span class="soon__dot soon__dot--now"></span> &nbsp;
-              {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
-              </h6>
-            {% set first = 1 %}
+      {# further filter the collection #}
+        {% for p in soon_collection %}
+          {% if  not (  p.header.start|date('Y-m-d') <= strtotime("today +10 day")|date('Y-m-d') and p.header.end|date('Y-m-d') >= strtotime("today")|date('Y-m-d') ) %}
+              {% set soon_collection = soon_collection.remove() %}
           {% endif %}
-
-          {% if p.header.start > currdate %}
-            {% set currdate = p.header.start %}
-            <h6 class="soon__date"><span class="soon__dot"></span> &nbsp;
-              {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper ~ ' | '~ currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd.M.')|upper }}
-            </h6>
-          {% endif %}
-
-          
-          <section class="soon__event editBliziSeButton" style="cursor: pointer; background-color:white">
-            <h4 class="soon__title">
-              {{ p.header.title ~' '~ p.header.event.location }} 
-          
-              <br>
-              <em style="font-weight:normal;">
-                {% set group = p.header.taxonomy.skupina %}
-                {% if group|length > 0 and group|length < 6 %}
-                {% if "zabicky" in group %} žabičky {% endif %} 
-                {% if "pulci1" in group and "pulci2" in group %} pulci {% elseif "pulci1" in group %} pulci1 {% elseif "pulci2" in group %} pulci2 {% endif %} 
-                {% if "zaci1" in group and "zaci2" in group %} žáci {% elseif "zaci1" in group %} žáci1 {% elseif "zaci2" in group %} žáci2 {% endif %} 
-                {% if "dorost" in group %} dorost+ {% endif %}
-                {% if "hobby" in group %} hobby {% endif %}
-                {% endif %}
-              </em>
-            </h4>
-            <article class="soon__content" data-id="{{p.header.id}}">
-              {{p.content|markdown}}
-            </article>
-          </section>
+        {% endfor %}
          
-        {% endif %}
-      {% endfor %}
+      {% set events = collectionToEventsByDate(soon_collection) %}
+      {% for i in 0..14 %}
+            {% set currdate = strtotime("today +" ~ i ~ " day")|date('Y-m-d') %}
+  
+            {% if currdate in events|keys or currdate in entries|keys or currdate == "now"|date('Y-m-d') %}
+              <h4 class="soon__date">
+                <span class="soon__dot {% if currdate == "now"|date('Y-m-d') %} soon__dot--now {% endif %}"></span> &nbsp;      
+                <span class="soon__countdown">
+                  {% if i == 0 %}
+                    dnes
+                  {% elseif i == 1 %}
+                    zítra
+                  {% elseif 1 < i and i < 5 %}
+                    za {{i}} dny
+                  {% else %}
+                    za {{i}} dní
+                  {% endif %}
+                </span>
+                <span class="soon__day"> 
+                  {{currdate|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc d.M.') }}
+                </span>
+              </h4>
+            {% endif %}
+            
+            {# ongoing events that started before today #}
+            {% for p in attribute(events, currdate) if currdate in events|keys %}      
+                
+                <section class="soon__event editBliziSeButton" style="cursor: pointer;">
+                    <h4 class="soon__title">
+                      {{ p.header.title ~' '~ p.header.event.location }} 
+                      <br>
+                      <em style="font-weight:normal;font-size: 1rem;">
+                        {% set group = p.header.taxonomy.skupina %}
+                        {% if group|length > 0 and group|length < 6 %}
+                        {% if "zabicky" in group %} žabičky {% endif %} 
+                        {% if "pulci1" in group and "pulci2" in group %} pulci {% elseif "pulci1" in group %} pulci1 {% elseif "pulci2" in group %} pulci2 {% endif %} 
+                        {% if "zaci1" in group and "zaci2" in group %} žáci {% elseif "zaci1" in group %} žáci1 {% elseif "zaci2" in group %} žáci2 {% endif %} 
+                        {% if "dorost" in group %} dorost+ {% endif %}
+                        {% if "hobby" in group %} hobby {% endif %}
+                        {% endif %}
+                      </em>
+                    </h4>
+                  <article class="soon__content" data-id="{{p.header.id}}" data-template="{{p.header.template}}" data-orisid="{{p.header.orisid}}">
+                    {{p.content|markdown}}
+                  </article>
+                </section>
+                
+            {% endfor %}
+        {% endfor %}
     </div>
     </div> <!-- blizi se -->
 
