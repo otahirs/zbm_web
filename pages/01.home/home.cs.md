@@ -256,7 +256,7 @@ Array.from(document.querySelectorAll(".soon__content")).forEach((content) => {
       .then(function(oris){
         if(oris.Data.constructor === Object && !isHistory){
           span = document.createElement('span');
-          span.innerHTML = `<a class="external-link" href='https://oris.orientacnisporty.cz/Startovka?id=${orisid}' target="_blank">startovky</a>`;
+          span.innerHTML = `<a class="external-link" href='https://oris.orientacnisporty.cz/Startovka?id=${orisid}' target="_blank">startovky</a><br>`;
           content.append(span);
         }  
         url = 'https://cors.zabiny.club/https://oris.orientacnisporty.cz/API/?format=json&method=getEventResults&eventid=' + orisid;
