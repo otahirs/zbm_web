@@ -17,7 +17,7 @@ transport: "auty\r\nhttps://docs.google.com/spreadsheets/d/145m3Bqew5jruHF1qA-vd
 accomodation: ''
 food: ''
 leader: ''
-note: "Trailtour: Drahanská vysočina \r\n14 km společný běh po značkách:\r\nhttp://www.trailtour.cz/2021/etapy-cz/cz-etapa18-adamov-drahanska-vrchovina/"
+note: "Trailtour: Drahanská vysočina \n14 km společný běh po značkách:\nhttp://www.trailtour.cz/2021/etapy-cz/cz-etapa18-adamov-drahanska-vrchovina/"
 return: ''
 price: ''
 program: ''
@@ -25,7 +25,11 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        - hobby
+        1: hobby
+results:
+    -
+        name: '18. TT'
+        link: 'http://www.trailtour.cz/2021/etapy-cz/cz-etapa18-adamov-drahanska-vrchovina/#vysledky'
 ---
 
 {{page.header.note}}
