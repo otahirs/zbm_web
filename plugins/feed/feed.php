@@ -90,17 +90,10 @@ class FeedPlugin extends Plugin
      */
     public function onPageInitialized()
     {
-        /** @var PageInterface $page */
         $page = $this->grav['page'];
 
-        $base_url = $this->grav['base_url'];
-        $uri_info = pathinfo($this->grav['uri']->uri());
-        $uri = rtrim($uri_info['dirname'], '/') . '/' . $uri_info['filename'];
-        $raw_url = $base_url . $page->rawRoute();
-        $url = $page->url();
-
         // Overwrite regular content with feed config, so you can influence the collection processing with feed config
-        if (($uri === $url || $uri === $raw_url) && property_exists($page->header(), 'content')) {
+        if (property_exists($page->header(), 'content')) {
             if (isset($page->header()->feed)) {
                 $this->feed_config = array_merge($this->feed_config, $page->header()->feed);
             }
@@ -111,7 +104,6 @@ class FeedPlugin extends Plugin
 
             $this->enable([
                 'onCollectionProcessed' => ['onCollectionProcessed', 0],
-
             ]);
         }
 
