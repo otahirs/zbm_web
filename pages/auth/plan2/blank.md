@@ -9,66 +9,6 @@ process:
 plan:
     thisWeek:
         monday:
-            -
-                group:
-                    - dorost
-                name: Posilování
-                time: '16:45'
-                place: 'nám Svornosti, https://en.mapy.cz/s/namovudojo'
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: Tělocvična
-                time: '16:30 - 18:00'
-                place: 'hala Rosnička'
-        tuesday:
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-                name: 'Mapový trénink'
-                time: '16:00 - 18:00'
-                place: 'Po skupinách'
-        thursday:
-            -
-                group:
-                    - dorost
-                name: 'Intervalový trénink'
-                time: '17:00'
-                place: Podzimní
-            -
-                group:
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 - 18:00'
-                place: 'viz Google Classroom'
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                name: 'Běžecký trénink'
-                time: '16:00'
-                place: 'Pod Palackého vrchem'
-        friday:
-            -
-                group:
-                    - dorost
-                name: Kompenzace
-                time: ''
-                place: Samostatně
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: Samostatně
-    nextWeek:
-        monday:
             1:
                 group:
                     - zaci1
@@ -126,6 +66,78 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
+    nextWeek:
+        monday:
+            -
+                group:
+                    - dorost
+                name: Posilování
+                time: '16:45'
+                place: 'nám Svornosti, https://en.mapy.cz/s/namovudojo'
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: Tělocvična
+                time: '16:30 - 18:00'
+                place: 'hala Rosnička'
+        tuesday:
+            -
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                name: 'Mapový trénink'
+                time: '16:00 - 18:00'
+                place: 'Po skupinách'
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: 'Posilování + Běh dle plánu'
+                time: '16:30'
+                place: 'Rosnička, https://en.mapy.cz/s/resafolera'
+        thursday:
+            -
+                group:
+                    - dorost
+                name: 'Intervalový trénink'
+                time: '17:00'
+                place: Podzimní
+            -
+                group:
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 - 18:00'
+                place: 'viz Google Classroom'
+            -
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                name: 'Běžecký trénink'
+                time: '16:00'
+                place: 'Pod Palackého vrchem'
+        friday:
+            -
+                group:
+                    - dorost
+                name: Kompenzace
+                time: ''
+                place: Samostatně
+        saturday:
+            -
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: Samostatně
+        sunday:
+            1622979796349:
+                name: ''
+                time: ''
+                place: ''
 ---
 
 <div class="row justify-content-between"> 

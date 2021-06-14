@@ -5,9 +5,9 @@ type: M
 title: 'Mapový trénik žactva'
 start: '2021-06-15'
 end: '2021-06-15'
-place: Chvalkovka
+place: Achtelky
 meetTime: '16:00'
-meetPlace: 'Bystrc, Ruda (MHD E50, 51, 52, 54)'
+meetPlace: 'Kohoutovice, Jírovcova'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -25,12 +25,11 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        - zabicky
-        - pulci1
-        - pulci2
-        - zaci1
-        - zaci2
-gps: '49.22052, 16.50271'
+        1: pulci1
+        2: pulci2
+        3: zaci1
+        4: zaci2
+gps: '49.18822, 16.53446'
 ---
 
 {{page.header.note}}
