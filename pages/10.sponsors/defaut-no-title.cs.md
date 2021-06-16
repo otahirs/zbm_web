@@ -16,9 +16,14 @@ primaryImage: {  }
         <img class="sponsors--img" src="{{page.route()}}/JMK.svg">
         </a>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
         <a href="http://www.revos.cz/" target="_blank">
         <img class="sponsors--img" src="{{page.route()}}/Revos.svg">
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a href="https://www.naskok.cz/" target="_blank">
+        <img class="sponsors--img" src="{{page.route()}}/Naskok.svg">
         </a>
     </div>
 <!-- Nadace OB neprispela
