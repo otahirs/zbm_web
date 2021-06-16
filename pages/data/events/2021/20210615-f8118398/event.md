@@ -11,7 +11,7 @@ meetPlace: 'Kohoutovice, Jírovcova'
 link: ''
 eventTypeDescription: ''
 startTime: ''
-map: 'Chvalkovka 365'
+map: 'Kohoutovice - les'
 terrain: ''
 transport: vlastní
 accomodation: ''
