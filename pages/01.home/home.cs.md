@@ -151,7 +151,14 @@ news:
                 </em>
               </h4>
             </a>
-            <article class="soon__content" data-orisid="{{p.header.orisid}}" data-history="true"></article>
+            <article class="soon__content" data-orisid="{{p.header.orisid}}" data-history="true">
+              {% if p.header.hasStartist %}
+                <a class="external-link" href='https://oris.orientacnisporty.cz/Startovka?id={{p.header.orisid}}' target="_blank">startovky</a><br>
+              {% endif %}
+              {% if p.header.hasResults %}
+                <a class="external-link" href='https://oris.orientacnisporty.cz/Vysledky?id={{p.header.orisid}}' target="_blank">výsledky</a>
+              {% endif %}
+            </article>
           </section>
         {% endfor %}
       </div>
@@ -222,6 +229,12 @@ news:
                   </a>
                   <article class="soon__content" data-id="{{p.header.id}}" data-template="{{p.header.template}}" data-orisid="{{p.header.orisid}}">
                     {{p.content|markdown}}
+                    {% if p.header.hasStartist %}
+                      <a class="external-link" href='https://oris.orientacnisporty.cz/Startovka?id={{p.header.orisid}}' target="_blank">startovky</a><br>
+                    {% endif %}
+                    {% if p.header.hasResults %}
+                      <a class="external-link" href='https://oris.orientacnisporty.cz/Vysledky?id={{p.header.orisid}}' target="_blank">výsledky</a>
+                    {% endif %}
                   </article>
                 </section>
                 
@@ -245,33 +258,3 @@ news:
   
 
 </div> <!-- uzavira celou stranku , pure-g -->
-<script>
-Array.from(document.querySelectorAll(".soon__content")).forEach((content) => {
-  let orisid = content.dataset.orisid;
-  let isHistory = content.dataset.history == "true";
-  if(orisid) {
-    url = 'https://cors.zabiny.club/https://oris.orientacnisporty.cz/API/?format=json&method=getEventStartLists&eventid=' + orisid;
-    fetch(url, {headers:{'Content-Type': 'application/json'}})
-      .then(response => response.json())
-      .then(function(oris){
-        if(oris.Data.constructor === Object && !isHistory){
-          span = document.createElement('span');
-          span.innerHTML = `<a class="external-link" href='https://oris.orientacnisporty.cz/Startovka?id=${orisid}' target="_blank">startovky</a><br>`;
-          content.append(span);
-        }  
-        url = 'https://cors.zabiny.club/https://oris.orientacnisporty.cz/API/?format=json&method=getEventResults&eventid=' + orisid;
-        fetch(url, {headers:{'Content-Type': 'application/json'}})
-          .then(response => response.json())
-          .then(function(oris){
-            if(oris.Data.constructor === Object){
-              span = document.createElement('span');
-              span.innerHTML = `<a class="external-link" href='https://oris.orientacnisporty.cz/Vysledky?id=${orisid}' target="_blank">výsledky</a>`;
-              content.append(span);
-            }          
-          }
-        )        
-      }
-    )
-  }
-});
-</script>

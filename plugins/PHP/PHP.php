@@ -77,7 +77,11 @@ class PHPPlugin extends Plugin
 
         // import events from members.eob.cz/zbm/ every 10min
         $job = $scheduler->addFunction('\Grav\Plugin\Events::importRacesFromMembers', [], 'import-races-from-members');
-	$job->at('*/10 * * * *'); 
+	    $job->at('*/10 * * * *'); 
+
+        // check if startlist or results are avaible
+        $job = $scheduler->addFunction('\Grav\Plugin\Events::updateStartlistResultsStatus', [], 'update-startist-results-status');
+	    $job->at('*/10 * * * *'); 
     }
 
 

@@ -77,6 +77,48 @@ class Events extends \Grav\Common\Twig\TwigExtension
         return $event_list;
     }
 
+    public static function updateStartlistResultsStatus() 
+    {
+        $page = Grav::instance()['page'];
+        $collection = $page->evaluate(['@page.descendants' => '/data/events'])->routable();
+        $clear_cache = false;
+        foreach($collection as $page )
+        {
+            $frontmatter = (array)$page->header();
+            if(!empty($frontmatter['orisid']) &&
+                strtotime($frontmatter['start']) < strtotime("today +14 day") &&
+                strtotime($frontmatter['end']) > strtotime("today -5 day"))
+            {
+                $orisid = $frontmatter['orisid'];
+                $changed = false;
+                if(empty($frontmatter['hasStartlist'])) {
+                    $body = Response::get('https://oris.orientacnisporty.cz/API/?format=json&method=getEventStartLists&eventid=' . $orisid);
+                    $data = json_decode($body, true);
+                    if(!empty($data["Data"])) {
+                        $frontmatter['hasStartlist'] = true;
+                        $changed = true;
+                        $clear_cache = true;
+                    }
+                }
+                if(empty($frontmatter['hasResults'])) {
+                    $body = Response::get('https://oris.orientacnisporty.cz/API/?format=json&method=getEventResults&eventid=' . $orisid);
+                    $data = json_decode($body, true);
+                    if(!empty($data["Data"])) {
+                        $frontmatter['hasResults'] = true;
+                        $changed = true;
+                        $clear_cache = true;
+                    }
+                }
+                if($changed) {
+                    $page->header($frontmatter);
+                    $page->save();
+                }
+            }
+        }
+        if($clear_cache)
+            Cache::clearCache('cache-only');
+    }
+
     public static function importRacesFromMembers() {
         Grav::instance()['twig']->init(); // fix function crash if runned from scheduler
         $body = Response::get("https://members.eob.cz/zbm/api_racelist.php");
