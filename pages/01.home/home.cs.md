@@ -160,7 +160,7 @@ news:
   
         {# further filter the collection #}
         {% for p in soon_collection %}
-          {% if  not (  p.header.start|date('Y-m-d') <= strtotime("today +10 day")|date('Y-m-d') and p.header.end|date('Y-m-d') >= strtotime("today")|date('Y-m-d') ) %}
+          {% if  not (  p.header.start|date('Y-m-d') <= strtotime("today +14 day")|date('Y-m-d') and p.header.end|date('Y-m-d') >= strtotime("today")|date('Y-m-d') ) %}
               {% set soon_collection = soon_collection.remove() %}
           {% endif %}
         {% endfor %}
