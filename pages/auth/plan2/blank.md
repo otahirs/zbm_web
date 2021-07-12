@@ -269,7 +269,7 @@ plan:
 
 <a href="/auth/plan2/templates" class="button">Spravovat šablony <i class="fa fa-th" aria-hidden="true"></i></a>
 
-
+<div style="min-height: 8em;">&nbsp; <!-- prevents group selection dialog overflow --> </div>
 
 <div id="NewsModal" class="news--modal">
     <div id="NewsModalContent" class="news--modal-content">
