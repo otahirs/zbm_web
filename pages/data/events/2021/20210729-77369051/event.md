@@ -1,23 +1,23 @@
 ---
-id: 20210615-f8118398
+id: 20210729-77369051
 template: trenink
 type: M
-title: 'Mapový trénik žactva'
-start: '2021-06-15'
-end: '2021-06-15'
-place: Achtelky
+title: 'Společný mapový'
+start: '2021-06-29'
+end: '2021-06-29'
+place: 'Zamilovaný háj, u hřiště'
 meetTime: '16:00'
-meetPlace: 'Kohoutovice, Jírovcova'
+meetPlace: 'U mostu vedle školy Novoměstká'
 link: ''
 eventTypeDescription: ''
-startTime: ''
-map: 'Kohoutovice - les'
+startTime: '16:15'
+map: Zamilec
 terrain: ''
-transport: vlastní
+transport: MHD
 accomodation: ''
 food: ''
-leader: ''
-note: 'Cesta na start bude fáborkována z místa srazu.'
+leader: 'Lenka H.'
+note: "* bludiště\r\n* jednoduchý závod\r\n* kvíz"
 return: ''
 price: ''
 program: ''
@@ -25,11 +25,14 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
+        - zabicky
         - pulci1
         - pulci2
         - zaci1
         - zaci2
-gps: '49.18822, 16.53446'
+        - dorost
+        - hobby
+gps: '49.24273, 16.58852'
 ---
 
 {{page.header.note}}
