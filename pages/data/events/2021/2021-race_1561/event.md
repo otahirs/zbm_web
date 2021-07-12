@@ -33,5 +33,7 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '50.1084, 16.8724'
+hasStartlist: true
+hasResults: true
 ---
 

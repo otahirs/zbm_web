@@ -22,6 +22,8 @@ date: '2021-05-26'
 import:
     type: members
     time: 1622055023
+hasStartlist: true
+hasResults: true
 ---
 
 {{page.header.note}}

@@ -9,7 +9,13 @@ process:
 plan:
     thisWeek:
         monday:
-            1:
+            -
+                group:
+                    - dorost
+                name: Posilování
+                time: '16:45'
+                place: 'nám Svornosti, https://en.mapy.cz/s/namovudojo'
+            -
                 group:
                     - zaci1
                     - zaci2
@@ -17,7 +23,7 @@ plan:
                 time: '16:30 - 18:00'
                 place: 'hala Rosnička'
         tuesday:
-            -
+            0:
                 group:
                     - pulci1
                     - pulci2
@@ -26,18 +32,26 @@ plan:
                 name: 'Mapový trénink'
                 time: '16:00 - 18:00'
                 place: 'Po skupinách'
-        wednesday:
-            1623182144645:
-                name: ''
+            1626027019948:
+                group:
+                    - dorost
+                name: 'Běh dle plánu'
                 time: ''
-                place: ''
+                place: Samostatně
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: 'Posilování + Běh dle plánu'
+                time: '17:00'
+                place: 'Rosnička, https://en.mapy.cz/s/resafolera'
         thursday:
             -
                 group:
                     - dorost
                 name: 'Intervalový trénink'
-                time: '17:00'
-                place: Podzimní
+                time: '17:10'
+                place: 'Pod Palackého vrchem - dráha VUT, přijďte včas, jinak nás nepustí dovnitř'
             -
                 group:
                     - zaci2
@@ -52,13 +66,6 @@ plan:
                 name: 'Běžecký trénink'
                 time: '16:00'
                 place: 'Pod Palackého vrchem'
-        friday:
-            -
-                group:
-                    - dorost
-                name: Kompenzace
-                time: ''
-                place: Samostatně
         saturday:
             -
                 group:
