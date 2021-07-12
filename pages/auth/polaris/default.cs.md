@@ -58,16 +58,11 @@ access:
     <div class="row">
         {% for cislo, pdf in year %}
             <div class="col-sm-6 col-md-3 col-lg-2">
-                <div class="polaris--outerDiv">
-                    <div class="polaris--innerDiv">
-                        <a href="/data/polaris/{{rok}}/{{pdf}}" target="_blank">
-                            <img src="/data/polaris/{{rok}}/{{pdf}}.jpg">
-                            <div class="polaris--title"> 
-                                {{pdf[13:2]}}
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="polaris--delete" data-year="{{rok}}" data-cislo="{{pdf[13:2]}}" data-pdf="{{pdf}}"> 
+                <div class="polaris">
+                    <a href="/data/polaris/{{rok}}/{{pdf}}" target="_blank">
+                        <img src="/data/polaris/{{rok}}/{{pdf}}.jpg">
+                    </a>
+                    <div class="polaris--delete" data-year="{{rok}}" data-cislo="{{pdf[13:2]}}" data-pdf="{{pdf}}" title="Smazat"> 
                         <i class="fa fa-times" aria-hidden="true"></i>
                     </div>
                 </div>

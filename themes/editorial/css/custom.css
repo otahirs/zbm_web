@@ -256,23 +256,50 @@
     padding: 10%;
     margin: 0 auto;
 }
+
 /* polaris */
-.polaris--outerDiv {
-    padding: 10%;
+.polaris {
+  background: #fff;
+  position: relative;
+  margin: 10%;
 }
-.polaris--innerDiv {
-    border: dotted;
+
+.polaris,
+.polaris::before,
+.polaris::after {
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+  border: 1px solid #bbb;
 }
-.polaris--title{
-    text-align: center;
-    color: black;
-    padding-bottom: 10%;
-    font-size: 120%;
+
+.polaris::before,
+.polaris::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
 }
+
+/* Second sheet of polaris */
+.polaris::before {
+    left: 7px;
+    top: 5px;
+    z-index: -1;
+  }
+  
+/* Third sheet of polaris */
+.polaris::after {
+  left: 12px;
+  top: 10px;
+  z-index: -2;
+}
+
 .polaris--delete{
     text-align: center;
     background-color: #f56a6a;
+    cursor: pointer;
 }
+
 /* edit event */
 #editEvent input, #editEvent textarea{
     width:100%;
