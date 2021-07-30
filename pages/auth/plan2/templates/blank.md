@@ -7,7 +7,7 @@ access:
 process:
     markdown: false
 cache_enable: false
-defaultTemplate: Korona
+defaultTemplate: Prázdniny
 templates:
     Letní:
         monday:
@@ -127,19 +127,31 @@ templates:
                 place: ''
     Prázdniny:
         monday:
-            -
+            0:
                 group:
                     - dorost
                 name: Posilovna
                 time: '14:30'
                 place: 'Bohunice, kampus, FSpS'
+            1627019346887:
+                group:
+                    - zaci2
+                name: 'Cvičení dle plánu'
+                time: ''
+                place: samostatně
         tuesday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'běh (dle víkendu)'
                 time: '16:30'
                 place: 'hala Rosnička (sraz) a okolí'
+            1627019374835:
+                group:
+                    - zaci2
+                name: 'běh dle plánu'
+                time: ''
+                place: samostatně
         wednesday:
             -
                 group:
@@ -148,12 +160,18 @@ templates:
                 time: '14:30'
                 place: 'Bohunice, kampus, FSpS'
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, pPv'
+            1627019390447:
+                group:
+                    - zaci2
+                name: 'běh dle plánu'
+                time: ''
+                place: 'samostatně (lze využít dráhu s dorostem)'
         friday:
             -
                 name: ''
@@ -161,9 +179,11 @@ templates:
                 place: ''
         saturday:
             -
-                name: ''
+                group:
+                    - zaci2
+                name: 'běh dle plánu'
                 time: ''
-                place: ''
+                place: samostatně
         sunday:
             -
                 name: ''
@@ -242,6 +262,7 @@ templates:
                 time: ''
                 place: ''
 ---
+
 <a href="/auth/plan2" id="back-btn" class="button small"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> týdenní plán</a> <br> <br>
 {% set curr_template = uri.query('template') ?? page.header.defaultTemplate %}
 

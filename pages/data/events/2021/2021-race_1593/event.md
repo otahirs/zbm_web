@@ -1,6 +1,8 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - dorost
+        - hobby
 id: 2021-race_1593
 start: '2021-09-04'
 end: '2021-09-04'
@@ -13,5 +15,6 @@ date: '2021-05-14'
 import:
     type: members
     time: 1620993602
+place: Kladky
 ---
 
