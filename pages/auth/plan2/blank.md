@@ -9,142 +9,119 @@ process:
 plan:
     thisWeek:
         monday:
-            -
+            1627019346887:
                 group:
-                    - dorost
-                name: Posilování
-                time: '16:45'
-                place: 'nám Svornosti, https://en.mapy.cz/s/namovudojo'
-            -
-                group:
-                    - zaci1
                     - zaci2
-                name: Tělocvična
-                time: '16:30 - 18:00'
-                place: 'hala Rosnička'
+                name: 'Cvičení dle plánu'
+                time: ''
+                place: samostatně
         tuesday:
             0:
                 group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-                name: 'Mapový trénink'
-                time: '16:00 - 18:00'
-                place: 'Po skupinách'
-            1626027019948:
-                group:
                     - dorost
-                name: 'Běh dle plánu'
+                name: 'běh (dle víkendu)'
+                time: '16:30'
+                place: 'hala Rosnička, nebo samostatně dle fb domluvy(sraz) a okolí'
+            1627019374835:
+                group:
+                    - zaci2
+                name: 'běh dle plánu'
                 time: ''
-                place: Samostatně
+                place: samostatně
         wednesday:
             -
                 group:
                     - dorost
-                name: 'Posilování + Běh dle plánu'
+                name: 'běh dle plánu'
                 time: '17:00'
-                place: 'Rosnička, https://en.mapy.cz/s/resafolera'
+                place: 'hala Rosnička (sraz) a okolí'
         thursday:
-            -
+            0:
                 group:
                     - dorost
-                name: 'Intervalový trénink'
-                time: '17:10'
-                place: 'Pod Palackého vrchem - dráha VUT, přijďte včas, jinak nás nepustí dovnitř'
-            -
+                name: Dráha
+                time: '17:00'
+                place: 'Areál VUT, pPv'
+            1627019390447:
                 group:
                     - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 - 18:00'
-                place: 'viz Google Classroom'
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                name: 'Běžecký trénink'
-                time: '16:00'
-                place: 'Pod Palackého vrchem'
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
+                name: 'běh dle plánu'
                 time: ''
-                place: Samostatně
+                place: 'samostatně (lze využít dráhu s dorostem)'
+        friday:
+            1627318638945:
+                group:
+                    - dorost
+                name: Posilovna
+                time: '11:45'
+                place: 'Bohunice, kampus, FSpS'
+        saturday:
+            0:
+                group:
+                    - zaci2
+                name: 'běh dle plánu'
+                time: ''
+                place: samostatně
+            1627651645631:
+                group:
+                    - dorost
+                name: 'běh dle plánu'
+                time: ''
+                place: samostatně
     nextWeek:
         monday:
-            -
+            0:
                 group:
                     - dorost
-                name: Posilování
-                time: '16:45'
-                place: 'nám Svornosti, https://en.mapy.cz/s/namovudojo'
-            -
+                name: Posilovna
+                time: '14:30'
+                place: 'Bohunice, kampus, FSpS'
+            1627019346887:
                 group:
-                    - zaci1
                     - zaci2
-                name: Tělocvična
-                time: '16:30 - 18:00'
-                place: 'hala Rosnička'
+                name: 'Cvičení dle plánu'
+                time: ''
+                place: samostatně
         tuesday:
-            -
+            0:
                 group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
+                    - dorost
+                name: 'běh (dle víkendu)'
+                time: '16:30'
+                place: 'hala Rosnička (sraz) a okolí'
+            1627019374835:
+                group:
                     - zaci2
-                name: 'Mapový trénink'
-                time: '16:00 - 18:00'
-                place: 'Po skupinách'
+                name: 'běh dle plánu'
+                time: ''
+                place: samostatně
         wednesday:
             -
                 group:
                     - dorost
-                name: 'Posilování + Běh dle plánu'
-                time: '16:30'
-                place: 'Rosnička, https://en.mapy.cz/s/resafolera'
+                name: Posilovna
+                time: '14:30'
+                place: 'Bohunice, kampus, FSpS'
         thursday:
-            -
+            0:
                 group:
                     - dorost
-                name: 'Intervalový trénink'
+                name: Dráha
                 time: '17:00'
-                place: Podzimní
-            -
+                place: 'Areál VUT, pPv'
+            1627019390447:
                 group:
                     - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 - 18:00'
-                place: 'viz Google Classroom'
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                name: 'Běžecký trénink'
-                time: '16:00'
-                place: 'Pod Palackého vrchem'
-        friday:
-            -
-                group:
-                    - dorost
-                name: Kompenzace
+                name: 'běh dle plánu'
                 time: ''
-                place: Samostatně
+                place: 'samostatně (lze využít dráhu s dorostem)'
         saturday:
             -
                 group:
                     - zaci2
-                name: 'Běh dle plánu'
+                name: 'běh dle plánu'
                 time: ''
-                place: Samostatně
-        sunday:
-            1622979796349:
-                name: ''
-                time: ''
-                place: ''
+                place: samostatně
 ---
 
 <div class="row justify-content-between"> 
