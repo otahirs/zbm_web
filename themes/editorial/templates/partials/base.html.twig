@@ -89,21 +89,10 @@
 {% block bottom %}
     {{ assets.js('bottom') }}
 
-<!-- Fathom - simple website analytics - https://github.com/usefathom/fathom --> 
-<script>
-(function(f, a, t, h, o, m){
-	a[h]=a[h]||function(){
-		(a[h].q=a[h].q||[]).push(arguments)
-	};
-	o=f.createElement('script'),
-	m=f.getElementsByTagName('script')[0];
-	o.async=1; o.src=t; o.id='fathom-script';
-	m.parentNode.insertBefore(o,m)
-})(document, window, '//anal.zabiny.club/tracker.js', 'fathom');
-fathom('set', 'siteId', 'RHATW');
-fathom('trackPageview');
-</script>
-<!-- / Fathom -->
+<!-- Plausible - simple website analytics - https://plausible.io/ --> 
+<script async defer data-domain="zabiny.club" src="https://anal.zabiny.club/js/plausible.js"></script>
+<!-- / Plausible -->
+
 <!-- Appzi - feedback button - https://www.appzi.com -->
 <script async src="https://w.appzi.io/w.js?token=m8wXI"></script>
 <!-- / Appzi -->
