@@ -77,6 +77,18 @@ Aktuální stav je on-line v „Přihláškovém systému".
 #### Čerpání financí
 - Finance z oddílového účtu lze použít zejména na zaplacení oddílových příspěvků, soustředění, startovného na nedotované závody (např. prázdninové vícedenní závody, LOB, MTBO) či oddílového oblečení. Členské příspěvky a dary poskytnuté na oddílový účet již nelze poslat zpět na účet soukromý.
 
+#### Cestovní příkazy
+Od letošního roku začíná klub proplácet náklady na pohonné hmoty v případech, kdy jedete na závody vlastním autem a přibíráte ostatní členy klubu jako spolucestující (tam kde oddíl hradí dopravu).
+
+Toto proplácení bude probíhat na základě vyplněných cesťáků, kdy ke každé akci je potřeba vyplnit samostatný cesťák. 
+Vzor cesťáku najdete <a href="https://drive.google.com/drive/folders/12skyQ7j0W3CDJGRodh_-6Ghj_g0g3e7n" target="_blank">zde</a>. 
+Vzor si zkopírujte, nazvěte vlastním jménem a uložte do stejné složky. Následně pro každou akci během roku 2021 vždy kopírujte do nové záložky nazvané podle akce a vyplňte (viz např. Jendův cesťák, který zde už je uložený).
+Tyto cesťáky bohužel nestačí mít jen elektronicky, ale vždy je pak potřeba je vytisknout, podepsat na kolonce "Částku vyúčtoval a převzal" a takto předat vedoucímu akce (většinou Jenda). Ten je také podepíše a předá k zaúčtování. Následně vám budou proplaceny peníze.
+
+V tuto chvíli je potřeba dořešit všechny cesťáky od začátku roku 2021. Všichni, kterých se to týká, prosím tedy dovyplňte všechny cesťáky, vytiskněte a podepište je a předejte Jendovi. Pro všechny cesťáky za leden - srpen 2021 platí deadline na předání do konce září, později předané cesťáky nebudou proplaceny. Od září pak zavádíme pravidlo, že cesťáky musí být vyplněné a podepsané předány vedoucímu akce vždy do 2 týdnů po ukončení akce, jinak propadá nárok na jejich proplacení. Toto pravidlo je nutné zavést proto, aby bylo cesťáky možné průběžně zavádět do účetnictví a udržel se v nich přehled a pořádek.
+
+V případě dotazů ohledně cesťáků nebo potřeby domluvení si výjimky na deadine jejich předání (pouze v relevantních případech) pište na mail: _finance@zabiny.club_
+
 ---
 ## Oddílové příspěvky 2021 <a name="prispevky"></a>
 Členské příspěvky je potřeba zaplatit **nejpozději do 26.&nbsp;2.&nbsp;2021**. Zároveň v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2021 - evidence_, dle příslušného typu příspěvku.
