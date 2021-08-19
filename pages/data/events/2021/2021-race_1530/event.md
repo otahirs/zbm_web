@@ -27,14 +27,37 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: "Odjezd: 14. 8. vlakem R 872 v 6:36\r\nVelká zavazadla vezou tam i zpět auta, s sebou do vlaku jen malé batůžky se svačinou a pláštěnkou. Do přistavených aut bude potřeba v čase od 6:00 – 6:20 hodin naložit velká zavazadla dětí. Žádáme vás o dochvilnost, aby se podařilo plynule naložit věci do aut. Zde budeme také vybírat zdravotní dokumentaci dětí, včetně covid potvrzení. Děti si nejpozději v 6:20 hodin přepočítáme a vyrazíme s nimi na nástupiště na vlak.<hr>\r\nDorostenci s koly jedou jiným vlakem, organizuje Jan Drábek<hr>\r\nPokud s námi nebudou děti cestovat, je možné je předat v táboře mezi 11:45 a 12:30 hodin (vlak má příjezd do Mladějova 11:35)."
+transport: "Odjezd: 14. 8. vlakem R 872 v 6:36\r\nVelká zavazadla vezou tam i zpět auta, s sebou do vlaku jen malé batůžky se svačinou a pláštěnkou. Do přistavených aut bude potřeba v čase od 6:00 – 6:20 hodin naložit velká zavazadla dětí. Žádáme vás o dochvilnost, aby se podařilo plynule naložit věci do aut. Zde budeme také vybírat zdravotní dokumentaci dětí, včetně covid potvrzení. Děti si nejpozději v 6:20 hodin přepočítáme a vyrazíme s nimi na nástupiště na vlak.<hr>\r\nDorostenci s koly jedou jiným vlakem, organizuje Jan Drábek<hr>\r\nPokud s námi nebudou děti cestovat, je možné je předat v táboře mezi 11:45 a 12:30 hodin (vlak má příjezd do Mladějova 11:35).\r\nDorost: Sraz v 5:45 na nádraží!"
 accomodation: "Letní dětský OB tábor Mladějov\r\nKemp zelené údolí\r\nLoveč 15\r\n507 45 Mladějov"
 food: 'Prvním i posledním jídlem na táboře bude oběd'
 leader: 'Andrea Firešová'
 return: 'Příjezd: 21. 8. vlakem R 1193 v 19:19'
 price: "**Cena pro všechny**\n- 0,- Kč děti (0 - 1 rok)<br>\n- 1200,- Kč malé žabičky (1 - 3 let)<br>\n- 3300,- Kč žabičky (4 - 6 let)<br>\n- 3500,- Kč pulci (6 - 10 let)<br>\n- 3800,- Kč žáci (10 - 14 let)<br>\n- 4000,- Kč dorostenci (15 - 18 let)<br>\n- 6900,- Kč sourozenci (2 sourozenci 4 - 14 let)<br>\n- 4200,- Kč dospělý člen rodiny<br>\n- vedoucí dle individuální domluvy"
 program: "•\ttréninky orientačního běhu\n•\ttáborové hry\n•\tsoutěže\n•\tkoupání\n•\tvýlety"
-thingsToTake: "•\tstaré převážně bílé triko na zničení (obarvení) – nutné pro hru\n•\tpirátské doplňky (šátek, vesta, pruhované triko, dřevěná noha, páska přes oko, …)\n•\tpropiska, tužka\n•\tbuzola (kdo má), čip (kdo má)\n•\tfixy nebo pastelky – stačí barvy černá, hnědá, zelená, modrá, žlutá, červená\n•\tblok nebo sešit se čtverečkovaným papírem A5\n•\tizolepa, zavírací špendlíky\n•\tbaterka s náhradními bateriemi, nebo čelovka (kdo má) – tradiční noční mapový trénink bude\n•\tknížka na čtení, karty, menší cestovní hry apod.\n•\toblečení na běhání - tepláky nebo elasťáky (něco, co má dlouhé nohavice), běhací dres (dederon, kdo má), není vždy možnost je někde rychle usušit, proto doporučujeme mít věci na běhání 3x\n•\tboty na běhání 2x\n•\tpřezůvky do chaty (kroksy, sandály, …)\n•\ttrička s krátkým rukávem\n•\ttrička s dlouhým rukávem\n•\tobuv ven (pevné (skoro) nepromokavé boty na výlety a chození po lese)\n•\tponožky a spodní prádlo (dle počtu dní, suchých ponožek není nikdy dost)\n•\toblečení pro pobyt (nejlépe využitelné jako oblečení na běhání v případě nouze)\n•\tpyžamo, hygienické potřeby, opalovací krém, repelent\n•\tplavky, ručník\n•\tšátek, kšiltovka\n•\tvětrovka/bunda\n•\tsvetr/teplá mikina\n•\tběháme a chodíme ven za každého počasí, proto oblečení přizpůsobte počasí (pokud bude chladno, přidejte teplejší věci)"
+thingsToTake: "•\tstaré převážně bílé triko na zničení (obarvení) – nutné pro hru\n•\tpirátské doplňky (šátek, vesta, pruhované triko, dřevěná noha, páska přes oko, …)\n•\tpropiska, tužka\n•\tbuzola (kdo má), čip (kdo má)\n•\tfixy nebo pastelky – stačí barvy černá, hnědá, zelená, modrá, žlutá, červená\n•\tblok nebo sešit se čtverečkovaným papírem A5\n•\tizolepa, zavírací špendlíky\n•\tbaterka s náhradními bateriemi, nebo čelovka (kdo má) – tradiční noční mapový trénink bude\n•\tknížka na čtení, karty, menší cestovní hry apod.\n•\toblečení na běhání - tepláky nebo elasťáky (něco, co má dlouhé nohavice), běhací dres (dederon, kdo má), není vždy možnost je někde rychle usušit, proto doporučujeme mít věci na běhání 3x\n•\tboty na běhání 2x (**Pozor na mapu Kost se smí jen v botech bez hřebů!**)\n•\tpřezůvky do chaty (kroksy, sandály, …)\n•\ttrička s krátkým rukávem\n•\ttrička s dlouhým rukávem\n•\tobuv ven (pevné (skoro) nepromokavé boty na výlety a chození po lese)\n•\tponožky a spodní prádlo (dle počtu dní, suchých ponožek není nikdy dost)\n•\toblečení pro pobyt (nejlépe využitelné jako oblečení na běhání v případě nouze)\n•\tpyžamo, hygienické potřeby, opalovací krém, repelent\n•\tplavky, ručník\n•\tšátek, kšiltovka\n•\tvětrovka/bunda\n•\tsvetr/teplá mikina\n•\tběháme a chodíme ven za každého počasí, proto oblečení přizpůsobte počasí (pokud bude chladno, přidejte teplejší věci)"
 signups: ''
+routes:
+    -
+        name: '02 | Úvod, vrstevnicovka'
+        link: 'http://3drerun.worldofo.com/?id=-16872385&type=info'
+    -
+        name: '03 | COB - Kost'
+        link: 'http://3drerun.worldofo.com/?id=-16872381&type=info'
+    -
+        name: '07 | seběhy'
+        link: 'http://3drerun.worldofo.com/index.php?id=-16873153&type=info'
+    -
+        name: '08 | middle'
+        link: 'http://3drerun.worldofo.com/index.php?id=-16873158&type=info'
+results:
+    -
+        name: '02 | Skalní sprint'
+        link: 'http://obasen.orientering.se/winsplits/online/en/default.asp?page=classes&databaseId=76444'
+    -
+        name: '03 | Drsná Kost'
+        link: 'http://obasen.orientering.se/winsplits/online/en/default.asp?page=classes&databaseId=76445'
+    -
+        name: 'Táborový sprint'
+        link: 'http://obasen.orientering.se/winsplits/online/en/show_event.asp?id=76456'
 ---
 

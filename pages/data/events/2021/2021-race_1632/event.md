@@ -32,10 +32,14 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.2205, 16.5183'
+hasResults: true
 routes:
     -
         name: '3D Rerun'
         link: 'http://3drerun.worldofo.com/?id=-16864527&type=info'
-hasResults: true
+results:
+    -
+        name: 'Výsledky Bystrc'
+        link: 'https://oris.orientacnisporty.cz/Vysledky?id=6593'
 ---
 

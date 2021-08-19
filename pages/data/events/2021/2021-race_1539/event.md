@@ -15,6 +15,7 @@ date: '2021-01-04'
 import:
     type: members
     time: 1609747203
+hasStartlist: true
 ---
 
-{{page.header.note}}
+Skalnaté a kamenité terény (vcelku čistý les, hodně hustníků a pasek, v části mnoho kamenů, balvanů a skalek.
