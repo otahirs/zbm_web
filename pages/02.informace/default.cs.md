@@ -82,7 +82,7 @@ Klub proplácí (od roku 2021) náklady na pohonné hmoty.
 
 #### Podmínky
 - přibíráte ostatní členy klubu jako spolucestující
-- jedná se o závod, kde oddíl hradí dopravu nebo o vybraný mapový trénink (soutředění jsou řešeny slevou na přislušnou akci)
+- jedná se o závod, kde oddíl hradí dopravu nebo o vybraný mapový trénink (soutředění jsou řešeny slevou z ceny akce)
 - vyplnit cesťák 
 - předat vyplněný a podepsaný cesťák vedoucímu akce do 2 týdnů po jejím skončení
 
@@ -92,7 +92,7 @@ je potřeba vyplnit ke každé akci samostatně
 2. vzor si zkopírujte, nazvěte vlastním jménem a uložte do stejné složky
 3. následně pro každou akci během roku vždy kopírujte do nové záložky nazvané podle akce a vyplňte (viz např. Jendův cesťák, který zde už je uložený).
 4. z administrativních důvodů je nutné cesťák následně i vytisknout, podepsat na kolonce "Částku vyúčtoval a převzal" a předat vedoucímu akce (většinou Jenda). Ten je také podepíše a předá k zaúčtování.
-5. peníze budou časem připsány na oddílový účet
+5. peníze vám budou časem připsány na účet
 
 
 V případě dotazů ohledně cesťáků nebo potřeby domluvení si výjimky na deadine jejich předání (pouze v relevantních případech) pište na mail: _finance@zabiny.club_
