@@ -77,7 +77,7 @@ Aktuální stav je on-line v „Přihláškovém systému".
 ### Čerpání financí
 - Finance z oddílového účtu lze použít zejména na zaplacení oddílových příspěvků, soustředění, startovného na nedotované závody (např. prázdninové vícedenní závody, LOB, MTBO) či oddílového oblečení. Členské příspěvky a dary poskytnuté na oddílový účet již nelze poslat zpět na účet soukromý.
 
-### Cestovní příkazy
+### Cestovní příkazy <a name="cestaky"></a>
 Klub proplácí (od roku 2021) náklady na pohonné hmoty. 
 
 #### Podmínky
