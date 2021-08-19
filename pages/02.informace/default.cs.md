@@ -69,13 +69,33 @@ Všechny důležité kontakty najdete na <a href="./kontakty"> vlastní stránce
 
 Aktuální stav je on-line v „Přihláškovém systému".
 
-#### Členské příspěvky a dary oddílu
+### Členské příspěvky a dary oddílu
 - Zasílejte výhradně bezhotovostně na účet u Raiffeisenbank 4067843369/5500 (změna - jiné číslo banky než minulé roky), v.s. xxxx (xxxx = registrační číslo).
 - Do poznámky vždy připište: "Členské příspěvky", případně "Dar".
 - V případě, že chcete přispět oddílu darem (který lze odečíst ze základu daně při ročním zúčtování daně z příjmu), kontaktujte předem Honzu (predseda@zabiny.club). Darovaná částka nesmí být nižší než 1 000,– Kč. Maximální možnost odečtu ze základu daně je 15%.
 
-#### Čerpání financí
+### Čerpání financí
 - Finance z oddílového účtu lze použít zejména na zaplacení oddílových příspěvků, soustředění, startovného na nedotované závody (např. prázdninové vícedenní závody, LOB, MTBO) či oddílového oblečení. Členské příspěvky a dary poskytnuté na oddílový účet již nelze poslat zpět na účet soukromý.
+
+### Cestovní příkazy <a name="cestaky"></a>
+Klub proplácí (od roku 2021) náklady na pohonné hmoty. 
+
+#### Podmínky
+- přibíráte ostatní členy klubu jako spolucestující
+- jedná se o závod, kde oddíl hradí dopravu nebo o vybraný mapový trénink (soutředění jsou řešeny slevou z ceny akce)
+- vyplnit cesťák 
+- předat vyplněný a podepsaný cesťák vedoucímu akce do 2 týdnů po jejím skončení
+
+#### Jak vyplnit cesťák
+je potřeba vyplnit ke každé akci samostatně  
+1. vzor najdete <a href="https://drive.google.com/drive/folders/12skyQ7j0W3CDJGRodh_-6Ghj_g0g3e7n" target="_blank">zde</a>
+2. vzor si zkopírujte, nazvěte vlastním jménem a uložte do stejné složky
+3. následně pro každou akci během roku vždy kopírujte do nové záložky nazvané podle akce a vyplňte (viz např. Jendův cesťák, který zde už je uložený).
+4. z administrativních důvodů je nutné cesťák následně i vytisknout, podepsat na kolonce "Částku vyúčtoval a převzal" a předat vedoucímu akce (většinou Jenda). Ten je také podepíše a předá k zaúčtování.
+5. peníze vám budou časem připsány na účet
+
+
+V případě dotazů ohledně cesťáků nebo potřeby domluvení si výjimky na deadine jejich předání (pouze v relevantních případech) pište na mail: _finance@zabiny.club_
 
 ---
 ## Oddílové příspěvky 2021 <a name="prispevky"></a>
