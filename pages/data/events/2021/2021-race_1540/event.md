@@ -17,4 +17,4 @@ import:
     time: 1609747203
 ---
 
-{{page.header.note}}
+Přesunutý závod z roku 2020.
