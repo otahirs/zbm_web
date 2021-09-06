@@ -16,5 +16,22 @@ import:
     type: members
     time: 1620994202
 place: 'Pohoří (Jílové u Prahy)'
+meetTime: ''
+meetPlace: 'zastávka Akademická (u Campusu)'
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: autobusem
+accomodation: ''
+food: ''
+leader: Jenda
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.89626, 14.52159'
 ---
 

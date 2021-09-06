@@ -1,8 +1,8 @@
 ---
 taxonomy:
     skupina:
-        - dorost
-        - hobby
+        1: hobby
+        2: dorost
 id: 2021-race_1626
 start: '2021-10-16'
 end: '2021-10-16'
@@ -16,5 +16,21 @@ date: '2021-06-29'
 import:
     type: members
     time: 1624951802
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: 'Společné ubytování na postelích včetně snídaně, příspěvek 200 Kč za osobu.'
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 

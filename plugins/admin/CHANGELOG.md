@@ -1,10 +1,49 @@
+# v1.10.20
+## 09/01/2021
+
+3. [](#bugfix)
+    * Fixed regression `Argument 4 passed to Grav\Plugin\Form\TwigExtension::prepareFormField() must be of the type array` [#2177](https://github.com/getgrav/grav-plugin-admin/issues/2177)
+    * Fixed `X-Frame-Options` to be `DENY` in all admin pages to prevent a clickjacking attack
+
+# v1.10.19
+## 08/31/2021
+
+1. [](#new)
+    * Require **Grav 1.7.19** and **Form 5.1.0** and **Login 3.5.0**
+    * Updated SCSS compiler to v1.6
+2. [](#improved)
+    * Updated forms and nested fields to use new form logic
+    * Admin form now use layout `admin`, meaning you can create admin specific field templates by `forms/fields/myfield/admin-field.html.twig`
+    * Stop using `|tu` filter, Grav already has the same logic in `|t` for admin
+    * Remove unneeded escapes
+    * Allow removal of plugin when disabled [#2167](https://github.com/getgrav/grav-plugin-admin/issues/2167)
+3. [](#bugfix)
+    * Fixed missing values in `fieldset` form field
+
+# v1.10.18
+## 07/19/2021
+
+1. [](#improved)
+    * Add logic to allow fieldset form field inside a list field [#2159](https://github.com/getgrav/grav-plugin-admin/pull/2159)
+
+# v1.10.17
+## 06/15/2021
+
+1. [](#improved)
+    * Added timestamp as title in logs date [#2141](https://github.com/getgrav/grav-plugin-admin/issues/2141)
+    * Use `base64_encode` filter rather than function
+    * Composer update
+1. [](#bugfix)
+    * Fixed missing `Remove Theme` button when the theme is inactive
+    * Update taskGetChildTypes() to use Flex Pages (works without the plugin) [#2087](https://github.com/getgrav/grav-plugin-admin/issues/2087)
+
 # v1.10.16
 ## 06/02/2021
 
 1. [](#bugfix)
     * Fixed issue with some elements overflowing closed list items [#2146](https://github.com/getgrav/grav-plugin-admin/issues/2146)
     * Fixed configuration not fully updating on save [#2149](https://github.com/getgrav/grav-plugin-admin/issues/2149)
-    * Fixed display issue with "+ Add Page" and picking a different route [#2136](https://github.com/getgrav/grav-plugin-admin/issues/2136), [#2145](https://github.com/getgrav/grav-plugin-admin/issues/2145) 
+    * Fixed display issue with "+ Add Page" and picking a different route [#2136](https://github.com/getgrav/grav-plugin-admin/issues/2136), [#2145](https://github.com/getgrav/grav-plugin-admin/issues/2145)
     * Treat WebP as image when inserting / drag & dropping [#2150](https://github.com/getgrav/grav-plugin-admin/issues/2150)
 
 # v1.10.15

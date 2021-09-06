@@ -1,3 +1,41 @@
+# v1.1.1
+## 09/01/2021
+
+1. [](#bugfix)
+    * Fixed XSS in page admin
+    * Fixed check for bad folder name, prevent bad characters
+
+# v1.1.0
+## 08/31/2021
+
+1. [](#new)
+   * Require **Grav 1.7.19** and **Form 5.1.0**
+   * Added basic frontend editing support
+   * Added `onBeforeFlexFormInitialize` event to help to initialize the frontend form
+1. [](#bugfix)
+   * Fixed error in admin when field validation fails
+
+# v1.0.16
+## 07/19/2021
+
+1. [](#new)
+   * Added basic new modal support for all flex types
+1. [](#bugfix)
+   * Fixed authorization check for user configuration
+
+# v1.0.15
+## 06/16/2021
+
+1. [](#improved)
+   * Better checks against missing Flex Type inside tasks
+   * Better authorization checks, falls back to directory level authorization checks if objects do not support authorization
+1. [](#bugfix)
+   * Fixed missing handling of child_type in Flex Pages [getgrav/grav-plugin-admin#2087](https://github.com/getgrav/grav-plugin-admin/issues/2087)
+   * Added support for multiple `Exports` in a dropdown
+   * Admin is no longer a dependency of Flex Objects [#130](https://github.com/trilbymedia/grav-plugin-flex-objects/issues/130)
+   * Fixed authorization checks during page creation for users who have limited access to some pages [getgrav/grav#3382](https://github.com/getgrav/grav/issues/3382)
+   * Fixed permission check when moving a page [getgrav/grav#3382](https://github.com/getgrav/grav/issues/3382)
+
 # v1.0.14
 ## 06/07/2021
 

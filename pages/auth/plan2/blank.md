@@ -9,106 +9,42 @@ process:
 plan:
     thisWeek:
         monday:
-            0:
+            -
                 group:
                     - dorost
-                name: Posilovna
-                time: '14:30'
-                place: 'Bohunice, kampus, FSpS'
-            1627019346887:
+                name: 'Atletické posilko'
+                time: '16:45'
+                place: 'Nám. Svornosti, https://mapy.cz/s/cubasamuca'
+            -
                 group:
+                    - zaci1
                     - zaci2
-                name: 'Cvičení dle plánu'
-                time: ''
-                place: samostatně
-        tuesday:
-            1627019374835:
-                group:
-                    - zaci2
-                name: 'běh dle plánu'
-                time: ''
-                place: samostatně
+                name: Tělocvična
+                time: '16:30 – 18:00'
+                place: 'hala Rosnička'
         wednesday:
             -
                 group:
                     - dorost
-                name: Posilovna
-                time: '14:30'
-                place: 'Bohunice, kampus, FSpS'
+                name: 'Atletické posilko'
+                time: '16:45'
+                place: Rosnička
         thursday:
-            0:
+            -
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 – 18:00'
+                place: 'Stadion pod Palackého vrchem'
+            -
                 group:
                     - dorost
                 name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, pPv'
-            1627019390447:
-                group:
-                    - zaci2
-                name: 'běh dle plánu'
-                time: ''
-                place: 'samostatně (lze využít dráhu s dorostem)'
-        saturday:
-            0:
-                group:
-                    - zaci2
-                name: 'běh dle plánu'
-                time: ''
-                place: samostatně
-            1629913656834:
-                group:
-                    - dorost
-                name: 'TSM testy'
-                time: ''
-                place: Přerov
-        sunday:
-            1629913674680:
-                group:
-                    - dorost
-                name: 'běh dle plánu'
-                time: ''
-                place: samostatně
-    nextWeek:
-        monday:
-            0:
-                group:
-                    - dorost
-                name: Posilovna
-                time: '14:30'
-                place: 'Bohunice, kampus, FSpS'
-            1627019346887:
-                group:
-                    - zaci2
-                name: 'Cvičení dle plánu'
-                time: ''
-                place: samostatně
-        tuesday:
-            1627019374835:
-                group:
-                    - zaci2
-                name: 'běh dle plánu'
-                time: ''
-                place: samostatně
-        wednesday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '14:30'
-                place: 'Bohunice, kampus, FSpS'
-        thursday:
-            0:
-                group:
-                    - dorost
-                name: Dráha
-                time: '17:00'
-                place: 'Areál VUT, pPv'
-            1627019390447:
-                group:
-                    - zaci2
-                name: 'běh dle plánu'
-                time: ''
-                place: 'samostatně (lze využít dráhu s dorostem)'
         friday:
             -
                 name: ''
@@ -118,9 +54,70 @@ plan:
             -
                 group:
                     - zaci2
-                name: 'běh dle plánu'
+                name: 'Běh dle plánu'
                 time: ''
-                place: samostatně
+                place: Samostatně
+    nextWeek:
+        monday:
+            -
+                group:
+                    - dorost
+                name: 'Atletické posilko'
+                time: '16:45'
+                place: 'Nám. Svornosti, https://mapy.cz/s/cubasamuca'
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: Tělocvična
+                time: '16:30 – 18:00'
+                place: 'hala Rosnička'
+        tuesday:
+            -
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                name: 'Mapový trénink'
+                time: '16:00 – 18:00'
+                place: 'okolí Brna'
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: 'Atletické posilko'
+                time: '16:45'
+                place: 'Nám. Svornosti, https://mapy.cz/s/cubasamuca'
+        thursday:
+            -
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 – 18:00'
+                place: 'Stadion pod Palackého vrchem'
+            -
+                group:
+                    - dorost
+                name: Dráha
+                time: '17:00'
+                place: 'Areál VUT, pPv'
+        friday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            -
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: Samostatně
 ---
 
 <div class="row justify-content-between"> 

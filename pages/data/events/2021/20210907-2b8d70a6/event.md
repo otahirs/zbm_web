@@ -5,9 +5,9 @@ type: M
 title: 'Mapový trénik žactva'
 start: '2021-09-07'
 end: '2021-09-07'
-place: 'U buku'
+place: 'Pod Útěchovem'
 meetTime: '16:00'
-meetPlace: 'Útěchov, U buku (MHD 57)'
+meetPlace: 'Útěchov, Rozcestí (MHD 57)'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -25,12 +25,12 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        1: pulci1
-        2: pulci2
-        3: zaci1
-        4: zaci2
-        5: zabicky
-gps: '49.27720, 16.63022'
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+gps: '49.28545, 16.63170'
 ---
 
 {{page.header.note}}

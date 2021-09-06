@@ -7,16 +7,16 @@ access:
 process:
     markdown: false
 cache_enable: false
-defaultTemplate: Prázdniny
+defaultTemplate: Letní
 templates:
     Letní:
         monday:
             -
                 group:
                     - dorost
-                name: Posilovna
-                time: '16:30'
-                place: 'Bohunice, kampus, FSpS'
+                name: 'Atletické posilko'
+                time: '16:45'
+                place: 'Nám. Svornosti, https://mapy.cz/s/cubasamuca'
             -
                 group:
                     - zaci1
@@ -39,9 +39,9 @@ templates:
             -
                 group:
                     - dorost
-                name: Posilovna
-                time: '16:30'
-                place: 'Bohunice, kampus, FSpS'
+                name: 'Atletické posilko'
+                time: '16:45'
+                place: 'Nám. Svornosti, https://mapy.cz/s/cubasamuca'
         thursday:
             -
                 group:
