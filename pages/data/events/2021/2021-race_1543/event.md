@@ -17,4 +17,4 @@ import:
     time: 1609747803
 ---
 
-{{page.header.note}}
+Interkompas proběhne v lesním komplexu v okolí Cyklokempu u Starého Města pod Landštejnem. Poběží se na nových mapách o celkovém rozsahu 10 km2.

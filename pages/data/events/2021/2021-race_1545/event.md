@@ -15,6 +15,7 @@ date: '2021-01-04'
 import:
     type: members
     time: 1609747804
+hasResults: true
 ---
 
 {{page.header.note}}

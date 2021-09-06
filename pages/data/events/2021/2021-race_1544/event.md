@@ -17,4 +17,4 @@ import:
     time: 1609747804
 ---
 
-{{page.header.note}}
+V pátek odpoledne se poběží krátká trať, v sobotu klasika a v neděli zkrácená klasika. Centrem závodu bude Pustá Rybná.

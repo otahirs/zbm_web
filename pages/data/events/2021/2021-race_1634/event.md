@@ -1,7 +1,8 @@
 ---
 taxonomy:
     skupina:
-        1: hobby
+        - dorost
+        - hobby
 id: 2021-race_1634
 start: '2021-08-24'
 end: '2021-08-24'
@@ -31,5 +32,14 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasResults: true
+routes:
+    -
+        name: Slátanina
+        link: 'http://3drerun.worldofo.com/?id=-16875268&type=info'
+results:
+    -
+        name: 3BLL
+        link: 'https://oris.orientacnisporty.cz/Vysledky?id=6604'
 ---
 

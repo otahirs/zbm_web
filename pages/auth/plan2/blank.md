@@ -9,6 +9,12 @@ process:
 plan:
     thisWeek:
         monday:
+            0:
+                group:
+                    - dorost
+                name: Posilovna
+                time: '14:30'
+                place: 'Bohunice, kampus, FSpS'
             1627019346887:
                 group:
                     - zaci2
@@ -22,7 +28,20 @@ plan:
                 name: 'běh dle plánu'
                 time: ''
                 place: samostatně
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '14:30'
+                place: 'Bohunice, kampus, FSpS'
         thursday:
+            0:
+                group:
+                    - dorost
+                name: Dráha
+                time: '17:00'
+                place: 'Areál VUT, pPv'
             1627019390447:
                 group:
                     - zaci2
@@ -30,9 +49,22 @@ plan:
                 time: ''
                 place: 'samostatně (lze využít dráhu s dorostem)'
         saturday:
-            -
+            0:
                 group:
                     - zaci2
+                name: 'běh dle plánu'
+                time: ''
+                place: samostatně
+            1629913656834:
+                group:
+                    - dorost
+                name: 'TSM testy'
+                time: ''
+                place: Přerov
+        sunday:
+            1629913674680:
+                group:
+                    - dorost
                 name: 'běh dle plánu'
                 time: ''
                 place: samostatně
@@ -51,12 +83,6 @@ plan:
                 time: ''
                 place: samostatně
         tuesday:
-            0:
-                group:
-                    - dorost
-                name: 'běh (dle víkendu)'
-                time: '16:30'
-                place: 'hala Rosnička (sraz) a okolí'
             1627019374835:
                 group:
                     - zaci2
@@ -95,11 +121,6 @@ plan:
                 name: 'běh dle plánu'
                 time: ''
                 place: samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
 ---
 
 <div class="row justify-content-between"> 

@@ -19,7 +19,7 @@ date: '2020-11-18'
 import:
     type: members
     time: 1605697203
-note: "**Zdravotní dokumentace** (odevzdáte při odjezdu na tábor nebo při příjezdu do tábora)\n•\tprohlášení o bezinfekčnosti (tiskopis v emailu)\n•\tpotvrzení o zdravotní způsobilosti (vydá lékař, platí 2 roky)\n•\t**potvrzení ohledně covidu** – jedna ze 4 možností:\n  a)\tPCR test maximálně 7 dní starý\n  b)\tantigenní test maximálně 72 hodin starý\n  c)\tpotvrzení o prodělané nemoci (platí 180 dnů)\n  d)\točkování – minimálně 22 dní po 1. dávce"
+note: "**Zdravotní dokumentace** (odevzdáte při odjezdu na tábor nebo při příjezdu do tábora)\r\n•\tprohlášení o bezinfekčnosti (tiskopis v emailu)\r\n•\tpotvrzení o zdravotní způsobilosti (vydá lékař, platí 2 roky)\r\n•\t**potvrzení ohledně covidu** – jedna ze 4 možností:\r\n  a)\tPCR test maximálně 7 dní starý\r\n  b)\tantigenní test maximálně 72 hodin starý\r\n  c)\tpotvrzení o prodělané nemoci (platí 180 dnů)\r\n  d)\točkování – minimálně 22 dní po 1. dávce"
 meetTime: '6:00'
 meetPlace: 'Brno, na parkovišti u Tesca: https://mapy.cz/s/2VLd3'
 link: ''
@@ -32,9 +32,9 @@ accomodation: "Letní dětský OB tábor Mladějov\r\nKemp zelené údolí\r\nLo
 food: 'Prvním i posledním jídlem na táboře bude oběd'
 leader: 'Andrea Firešová'
 return: 'Příjezd: 21. 8. vlakem R 1193 v 19:19'
-price: "**Cena pro všechny**\n- 0,- Kč děti (0 - 1 rok)<br>\n- 1200,- Kč malé žabičky (1 - 3 let)<br>\n- 3300,- Kč žabičky (4 - 6 let)<br>\n- 3500,- Kč pulci (6 - 10 let)<br>\n- 3800,- Kč žáci (10 - 14 let)<br>\n- 4000,- Kč dorostenci (15 - 18 let)<br>\n- 6900,- Kč sourozenci (2 sourozenci 4 - 14 let)<br>\n- 4200,- Kč dospělý člen rodiny<br>\n- vedoucí dle individuální domluvy"
-program: "•\ttréninky orientačního běhu\n•\ttáborové hry\n•\tsoutěže\n•\tkoupání\n•\tvýlety"
-thingsToTake: "•\tstaré převážně bílé triko na zničení (obarvení) – nutné pro hru\n•\tpirátské doplňky (šátek, vesta, pruhované triko, dřevěná noha, páska přes oko, …)\n•\tpropiska, tužka\n•\tbuzola (kdo má), čip (kdo má)\n•\tfixy nebo pastelky – stačí barvy černá, hnědá, zelená, modrá, žlutá, červená\n•\tblok nebo sešit se čtverečkovaným papírem A5\n•\tizolepa, zavírací špendlíky\n•\tbaterka s náhradními bateriemi, nebo čelovka (kdo má) – tradiční noční mapový trénink bude\n•\tknížka na čtení, karty, menší cestovní hry apod.\n•\toblečení na běhání - tepláky nebo elasťáky (něco, co má dlouhé nohavice), běhací dres (dederon, kdo má), není vždy možnost je někde rychle usušit, proto doporučujeme mít věci na běhání 3x\n•\tboty na běhání 2x (**Pozor na mapu Kost se smí jen v botech bez hřebů!**)\n•\tpřezůvky do chaty (kroksy, sandály, …)\n•\ttrička s krátkým rukávem\n•\ttrička s dlouhým rukávem\n•\tobuv ven (pevné (skoro) nepromokavé boty na výlety a chození po lese)\n•\tponožky a spodní prádlo (dle počtu dní, suchých ponožek není nikdy dost)\n•\toblečení pro pobyt (nejlépe využitelné jako oblečení na běhání v případě nouze)\n•\tpyžamo, hygienické potřeby, opalovací krém, repelent\n•\tplavky, ručník\n•\tšátek, kšiltovka\n•\tvětrovka/bunda\n•\tsvetr/teplá mikina\n•\tběháme a chodíme ven za každého počasí, proto oblečení přizpůsobte počasí (pokud bude chladno, přidejte teplejší věci)"
+price: "**Cena pro všechny**\r\n- 0,- Kč děti (0 - 1 rok)<br>\r\n- 1200,- Kč malé žabičky (1 - 3 let)<br>\r\n- 3300,- Kč žabičky (4 - 6 let)<br>\r\n- 3500,- Kč pulci (6 - 10 let)<br>\r\n- 3800,- Kč žáci (10 - 14 let)<br>\r\n- 4000,- Kč dorostenci (15 - 18 let)<br>\r\n- 6900,- Kč sourozenci (2 sourozenci 4 - 14 let)<br>\r\n- 4200,- Kč dospělý člen rodiny<br>\r\n- vedoucí dle individuální domluvy"
+program: "•\ttréninky orientačního běhu\r\n•\ttáborové hry\r\n•\tsoutěže\r\n•\tkoupání\r\n•\tvýlety"
+thingsToTake: "•\tstaré převážně bílé triko na zničení (obarvení) – nutné pro hru\r\n•\tpirátské doplňky (šátek, vesta, pruhované triko, dřevěná noha, páska přes oko, …)\r\n•\tpropiska, tužka\r\n•\tbuzola (kdo má), čip (kdo má)\r\n•\tfixy nebo pastelky – stačí barvy černá, hnědá, zelená, modrá, žlutá, červená\r\n•\tblok nebo sešit se čtverečkovaným papírem A5\r\n•\tizolepa, zavírací špendlíky\r\n•\tbaterka s náhradními bateriemi, nebo čelovka (kdo má) – tradiční noční mapový trénink bude\r\n•\tknížka na čtení, karty, menší cestovní hry apod.\r\n•\toblečení na běhání - tepláky nebo elasťáky (něco, co má dlouhé nohavice), běhací dres (dederon, kdo má), není vždy možnost je někde rychle usušit, proto doporučujeme mít věci na běhání 3x\r\n•\tboty na běhání 2x (**Pozor na mapu Kost se smí jen v botech bez hřebů!**)\r\n•\tpřezůvky do chaty (kroksy, sandály, …)\r\n•\ttrička s krátkým rukávem\r\n•\ttrička s dlouhým rukávem\r\n•\tobuv ven (pevné (skoro) nepromokavé boty na výlety a chození po lese)\r\n•\tponožky a spodní prádlo (dle počtu dní, suchých ponožek není nikdy dost)\r\n•\toblečení pro pobyt (nejlépe využitelné jako oblečení na běhání v případě nouze)\r\n•\tpyžamo, hygienické potřeby, opalovací krém, repelent\r\n•\tplavky, ručník\r\n•\tšátek, kšiltovka\r\n•\tvětrovka/bunda\r\n•\tsvetr/teplá mikina\r\n•\tběháme a chodíme ven za každého počasí, proto oblečení přizpůsobte počasí (pokud bude chladno, přidejte teplejší věci)"
 signups: ''
 routes:
     -
@@ -44,20 +44,41 @@ routes:
         name: '03 | COB - Kost'
         link: 'http://3drerun.worldofo.com/?id=-16872381&type=info'
     -
+        name: '04 | Štafetové úseky'
+        link: 'http://3drerun.worldofo.com/?id=-16873501&type=info'
+    -
         name: '07 | seběhy'
         link: 'http://3drerun.worldofo.com/index.php?id=-16873153&type=info'
     -
         name: '08 | middle'
         link: 'http://3drerun.worldofo.com/index.php?id=-16873158&type=info'
+    -
+        name: '10 | KP + sprint + vrstevnicovka'
+        link: 'http://3drerun.worldofo.com/?id=-16873508&type=info'
+    -
+        name: '11 | sprint'
+        link: 'http://3drerun.worldofo.com/?id=-16873794&type=info'
+    -
+        name: '12 | štafety'
+        link: 'http://3drerun.worldofo.com/?id=-16873788&type=info'
 results:
     -
-        name: '02 | Skalní sprint'
+        name: '02 | D+: Skalní sprint'
         link: 'http://obasen.orientering.se/winsplits/online/en/default.asp?page=classes&databaseId=76444'
     -
-        name: '03 | Drsná Kost'
+        name: '03 | D+ - long, C - middle: Drsná Kost'
         link: 'http://obasen.orientering.se/winsplits/online/en/default.asp?page=classes&databaseId=76445'
     -
-        name: 'Táborový sprint'
+        name: '06 | D+ - Knockout sprint: Zelené údolí'
         link: 'http://obasen.orientering.se/winsplits/online/en/show_event.asp?id=76456'
+    -
+        name: '08 | B - middle, A - odbočovák: Bártlův vrch'
+        link: 'http://obasen.orientering.se/winsplits/online/en/default.asp?page=classes&databaseId=76517'
+    -
+        name: '10 | D+ - SI sprin: hrad Pařez'
+        link: 'http://obasen.orientering.se/winsplits/online/en/default.asp?page=classes&databaseId=76514'
+    -
+        name: '06 | žáci - sprint: Zelené údolí'
+        link: 'http://obasen.orientering.se/winsplits/online/en/default.asp?page=classes&databaseId=76551&ct=true'
 ---
 
