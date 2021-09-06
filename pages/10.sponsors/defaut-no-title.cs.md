@@ -26,6 +26,11 @@ primaryImage: {  }
         <img class="sponsors--img" src="{{page.route()}}/Naskok.svg">
         </a>
     </div>
+    <div class="col-md-6">
+        <a href="https://www.cus-sportujsnami.cz/" target="_blank">
+        <img class="sponsors--img" src="{{page.route()}}/Sportuj.svg">
+        </a>
+    </div>
 <!-- Nadace OB neprispela
      <div class="col-md-6">
         <a href="https://www.obnadace.cz/" target="_blank">
