@@ -22,13 +22,24 @@ plan:
                 name: Tělocvična
                 time: '16:30 – 18:00'
                 place: 'hala Rosnička'
+        tuesday:
+            -
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                name: 'Mapový trénink'
+                time: '16:00 – 18:00'
+                place: 'okolí Brna'
         wednesday:
             -
                 group:
                     - dorost
                 name: 'Atletické posilko'
                 time: '16:45'
-                place: Rosnička
+                place: 'Nám. Svornosti, https://mapy.cz/s/cubasamuca'
         thursday:
             -
                 group:
@@ -118,6 +129,11 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
+        sunday:
+            -
+                name: ''
+                time: ''
+                place: ''
 ---
 
 <div class="row justify-content-between"> 

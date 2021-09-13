@@ -16,7 +16,7 @@ import:
     type: members
     time: 1620994202
 place: 'Pohoří (Jílové u Prahy)'
-meetTime: ''
+meetTime: '7:00'
 meetPlace: 'zastávka Akademická (u Campusu)'
 eventTypeDescription: ''
 startTime: ''
@@ -26,7 +26,7 @@ transport: autobusem
 accomodation: ''
 food: ''
 leader: Jenda
-note: ''
+note: 'Spí se na povlečených postelích. Součástí ubytování je sobotní večeře a nedělní snídaně. Ubytování [zde](https://mapy.cz/s/hemevesemo)'
 return: ''
 price: ''
 program: ''

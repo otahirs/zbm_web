@@ -13,7 +13,7 @@ eventTypeDescription: ''
 startTime: ''
 map: 'Dub Troják'
 terrain: ''
-transport: vlastní
+transport: "Přibližovací srazy:\r\n* Halasovo náměstí 15:10 (15:15 Autobus 44 - Anthropos - 15:46 Trolejbus 37 - Pavlovská 15:57)\r\n* Skácelova 15:20 (15:27 Autobus 44 - Anthropos - 15:46 Trolejbus 37 -     Pavlovská 15:57"
 accomodation: ''
 food: ''
 leader: ''
@@ -25,11 +25,10 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        - zabicky
-        - pulci1
-        - pulci2
-        - zaci1
-        - zaci2
+        1: pulci1
+        2: pulci2
+        3: zaci1
+        4: zaci2
 gps: '49.18976, 16.53116'
 ---
 

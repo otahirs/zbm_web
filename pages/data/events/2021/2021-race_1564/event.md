@@ -34,5 +34,7 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasStartlist: true
+hasResults: true
 ---
 

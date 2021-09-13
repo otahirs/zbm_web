@@ -31,5 +31,10 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.33058, 16.71976'
+routes:
+    -
+        name: celé
+        link: 'http://3drerun.worldofo.com/?id=-16878271&type=info'
 ---
 
