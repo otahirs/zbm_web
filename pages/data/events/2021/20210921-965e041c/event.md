@@ -13,11 +13,11 @@ eventTypeDescription: ''
 startTime: ''
 map: Melatín
 terrain: ''
-transport: vlastní
+transport: 'Vlastní nebo s použitím přibližovacích srazů (Skácelova a Halasovo náměstí)'
 accomodation: ''
 food: ''
 leader: ''
-note: 'Cesta na start bude fáborkována z místa srazu.'
+note: "Cesta na start bude fáborkována z místa srazu (16:00 zastávka U buku)\n**Přibližovací srazy:**\n* 15:10 Skácelova\t(15:15 Autobus 53 - Halasovo náměstí 15:27, 15:33 Autobus 57 - U buku\t15:47)\n* 15:25 Halasovo náměstí (15:33 Autobus 57 - U buku\t15:47)"
 return: ''
 price: ''
 program: ''

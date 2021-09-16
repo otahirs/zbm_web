@@ -1,9 +1,9 @@
 ---
 taxonomy:
     skupina:
-        - dorost
-        - zaci2
         - zaci1
+        - zaci2
+        - dorost
         - hobby
 id: 2021-race_1600
 start: '2021-09-26'

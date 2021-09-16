@@ -1,7 +1,7 @@
 ---
 taxonomy:
     skupina:
-        - dorost
+        1: dorost
 id: 2021-race_1641
 start: '2021-09-14'
 end: '2021-09-14'
@@ -30,6 +30,19 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
-gps: '49.48284, 16.74778'
+gps: '49.48538, 16.75274'
+routes:
+    -
+        name: D15
+        link: 'http://3drerun.worldofo.com/?id=-16879530&type=info'
+    -
+        name: D
+        link: 'http://3drerun.worldofo.com/?id=-16879529&type=info'
+    -
+        name: 'H + DE'
+        link: 'http://3drerun.worldofo.com/?id=-16879531&type=info'
+    -
+        name: HE
+        link: 'http://3drerun.worldofo.com/?id=-16879532&type=info'
 ---
 
