@@ -304,6 +304,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     initMarkdownEditor("note");
+    initMarkdownEditor("transport");
 
     {% if event.template == "soustredeni" %}      
         initMarkdownEditor("program");

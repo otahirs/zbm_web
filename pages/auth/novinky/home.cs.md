@@ -85,7 +85,7 @@ news:
         <i class="fa fa-arrow-left" aria-hidden="true"></i> <i class="fa fa-plus-square-o" aria-hidden="true"></i> přidej novinku <br> 
        <i class="fa fa-arrow-left" aria-hidden="true"></i> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> uprav novinku <br>
         ---<br>
-        <i class="fa fa-arrow-down" aria-hidden="true"></i> uprav náhled blížící se události
+        <i class="fa fa-arrow-down" aria-hidden="true"></i> uprav událost
       </h4>
     
       <div class="soon__timeline"></div>
@@ -125,6 +125,7 @@ news:
             {% for p in attribute(events, currdate) if currdate in events|keys %}      
                 
                 <section class="soon__event editBliziSeButton" style="cursor: pointer;">
+                    <a href="/auth/events/edit?event={{p.header.id}}">
                     <h4 class="soon__title">
                       {{ p.header.title ~' '~ p.header.event.location }} 
                       <br>
@@ -139,6 +140,7 @@ news:
                         {% endif %}
                       </em>
                     </h4>
+                    </a>
                   <article class="soon__content" data-id="{{p.header.id}}" data-template="{{p.header.template}}" data-orisid="{{p.header.orisid}}">
                     {{p.content|markdown}}
                   </article>
@@ -484,97 +486,6 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
     }
 }
 
-
-{#######################################
-############ Edit blizise ##############
-########################################}
-
-    /* inicializace prekladace z HTML zpet na markdown "Turndown"*/
-    const editBliziSe_turndownService = new TurndownService({
-      headingStyle: 'atx', //mění defaultni zobrazení nadpisu na ten pouzivany v gravu
-      emDelimiter: '*',
-    
-    });
-
-  $(".editBliziSeButton").click(function(){
-      var soonEvent = this;
-      if(soonEvent.classList.contains("edit-blizise-active")) return;
-      soonEvent.classList.add("edit-blizise-active");
-      var content = this.querySelector("article") //nacte tag obsahujici text blizi se
-      var content_text = content.innerHTML.trim(); //ulozi stary text a odstihne ze zacatku a konce bile znaky
-      content.innerHTML = '<form method="post" action="/php/blizise">' +  //nahradi text blizi se formularem na upravu
-                            '<input name="POST_type" type="hidden" value="editBliziSe">' +
-                            '<input name="id" type="hidden" value="'+ content.getAttribute("data-id") +'">' +
-                            '<textarea name="content"></textarea>' +
-                            '<button class="saveBlizise special fit" type="submit" style="margin-top: 1em">Uložit</button>' +
-                            '<div class="row">' +
-                            '<div class="col-8">' +
-                            '<button class="editBliziSeCancel fit small" type="button">Zrušit</button>' +
-                            '</div>' +
-                            '<div class="col-4">' +
-                            '<button class="regenerateBliziSe fit small" type="button" title="Znovu vygenerovat obsah"><i class="fa fa-refresh" aria-hidden="true"></i></button>' +
-                            '</div>' +
-                            '</div>' +
-                            '</form>';
-
-      var editBliziSe_simplemde = new SimpleMDE({ element: content.querySelector("textarea"), //misto textarea nacte markdown editor
-                                   spellChecker: false,
-                                   status: false});
-      editBliziSe_simplemde.value( editBliziSe_turndownService.turndown(content_text) ); //nahraje do editoru drive ulozeny text, ktery zkonvertuje z html tagu z5 na markdown pomoci .js knihovny "turndown"
-
-      $(".editBliziSeCancel").click(function(e){ //tlacitko pro zruseni
-        e.stopPropagation(); //zastavi propagaci click eventu aby se neodesilal formular pres tlacitko submit
-        content.innerHTML = content_text; //vrati drive ulozeny text
-        soonEvent.classList.remove("edit-blizise-active");
-      })
-
-      $(".saveBlizise").click(function(e){
-          e.preventDefault(); //zabrani defaultnimu odeslani formulare
-          e.stopPropagation();
-          var bliziseForm = new FormData($(this).closest("form")[0]);
-          bliziseForm.append("content", editBliziSe_simplemde.value() );
-          $.ajax({
-              url: "/php/blizise",
-              type: "POST",
-              data: bliziseForm,
-              processData: false,
-              contentType: false,
-              success: function ()
-              { 
-                notyf.success("Náhled události uložen.");
-                soonEvent.classList.remove("edit-blizise-active"); 
-                window.location.replace(location.href);
-              },
-              error: function (xhr, desc, err){
-                console.log(err);
-                console.log(desc);
-                console.log(xhr);
-              }
-          });
-      });
-
-      $(".regenerateBliziSe").click(function(e){ //tlacitko pro zruseni
-        var bliziseForm = new FormData($(this).closest("form")[0]);
-        bliziseForm.append("regenerate", true );
-        $.ajax({
-              url: "/php/blizise",
-              type: "POST",
-              data: bliziseForm,
-              processData: false,
-              contentType: false,
-              success: function ()
-              {  
-                notyf.success("Náhled události obnoven do výchozí podoby.");
-                soonEvent.classList.remove("edit-blizise-active");
-                window.location.replace(location.href);  
-              },
-              error: function (xhr, desc, err){
-                console.log(err);
-                console.log(desc);
-                console.log(xhr);
-              }
-          });
-      })
-  });
-  }, false); // laod
-  </script>
+});
+}, false); // laod
+</script>
