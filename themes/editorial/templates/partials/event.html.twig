@@ -84,14 +84,14 @@
 
         
         <dl>
-            {% if page.header.transport %}
+            {% if page.header.meetTime or page.header.meetPlace  %}
                 <dt>Sraz</dt>
                 <dd>{{page.header.meetTime ~ ' '~ page.header.meetPlace}} </dd>
             {% endif %}
 
             {% if page.header.transport %}
                 <dt>Doprava</dt>
-                <dd>{{page.header.transport}}</dd>
+                <dd>{{page.header.transport|markdown}}</dd>
             {% endif %}
 
             {% if page.header.accomodation %}

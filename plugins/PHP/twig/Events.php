@@ -24,31 +24,6 @@ class Events extends \Grav\Common\Twig\TwigExtension
         ];
     }   
 
-    
-
-
-    //******************************************************************************************************/
-    //updatuje kontent zobrazovany v Blizi se
-    public static function editBliziSeFunction(){
-        if ($_SERVER["REQUEST_METHOD"] !== "POST") return;
-        $page_url = "/data/events/". substr($_POST["id"], 0, 4) ."/". $_POST["id"];
-        $page = Grav::instance()['page']->find($page_url);
-        
-        if(isset($_POST["regenerate"]) && $_POST["regenerate"]){
-            $content = self::generate_content((array)$page->header());
-            $page->content($content);
-        }
-        else{
-            $page->content($_POST["content"]);
-        }
-        $page->save();
-        Cache::clearCache('cache-only');
-    }
-
-    
-    
-    
-
     //nahravani programu z CSV souboru
     static function parse_uploaded_csv(){
         $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
@@ -256,13 +231,13 @@ class Events extends \Grav\Common\Twig\TwigExtension
                 if(!$page->exists()) {
                     $frontmatter["import"]["type"] = $type;
                     $frontmatter["import"]["time"] = time();
-                    $content = self::generate_content($frontmatter);
-                    $page->content($content);
                     Utils::log("event imported | from {$type} | {$event['id']}");
                 }
                 else {
                     Utils::log("event edited | from {$type} | {$event['id']}");
                 }
+                $content = self::generate_content($frontmatter);
+                $page->content($content);
                 $page->header($frontmatter);
                 $page->save();
             }
@@ -371,12 +346,9 @@ class Events extends \Grav\Common\Twig\TwigExtension
             }
             $i++;
         }
-
-        if($new) {
-            $content = self::generate_content($frontmatter);
-            $page->content($content);
-        }
-
+        
+        $content = self::generate_content($frontmatter);
+        $page->content($content);
         $page->header($frontmatter);
         $page->save();      
 
@@ -440,15 +412,17 @@ class Events extends \Grav\Common\Twig\TwigExtension
         if(!empty($race["doWeOrganize"]) && $race["doWeOrganize"]=="1" ) {
             $content .= "**Pořádáme!!**" . PHP_EOL;
         }
-        if(!empty($race["note"]))                {$content .= "{{page.header.note}}" . PHP_EOL;}
-        // jeden řádek s časem, místem srazu a typem dopravy
-        if(!empty($race["meetTime"]))            {$content .= "* **sraz**: {{page.header.meetTime}}"; $writw_eol=true;}
-        if(!empty($race["meetPlace"]))           {$content .= " {{page.header.meetPlace}}."; $writw_eol=true;}
-        if(!empty($race["transport"]))           {$content .= " Doprava {{page.header.transport}}."; $writw_eol=true;}
-        if(isset($writw_eol)) {if($writw_eol==true) $content .= PHP_EOL;}
-
-        if(!empty($race["accomodation"]))        {$content .= "* **ubytování**: {{page.header.accomodation}}" . PHP_EOL;}
-        if(!empty($race["food"]))                {$content .= "* **strava**: {{page.header.food}}" . PHP_EOL;}
+        if(!empty($race["note"]))          {$content .= $race["note"] . PHP_EOL;}
+        // jeden řádek s časem, místem srazu
+        if(!empty($race["meetTime"]) || !empty($race["meetPlace"]))  {
+            $content .= "* **sraz**:";
+            if(!empty($race["meetTime"]))  {$content .= " " . $race["meetTime"] ;}
+            if(!empty($race["meetPlace"])) {$content .= " " . $race["meetPlace"] ;}
+            $content .= PHP_EOL;
+        }
+        if(!empty($race["transport"]))     {$content .= "* **doprava**: " . $race["transport"] . PHP_EOL;}
+        if(!empty($race["accomodation"]))  {$content .= "* **ubytování**: " . $race["accomodation"] . PHP_EOL;}
+        if(!empty($race["food"]))          {$content .= "* **strava**: " . $race["food"] . PHP_EOL;}
         return $content;
     }
 
