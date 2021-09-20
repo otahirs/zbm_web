@@ -37,5 +37,12 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasStartlist: true
+hasResults: true
 ---
 
+* **sraz**: 8:15 - 8:30 Bohéma
+* **doprava**: Odjezd objednaným autobusem: 8:30 hod od Bohémy (ul. Roosveltova).
+Příjezd na místo (Jedovnice) 9:30. 
+Cíl cesty: Jedovnice, co nejblíže kempu Olšovec. 
+Předpokládaný příjezd zpět mezi 14:00 - 15:00.
