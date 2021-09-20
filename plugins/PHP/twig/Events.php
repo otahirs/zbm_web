@@ -301,7 +301,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
 
         // groups
         foreach($group_arr as $key => $group){
-            if($_POST[$group]){
+            if(!empty($_POST[$group])){
                 if (!isset($frontmatter['taxonomy']['skupina']) || !in_array($group, $frontmatter['taxonomy']['skupina'])) {
                     $frontmatter['taxonomy']['skupina'][] = $group;
                 }
