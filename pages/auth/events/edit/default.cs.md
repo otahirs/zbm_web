@@ -137,29 +137,24 @@ access:
                     <legend>Skupiny:</legend>
                     <div class="row">
                         <div class="col-6">
-                            <input name="dorost" type="hidden" value="0">
-                            <input id="dorost" type="checkbox" name="dorost" value="1" {% if "dorost" in event.header.taxonomy.skupina %} checked {% endif %}>
+                            <input id="dorost" type="checkbox" name="dorost" class="group-selector" {% if "dorost" in event.header.taxonomy.skupina %} checked {% endif %}>
                                 <label for="dorost"> dorost+ </label> <br>
-                            <input name="zaci2" type="hidden" value="0">
-                            <input id="zaci2" type="checkbox" name="zaci2" value="1" {% if "zaci2" in event.header.taxonomy.skupina %} checked {% endif %}>
+                            <input id="zaci2" type="checkbox" name="zaci2" class="group-selector" {% if "zaci2" in event.header.taxonomy.skupina %} checked {% endif %}>
                                 <label for="zaci2"> žáci 2 </label> <br>
-                            <input name="zaci1" type="hidden" value="0">
-                            <input id="zaci1" type="checkbox" name="zaci1" value="1" {% if "zaci1" in event.header.taxonomy.skupina %} checked {% endif %}>
+                            <input id="zaci1" type="checkbox" name="zaci1" class="group-selector" {% if "zaci1" in event.header.taxonomy.skupina %} checked {% endif %}>
                                 <label for="zaci1"> žáci 1 </label> <br>
-                            <input name="hobby" type="hidden" value="0">
-                            <input id="hobby" type="checkbox" name="hobby" value="1" {% if "hobby" in event.header.taxonomy.skupina %} checked {% endif %}>
+                            <input id="hobby" type="checkbox" name="hobby" class="group-selector" {% if "hobby" in event.header.taxonomy.skupina %} checked {% endif %}>
                                 <label for="hobby"> hobby </label> <br>
                         </div>
                         <div class="col-6">
-                            <input name="pulci2" type="hidden" value="0">
-                            <input id="pulci2" type="checkbox" name="pulci2" value="1" {% if "pulci2" in event.header.taxonomy.skupina %} checked {% endif %}>
+                            <input id="pulci2" type="checkbox" name="pulci2" class="group-selector" {% if "pulci2" in event.header.taxonomy.skupina %} checked {% endif %}>
                                 <label for="pulci2"> pulci 2 </label> <br>
-                            <input name="pulci1" type="hidden" value="0">
-                            <input id="pulci1" type="checkbox" name="pulci1" value="1" {% if "pulci1" in event.header.taxonomy.skupina %} checked {% endif %}>
+                            <input id="pulci1" type="checkbox" name="pulci1" class="group-selector" {% if "pulci1" in event.header.taxonomy.skupina %} checked {% endif %}>
                                 <label for="pulci1"> pulci 1 </label> <br>
-                            <input name="zabicky" type="hidden" value="0">
-                            <input id="zabicky" type="checkbox" name="zabicky" value="1" {% if "zabicky" in event.header.taxonomy.skupina %} checked {% endif %}>
-                                <label for="zabicky"> žabičky </label> <br>     
+                            <input id="zabicky" type="checkbox" name="zabicky" class="group-selector" {% if "zabicky" in event.header.taxonomy.skupina %} checked {% endif %}>
+                                <label for="zabicky"> žabičky </label> <br>    
+                            <button id="groups-select-all" class="small" style="margin-top: 1.6em;" type="button">vše</button> 
+                            <button id="groups-select-none" class="small" type="button">nic</button>
                         </div>
                     </div>                
                 </fieldset>
@@ -311,6 +306,10 @@ window.addEventListener('DOMContentLoaded', function () {
         initMarkdownEditor("price");
         initMarkdownEditor("thingsToTake");
     {% endif %}
+    
+    /**** all & none group select buttons ****/
+    $("#groups-select-all").click( () => { $('.group-selector').prop('checked', true); } )
+    $("#groups-select-none").click( () => { $('.group-selector').prop('checked', false); } )
 
     /**** prevent submit on enter ***/
         $(document).on("keypress", "input", function (e) {
