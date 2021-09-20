@@ -486,6 +486,5 @@ document.getElementById("News--deleteButtonSpan").onclick = function(e) {
     }
 }
 
-});
 }, false); // laod
 </script>
