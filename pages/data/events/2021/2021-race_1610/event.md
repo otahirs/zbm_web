@@ -1,7 +1,7 @@
 ---
 taxonomy:
     skupina:
-        - dorost
+        1: dorost
 id: 2021-race_1610
 start: '2021-06-08'
 end: '2021-06-08'
@@ -31,6 +31,21 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.53137, 16.3203'
+routes:
+    -
+        name: D16-18
+        link: 'http://3drerun.worldofo.com/index.php?id=-16856967&type=info'
+    -
+        name: D21
+        link: 'http://3drerun.worldofo.com/index.php?id=-16856968&type=info'
+    -
+        name: H16-20
+        link: 'http://3drerun.worldofo.com/index.php?id=-16856969&type=info'
+    -
+        name: H21
+        link: 'http://3drerun.worldofo.com/index.php?id=-16856970&type=info'
 ---
 
-{{page.header.note}}
+middle
+* **sraz**: 16:30 Parkoviště u ZOO (https://mapy.cz/s/hojezesape)
+* **doprava**: společná

@@ -17,7 +17,7 @@ transport: 'Vlastní nebo s použitím přibližovacích srazů (Skácelova a Ha
 accomodation: ''
 food: ''
 leader: ''
-note: "Cesta na start bude fáborkována z místa srazu (16:00 zastávka U buku)\n**Přibližovací srazy:**\n* 15:10 Skácelova\t(15:15 Autobus 53 - Halasovo náměstí 15:27, 15:33 Autobus 57 - U buku\t15:47)\n* 15:25 Halasovo náměstí (15:33 Autobus 57 - U buku\t15:47)"
+note: "Cesta na start bude fáborkována z místa srazu (16:00 zastávka U buku)\r\n**Přibližovací srazy:**\r\n* 15:10 Skácelova\t(15:15 Autobus 53 - Halasovo náměstí 15:27, 15:33 Autobus 57 - U buku\t15:47)\r\n* 15:25 Halasovo náměstí (15:33 Autobus 57 - U buku\t15:47)"
 return: ''
 price: ''
 program: ''
@@ -33,5 +33,9 @@ taxonomy:
 gps: '49.27724, 16.63216'
 ---
 
-{{page.header.note}}
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+Cesta na start bude fáborkována z místa srazu (16:00 zastávka U buku)
+**Přibližovací srazy:**
+* 15:10 Skácelova	(15:15 Autobus 53 - Halasovo náměstí 15:27, 15:33 Autobus 57 - U buku	15:47)
+* 15:25 Halasovo náměstí (15:33 Autobus 57 - U buku	15:47)
+* **sraz**: 16:00 Útěchov, U buku (MHD 57)
+* **doprava**: Vlastní nebo s použitím přibližovacích srazů (Skácelova a Halasovo náměstí)

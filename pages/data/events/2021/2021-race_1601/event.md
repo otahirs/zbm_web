@@ -18,5 +18,6 @@ import:
     type: members
     time: 1620994202
 place: 'Vysoká nad Labem'
+hasResults: true
 ---
 

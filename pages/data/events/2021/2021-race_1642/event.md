@@ -14,11 +14,11 @@ date: '2021-08-23'
 import:
     type: members
     time: 1629699602
-meetTime: '16:00'
+meetTime: '16:20'
 meetPlace: 'STK Nový Lískovec'
 link: ''
 eventTypeDescription: ''
-startTime: ''
+startTime: '17:10'
 map: ''
 terrain: ''
 transport: auty
@@ -34,3 +34,5 @@ signups: ''
 gps: '49.29387, 15.91962'
 ---
 
+* **sraz**: 16:20 STK Nový Lískovec
+* **doprava**: auty

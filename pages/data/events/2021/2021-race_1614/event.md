@@ -1,6 +1,13 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - dorost
+        - hobby
 id: 2021-race_1614
 start: '2021-09-25'
 end: '2021-09-25'
@@ -14,5 +21,21 @@ date: '2021-06-09'
 import:
     type: members
     time: 1623221402
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
