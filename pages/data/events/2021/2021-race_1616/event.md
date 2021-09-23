@@ -21,17 +21,17 @@ date: '2021-06-09'
 import:
     type: members
     time: 1623221403
-meetTime: ''
-meetPlace: ''
+meetTime: '7:45'
+meetPlace: Bohéma
 eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
+transport: autobusem
 accomodation: ''
 food: ''
 leader: Andrea
-note: ''
+note: 'Návrat 17:30 - 18:30'
 return: ''
 price: ''
 program: ''
@@ -39,3 +39,6 @@ thingsToTake: ''
 signups: ''
 ---
 
+Návrat 17:30 - 18:30
+* **sraz**: 7:45 Bohéma
+* **doprava**: autobusem
