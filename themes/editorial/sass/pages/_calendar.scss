@@ -1,5 +1,6 @@
 .cal {
-    height: 43rem;
+    height: 39rem;
+    position: relative;
 }
 .cal-container-outer {
     position: absolute;
@@ -76,7 +77,7 @@
 }
 
 .cal-day {
-    font-size: 16px;
+    font-size: 15px;
     border-right: #dadce0 1px solid;
     color: #70757a;
     -moz-box-flex: 1 1 0%;
@@ -84,9 +85,14 @@
     overflow-y: auto;
     overflow-x: hidden;
     .event {
+        line-height: 1.4em;
         text-align: center;
         white-space: nowrap;
         color: black !important;
+        p {
+            margin: 0 0.3em;
+            overflow: hidden;
+        }
     }
 }
 .cal-day-tag-outer {
@@ -138,6 +144,11 @@
    }
 }
 
+#cal-events-inner {
+    border: solid 1px;
+    padding: 1em;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+}
 #cal-events-list {
     list-style: disclosure-closed;
 
@@ -157,33 +168,39 @@
     
 }
 .Z  { // závod
-    background-color: #ef8585;
+    background-color: #eb9797;
 }
 
 .M  { // mapový trénink
-    background-color: #f2bc58;
+    background-color: #f5d394;
 }
 
 .T  { // trénink
-    background-color: #80bcfb;
+    background-color: #97c2f0;
 }
 
 .S  { // soustředění
-    background-color: #7ce07c;
+    background-color: #a1f3a1;
 }
 
 .BZL {  // zimní mapové ligy
-    background-color: #f1f13a;
+    background-color: #ecec9c;
 }
 
 .BBP {  // běžecké závody jako BBP
-    background-color: #bca3f3;
+    background-color: #bfa8f0;
 }
 
 .TABOR {
-    background-color: aquamarine;
+    background-color: rgb(165, 248, 220);
 }
 
-.J  { // jiné
-    background-color: #afafaf;
+.J, .V  { // jiné
+    background-color: #dfdfdf;
+}
+
+.cal-legend-label {
+    display: inline-block;
+    margin: 2px 0;
+    padding: 0 0.5em;
 }

@@ -9,8 +9,8 @@
 	<div class="calendar-content">{{ page.content }}</div>
 	
     <div class="row">
-    <div class="cal col-sm-8 col-12">
-        
+    <div class="col-sm-8 col-12">
+        <div class="cal">        
         
         <div class="cal-container-outer">
         <div class="cal-container-inner">
@@ -64,24 +64,7 @@
                     </div>
                     {% for event in calendar.events[currentDay|date("U")] %}
                         <div class="event {{event.header.type ? event.header.type : "J" }}" data-groups="{% for g in event.header.taxonomy.skupina %}{{g}}{% endfor %}">
-                        {% switch event.header.type %}
-                        {% case 'Z' %}
-                            závod
-                        {% case 'T' %}
-                            trénink
-                        {% case 'M' %}
-                            mapový tr.
-                        {% case 'S' %}
-                            soustředění
-                        {% case 'BZL' %}
-                            BZL
-                        {% case 'BBP' %}
-                            běžecký záv.
-                        {% case 'TABOR' %}
-                            tábor
-                        {% default %}
-                            {{event.header.template}}
-                        {% endswitch %}
+                            <p>{{ event.header.title }}</p>
                         </div>                        
                     {% endfor %}
                 
@@ -96,11 +79,17 @@
         </div>
         </div>
         </div>
-        
+        </div>
+
+        <br>
+        <p>Kalendář nezobrazuje běžné pravidelné tréninky. Aktuální týdení plán je vždy dostupný z hlavní stránky -> Tréninkové skupiny.</p>
+
         </div>
         <div class="col-sm-4 col-12">
 
 		<div id="cal-events-outer">
+
+          <h5>Vybraný den</h5>
 		  <div id="cal-events-inner">
 				<h2 id="cal-events-title"></h2>
                 <p id="cal-events-empty"></p>
@@ -108,7 +97,7 @@
 			</div>
 		</div>
         <hr>
-        <h5>Filtr akcí dle skupiny:</h5>
+        <h5 style="margin-bottom:0;">Filtr akcí dle skupiny</h5>
         
                 <input type="checkbox" value="all" id="filter-all" checked />
                 <label for="filter-all">Vše</label><br>
@@ -127,7 +116,20 @@
                 <input class="filter" type="checkbox" value="hobby" id="filter-hobby" />
                 <label for="filter-hobby">Hobby</label>
         <hr>
-        <a href="/calendar/ical"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Export a synchronizace kalendáře</a>
+        <div>
+            <h5>Legenda</h5>
+            <div class="cal-legend-label Z">závod</div>
+            <div class="cal-legend-label M">mapový trénink</div>
+            <div class="cal-legend-label T">trénink</div>
+            <div class="cal-legend-label S">soustředění</div>
+            <div class="cal-legend-label BZL">BZL</div>
+            <div class="cal-legend-label BBP">běžecký závod</div>
+            <div class="cal-legend-label TABOR">tábor</div>
+            <div class="cal-legend-label J">jiné</div>
+    </div>
+    <hr>
+    <h5>Export a synchronizace</h5>
+    <a href="/calendar/ical"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> ICAL soubory, synchronizace s eexterními kalendáři</a>
 
     <br><br>        
     </div>
