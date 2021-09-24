@@ -27,11 +27,11 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: autobusem
+transport: "* **Odjezd 8:00** hodin od Bohémy (objednaným autobusem)\n*  Příjezd na místo (Ivančice) cca v 9 hodin\n*  kolem 17 hodin odjezd zpět do Brna.\n*  Návrat 17:30 až 18:30 opět k Bohémě"
 accomodation: ''
 food: ''
 leader: Andrea
-note: 'Návrat 17:30 - 18:30'
+note: ''
 return: ''
 price: ''
 program: ''
@@ -39,6 +39,8 @@ thingsToTake: ''
 signups: ''
 ---
 
-Návrat 17:30 - 18:30
 * **sraz**: 7:45 Bohéma
-* **doprava**: autobusem
+* **doprava**: * **Odjezd 8:00** hodin od Bohémy (objednaným autobusem)
+*  Příjezd na místo (Ivančice) cca v 9 hodin
+*  kolem 17 hodin odjezd zpět do Brna.
+*  Návrat 17:30 až 18:30 opět k Bohémě
