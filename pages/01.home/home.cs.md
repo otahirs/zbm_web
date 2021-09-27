@@ -229,7 +229,7 @@ news:
                   </a>
                   <article class="soon__content" data-id="{{p.header.id}}" data-template="{{p.header.template}}" data-orisid="{{p.header.orisid}}">
                     {{p.content|markdown}}
-                    {% if p.header.hasStartist %}
+                    {% if p.header.hasStartlist %}
                       <a class="external-link" href='https://oris.orientacnisporty.cz/Startovka?id={{p.header.orisid}}' target="_blank">startovky</a><br>
                     {% endif %}
                     {% if p.header.hasResults %}
