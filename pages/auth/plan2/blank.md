@@ -39,7 +39,7 @@ plan:
                     - dorost
                 name: 'Atletické posilko'
                 time: '16:45'
-                place: Rosnička
+                place: 'Nám. Svornosti, https://mapy.cz/s/cubasamuca'
         thursday:
             -
                 group:
@@ -68,6 +68,11 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
+        sunday:
+            -
+                name: ''
+                time: ''
+                place: ''
     nextWeek:
         monday:
             -

@@ -37,6 +37,7 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasStartlist: true
 ---
 
 Návrat 17:30 - 18:30

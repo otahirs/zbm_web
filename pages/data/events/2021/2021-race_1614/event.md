@@ -38,6 +38,7 @@ program: ''
 thingsToTake: ''
 signups: ''
 hasStartlist: true
+hasResults: true
 ---
 
 * **sraz**: 8:50 Královo Pole - nádraží

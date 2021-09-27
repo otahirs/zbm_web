@@ -34,6 +34,7 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasResults: true
 ---
 
 **Ubytování**: na povlečených postelích

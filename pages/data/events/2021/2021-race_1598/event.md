@@ -33,6 +33,7 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasResults: true
 ---
 
 * **sraz**: 6:00 za Lužánkami (doplníme dle DPMB)
