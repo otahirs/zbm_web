@@ -13,7 +13,7 @@ eventTypeDescription: ''
 startTime: ''
 map: 'Babí lom'
 terrain: ''
-transport: vlastní
+transport: "**sraz Lesná**: tentokrát se pojede auty, sraz **15:25** na parkovišti u Halasova náměstí, odjezd 15:30\n**sraz Skácelova**: MHD směr Lesná **15:20**, odjezd prvním spojem po této době, odjezd z **Králova Pole**, nádraží autobusem 41 v **15:30**, náves Lelekovice 15:55 (kontaktní telefon: 737 353 537)\n** sraz 16:00 na návsi Lelekovice**, odsud fáborky"
 accomodation: ''
 food: ''
 leader: ''
@@ -25,13 +25,16 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        1: pulci1
-        2: pulci2
-        3: zaci1
-        4: zaci2
-        5: zabicky
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
 gps: '49.29126, 16.57887'
 ---
 
-{{page.header.note}}
-* **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.
+Cesta na start bude fáborkována z místa srazu.
+* **sraz**: 16:00 Lelekovice, náves (MHD 41)
+* **doprava**: **sraz Lesná**: tentokrát se pojede auty, sraz **15:25** na parkovišti u Halasova náměstí, odjezd 15:30
+**sraz Skácelova**: MHD směr Lesná **15:20**, odjezd prvním spojem po této době, odjezd z **Králova Pole**, nádraží autobusem 41 v **15:30**, náves Lelekovice 15:55 (kontaktní telefon: 737 353 537)
+** sraz 16:00 na návsi Lelekovice**, odsud fáborky

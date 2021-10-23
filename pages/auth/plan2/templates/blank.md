@@ -41,7 +41,7 @@ templates:
                     - dorost
                 name: 'Atletické posilko'
                 time: '16:45'
-                place: 'Nám. Svornosti, https://mapy.cz/s/cubasamuca'
+                place: 'Rosnička, https://mapy.cz/s/kelafukare'
         thursday:
             -
                 group:

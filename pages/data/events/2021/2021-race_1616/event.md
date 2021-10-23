@@ -1,13 +1,13 @@
 ---
 taxonomy:
     skupina:
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
         - dorost
         - hobby
-        - zaci2
-        - zaci1
-        - pulci2
-        - pulci1
-        - zabicky
 id: 2021-race_1616
 start: '2021-09-28'
 end: '2021-09-28'
@@ -38,6 +38,7 @@ program: ''
 thingsToTake: ''
 signups: ''
 hasStartlist: true
+hasResults: true
 ---
 
 Návrat 17:30 - 18:30

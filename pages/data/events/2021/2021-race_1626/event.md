@@ -1,8 +1,8 @@
 ---
 taxonomy:
     skupina:
-        1: hobby
-        2: dorost
+        - dorost
+        - hobby
 id: 2021-race_1626
 start: '2021-10-16'
 end: '2021-10-16'
@@ -22,15 +22,19 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
+transport: '[tabulka](https://docs.google.com/spreadsheets/d/1W9S6pKS_s_MA_NzcA01Q2oIXY2CfCOg2GTk9b0oH5tI/edit?fbclid=IwAR2NXJvvAsozd_qXLGbvf1TwBuZJi9IPYtpqEiiUBZuDO9BdkJk_Fw4ZdYc#gid=1588252110)'
 accomodation: ''
 food: ''
 leader: ''
-note: 'Společné ubytování na postelích včetně snídaně, příspěvek 200 Kč za osobu.'
+note: 'Společné [ubytování](https://en.mapy.cz/s/luvufamuro) na postelích včetně snídaně, příspěvek 200 Kč za osobu.'
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasStartlist: true
+hasResults: true
 ---
 
+Společné [ubytování](https://en.mapy.cz/s/luvufamuro) na postelích včetně snídaně, příspěvek 200 Kč za osobu.
+* **doprava**: [tabulka](https://docs.google.com/spreadsheets/d/1W9S6pKS_s_MA_NzcA01Q2oIXY2CfCOg2GTk9b0oH5tI/edit?fbclid=IwAR2NXJvvAsozd_qXLGbvf1TwBuZJi9IPYtpqEiiUBZuDO9BdkJk_Fw4ZdYc#gid=1588252110)
