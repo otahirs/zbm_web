@@ -2,6 +2,9 @@
     height: 39rem;
     position: relative;
 }
+.cal-controls {
+    margin-bottom: 1rem;
+}
 .cal-container-outer {
     position: absolute;
     top: 0;
@@ -112,7 +115,7 @@
     color: #70757a;
     line-height: 16px;
 }
-.cal-today {
+.cal-tag-today {
     margin-top: 3px;
     height: 24px;
     line-height: 24px;
@@ -122,26 +125,17 @@
     border-radius: 20%;
     margin-bottom: 9px;
 }
+.cal-month-title {
+    padding: 0 0.4em;
+}
 .cal-button {
-    margin-bottom: 2em;
-    display: inline-block;
-    color:black;
-    line-height: 1.5rem;
-    height: inherit;
-    background-color: #eee;
-    border-radius: 2px;
-    padding: 0.2em 0.5em;
-    border-bottom: black 1px dotted;
-
-   a {
-       color: black;
-   }
-   
-   &:hover {
-       transition: background-color 0.2s ease;
-       background-color: #ddd;
-       color: _palette(accent);
-   }
+    font-size: 1rem !important;
+    border-radius: 0.225rem;
+    height: 2.1rem;
+    letter-spacing: 0.045rem;
+    line-height: 2.1rem;
+    padding: 0 1.35rem;
+    text-transform: none;
 }
 
 #cal-events-inner {
