@@ -9,13 +9,7 @@ process:
 plan:
     thisWeek:
         monday:
-            -
-                group:
-                    - dorost
-                name: 'Atletické posilko'
-                time: '16:45'
-                place: 'Nám. Svornosti, https://mapy.cz/s/cubasamuca'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
@@ -33,13 +27,6 @@ plan:
                 name: 'Mapový trénink'
                 time: '16:00 – 18:00'
                 place: 'okolí Brna'
-        wednesday:
-            -
-                group:
-                    - dorost
-                name: 'Atletické posilko'
-                time: '16:45'
-                place: 'Nám. Svornosti, https://mapy.cz/s/cubasamuca'
         thursday:
             -
                 group:
@@ -50,12 +37,6 @@ plan:
                 name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
                 place: 'Stadion pod Palackého vrchem'
-            -
-                group:
-                    - dorost
-                name: Dráha
-                time: '17:00'
-                place: 'Areál VUT, pPv'
         friday:
             -
                 name: ''
@@ -68,11 +49,6 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
     nextWeek:
         monday:
             -
@@ -105,7 +81,7 @@ plan:
                     - dorost
                 name: 'Atletické posilko'
                 time: '16:45'
-                place: 'Nám. Svornosti, https://mapy.cz/s/cubasamuca'
+                place: 'Rosnička, https://mapy.cz/s/kelafukare'
         thursday:
             -
                 group:
@@ -122,11 +98,6 @@ plan:
                 name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, pPv'
-        friday:
-            -
-                name: ''
-                time: ''
-                place: ''
         saturday:
             -
                 group:
@@ -134,11 +105,6 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
 ---
 
 <div class="row justify-content-between"> 

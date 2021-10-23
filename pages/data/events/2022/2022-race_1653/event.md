@@ -1,15 +1,16 @@
 ---
 taxonomy:
     skupina:
-        - dorost
-        - hobby
+        1: hobby
+        2: zaci2
+        3: dorost
 id: 2022-race_1653
 start: '2022-04-14'
 end: '2022-04-18'
 title: 'VT Velikonoce'
 place: 'Dvůr Králové'
-type: Z
-template: zavod
+type: S
+template: soustredeni
 date: '2021-08-25'
 import:
     type: members

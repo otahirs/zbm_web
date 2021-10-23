@@ -1,10 +1,10 @@
 ---
 taxonomy:
     skupina:
-        1: hobby
-        4: dorost
-        5: zaci2
-        6: zaci1
+        - zaci1
+        - zaci2
+        - dorost
+        - hobby
 id: 2021-race_1630
 start: '2021-10-10'
 end: '2021-10-10'
@@ -34,5 +34,6 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasResults: true
 ---
 
