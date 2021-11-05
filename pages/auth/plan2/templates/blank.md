@@ -7,7 +7,7 @@ access:
 process:
     markdown: false
 cache_enable: false
-defaultTemplate: Letní
+defaultTemplate: Zimní
 templates:
     Letní:
         monday:
@@ -84,6 +84,12 @@ templates:
                 name: Tělocvična
                 time: '16:30 – 18:00'
                 place: 'hala Rosnička'
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '17:00'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         tuesday:
             -
                 group:
@@ -94,12 +100,20 @@ templates:
                     - zaci2
                 name: 'Mapový trénink'
                 time: '16:00 – 18:00'
-                place: ''
+                place: 'ZŠ náměstí Svornosti 7'
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '16:30'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/hadasoveno'
         wednesday:
             -
-                name: ''
-                time: ''
-                place: ''
+                group:
+                    - dorost
+                name: Posilovna
+                time: '17:00'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         thursday:
             -
                 group:
@@ -108,6 +122,19 @@ templates:
                 name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
                 place: 'hala Rosnička'
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '17:00'
+                place: 'hala Rosnička'
+            -
+                group:
+                    - pulci1
+                    - pulci2
+                name: Telocvična
+                time: '16:00 - 17:30'
+                place: 'ZŠ Merhautova 37'
         friday:
             -
                 name: ''
@@ -120,9 +147,17 @@ templates:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
+            -
+                group:
+                    - dorost
+                name: 'Běh dle plánu'
+                time: ''
+                place: ''
         sunday:
             -
-                name: ''
+                group:
+                    - dorost
+                name: 'Běh dle plánu'
                 time: ''
                 place: ''
     Prázdniny:
