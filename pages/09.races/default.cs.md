@@ -8,7 +8,8 @@ primaryImage: {  }
 ---
 
 <div class="row">
-    <div class="col-3"><a href="http://bzl.zbmob.cz/">Brněnská zimní liga</a></div>
+    <div class="col-3"><a href="https://kratkyden.zabiny.club/">Krátký den</a></div>
+    <div class="col-3"><a href="https://bzl.zabiny.club/">Brněnská zimní liga</a></div>
     <div class="col-4"><a href="http://zbm.eob.cz/op/op.htm">Oddílové přebory od roku 1981</a></div>
 </div>
 <hr>
