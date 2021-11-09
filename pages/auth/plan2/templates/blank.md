@@ -112,7 +112,7 @@ templates:
                 group:
                     - dorost
                 name: Posilovna
-                time: '17:00'
+                time: '15:15, 16:15'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         thursday:
             -
@@ -120,7 +120,7 @@ templates:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
-                time: '16:00 – 18:00'
+                time: '16:15 – 18:00'
                 place: 'hala Rosnička'
             -
                 group:
@@ -137,9 +137,11 @@ templates:
                 place: 'ZŠ Merhautova 37'
         friday:
             -
-                name: ''
+                group:
+                    - dorost
+                name: kompenzace
                 time: ''
-                place: ''
+                place: 'samostatně dle plánu'
         saturday:
             -
                 group:
@@ -147,17 +149,9 @@ templates:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-            -
-                group:
-                    - dorost
-                name: 'Běh dle plánu'
-                time: ''
-                place: ''
         sunday:
-            -
-                group:
-                    - dorost
-                name: 'Běh dle plánu'
+            1636293004658:
+                name: ''
                 time: ''
                 place: ''
     Prázdniny:

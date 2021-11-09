@@ -29,9 +29,9 @@ transport: "auty, [zapište se ke svému řidiči,](https://docs.google.com/spre
 accomodation: 'Jitřetín pod Jedlovou, Rekreační areál pod Jedlovou, https://mapy.cz/s/pabelaguda'
 food: 'polo penze, obědy vyřešíme dle výletů'
 leader: Jenda
-note: "Náplní budou turistické výlety v NP České Švýcarsko a Lužických horách, ferraty v Děčíně, ...\r\nPředběžná cena 3000,- Kč (závisí na množství placených vstupů)\r\nCOVID pravidla drržíme, návod [zde](https://covid.gov.cz/)"
+note: "Náplní budou turistické výlety v NP České Švýcarsko a Lužických horách, ferraty v Děčíně, ...\r\nKonečná cena 3100,- Kč (+ případná platba za účastníka za oběd)\r\nCOVID pravidla drržíme, návod [zde](https://covid.gov.cz/)"
 return: 'v neděli v podvečer'
-price: '3000,- plus vstupy a půjčovné'
+price: '3100,- Kč (+ cena za oběd)'
 program: 'Turistika, feraty v Děčíně'
 thingsToTake: '2x věci na turistiku (kdyby pršelo), 1x sada sportovního oblečení na feraty, která se dá zašpinit.'
 signups: ''
@@ -39,7 +39,7 @@ gps: '49.17724, 16.56424'
 ---
 
 Náplní budou turistické výlety v NP České Švýcarsko a Lužických horách, ferraty v Děčíně, ...
-Předběžná cena 3000,- Kč (závisí na množství placených vstupů)
+Konečná cena 3100,- Kč (+ případná platba za účastníka za oběd)
 COVID pravidla drržíme, návod [zde](https://covid.gov.cz/)
 * **sraz**: 9:00 Bohunice, parkoviště u Kampusu
 * **doprava**: auty, [zapište se ke svému řidiči,](https://docs.google.com/spreadsheets/d/1W9S6pKS_s_MA_NzcA01Q2oIXY2CfCOg2GTk9b0oH5tI/edit?), třeba vás vyzvedne blíž, než na srazu

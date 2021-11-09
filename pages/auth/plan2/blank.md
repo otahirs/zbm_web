@@ -9,13 +9,19 @@ process:
 plan:
     thisWeek:
         monday:
-            1:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '16:30 – 18:00'
                 place: 'hala Rosnička'
+            -
+                group:
+                    - dorost
+                name: Klus
+                time: '17:00'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo, světlo!'
         tuesday:
             -
                 group:
@@ -26,32 +32,41 @@ plan:
                     - zaci2
                 name: 'Mapový trénink'
                 time: '16:00 – 18:00'
-                place: 'okolí Brna'
+                place: 'ZŠ náměstí Svornosti 7'
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '16:30'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/hadasoveno'
         wednesday:
-            1635890613:
-                name: ''
-                time: ''
-                place: ''
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '15:15, 16:15'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         thursday:
-            0:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
-                time: '16:00 – 18:00'
-                place: 'Stadion pod Palackého vrchem'
-            1635890855091:
+                time: '16:15 – 18:00'
+                place: 'hala Rosnička'
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '17:00'
+                place: 'hala Rosnička'
+            -
                 group:
                     - pulci1
                     - pulci2
-                name: Tělocvična
+                name: Telocvična
                 time: '16:00 - 17:30'
                 place: 'ZŠ Merhautova 37'
-        friday:
-            -
-                name: ''
-                time: ''
-                place: ''
         saturday:
             -
                 group:
@@ -96,7 +111,7 @@ plan:
                 group:
                     - dorost
                 name: Posilovna
-                time: '17:00'
+                time: '15:15, 16:15'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         thursday:
             -
@@ -104,7 +119,7 @@ plan:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
-                time: '16:00 – 18:00'
+                time: '16:15 – 18:00'
                 place: 'hala Rosnička'
             -
                 group:
@@ -121,9 +136,11 @@ plan:
                 place: 'ZŠ Merhautova 37'
         friday:
             -
-                name: ''
+                group:
+                    - dorost
+                name: kompenzace
                 time: ''
-                place: ''
+                place: 'samostatně dle plánu'
         saturday:
             -
                 group:
@@ -131,17 +148,9 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-            -
-                group:
-                    - dorost
-                name: 'Běh dle plánu'
-                time: ''
-                place: ''
         sunday:
-            -
-                group:
-                    - dorost
-                name: 'Běh dle plánu'
+            1636293004658:
+                name: ''
                 time: ''
                 place: ''
 ---
