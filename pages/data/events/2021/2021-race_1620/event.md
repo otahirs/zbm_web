@@ -39,6 +39,7 @@ thingsToTake: ''
 signups: ''
 gps: '49.68421, 16.06276'
 hasStartlist: true
+hasResults: true
 ---
 
 Bacha, závod je v neděli!

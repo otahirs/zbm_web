@@ -151,9 +151,9 @@ primaryImage: {  }
                 <li><i class="fa-li fa fa-phone"></i>725 258 326</li>
                 <li><i class="fa-li fa fa-envelope"></i>jenda.zh@gmail.com</li>
             </ul>
-            <h4>Barbora Zháňalová</h4>
+            <h4>Alexandr Jordanov</h4>
             <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>barborazhanalova@gmail.com</li>
+                <li><i class="fa-li fa fa-envelope"></i>alexandr.jordanov95@gmail.com</li>
             </ul>
             <h4>Stanislav Mokrý</h4>
             <ul class="fa-ul">
@@ -162,6 +162,15 @@ primaryImage: {  }
             <h4>Otakar Hirš</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>otakar.hirs@gmail.com</li>
+            </ul>
+        </div>
+    </div>
+    <div class="divOuter col-lg-6" id="hobby">
+        <div class="contact--divInner">
+        <h3>Hobby</h3>
+            <h4>Jan Drábek</h4>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-envelope"></i>drbca@centrum.cz</li>
             </ul>
         </div>
     </div>

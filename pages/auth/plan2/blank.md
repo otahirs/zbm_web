@@ -27,16 +27,26 @@ plan:
                 name: 'Mapový trénink'
                 time: '16:00 – 18:00'
                 place: 'okolí Brna'
+        wednesday:
+            1635890613:
+                name: ''
+                time: ''
+                place: ''
         thursday:
-            -
+            0:
                 group:
-                    - pulci1
-                    - pulci2
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
                 place: 'Stadion pod Palackého vrchem'
+            1635890855091:
+                group:
+                    - pulci1
+                    - pulci2
+                name: Tělocvična
+                time: '16:00 - 17:30'
+                place: 'ZŠ Merhautova 37'
         friday:
             -
                 name: ''
@@ -53,17 +63,17 @@ plan:
         monday:
             -
                 group:
-                    - dorost
-                name: 'Atletické posilko'
-                time: '16:45'
-                place: 'Nám. Svornosti, https://mapy.cz/s/cubasamuca'
-            -
-                group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '16:30 – 18:00'
                 place: 'hala Rosnička'
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '17:00'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         tuesday:
             -
                 group:
@@ -74,30 +84,46 @@ plan:
                     - zaci2
                 name: 'Mapový trénink'
                 time: '16:00 – 18:00'
-                place: 'okolí Brna'
+                place: 'ZŠ náměstí Svornosti 7'
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '16:30'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/hadasoveno'
         wednesday:
             -
                 group:
                     - dorost
-                name: 'Atletické posilko'
-                time: '16:45'
-                place: 'Rosnička, https://mapy.cz/s/kelafukare'
+                name: Posilovna
+                time: '17:00'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         thursday:
             -
                 group:
-                    - pulci1
-                    - pulci2
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
-                place: 'Stadion pod Palackého vrchem'
+                place: 'hala Rosnička'
             -
                 group:
                     - dorost
-                name: Dráha
+                name: 'Běžecký trénink'
                 time: '17:00'
-                place: 'Areál VUT, pPv'
+                place: 'hala Rosnička'
+            -
+                group:
+                    - pulci1
+                    - pulci2
+                name: Telocvična
+                time: '16:00 - 17:30'
+                place: 'ZŠ Merhautova 37'
+        friday:
+            -
+                name: ''
+                time: ''
+                place: ''
         saturday:
             -
                 group:
@@ -105,6 +131,19 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
+            -
+                group:
+                    - dorost
+                name: 'Běh dle plánu'
+                time: ''
+                place: ''
+        sunday:
+            -
+                group:
+                    - dorost
+                name: 'Běh dle plánu'
+                time: ''
+                place: ''
 ---
 
 <div class="row justify-content-between"> 
