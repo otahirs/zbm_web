@@ -88,7 +88,7 @@ templates:
                 group:
                     - dorost
                 name: Posilovna
-                time: '17:00'
+                time: '15:15 a 18:00'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         tuesday:
             -
@@ -111,9 +111,15 @@ templates:
             -
                 group:
                     - dorost
-                name: Posilovna
-                time: '15:15, 16:15'
+                name: 'Posilovna + běh dle plánu'
+                time: '15:15 a 18:00'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
+            -
+                group:
+                    - hobby
+                name: 'Hobby online teorie'
+                time: '20:00'
+                place: meet.google.com/gdb-zbif-ghr
         thursday:
             -
                 group:
@@ -150,7 +156,7 @@ templates:
                 time: ''
                 place: Samostatně
         sunday:
-            1636293004658:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -290,6 +296,45 @@ templates:
                 name: ''
                 time: ''
                 place: ''
+    'Hobby onlie teorie':
+        monday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        tuesday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        wednesday:
+            -
+                group:
+                    - hobby
+                name: 'Hobby online teorie'
+                time: '20:00'
+                place: meet.google.com/gdb-zbif-ghr
+        thursday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        friday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        sunday:
+            -
+                name: ''
+                time: ''
+                place: ''
+    'zima hobby': {  }
 ---
 
 <a href="/auth/plan2" id="back-btn" class="button small"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> týdenní plán</a> <br> <br>

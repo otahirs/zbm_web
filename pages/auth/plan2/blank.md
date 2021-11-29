@@ -19,75 +19,8 @@ plan:
             -
                 group:
                     - dorost
-                name: Klus
-                time: '17:00'
-                place: 'Rosnička, https://mapy.cz/s/pujazepebo, světlo!'
-        tuesday:
-            -
-                group:
-                    - zabicky
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-                name: 'Mapový trénink'
-                time: '16:00 – 18:00'
-                place: 'ZŠ náměstí Svornosti 7'
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink'
-                time: '16:30'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/hadasoveno'
-        wednesday:
-            -
-                group:
-                    - dorost
                 name: Posilovna
-                time: '15:15, 16:15'
-                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
-        thursday:
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:15 – 18:00'
-                place: 'hala Rosnička'
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink'
-                time: '17:00'
-                place: 'hala Rosnička'
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                name: Telocvična
-                time: '16:00 - 17:30'
-                place: 'ZŠ Merhautova 37'
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: Samostatně
-    nextWeek:
-        monday:
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: Tělocvična
-                time: '16:30 – 18:00'
-                place: 'hala Rosnička'
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00'
+                time: '15:15 a 18:00'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         tuesday:
             -
@@ -110,9 +43,15 @@ plan:
             -
                 group:
                     - dorost
-                name: Posilovna
-                time: '15:15, 16:15'
+                name: 'Posilovna + běh dle plánu'
+                time: '15:15 a 18:00'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
+            -
+                group:
+                    - hobby
+                name: 'Hobby online teorie'
+                time: '20:00'
+                place: meet.google.com/gdb-zbif-ghr
         thursday:
             -
                 group:
@@ -149,7 +88,92 @@ plan:
                 time: ''
                 place: Samostatně
         sunday:
-            1636293004658:
+            -
+                name: ''
+                time: ''
+                place: ''
+    nextWeek:
+        monday:
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: Tělocvična
+                time: '16:30 – 18:00'
+                place: 'hala Rosnička'
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '15:15 a 18:00'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
+        tuesday:
+            -
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                name: 'Mapový trénink'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7'
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '16:30'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/hadasoveno'
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: 'Posilovna + běh dle plánu'
+                time: '15:15 a 18:00'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
+            -
+                group:
+                    - hobby
+                name: 'Hobby online teorie'
+                time: '20:00'
+                place: meet.google.com/gdb-zbif-ghr
+        thursday:
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:15 – 18:00'
+                place: 'hala Rosnička'
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '17:00'
+                place: 'hala Rosnička'
+            -
+                group:
+                    - pulci1
+                    - pulci2
+                name: Telocvična
+                time: '16:00 - 17:30'
+                place: 'ZŠ Merhautova 37'
+        friday:
+            -
+                group:
+                    - dorost
+                name: kompenzace
+                time: ''
+                place: 'samostatně dle plánu'
+        saturday:
+            -
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: Samostatně
+        sunday:
+            -
                 name: ''
                 time: ''
                 place: ''

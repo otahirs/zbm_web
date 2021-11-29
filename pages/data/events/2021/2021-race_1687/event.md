@@ -12,5 +12,22 @@ date: '2021-11-07'
 import:
     type: members
     time: 1636318202
+meetTime: ''
+meetPlace: ''
+link: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
