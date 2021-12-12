@@ -244,12 +244,11 @@ doržujte prosím data přihlášek a pokud možno se na závody nepřihlašujte
 Všichni závodníci kategorií D, H-20, 21 se mohou přihlásit na kterýkoliv závod v ČR mimo Mistrovství ČR (dle pořadí v Rankingu). V případě, že v tomto závodě bude více podkategorií (E, A, B, C, D), uveďte v přihlášce do poznámky, do jaké podkategorie chcete přihlásit. Na oblastních závodech bude vypsána kategorie D21D, H21D (zkrácená trať).
 
 ---
-## Vedoucí na závodech <a name="vedouci"></a>
+## Vedoucí na závodech a akcích <a name="vedouci"></a>
 Pokud budete určeni jako vedoucí na závodech, proveďte prosím následující úkony:  
-- Zkontrolujte, že máte potvrzení o zaplacení v e-mailu, v opačném případě kontaktujte Věrku
 - Na závodech odprezentujte oddíl. 
 - Při dopravě autobusem na dva dny nezapomeňte zjistit, kde je ubytování a zejména, kde je ubytován řidič autobusu (u pořadatelů vyžadujte plánek jeho ubytování). Je dobré si vzít na řidiče telefon.
-- Po závodech dodejte doklady k vyúčtování.
+- Po závodech do 14 dnů dodejte Kristýně <a href="#cestaky">vyplněné cesťáky</a> a doklady k vyúčtování.
 
 <!--
 ---
