@@ -103,9 +103,8 @@
                 <dt>Jídlo</dt>
                 <dd>{{page.header.food}}</dd>
             {% endif %}
-        </dl>
 
-        <dl>
+
             {% if page.header.startTime %}
                 <dt>Start</dt>
                 <dd>{{page.header.startTime}}</dd>
@@ -120,15 +119,15 @@
                 <dt>Terén</dt>
                 <dd>{{page.header.terrain }}</dd>
             {% endif %}
+            
             {% if page.header.eventTypeDescription %}
                 <dt>Tratě</dt>
                 <dd>{{page.header.eventTypeDescription }}</dd>
             {% endif %}
-        </dl>
 
-         <dl>
+
             {% if page.header.price %}
-                <dt>Cena pro nečleny oddílu</dt>
+                <dt>Očekávaná cena</dt>
                 <dd>{{page.header.price|markdown}}</dd>
             {% endif %}
 
