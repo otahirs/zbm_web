@@ -248,7 +248,7 @@ Všichni závodníci kategorií D, H-20, 21 se mohou přihlásit na kterýkoliv 
 Pokud budete určeni jako vedoucí na závodech, proveďte prosím následující úkony:  
 - Na závodech odprezentujte oddíl. 
 - Při dopravě autobusem na dva dny nezapomeňte zjistit, kde je ubytování a zejména, kde je ubytován řidič autobusu (u pořadatelů vyžadujte plánek jeho ubytování). Je dobré si vzít na řidiče telefon.
-- Po závodech do 14 dnů dodjete Krisrýně <a href="#cestaky">vyplněné cesťáky</a> a doklady k vyúčtování.
+- Po závodech do 14 dnů dodejte Kristýně <a href="#cestaky">vyplněné cesťáky</a> a doklady k vyúčtování.
 
 <!--
 ---
