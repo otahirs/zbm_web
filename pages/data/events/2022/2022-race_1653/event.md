@@ -4,6 +4,7 @@ taxonomy:
         1: hobby
         2: zaci2
         3: dorost
+        4: zaci1
 id: 2022-race_1653
 start: '2022-04-14'
 end: '2022-04-18'
