@@ -140,13 +140,6 @@ plan:
                 name: Telocvična
                 time: '16:00 - 17:30'
                 place: 'ZŠ Merhautova 37'
-        friday:
-            -
-                group:
-                    - dorost
-                name: kompenzace
-                time: ''
-                place: 'samostatně dle plánu'
         saturday:
             -
                 group:
@@ -154,11 +147,6 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
 ---
 
 <div class="row justify-content-between"> 

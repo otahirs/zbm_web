@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - dorost
 id: 2021-race_1694
 start: '2021-12-19'
 end: '2021-12-19'
