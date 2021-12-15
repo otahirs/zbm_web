@@ -10,22 +10,22 @@ id: 2022-race_1706
 start: '2022-02-19'
 end: '2022-02-19'
 title: 'Mapový trénink žactva'
-place: 'Brno či okolí'
+place: Omice
 type: T
-note: 'Mapový trénink v Brně či blízkém okolí.'
+note: 'Mapový trénink mezi Tetčicemi a Omicemi.'
 template: trenink
 date: '2021-11-15'
 import:
     type: members
     time: 1637000402
-meetTime: ''
-meetPlace: ''
+meetTime: 'cca 9:00'
+meetPlace: 'Brno, hlavní nádraží'
 link: ''
 eventTypeDescription: ''
 startTime: ''
-map: ''
+map: 'Omický les'
 terrain: ''
-transport: ''
+transport: Vlak.
 accomodation: ''
 food: ''
 leader: Luf
@@ -36,4 +36,6 @@ thingsToTake: ''
 signups: ''
 ---
 
-Mapový trénink v Brně či blízkém okolí.
+Mapový trénink mezi Tetčicemi a Omicemi.
+* **sraz**: cca 9:00 Brno, hlavní nádraží
+* **doprava**: Vlak.
