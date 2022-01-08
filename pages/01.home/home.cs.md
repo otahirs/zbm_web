@@ -99,6 +99,8 @@ news:
   <div id="right_box" class="col-md-4">
     <div>
       <h4>Odkazy</h4>
+        <a class="home__link external-link" href="https://bzl.zabiny.club/#races">BZL - Brněnská zimní liga</a>
+        <a class="home__link external-link" href="https://kratkyden.zabiny.club/">Krátký den</a> </br>
         <a class="home__link external-link" href="https://www.orientacnisporty.cz/">Český&nbsp;svaz&nbsp;orientačních&nbsp;sportů</a>
         <a class="home__link external-link" href="https://oris.orientacnisporty.cz/">ORIS</a> </br>
         <a class="home__link external-link" href="http://www.lpu.cz/beda/">Jak&nbsp;to&nbsp;vidí&nbsp;Béďa</a> 
