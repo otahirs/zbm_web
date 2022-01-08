@@ -15,7 +15,7 @@ title: 'BZL - Pohár Legendy'
 link: 'https://oris.orientacnisporty.cz/Zavod?id=6669'
 orisid: '6669'
 place: 'Brno - Vinohrady'
-type: Z
+type: BZL
 template: zavod
 date: '2021-09-24'
 import:
@@ -37,5 +37,6 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasStartlist: true
 ---
 

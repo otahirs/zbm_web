@@ -38,7 +38,7 @@ plan:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '16:30'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/hadasoveno'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
         wednesday:
             -
                 group:
@@ -73,22 +73,35 @@ plan:
                 name: Telocvična
                 time: '16:00 - 17:30'
                 place: 'ZŠ Merhautova 37'
-        saturday:
+        friday:
             -
+                group:
+                    - dorost
+                name: kompenzace
+                time: ''
+                place: 'samostatně dle plánu'
+        saturday:
+            0:
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
+            1641066095627:
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: ''
+                place: 'samostatně dle plánu'
     nextWeek:
         monday:
             -
                 group:
                     - zaci1
                     - zaci2
-                name: 'Změna! Běžecký trénink'
+                name: Tělocvična
                 time: '16:30 – 18:00'
-                place: 'hala Rosnička (jen šatna)'
+                place: 'hala Rosnička'
             -
                 group:
                     - dorost
@@ -96,27 +109,22 @@ plan:
                 time: '15:15 a 18:00'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         tuesday:
-            0:
+            -
                 group:
                     - zabicky
                     - pulci1
                     - pulci2
-                name: 'Vánoční besídka'
+                    - zaci1
+                    - zaci2
+                name: 'Mapový trénink'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            1:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '16:30'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/hadasoveno'
-            1639514248004:
-                group:
-                    - zaci1
-                    - zaci2
-                name: 'Trénink a vánoční besídka'
-                time: '16:00 – 18:00'
-                place: 'ZŠ náměstí Svornosti 7'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
         wednesday:
             -
                 group:
@@ -131,18 +139,26 @@ plan:
                 time: '20:00'
                 place: meet.google.com/gdb-zbif-ghr
         thursday:
-            1:
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:15 – 18:00'
+                place: 'hala Rosnička'
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '17:00'
                 place: 'hala Rosnička'
-            1639513682316:
+            -
                 group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: Samostatně
+                    - pulci1
+                    - pulci2
+                name: Telocvična
+                time: '16:00 - 17:30'
+                place: 'ZŠ Merhautova 37'
         friday:
             -
                 group:

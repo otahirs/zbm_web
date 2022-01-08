@@ -14,7 +14,7 @@ end: '2021-12-05'
 title: 'BZL - Onos cup'
 link: 'https://oris.orientacnisporty.cz/Zavod?id=6668'
 orisid: '6668'
-type: Z
+type: BZL
 template: zavod
 date: '2021-09-24'
 import:

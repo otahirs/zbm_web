@@ -106,7 +106,7 @@ templates:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '16:30'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/hadasoveno'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
         wednesday:
             -
                 group:
