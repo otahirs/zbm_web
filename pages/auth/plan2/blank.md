@@ -81,18 +81,17 @@ plan:
                 time: ''
                 place: 'samostatně dle plánu'
         saturday:
-            0:
+            -
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-            1641066095627:
-                group:
-                    - dorost
-                name: 'Běžecký trénink'
+        sunday:
+            -
+                name: ''
                 time: ''
-                place: 'samostatně dle plánu'
+                place: ''
     nextWeek:
         monday:
             -
