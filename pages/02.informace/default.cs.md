@@ -99,33 +99,36 @@ V případě dotazů ohledně cesťáků nebo potřeby domluvení si výjimky na
 
 ---
 ## Oddílové příspěvky 2021 <a name="prispevky"></a>
-Členské příspěvky je potřeba zaplatit **nejpozději do 26.&nbsp;2.&nbsp;2021**. Zároveň v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2021 - evidence_, dle příslušného typu příspěvku.
+Členské příspěvky je potřeba zaplatit **nejpozději do 20.&nbsp;2.&nbsp;2021**. Zároveň v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2022 - evidence_, dle příslušného typu příspěvku.
 
 Platby proveďte bezhotovostně na účet SK Brno-Žabovřesky u Raifeisenbank 4067843369/5500, vs. xxxx (kde xxxx = registrační číslo).
 
 Ve všech typech příspěvků jsou již zahrnuty povinné odvody SK ve výši 300,–&nbsp;Kč a registrace ČSOS ve výši 100,–&nbsp;Kč.
 
-Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému. Veškeré **dluhy** z minulosti je potřeba vyrovnat taktéž nejpozději **do 26.&nbsp;2.&nbsp;2021**. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, **nebudou přihlašováni na závody!**
+Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému. Veškeré **dluhy** z minulosti je potřeba vyrovnat taktéž nejpozději **do 20.&nbsp;2.&nbsp;2022**. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, **nebudou přihlašováni na závody!**
 
 ### Kolik zaplatím?
 
-| typ příspěvků | částka | závody hrazené oddílem |
-| --- | --- | --- |
-| Žabičky (3 až 6 let) | 1000,– Kč | JmL |
-| Pulci (7 až 10 let) | 1 900,– Kč | JmL |
-| Žáci (11 až 14 let) | 2 500,– Kč | ŽB, JmL |
-| Dorost (15 až 18 let) - licence B, C | 3 000,– Kč | ŽB, JmL |
-| Dorost (15 až 18 let) - licence A <br> Ostatní - Reprezentant ČR, licence E | 2 700,– Kč | ŽA, ŽB, JmL |
-| Ostatní - Licence R | 3 200,– Kč | ŽA, ŽB, JmL |
-| Ostatní - nejezdím nikam nebo málo | 1000,– Kč | --- |
-| Ostatní - jezdím jen na Jihomoravskou ligu | 2 600,– Kč | JmL |
-| Ostatní - jezdím na Jihomoravskou ligu a ŽB | 3 500,– Kč | ŽB, JmL |
-| Ostatní - jezdím všude | 4 500,– Kč | ŽA, ŽB, JmL |
-| Ostatní - registrace za jiný klub OB | 3500 Kč | --- |
+| Skupina | Maximální výše členského příspěvku |
+| --- |--- |
+| Předškoláci | 1 500 Kč |
+| Žactvo (7–14) | 4 000 Kč |
+| Dorost | 4 500 Kč |
+| Dospělý | 5 500 Kč |
+| Dospělý – neaktivní | 1 500 Kč |
+| Dospělý – registrovaný za jiný klub OB | 4 000 Kč |
 
-Sourozenci (Žabičky, Pulci, Žáci, Dorost) – druhý a další sourozenec sleva 30&nbsp;%.
+Každá skupina může formou bonusů získat **slevu** na členských příspěvcích **v rozmezí 500 až 2 400 Kč.**  
 
-Členové oddílu, kteří nebydlí v Brně nebo jeho blízkém okolí, případně v Brně nestudují, mají slevu 500,–&nbsp;Kč (platí pro závodníky s licencí B a vyšší).
+Bonusy lze získat za:
+* zisk či udržení licence (Licence)
+* účast  na alespoň třech závodech (Závody)
+* účast  na alespoň jednom soustředění či táboře (Soustředění)
+* aktivní pomoc při přípravě a pořádání soustředění (Aktivní pomoc)
+
+<a href="{{page.url}}/Členské příspěvky 2022.pdf">-> Tabulka s přehledem příspěvků a možných bonusů zde <-</a>.
+
+Sourozenci (Žabičky, Pulci, Žáci, Dorost) – druhý a další sourozenec sleva 30&nbsp;%. Členové oddílu, kteří nebydlí v Brně nebo jeho blízkém okolí, případně v Brně nestudují, mají slevu 500&nbsp;Kč (platí pro závodníky s licencí B a vyšší).
 
 ### Povinnosti oddílu
 - Oddíl hradí vklady a dopravu (mimo individuální dopravy) na závody ČSOS dle typu zaplacených oddílových příspěvků.
