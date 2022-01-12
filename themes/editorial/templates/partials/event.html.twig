@@ -71,7 +71,7 @@
             <hr>
         {% endif %}
 
-        {% if page.header.link %}
+        {% if page.header.link and not (page.header.link ends with page.url) %}
             <a href="{{page.header.link}}">{{page.header.link}}</a>
             <br>
         {% endif %}
