@@ -1,11 +1,11 @@
 ---
 taxonomy:
     skupina:
-        1: pulci2
-        2: zaci1
-        3: zaci2
-        4: pulci1
-        5: hobby
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - hobby
 id: 2022-race_1704
 start: '2022-01-15'
 end: '2022-01-15'

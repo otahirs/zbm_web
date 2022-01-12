@@ -87,11 +87,6 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
     nextWeek:
         monday:
             -
@@ -115,8 +110,8 @@ plan:
                     - pulci2
                     - zaci1
                     - zaci2
-                name: 'Mapový trénink'
-                time: '16:00 – 18:00'
+                name: 'Mapový trénink - kratší'
+                time: '! 16:00 – 17:00 !'
                 place: 'ZŠ náměstí Svornosti 7'
             -
                 group:
