@@ -53,26 +53,12 @@ plan:
                 time: '20:00'
                 place: meet.google.com/gdb-zbif-ghr
         thursday:
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:15 – 18:00'
-                place: 'hala Rosnička'
-            -
+            1:
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '17:00'
                 place: 'hala Rosnička'
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                name: Telocvična
-                time: '16:00 - 17:30'
-                place: 'ZŠ Merhautova 37'
         friday:
             -
                 group:
@@ -110,8 +96,8 @@ plan:
                     - pulci2
                     - zaci1
                     - zaci2
-                name: 'Mapový trénink - kratší'
-                time: '! 16:00 – 17:00 !'
+                name: 'Mapový trénink'
+                time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
             -
                 group:

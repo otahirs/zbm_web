@@ -16,22 +16,26 @@ date: '2021-11-15'
 import:
     type: members
     time: 1637001002
-meetTime: ''
-meetPlace: ''
+meetTime: '8:00'
+meetPlace: 'Brno, Bohéma'
 link: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
-accomodation: ''
-food: ''
+transport: Auty
+accomodation: 'Na postelích'
+food: 'Plná penze'
 leader: Luf
-return: ''
-price: ''
-program: ''
+return: 'Okolo 19-20 hodiny do Brna.'
+price: "8000 (1. a 2. termín přihlášek)\r\n8500 (po 2. termínu přihlášek)"
+program: 'Tréninky, 2 výlety, závody Lipica Open 2022'
 thingsToTake: ''
 signups: ''
 ---
 
 Soustředění u Středozemního moře ve Slovinsku v době jarních prázdnin. Na závěr soustředění se v sobotu a neděli zúčastníme 2 etap Lipica Open 2022 (https://lipicaopen.com/).
+* **sraz**: 8:00 Brno, Bohéma
+* **doprava**: Auty
+* **ubytování**: Na postelích
+* **strava**: Plná penze

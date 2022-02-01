@@ -1,8 +1,8 @@
 ---
 taxonomy:
     skupina:
-        1: hobby
-        2: dorost
+        - dorost
+        - hobby
 id: 2022-race_1688
 start: '2022-01-14'
 end: '2022-01-14'
@@ -31,7 +31,17 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
-gps: '49.21310, 16.76448'
+gps: '49.2131, 16.76448'
+routes:
+    -
+        name: D15
+        link: 'http://3drerun.worldofo.com/index.php?id=-16894598&type=info'
+    -
+        name: D
+        link: 'http://3drerun.worldofo.com/index.php?id=-16894599&type=info'
+    -
+        name: H
+        link: 'http://3drerun.worldofo.com/index.php?id=-16894600&type=info'
 ---
 
 * **sraz**: 16:15 Naproti Bille, Líšeň, https://mapy.cz/s/cuhopehora

@@ -6,8 +6,8 @@ taxonomy:
         4: zaci2
         5: hobby
 id: 2022-race_1709
-start: '2022-04-01'
-end: '2022-04-03'
+start: '2022-03-25'
+end: '2022-03-27'
 title: 'VT Brno'
 place: 'Brno a blízké okolí'
 type: S
