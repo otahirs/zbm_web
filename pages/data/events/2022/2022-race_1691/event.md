@@ -1,6 +1,8 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - dorost
+        - hobby
 id: 2022-race_1691
 start: '2022-02-18'
 end: '2022-02-18'

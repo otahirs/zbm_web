@@ -19,17 +19,17 @@ date: '2021-11-15'
 import:
     type: members
     time: 1637001602
-place: Svratouch
-meetTime: ''
-meetPlace: ''
+place: Kuklík
+meetTime: '15:20'
+meetPlace: 'Královo pole, nádraží'
 link: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
-accomodation: ''
-food: ''
+transport: Auty/vlakem
+accomodation: 'Na postelích v penzionu Kukla'
+food: 'Společné vaření'
 leader: Luf
 return: ''
 price: ''
@@ -39,3 +39,7 @@ signups: ''
 ---
 
 Podzimní soustředění začínající pátečním sprintem a obsahující závod JmL v Křižánkách.
+* **sraz**: 15:20 Královo pole, nádraží
+* **doprava**: Auty/vlakem
+* **ubytování**: Na postelích v penzionu Kukla
+* **strava**: Společné vaření

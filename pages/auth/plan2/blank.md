@@ -53,26 +53,39 @@ plan:
                 time: '20:00'
                 place: meet.google.com/gdb-zbif-ghr
         thursday:
-            1:
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:15 – 18:00'
+                place: 'hala Rosnička'
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '17:00'
                 place: 'hala Rosnička'
-        friday:
             -
                 group:
-                    - dorost
-                name: kompenzace
-                time: ''
-                place: 'samostatně dle plánu'
+                    - pulci1
+                    - pulci2
+                name: Telocvična
+                time: '16:00 - 17:30'
+                place: 'ZŠ Merhautova 37'
         saturday:
-            -
+            0:
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
+            1644080343536:
+                group:
+                    - dorost
+                name: 'běžecký trénink'
+                time: ''
+                place: individuálně
     nextWeek:
         monday:
             -
@@ -155,9 +168,11 @@ plan:
                 place: Samostatně
         sunday:
             -
-                name: ''
+                group:
+                    - dorost
+                name: 'běžecký trénink'
                 time: ''
-                place: ''
+                place: individuálně
 ---
 
 <div class="row justify-content-between"> 

@@ -5,6 +5,9 @@ taxonomy:
         - hobby
         - zaci2
         - zaci1
+        - pulci2
+        - pulci1
+        - zabicky
 id: 2022-race_1726
 start: '2022-05-21'
 end: '2022-05-21'

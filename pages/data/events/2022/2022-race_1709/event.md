@@ -5,6 +5,8 @@ taxonomy:
         3: zaci1
         4: zaci2
         5: hobby
+        6: zabicky
+        7: pulci1
 id: 2022-race_1709
 start: '2022-03-25'
 end: '2022-03-27'
@@ -24,8 +26,8 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
-accomodation: ''
+transport: 'MHD, neděle dle počtu přihlášených'
+accomodation: Doma
 food: ''
 leader: Luf
 return: ''
@@ -36,3 +38,5 @@ signups: ''
 ---
 
 Klasické soustředění jarní soustředění s přespáním doma.
+* **doprava**: MHD, neděle dle počtu přihlášených
+* **ubytování**: Doma
