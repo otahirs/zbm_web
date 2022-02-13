@@ -27,11 +27,6 @@ primaryImage: {  }
         </a>
     </div>
     <div class="col-md-6">
-        <a href="https://www.nadacecez.cz/" target="_blank">
-        <img class="sponsors--img" src="{{page.route()}}/CEZ.svg" style="padding: 10% 20%;">
-        </a>
-    </div>
-    <div class="col-md-6">
         <a href="https://www.sap.com/cz/products/business-one.html" target="_blank">
         <img class="sponsors--img" src="{{page.route()}}/SAP.svg">
         </a>
