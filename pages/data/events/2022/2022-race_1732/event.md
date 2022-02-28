@@ -17,5 +17,6 @@ date: '2022-01-07'
 import:
     type: members
     time: 1641562802
+place: Přečkovice
 ---
 

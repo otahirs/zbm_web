@@ -2,9 +2,9 @@
 id: 20220226-88aceebc
 template: zavod
 type: BZL
-title: Kauflauf
-start: '2022-02-26'
-end: '2022-02-26'
+title: 'BZL: Kauflauf'
+start: '2022-02-27'
+end: '2022-02-27'
 place: 'Brno - Kohoutovice'
 meetTime: ''
 meetPlace: ''

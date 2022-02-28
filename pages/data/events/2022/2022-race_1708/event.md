@@ -1,9 +1,9 @@
 ---
 taxonomy:
     skupina:
-        1: zaci1
-        2: zaci2
-        3: hobby
+        - zaci1
+        - zaci2
+        - hobby
 id: 2022-race_1708
 start: '2022-03-05'
 end: '2022-03-13'

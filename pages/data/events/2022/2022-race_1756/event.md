@@ -20,5 +20,6 @@ date: '2022-02-10'
 import:
     type: members
     time: 1644474602
+place: Žebětín
 ---
 
