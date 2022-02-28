@@ -99,7 +99,7 @@ V případě dotazů ohledně cesťáků nebo potřeby domluvení si výjimky na
 
 ---
 ## Oddílové příspěvky 2022 <a name="prispevky"></a>
-Členské příspěvky je potřeba zaplatit **nejpozději do 20.&nbsp;2.&nbsp;2022**. Zároveň v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2022 - evidence_, dle příslušného typu příspěvku.
+Členské příspěvky je potřeba zaplatit **nejpozději do 20.&nbsp;2.&nbsp;2022**.  Registrované členy zároveň prosíme - v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2022 - evidence_, dle příslušného typu příspěvku.
 
 Platby proveďte bezhotovostně na účet SK Brno-Žabovřesky u Raifeisenbank 4067843369/5500, vs. xxxx (kde xxxx = registrační číslo).
 
