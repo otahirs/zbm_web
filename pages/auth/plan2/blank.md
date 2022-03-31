@@ -87,6 +87,11 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
+        sunday:
+            -
+                name: ''
+                time: ''
+                place: ''
     nextWeek:
         monday:
             -

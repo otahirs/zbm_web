@@ -11,5 +11,8 @@ date: '2022-02-09'
 import:
     type: members
     time: 1644388202
+place: Čeřínek
+note: 'Jestli nemáte zájem o ubytování, napište to do poznámky.'
 ---
 
+Jestli nemáte zájem o ubytování, napište to do poznámky.

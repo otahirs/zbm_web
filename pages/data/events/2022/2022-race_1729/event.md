@@ -1,8 +1,8 @@
 ---
 taxonomy:
     skupina:
-        - dorost
-        - hobby
+        1: hobby
+        2: dorost
 id: 2022-race_1729
 start: '2022-05-22'
 end: '2022-05-22'
@@ -15,5 +15,23 @@ date: '2022-01-07'
 import:
     type: members
     time: 1641561602
+place: 'KV?'
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: 'BUS DPmB'
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
+* **doprava**: BUS DPmB

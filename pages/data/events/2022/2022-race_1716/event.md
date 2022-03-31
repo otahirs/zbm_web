@@ -1,10 +1,10 @@
 ---
 taxonomy:
     skupina:
+        - zaci1
+        - zaci2
         - dorost
         - hobby
-        - zaci2
-        - zaci1
 id: 2022-race_1716
 start: '2022-03-20'
 end: '2022-03-20'
@@ -18,5 +18,22 @@ date: '2021-12-14'
 import:
     type: members
     time: 1639515602
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: auty
+accomodation: ''
+food: ''
+leader: Jenda
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
+* **doprava**: auty

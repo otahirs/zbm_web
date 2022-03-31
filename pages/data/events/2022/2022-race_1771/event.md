@@ -15,5 +15,6 @@ date: '2022-02-14'
 import:
     type: members
     time: 1644844802
+place: Struhařov
 ---
 

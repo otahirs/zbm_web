@@ -1,7 +1,7 @@
 ---
 taxonomy:
     skupina:
-        - dorost
+        1: dorost
 id: 2022-race_1652
 start: '2022-03-03'
 end: '2022-03-12'
@@ -26,10 +26,56 @@ leader: Jenda
 note: 'Na místě se budeme dopravovat zapůjčenými auty, prosím ozvěte se mi s přihláškou, budu auta objednávat co nejdřív dle zaplnění.'
 return: 'V neděli 0:10 do Brna. Bude-li potřeba, zařídíme možnost přespání po návratu v Brně.'
 price: 'max 6000, nezahrnuje letenky a jídlo, pokud budeme levnější, bude cena nižší (v tuto chvíli je cena ubytování ~100e, auto / 5 lidí 171-185$, vlak na letiště 2x300Kč, cena za mapy zatím neznámá, příspěvek oddílu zatím není přesně daný, bude záležet i na počtu lidí)'
-program: "Orientační běh v jednom z nejluxusnějších evropských terénů!\r\n\r\n| Den |      | typ                                           | mapa              | rychlost        | parkování                    |\r\n|-----|------|-----------------------------------------------|-------------------|-----------------|------------------------------|\r\n| pa  | dopo | seznamovák: linie, výrazné objekty, plánování | Potensac          | volně           | https://mapy.cz/s/kakefuhava |\r\n|     | odpo | stinovaná-sudá-lichá                          | Figayrol          | volně           |                              |\r\n| so  | dopo | long                                          | Figayrol          | středně/na mapu |                              |\r\n|     | odpo | volno/výlet                                   |                   |                 |                              |\r\n| ne  | dopo | sprintové úseky/štafety                       | Millau            | závodně         |                              |\r\n|     | odpo | koridory                                      | Les Bousquetnnous | volně           |                              |\r\n| po  | dopo | štafety                                       | Clarrisac         | závodně         |                              |\r\n|     | odpo | volno/výlet                                   |                   |                 |                              |\r\n| ut  | dopo | linie, kp, mikrosprint                        | Guilhaumard       | volně + rychle  | https://mapy.cz/s/holefozatu |\r\n|     | odpo | okruhy/semtamy                                | Guilhaumard       | rychle          | https://mapy.cz/s/holefozatu |\r\n| st  | dopo | vrstvenicovka                                 | St Jean           | volně ++        |                              |\r\n|     | odpo | volno/výlet                                   |                   |                 |                              |\r\n| ct  | dopo | bludiště-middle                               | Guilhaumard       | volně           | https://mapy.cz/s/holefozatu |\r\n|     | odpo | rozložený úsek                                | Mt. Merdous       | rychle          |                              |\r\n| pa  | dopo | shluky - spojené do tratě                     | Ste Eulalie       | středně/na mapu |                              |\r\n|     | odpo | volno/věšák-sběrák                            | Figayrol          | volně           |                              |\r\n| so  | dopo | middle                                        | Escandorque       | závodně         |                              |\r\n|     | odpo | výlet                                         |                   |                 |                              |\r\n\r\n\r\n[Ukázka mapy](http://www.orientabonito.fr/doma/map_images/1687.blank.jpg)"
+program: "Orientační běh v jednom z nejluxusnějších evropských terénů!\r\n\r\n| Den |      | typ                                           | mapa              | rychlost        | parkování                    |\r\n|-----|------|-----------------------------------------------|-------------------|-----------------|------------------------------|\r\n| pa  | dopo | seznamovák: linie, výrazné objekty, plánování | Potensac          | volně           | https://mapy.cz/s/kakefuhava |\r\n|     | odpo | stinovaná-sudá-lichá                          | Figayrol          | volně           | https://mapy.cz/s/fejujebufa |\r\n| so  | dopo | long                                          | Figayrol          | středně/na mapu | https://mapy.cz/s/jevofubevu |\r\n|     | odpo | volno/výlet                                   |                   |                 |                              |\r\n| ne  | dopo | sprintové úseky/štafety                       | Millau            | závodně         | https://mapy.cz/s/fomapulasu |\r\n|     | odpo | koridory                                      | Les Bousquetnnous | volně           | https://mapy.cz/s/fejujebufa |\r\n| po  | dopo | štafety                                       | Clarrisac         | závodně         |                              |\r\n|     | odpo | volno/výlet                                   |                   |                 |                              |\r\n| ut  | dopo | linie, kp, mikrosprint                        | Guilhaumard       | volně + rychle  | https://mapy.cz/s/holefozatu |\r\n|     | odpo | okruhy/semtamy                                | Guilhaumard       | rychle          | https://mapy.cz/s/holefozatu |\r\n| st  | dopo | vrstvenicovka                                 | St Jean           | volně ++        | https://mapy.cz/s/podozukogu |\r\n|     | odpo | volno/výlet                                   |                   |                 | https://mapy.cz/s/hefanapaja |\r\n| ct  | dopo | bludiště-middle                               | Guilhaumard       | volně           | https://mapy.cz/s/nabepegure |\r\n|     | odpo | rozložený úsek                                | Mt. Merdous       | rychle          | https://mapy.cz/s/lazapatulo |\r\n| pa  | dopo | shluky - spojené do tratě                     | Ste Eulalie       | středně/na mapu | https://mapy.cz/s/porahanece |\r\n|     | odpo | volno/věšák-sběrák                            | Figayrol          | volně           | https://mapy.cz/s/jevofubevu |\r\n| so  | dopo | middle                                        | Escandorque       | závodně         |                              |\r\n|     | odpo | výlet                                         |                   |                 |                              |\r\n\r\n\r\n[Ukázka mapy](http://www.orientabonito.fr/doma/map_images/1687.blank.jpg)"
 thingsToTake: ''
 signups: ''
 link: 'https://zabiny.club/data/events/2022/2022-race_1652'
+routes:
+    -
+        name: '#01 - úvod'
+        link: 'http://3drerun.worldofo.com/?id=-16902780&type=info'
+    -
+        name: '#02 - Sudá - lichá'
+        link: 'http://3drerun.worldofo.com/?id=-16902868&type=info'
+    -
+        name: '#03 - long'
+        link: 'http://3drerun.worldofo.com/index.php?id=-16902923&type=info'
+    -
+        name: '#04 - KO sprint'
+        link: 'https://drive.google.com/drive/folders/1GxoFXEwlzwY-s4cTM0iOemQxLfHvPVVW?usp=sharing'
+    -
+        name: '#05 - koridory'
+        link: 'http://3drerun.worldofo.com/index.php?id=-16903281&type=info'
+    -
+        name: '#06 - štafety'
+        link: 'https://drive.google.com/drive/folders/1HE1coDKPdwF_bM4SUDs1utgE3sug1g0Z?usp=sharing'
+    -
+        name: '#07 - linie + krátké postupy'
+        link: 'http://3drerun.worldofo.com/index.php?id=-16903660&type=info'
+    -
+        name: '#07 - mikrosprint'
+        link: 'http://3drerun.worldofo.com/?id=-16903661&type=info'
+    -
+        name: '#08 - semtamy'
+        link: 'http://3drerun.worldofo.com/?id=-16903647&type=info'
+    -
+        name: '#09 - vrstevnicovka'
+        link: 'http://3drerun.worldofo.com/index.php?id=-16903752&type=info'
+    -
+        name: '#10 - middle'
+        link: 'http://3drerun.worldofo.com/index.php?id=-16903853&type=info'
+    -
+        name: '#11 - rozložený štafetový úsek'
+        link: 'http://3drerun.worldofo.com/?id=-16903898&type=info'
+    -
+        name: '#12 - shluky'
+        link: 'http://3drerun.worldofo.com/?id=-16903979&type=info'
+    -
+        name: '#13 - věšák-sběrák'
+        link: TBD
+    -
+        name: '#14 - middle'
+        link: 'http://3drerun.worldofo.com/?id=-16904295&type=info'
 ---
 
 Na místě se budeme dopravovat zapůjčenými auty, prosím ozvěte se mi s přihláškou, budu auta objednávat co nejdřív dle zaplnění.

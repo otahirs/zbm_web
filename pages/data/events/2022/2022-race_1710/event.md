@@ -5,9 +5,9 @@ taxonomy:
         2: zaci2
         3: zaci1
         4: pulci2
-        5: dorost
         6: pulci1
         7: zabicky
+        8: dorost
 id: 2022-race_1710
 start: '2022-05-06'
 end: '2022-05-08'
