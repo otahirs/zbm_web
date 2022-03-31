@@ -8,7 +8,7 @@ class CalendarExport extends \Grav\Common\Twig\TwigExtension
     {
         return 'CalendarExport';
     }
-    public function getFunctions()
+    public function getFunctions() : array
     {
         return [
             new \Twig_SimpleFunction('phpCalendarExport', [$this, 'calendarExport']),  

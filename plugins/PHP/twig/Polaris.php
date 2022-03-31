@@ -12,7 +12,7 @@ class Polaris extends \Grav\Common\Twig\TwigExtension
     {
         return 'Polaris';
     }
-    public function getFunctions()
+    public function getFunctions() : array
     {
         return [
             new \Twig_SimpleFunction('phpSavePolaris', [$this, 'SavePolaris']),

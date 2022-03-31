@@ -22,7 +22,7 @@ primaryImage: {  }
 <hr>
 <h2>Další užitečné kontakty</h2>
 **Finance:** Aleš Finstrle - koordinator@zabiny.club
-**Přihlášky na závody:** Jan Drábek - drbca@centrum.cz
+**Přihlášky na závody:** Jan Drábek - prihlasky@zabiny.club
 **IT - přihláškový systém:** Lukáš König - kenia@seznam.cz  
 **IT - web:** Otakar Hirš - otakar.hirs@gmail.com
 **Sklad:** Štěpán Zimmermann - stepazdepa@seznam.cz
@@ -68,12 +68,15 @@ primaryImage: {  }
     <div class="divOuter col-lg-6" id="zabicky">
         <div class="contact--divInner">
         <h3>Žabičky - do 6 let</h3>
-            <h4>Aleš Finstrle</h4>
+            <h4>Veronika Křístková</h4>
             <ul class="fa-ul">
-                <li><i class="fa-li fa fa-phone"></i>603 523 183</li>
-                <li><i class="fa-li fa fa-envelope"></i>ales.finstrle@gmail.com</li>
+                <li><i class="fa-li fa fa-envelope"></i>fricco@seznam.cz</li>
             </ul>
-        </div>  
+            <h4>Stachoňová	Barbara</h4>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-envelope"></i>reibara@seznam.cz</li>
+            </ul>
+        </div>
     </div>
     <div class="divOuter col-lg-6" id="pulci1">
         <div class="contact--divInner">
@@ -82,11 +85,7 @@ primaryImage: {  }
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-phone"></i>777 631 615</li>
                 <li><i class="fa-li fa fa-envelope"></i>kocovalenka@gmail.com</li>
-            </ul>  
-            <h4>Hanka Nedbálková</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>hana.nedbalkova@seznam.cz</li>
-            </ul>      
+            </ul>    
             <h4>Jan Drábek</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>drbca@centrum.cz</li>

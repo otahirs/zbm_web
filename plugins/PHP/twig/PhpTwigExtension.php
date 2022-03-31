@@ -13,7 +13,7 @@ class PhpTwigExtension extends \Grav\Common\Twig\TwigExtension
     {
         return 'PhpTwigExtension';
     }
-    public function getFunctions()
+    public function getFunctions() : array
     {
         return [
             new \Twig_SimpleFunction('phpTest', [$this, 'Test']),        
