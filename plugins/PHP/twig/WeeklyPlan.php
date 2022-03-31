@@ -12,7 +12,7 @@ class WeeklyPlan extends \Grav\Common\Twig\TwigExtension
     {
         return 'WeeklyPlan';
     }
-    public function getFunctions()
+    public function getFunctions() : array
     {
         return [
             new \Twig_SimpleFunction('phpSavePlan2', [$this, 'SavePlan2']),
