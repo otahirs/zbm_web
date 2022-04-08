@@ -238,7 +238,7 @@ access:
         </div>
         </fieldset>
         {% endfor %}
-        <button id="addRoute" type="button">přdat další</button>
+        <button id="addRoute" type="button">přidat další</button>
     </div>
     <div id="results" class="tab-content">
         {% for results in event.header.results %}
@@ -253,7 +253,7 @@ access:
         </div>
         </fieldset>
         {% endfor %}
-        <button id="addResults" type="button">přdat další</button>
+        <button id="addResults" type="button">přidat další</button>
     </div>        
     <hr>
     <div class="row row justify-content-between">
