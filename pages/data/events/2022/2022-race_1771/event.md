@@ -16,5 +16,6 @@ import:
     type: members
     time: 1644844802
 place: Struhařov
+hasStartlist: true
 ---
 

@@ -1,13 +1,14 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        2: dorost
 id: 2022-race_1789
 start: '2022-05-07'
 end: '2022-05-08'
-title: 'D+: příprava na sprinty'
+title: 'Příprava na sprintová MČR'
 place: Brno
-type: T
-template: trenink
+type: S
+template: soustredeni
 date: '2022-03-23'
 import:
     type: members
@@ -22,11 +23,11 @@ terrain: ''
 transport: ''
 accomodation: ''
 food: ''
-leader: ''
+leader: Jenda
 note: ''
 return: ''
-price: ''
-program: ''
+price: '0,-'
+program: "3 mapové tréninky v okolí Brna\r\n- sprint\r\n- sprintové štafety\r\n- štafety"
 thingsToTake: ''
 signups: ''
 ---

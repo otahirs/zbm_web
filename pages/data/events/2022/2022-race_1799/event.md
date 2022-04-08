@@ -1,18 +1,17 @@
 ---
 taxonomy:
-    skupina:
-        2: dorost
-id: 2022-race_1788
-start: '2022-05-27'
-end: '2022-05-29'
-title: 'Mapová příprava na MČR na krátké trati'
-place: 'Karlov v Jizerských horách'
-type: S
-template: soustredeni
-date: '2022-03-23'
+    skupina: {  }
+id: 2022-race_1799
+start: '2022-06-14'
+end: '2022-06-14'
+title: 'D+ mapáč: vrstevnicovka'
+place: Ivančice
+type: T
+template: trenink
+date: '2022-04-04'
 import:
     type: members
-    time: 1648068602
+    time: 1649050202
 meetTime: ''
 meetPlace: ''
 link: ''
@@ -30,5 +29,6 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.08254, 16.40949'
 ---
 

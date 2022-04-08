@@ -1,8 +1,8 @@
 ---
 taxonomy:
     skupina:
-        1: hobby
-        2: dorost
+        - dorost
+        - hobby
 id: 2022-race_1784
 start: '2022-04-02'
 end: '2022-04-02'
@@ -32,6 +32,13 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.47228, 16.71118'
+routes:
+    -
+        name: D
+        link: 'http://3drerun.worldofo.com/index.php?id=-16908495&type=info'
+    -
+        name: H
+        link: 'http://3drerun.worldofo.com/?id=-16908496&type=info'
 ---
 
 * **sraz**: 18:15 Kr. Pole, nádraží

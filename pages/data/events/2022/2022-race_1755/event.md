@@ -1,13 +1,13 @@
 ---
 taxonomy:
     skupina:
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
         - dorost
         - hobby
-        - zaci2
-        - zaci1
-        - pulci2
-        - pulci1
-        - zabicky
 id: 2022-race_1755
 start: '2022-04-02'
 end: '2022-04-02'
@@ -38,6 +38,8 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '48.9454, 16.312'
+hasStartlist: true
+hasResults: true
 ---
 
 návrat do Brna po skončení závodu

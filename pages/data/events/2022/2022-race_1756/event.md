@@ -1,13 +1,13 @@
 ---
 taxonomy:
     skupina:
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
         - dorost
         - hobby
-        - zaci2
-        - zaci1
-        - pulci2
-        - pulci1
-        - zabicky
 id: 2022-race_1756
 start: '2022-04-09'
 end: '2022-04-09'
@@ -21,5 +21,28 @@ import:
     type: members
     time: 1644474602
 place: Žebětín
+meetTime: '9:30'
+meetPlace: 'louka nad zastávkou Ríšova'
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: "samostatně MHD\r\nKdo by měl zájem o přibližovací sraz, ozvěte se mailem Lufovi"
+accomodation: ''
+food: ''
+leader: Luf
+note: "Na shromaždišti stan a vlajka.\r\nVyhlášení okolo 13:15."
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.2048, 16.4773'
+hasStartlist: true
 ---
 
+Na shromaždišti stan a vlajka.
+Vyhlášení okolo 13:15.
+* **sraz**: 9:30 louka nad zastávkou Ríšova
+* **doprava**: samostatně MHD
+Kdo by měl zájem o přibližovací sraz, ozvěte se mailem Lufovi

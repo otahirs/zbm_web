@@ -1,18 +1,19 @@
 ---
 taxonomy:
     skupina:
-        2: dorost
-id: 2022-race_1788
-start: '2022-05-27'
-end: '2022-05-29'
-title: 'Mapová příprava na MČR na krátké trati'
-place: 'Karlov v Jizerských horách'
-type: S
-template: soustredeni
-date: '2022-03-23'
+        - dorost
+        - hobby
+id: 2022-race_1803
+start: '2022-09-20'
+end: '2022-09-20'
+title: 'D+ mapáč: 1. úsek štafet'
+place: Neslovice
+type: T
+template: trenink
+date: '2022-04-04'
 import:
     type: members
-    time: 1648068602
+    time: 1649050802
 meetTime: ''
 meetPlace: ''
 link: ''
@@ -30,5 +31,6 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.13305, 16.39200'
 ---
 
