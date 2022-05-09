@@ -25,13 +25,15 @@ terrain: ''
 transport: 'BUS DPmB'
 accomodation: ''
 food: ''
-leader: ''
-note: ''
+leader: Jenda
+note: '**Pojede se už v pátek odpoledne.**'
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '50.3342, 12.772'
 ---
 
+**Pojede se už v pátek odpoledne.**
 * **doprava**: BUS DPmB

@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - dorost
 id: 2022-race_1794
 start: '2022-05-10'
 end: '2022-05-10'

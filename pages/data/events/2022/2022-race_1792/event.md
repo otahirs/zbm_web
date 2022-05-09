@@ -1,7 +1,7 @@
 ---
 taxonomy:
     skupina:
-        1: hobby
+        - hobby
 id: 2022-race_1792
 start: '2022-04-06'
 end: '2022-04-06'

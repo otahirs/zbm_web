@@ -9,7 +9,7 @@ taxonomy:
         6: pulci1
         7: zabicky
 id: 2022-race_1712
-start: '2022-09-30'
+start: '2022-09-28'
 end: '2022-10-02'
 title: 'VT Vysočina'
 type: S

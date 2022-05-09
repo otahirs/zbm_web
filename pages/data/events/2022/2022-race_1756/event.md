@@ -23,7 +23,7 @@ import:
 place: Žebětín
 meetTime: '9:30'
 meetPlace: 'louka nad zastávkou Ríšova'
-eventTypeDescription: ''
+eventTypeDescription: 'https://obpostupy.orientacnisporty.cz/zavod/31dc15305eb845119bd5519ca8008875'
 startTime: ''
 map: ''
 terrain: ''
@@ -39,6 +39,7 @@ thingsToTake: ''
 signups: ''
 gps: '49.2048, 16.4773'
 hasStartlist: true
+hasResults: true
 ---
 
 Na shromaždišti stan a vlajka.

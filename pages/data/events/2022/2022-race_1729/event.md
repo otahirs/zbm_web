@@ -26,12 +26,14 @@ transport: 'BUS DPmB'
 accomodation: ''
 food: ''
 leader: ''
-note: ''
+note: '**Pojede se už v pátek odpoledne.**'
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '50.3344, 12.7719'
 ---
 
+**Pojede se už v pátek odpoledne.**
 * **doprava**: BUS DPmB

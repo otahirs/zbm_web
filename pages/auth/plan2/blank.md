@@ -9,21 +9,21 @@ process:
 plan:
     thisWeek:
         monday:
-            1:
+            -
+                group:
+                    - dorost
+                name: 'Atletické posilko'
+                time: '16:45'
+                place: 'Nám. Svornosti, https://mapy.cz/s/cubasamuca'
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '16:30 – 18:00'
                 place: 'hala Rosnička'
-            1648987889212:
-                group:
-                    - dorost
-                name: Posilovna
-                time: '15:15 a 18:00'
-                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         tuesday:
-            0:
+            -
                 group:
                     - zabicky
                     - pulci1
@@ -32,22 +32,16 @@ plan:
                     - zaci2
                 name: 'Mapový trénink'
                 time: '16:00 – 18:00'
-                place: 'U buku'
-            1648987912185:
-                group:
-                    - dorost
-                name: 'Běžecký trénink'
-                time: '16:30'
-                place: 'https://mapy.cz/s/lafehafofa, škola je zavřená '
+                place: 'okolí Brna'
         wednesday:
-            1648987994059:
+            -
                 group:
                     - dorost
-                name: 'Posilovna + běh dle plánu'
+                name: Posilovna
                 time: '15:15 a 18:00'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         thursday:
-            0:
+            -
                 group:
                     - pulci1
                     - pulci2
@@ -56,12 +50,12 @@ plan:
                 name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
                 place: 'Stadion pod Palackého vrchem'
-            1648988027465:
+            -
                 group:
                     - dorost
-                name: 'Běžecký trénink'
+                name: Dráha
                 time: '17:00'
-                place: 'hala Rosnička'
+                place: 'Areál VUT, pPv'
         friday:
             -
                 name: ''
@@ -104,9 +98,9 @@ plan:
             -
                 group:
                     - dorost
-                name: 'Atletické posilko'
-                time: '16:45'
-                place: 'Rosnička, https://mapy.cz/s/kelafukare'
+                name: Posilka
+                time: '15:15 a 18:00'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         thursday:
             -
                 group:
@@ -123,6 +117,11 @@ plan:
                 name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, pPv'
+        friday:
+            -
+                name: ''
+                time: ''
+                place: ''
         saturday:
             -
                 group:
@@ -130,6 +129,11 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: Samostatně
+        sunday:
+            -
+                name: ''
+                time: ''
+                place: ''
 ---
 
 <div class="row justify-content-between"> 

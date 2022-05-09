@@ -39,9 +39,9 @@ templates:
             -
                 group:
                     - dorost
-                name: 'Atletické posilko'
-                time: '16:45'
-                place: 'Rosnička, https://mapy.cz/s/kelafukare'
+                name: Posilka
+                time: '15:15 a 18:00'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         thursday:
             -
                 group:

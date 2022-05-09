@@ -34,6 +34,7 @@ thingsToTake: ''
 signups: ''
 gps: '49.9556, 14.7482'
 hasStartlist: true
+hasResults: true
 ---
 
 Centrem závodu je Struhařov, lesní prostor je vymezen obcemi Struhařov, Svojetice, Černé Voděrady, Zvánovice.
