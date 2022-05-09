@@ -11,9 +11,12 @@ p {
 }
 </style>
 
-Náš klub orientačního běhu je jednou ze sekcí Sportovního klubu Žabovřesky Brno, který započal svou činnost kolem roku 1978. Dlouhodobě patříme mezi největší a nejúspěšnější oddíly orientačního běhu v České republice. Naše členy najdeme v juniorském i dospělém českém reprezentačním týmu. Současnými oporami české reprezentace jsou Adéla Indráková, Marek Minář a Miloš Nykodým, vítěz závodu Světového poháru z roku 2018.
-
-Oddíl pořádá každoročně několik závodů. Pravidelně to jsou oblastní žebříčky či závody Brněnská zimní ligy. Od začátku století jsme uspořádali také všechny možné větší akce spojené s českým orientačním během. Tou největší bylo, když brněnské oddíly pořádaly Světový pohár v orientačním běhu v roce 2002. Dále jsme uspořádali všechna důležitá Mistrovství ČR: na krátké trati (2006, Růžená), na dlouhé trati (2008, Jedovnice), na klasické trati (2009, Blansko-Palava), noční (2011, Ruprechtov, 2015, Bukovinka), štafet a klubů (2012, Březina), a sprintu a sprintových štafet (2017, Brno). Další závody byly závody Českého poháru, Žebříčku A, Akademické mistrovství ČR. Nejbližší velký závod, který nás čeká, je MČR na klasické trati v roce 2020 u Víru.
+Dlouhodobě patříme mezi největší a nejúspěšnější oddíly orientačního běhu v České republice. Naše členy najdete i v českých reprezentačních týmech.
+Současnými oporami české reprezentace jsou Adéla Finstrlová a Miloš Nykodým, vítěz závodu Světového poháru z roku 2018.
+Oddíl pořádá každoročně několik závodů. Pravidelně to jsou oblastní žebříčky či závody Brněnské zimní ligy.
+Od začátku století jsme uspořádali také všechny možné větší akce spojené s českým orientačním během. Tou největší byl Světový pohár v orientačním běhu v roce 2002 v režii všech brněnských oddílů.
+Dále jsme uspořádali všechny typy Mistrovství ČR: na krátké trati (2006, Růžená), na dlouhé trati (2008, Jedovnice), na klasické trati (2009, Blansko-Palava, 2020, Vír), noční (2011, Ruprechtov, 2015, Bukovinka), štafet a klubů (2012, Březina), a sprintu a sprintových štafet (2017, Brno).
+Pravidelně organizujeme tréninky pro všechny věkové i výkonnostní kategorie od nejmenších dětí přes dorostence až po hobby skupinu s veterány.
 
 ## A jak to v Žabinách chodí?
 
