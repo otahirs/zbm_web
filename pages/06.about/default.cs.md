@@ -11,11 +11,8 @@ p {
 }
 </style>
 
-Dlouhodobě patříme mezi největší a nejúspěšnější oddíly orientačního běhu v České republice. Naše členy najdete i v českých reprezentačních týmech.
-Současnými oporami české reprezentace jsou Adéla Finstrlová a Miloš Nykodým, vítěz závodu Světového poháru z roku 2018.
-Oddíl pořádá každoročně několik závodů. Pravidelně to jsou oblastní žebříčky či závody Brněnské zimní ligy.
-Od začátku století jsme uspořádali také všechny možné větší akce spojené s českým orientačním během. Tou největší byl Světový pohár v orientačním běhu v roce 2002 v režii všech brněnských oddílů.
-Dále jsme uspořádali všechny typy Mistrovství ČR: na krátké trati (2006, Růžená), na dlouhé trati (2008, Jedovnice), na klasické trati (2009, Blansko-Palava, 2020, Vír), noční (2011, Ruprechtov, 2015, Bukovinka), štafet a klubů (2012, Březina), a sprintu a sprintových štafet (2017, Brno).
+Dlouhodobě patříme mezi největší a nejúspěšnější oddíly orientačního běhu v České republice. Naše členy najdete i v českých reprezentačních týmech. Současnými oporami české reprezentace jsou Adéla Finstrlová a Miloš Nykodým, vítěz závodu Světového poháru z roku 2018. Oba se pyšní výsledky v top 10 na místrovstvích světa.
+Oddíl pořádá každoročně několik závodů. Pravidelně to jsou oblastní žebříčky či závody Brněnské zimní ligy. Od začátku století jsme uspořádali také všechny možné větší akce spojené s českým orientačním během. Tou největší byl Světový pohár v orientačním běhu v roce 2002 v režii všech brněnských oddílů. Dále jsme uspořádali všechny typy Mistrovství ČR: na krátké trati (2006, Růžená), na dlouhé trati (2008, Jedovnice), na klasické trati (2009, Blansko-Palava, 2020, Vír), noční (2011, Ruprechtov, 2015, Bukovinka), štafet a klubů (2012, Březina), a sprintu a sprintových štafet (2017, Brno).
 Pravidelně organizujeme tréninky pro všechny věkové i výkonnostní kategorie od nejmenších dětí přes dorostence až po hobby skupinu s veterány.
 
 ## A jak to v Žabinách chodí?
