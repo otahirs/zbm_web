@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - hobby
 id: 2022-race_1809
 start: '2022-05-11'
 end: '2022-05-11'

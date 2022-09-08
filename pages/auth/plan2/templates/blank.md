@@ -14,15 +14,15 @@ templates:
             -
                 group:
                     - dorost
-                name: 'Atletické posilko'
-                time: '16:45'
-                place: 'Nám. Svornosti, https://mapy.cz/s/cubasamuca'
+                name: Posilka
+                time: '15:15 a 18:00'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
             -
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
-                time: '16:30 – 18:00'
+                time: '17:00 – 18:30'
                 place: 'hala Rosnička'
         tuesday:
             -
@@ -82,7 +82,7 @@ templates:
                     - zaci1
                     - zaci2
                 name: Tělocvična
-                time: '16:30 – 18:00'
+                time: '17:00 – 18:00'
                 place: 'hala Rosnička'
             -
                 group:

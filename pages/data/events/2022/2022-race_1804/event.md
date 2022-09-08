@@ -12,5 +12,22 @@ date: '2022-04-04'
 import:
     type: members
     time: 1649050802
+meetTime: ''
+meetPlace: ''
+link: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 

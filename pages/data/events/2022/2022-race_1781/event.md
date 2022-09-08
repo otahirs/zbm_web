@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - hobby
 id: 2022-race_1781
 start: '2022-08-26'
 end: '2022-08-28'
@@ -14,5 +15,22 @@ date: '2022-02-18'
 import:
     type: members
     time: 1645182002
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+hasResults: true
 ---
 

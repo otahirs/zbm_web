@@ -17,5 +17,6 @@ date: '2022-01-10'
 import:
     type: members
     time: 1641817202
+place: 'Vítězná - Záboří'
 ---
 

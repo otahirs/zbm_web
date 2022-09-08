@@ -13,7 +13,7 @@ eventTypeDescription: 'Z+A - okruhy, B - shluky, C - sudá/lichá'
 startTime: ''
 map: ''
 terrain: ''
-transport: "Pavlovská - zastávka MHD 37\r\npřibližovací srazy:\r\nSkácelova\r\nHalasovo náměstí"
+transport: "Pavlovská - zastávka MHD 37\r\npřibližovací srazy:\r\nSkácelova 15:20\r\nHalasovo náměstí 15:10"
 accomodation: ''
 food: ''
 leader: ''
@@ -25,15 +25,15 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        1: pulci1
-        2: pulci2
-        3: zaci1
-        4: zaci2
-        5: zabicky
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
 ---
 
 * **sraz**: 16:15 značeno fáborky ze zastávky Pavlovská
 * **doprava**: Pavlovská - zastávka MHD 37
 přibližovací srazy:
-Skácelova
-Halasovo náměstí
+Skácelova 15:20
+Halasovo náměstí 15:10

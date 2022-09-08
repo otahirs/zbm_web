@@ -15,5 +15,6 @@ date: '2022-01-10'
 import:
     type: members
     time: 1641817201
+place: Svitava
 ---
 

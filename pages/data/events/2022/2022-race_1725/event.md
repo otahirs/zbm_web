@@ -1,10 +1,10 @@
 ---
 taxonomy:
     skupina:
-        1: zaci2
-        2: dorost
-        3: hobby
-        4: zaci1
+        - zaci1
+        - zaci2
+        - dorost
+        - hobby
 id: 2022-race_1725
 start: '2022-05-15'
 end: '2022-05-15'
@@ -35,6 +35,7 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '50.0485, 14.3492'
+hasResults: true
 ---
 
 Den po mistrovském závodě ve sprintu čekají naše nejlepší závodníky sprintové štafety. Šampionát zavede závodníky do stejného prostoru jako sprint, tj. do městské části Praha 13. Terén tedy bude obdobný jako den předtím, ale jiný bude stavitel tratí, tratě postaví Radim Hošek. Závod proběhne pod dohledem televizních kamer, přímý přenos ze závodu kategorie dospělých bude v programu České televize (start proto bude docela brzy, již v 9:15 hod.). 

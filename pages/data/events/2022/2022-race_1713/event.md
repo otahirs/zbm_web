@@ -1,6 +1,8 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - dorost
+        - hobby
 id: 2022-race_1713
 start: '2022-12-08'
 end: '2022-12-11'
@@ -12,5 +14,22 @@ date: '2021-12-12'
 import:
     type: members
     time: 1639336802
+meetTime: ''
+meetPlace: ''
+link: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 

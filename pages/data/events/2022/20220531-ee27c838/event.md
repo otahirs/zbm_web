@@ -10,10 +10,10 @@ meetTime: '16:15'
 meetPlace: 'značeno fáborky ze zastávky Kouty'
 link: ''
 eventTypeDescription: 'Z+A - COB, B - azimutové okruhy, C - SUI hra'
-startTime: ''
+startTime: 'https://mapy.cz/s/pamavubofa'
 map: ''
 terrain: ''
-transport: "Kouty - zastávka MHD 41, 71\r\npřibližovací srazy:\r\nSkácelova\r\nHalasovo náměstí"
+transport: "Kouty - zastávka MHD 41, 71\r\npřibližovací srazy:\r\nSkácelova 15:30 (odjezd 72 v 15:35)\r\nHalasovo náměstí 15:30 - auty"
 accomodation: ''
 food: ''
 leader: ''
@@ -25,15 +25,14 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        1: pulci1
-        2: pulci2
-        3: zaci1
-        4: zaci2
-        5: zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
 ---
 
 * **sraz**: 16:15 značeno fáborky ze zastávky Kouty
 * **doprava**: Kouty - zastávka MHD 41, 71
 přibližovací srazy:
-Skácelova
-Halasovo náměstí
+Skácelova 15:30 (odjezd 72 v 15:35)
+Halasovo náměstí 15:30 - auty

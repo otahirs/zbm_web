@@ -1,10 +1,10 @@
 ---
 taxonomy:
     skupina:
+        - zaci1
+        - zaci2
         - dorost
         - hobby
-        - zaci2
-        - zaci1
 id: 2022-race_1791
 start: '2022-05-20'
 end: '2022-05-20'
@@ -18,5 +18,6 @@ date: '2022-03-29'
 import:
     type: members
     time: 1648553402
+hasResults: true
 ---
 

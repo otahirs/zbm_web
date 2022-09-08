@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - hobby
 id: 2022-race_1735
 start: '2022-06-26'
 end: '2022-06-26'
@@ -14,5 +15,24 @@ import:
     type: members
     time: 1641562802
 place: 'Horní Město'
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: '11:00'
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.90512, 17.21745'
+hasStartlist: true
+hasResults: true
 ---
 

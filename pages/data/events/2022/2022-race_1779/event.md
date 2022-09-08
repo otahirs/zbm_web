@@ -13,5 +13,6 @@ date: '2022-02-18'
 import:
     type: members
     time: 1645182002
+place: Mostek
 ---
 

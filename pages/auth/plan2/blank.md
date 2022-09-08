@@ -12,32 +12,21 @@ plan:
             -
                 group:
                     - dorost
-                name: 'Atletické posilko'
-                time: '16:45'
-                place: 'Nám. Svornosti, https://mapy.cz/s/cubasamuca'
+                name: Posilka
+                time: '15:15 a 18:00'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
             -
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
-                time: '16:30 – 18:00'
+                time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-        tuesday:
-            -
-                group:
-                    - zabicky
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-                name: 'Mapový trénink'
-                time: '16:00 – 18:00'
-                place: 'okolí Brna'
         wednesday:
             -
                 group:
                     - dorost
-                name: Posilovna
+                name: Posilka
                 time: '15:15 a 18:00'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         thursday:
@@ -73,15 +62,15 @@ plan:
             -
                 group:
                     - dorost
-                name: 'Atletické posilko'
-                time: '16:45'
-                place: 'Nám. Svornosti, https://mapy.cz/s/cubasamuca'
+                name: Posilka
+                time: '15:15 a 18:00'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
             -
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
-                time: '16:30 – 18:00'
+                time: '17:00 – 18:30'
                 place: 'hala Rosnička'
         tuesday:
             -

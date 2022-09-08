@@ -14,5 +14,6 @@ date: '2022-01-31'
 import:
     type: members
     time: 1643649004
+hasResults: true
 ---
 

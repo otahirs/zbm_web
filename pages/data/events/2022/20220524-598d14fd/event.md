@@ -5,15 +5,15 @@ type: M
 title: 'Mapový trénink žactva'
 start: '2022-05-24'
 end: '2022-05-24'
-place: 'Ochoz, Na Spáleništi'
+place: 'Bystrc, U křivé borovice'
 meetTime: '16:15'
-meetPlace: 'značeno fáborky ze zastávky Na spáleništi'
+meetPlace: 'https://mapy.cz/s/fabupuvabe'
 link: ''
-eventTypeDescription: 'Z+A - hvězdice, B - paměťák, C - vrstevnice'
+eventTypeDescription: 'P + A - fáborková linie, B - paměťák, C - shluky'
 startTime: ''
 map: ''
 terrain: ''
-transport: "Na spáleništi - zastávka MHD 201\r\npřibližovací srazy:\r\nSkácelova\r\nHalasovo náměstí"
+transport: "MHD - značeno fáborky ze zastávky Ruda\r\nPřibližovací srazy:\r\nSkácelova 15:20\r\nHalasovo náměstí 15:00"
 accomodation: ''
 food: ''
 leader: ''
@@ -25,15 +25,15 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        1: pulci1
-        2: pulci2
-        3: zaci1
-        4: zaci2
-        5: zabicky
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
 ---
 
-* **sraz**: 16:15 značeno fáborky ze zastávky Na spáleništi
-* **doprava**: Na spáleništi - zastávka MHD 201
-přibližovací srazy:
-Skácelova
-Halasovo náměstí
+* **sraz**: 16:15 https://mapy.cz/s/fabupuvabe
+* **doprava**: MHD - značeno fáborky ze zastávky Ruda
+Přibližovací srazy:
+Skácelova 15:20
+Halasovo náměstí 15:00
