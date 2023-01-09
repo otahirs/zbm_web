@@ -1,8 +1,7 @@
 ---
 taxonomy:
     skupina:
-        - dorost
-        - hobby
+        2: dorost
 id: 2023-race_1873
 start: '2023-01-14'
 end: '2023-01-14'
