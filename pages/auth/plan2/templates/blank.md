@@ -7,23 +7,23 @@ access:
 process:
     markdown: false
 cache_enable: false
-defaultTemplate: Letní
+defaultTemplate: Zimní
 templates:
     Letní:
         monday:
-            -
-                group:
-                    - dorost
-                name: Posilka
-                time: '15:15 a 18:00'
-                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
+            1671356046888:
+                group:
+                    - dorost
+                name: Posilovna
+                time: '15:15 a 18:00'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         tuesday:
             -
                 group:
@@ -39,7 +39,7 @@ templates:
             -
                 group:
                     - dorost
-                name: Posilka
+                name: Posilovna
                 time: '15:15 a 18:00'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         thursday:
@@ -69,7 +69,7 @@ templates:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
-                place: Samostatně
+                place: samostatně
         sunday:
             -
                 name: ''
@@ -82,7 +82,7 @@ templates:
                     - zaci1
                     - zaci2
                 name: Tělocvična
-                time: '17:00 – 18:00'
+                time: '17:00 – 18:30'
                 place: 'hala Rosnička'
             -
                 group:
@@ -91,17 +91,22 @@ templates:
                 time: '15:15 a 18:00'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         tuesday:
-            -
+            0:
                 group:
                     - zabicky
                     - pulci1
                     - pulci2
                     - zaci1
-                    - zaci2
-                name: 'Mapový trénink'
+                name: 'Mapový trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            -
+            1:
+                group:
+                    - zaci2
+                name: 'Běžecký trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7'
+            1671355812609:
                 group:
                     - dorost
                 name: 'Běžecký trénink'
@@ -119,28 +124,28 @@ templates:
                     - hobby
                 name: 'Hobby online teorie'
                 time: '20:00'
-                place: meet.google.com/gdb-zbif-ghr
+                place: meet.google.com/wed-ixsv-poc
         thursday:
-            -
+            2:
+                group:
+                    - pulci1
+                    - pulci2
+                name: Telocvična
+                time: '16:00 - 17:00'
+                place: 'hala Rosnička'
+            1671355885792:
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
-                time: '16:15 – 18:00'
+                time: '16:30 – 18:00'
                 place: 'hala Rosnička'
-            -
+            1671355913824:
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '17:00'
                 place: 'hala Rosnička'
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                name: Telocvična
-                time: '16:00 - 17:30'
-                place: 'ZŠ Merhautova 37'
         friday:
             -
                 group:
@@ -154,7 +159,7 @@ templates:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
-                place: Samostatně
+                place: samostatně
         sunday:
             -
                 name: ''
@@ -162,29 +167,29 @@ templates:
                 place: ''
     Prázdniny:
         monday:
-            0:
+            -
                 group:
                     - dorost
                 name: Posilovna
                 time: '14:30'
                 place: 'Bohunice, kampus, FSpS'
-            1627019346887:
+            -
                 group:
                     - zaci2
                 name: 'Cvičení dle plánu'
                 time: ''
                 place: samostatně
         tuesday:
-            0:
+            -
                 group:
                     - dorost
-                name: 'běh (dle víkendu)'
+                name: 'Běh (dle víkendu)'
                 time: '16:30'
                 place: 'hala Rosnička (sraz) a okolí'
-            1627019374835:
+            -
                 group:
                     - zaci2
-                name: 'běh dle plánu'
+                name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
         wednesday:
@@ -195,16 +200,16 @@ templates:
                 time: '14:30'
                 place: 'Bohunice, kampus, FSpS'
         thursday:
-            0:
+            -
                 group:
                     - dorost
                 name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, pPv'
-            1627019390447:
+            -
                 group:
                     - zaci2
-                name: 'běh dle plánu'
+                name: 'Běh dle plánu'
                 time: ''
                 place: 'samostatně (lze využít dráhu s dorostem)'
         friday:
@@ -216,7 +221,7 @@ templates:
             -
                 group:
                     - zaci2
-                name: 'běh dle plánu'
+                name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
         sunday:
@@ -248,7 +253,7 @@ templates:
                     - zaci2
                 name: 'Mapový trénink'
                 time: '16:00 - 18:00'
-                place: 'Po skupinách'
+                place: 'po skupinách'
         wednesday:
             -
                 group:
@@ -283,16 +288,16 @@ templates:
                     - dorost
                 name: Kompenzace
                 time: ''
-                place: Samostatně
+                place: samostatně
         saturday:
             -
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
-                place: Samostatně
+                place: samostatně
         sunday:
-            1622979796349:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -334,7 +339,6 @@ templates:
                 name: ''
                 time: ''
                 place: ''
-    'zima hobby': {  }
 ---
 
 <a href="/auth/plan2" id="back-btn" class="button small"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> týdenní plán</a> <br> <br>

@@ -1,10 +1,10 @@
 ---
 taxonomy:
     skupina:
-        1: zaci2
-        2: dorost
-        3: hobby
-        4: zaci1
+        - zaci1
+        - zaci2
+        - dorost
+        - hobby
 id: 2022-race_1737
 start: '2022-09-11'
 end: '2022-09-11'
@@ -36,6 +36,7 @@ thingsToTake: ''
 signups: ''
 hasStartlist: true
 gps: '49.3348, 17.7086'
+hasResults: true
 ---
 
 Spí se na postelích, ale ve spacácích, proto prosím všechny vzít si **spacáky s sebou**.

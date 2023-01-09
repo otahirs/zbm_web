@@ -1,7 +1,7 @@
 ---
 taxonomy:
     skupina:
-        1: dorost
+        - dorost
 id: 2022-race_1801
 start: '2022-09-06'
 end: '2022-09-06'

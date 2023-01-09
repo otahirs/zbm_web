@@ -5,15 +5,15 @@ type: M
 title: 'Mapový trénink žactva'
 start: '2022-09-13'
 end: '2022-09-13'
-place: 'Útěchov, U buku'
-meetTime: ''
-meetPlace: ''
+place: 'Útěchov, U buku - mapa Melatín'
+meetTime: '16:15'
+meetPlace: 'https://mapy.cz/s/motejuvamo'
 link: ''
-eventTypeDescription: 'Z+A - fáborková linie, B - odbočovák, C - scorelauf'
+eventTypeDescription: 'Z+A - fáborková linie, B - odbočovák, C - shluky'
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
+transport: "Přibližovací srazy:\r\nSkácelova 15:15\r\nHalasovo náměstí 15:25"
 accomodation: ''
 food: ''
 leader: ''
@@ -29,6 +29,10 @@ taxonomy:
         2: pulci2
         3: zaci1
         4: zaci2
-        5: zabicky
+gps: '49.27190, 16.6405'
 ---
 
+* **sraz**: 16:15 https://mapy.cz/s/motejuvamo
+* **doprava**: Přibližovací srazy:
+Skácelova 15:15
+Halasovo náměstí 15:25

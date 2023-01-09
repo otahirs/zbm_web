@@ -11,113 +11,177 @@ plan:
         monday:
             -
                 group:
-                    - dorost
-                name: Posilka
-                time: '15:15 a 18:00'
-                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
-            -
-                group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-        wednesday:
             -
                 group:
                     - dorost
-                name: Posilka
+                name: Posilovna
                 time: '15:15 a 18:00'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
-        thursday:
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 – 18:00'
-                place: 'Stadion pod Palackého vrchem'
-            -
-                group:
-                    - dorost
-                name: Dráha
-                time: '17:00'
-                place: 'Areál VUT, pPv'
-        friday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: Samostatně
-    nextWeek:
-        monday:
-            -
-                group:
-                    - dorost
-                name: Posilka
-                time: '15:15 a 18:00'
-                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: Tělocvična
-                time: '17:00 – 18:30'
-                place: 'hala Rosnička'
         tuesday:
-            -
+            0:
                 group:
                     - zabicky
                     - pulci1
                     - pulci2
                     - zaci1
-                    - zaci2
-                name: 'Mapový trénink'
+                name: 'Mapový trénink + teorie'
                 time: '16:00 – 18:00'
-                place: 'okolí Brna'
+                place: 'ZŠ náměstí Svornosti 7'
+            1:
+                group:
+                    - zaci2
+                name: 'Běžecký trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7'
+            1671355812609:
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '16:30'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
         wednesday:
             -
                 group:
                     - dorost
-                name: Posilka
+                name: 'Posilovna + běh dle plánu'
                 time: '15:15 a 18:00'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
-        thursday:
             -
+                group:
+                    - hobby
+                name: 'Hobby online teorie'
+                time: '20:00'
+                place: meet.google.com/wed-ixsv-poc
+        thursday:
+            2:
                 group:
                     - pulci1
                     - pulci2
+                name: Telocvična
+                time: '16:00 - 17:00'
+                place: 'hala Rosnička'
+            1671355885792:
+                group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
-                time: '16:00 – 18:00'
-                place: 'Stadion pod Palackého vrchem'
+                time: '16:30 – 18:00'
+                place: 'hala Rosnička'
+            1671355913824:
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '17:00'
+                place: 'hala Rosnička'
+        friday:
             -
                 group:
                     - dorost
-                name: Dráha
-                time: '17:00'
-                place: 'Areál VUT, pPv'
-        friday:
-            -
-                name: ''
+                name: kompenzace
                 time: ''
-                place: ''
+                place: 'samostatně dle plánu'
         saturday:
             -
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
-                place: Samostatně
+                place: samostatně
+        sunday:
+            -
+                name: ''
+                time: ''
+                place: ''
+    nextWeek:
+        monday:
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: Tělocvična
+                time: '17:00 – 18:30'
+                place: 'hala Rosnička'
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '15:15 a 18:00'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
+        tuesday:
+            0:
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                name: 'Mapový trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7'
+            1:
+                group:
+                    - zaci2
+                name: 'Běžecký trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7'
+            1671355812609:
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '16:30'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: 'Posilovna + běh dle plánu'
+                time: '15:15 a 18:00'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
+            -
+                group:
+                    - hobby
+                name: 'Hobby online teorie'
+                time: '20:00'
+                place: meet.google.com/wed-ixsv-poc
+        thursday:
+            2:
+                group:
+                    - pulci1
+                    - pulci2
+                name: Telocvična
+                time: '16:00 - 17:00'
+                place: 'hala Rosnička'
+            1671355885792:
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:30 – 18:00'
+                place: 'hala Rosnička'
+            1671355913824:
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '17:00'
+                place: 'hala Rosnička'
+        friday:
+            -
+                group:
+                    - dorost
+                name: kompenzace
+                time: ''
+                place: 'samostatně dle plánu'
+        saturday:
+            -
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: samostatně
         sunday:
             -
                 name: ''

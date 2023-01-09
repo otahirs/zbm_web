@@ -6,14 +6,14 @@ title: 'Mapový trénink žactva'
 start: '2022-09-20'
 end: '2022-09-20'
 place: 'Líšeň, Hornek'
-meetTime: ''
-meetPlace: ''
+meetTime: '16:15'
+meetPlace: 'fáborky ze zastávky Na spáleništi'
 link: ''
 eventTypeDescription: 'Z+A - okruhy, B - linie, C - krátké postupy'
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
+transport: "Přibližovací srazy:\r\nHalasovo náměstí 15:25 - počítejte s jízdenkami mimmo zónu 101\r\nSkácelova 15:10 pojedeme pravděpodobně auty"
 accomodation: ''
 food: ''
 leader: ''
@@ -25,10 +25,14 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        1: pulci1
-        2: pulci2
-        3: zaci1
-        4: zaci2
-        5: zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+gps: '49.24170, 16.72130'
 ---
 
+* **sraz**: 16:15 fáborky ze zastávky Na spáleništi
+* **doprava**: Přibližovací srazy:
+Halasovo náměstí 15:25 - počítejte s jízdenkami mimmo zónu 101
+Skácelova 15:10 pojedeme pravděpodobně auty

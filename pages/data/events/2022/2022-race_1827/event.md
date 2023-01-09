@@ -2,12 +2,11 @@
 taxonomy:
     skupina:
         1: hobby
-        2: dorost
 id: 2022-race_1827
 start: '2022-09-14'
 end: '2022-09-14'
-title: 'Hobby mapáč - krátká trať'
-place: Ochoz
+title: 'Hobby mapáč - dlouéh postupy'
+place: Březina
 type: T
 template: trenink
 date: '2022-09-05'
@@ -31,7 +30,11 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
-gps: '49.2709, 16.70436'
+gps: '49.28319, 16.76406'
+routes:
+    -
+        name: 'Ob postupy: Dlouhé postupy v Březině'
+        link: 'http://3drerun.worldofo.com/?id=-16940392&type=info'
 ---
 
 Kategorie jsou stejné, jako u úterního tréninku dorostu: H, D, D15. Volte to podle sebe. H - mám na to, D - spíše naše H, D15 - spíše na D.
