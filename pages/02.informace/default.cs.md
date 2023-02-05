@@ -88,7 +88,7 @@ Klub proplácí (od roku 2021) náklady na pohonné hmoty.
 
 #### Jak vyplnit cesťák
 je potřeba vyplnit ke každé akci samostatně  
-1. vzor najdete <a href="https://drive.google.com/drive/folders/12skyQ7j0W3CDJGRodh_-6Ghj_g0g3e7n" target="_blank">zde</a>
+1. vzor najdete <a href="https://drive.google.com/drive/folders/1w-NfqqugbB9czti9dgmAtg8hYdgyYxBk?usp=sharing" target="_blank">zde</a>
 2. vzor si zkopírujte, nazvěte vlastním jménem a uložte do stejné složky
 3. následně pro každou akci během roku vždy kopírujte do nové záložky nazvané podle akce a vyplňte (viz např. Jendův cesťák, který zde už je uložený).
 4. z administrativních důvodů je nutné cesťák následně i vytisknout, podepsat na kolonce "Částku vyúčtoval a převzal" a předat vedoucímu akce (většinou Jenda). Ten je také podepíše a předá k zaúčtování.
