@@ -1,10 +1,10 @@
 ---
 taxonomy:
     skupina:
-        - zaci1
-        - zaci2
-        - dorost
-        - hobby
+        1: zaci2
+        2: dorost
+        3: hobby
+        4: zaci1
 id: 2022-race_1835
 start: '2022-11-11'
 end: '2022-11-13'
@@ -29,7 +29,7 @@ accomodation: "Na 2 místech, na postelích.\r\nAuta LuF a Jenda v Kecskemetu, z
 food: "Bude zajištěn sobotní oběd (studenou formou hned po/na závodech), \r\nSobota večeře auta: Jenda a Luf(z důvodu změny ubytování) na místě ubytování\r\nOstatní: doporučuju návštěvu restaurace, na ubytování bude podle posledních informací pouze lednička, mikrovlnka a malá trouba s vařičem - místní mražená pizza je tím pádem taky řešení) a  nedělní snídaně (nakoupíme). Neděle - po cestě zpět nakoupíme tak, abychom vydrželi do Brna."
 leader: Jenda
 return: 'V neděli večer, okolo 8 hodiny.'
-price: 'max 3700,- (strženo bude dle realné ceny)'
+price: ''
 program: "1. Noční proběhnutí v Bratislavě\r\n  * parkujeme [zde](https://en.mapy.cz/s/loropuzodu)\r\n  * [cesta na start](https://en.mapy.cz/s/hacavotaro)\r\n2. Závody v pískových dunách\r\n3. Termální lázně v blízkosti ubytování"
 thingsToTake: "* **světlo**, může být i bludička, ve městě to do mapy stačí\r\n* Věci na ob\r\n* běžecké boty do města i do lesa\r\n* **PLAVKY**\r\n* V Maďarsku jde vcelku bez problémů platit kartou, ale peníze se můžou hodit..."
 signups: ''

@@ -32,7 +32,7 @@ accomodation: 'https://www.atcluhacovice.cz/skola/ - https://mapy.cz/s/fazubogeb
 food: 'plná penze, začínáme večeří'
 leader: Andrea
 return: 'neděle 8. 5. cca v 15:00'
-price: '1250,- Kč'
+price: ''
 program: "| Den | Mapa | A | B | C | Hobíci | Parkování |\r\n| -------- | -------- | -------- |-------- | -------- | -------- | -------- |\r\n| Pá odpo | Gaborka | hvězdice | linie | linie | linie |[start, parkování](https://en.mapy.cz/s/godemozako) |\r\n| So dopo | Maršov | linie | COB | souboje | SUI hra | |\r\n| So odpo | Gaborka | COB/dlouhé okruhy | SUI hra | SUI hra/vrstevnice | vrstevnice | |\r\n| Ne dopo | Gaborka | štafety | štafety | štafety | štafety | |"
 thingsToTake: "* věci na běhání (aspoň 2x)\r\n* čip, buzolu\r\n* společenské hry na večer\r\n* dobrou náladu"
 signups: ''

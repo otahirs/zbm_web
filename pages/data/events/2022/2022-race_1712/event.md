@@ -32,7 +32,7 @@ accomodation: 'Na postelích v penzionu Kukla.'
 food: 'Společné vaření - plná penze včetně pitného režimu.'
 leader: Luf
 return: 'V neděli 2.října kolem 19 hodiny.'
-price: 'cca 3000 Kč pro žactvo'
+price: ''
 program: "2x závod JmL, až 6x trénink, rozbory, večerní společenský program a další.\r\n\r\n**Tréninky**:\r\n\r\n| Den        | A        | B         | C         | Hobby             | Mapa          | Start                       |\r\n|------------|----------|-----------|-----------|---------------|---------------|---------------|---------------------------------|\r\n| St - dopo  | JmL   | JmL     | JmL   | JmL       |  Chocholoušek     | https://oris.orientacnisporty.cz/Zavod?id=6973 |\r\n| St - odpo | hvězdice         | linie          | věšák-sběrák          | věšák-sběrák              |  Ochoza | https://mapy.cz/s/mebezohobo |\r\n| Čt - dopo |sudá-lichá |\tazimutové okruhy\t|  azimuťák\t| azimuťák    |  Buldok | https://mapy.cz/s/hegococuka |\r\n| Čt - odpo | odbočovák         | odbočovák          | sem-tamy          | sudá-lichá              |  Bršlice | https://mapy.cz/s/jedekerugu |\r\n| So - dopo | JmL         | JmL          | JmL          | JmL              | U Pytláka | https://oris.orientacnisporty.cz/Zavod?id=6975 |\r\n| So - odpo | linie         | krátké postupy          |   krátké postupy       | krátké postupy         |  Bršlice | https://mapy.cz/s/jadabevado |\r\n| Ne - dopo | hvězdice         | věšák-sběrák          | koridor          | koridor             |  Čtyři palice | https://mapy.cz/s/fucesokaza |\r\n| Ne - odpo | sprintové štafety        |  sprintové štafety         |  sprintové štafety         | sprintové štafety             |  Nově Město | https://mapy.cz/s/gagakamomo |"
 thingsToTake: ''
 signups: ''

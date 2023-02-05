@@ -30,7 +30,7 @@ accomodation: ''
 food: ''
 leader: Luf
 return: ''
-price: 'Cena soustředění je 300,- Kč (pro dospělé s členskými příspěvky „neaktivní“ 500,- Kč)'
+price: ''
 program: "Klasické soustředění jarní soustředění s přespáním doma.\r\nPátek 25. 3.\t– trénink na mapě Rybstole\r\n\t\t- začátek tréninku v 16:00 zde: https://mapy.cz/turisticka?vlastni-body&x=16.6082411&y=49.2358497&z=17&ut=Nov%C3%BD%20bod&uc=9mMBLx8EHh&ud=49%C2%B014%278.315%22N%2C%2016%C2%B036%2721.692%22E\r\n\t\t- přibližovací srazy: \tSkácelova 15:25\r\n\t\t\t\t\tHalasovo náměstí 15:30\r\n\t\t- předpokládaný konec tréninku 17:45\r\n\r\nSobota 26. 3.\t- dopoledne sprintový trénink, odpoledne v lese u dubu Troják\r\n\t\t- sraz v 9:30 na parkovišti u aquaparku: https://mapy.cz/zakladni?vlastni-body&x=16.5400339&y=49.1941261&z=19&ut=Nov%C3%BD%20bod&uc=9mCHTxTsuk&ud=49%C2%B011%2737.538%22N%2C%2016%C2%B032%2726.594%22E\r\n\t\t- oběd bude zajištěn\r\n\t\t- předpokládaný konec odpoledního tréninku je v 16:30: \r\nhttps://mapy.cz/zakladni?vlastni-body&x=16.5294043&y=49.1927633&z=16&ut=Nov%C3%BD%20bod&uc=9m0lAxTr-Q&ud=49%C2%B011%2723.573%22N%2C%2016%C2%B031%2738.594%22E\r\n\r\nNeděle 27. 3.\t- mapové tréninky v Šaštíně na Slovensku – vezměte si s sebou průkaz totožnosti a u dětí souhlas s výjezdem dítěte\r\n\t\t- sraz v 8:00 u Bohémy, pojedeme autobusem (Pozor v noci je změna času!)\r\n\t\t- oběd bude zajištěn\r\n\t\t- návrat v cca 19:00"
 thingsToTake: ''
 signups: ''

@@ -1,11 +1,11 @@
 ---
 taxonomy:
     skupina:
-        - pulci2
-        - zaci1
-        - zaci2
-        - dorost
-        - hobby
+        1: zaci1
+        2: zaci2
+        3: dorost
+        4: hobby
+        5: pulci2
 id: 2022-race_1651
 start: '2022-02-03'
 end: '2022-02-06'
@@ -30,7 +30,7 @@ food: 'Plná penze'
 leader: 'Andrea, Jenda'
 note: ''
 return: ''
-price: '1600,-'
+price: ''
 program: 'Podle počasí běžecké a mapové treninky nebo běžky.'
 thingsToTake: ''
 signups: ''

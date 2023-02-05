@@ -27,7 +27,7 @@ food: "Vaříme si sami.\r\nDovezte si čtvrteční večeři."
 leader: 'Jenda, Saša, Miloš'
 note: ''
 return: 'V neděli odpoledne dle počtu aut...'
-price: 'Dle toho, kolik protopíme (elektřina zdražila), maximálně 2000,- Jako obvykle naúčtujeme realitu.'
+price: ''
 program: "Lyžovaní na běžkách, pokud to půjde - v závislosti na sněhových podmínkách a počasí.\r\nPokud sníh nebude budeme běhat."
 thingsToTake: "Přezůvky.\r\nPokud to bude na lyže, berte běžky a věci na ně. Zároveň i jedny boty na běh (aby byla varianta v případě nutnosti).\r\nVarianta běh doporučuju alespoň:\r\n* 2x boty (terén, cesty)\r\n* 2 sady oblečení\r\n* světlo\r\n* buzolu\r\nHry na večer.\r\n1x společný dárek pod stromeček (další dárky navíc v neomezeném množství).\r\nMapy, které jste ještě nestihli probrat s nikým 20+.\r\nPro zimomřivé spacák (kdybychom museli šetřit na topení)"
 signups: ''

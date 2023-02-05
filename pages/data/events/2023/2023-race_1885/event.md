@@ -9,7 +9,7 @@ taxonomy:
 id: 2023-race_1885
 start: '2023-01-28'
 end: '2023-01-28'
-title: 'BZL: Hromnicni trapeni'
+title: 'BZL: Hromniční trápení'
 link: 'https://oris.orientacnisporty.cz/Zavod?id=7551'
 orisid: '7551'
 place: 'Olympia club, Blansko, Mlýnská 22'
@@ -35,5 +35,7 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasStartlist: true
+hasResults: true
 ---
 

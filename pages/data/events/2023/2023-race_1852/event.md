@@ -2,8 +2,8 @@
 taxonomy:
     skupina: {  }
 id: 2023-race_1852
-start: '2023-08-19'
-end: '2023-08-26'
+start: '2023-08-12'
+end: '2023-08-19'
 title: Tábor
 place: 'Jizerky - Slovanka'
 type: S
@@ -13,6 +13,22 @@ date: '2022-10-06'
 import:
     type: members
     time: 1665087601
+meetTime: ''
+meetPlace: ''
+link: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
 Letní OB tábor pro všechny kategorie.

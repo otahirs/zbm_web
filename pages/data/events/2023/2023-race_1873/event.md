@@ -13,8 +13,8 @@ date: '2022-10-16'
 import:
     type: members
     time: 1665953402
-meetTime: ''
-meetPlace: ''
+meetTime: '10:00'
+meetPlace: 'Krpole nádraží'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -24,7 +24,7 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-note: ''
+note: '10:10 - parkování u Lelekovice, škola'
 return: ''
 price: ''
 program: ''
@@ -32,3 +32,5 @@ thingsToTake: ''
 signups: ''
 ---
 
+10:10 - parkování u Lelekovice, škola
+* **sraz**: 10:00 Krpole nádraží

@@ -26,7 +26,7 @@ food: 'Včetně stravování.'
 leader: Jenda
 note: '**Pojede se už v pátek.**'
 return: 'v neděli večer'
-price: '1200,-'
+price: ''
 program: "| Den |      | typ                                           | mapa              | rychlost        | parkování                    |\r\n|-----|------|-----------------------------------------------|-------------------|-----------------|------------------------------|\r\n| pa  | dopo |                  |           |             |    |\r\n|     | odpo | úvodní middle                       | Slovanka          | volně           | https://mapy.cz/s/pelelafape |\r\n| so  | dopo | seběhy                                     | Slovanka          | rychle | https://mapy.cz/s/lumugololo |\r\n|     | odpo | 2k middle                                   |   Buková hora | volně | https://mapy.cz/s/culedenego |\r\n| ne  | dopo | middle                       | Tanvaldský špičák     | rychle         | https://mapy.cz/s/nabusuhuco |\r\n|     | odpo | sudá-lichá                                      | Kynast        | volně           |\r\nhttps://mapy.cz/s/nejebasota |"
 thingsToTake: ''
 signups: ''

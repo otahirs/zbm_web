@@ -19,23 +19,25 @@ import:
     type: members
     time: 1665642602
 meetTime: '8:00'
-meetPlace: 'Sportcentrum Zelva'
-eventTypeDescription: 'Zaci, dospeli'
+meetPlace: 'Sportcentrum Želva'
+eventTypeDescription: 'žáci, dospělí'
 startTime: '12:30'
-map: 'Dubnanske les 2023'
+map: 'Dubňanské les 2023'
 terrain: ''
-transport: 'domluvte se do aut'
+transport: 'Domluvte se společně do aut, viz e-mail.'
 accomodation: ''
 food: ''
-leader: 'Jan Drabek'
-note: ''
+leader: 'Jan Drábek'
+note: 'Pokud jste se přihlásili později, nebo vám nedošel e-mail ohledně Krátkého dne, tak mi napište. Drbca'
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
 gps: '48.91091, 17.09917'
+hasResults: true
 ---
 
-* **sraz**: 8:00 Sportcentrum Zelva
-* **doprava**: domluvte se do aut
+Pokud jste se přihlásili později, nebo vám nedošel e-mail ohledně Krátkého dne, tak mi napište. Drbca
+* **sraz**: 8:00 Sportcentrum Želva
+* **doprava**: Domluvte se společně do aut, viz e-mail.

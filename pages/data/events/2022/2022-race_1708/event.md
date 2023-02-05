@@ -28,7 +28,7 @@ accomodation: 'Na postelích'
 food: 'Plná penze'
 leader: Luf
 return: 'Okolo 19-20 hodiny do Brna.'
-price: "8000 (1. a 2. termín přihlášek)\r\n8500 (po 2. termínu přihlášek)"
+price: ''
 program: 'Tréninky, 2 výlety, závody Lipica Open 2022'
 thingsToTake: ''
 signups: ''

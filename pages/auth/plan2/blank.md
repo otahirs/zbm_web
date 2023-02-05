@@ -58,20 +58,6 @@ plan:
                 time: '20:00'
                 place: meet.google.com/wed-ixsv-poc
         thursday:
-            2:
-                group:
-                    - pulci1
-                    - pulci2
-                name: Telocvična
-                time: '16:00 - 17:00'
-                place: 'hala Rosnička'
-            1671355885792:
-                group:
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:30 – 18:00'
-                place: 'hala Rosnička'
             1671355913824:
                 group:
                     - dorost
@@ -92,11 +78,6 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
     nextWeek:
         monday:
             -
@@ -182,11 +163,6 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
 ---
 
 <div class="row justify-content-between"> 
