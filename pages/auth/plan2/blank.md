@@ -16,12 +16,6 @@ plan:
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '15:15 a 18:00'
-                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         tuesday:
             0:
                 group:
@@ -58,26 +52,26 @@ plan:
                 time: '20:00'
                 place: meet.google.com/wed-ixsv-poc
         thursday:
+            2:
+                group:
+                    - pulci1
+                    - pulci2
+                name: Telocvična
+                time: '16:00 - 17:00'
+                place: 'hala Rosnička'
+            1671355885792:
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:30 – 18:00'
+                place: 'hala Rosnička'
             1671355913824:
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '17:00'
                 place: 'hala Rosnička'
-        friday:
-            -
-                group:
-                    - dorost
-                name: kompenzace
-                time: ''
-                place: 'samostatně dle plánu'
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: samostatně
     nextWeek:
         monday:
             -

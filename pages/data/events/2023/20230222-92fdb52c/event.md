@@ -25,8 +25,8 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        1: hobby
-        2: dorost
+        - dorost
+        - hobby
 gps: '49.21498, 16.57991'
 ---
 
