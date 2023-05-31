@@ -16,5 +16,7 @@ date: '2023-01-25'
 import:
     type: members
     time: 1674633602
+hasStartlist: true
+hasResults: true
 ---
 

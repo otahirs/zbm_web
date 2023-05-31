@@ -17,5 +17,6 @@ date: '2023-02-02'
 import:
     type: members
     time: 1675344003
+place: Vojtíškov
 ---
 

@@ -13,5 +13,6 @@ date: '2023-02-08'
 import:
     type: members
     time: 1675896602
+place: Liberec
 ---
 

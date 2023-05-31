@@ -7,23 +7,23 @@ access:
 process:
     markdown: false
 cache_enable: false
-defaultTemplate: Zimní
+defaultTemplate: Letní
 templates:
     Letní:
         monday:
-            1:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-            1671356046888:
+            -
                 group:
                     - dorost
-                name: Posilovna
-                time: '15:15 a 18:00'
-                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
+                name: 'Atletické posilování'
+                time: '17:00'
+                place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
         tuesday:
             -
                 group:
@@ -32,6 +32,7 @@ templates:
                     - pulci2
                     - zaci1
                     - zaci2
+                    - hobby
                 name: 'Mapový trénink'
                 time: '16:00 – 18:00'
                 place: 'okolí Brna'
@@ -42,6 +43,12 @@ templates:
                 name: Posilovna
                 time: '15:15 a 18:00'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
+            -
+                group:
+                    - hobby
+                name: 'Mapový trénink'
+                time: '17:00 – 19:00'
+                place: 'okolí Brna'
         thursday:
             -
                 group:
@@ -51,13 +58,13 @@ templates:
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
-                place: 'Stadion pod Palackého vrchem'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
             -
                 group:
                     - dorost
                 name: Dráha
                 time: '17:00'
-                place: 'Areál VUT, pPv'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
         friday:
             -
                 name: ''

@@ -16,62 +16,58 @@ plan:
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-        tuesday:
-            0:
-                group:
-                    - zabicky
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                name: 'Mapový trénink + teorie'
-                time: '16:00 – 18:00'
-                place: 'ZŠ náměstí Svornosti 7'
-            1:
-                group:
-                    - zaci2
-                name: 'Běžecký trénink + teorie'
-                time: '16:00 – 18:00'
-                place: 'ZŠ náměstí Svornosti 7'
-            1671355812609:
+            -
                 group:
                     - dorost
-                name: 'Běžecký trénink'
-                time: '16:30'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
+                name: 'Atletické posilování'
+                time: '17:00'
+                place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
         wednesday:
             -
                 group:
                     - dorost
-                name: 'Posilovna + běh dle plánu'
+                name: Posilovna
                 time: '15:15 a 18:00'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
             -
                 group:
                     - hobby
-                name: 'Hobby online teorie'
-                time: '20:00'
-                place: meet.google.com/wed-ixsv-poc
+                name: 'Mapový trénink'
+                time: '17:00 – 19:00'
+                place: 'okolí Brna'
         thursday:
-            2:
+            -
                 group:
                     - pulci1
                     - pulci2
-                name: Telocvična
-                time: '16:00 - 17:00'
-                place: 'hala Rosnička'
-            1671355885792:
-                group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
-                time: '16:30 – 18:00'
-                place: 'hala Rosnička'
-            1671355913824:
+                time: '16:00 – 18:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+            -
                 group:
                     - dorost
-                name: 'Běžecký trénink'
+                name: Dráha
                 time: '17:00'
-                place: 'hala Rosnička'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+        friday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            -
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: samostatně
+        sunday:
+            -
+                name: ''
+                time: ''
+                place: ''
     nextWeek:
         monday:
             -
@@ -84,72 +80,55 @@ plan:
             -
                 group:
                     - dorost
-                name: Posilovna
-                time: '15:15 a 18:00'
-                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
+                name: 'Atletické posilování'
+                time: '17:00'
+                place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
         tuesday:
-            0:
+            -
                 group:
                     - zabicky
                     - pulci1
                     - pulci2
                     - zaci1
-                name: 'Mapový trénink + teorie'
-                time: '16:00 – 18:00'
-                place: 'ZŠ náměstí Svornosti 7'
-            1:
-                group:
                     - zaci2
-                name: 'Běžecký trénink + teorie'
+                    - hobby
+                name: 'Mapový trénink'
                 time: '16:00 – 18:00'
-                place: 'ZŠ náměstí Svornosti 7'
-            1671355812609:
-                group:
-                    - dorost
-                name: 'Běžecký trénink'
-                time: '16:30'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
+                place: 'okolí Brna'
         wednesday:
             -
                 group:
                     - dorost
-                name: 'Posilovna + běh dle plánu'
+                name: Posilovna
                 time: '15:15 a 18:00'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
             -
                 group:
                     - hobby
-                name: 'Hobby online teorie'
-                time: '20:00'
-                place: meet.google.com/wed-ixsv-poc
+                name: 'Mapový trénink'
+                time: '17:00 – 19:00'
+                place: 'okolí Brna'
         thursday:
-            2:
+            -
                 group:
                     - pulci1
                     - pulci2
-                name: Telocvična
-                time: '16:00 - 17:00'
-                place: 'hala Rosnička'
-            1671355885792:
-                group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
-                time: '16:30 – 18:00'
-                place: 'hala Rosnička'
-            1671355913824:
-                group:
-                    - dorost
-                name: 'Běžecký trénink'
-                time: '17:00'
-                place: 'hala Rosnička'
-        friday:
+                time: '16:00 – 18:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
             -
                 group:
                     - dorost
-                name: kompenzace
+                name: Dráha
+                time: '17:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+        friday:
+            -
+                name: ''
                 time: ''
-                place: 'samostatně dle plánu'
+                place: ''
         saturday:
             -
                 group:
@@ -157,6 +136,11 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
+        sunday:
+            -
+                name: ''
+                time: ''
+                place: ''
 ---
 
 <div class="row justify-content-between"> 
