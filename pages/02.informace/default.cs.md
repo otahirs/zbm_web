@@ -211,7 +211,7 @@ Přihlašování na závody i soustředění probíhá výhradně přes [Přihl�
 
 V krajní nouzi pak můžete využít některého z následujících kontaktů:
 * Honza Drábek, e-mail – _prihlasky@zabiny.club_  mobil – 608 477 026 
-* Peťa Koporová, e-mail – _prihlasky@zabiny.club_ 
+* Adam Urbánek, e-mail – _prihlasky@zabiny.club_ 
 
 Pokud vám nefunguje vaše přístupové jméno a heslo do našeho „Přihláškového systému", kontaktujte Lukáše Königa - _kenia@seznam.cz_, který vám tyto údaje poskytne.
 <br>
