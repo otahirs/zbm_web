@@ -38,6 +38,7 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.2211, 16.7331'
+hasStartlist: true
 ---
 
 * **sraz**: 8:45 Bohéma (ul. Roosveltova)
