@@ -22,6 +22,11 @@ plan:
                 name: 'Atletické posilování'
                 time: '17:00'
                 place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
+        tuesday:
+            1687114945050:
+                name: ''
+                time: ''
+                place: ''
         wednesday:
             -
                 group:

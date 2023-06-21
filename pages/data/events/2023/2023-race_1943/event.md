@@ -1,10 +1,10 @@
 ---
 taxonomy:
     skupina:
-        1: hobby
-        2: dorost
-        3: zaci2
-        4: zaci1
+        - zaci1
+        - zaci2
+        - dorost
+        - hobby
 id: 2023-race_1943
 start: '2023-06-13'
 end: '2023-06-18'

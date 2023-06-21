@@ -31,6 +31,10 @@ taxonomy:
         4: hobby
         5: pulci1
 gps: '49.19146, 16.49596'
+routes:
+    -
+        name: 'trénink Veselka K - koridor'
+        link: 'http://3drerun.worldofo.com/?id=-16979525&type=info'
 ---
 
 * **sraz**: 16:30

@@ -6,14 +6,14 @@ title: 'Mapový trénink Velká Baba'
 start: '2023-06-13'
 end: '2023-06-13'
 place: 'Velká Baba'
-meetTime: ''
+meetTime: '16:30'
 meetPlace: ''
 link: ''
 eventTypeDescription: 'P - fáborková linie, A - fáborková linie, B - shluky, C - shluky, K - shluky'
 startTime: ''
 map: Baba
 terrain: ''
-transport: ''
+transport: "MHD na zastávku Kouty - vzdálenost na start 1,5 km.\r\nPřibližovací srazy:\r\nSkácelova 15:30\r\nHalasovo náměstí 15:20"
 accomodation: ''
 food: ''
 leader: ''
@@ -25,11 +25,16 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        1: pulci1
-        2: pulci2
-        3: zaci1
-        4: zaci2
-        5: hobby
-        6: zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - hobby
+gps: '49.26315, 16.54738'
 ---
 
+* **sraz**: 16:30
+* **doprava**: MHD na zastávku Kouty - vzdálenost na start 1,5 km.
+Přibližovací srazy:
+Skácelova 15:30
+Halasovo náměstí 15:20

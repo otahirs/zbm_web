@@ -31,6 +31,10 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.13358, 16.39107'
+routes:
+    -
+        name: shluky
+        link: 'http://3drerun.worldofo.com/index.php?id=-16979144&type=info'
 ---
 
 * **sraz**: 16:30 Brno, Bohunice, Kampus

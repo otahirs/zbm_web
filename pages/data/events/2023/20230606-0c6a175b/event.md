@@ -13,7 +13,7 @@ eventTypeDescription: 'P - linie s kontrolami, A - linie s kontrolami, B - COB, 
 startTime: ''
 map: 'Zamilovaný háj'
 terrain: ''
-transport: ''
+transport: "MHD na zastávku Útěchovská\r\nPřibližovací srazy:\r\nSkácelova 15:35\r\nHalasovo náměstí 15:40\r\nVzdálenost od zastávky na start je 850m."
 accomodation: ''
 food: ''
 leader: ''
@@ -25,11 +25,17 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        - zabicky
-        - pulci1
-        - pulci2
-        - zaci1
-        - zaci2
-        - hobby
+        1: pulci1
+        2: pulci2
+        3: zaci1
+        4: zaci2
+        5: hobby
+        6: zabicky
+gps: '49.24771, 16.60543'
 ---
 
+* **doprava**: MHD na zastávku Útěchovská
+Přibližovací srazy:
+Skácelova 15:35
+Halasovo náměstí 15:40
+Vzdálenost od zastávky na start je 850m.
