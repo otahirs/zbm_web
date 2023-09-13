@@ -1,8 +1,8 @@
 ---
 taxonomy:
     skupina:
-        - dorost
-        - hobby
+        1: hobby
+        2: dorost
 id: 2023-race_1914
 start: '2023-09-30'
 end: '2023-09-30'
@@ -16,5 +16,23 @@ date: '2023-01-25'
 import:
     type: members
     time: 1674634203
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: auty
+accomodation: ''
+food: ''
+leader: ''
+note: '[na postelích](http://www.penzionjakartovice.cz/index.html)'
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
+[na postelích](http://www.penzionjakartovice.cz/index.html)
+* **doprava**: auty

@@ -178,8 +178,8 @@ templates:
                 group:
                     - dorost
                 name: Posilovna
-                time: '14:30'
-                place: 'Bohunice, kampus, FSpS'
+                time: '15:15 a 18:00'
+                place: 'Sokol Žabovřesky, https://en.mapy.cz/s/gavotococu'
             -
                 group:
                     - zaci2
@@ -204,8 +204,8 @@ templates:
                 group:
                     - dorost
                 name: Posilovna
-                time: '14:30'
-                place: 'Bohunice, kampus, FSpS'
+                time: '15:15 a 18:00'
+                place: 'Sokol Žabovřesky, https://en.mapy.cz/s/gavotococu'
         thursday:
             -
                 group:

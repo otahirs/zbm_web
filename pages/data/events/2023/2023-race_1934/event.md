@@ -14,5 +14,7 @@ import:
     type: members
     time: 1675896602
 place: Liberec
+hasStartlist: true
+hasResults: true
 ---
 

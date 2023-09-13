@@ -21,5 +21,7 @@ date: '2023-01-16'
 import:
     type: members
     time: 1673859008
+note: 'Bez společné dopravy'
 ---
 
+Bez společné dopravy

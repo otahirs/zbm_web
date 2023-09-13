@@ -23,10 +23,17 @@ plan:
                 time: '17:00'
                 place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
         tuesday:
-            1687114945050:
-                name: ''
-                time: ''
-                place: ''
+            -
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                    - hobby
+                name: 'Mapový trénink'
+                time: '16:00 – 18:00'
+                place: 'okolí Brna'
         wednesday:
             -
                 group:
@@ -68,11 +75,6 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
     nextWeek:
         monday:
             -

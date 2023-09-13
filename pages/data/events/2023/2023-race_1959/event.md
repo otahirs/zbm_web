@@ -1,12 +1,12 @@
 ---
 taxonomy:
     skupina:
-        1: pulci2
-        2: zaci1
-        3: zaci2
-        4: dorost
-        5: hobby
-        6: pulci1
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - dorost
+        - hobby
 id: 2023-race_1959
 start: '2023-06-21'
 end: '2023-06-21'
@@ -36,6 +36,7 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasResults: true
 ---
 
 Pokud pojedete autem, využijte parkoviště u hřbitova. Je zakázáno parkovat podél silnice v blízkosti centra závodu.
