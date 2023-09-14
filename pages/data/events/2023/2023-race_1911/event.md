@@ -32,6 +32,7 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasStartlist: true
 ---
 
 Pozor, doprava na místě bude při nejlepším komplikovaná, ale čekám spíš naprosté peklo viz [dokument od pořadatele](https://oris.orientacnisporty.cz/Priloha?id=6807&doc=Pl%C3%A1nek%20parkov%C3%A1n%C3%AD). Vyjeďte s větší rezervou!

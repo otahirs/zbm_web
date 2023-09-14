@@ -21,7 +21,7 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: 'autobusem společně s oblastním závodem'
+transport: '2 krabice + autobusem společně s oblastním závodem'
 accomodation: ''
 food: ''
 leader: ''
@@ -31,6 +31,7 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasStartlist: true
 ---
 
-* **doprava**: autobusem společně s oblastním závodem
+* **doprava**: 2 krabice + autobusem společně s oblastním závodem
