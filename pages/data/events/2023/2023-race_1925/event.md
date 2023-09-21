@@ -1,7 +1,7 @@
 ---
 taxonomy:
     skupina:
-        2: dorost
+        - dorost
 id: 2023-race_1925
 start: '2023-09-17'
 end: '2023-09-17'
@@ -32,6 +32,7 @@ program: ''
 thingsToTake: ''
 signups: ''
 hasStartlist: true
+hasResults: true
 ---
 
 * **doprava**: 2 krabice + autobusem společně s oblastním závodem

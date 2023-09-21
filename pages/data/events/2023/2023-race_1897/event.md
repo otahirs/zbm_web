@@ -39,6 +39,7 @@ thingsToTake: ''
 signups: ''
 gps: '49.64886, 16.04731'
 hasStartlist: true
+hasResults: true
 ---
 
 * **sraz**: 7:30 Bohéma

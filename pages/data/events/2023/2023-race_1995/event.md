@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        1: dorost
 id: 2023-race_1995
 start: '2023-09-19'
 end: '2023-09-19'
@@ -29,7 +30,7 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
-gps: '49.24609, 16.67846'
+gps: '49.24317, 16.68396'
 ---
 
 Možno jet i z Hlaváku, či například z Řečkovi-Kr. Pole-Lesné s přesedáním

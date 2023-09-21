@@ -18,7 +18,7 @@ import:
     time: 1685539802
 meetTime: ''
 meetPlace: ''
-link: ''
+link: 'https://oris.orientacnisporty.cz/Zavod?id=8041'
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -34,5 +34,6 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '48.91095, 17.09892'
+orisid: '8041'
 ---
 
