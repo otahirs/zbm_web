@@ -43,7 +43,7 @@ class CalendarExport extends \Grav\Common\Twig\TwigExtension
             echo "DTEND;VALUE=DATE:". date("Ymd", strtotime($event->value("header.end") . "+ 1 day"))."\r\n";
             echo "SUMMARY:". $event->value("header.title") ."\r\n";
             echo "LOCATION:". $event->value("header.place") ."\r\n";
-            echo "URL:". $event->url() ."\r\n";
+            echo "URL:". $event->url(true) ."\r\n";
             echo "END:VEVENT\r\n";
         }
         echo "END:VCALENDAR\r\n";
