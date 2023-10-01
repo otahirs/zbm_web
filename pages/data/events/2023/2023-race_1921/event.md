@@ -1,10 +1,10 @@
 ---
 taxonomy:
     skupina:
-        - dorost
-        - hobby
-        - zaci2
-        - zaci1
+        1: hobby
+        4: dorost
+        5: zaci2
+        6: zaci1
 id: 2023-race_1921
 start: '2023-10-14'
 end: '2023-10-14'
@@ -18,5 +18,21 @@ date: '2023-01-30'
 import:
     type: members
     time: 1675066203
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 

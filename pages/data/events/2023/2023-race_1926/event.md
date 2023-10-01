@@ -1,10 +1,10 @@
 ---
 taxonomy:
     skupina:
-        1: hobby
-        2: zaci2
-        3: zaci1
-        4: dorost
+        - zaci1
+        - zaci2
+        - dorost
+        - hobby
 id: 2023-race_1926
 start: '2023-10-01'
 end: '2023-10-01'
@@ -34,6 +34,7 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasResults: true
 ---
 
 na postelích

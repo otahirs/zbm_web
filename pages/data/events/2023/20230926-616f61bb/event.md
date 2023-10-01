@@ -6,14 +6,14 @@ title: 'Mapový trénink žactva Soběšice'
 start: '2023-09-26'
 end: '2023-09-26'
 place: Soběšice
-meetTime: ''
+meetTime: '16:15'
 meetPlace: ''
 link: ''
 eventTypeDescription: "P - linie s kontrolami,\r\nA - COB,\r\nB - azimuty,\r\nC, K - dlouhé postupy"
 startTime: ''
 map: 'Kobylín 398'
 terrain: ''
-transport: ''
+transport: "MHD na zastávku Klarisky - vzdálenost na start 900m\r\nPřibližovací srazy:\r\nSkácelova 15:25\r\nHalasovo náměstí 15:40"
 accomodation: ''
 food: ''
 leader: ''
@@ -25,11 +25,16 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        1: pulci1
-        2: pulci2
-        3: zaci1
-        4: zaci2
-        5: hobby
-        6: zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - hobby
+gps: '49.25941, 16.61268'
 ---
 
+* **sraz**: 16:15
+* **doprava**: MHD na zastávku Klarisky - vzdálenost na start 900m
+Přibližovací srazy:
+Skácelova 15:25
+Halasovo náměstí 15:40

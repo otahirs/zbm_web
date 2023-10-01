@@ -1,8 +1,8 @@
 ---
 taxonomy:
     skupina:
-        1: hobby
-        2: dorost
+        - dorost
+        - hobby
 id: 2023-race_1914
 start: '2023-09-30'
 end: '2023-09-30'
@@ -22,17 +22,19 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: auty
+transport: '[auty](https://docs.google.com/spreadsheets/d/13nAnJUMskLVqCIEIaDftTleUtRbcFuc8Phf_JeQNO-E/edit#gid=2123661612)'
 accomodation: ''
 food: ''
-leader: ''
+leader: Miloš
 note: '[na postelích](http://www.penzionjakartovice.cz/index.html)'
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasStartlist: true
+hasResults: true
 ---
 
 [na postelích](http://www.penzionjakartovice.cz/index.html)
-* **doprava**: auty
+* **doprava**: [auty](https://docs.google.com/spreadsheets/d/13nAnJUMskLVqCIEIaDftTleUtRbcFuc8Phf_JeQNO-E/edit#gid=2123661612)

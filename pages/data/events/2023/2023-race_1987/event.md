@@ -1,7 +1,7 @@
 ---
 taxonomy:
     skupina:
-        1: hobby
+        - hobby
 id: 2023-race_1987
 start: '2023-09-20'
 end: '2023-09-20'

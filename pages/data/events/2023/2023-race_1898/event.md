@@ -27,7 +27,7 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: "[auty](https://docs.google.com/spreadsheets/d/13nAnJUMskLVqCIEIaDftTleUtRbcFuc8Phf_JeQNO-E/edit#gid=1687527609) a MHD\r\nSpolečná doprava MHD - sraz v 12:45 Královo pole, nádraží - vedoucí Andrea"
+transport: "[auty](https://docs.google.com/spreadsheets/d/13nAnJUMskLVqCIEIaDftTleUtRbcFuc8Phf_JeQNO-E/edit#gid=1687527609) a MHD\r\nSpolečná doprava MHD - sraz v 12:45 Královo pole, nádraží - vedoucí Andrea, mějte nachystané jízdenky"
 accomodation: ''
 food: ''
 leader: ''
@@ -37,7 +37,8 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasResults: true
 ---
 
 * **doprava**: [auty](https://docs.google.com/spreadsheets/d/13nAnJUMskLVqCIEIaDftTleUtRbcFuc8Phf_JeQNO-E/edit#gid=1687527609) a MHD
-Společná doprava MHD - sraz v 12:45 Královo pole, nádraží - vedoucí Andrea
+Společná doprava MHD - sraz v 12:45 Královo pole, nádraží - vedoucí Andrea, mějte nachystané jízdenky

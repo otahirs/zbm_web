@@ -1,7 +1,7 @@
 ---
 taxonomy:
     skupina:
-        1: dorost
+        - dorost
 id: 2023-race_1995
 start: '2023-09-19'
 end: '2023-09-19'

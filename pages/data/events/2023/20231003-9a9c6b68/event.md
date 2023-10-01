@@ -6,14 +6,14 @@ title: 'Mapový trénink žactva Vranov'
 start: '2023-10-03'
 end: '2023-10-03'
 place: Vranov
-meetTime: ''
+meetTime: '16:15'
 meetPlace: ''
 link: ''
 eventTypeDescription: "P, A - okruhy,\r\nB, C, K - SUI hra"
 startTime: ''
 map: Vranov
 terrain: ''
-transport: ''
+transport: "MHD na zastávku Vranov +(bude upřesněno)\r\nPřibližovací srazy:\r\nSkácelova: 15:10\r\nHalasovo náměstí: 15:25"
 accomodation: ''
 food: ''
 leader: ''
@@ -30,6 +30,10 @@ taxonomy:
         3: zaci1
         4: zaci2
         5: hobby
-        6: zabicky
 ---
 
+* **sraz**: 16:15
+* **doprava**: MHD na zastávku Vranov +(bude upřesněno)
+Přibližovací srazy:
+Skácelova: 15:10
+Halasovo náměstí: 15:25
