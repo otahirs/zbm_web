@@ -26,12 +26,13 @@ primaryImage: {  }
         <img class="sponsors--img" src="{{page.route()}}/Naskok.svg">
         </a>
     </div>
-## Zakomentovano nez zjistime, jestli z nich jeste neco nedostanem
-#    <div class="col-md-6">
-#        <a href="https://www.sap.com/cz/products/business-one.html" target="_blank">
-#        <img class="sponsors--img" src="{{page.route()}}/SAP.svg">
-#        </a>
-#    </div>
+<!--## Zakomentovano nez zjistime, jestli z nich jeste neco nedostanem
+    <div class="col-md-6">
+        <a href="https://www.sap.com/cz/products/business-one.html" target="_blank">
+        <img class="sponsors--img" src="{{page.route()}}/SAP.svg">
+        </a>
+    </div>
+-->
     <div class="col-md-6">
         <a href="https://www.cus-sportujsnami.cz/" target="_blank">
         <img class="sponsors--img" src="{{page.route()}}/Sportuj.svg">
