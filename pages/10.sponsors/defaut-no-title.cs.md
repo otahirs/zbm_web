@@ -1,6 +1,6 @@
 ---
 title: 'Partneři klubu'
-media_order: 'Brno.svg,gpsCentrum.svg,Revos.svg,JMK.svg,sanasport.svg'
+media_order: 'Brno.svg,gpsCentrum.svg,Revos.svg,JMK.svg,Lucifer_Logo_White02.svg'
 date: '2018-10-29'
 primaryImage: {  }
 ---
@@ -38,10 +38,14 @@ primaryImage: {  }
         <img class="sponsors--img" src="{{page.route()}}/Sportuj.svg">
         </a>
     </div>
-<!-- Nadace OB neprispela
-     <div class="col-md-6">
+    <div class="col-md-6">
         <a href="https://www.obnadace.cz/" target="_blank">
         <img class="sponsors--img" src="http://www.orientacnisporty.cz/upload/ilustracni-obrazky/nadaceob.PNG">
         </a>
-    </div>-->
+    </div>
+    <div class="col-md-6">
+        <a href="https://luciferlights.net/" target="_blank">
+        <img class="sponsors--img" src="{{page.route()}}/\Lucifer_Logo_White02.svg">
+        </a>
+    </div>
 </div>
