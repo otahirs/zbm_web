@@ -14,12 +14,33 @@ end: '2023-10-07'
 title: '11. JML: klasická trať'
 link: 'https://oris.orientacnisporty.cz/Zavod?id=7535'
 orisid: '7535'
-place: Dambořicko
+place: Uhřice
 type: Z
 template: zavod
 date: '2023-01-16'
 import:
     type: members
     time: 1673859008
+meetTime: '8:30'
+meetPlace: Bohéma
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: 'společná autobusem návrat mezi 15:30 a 16:30 hod'
+accomodation: ''
+food: ''
+leader: 'Jitka K.'
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.0518, 16.9388'
+hasStartlist: true
+hasResults: true
 ---
 
+* **sraz**: 8:30 Bohéma
+* **doprava**: společná autobusem návrat mezi 15:30 a 16:30 hod

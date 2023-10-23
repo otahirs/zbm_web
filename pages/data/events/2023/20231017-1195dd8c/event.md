@@ -2,18 +2,18 @@
 id: 20231017-1195dd8c
 template: trenink
 type: M
-title: 'Mapový trénink žactva Komín'
+title: 'Mapový trénink žactva Hády'
 start: '2023-10-17'
 end: '2023-10-17'
-place: 'Komín - kukuřičné bludiště'
-meetTime: ''
+place: 'Zadní Hády'
+meetTime: 'Začátek tréninku 16:15'
 meetPlace: ''
 link: ''
-eventTypeDescription: bludiště
+eventTypeDescription: "P - hvězdice\r\nA - linie\r\nB - okruhy\r\nC, K - vrstevnicovka"
 startTime: ''
-map: 'Kukuřičné bludiště'
+map: 'Zadní Hády'
 terrain: ''
-transport: ''
+transport: "MHD na zastávku Na Spáleništi - vzdálenost na start 850m\r\nPřibližovacíá srazy:\r\nSkácelova: 15:05\r\nHalasovo náměstí: 15:20"
 accomodation: ''
 food: ''
 leader: ''
@@ -25,11 +25,17 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        1: pulci1
-        2: pulci2
-        3: zaci1
-        4: zaci2
-        5: hobby
-        6: zabicky
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - hobby
+gps: '49.24796, 16.70784'
 ---
 
+* **sraz**: Začátek tréninku 16:15
+* **doprava**: MHD na zastávku Na Spáleništi - vzdálenost na start 850m
+Přibližovacíá srazy:
+Skácelova: 15:05
+Halasovo náměstí: 15:20

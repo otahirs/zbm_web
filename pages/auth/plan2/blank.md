@@ -9,17 +9,17 @@ process:
 plan:
     thisWeek:
         monday:
-            -
+            0:
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-            -
+            1698002116303:
                 group:
                     - dorost
-                name: 'Atletické posilování'
+                name: Fotbal
                 time: '17:00'
                 place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
         wednesday:
@@ -35,13 +35,6 @@ plan:
                 name: 'Mapový trénink'
                 time: '17:00 – 19:00'
                 place: 'okolí Brna'
-        thursday:
-            1:
-                group:
-                    - dorost
-                name: Dráha
-                time: '17:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
         saturday:
             -
                 group:
@@ -64,6 +57,18 @@ plan:
                 name: 'Atletické posilování'
                 time: '17:00'
                 place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
+        tuesday:
+            -
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                    - hobby
+                name: 'Mapový trénink'
+                time: '16:00 – 18:00'
+                place: 'okolí Brna'
         wednesday:
             -
                 group:
@@ -78,26 +83,21 @@ plan:
                 time: '17:00 – 19:00'
                 place: 'okolí Brna'
         thursday:
-            0:
+            -
                 group:
+                    - pulci1
+                    - pulci2
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            1:
+            -
                 group:
                     - dorost
                 name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            1696151532424:
-                group:
-                    - pulci1
-                    - pulci2
-                name: 'Tělocvična ZŠ Sirotkova'
-                time: '16:00 - 17:00'
-                place: 'ZŠ Sirotkova, Brno Žabovřesky'
         friday:
             -
                 name: ''
@@ -110,6 +110,11 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
+        sunday:
+            -
+                name: ''
+                time: ''
+                place: ''
 ---
 
 <div class="row justify-content-between"> 

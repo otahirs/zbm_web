@@ -32,7 +32,7 @@ accomodation: "na postelích v penzionu Králická chata\r\nŽáci2, Dorost a Ho
 food: 'plná penze, začíná se v pátek večeří'
 leader: Luf
 return: 'pondělí 8.5. v podvečer'
-price: '2 400 Kč'
+price: ''
 program: "V pátek začneme večeří a hrou, poté tréninky, rozbory, hry, zábava.\r\n\r\n| Den | Mapa | A | B | C | K | D | Cesta | \r\n|-----|------|-----|-----|-----|-----|-----|-----|\r\n| 6.5. dopo | Paprsek | linie | linie | linie | linie | linie | https://mapy.cz/s/pohuvedace |\r\n| 6.5. odpo | Paprsek | COB | COB | COB s chybějícími kontrolami | COB s chybějícími kontrolami | COB s chybějícími kontrolami | https://mapy.cz/s/pevulokede |\r\n| 7.5. dopo | Jeřábek | hvězdice | shluky | shluky | shluky | shluky | https://mapy.cz/s/foherapopu |\r\n| 7.5. odpo | Jeřábek | sudá/lichá | SUI hra | koridor + krátké postupy | koridor + krátké postupy |  koridor + krátké postupy | https://mapy.cz/s/foherapopu |\r\n| 8.5. dopo | Adam | odbočovák | krátké postupy | krátké postupy | krátké postupy | krátké postupy | https://mapy.cz/s/mubotaleko |\r\n| 8.5. odpo | Mohelnice | sprintové štafety | sprintové štafety | sprintové štafety | sprintové štafety | sprintové štafety | https://mapy.cz/s/dadajasuda |"
 thingsToTake: "buzola, čip, věci na běhání, běháme za každého počasí, takže nezapomeňte si přibalit teplouše...\r\nI oblečení na sebe přizpůsobit počasí. Nezapomeňte na dostatek teplého oblečení na sebe :o))."
 signups: ''

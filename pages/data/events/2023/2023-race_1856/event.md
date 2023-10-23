@@ -13,8 +13,8 @@ start: '2023-11-04'
 end: '2023-11-05'
 title: 'Oddílový přebor'
 place: Zubří
-type: Z
-template: zavod
+type: S
+template: soustredeni
 date: '2022-10-10'
 import:
     type: members
@@ -26,7 +26,7 @@ eventTypeDescription: "Oddílový přebor, kategorie:  \r\nVP: Veteránský poh�
 startTime: '11:00'
 map: 'U Pytláka https://mapy.orientacnisporty.cz/mapa/u-pytlaka-2022'
 terrain: 'Typický vysočinský'
-transport: "Vlakem\r\nsobota: Brno hl. n.: 08:15 - 9:52 Olešná na Moravě (2 km od vlaku)   \r\nneděle: Olešná na Moravě: 15:05 - 17:06"
+transport: "Vlakem - vede Lenka Hr.\r\nsraz: 8:00\r\nsobota: Brno Kr. pole.: 08:28 - 9:52 Olešná na Moravě (2 km od vlaku)   \r\nneděle: Olešná na Moravě: 15:05 - 17:06"
 accomodation: "Jasenka rekreační středisko a restaurace Zubří\r\nKapacita je 98 ubytovaných!"
 food: 'Sobota: oběd, večere, neděle: snídaně, oběd.'
 leader: 'Jan Drábek'
@@ -43,8 +43,9 @@ gps: '49.57881, 16.12636'
 **Sobota odpoledne**: GAMEBOOK - prožijte příběh Odvážného Orienťáka Oskar – vede Jana Smítalová.  
 **Sobotní večer**: Vyhlášení nejlepších závodníků oddílu, vyhlášení Oddílového přeboru, večerní program, losování štafet, diskotéka.   
 **Neděle dopoledne**: Štafety, staví Danáč.
-* **doprava**: Vlakem
-sobota: Brno hl. n.: 08:15 - 9:52 Olešná na Moravě (2 km od vlaku)   
+* **doprava**: Vlakem - vede Lenka Hr.
+sraz: 8:00
+sobota: Brno Kr. pole.: 08:28 - 9:52 Olešná na Moravě (2 km od vlaku)   
 neděle: Olešná na Moravě: 15:05 - 17:06
 * **ubytování**: Jasenka rekreační středisko a restaurace Zubří
 Kapacita je 98 ubytovaných!

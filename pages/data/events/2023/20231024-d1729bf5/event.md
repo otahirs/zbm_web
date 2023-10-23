@@ -6,14 +6,14 @@ title: 'Mapový trénink žactva Lesná'
 start: '2023-10-24'
 end: '2023-10-24'
 place: Lesná
-meetTime: ''
+meetTime: 'začátek tréninku 16:15'
 meetPlace: ''
 link: ''
 eventTypeDescription: 'sprintové štafety'
 startTime: ''
 map: Lesná
 terrain: ''
-transport: ''
+transport: "MHD na zastávku Čertova rokle\r\npřibližovací sraz - Skácelova 15:30"
 accomodation: ''
 food: ''
 leader: ''
@@ -25,11 +25,16 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        1: pulci1
-        2: pulci2
-        3: zaci1
-        4: zaci2
-        5: hobby
-        6: zabicky
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - dorost
+        - hobby
+gps: '49.22745, 16.62326'
 ---
 
+* **sraz**: začátek tréninku 16:15
+* **doprava**: MHD na zastávku Čertova rokle
+přibližovací sraz - Skácelova 15:30

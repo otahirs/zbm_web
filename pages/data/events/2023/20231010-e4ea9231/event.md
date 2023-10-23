@@ -2,22 +2,22 @@
 id: 20231010-e4ea9231
 template: trenink
 type: M
-title: 'Mapový trénink žactva Zadní Hády'
+title: 'Mapový trénink žactva Kukuřice Kníničky'
 start: '2023-10-10'
 end: '2023-10-10'
-place: 'Zadní Hády'
-meetTime: ''
+place: 'Kníničky - kukuřičné bludiště'
+meetTime: '16:30'
 meetPlace: ''
 link: ''
-eventTypeDescription: "P - hvězdice,\r\nA - linie,\r\nB - okruhy,\r\nC, K - vrstevnice"
+eventTypeDescription: Bludiště
 startTime: ''
-map: 'Zadní Hády'
+map: Kukuřice
 terrain: ''
-transport: ''
+transport: "MHD na zastávku Zoologická zahrada - vzdálenost na start 850m\r\nPřibližovací srazy:\r\nHalasovo náměstí: 15:15\r\nSkácelova: 15:30"
 accomodation: ''
 food: ''
 leader: ''
-note: ''
+note: '**Vezměte si čip.**'
 return: ''
 price: ''
 program: ''
@@ -30,6 +30,12 @@ taxonomy:
         3: zaci1
         4: zaci2
         5: hobby
-        6: zabicky
+gps: '49.23341, 16.52867'
 ---
 
+**Vezměte si čip.**
+* **sraz**: 16:30
+* **doprava**: MHD na zastávku Zoologická zahrada - vzdálenost na start 850m
+Přibližovací srazy:
+Halasovo náměstí: 15:15
+Skácelova: 15:30

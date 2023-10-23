@@ -31,7 +31,7 @@ accomodation: Doma.
 food: 'Sobotní a nedělní oběd zajištěn, ostatní doma.'
 leader: Luf
 return: ''
-price: '350,- Kč'
+price: ''
 program: ''
 thingsToTake: ''
 signups: ''

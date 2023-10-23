@@ -13,7 +13,7 @@ eventTypeDescription: "P, A - okruhy,\r\nB, C, K - SUI hra"
 startTime: ''
 map: Vranov
 terrain: ''
-transport: "MHD na zastávku Vranov +(bude upřesněno)\r\nPřibližovací srazy:\r\nSkácelova: 15:10\r\nHalasovo náměstí: 15:25"
+transport: "MHD na zastávku Vranov myslivna\r\nPřibližovací srazy:\r\nSkácelova: 15:10\r\nHalasovo náměstí: 15:25"
 accomodation: ''
 food: ''
 leader: ''
@@ -25,15 +25,16 @@ thingsToTake: ''
 signups: ''
 taxonomy:
     skupina:
-        1: pulci1
-        2: pulci2
-        3: zaci1
-        4: zaci2
-        5: hobby
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - hobby
+gps: '49.31215, 16.62401'
 ---
 
 * **sraz**: 16:15
-* **doprava**: MHD na zastávku Vranov +(bude upřesněno)
+* **doprava**: MHD na zastávku Vranov myslivna
 Přibližovací srazy:
 Skácelova: 15:10
 Halasovo náměstí: 15:25

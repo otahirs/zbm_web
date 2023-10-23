@@ -32,11 +32,11 @@ accomodation: 'Penzion Kukla v obci Kuklík na Vysočině.'
 food: 'Plná penze, začínáme večeří.'
 leader: Andrea
 return: 'Neděle 5.2. v odpoledních hodinách.'
-price: '1950,- Kč'
+price: ''
 program: "Běh na běžkách.\r\nV případě nepříznivých sněhových podmínek tréninky OB, běžecké tréninky/vycházky."
 thingsToTake: "Vybavení na běžky = běžky, hůlky, boty, vosky (kdo má)\r\nVhodné oblečení na běžkování, případně běhání (pokud nebude sníh), buzola.\r\nSpolečenské hry na večer."
 signups: ''
-gps: '49.62060, 16.12158'
+gps: '49.6206, 16.12158'
 ---
 
 Běžkařské či běžecko/turistické soustředění o pololetních prázdninách je určeno všem kategoriím.
