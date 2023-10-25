@@ -56,7 +56,8 @@ Info:
 <section>
     <header class="main">
     </header>
-              <div class="row align-items-center">
+
+    <div class="row align-items-center">
     <div class="col-md-6">
         <a href="https://www.brno.cz/uvodni-strana/" target="_blank">
         <img class="sponsors--img" src="/sponsors/Brno.svg">
@@ -69,7 +70,7 @@ Info:
     </div>
     <div class="col-md-6">
         <a href="http://www.revos.cz/" target="_blank">
-        <img class="sponsors--img" src="/sponsors/Revos.svg">
+        <img class="sponsors--img" src="{{page.route()}}/Revos.svg">
         </a>
     </div>
     <div class="col-md-6">
@@ -77,21 +78,27 @@ Info:
         <img class="sponsors--img" src="/sponsors/Naskok.svg">
         </a>
     </div>
+<!--## Zakomentovano nez zjistime, jestli z nich jeste neco nedostanem
     <div class="col-md-6">
         <a href="https://www.sap.com/cz/products/business-one.html" target="_blank">
         <img class="sponsors--img" src="/sponsors/SAP.svg">
         </a>
     </div>
+-->
     <div class="col-md-6">
         <a href="https://www.cus-sportujsnami.cz/" target="_blank">
         <img class="sponsors--img" src="/sponsors/Sportuj.svg">
         </a>
     </div>
-<!-- Nadace OB neprispela
-     <div class="col-md-6">
+    <div class="col-md-6">
         <a href="https://www.obnadace.cz/" target="_blank">
         <img class="sponsors--img" src="http://www.orientacnisporty.cz/upload/ilustracni-obrazky/nadaceob.PNG">
         </a>
-    </div>-->
+    </div>
+    <div class="col-md-6">
+        <a href="https://luciferlights.net/" target="_blank">
+        <img class="sponsors--img" src="/sponsors/Lucifer_Logo_White02.svg">
+        </a>
+    </div>
 </div>
     </section>
