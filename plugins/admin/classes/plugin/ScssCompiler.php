@@ -1,7 +1,16 @@
 <?php
+
+/**
+ * @package    Grav\Plugin\Admin
+ *
+ * @copyright  Copyright (c) 2015 - 2023 Trilby Media, LLC. All rights reserved.
+ * @license    MIT License; see LICENSE file for details.
+ */
+
 namespace Grav\Plugin\Admin;
 
 use ScssPhp\ScssPhp\Compiler;
+use ScssPhp\ScssPhp\ValueConverter;
 
 class ScssCompiler
 {
@@ -23,7 +32,13 @@ class ScssCompiler
 
     public function setVariables(array $variables)
     {
-        $this->compiler()->setVariables($variables);
+//        $parsed = ValueConverter::fromPhp($variables);
+        $parsed = [];
+        foreach ($variables as $key => $value) {
+            $parsed[$key] = ValueConverter::parseValue($value);
+        }
+
+        $this->compiler()->addVariables($parsed);
         return $this;
     }
 
@@ -47,7 +62,7 @@ class ScssCompiler
         foreach ($input_paths as $input_file) {
             $input .= trim(file_get_contents($input_file)) . "\n\n";
         }
-        $output = $this->compiler()->compile($input);
+        $output = $this->compiler()->compileString($input)->getCss();
         file_put_contents($output_file, $output);
         return $this;
     }

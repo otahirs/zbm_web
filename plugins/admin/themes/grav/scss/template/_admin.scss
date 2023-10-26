@@ -332,7 +332,7 @@ $content-padding: 1.5rem;
         object-fit: cover;
     }
 
-    & ~ .block-file {
+    & + .block-file {
         margin-top: -5rem !important;
     }
 }
@@ -1114,7 +1114,7 @@ body.sidebar-quickopen #admin-main {
         linep-height: 1.2;
     }
 
-    .gravatar {
+    .avatar {
         font-size: 0.9rem;
         padding: 0;
     }
@@ -1218,6 +1218,13 @@ body.sidebar-quickopen #admin-main {
         right: 0;
         left: 0;
     }
+}
+
+// Gumroad
+.gumroad {
+  .cart-button {
+    display: none !important;
+  }
 }
 
 // Config Side Tabs

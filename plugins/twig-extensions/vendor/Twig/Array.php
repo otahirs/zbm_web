@@ -20,7 +20,8 @@ class Twig_Extensions_Extension_Array extends Twig_Extension
     public function getFilters()
     {
         $filters = array(
-             new Twig_SimpleFilter('shuffle', 'twig_shuffle_filter'),
+            new Twig_SimpleFilter('shuffle', [$this, 'shuffle']),
+            new Twig_SimpleFilter('array_push', [$this, 'push' ]),
         );
 
         return $filters;
@@ -33,24 +34,41 @@ class Twig_Extensions_Extension_Array extends Twig_Extension
     {
         return 'array';
     }
-}
 
-/**
- * Shuffles an array.
- *
- * @param array|Traversable $array An array
- *
- * @return array
- */
-function twig_shuffle_filter($array)
-{
-    if ($array instanceof Traversable) {
-        $array = iterator_to_array($array, false);
+    /**
+     * Shuffles an array.
+     *
+     * @param array|Traversable $array An array
+     *
+     * @return array
+     */
+    function shuffle($array)
+    {
+        if ($array instanceof Traversable) {
+            $array = iterator_to_array($array, false);
+        }
+
+        shuffle($array);
+
+        return $array;
     }
 
-    shuffle($array);
+    /**
+     * Push one or more elements onto the end of array
+     *
+     * @param array|Traversable $array An array
+     *
+     * @return array
+     */
+    public function push($array, $array2 = [])
+    {
+        if ($array instanceof Traversable) {
+            $array = iterator_to_array($array, false);
+        }
 
-    return $array;
+        array_push($array, $array2);
+        return $array;
+    }
 }
 
 class_alias('Twig_Extensions_Extension_Array', 'Twig\Extensions\ArrayExtension', false);

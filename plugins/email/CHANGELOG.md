@@ -1,3 +1,95 @@
+# v4.0.4
+## 07/10/2023
+
+1. [](#bugfix)
+   * Fix for email file attachments using stream
+
+# v4.0.3
+## 06/29/2023
+
+1. [](#improved)
+   * Simplified the `Email::processRecipients()` logic for readability
+1. [](#bugfix)
+   * Fix an issue with 2 email addresses provided with 'just' email and no name [#176](https://github.com/getgrav/grav-plugin-email/issues/176)
+   * Fix for blank subjectlines when using `Message::setSubject()` in Twig templates [getgrav/grav-plugin-login#299](https://github.com/getgrav/grav-plugin-login/issues/299)
+
+# v4.0.2
+## 06/27/2023
+
+1. [](#bugfix)
+   * some recipient handling improvements. e.g. missing `bcc_name` throwing error
+   * Allow overriding of defaults with a form configuration.  Use `null` to remove default email configuration
+
+# v4.0.1
+## 05/20/2023
+
+1. [](#bugfix)
+   * Fixed a bug with Email 4.0 ignoring `template:` parameter when dealing with multiple body sections
+
+# v4.0.0
+## 05/09/2023
+
+1. [](#new)
+   * Migrated from `Swiftmailer` (which has been deprecated) to `Symfony/Mailer`, a more modern and extensible mailing library.
+   * Built-in support for `SMTP`, `SMTPS`, `Sendmail` and `Native` (uses best solution per-platform) engines
+   * Added ability to have 3rd party plugins that provide new engines (e.g. `SendGrid`, `MailJet`, etc.) with `SMTP`, `API` or `HTTPS` transports for faster and more reliable email sending
+   * More flexible options for email formatting including RFC822 `name-addr` format (`Joe Bloggs <user@example.com>`) and simple arrays (`[user@example.com, Joe Bloggs]`)
+   * Support `tags` and `metadata` in `Email::buildMessage()`
+   * Two new events `onEmailEngines` and `onEmailTransportDsn` to facilitate the integration of custom engines via plugins
+
+# v4.0.0-rc.4
+## 02/27/2023
+   
+1. [](#bugfix)
+   * Fixed for multiple recipients [#167](https://github.com/getgrav/grav-plugin-email/issues/167)
+   * Fix for simple array format with names which wasn't working
+
+# v4.0.0-rc.3
+## 10/27/2022
+   
+1. [](#bugfix)
+   * Fixed an issue with array based email address
+
+# v4.0.0-rc.2
+## 10/19/2022
+   
+1. [](#improved)
+   * Set `sendmail` as default engine to provide better fallback for unsupported `mailer` option
+   * Added info about available engine plugins in `README.md`
+
+# v4.0.0-rc.1
+## 10/05/2022
+   
+1. [](#new)
+   * Migrated from `Swiftmailer` (which has been deprecated) to `Symfony/Mailer`, a more modern and extensible mailing library.
+   * Built-in support for `SMTP`, `SMTPS`, `Sendmail` and `Native` (uses best solution per-platform) engines
+   * Added ability to have 3rd party plugins that provide new engines (e.g. `SendGrid`, `MailJet`, etc.) with `SMTP`, `API` or `HTTPS` transports for faster and more reliable email sending
+   * More flexible options for email formatting including RFC822 `name-addr` format (`Joe Bloggs <user@example.com>`) and simple arrays (`[user@example.com, Joe Bloggs]`)
+   * Support `tags` and `metadata` in `Email::buildMessage()`
+   * Two new events `onEmailEngines` and `onEmailTransportDsn` to facilitate the integration of custom engines via plugins
+
+# v3.2.0
+## 03/28/2022
+
+1. [](#new)
+    * Require **Grav 1.7.32** and **Form 6.0.0**
+1. [](#improved)
+    * Added access email message object inside the twig template file
+2. [](#bugfix)
+    * Fixed twig not being initialized when building an email message
+
+# v3.1.5
+## 01/03/2022
+
+1. [](#improved)
+   * Updated to Swiftmailer `v6.3.0` with PHP 8.1 compatibility [#157](https://github.com/getgrav/grav-plugin-email/issues/157)
+
+# v3.1.4
+## 11/16/2021
+
+1. [](#improved)
+    * Added second parameter to `Email::send()` to get failed recipients
+
 # v3.1.3
 ## 07/19/2021
 

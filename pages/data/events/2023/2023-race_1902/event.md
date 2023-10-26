@@ -21,5 +21,6 @@ import:
     type: members
     time: 1673859008
 place: Olbramice
+hasStartlist: true
 ---
 

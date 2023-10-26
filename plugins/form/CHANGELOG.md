@@ -1,3 +1,158 @@
+# v7.2.1
+## 06/27/2023
+
+1. [](#improved)
+   * Added some optional debug output to help isolate form loading problems
+1. [](#bugfix)
+   * More robust fix for multi-language form caching
+
+# v7.2.0
+## 06/21/2023
+
+1. [](#bugfix)
+   * Fixed a long-standing bug with cached forms not working properly in multi-language scenarios
+
+# v7.1.3
+## 05/09/2023
+
+1. [](#improved)
+   * Removed `FILTER_SANITIZE_STRING` input filter in favor of `htmlspecialchars(strip_tags())` 
+   * Fixed a deprecated message when using `Route::_toString()`
+   * Require Grav `v1.7.41` as it contains `GRAV_SANITIZE_STRING` constant
+
+# v7.1.2
+## 01/08/2023
+
+1. [](#bugfix)
+   * Fixes issue with multiplication type BasicCaptcha Math Captcha [#587](https://github.com/getgrav/grav-plugin-form/issues/587)
+
+# v7.1.1
+## 11/29/2022
+
+1. [](#bugfix)
+   * Fix missing blueprint entries for Turnstile configuration [#583](https://github.com/getgrav/grav-plugin-form/issues/583)
+
+# v7.1.0
+## 11/16/2022
+
+1. [](#new)
+   * Added Cloudflare's `turnstile` captcha integration [documentation](https://learn.getgrav.org/17/forms/forms/fields-available#turnstile-field-cloudflare)
+
+# v7.0.2
+## 10/05/2022
+
+1. [](#bugfix)
+   * Fix for modular form definitions at root-level (useful for storing shared forms)
+
+# v7.0.1
+## 09/20/2022
+
+1. [](#improved)
+   * Provided some basic CSS styling for new captcha field
+
+# v7.0.0
+## 09/20/2022
+
+1. [](#new)
+   * Added a new custom `basic-captcha` option with **character** and **math** puzzles.  No 3rd-part service required.
+
+# v6.0.4
+## 08/08/2022
+
+1. [](#improved)
+    * Added `attributes` to field [#573](https://github.com/getgrav/grav-plugin-form/pull/573)
+
+# v6.0.3
+## 05/05/2022
+
+1. [](#bugfix)
+    * Regression: Fixed broken `addForm()` method
+
+# v6.0.2
+## 05/02/2022
+
+1. [](#bugfix)
+    * Fixed `forms({ route: '/forms/_myform' })` not finding form from non-routable pages (second try)
+
+# v6.0.1
+## 04/25/2022
+
+1. [](#improved)
+    * Improved `prepare_form_field()` twig method to include `plain_name`
+1. [](#bugfix)
+    * Fixed `columns` and `column` fields with `.dotted` variables inside to ignore columns and column names
+    * Fixed `forms({ route: '/forms/_myform' })` not finding forms from non-routable pages
+
+# v6.0.0
+## 03/28/2022
+
+1. [](#improved)
+    * Added log warning when trying to access form by non-unique name
+    * Optimized form caching by not initializing the forms in `onPageProcessed` event anymore
+    * **BACKWARD COMPATIBILITY**: As form initialization has been delayed, logic relaying on `onPageProcessed` with forms may not work anymore
+1. [](#bugfix)
+    * Fixed select field where option is iterable (#558)
+    * Fixed `FormPlugin::getForm()` to properly search the current page first
+    * Fixed `FormPlugin::getForm()` to ignore fallback if the page was given as parameter
+    * Fixed dynamic forms to work with cache turned on
+    * Fix nested `toggleable`: originalValue now checks with `??` instead of `is defined`
+
+# v5.1.7
+## 03/14/2022
+
+1. [](#new)
+    * Added `access` support for buttons
+2. [](#bugfix)
+   * Fixed tabs in the frontend to ensure JS is loaded
+   
+# v5.1.6
+## 02/07/2022
+
+1. [](#bugfix)
+    * Fixed Select field when using OptGroups, not allowing key/values [#541](https://github.com/getgrav/grav-plugin-form/issues/541)
+    * Support for translatable OptGroup labels in Select field [#540](https://github.com/getgrav/grav-plugin-form/issues/540)
+
+# v5.1.5
+## 01/24/2022
+
+1. [](#bugfix)
+    * Fixed case in selectize field where custom new entries would not be stored in non `multiple` lists
+
+# v5.1.4
+## 11/16/2021
+
+1. [](#bugfix)
+    * Fixed buttons no longer rendered [#537](https://github.com/getgrav/grav-plugin-form/issues/537) 
+    * Allow `select` field to customize `autocomplete` attribute
+
+# v5.1.3
+## 10/26/2021
+
+1. [](#new)
+    * Require **Grav 1.7.24**
+    * Added support to disable a form, making it readonly
+    * Added `|value_and_label` Twig filter to convert options to value/label pairs
+1. [](#improved)
+    * Improved Twig function `include_form_field()` to allow the second parameter to be an array of layouts
+
+# v5.1.2
+## 09/29/2021
+
+1. [](#improved)
+    * Improved support for Twig 2/3
+
+# v5.1.1
+## 09/14/2021
+
+1. [](#new)
+    * Require **Grav 1.7.21**
+1. [](#bugfix)
+    * Fixed accidental admin plugin requirement for YAML filter in the form
+    * Fixed `GravForm.config` JS to have correct `current_url` and `current_params` settings
+    * Fixed custom file upload and remove routes
+    * Fixed bug where uploading file has no effect [#349](https://github.com/getgrav/grav-plugin-form/issues/349)
+    * Fixed field with numeric field name in `prepare_form_fields()` [#530](https://github.com/getgrav/grav-plugin-form/issues/530)
+
 # v5.1.0
 ## 08/31/2021
 

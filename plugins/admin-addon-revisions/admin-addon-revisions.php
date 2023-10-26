@@ -1,4 +1,5 @@
 <?php
+
 namespace Grav\Plugin;
 
 use RocketTheme\Toolbox\Event\Event;
@@ -10,7 +11,8 @@ use AdminAddonRevisions\TaskHandler;
 use AdminAddonRevisions\Revision;
 use AdminAddonRevisions\Revisions;
 
-class AdminAddonRevisionsPlugin extends Plugin {
+class AdminAddonRevisionsPlugin extends Plugin
+{
 
   public static $instance;
 
@@ -22,17 +24,20 @@ class AdminAddonRevisionsPlugin extends Plugin {
   protected $loader = null;
   protected $taskHandler = null;
 
-  public static function getSubscribedEvents() {
+  public static function getSubscribedEvents()
+  {
     return [
       'onPluginsInitialized' => ['onPluginsInitialized', 0]
     ];
   }
 
-  public static function instance() {
+  public static function instance()
+  {
     return self::$instance;
   }
 
-  private function _autoload($namespace, $folders) {
+  private function _autoload($namespace, $folders)
+  {
     if ($this->loader === null) {
       $this->loader = new ClassLoader();
     }
@@ -41,11 +46,13 @@ class AdminAddonRevisionsPlugin extends Plugin {
     $this->loader->register(true);
   }
 
-  public function configKey() {
+  public function configKey()
+  {
     return 'plugins.' . self::SLUG;
   }
 
-  public function onPluginsInitialized() {
+  public function onPluginsInitialized()
+  {
     $this->_autoload('AdminAddonRevisions', array(__DIR__ . '/src/'));
     self::$instance = $this;
 
@@ -66,14 +73,47 @@ class AdminAddonRevisionsPlugin extends Plugin {
       'onTwigSiteVariables' => ['onTwigSiteVariables', 0],
       'onAdminMenu' => ['onAdminMenu', 0],
       'onAssetsInitialized' => ['onAssetsInitialized', 0],
+      'onSchedulerInitialized' => ['onSchedulerInitialized', 0],
     ]);
   }
 
-  public function onAssetsInitialized() {
+  public function onAssetsInitialized()
+  {
     $this->grav['assets']->addCss('plugin://' . self::SLUG . '/assets/style.css');
   }
 
-  public function onAdminMenu() {
+  public static function CleanupJob()
+  {
+    $instance = AdminAddonRevisionsPlugin::instance();
+    $instance->cleanupRevisionsForAllPages();
+  }
+
+  public function cleanupRevisionsForAllPages()
+  {
+    $allPages = $this->grav['pages']->all();
+    foreach ($allPages as $page) {
+      $revisions = new Revisions($page);
+      $this->cleanupRevisions($revisions);
+    }
+  }
+
+  public function onSchedulerInitialized($e): void
+  {
+    $config = $this->config();
+
+    if (!empty($config['scheduled_cleanup']['enabled'])) {
+      $scheduler = $e['scheduler'];
+      $at = $config['scheduled_cleanup']['at'] ?? '0 0 * * *';
+      $logs = $config['scheduled_cleanup']['logs'] ?? '';
+      $job = $scheduler->addFunction('Grav\Plugin\AdminAddonRevisionsPlugin::CleanupJob', [], self::SLUG . '-cleanup');
+      $job->at($at);
+      $job->output($logs);
+      $job->backlink('/plugins/' . self::SLUG);
+    }
+  }
+
+  public function onAdminMenu()
+  {
     $twig = $this->grav['twig'];
     $twig->plugins_hooked_nav = (isset($twig->plugins_hooked_nav)) ? $twig->plugins_hooked_nav : [];
     $twig->plugins_hooked_nav['Revisions'] = [
@@ -82,13 +122,15 @@ class AdminAddonRevisionsPlugin extends Plugin {
     ];
   }
 
-  public function onAdminTwigTemplatePaths($e) {
+  public function onAdminTwigTemplatePaths($e)
+  {
     $paths = $e['paths'];
     $paths[] = __DIR__ . DS . 'templates';
     $e['paths'] = $paths;
   }
 
-  public function onTwigSiteVariables() {
+  public function onTwigSiteVariables()
+  {
     $twig = $this->grav['twig'];
     $page = $this->grav['page'];
     $uri = $this->grav['uri'];
@@ -142,7 +184,8 @@ class AdminAddonRevisionsPlugin extends Plugin {
     $twig->twig_vars['action'] = $action;
   }
 
-  public function onAdminTaskExecute($e) {
+  public function onAdminTaskExecute($e)
+  {
     if ($this->taskHandler === null) {
       $this->taskHandler = new TaskHandler($this);
     }
@@ -150,16 +193,21 @@ class AdminAddonRevisionsPlugin extends Plugin {
     return $this->taskHandler->execute($e['method']);
   }
 
-  public function onPageProcessed(Event $e) {
+  public function onPageProcessed(Event $e)
+  {
     $page = $e['page'];
 
     if (!$page->id() || !$page->exists()) {
       return;
     }
 
-    $this->debugMessage('--- Admin Addon Revision - Analyzing \'' . $page->title(). '\' ---');
+    $this->debugMessage('--- Admin Addon Revision - Analyzing \'' . $page->title() . '\' ---');
 
     $revisions = new Revisions($page);
+    if (!$revisions->writable()) {
+      $this->debugMessage('-- Not writable, skipping');
+      return;
+    }
 
     // Make sure we have a revisions directory
     if (!$revisions->exists()) {
@@ -206,46 +254,56 @@ class AdminAddonRevisionsPlugin extends Plugin {
         return;
       }
 
-      // Limit number of revisions
-      $deletedRevision = false;
-      do {
-        $deletedRevision = false;
-
-        // Check for maximum count and delete the oldest revisions first
-        $maximum = $this->config->get($this->configKey() . '.limit.maximum', 0);
-        if ($maximum && ctype_digit($maximum)) {
-          // Refresh instances
-          $revisions->instances(true);
-          // Increment by one because we don't want to count the current revision
-          if ($revisions->count() > $maximum + 1) {
-            $firstRev = $revisions->first();
-            $this->debugMessage('-- Deleting revision: ' . $firstRev->name() . ', limit exceeded.');
-            $firstRev->delete();
-            $deletedRevision = true;
-          }
-        }
-
-        // Check for old revisions
-        $older = $this->config->get($this->configKey() . '.limit.older', null);
-        if ($older) {
-          $instances = $revisions->instances(true);
-          foreach ($revisions as $rev) {
-            $time = $rev->createdAt();
-            $olderTime = strtotime('-' . $older);
-            if ($olderTime !== false && $older > $time) {
-              $this->debugMessage('-- Deleting revision: ' . $rev->name() . ', older than ' . $older . '.');
-              $rev->delete();
-              $deletedRevision = true;
-            }
-          }
-        }
-      } while($deletedRevision);
+      $this->cleanupRevisions($revisions);
     } else {
       $this->debugMessage('-- No changes.');
     }
   }
 
-  private function debugMessage($msg) {
+  private function cleanupRevisions($revisions)
+  {
+    if (!$revisions->exists()) {
+      return;
+    }
+
+    // Limit number of revisions
+    $deletedRevision = false;
+    do {
+      $deletedRevision = false;
+
+      // Check for maximum count and delete the oldest revisions first
+      $maximum = $this->config->get($this->configKey() . '.limit.maximum', 0);
+      if ($maximum && ctype_digit($maximum)) {
+        // Refresh instances
+        $revisions->instances(true);
+        // Increment by one because we don't want to count the current revision
+        if ($revisions->count() > $maximum + 1) {
+          $firstRev = $revisions->first();
+          $this->debugMessage('-- Deleting revision: ' . $firstRev->name() . ', limit exceeded.');
+          $firstRev->delete();
+          $deletedRevision = true;
+        }
+      }
+
+      // Check for old revisions
+      $older = $this->config->get($this->configKey() . '.limit.older', null);
+      if ($older) {
+        $instances = $revisions->instances(true);
+        foreach ($instances as $rev) {
+          $time = $rev->createdAt();
+          $olderTime = strtotime('-' . $older);
+          if ($olderTime !== false && $olderTime > $time) {
+            $this->debugMessage('-- Deleting revision: ' . $rev->name() . ', older than ' . $older . '.');
+            $rev->delete();
+            $deletedRevision = true;
+          }
+        }
+      }
+    } while ($deletedRevision);
+  }
+
+  private function debugMessage($msg)
+  {
     $debugEnabled = $this->config->get($this->configKey() . '.debug');
 
     if ($debugEnabled) {
@@ -253,7 +311,8 @@ class AdminAddonRevisionsPlugin extends Plugin {
     }
   }
 
-  public function getCurrentPage() {
+  public function getCurrentPage()
+  {
     $page = $this->grav['admin']->page(true);
 
     if (!$page) {
@@ -263,15 +322,18 @@ class AdminAddonRevisionsPlugin extends Plugin {
     return $page;
   }
 
-  public function directoryName() {
+  public function directoryName()
+  {
     return $this->directoryName;
   }
 
-  public function grav() {
+  public function grav()
+  {
     return $this->grav;
   }
 
-  public function isIgnoredFile($file) {
+  public function isIgnoredFile($file)
+  {
     $patterns = $this->config->get($this->configKey() . '.ignore_files', []);
 
     foreach ($patterns as $pattern) {
@@ -282,5 +344,4 @@ class AdminAddonRevisionsPlugin extends Plugin {
 
     return false;
   }
-
 }

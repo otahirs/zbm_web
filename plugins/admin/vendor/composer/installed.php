@@ -1,88 +1,77 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'dev-develop',
-    'version' => 'dev-develop',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'name' => 'getgrav/grav-plugin-admin',
+        'pretty_version' => 'dev-develop',
+        'version' => 'dev-develop',
+        'reference' => '8c17ca7d75e271ee2cf4e38ae54e75d2ce8b9224',
+        'type' => 'grav-plugin',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => false,
     ),
-    'reference' => '315e35fa69d28436e276274382262866360c64e9',
-    'name' => 'getgrav/grav-plugin-admin',
-  ),
-  'versions' => 
-  array (
-    'getgrav/grav-plugin-admin' => 
-    array (
-      'pretty_version' => 'dev-develop',
-      'version' => 'dev-develop',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '315e35fa69d28436e276274382262866360c64e9',
+    'versions' => array(
+        'getgrav/grav-plugin-admin' => array(
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
+            'reference' => '8c17ca7d75e271ee2cf4e38ae54e75d2ce8b9224',
+            'type' => 'grav-plugin',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'laminas/laminas-xml' => array(
+            'pretty_version' => '1.4.0',
+            'version' => '1.4.0.0',
+            'reference' => 'dcadeefdb6d7ed6b39d772b47e3845003d6ea60f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laminas/laminas-xml',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'laminas/laminas-zendframework-bridge' => array(
+            'pretty_version' => '1.4.1',
+            'version' => '1.4.1.0',
+            'reference' => '88bf037259869891afce6504cacc4f8a07b24d0f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laminas/laminas-zendframework-bridge',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'miniflux/picofeed' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '0.1.35',
+            ),
+        ),
+        'p3k/picofeed' => array(
+            'pretty_version' => '1.0.0',
+            'version' => '1.0.0.0',
+            'reference' => '8eacaa62f50a0935e26ca33f8d30d283344ca397',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../p3k/picofeed',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'scssphp/scssphp' => array(
+            'pretty_version' => 'v1.11.0',
+            'version' => '1.11.0.0',
+            'reference' => '33749d12c2569bb24071f94e9af828662dabb068',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../scssphp/scssphp',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/polyfill-php72' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
+        ),
+        'symfony/polyfill-php73' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
+        ),
     ),
-    'laminas/laminas-xml' => 
-    array (
-      'pretty_version' => '1.3.1',
-      'version' => '1.3.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '2eada592359aec9d9e55339270b621295cff3a4f',
-    ),
-    'laminas/laminas-zendframework-bridge' => 
-    array (
-      'pretty_version' => '1.3.0',
-      'version' => '1.3.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '13af2502d9bb6f7d33be2de4b51fb68c6cdb476e',
-    ),
-    'miniflux/picofeed' => 
-    array (
-      'replaced' => 
-      array (
-        0 => '0.1.35',
-      ),
-    ),
-    'p3k/picofeed' => 
-    array (
-      'pretty_version' => 'v0.1.40',
-      'version' => '0.1.40.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '356fd66d48779193b10ac28532cb4a4e11bb801c',
-    ),
-    'scssphp/scssphp' => 
-    array (
-      'pretty_version' => 'v1.6.0',
-      'version' => '1.6.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'b83594e2323c5d6e80785df3f91b9d1d32aad530',
-    ),
-    'symfony/polyfill-php72' => 
-    array (
-      'replaced' => 
-      array (
-        0 => '*',
-      ),
-    ),
-    'symfony/polyfill-php73' => 
-    array (
-      'replaced' => 
-      array (
-        0 => '*',
-      ),
-    ),
-    'zendframework/zendxml' => 
-    array (
-      'replaced' => 
-      array (
-        0 => '^1.2.0',
-      ),
-    ),
-  ),
 );

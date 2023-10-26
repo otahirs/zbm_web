@@ -15,21 +15,30 @@ pictures:
       ratio: '6'
 ---
 Dvě zlata, jedno stříbro a dvě bronzové medajle jsme dovezli z víkendového Mistrovství ČR a veteraniády štafet a družstev!  
-Zlato:  
-štafeta mužů (Jáchym Coufal, Mára Minář, Miloš Nykodým)  
-štafeta dorostenců (Martin Bulička, Tomáš Urbánek, Tomáš Kučera)  
-stříbro dorostenců ze družstev (Bulička Martin, Coufalová Rea, Kučera Tomáš, Finstrlová Kristýna, Prášil Tomáš, Tomanová Eliška, Urbánek Tomáš)  
-bronz dospělého družstva (Jonáš Adam, Hiklová Natalia, Nykodým Miloš, Odehnalová Tereza, Coufal Jáchym, Zháňalová Barbora, Minář Marek)  
-bronz nejmladších veteránů (Drábek Jan, Stachoňová Barbara, Hikl Tomáš, Kopáčková Jana, Zháňal Jan)  
-Navíc ve zlatém družstvě Jihomoravské oblasti běžely čtyři naděje z Žabin (Toman Matěj, Hikl Martin, Beránková Kamila, Marková Eva)!  
-Ale i další skvělé výsledky jsme dovezli z víkendu:
+Zlato:
 
-Štafeta žen byla 5. (Hiklová Natalia, Odehnalová Tereza, Zháňalová Barbora)  
-Štafeta dorostenek 7. (Finstrlová Kristýna, Coufalová Rea, Tomanová Eliška)  
-Štafeta nejmladších veteránek 5. (Stachoňová Barbara, Smítalová Jana, Kopáčková Jana)  
-Béčko mužů 8. (Brlica Pavel, Hájek Daniel, Hirš Otakar)  
-Štafeta nejmladších veteránů 9. (Drábek Jan, Hikl Tomáš, Zháňal Jan)  
-Béčkové dospělé družstvo bylo neuvěřitelně 7.! (Hirš Otakar, Klusáčková Magdaléna, Brlica Pavel, Tesařová Markéta, Mokrý Stanislav, Finstrlová Adéla, Hájek Daniel)
+*   štafeta mužů (Jáchym Coufal, Mára Minář, Miloš Nykodým)
+*   štafeta dorostenců (Martin Bulička, Tomáš Urbánek, Tomáš Kučera)
 
-Díky všem za skvělou reprezentaci!
+Stříbro:
+
+*   dorostenců ze družstev (Bulička Martin, Coufalová Rea, Kučera Tomáš, Finstrlová Kristýna, Prášil Tomáš, Tomanová Eliška, Urbánek Tomáš)
+
+Bronz
+
+*   dospělého družstva (Jonáš Adam, Hiklová Natalia, Nykodým Miloš, Odehnalová Tereza, Coufal Jáchym, Zháňalová Barbora, Minář Marek)
+*   nejmladších veteránů (Drábek Jan, Stachoňová Barbara, Hikl Tomáš, Kopáčková Jana, Zháňal Jan)  
+    
+Navíc ve zlatém družstvě Jihomoravské oblasti běžely čtyři naděje z Žabin (Toman Matěj, Hikl Martin, Beránková Kamila, Marková Eva)!
+
+A další skvělé výsledky:
+
+*   štafeta žen byla 5. (Hiklová Natalia, Odehnalová Tereza, Zháňalová Barbora)
+*   štafeta nejmladších veteránek 5. (Stachoňová Barbara, Smítalová Jana, Kopáčková Jana)
+*   štafeta dorostenek 7. (Finstrlová Kristýna, Coufalová Rea, Tomanová Eliška)
+*   béčkové dospělé družstvo 7.! (Hirš Otakar, Klusáčková Magdaléna, Brlica Pavel, Tesařová Markéta, Mokrý Stanislav, Finstrlová Adéla, Hájek Daniel)
+*   štafetové béčko mužů 8. (Brlica Pavel, Hájek Daniel, Hirš Otakar)
+*   štafeta nejmladších veteránů 9. (Drábek Jan, Hikl Tomáš, Zháňal Jan)
+
+Díky všem za skvělou reprezentaci!  
 Fotky [zde](https://www.rajce.idnes.cz/skzabovresky/album/mcr-stafet-a-druzstev-2023).

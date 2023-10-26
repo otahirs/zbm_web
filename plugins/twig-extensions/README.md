@@ -1,8 +1,8 @@
 # Twig Extensions Plugin
 
-The **Twig Extensions** plugin is for [Grav CMS](http://github.com/getgrav/grav). It pulls in a subset of the official [Twig Extensions](https://github.com/twigphp/Twig-extensions), v1.4.0.
+The **Twig Extensions** plugin is for [Grav CMS](http://github.com/getgrav/grav). It pulls in a subset of the official [Twig Extensions](https://github.com/twigphp/Twig-extensions) and adds some customizations.
 
-For a demo, [visit my blog](https://perlkonig.com/demos/twig-extensions).
+This is also the new home of the [abandoned plugin by Aaron Dalton](https://github.com/Perlkonig/grav-plugin-twig-extensions).
 
 ## Installation
 
@@ -23,7 +23,7 @@ To install this plugin, just download the zip version of this repository and unz
 You should now have all the plugin files under
 
     /your/site/grav/user/plugins/twig-extensions
-  
+
 > NOTE: This plugin is a modular component for Grav which requires [Grav](http://github.com/getgrav/grav) and the [Error](https://github.com/getgrav/grav-plugin-error) and [Problems](https://github.com/getgrav/grav-plugin-problems) to operate.
 
 ## Configuration
@@ -44,19 +44,21 @@ modules: [array, intl, date]
 
 Simply enable the plugin to use these Twig filters. There are three modules available:
 
-* The `Intl` module provides three filters:
+* The `Intl` module:
   * `localizeddate` formats a date based on the locale.
   * `localizednumber` formats a number based on the locale.
   * `localizedcurrency` formats a number based on a given currency code.
 
-* The `Array` module provides a single filter:
+* The `Array` module:
+  * `array_push` (custom filter) adds elements onto the end of array.
+  * **Note:** This is useful to add multidimensional, associative arrays, since the `merge` filter is not capable of this
   * `shuffle` randomizes an array.
   * **Note:** This code was slightly modified to allow shuffling associative arrays. Simply pass `true` to enable this feature: `{{ myArray | shuffle(true) }}`.
 
-The `Date` module also only provides a single filter:
+The `Date` module:
   * `time_diff` dispays the delta between two dates in a human readable form (e.g., `2 days ago`).
 
-For more information, [read the official documentation](http://twig.sensiolabs.org/doc/extensions/index.html).
+For more information, read [the documentation of the original extensions](https://github.com/twigphp/Twig-extensions/tree/master/doc).
 
 ### Omitted Modules
 

@@ -8,7 +8,8 @@ pictures:
     - name: '1697790925333_OrienteeringHeadlamp003-940x626.jpg'
       ratio: '3'
 ---
-S plížícím se podzimem se nám zkrátí den a bude potřeba si svítit do mapy i pod nohy.
+**Objednáváme v pátek 27. 10. **
+S blížícím se podzimem se nám zkrátí den a bude potřeba si svítit do mapy i pod nohy.
 
 Jako bonus budou letos noční tréninky připraveny i pro DH14 a k nim bych si dovolil pozvat i hobíky, kteří se ještě necítí na nočák pro eliťáka, protože tratě pro 14ky budou lehčí.
 

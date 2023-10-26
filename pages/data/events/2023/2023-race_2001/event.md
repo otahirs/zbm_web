@@ -21,7 +21,7 @@ eventTypeDescription: ''
 startTime: '11:00'
 map: ''
 terrain: ''
-transport: 'auty, dle tabulky'
+transport: 'auty, [dle tabulky](https://docs.google.com/spreadsheets/d/13nAnJUMskLVqCIEIaDftTleUtRbcFuc8Phf_JeQNO-E/edit#gid=2123661612)'
 accomodation: 'https://jonathermal.hu/en/'
 food: "Pátek: z vlastních zásob\r\nSobota: \r\n- snídaně: ještě z vlastních dovezených zásob\r\n- oběd: nakoupíme lehčí v místních obchodech\r\n- večeře: v místní restauraci\r\nNeděle:\r\n- snídaně: společná z místního nákupu\r\n- oběd: nakoupíme lehčí v místních obchodech\r\n- večeře: dle domluvy v jednotlivých autech"
 leader: Jenda
@@ -35,7 +35,7 @@ gps: '49.17692, 16.62248'
 ---
 
 * **sraz**: 15:00 Mariánské náměstí, https://en.mapy.cz/s/kezemobare
-* **doprava**: auty, dle tabulky
+* **doprava**: auty, [dle tabulky](https://docs.google.com/spreadsheets/d/13nAnJUMskLVqCIEIaDftTleUtRbcFuc8Phf_JeQNO-E/edit#gid=2123661612)
 * **ubytování**: https://jonathermal.hu/en/
 * **strava**: Pátek: z vlastních zásob
 Sobota: 

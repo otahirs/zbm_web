@@ -1,15 +1,16 @@
 name: Twig Extensions
-version: 1.1.0
-description: Incorporates a subset of the official [Twig Extensions](https://github.com/twigphp/Twig-extensions)
+slug: twig-extensions
+type: plugin
+version: 1.2.0
+description: Incorporates a subset of the official [Twig Extensions](https://github.com/twigphp/Twig-extensions) and custom enhancements
 icon: filter
 author:
-  name: Aaron Dalton
-  email: aaron@daltons.ca
-homepage: https://github.com/Perlkonig/grav-plugin-twig-extensions
+  name: Sebastian Laube
+  email: hello@sebastianlaube.de
+homepage: https://github.com/bitstarr/grav-plugin-twig-extensions
 keywords: grav, plugin, twig, extensions
-bugs: https://github.com/Perlkonig/grav-plugin-twig-extensions/issues
-docs: https://github.com/Perlkonig/grav-plugin-twig-extensions/blob/master/README.md
-demo: https://perlkonig.com/demos/twig-extensions
+bugs: https://github.com/bitstarr/grav-plugin-twig-extensions/issues
+docs: https://github.com/bitstarr/grav-plugin-twig-extensions/blob/main/README.md
 license: MIT
 
 form:
@@ -17,11 +18,25 @@ form:
   fields:
     enabled:
       type: toggle
-      label: Plugin status
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
       highlight: 1
       default: 0
       options:
-        1: Enabled
-        0: Disabled
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
       validate:
         type: bool
+    modules:
+      type: selectize
+      selectize:
+        options:
+          - text: "Array"
+            value: "array"
+          - text: "Date"
+            value: "date"
+          - text: "Intl"
+            value: "intl"
+      size: large
+      label: Modules
+      validate:
+        type: commalist

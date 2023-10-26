@@ -119,7 +119,7 @@ class Form implements FormInterface, ArrayAccess
             $this->items = $form;
         } else {
             // Otherwise get all forms in the page.
-            $forms = $page->forms();
+            $forms = $page->getForms();
             if ($name) {
                 // If form with given name was found, use that.
                 $this->items = $forms[$name] ?? [];
@@ -162,6 +162,10 @@ class Form implements FormInterface, ArrayAccess
 
         if (empty($this->items['nonce']['action'])) {
             $this->items['nonce']['action'] = 'form';
+        }
+
+        if (Utils::isPositive($this->items['disabled'] ?? false)) {
+            $this->disable();
         }
 
         // Initialize form properties.
@@ -1123,11 +1127,11 @@ class Form implements FormInterface, ArrayAccess
     }
 
     /**
-     * @param string $field
-     * @param string $filename
+     * @param string|null $field
+     * @param string|null $filename
      * @return Route|null
      */
-    public function getFileDeleteAjaxRoute($field, $filename): ?Route
+    public function getFileDeleteAjaxRoute($field = null, $filename = null): ?Route
     {
         $route = Uri::getCurrentRoute()->withExtension('json')->withGravParam('task', 'file-remove');
 

@@ -7,7 +7,7 @@ access:
 process:
     markdown: false
 cache_enable: false
-defaultTemplate: Letní
+defaultTemplate: Zimní
 templates:
     Letní:
         monday:

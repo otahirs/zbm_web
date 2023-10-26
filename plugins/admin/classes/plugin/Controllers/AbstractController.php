@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * @package    Grav\Plugin\Admin
+ *
+ * @copyright  Copyright (c) 2015 - 2023 Trilby Media, LLC. All rights reserved.
+ * @license    MIT License; see LICENSE file for details.
+ */
+
 declare(strict_types=1);
 
 namespace Grav\Plugin\Admin\Controllers;
@@ -292,7 +299,7 @@ abstract class AbstractController implements RequestHandlerInterface
         $response = [
             'code' => $code,
             'status' => 'error',
-            'message' => $message
+            'message' => htmlspecialchars($message, ENT_QUOTES | ENT_HTML5, 'UTF-8')
         ];
 
         $accept = $this->getAccept(['application/json', 'text/html']);

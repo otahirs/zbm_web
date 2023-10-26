@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * @package    Grav\Plugin\Admin
+ *
+ * @copyright  Copyright (c) 2015 - 2023 Trilby Media, LLC. All rights reserved.
+ * @license    MIT License; see LICENSE file for details.
+ */
+
 namespace Grav\Plugin\Admin;
 
 use Grav\Common\Backup\Backups;
@@ -22,6 +29,7 @@ use Grav\Common\Page\Medium\Medium;
 use Grav\Common\Page\Page;
 use Grav\Common\Page\Pages;
 use Grav\Common\Page\Collection;
+use Grav\Common\Plugins;
 use Grav\Common\Security;
 use Grav\Common\User\Interfaces\UserCollectionInterface;
 use Grav\Common\User\Interfaces\UserInterface;
@@ -35,6 +43,7 @@ use PicoFeed\Parser\MalformedXmlException;
 use Psr\Http\Message\ResponseInterface;
 use RocketTheme\Toolbox\Event\Event;
 use RocketTheme\Toolbox\File\File;
+use RocketTheme\Toolbox\File\YamlFile;
 use RocketTheme\Toolbox\ResourceLocator\UniformResourceLocator;
 use Twig\Loader\FilesystemLoader;
 
@@ -56,6 +65,7 @@ class AdminController extends AdminBaseController
     public function initialize(Grav $grav = null, $view = null, $task = null, $route = null, $post = null)
     {
         $this->grav = $grav;
+        $this->admin = $this->grav['admin'];
         $this->view = $view;
         $this->task = $task ?: 'display';
         if (isset($post['data'])) {
@@ -67,7 +77,6 @@ class AdminController extends AdminBaseController
         }
         $this->post  = $this->getPost($post);
         $this->route = $route;
-        $this->admin = $this->grav['admin'];
 
         $this->grav->fireEvent('onAdminControllerInit', new Event(['controller' => &$this]));
     }
@@ -165,7 +174,13 @@ class AdminController extends AdminBaseController
                 // Not used if Flex-Objects plugin handles users.
                 return $this->saveUser();
             default:
-                return $this->saveDefault();
+                if ($this->saveDefault()) {
+                    $route = $this->grav['uri']::getCurrentRoute();
+                    $this->setRedirect($route->withGravParam('task', null)->toString(), 302);
+                    $this->redirect();
+                }
+
+                return false;
         }
     }
 
@@ -174,11 +189,11 @@ class AdminController extends AdminBaseController
      */
     protected function saveDefault()
     {
-        // Handle standard data types.
-        $type = $this->getDataType();
-        $obj = $this->admin->getConfigurationData($type, $this->data);
-
         try {
+            // Handle standard data types.
+            $type = $this->getDataType();
+
+            $obj = $this->admin->getConfigurationData($type, $this->data);
             $obj->validate();
         } catch (\Exception $e) {
             /** @var Debugger $debugger */
@@ -282,7 +297,7 @@ class AdminController extends AdminBaseController
             $debugger = $this->grav['debugger'];
             $debugger->addException($e);
 
-            $this->admin->json_response = ['status' => 'error', 'message' => $e->getMessage()];
+            $this->admin->json_response = ['status' => 'error', 'message' => htmlspecialchars($e->getMessage(), ENT_QUOTES | ENT_HTML5, 'UTF-8')];
             return false;
         }
 
@@ -401,7 +416,7 @@ class AdminController extends AdminBaseController
             $debugger = $this->grav['debugger'];
             $debugger->addException($e);
 
-            $json_response = ['status' => 'error', 'message' => $e->getMessage()];
+            $json_response = ['status' => 'error', 'message' => htmlspecialchars($e->getMessage(), ENT_QUOTES | ENT_HTML5, 'UTF-8')];
         }
 
         $this->sendJsonResponse($json_response);
@@ -484,7 +499,7 @@ class AdminController extends AdminBaseController
             $debugger = $this->grav['debugger'];
             $debugger->addException($e);
 
-            $json_response = ['status' => 'error', 'message' => $e->getMessage()];
+            $json_response = ['status' => 'error', 'message' => htmlspecialchars($e->getMessage(), ENT_QUOTES | ENT_HTML5, 'UTF-8')];
         }
 
         $this->sendJsonResponse($json_response);
@@ -515,7 +530,7 @@ class AdminController extends AdminBaseController
 
         try {
             if ($download) {
-                $filename = basename(base64_decode(urldecode($download)));
+                $filename = Utils::basename(base64_decode(urldecode($download)));
                 $file = $this->grav['locator']->findResource("backup://{$filename}", true);
                 if (!$file || !Utils::endsWith($filename, '.zip', false)) {
                     header('HTTP/1.1 401 Unauthorized');
@@ -534,7 +549,7 @@ class AdminController extends AdminBaseController
 
             $this->admin->json_response = [
                 'status' => 'error',
-                'message' => $this->admin::translate('PLUGIN_ADMIN.AN_ERROR_OCCURRED') . '. ' . $e->getMessage()
+                'message' => $this->admin::translate('PLUGIN_ADMIN.AN_ERROR_OCCURRED') . '. ' . htmlspecialchars($e->getMessage(), ENT_QUOTES | ENT_HTML5, 'UTF-8')
             ];
 
             return true;
@@ -578,7 +593,7 @@ class AdminController extends AdminBaseController
         $backup = $this->grav['uri']->param('backup', null);
 
         if (null !== $backup) {
-            $filename = basename(base64_decode(urldecode($backup)));
+            $filename = Utils::basename(base64_decode(urldecode($backup)));
             $file = $this->grav['locator']->findResource("backup://{$filename}", true);
 
             if ($file && Utils::endsWith($filename, '.zip', false)) {
@@ -623,10 +638,8 @@ class AdminController extends AdminBaseController
             return false;
         }
 
-        // Filter value and save it.
-        $this->post = ['enabled' => true];
-        $obj        = $this->prepareData($this->post);
-        $obj->save();
+        $type = $this->getDataType();
+        $this->updatePluginState($type, ['enabled' => true]);
 
         $this->post = ['_redirect' => 'plugins'];
         if ($this->grav['uri']->param('redirect')) {
@@ -656,10 +669,8 @@ class AdminController extends AdminBaseController
             return false;
         }
 
-        // Filter value and save it.
-        $this->post = ['enabled' => false];
-        $obj        = $this->prepareData($this->post);
-        $obj->save();
+        $type = $this->getDataType();
+        $this->updatePluginState($type, ['enabled' => false]);
 
         $this->post = ['_redirect' => 'plugins'];
         $this->admin->setMessage($this->admin::translate('PLUGIN_ADMIN.SUCCESSFULLY_DISABLED_PLUGIN'), 'info');
@@ -667,6 +678,30 @@ class AdminController extends AdminBaseController
         Cache::clearCache('invalidate');
 
         return true;
+    }
+
+    /**
+     * @param string $type
+     * @param array $value
+     * @return void
+     */
+    protected function updatePluginState(string $type, array $value): void
+    {
+        $obj = Plugins::get(preg_replace('|plugins/|', '', $type));
+        if (null === $obj) {
+            throw new \RuntimeException("Plugin '{$type}' doesn't exist!");
+        }
+
+        /** @var UniformResourceLocator $locator */
+        $locator = $this->grav['locator'];
+
+        // Configuration file will be saved to the existing config stream.
+        $filename = $locator->findResource('config://') . "/{$type}.yaml";
+
+        $file = YamlFile::instance($filename);
+        $contents = $value + $file->content();
+
+        $file->save($contents);
     }
 
     /**
@@ -911,7 +946,7 @@ class AdminController extends AdminBaseController
             $debugger = $this->grav['debugger'];
             $debugger->addException($e);
 
-            $this->admin->json_response = ['status' => 'error', 'message' => $e->getMessage()];
+            $this->admin->json_response = ['status' => 'error', 'message' => htmlspecialchars($e->getMessage(), ENT_QUOTES | ENT_HTML5, 'UTF-8')];
 
             return false;
         }
@@ -955,7 +990,7 @@ class AdminController extends AdminBaseController
             $debugger = $this->grav['debugger'];
             $debugger->addException($e);
 
-            $this->admin->json_response = ['status' => 'error', 'message' => $e->getMessage()];
+            $this->admin->json_response = ['status' => 'error', 'message' => htmlspecialchars($e->getMessage(), ENT_QUOTES | ENT_HTML5, 'UTF-8')];
 
             return false;
         }
@@ -998,7 +1033,7 @@ class AdminController extends AdminBaseController
             $debugger = $this->grav['debugger'];
             $debugger->addException($e);
 
-            $this->admin->json_response = ['status' => 'error', 'message' => $e->getMessage()];
+            $this->admin->json_response = ['status' => 'error', 'message' => htmlspecialchars($e->getMessage(), ENT_QUOTES | ENT_HTML5, 'UTF-8')];
 
             return false;
         }
@@ -1053,7 +1088,7 @@ class AdminController extends AdminBaseController
             $msg = Utils::contains($msg, '401 Unauthorized') ? "ERROR: License key for this resource is invalid." : $msg;
             $msg = Utils::contains($msg, '404 Not Found') ? "ERROR: Resource not found" : $msg;
 
-            $this->admin->json_response = ['status' => 'error', 'message' => $msg];
+            $this->admin->json_response = ['status' => 'error', 'message' => htmlspecialchars($msg, ENT_QUOTES | ENT_HTML5, 'UTF-8')];
 
             return false;
         }
@@ -1127,7 +1162,7 @@ class AdminController extends AdminBaseController
             $debugger = $this->grav['debugger'];
             $debugger->addException($e);
 
-            $json_response = ['status' => 'error', 'message' => $e->getMessage()];
+            $json_response = ['status' => 'error', 'message' => htmlspecialchars($e->getMessage(), ENT_QUOTES | ENT_HTML5, 'UTF-8')];
 
             $this->sendJsonResponse($json_response, 200);
         }
@@ -2062,7 +2097,7 @@ class AdminController extends AdminBaseController
             $debugger = $this->grav['debugger'];
             $debugger->addException($e);
 
-            $this->admin->json_response = ['status' => 'error', 'message' => $e->getMessage()];
+            $this->admin->json_response = ['status' => 'error', 'message' => htmlspecialchars($e->getMessage(), ENT_QUOTES | ENT_HTML5, 'UTF-8')];
 
             return false;
         }
@@ -2219,7 +2254,7 @@ class AdminController extends AdminBaseController
             $this->admin->json_response = [
                 'status'  => 'error',
                 'message' => sprintf($this->admin::translate('PLUGIN_ADMIN.FILEUPLOAD_UNABLE_TO_UPLOAD'),
-                    $filename, 'Bad filename')
+                    htmlspecialchars($filename, ENT_QUOTES | ENT_HTML5, 'UTF-8'), 'Bad filename')
             ];
 
             return false;
@@ -2238,7 +2273,7 @@ class AdminController extends AdminBaseController
 
 
         // Check extension
-        $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+        $extension = strtolower(Utils::pathinfo($filename, PATHINFO_EXTENSION));
 
         // If not a supported type, return
         if (!$extension || !$config->get("media.types.{$extension}")) {
@@ -2287,7 +2322,7 @@ class AdminController extends AdminBaseController
 
         // Add metadata if needed
         $include_metadata = Grav::instance()['config']->get('system.media.auto_metadata_exif', false);
-        $basename = str_replace(['@3x', '@2x'], '', pathinfo($filename, PATHINFO_BASENAME));
+        $basename = str_replace(['@3x', '@2x'], '', Utils::pathinfo($filename, PATHINFO_BASENAME));
 
         $metadata = [];
 
@@ -2417,7 +2452,7 @@ class AdminController extends AdminBaseController
             return false;
         }
 
-        $filename = !empty($this->post['filename']) ? basename($this->post['filename']) : null;
+        $filename = !empty($this->post['filename']) ? Utils::basename($this->post['filename']) : null;
 
         // Handle bad filenames.
         if (!$filename || !Utils::checkFilename($filename)) {
@@ -2436,7 +2471,7 @@ class AdminController extends AdminBaseController
         if ($locator->isStream($targetPath)) {
             $targetPath = $locator->findResource($targetPath, true, true);
         }
-        $fileParts  = pathinfo($filename);
+        $fileParts  = Utils::pathinfo($filename);
 
         $found = false;
 
@@ -2447,7 +2482,7 @@ class AdminController extends AdminBaseController
             if (!$result) {
                 $this->admin->json_response = [
                     'status'  => 'error',
-                    'message' => $this->admin::translate('PLUGIN_ADMIN.FILE_COULD_NOT_BE_DELETED') . ': ' . $filename
+                    'message' => $this->admin::translate('PLUGIN_ADMIN.FILE_COULD_NOT_BE_DELETED') . ': ' . htmlspecialchars($filename, ENT_QUOTES | ENT_HTML5, 'UTF-8')
                 ];
 
                 return false;
@@ -2468,7 +2503,7 @@ class AdminController extends AdminBaseController
                 if (!$result) {
                     $this->admin->json_response = [
                         'status'  => 'error',
-                        'message' => $this->admin::translate('PLUGIN_ADMIN.FILE_COULD_NOT_BE_DELETED') . ': ' . $filename
+                        'message' => $this->admin::translate('PLUGIN_ADMIN.FILE_COULD_NOT_BE_DELETED') . ': ' . htmlspecialchars($filename, ENT_QUOTES | ENT_HTML5, 'UTF-8')
                     ];
 
                     return false;
@@ -2483,7 +2518,7 @@ class AdminController extends AdminBaseController
         if (!$found) {
             $this->admin->json_response = [
                 'status'  => 'error',
-                'message' => $this->admin::translate('PLUGIN_ADMIN.FILE_NOT_FOUND') . ': ' . $filename
+                'message' => $this->admin::translate('PLUGIN_ADMIN.FILE_NOT_FOUND') . ': ' . htmlspecialchars($filename, ENT_QUOTES | ENT_HTML5, 'UTF-8')
             ];
 
             return false;
@@ -2494,7 +2529,7 @@ class AdminController extends AdminBaseController
 
         $this->admin->json_response = [
             'status'  => 'success',
-            'message' => $this->admin::translate('PLUGIN_ADMIN.FILE_DELETED') . ': ' . $filename
+            'message' => $this->admin::translate('PLUGIN_ADMIN.FILE_DELETED') . ': ' . htmlspecialchars($filename, ENT_QUOTES | ENT_HTML5, 'UTF-8')
         ];
 
         return true;
@@ -2620,7 +2655,7 @@ class AdminController extends AdminBaseController
                     $payload = [
                         'name' => $file_page ? $file_page->title() : $fileName,
                         'value' => $file_page ? $file_page->rawRoute() : $file_path,
-                        'item-key' => basename($file_page ? $file_page->route() : $file_path),
+                        'item-key' => Utils::basename($file_page ? $file_page->route() : $file_path),
                         'filename' => $fileName,
                         'extension' => $type === 'dir' ? '' : $fileInfo->getExtension(),
                         'type' => $type,

@@ -4,6 +4,7 @@ namespace Grav\Plugin\Sitemap;
 class SitemapEntry
 {
     public $title;
+    public $route;
     public $lang;
     public $translated = false;
     public $location;
@@ -12,6 +13,11 @@ class SitemapEntry
     public $priority;
     public $images;
     public $hreflangs = [];
+
+    public int $timestamp;
+    public string $rawroute;
+    public string $longdate;
+    public string $shortdate;
 
     /**
      * SitemapEntry constructor.
@@ -80,6 +86,24 @@ class SitemapEntry
     public function setTitle($title): SitemapEntry
     {
         $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRoute()
+    {
+        return $this->route;
+    }
+
+    /**
+     * @param mixed $route
+     * @return SitemapEntry
+     */
+    public function setRoute($route): SitemapEntry
+    {
+        $this->route = $route;
         return $this;
     }
 
@@ -239,5 +263,44 @@ class SitemapEntry
         return $this;
     }
 
+    public function getTimestamp(): int
+    {
+        return $this->timestamp;
+    }
+
+    public function setTimestamp(int $timestamp): void
+    {
+        $this->timestamp = $timestamp;
+    }
+
+    public function getRawroute(): string
+    {
+        return $this->rawroute;
+    }
+
+    public function setRawroute(string $rawroute): void
+    {
+        $this->rawroute = $rawroute;
+    }
+
+    public function getLongdate(): string
+    {
+        return $this->longdate;
+    }
+
+    public function setLongdate(string $longdate): void
+    {
+        $this->longdate = $longdate;
+    }
+
+    public function getShortdate(): string
+    {
+        return $this->shortdate;
+    }
+
+    public function setShortdate(string $shortdate): void
+    {
+        $this->shortdate = $shortdate;
+    }
 
 }
