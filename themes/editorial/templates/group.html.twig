@@ -38,16 +38,12 @@
             {% set CZweek = [ 'PO', 'UT', 'ST', 'CT', 'PA', 'SO', 'NE'] %}
             {% set plan = page.find('/auth/plan2').header.plan %}
             {% for week, weekAr in [plan.thisWeek, plan.nextWeek] %}
-                {% if loop.first %}
+                {% if week == 0 %}
                     {% set start_day = date("monday this week") %}
                     <h4>Aktuální týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
                 {% else %}
-                    {% if "now"|date("w") in 1..5 %} 
-                        {% set CZweek = [] %} {# cripple table creation if its not weekend yet, twig does not support loop break #}
-                    {% else %}
-                        {% set start_day = date("monday next week")%}
-                        <h4>Příští týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
-                    {% endif %}
+                    {% set start_day = date("monday next week")%}
+                    <h4>Příští týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
                 {% endif %}
                 
                 <table class="plan">
@@ -62,7 +58,7 @@
                         {% for p in collection if p.header.template in ['zavod', 'trenink', 'soustredeni', 'tabor'] %}
                             {# pokud je mezi start a end datum_dne_v_tydnu, zobrazi se v tabulce#}
                             {%  if (  p.header.start <= datum_dne_v_tydnu and p.header.end >= datum_dne_v_tydnu ) %}
-                            <tr class="event--program{% if day_num % 2 == 0 %} plan--lichyDen  {% else %} plan--sudyDen {% endif %}">
+                            <tr class="{% if week == 0 and day_num == "now"|date("w") %} plan--today {% endif %} {% if day_num % 2 == 0 %} plan--lichyDen  {% else %} plan--sudyDen {% endif %}">
                                 <td class="den">
                                     {# zobrazi nazev dne (napr. "PO") jen pokud jiz neexistuje zaznam dne v tabulce #}
                                     {% if zapsany_den != den %}   
@@ -87,7 +83,7 @@
                             {% endif %}
                         {% endfor %}
                         {% for event in attribute(weekAr, ENGweek[day_num]) if page.header.group in event.group %}
-                        <tr {% if day_num % 2 == 0 %} class="plan--lichyDen"  {% else %} class="plan--sudyDen" {% endif %}>
+                        <tr {% if day_num % 2 == 0 %} class="{% if day_num == "now"|date("w") %} plan--today {% endif %} plan--lichyDen"  {% else %} class="plan--sudyDen" {% endif %}>
                                 <td class="den">
                                     {# zobrazi nazev dne (napr. "PO") jen pokud jiz neexistuje zaznam dne v tabulce #}
                                     {% if zapsany_den != den %}   
