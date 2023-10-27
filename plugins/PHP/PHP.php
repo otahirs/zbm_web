@@ -97,9 +97,10 @@ class PHPPlugin extends Plugin
         $plan_frontmatter = (array)$page->header();
         $template_frontmatter = (array)$page->find(WeeklyPlan::PLAN_TEMPLATES_URL)->header();
 
-        $default_template = $template_frontmatter["defaultTemplate"];
         $plan_frontmatter["plan"]["thisWeek"] = $plan_frontmatter["plan"]["nextWeek"];
-        $plan_frontmatter["plan"]["nextWeek"] = $template_frontmatter["templates"][$default_template];
+        $plan_frontmatter["plan"]["nextWeek"] = $plan_frontmatter["plan"]["next2Week"];
+        $plan_frontmatter["plan"]["next2Week"] = $plan_frontmatter["plan"]["next3Week"];
+        $plan_frontmatter["plan"]["next3Week"] = $template_frontmatter["templates"]["plan"];
 
         $page->header($plan_frontmatter);
         $page->save();

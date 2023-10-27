@@ -7,8 +7,81 @@ access:
 process:
     markdown: false
 cache_enable: false
-defaultTemplate: Zimní
+defaultTemplate: Letní
 templates:
+    plan:
+        monday:
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: Tělocvična
+                time: '17:00 – 18:30'
+                place: 'hala Rosnička'
+            -
+                group:
+                    - dorost
+                name: 'Atletické posilování'
+                time: '17:00'
+                place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
+        tuesday:
+            -
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                    - hobby
+                name: 'Mapový trénink'
+                time: '16:00 – 18:00'
+                place: 'okolí Brna'
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '15:15 a 18:00'
+                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
+            -
+                group:
+                    - hobby
+                name: 'Mapový trénink'
+                time: '17:00 – 19:00'
+                place: 'okolí Brna'
+        thursday:
+            -
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 – 18:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+            -
+                group:
+                    - dorost
+                name: Dráha
+                time: '17:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+        friday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            -
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: samostatně
+        sunday:
+            -
+                name: ''
+                time: ''
+                place: ''
     Letní:
         monday:
             -
@@ -349,61 +422,52 @@ templates:
 ---
 
 <a href="/auth/plan2" id="back-btn" class="button small"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> týdenní plán</a> <br> <br>
-{% set curr_template = uri.query('template') ?? page.header.defaultTemplate %}
 
 <div class="row justify-content-between"> 
-    <div class="col">
-        <select name="template" id="choose-template" autocomplete="off" style="display:inline">
-            {% for template_name, _ in page.header.templates %} 
-                <option value="{{template_name}}" {% if curr_template == template_name %} selected {% endif %}>{{template_name}}</option>
-            {% endfor %}
-        </select>
-        <button class="set-default-template" type="button" title='Výchozí šablona vyplňuje plán "příští týden" při posunu týdnů.' {% if curr_template == page.header.defaultTemplate %} disabled>Tato šablona je výchozí {% else %}>Nastavit jako výchozí {% endif %}</button> 
+    <div class="col-auto">
+        <input type="checkbox" value="all"  id="filter-all" checked />
+        <label for="filter-all">Vše</label>
+        <input class="filter" type="checkbox" value="zabicky" id="filter-zabicky" />
+        <label for="filter-zabicky">Žabičky</label>
+        <input class="filter" type="checkbox" value="pulci1" id="filter-pulci1" />
+        <label for="filter-pulci1">Pulci 1</label>
+        <input class="filter" type="checkbox" value="pulci2" id="filter-pulci2" />
+        <label for="filter-pulci2">Pulci 2</label>
+        <input class="filter" type="checkbox" value="zaci1" id="filter-zaci1" />
+        <label for="filter-zaci1">Žáci 1</label>
+        <input class="filter" type="checkbox" value="zaci2" id="filter-zaci2" />
+        <label for="filter-zaci2">Žáci 2</label>
+        <input class="filter" type="checkbox" value="dorost" id="filter-dorost" />
+        <label for="filter-dorost">Dorost+</label>
+        <input class="filter" type="checkbox" value="hobby" id="filter-hobby" />
+        <label for="filter-hobby">Hobby</label>
     </div>
     <div class="col-auto">
         <button id="edit-plan__submit" type="button" class="button special">Uložit</button>
     </div>
 </div>
 <br>
-<input type="checkbox" value="all"  id="filter-all" checked />
-<label for="filter-all">Vše</label>
-<input class="filter" type="checkbox" value="zabicky" id="filter-zabicky" />
-<label for="filter-zabicky">Žabičky</label>
-<input class="filter" type="checkbox" value="pulci1" id="filter-pulci1" />
-<label for="filter-pulci1">Pulci 1</label>
-<input class="filter" type="checkbox" value="pulci2" id="filter-pulci2" />
-<label for="filter-pulci2">Pulci 2</label>
-<input class="filter" type="checkbox" value="zaci1" id="filter-zaci1" />
-<label for="filter-zaci1">Žáci 1</label>
-<input class="filter" type="checkbox" value="zaci2" id="filter-zaci2" />
-<label for="filter-zaci2">Žáci 2</label>
-<input class="filter" type="checkbox" value="dorost" id="filter-dorost" />
-<label for="filter-dorost">Dorost+</label>
-<input class="filter" type="checkbox" value="hobby" id="filter-hobby" />
-<label for="filter-hobby">Hobby</label>
-<br><br>
 {# inicializace poli urcujiciho den v tydnu #}
 {% set collection = page.collection({'items': {'@page.descendants': '/data/events'}, 'filter': {'routable': 'true'},'order': {'by': 'default', 'dir': 'asc'}}) %}
 
 <form autocomplete="off" id="program"> 
-    {% set start_day = date("monday this week") %}
-    {% set template = attribute(page.header.templates, uri.query('template')) ?? attribute(page.header.templates, page.header.defaultTemplate) %}
+    {% set start_day = date("monday this week") %}    
     
-    <table class="edit-plan">
+    <table class="edit-plan template--plan" data-template="plan">
         {# inicializace promene urcujici jestli uz je v tabulce zapsany den v tydnu #}
         
         {% for day_num, day in ['monday','tuesday','wednesday','thursday','friday','saturday', 'sunday'] %}
             {% set datum_dne_v_tydnu = start_day|date_modify(" +" ~ (loop.index0)  ~ " days")|date("Y-m-d") %}
-            {% set events = template[day] %}
+            {% set events = page.header.templates.plan[day] %}
 
             {% for event in events %}
                 {% set n = loop.index0 %}
-                <tr {% if day_num % 2 == 0 %} class="edit-plan__odd-day"  {% else %} class="edit-plan__even-day" {% endif %} data-day={{day}}>
+                <tr {% if day_num % 2 == 0 %} class="edit-plan__odd-day" {% else %} class="edit-plan__even-day" {% endif %} data-day={{day}} data-template="plan">
                     {% if loop.first and allday_event_count == 0 %}
                         <td class="day"  rowspan="{{loop.length + allday_event_count}}">{{ datum_dne_v_tydnu|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc') }}</td>
                     {% endif %}
                     <td class="group">
-                        <select class="multi" multiple  name="template[{{curr_template}}][{{day}}][{{n}}][group][]">
+                        <select class="multi" multiple  name="template[plan][{{day}}][{{n}}][group][]">
                             <option value="zabicky" {% if "zabicky" in event.group %} selected {% endif %}>Žabičky</option>
                             <option value="pulci1" {% if "pulci1" in event.group %} selected {% endif %}>Pulci 1</option>
                             <option value="pulci2" {% if "pulci2" in event.group %} selected {% endif %}>Pulci 2</option>
@@ -413,18 +477,102 @@ templates:
                             <option value="hobby" {% if "hobby" in event.group %} selected {% endif %}>Hobby</option>
                         </select>
                     </td>
-                    <td class="name"> <input type="text" size="25" value="{{event.name}}" name="template[{{curr_template}}][{{day}}][{{n}}][name]" placeholder="název"></td>     
-                    <td class="time"> <input type="text" size="9" value="{{event.time}}" name="template[{{curr_template}}][{{day}}][{{n}}][time]" placeholder="čas"> </td>
-                    <td class="place"> <input type="text" size="40" value="{{event.place}}" name="template[{{curr_template}}][{{day}}][{{n}}][place]" placeholder="místo"> </td>  
+                    <td class="name"> <input type="text" size="25" value="{{event.name}}" name="template[plan][{{day}}][{{n}}][name]" placeholder="název"></td>     
+                    <td class="time"> <input type="text" size="9" value="{{event.time}}" name="template[plan][{{day}}][{{n}}][time]" placeholder="čas"> </td>
+                    <td class="place"> <input type="text" size="40" value="{{event.place}}" name="template[plan][{{day}}][{{n}}][place]" placeholder="místo"> </td>  
                     <td class="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></td>                         
                 </tr>
             {% else %}
-                <tr {% if day_num % 2 == 0 %} class="edit-plan__odd-day"  {% else %} class="edit-plan__even-day" {% endif %} data-day={{day}}>
+                <tr {% if day_num % 2 == 0 %} class="edit-plan__odd-day"  {% else %} class="edit-plan__even-day" {% endif %} data-day={{day}} data-template="plan">
                     {% if allday_event_count == 0 %}
                         <td class="day"  rowspan="1">{{ datum_dne_v_tydnu|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc') }}</td>
                     {% endif %}
                     <td class="group">
-                            <select class="multi" multiple  name="template[{{curr_template}}][{{day}}][0][group][]">
+                        <select class="multi" multiple  name="template[plan][{{day}}][0][group][]">
+                            <option value="zabicky">Žabičky</option>
+                            <option value="pulci1">Pulci 1</option>
+                            <option value="pulci2">Pulci 2</option>
+                            <option value="zaci1">Žáci 1</option>
+                            <option value="zaci2">Žáci 2</option>
+                            <option value="dorost">Dorost+</option>
+                            <option value="hobby">Hobby</option>
+                        </select>
+                    </td>
+                    <td class="name"> <input type="text" size="25" name="template[plan][{{day}}][0][name]" placeholder="název"></td>     
+                    <td class="time"> <input type="text" size="9" name="template[plan][{{day}}][0][time]" placeholder="čas"> </td>
+                    <td class="place"> <input type="text" size="40" name="template[plan][{{day}}][0][place]" placeholder="místo"> </td>  
+                    <td class="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></td>          
+                </tr>
+            {% endfor %}
+            
+        {% endfor %}
+    </table>
+    <hr/>
+    <p>⬆️ tabulka nahoře představuje výchozí plán, který se na začátku každého týdne nahraje do nejvzdálenějšího týdne k editaci</p>
+    <p>⬇️ v šablonách níže si můžete uchovávat libovolné údaje, nejsou však nikde propisovány</p>
+
+<hr/>
+    <div class="row">
+        <div class="col">
+            <label for="choose-template" style="display: inline-block;">Šablona</label><br>
+            <select name="defaultTemplate" id="choose-template" autocomplete="off" style="display:inline">
+                {% for template_name, _ in page.header.templates %} 
+                    {% if not loop.first %}
+                        <option value="{{template_name}}" {% if page.header.defaultTemplate == template_name %} selected {% endif %}>{{template_name}}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col">
+            <label for="create-template" style="display: inline-block;">Vytvořit novou šablonu:</label><br>
+            <input type="text" id="create-template" class="create-new-template__input" placeholder="název nové šablony" style="display:inline"></input>
+            <button type="button" class="create-new-template__button">Vytvořit</button> 
+        </div>
+
+        <div class="col-auto">
+            <label for="create-template">Odstranit tuto šablonu:</label>
+            <button class="delete-template" id="delete-template" type="button">Odstranit</button> 
+        </div>
+    </div>
+    <br/>
+    {% for template_name, template in page.header.templates %}
+    {% if not loop.first %}
+    <table class="edit-plan template" style="display: {% if loop.index != 2 %} none {% endif %}" data-template="{{template_name}}">
+        {# inicializace promene urcujici jestli uz je v tabulce zapsany den v tydnu #}
+        
+        {% for day_num, day in ['monday','tuesday','wednesday','thursday','friday','saturday', 'sunday'] %}
+            {% set datum_dne_v_tydnu = start_day|date_modify(" +" ~ (loop.index0)  ~ " days")|date("Y-m-d") %}
+            {% set events = template[day] %}
+
+            {% for event in events %}
+                {% set n = loop.index0 %}
+                <tr {% if day_num % 2 == 0 %} class="edit-plan__odd-day"  {% else %} class="edit-plan__even-day" {% endif %} data-day={{day}} data-template="{{template_name}}">
+                    {% if loop.first and allday_event_count == 0 %}
+                        <td class="day"  rowspan="{{loop.length + allday_event_count}}">{{ datum_dne_v_tydnu|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc') }}</td>
+                    {% endif %}
+                    <td class="group">
+                        <select class="multi" multiple  name="template[{{template_name}}][{{day}}][{{n}}][group][]">
+                            <option value="zabicky" {% if "zabicky" in event.group %} selected {% endif %}>Žabičky</option>
+                            <option value="pulci1" {% if "pulci1" in event.group %} selected {% endif %}>Pulci 1</option>
+                            <option value="pulci2" {% if "pulci2" in event.group %} selected {% endif %}>Pulci 2</option>
+                            <option value="zaci1" {% if "zaci1" in event.group %} selected {% endif %}>Žáci 1</option>
+                            <option value="zaci2" {% if "zaci2" in event.group %} selected {% endif %}>Žáci 2</option>
+                            <option value="dorost" {% if "dorost" in event.group %} selected {% endif %}>Dorost+</option>
+                            <option value="hobby" {% if "hobby" in event.group %} selected {% endif %}>Hobby</option>
+                        </select>
+                    </td>
+                    <td class="name"> <input type="text" size="25" value="{{event.name}}" name="template[{{template_name}}][{{day}}][{{n}}][name]" placeholder="název"></td>     
+                    <td class="time"> <input type="text" size="9" value="{{event.time}}" name="template[{{template_name}}][{{day}}][{{n}}][time]" placeholder="čas"> </td>
+                    <td class="place"> <input type="text" size="40" value="{{event.place}}" name="template[{{template_name}}][{{day}}][{{n}}][place]" placeholder="místo"> </td>  
+                    <td class="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></td>                         
+                </tr>
+            {% else %}
+                <tr {% if day_num % 2 == 0 %} class="edit-plan__odd-day"  {% else %} class="edit-plan__even-day" {% endif %} data-day={{day}} data-template="{{template_name}}">
+                    {% if allday_event_count == 0 %}
+                        <td class="day"  rowspan="1">{{ datum_dne_v_tydnu|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc') }}</td>
+                    {% endif %}
+                    <td class="group">
+                            <select class="multi" multiple  name="template[{{template_name}}][{{day}}][0][group][]">
                                 <option value="zabicky">Žabičky</option>
                                 <option value="pulci1">Pulci 1</option>
                                 <option value="pulci2">Pulci 2</option>
@@ -434,30 +582,21 @@ templates:
                                 <option value="hobby">Hobby</option>
                             </select>
                         </td>
-                    <td class="name"> <input type="text" size="25" name="template[{{curr_template}}][{{day}}][0][name]" placeholder="název"></td>     
-                    <td class="time"> <input type="text" size="9" name="template[{{curr_template}}][{{day}}][0][time]" placeholder="čas"> </td>
-                    <td class="place"> <input type="text" size="40" name="template[{{curr_template}}][{{day}}][0][place]" placeholder="místo"> </td>  
+                    <td class="name"> <input type="text" size="25" name="template[{{template_name}}][{{day}}][0][name]" placeholder="název"></td>     
+                    <td class="time"> <input type="text" size="9" name="template[{{template_name}}][{{day}}][0][time]" placeholder="čas"> </td>
+                    <td class="place"> <input type="text" size="40" name="template[{{template_name}}][{{day}}][0][place]" placeholder="místo"> </td>  
                     <td class="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></td>          
                 </tr>
             {% endfor %}
             
         {% endfor %}
     </table>
+    {% endif %}
+    {% endfor %}
 </form>
 <hr>
 
-<div class="row justify-content-between">
-<div class="col">
-    <label for="create-template" style="display: inline-block;">Vytvořit novou šablonu:</label><br>
-    <input type="text" id="create-template" class="create-new-template__input" placeholder="název nové šablony" style="display:inline"></input>
-    <button type="button" class="create-new-template__button">Vytvořit</button> 
-</div>
 
-<div class="col-auto">
-    <label for="create-template">Odstranit tuto šablonu:</label>
-    <button class="delete-template" id="delete-template" type="button" {% if curr_template == page.header.defaultTemplate %} disabled>Nelze odstranit výchozí šablonu {% else %} >Odstranit{% endif %}</button> 
-</div>
-</div>
 
 
 
@@ -484,8 +623,9 @@ templates:
         function createNewRowForDay(otherTr){
             let tr = document.createElement("tr");
             tr.className  = otherTr.className;
+            const template = otherTr.dataset.template;
             Object.assign(tr.dataset, otherTr.dataset);
-            const formNamePrefix = `template[{{curr_template}}][${otherTr.dataset.day}][${new Date().getTime()}]`;
+            const formNamePrefix = `template[${template}][${otherTr.dataset.day}][${new Date().getTime()}]`;
             tr.innerHTML = `
                 <td class="group">
                         <select class="multi" multiple="" name="${formNamePrefix}[group][]">
@@ -504,7 +644,7 @@ templates:
             
             tr.querySelector(".delete").addEventListener("click", deleteRow);
   
-            const dayTrList = document.querySelectorAll(`[data-day="${otherTr.dataset.day}"]`);
+            const dayTrList = document.querySelectorAll(`[data-template="${template}"][data-day="${otherTr.dataset.day}"]`);
             let appendAfterTr = dayTrList.item(dayTrList.length - 1);
 
             appendAfterTr.parentNode.insertBefore(tr, appendAfterTr.nextSibling);
@@ -541,14 +681,18 @@ templates:
                     }
                     
                 }
+                let template = tr.dataset.template;
                 let day = days[currDay];
                 let dayName = document.createElement("td");
                 dayName.className = "day";
                 dayName.innerHTML = CZdays[currDay];
-                dayName.rowSpan = document.querySelectorAll(`[data-day="${day}"]:not([style*="display: none"]`).length;
+                dayName.rowSpan = document.querySelectorAll(`[data-template="${template}"][data-day="${day}"]:not([style*="display: none"]`).length;
                 dayName.addEventListener("click", appendRowToDay);
                 tr.prepend(dayName);
                 currDay += 1;
+                if (currDay % 7 == 0) {
+                    currDay = 0;
+                }
             });
 
         }
@@ -558,7 +702,8 @@ templates:
             const rows = document.querySelectorAll("tr");
             rows.forEach(row => {
                 let day = row.dataset.day;
-                let rowsInDay = document.querySelectorAll(`[data-day="${day}"]`).length;
+                let template = row.dataset.template;
+                let rowsInDay = document.querySelectorAll(`[data-template="${template}"][data-day="${day}"]`).length;
                 if ( rowsInDay > 1 &&
                     !row.querySelector(".group").firstElementChild.value &&
                     !row.querySelector(".name")?.firstElementChild.value  &&
@@ -577,9 +722,9 @@ templates:
         function deleteRow() {
             if (document.querySelector(".multiselect-list.active") !== null) return;
             let row = this.parentNode;
+            let template = row.dataset.template;
             let day = row.dataset.day;
-            
-            if(document.querySelectorAll(`[data-day="${day}"]`).length === 1) {
+            if(document.querySelectorAll(`[data-template="${template}"][data-day="${day}"]`).length === 1) {
                 createNewRowForDay(row);
             }
             row.parentNode.removeChild(row);
@@ -675,10 +820,9 @@ templates:
                 processData: false,
                 contentType: false,
                 success: function (response){ 
-                    templateName = JSON.parse(response);
                     notyf.success("Šablona vytvořena!<br>Stránka se obnoví.");
                     setTimeout(() => {
-                        location.href = `{{page.url}}?template=${templateName}`
+                        location.href = `{{page.url}}`
                     }, 1000);
                 },
                 error: function (xhr, desc, err){
@@ -698,8 +842,9 @@ templates:
                 return
             }
             e.preventDefault();
+            const templateName = document.querySelector("#choose-template").value;
             var deleteTemplateFormData = new FormData();
-            deleteTemplateFormData.append("deletedTemplate", "{{curr_template}}");
+            deleteTemplateFormData.append("deletedTemplate", templateName);
             $.ajax({
                 url: "/php/plan/deletetemplate",
                 type: "POST",
@@ -719,42 +864,14 @@ templates:
         })
 
 
-        let defaultTemplateBtn = document.querySelector(".set-default-template");
-
-        defaultTemplateBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            var setDefaultTemplateFormData = new FormData();
-            setDefaultTemplateFormData.append("defaultTemplate", "{{curr_template}}");
-            $.ajax({
-                url: "/php/plan/setdefaulttemplate",
-                type: "POST",
-                data: setDefaultTemplateFormData,
-                processData: false,
-                contentType: false,
-                success: function (){ 
-                    notyf.success("Šablona nastavena jako výchozí.");
-                    deleteTemplateBtn.disabled = true;
-                    deleteTemplateBtn.innerHTML = "Nelze odstranit výchozí šablonu";
-                    defaultTemplateBtn.disabled = true;
-                    defaultTemplateBtn.innerHTML = "Tato šablona je výchozí";
-                    
-                },
-                error: function (xhr, desc, err){
-                    notyf.error("Neočekávaná chyba");
-                    console.log(xhr);
-                    console.log(desc);
-                    console.log(err);
-                }
-            });
-        })
-
-
         document.querySelector("#choose-template").addEventListener("change", (select) => {
-            if (!confirm("Neuložené změny v současné šabloně budou ztraceny, chcete pokračovat?")) {
-                select.target.value = "{{curr_template}}";
-                return
-            }
-            location.href = `{{page.url}}?template=${select.target.value}`;
+            let templates = document.querySelectorAll(".template");
+            templates.forEach((template) => {
+                template.style.display = "none";
+                if (template.dataset.template == select.target.value) {
+                    template.style.display = "table";
+                }
+            })
         })
         
     })

@@ -127,6 +127,58 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
+    next2Week:
+        monday:
+            1698416362:
+                name: ''
+                time: ''
+                place: ''
+        tuesday:
+            1698416362:
+                name: ''
+                time: ''
+                place: ''
+        wednesday:
+            1698416362:
+                name: ''
+                time: ''
+                place: ''
+        thursday:
+            1698416362:
+                name: ''
+                time: ''
+                place: ''
+    next3Week:
+        monday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        tuesday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        wednesday:
+            1698417609986:
+                name: ''
+                time: ''
+                place: ''
+        thursday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        friday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            -
+                name: ''
+                time: ''
+                place: ''
 ---
 
 <div class="row justify-content-between"> 
@@ -158,13 +210,19 @@ plan:
 
 <form autocomplete="off" id="program"> 
 {% set plan = page.header.plan %}
-{% for week, weekAr in {"thisWeek": plan.thisWeek, "nextWeek" : plan.nextWeek} %}
-    {% if loop.first %}
+{% for week, weekAr in {"thisWeek": plan.thisWeek, "nextWeek" : plan.nextWeek, "next2Week" : plan.next2Week, "next3Week" : plan.next3Week} %}
+    {% if week == "thisWeek" %}
         {% set start_day = date("monday this week") %}
         <h4>Aktuální týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
-    {% else %}
-        {% set start_day = date("monday next week")%}
+    {% elseif week == "nextWeek" %}
+        {% set start_day = date("monday next week") %}
         <h4>Příští týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
+    {% elseif week == "next2Week" %}
+        {% set start_day = date("monday +1 week") %}
+        <h4>Týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
+    {% else %}
+        {% set start_day = date("monday +2 week") %}
+        <h4>Týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
     {% endif %}
     
     <table class="edit-plan">
@@ -247,9 +305,9 @@ plan:
     </table>
 {% endfor %}
 </form>
-<button type="button" id="plan--load-template">Načíst ze šablony <i class="fa fa-upload" aria-hidden="true"></i></button> 
 
 <a href="/auth/plan2/templates" class="button">Spravovat šablony <i class="fa fa-th" aria-hidden="true"></i></a>
+<button type="button" id="plan--load-template">Načíst ze šablony <i class="fa fa-upload" aria-hidden="true"></i></button> 
 
 <div style="min-height: 8em;">&nbsp; <!-- prevents group selection dialog overflow --> </div>
 
@@ -259,17 +317,20 @@ plan:
       <form id="News--form" method="post" action="/php/plan/loadfromtemplate">
         <div>
             <p>Pozor! Data ze šablony nahradí všechny aktivity v daném týdnu pro všechny tréninkové skupiny. Veškeré změny budou ztraceny. Události zobrazované v kalendáři zůstávají zachovány.</p>
+            <p>Dojde k obnovení stránky, neuložené změny v plánu budou ztraceny.</p>
 
             <label for="week">nahradit</label>
             <select name="week" id="week">
                 <option value="thisWeek">tento týden</option>
-                <option value="nextWeek" selected>příští týden</option>
+                <option value="nextWeek">příští týden</option>
+                <option value="next2Week">příští příští týden</option>
+                <option value="next3Week">příští příští příští týden</option>
             </select>
             <label for="template">šablonou</label>
             <select name="template" id="template">
                 {% set template_page = page.find('/auth/plan2/templates').header%}
                 {% for template_name, _ in template_page.templates %} 
-                    <option value="{{template_name}}" {% if template_page.defaultTemplate == template_name %} selected {% endif %}>{{template_name}}</option>
+                    <option value="{{template_name}}" {% if "plan" == template_name %} selected {% endif %}>{{template_name}}</option>
                 {% endfor %}
             </select>
         </div>
@@ -346,7 +407,7 @@ plan:
             document.querySelectorAll(".day").forEach(e => e.parentNode.removeChild(e));
             const CZdays = ["pondělí", "úterý", "středa", "čtvrtek", "pátek", "sobota", "neděle"];
             const days = ['monday','tuesday','wednesday','thursday','friday','saturday', 'sunday'];
-            const weeks = ["thisWeek", "nextWeek"];
+            const weeks = ["thisWeek", "nextWeek", "next2Week", "next3Week"];
             const rows = document.querySelectorAll("tr");
             let currDay = 0;
             let currWeek = 0;
@@ -371,8 +432,8 @@ plan:
                 dayName.addEventListener("click", appendRowToDay);
                 tr.prepend(dayName);
                 currDay += 1;
-                if (currDay == 7) {
-                    currWeek = 1;
+                if (currDay % 7 == 0) {
+                    currWeek += 1;
                     currDay = 0;
                 }
             });
@@ -485,7 +546,6 @@ plan:
             });
         })
 
-        // modal
         // modal
         var modal = document.querySelector(".news--modal");
         var modal_content =  document.querySelector(".news--modal-content");

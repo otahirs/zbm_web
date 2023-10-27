@@ -31,17 +31,15 @@ class WeeklyPlan extends \Grav\Common\Twig\TwigExtension
         if ($_SERVER["REQUEST_METHOD"] !== "POST") return;
         if (empty($_POST["template"])) return;
 
-        $template_name = key($_POST["template"]);
-        $template = $_POST["template"][$template_name];
-
         $page = Grav::instance()['page']->find(self::PLAN_TEMPLATES_URL);
         $frontmatter = (array)$page->header();
-        $frontmatter["templates"][$template_name] = $template;
+        $frontmatter["defaultTemplate"] = $_POST["defaultTemplate"];
+        $frontmatter["templates"] = $_POST["template"];
 
         $page->header($frontmatter);
         $page->save();
 
-        Utils::log("PlanTemplate | edited | {$template_name}");
+        Utils::log("PlanTemplates | edited ");
         Cache::clearCache('cache-only');
     }
 
@@ -113,25 +111,11 @@ class WeeklyPlan extends \Grav\Common\Twig\TwigExtension
         Cache::clearCache('cache-only');
     }
 
-    public static function SetDefaultTemplate() {
-        if ($_SERVER["REQUEST_METHOD"] !== "POST") return;
-        if (empty($_POST["defaultTemplate"])) return;
-
-        $page = Grav::instance()['page']->find(self::PLAN_TEMPLATES_URL);
-        $frontmatter = (array)$page->header();
-        $frontmatter["defaultTemplate"] = $_POST["defaultTemplate"];
-
-        $page->header($frontmatter);
-        $page->save();
-
-        Utils::log("PlanTemplate | set default | {$_POST["defaultTemplate"]}");
-        Cache::clearCache('cache-only');
-    }
-
     public static function CreatePlanTemplate() {
         if ($_SERVER["REQUEST_METHOD"] !== "POST") return;
         if (empty($_POST["templateName"])) return;
         $template_name = Utils::trim_all($_POST["templateName"]);
+        if ($template_name === "plan") return;
         $page = Grav::instance()['page']->find(self::PLAN_TEMPLATES_URL);
         $frontmatter = (array)$page->header();
 
