@@ -1,0 +1,33 @@
+enabled: true
+folders:
+  - pages
+  - themes
+  - plugins
+sync:
+  on_save: false
+  on_delete: false
+  on_media: false
+  cron_enable: false
+  cron_at: '* * * * *'
+repository: 'https://github.com/otahirs/zbm_web.git'
+user: otahirs
+webhook: /_git-sync-0b9c8ed1821d
+webhook_enabled: '1'
+webhook_secret: e1377f1a20b29462bc1371f50b8416643b9664133a40ddab
+branch: master
+remote:
+  name: origin
+  branch: master
+git:
+  author: gituser
+  message: '(Grav GitSync) Automatic Commit'
+  name: GitSync
+  email: git-sync@trilby.media
+  bin: git
+  ignore: "**/.revs\n**/.revs/*\n/plugins/git-sync\n/plugins/git-sync/*"
+  private_key: null
+logging: false
+password: gitsync-def502002047e431e0b8f0caf01b26dd07d219379c0015c3818063866a9b7395f2781dd41c6b8649cc0dd3f4354503cc1939493d1c6f4963d4cd8b627ad8d8cf8b6489e8050a3ff8075e5760813e3785d54113c13a88549a51b3705c112ad1f982bfe5ad0c117078563d80c2ee74ede21b7e684f6fda616e2c638507
+local_repository: null
+no_user: '0'
+SyncNotice: null

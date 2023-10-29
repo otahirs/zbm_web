@@ -7,7 +7,7 @@ access:
 process:
     markdown: false
 cache_enable: false
-defaultTemplate: Letní
+defaultTemplate: Zimní
 templates:
     plan:
         monday:
@@ -19,30 +19,34 @@ templates:
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
             -
-                group:
-                    - dorost
-                name: 'Atletické posilování'
-                time: '17:00'
-                place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
+                name: ''
+                time: ''
+                place: ''
         tuesday:
-            -
+            0:
                 group:
                     - zabicky
                     - pulci1
                     - pulci2
                     - zaci1
-                    - zaci2
-                    - hobby
-                name: 'Mapový trénink'
+                name: 'Mapový trénink + teorie'
                 time: '16:00 – 18:00'
-                place: 'okolí Brna'
+                place: 'ZŠ náměstí Svornosti 7'
+            1698433701244:
+                group:
+                    - zaci2
+                name: 'Běžecký trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7'
+            1698433706260:
+                name: ''
+                time: ''
+                place: ''
         wednesday:
             -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '15:15 a 18:00'
-                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
+                name: ''
+                time: ''
+                place: ''
             -
                 group:
                     - hobby
@@ -50,21 +54,24 @@ templates:
                 time: '17:00 – 19:00'
                 place: 'okolí Brna'
         thursday:
-            -
+            0:
                 group:
                     - pulci1
                     - pulci2
+                name: Telocvična
+                time: '16:00 - 17:00'
+                place: 'ZŠ Sirotkova 36'
+            1:
+                group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
-                time: '16:00 – 18:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
-                group:
-                    - dorost
-                name: Dráha
-                time: '17:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
+                time: '16:30 – 18:00'
+                place: 'hala Rosnička'
+            1698433775251:
+                name: ''
+                time: ''
+                place: ''
         friday:
             -
                 name: ''
@@ -171,7 +178,7 @@ templates:
                 time: '15:15 a 18:00'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
         tuesday:
-            0:
+            -
                 group:
                     - zabicky
                     - pulci1
@@ -180,13 +187,13 @@ templates:
                 name: 'Mapový trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            1:
+            -
                 group:
                     - zaci2
                 name: 'Běžecký trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            1671355812609:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink'
@@ -206,21 +213,21 @@ templates:
                 time: '20:00'
                 place: meet.google.com/wed-ixsv-poc
         thursday:
-            2:
+            -
                 group:
                     - pulci1
                     - pulci2
                 name: Telocvična
                 time: '16:00 - 17:00'
                 place: 'hala Rosnička'
-            1671355885792:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:30 – 18:00'
                 place: 'hala Rosnička'
-            1671355913824:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink'

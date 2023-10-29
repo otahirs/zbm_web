@@ -99,7 +99,7 @@ plan:
                     - pulci2
                 name: Telocvična
                 time: '16:00 - 17:00'
-                place: 'hala Rosnička'
+                place: 'ZŠ Sirotkova 36'
             1671355885792:
                 group:
                     - zaci1
