@@ -154,6 +154,9 @@ class Events extends \Grav\Common\Twig\TwigExtension
                 $event_list[$num]["zabicky"] = "1";
             }
 
+            if (str_contains($event["Name"], "D+")) {
+                $event_list[$num]["dorost"] = "1";
+            }
             //$event_list[$num][""] = $event["Rank21"];
             $event_list[$num]["note"] = $event["Note"];
             if (array_key_exists("Transport", $event) && strpos($event["Transport"], "Ano") !== false) {   
