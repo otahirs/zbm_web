@@ -300,19 +300,12 @@ class Events extends \Grav\Common\Twig\TwigExtension
         }
 
         // groups
-        foreach($group_arr as $key => $group){
-            if(!empty($_POST[$group])){
-                if (!isset($frontmatter['taxonomy']['skupina']) || !in_array($group, $frontmatter['taxonomy']['skupina'])) {
-                    $frontmatter['taxonomy']['skupina'][] = $group;
-                }
+        $frontmatter['taxonomy']['skupina'] = array();
+        foreach($group_arr as $group){
+            if(!empty($_POST[$group])){ 
+                $frontmatter['taxonomy']['skupina'][] = $group;
             }
-            else{
-                if (isset($frontmatter['taxonomy']['skupina'])){
-                    $del = array_search( $group , $frontmatter['taxonomy']['skupina'] );
-                    unset($frontmatter['taxonomy']['skupina'][$del]);
-                }
-            }
-          }
+        }
 
         // normalize GPS
         if(!empty($_POST["GPS"])){
