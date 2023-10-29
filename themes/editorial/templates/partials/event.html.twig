@@ -14,12 +14,13 @@
                 <h1>{{ page.title }}</h1>
                 {% set group = page.header.taxonomy.skupina %}
                 {% if group|length > 0 and group|length < 6 %}
-                {% if "zabicky" in group %} žabičky {% endif %} 
-                {% if "pulci1" in group and "pulci2" in group %} pulci {% elseif "pulci1" in group %} pulci1 {% elseif "pulci2" in group %} pulci2 {% endif %} 
-                {% if "zaci1" in group and "zaci2" in group %} žáci {% elseif "zaci1" in group %} žáci1 {% elseif "zaci2" in group %} žáci2 {% endif %} 
-                {% if "dorost" in group %} dorost+ {% endif %}
+                    {% if "zabicky" in group %} žabičky {% endif %} 
+                    {% if "pulci1" in group and "pulci2" in group %} pulci {% elseif "pulci1" in group %} pulci1 {% elseif "pulci2" in group %} pulci2 {% endif %} 
+                    {% if "zaci1" in group and "zaci2" in group %} žáci {% elseif "zaci1" in group %} žáci1 {% elseif "zaci2" in group %} žáci2 {% endif %} 
+                    {% if "dorost" in group %} dorost+ {% endif %}
+                    {% if "hobby" in group %} hobby {% endif %}
                 {% else %}
-                všichni
+                    všichni
                 {% endif %}
 
 
