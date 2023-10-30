@@ -11,39 +11,53 @@ Ladíme detaily akcí a chystáme podrobnější info...
 **Kde a kde:** 24. – 26. listopadu 2023 v Brně
 
 **Těšte se na:**
-* Ples O-Gala v sobotu
 * Semináře pro rozhodčí a trenéry od pátku do neděle
 * Vyhlášení nejlepších o-sportovců
-
+* Ples O-Gala v sobotu
+* Sprintový závod v sobotu
 **O-víkend v Orisu:**
 * [Ples O-Gala](https://oris.orientacnisporty.cz/Zavod?id=8022)
 * [Metodický seminář rozhodčích a trenérů](https://oris.orientacnisporty.cz/Zavod?id=8023)
+* [Sprintový závod](https://oris.orientacnisporty.cz/Zavod?id=8051)
 
 <p>&nbsp;</p>
 
 ## Info k jednotlivým akcím
 
-### Vyhlášení O-sportovců
-* kdy: sobota 25. listopadu, 18:00
+### Vyhlášení ankety nejlepších O-sportovců
+* kdy: sobota 25. listopadu, začátek v 18:00
 * kde: Aula Q, [Technická 2](https://maps.app.goo.gl/SnqAcX66hG5V92BC8), Brno - Královo Pole
 
 Info:
 * šatna zajištěna
-* vstup možný od 17:00
-* raut pro VIP po skončení vyhlášení do 21:00
+* vstup možný od 17:30
+* dress code - [Semi Formal](https://www.moda.cz/dresscode-semiformal)
 
 <p>&nbsp;</p>
 
 ### Ples O-Gala
 * kdy: sobota 25. listopadu, 20:00
 * kde: [Kulturní dům Rubín](https://www.kdrubin.cz/), [Makovského náměstí 3](https://maps.app.goo.gl/M5Hd8696jQbSqK3HA), Brno - Žabovřesky
-* K tanci zahraje kapela [cca gang]()https://www.cca-gang.cz/
+* K tanci zahraje kapela [cca gang](https://www.cca-gang.cz/)
 
-Časový harmonogram:
+Info:
 * vstup možný od 19:00
 * začátek plesu 20:00
 * konec plesu 24:00
-* afterparty do 01:00
+* afterparty nejdéle do 02:00
+* dress code - [Semi Formal](https://www.moda.cz/dresscode-semiformal)
+
+<p>&nbsp;</p>
+
+### Sprintový závod
+* kdy: sobota 25. listopadu, 14:00
+* kde: [ZŠ náměstí Svornosti](https://mapy.cz/turisticka?q=49.2145N%2016.5802E&source=coor&id=16.5802%2C49.2145&x=16.5814285&y=49.2146367&z=17), Brno - Žabovřesky
+
+Info:
+* tradiční [zimní liga](https://bzl.zabiny.club/)
+* přihlášky do 20.11.2023 večer
+* 2. termín do 23.11.
+
 
 <p>&nbsp;</p>
 
