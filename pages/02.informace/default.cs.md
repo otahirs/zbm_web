@@ -3,6 +3,7 @@ title: 'Informace pro členy klubu'
 media_order: Zasady_zpracovani_OU_SKZabovresky.pdf
 date: '2018-07-10'
 menu: Informace
+primaryImage: {  }
 ---
 
  <!--
@@ -56,7 +57,9 @@ menu: Informace
  <li><a href="#prispevky">Oddílové příspěvky</a></li>
  <li><a href="#zavody">Přihlašování na závody</a></li>
  <li><a href="#vedouci">Vedoucí na závodech</a></li>
+ <li><a href="#fotky">Fotky</a></li>
  <li><a href="#zabiny">Emailová a Facebooková skupina</a></li>
+ <li><a href="#socsite">Sociální sítě</a></li>
  <li><a href="#gdpr">Ochrana osobních údajů (GDPR)</a></li>
 </ul>
  
@@ -272,7 +275,7 @@ V letošním roce pořádáme 3 závody Jihomoravské ligy a Finále ligy škol 
 - Při  pořádání oblastních, krajských a celostátních závodů bude každému, kdo se aktivně zúčastní pořádníní připsáno na oddílový účet 200,– Kč za každý pořádací den. 
 -->
 
-## Fotky
+## Fotky <a name="fotky"></a>
 - Fotoalba od října 2023 [Zonerama](https://skbrnozabovresky.zonerama.com/)
 - Do konce sezóny 2023 jsme dávali fotky na [Rajče](https://skzabovresky.rajce.idnes.cz/)
 
@@ -304,7 +307,7 @@ Zde je prostor pro nezávazné diskuze, fotky a vše co už se nevejde ani do ma
 </form>
 
 ---
-## Sociální sítě
+## Sociální sítě <a name="socsite"></a>
 Samozřejmě přispíváme i na různé sociální sítě, naše "stránky", které se týkají činnosti oddílu můžete najít pod těmito odkazy:
 - [Facebook](https://www.facebook.com/zbm.zabiny/)
 - [Instagram](https://www.instagram.com/zabinyyy/)    
