@@ -272,6 +272,10 @@ V letošním roce pořádáme 3 závody Jihomoravské ligy a Finále ligy škol 
 - Při  pořádání oblastních, krajských a celostátních závodů bude každému, kdo se aktivně zúčastní pořádníní připsáno na oddílový účet 200,– Kč za každý pořádací den. 
 -->
 
+## Fotky
+- Fotoalba od října 2023 [Zonerama](https://skbrnozabovresky.zonerama.com/)
+- Do konce sezóny 2023 jsme dávali fotky na [Rajče](https://skzabovresky.rajce.idnes.cz/)
+
 ---
 ## Emailová a Facebooková skupina <a name="zabiny"></a>
 - informace k pořádání
@@ -299,10 +303,10 @@ Zde je prostor pro nezávazné diskuze, fotky a vše co už se nevejde ani do ma
 <button>Přidat se na Facebooku</button>
 </form>
 
-### Sociální sítě
+---
+## Sociální sítě
 Samozřejmě přispíváme i na různé sociální sítě, naše "stránky", které se týkají činnosti oddílu můžete najít pod těmito odkazy:
 - [Facebook](https://www.facebook.com/zbm.zabiny/)
-- [Rajče](https://skzabovresky.rajce.idnes.cz/)
 - [Instagram](https://www.instagram.com/zabinyyy/)    
   
 ---
