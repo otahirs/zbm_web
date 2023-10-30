@@ -392,13 +392,13 @@ plan:
         {% set start_day = date("monday this week") %}
         <h4>Aktuální týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
     {% elseif week == "nextWeek" %}
-        {% set start_day = date("monday next week") %}
+        {% set start_day = date("monday +1 week") %}
         <h4>Příští týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
     {% elseif week == "next2Week" %}
-        {% set start_day = date("monday +1 week") %}
+        {% set start_day = date("monday +2 week") %}
         <h4>Týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
     {% else %}
-        {% set start_day = date("monday +2 week") %}
+        {% set start_day = date("monday +3 week") %}
         <h4>Týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
     {% endif %}
     
