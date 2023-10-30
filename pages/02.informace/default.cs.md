@@ -42,6 +42,7 @@ menu: Informace
 <ul>
 <h3>Ostatní</h3>
  <li><a href="#zabiny">Emailová skupina</a></li>
+ <li><a href="#zabiny">Sociální sítě</a></li>
  </ul>
 </div>
 </div>
@@ -298,6 +299,12 @@ Zde je prostor pro nezávazné diskuze, fotky a vše co už se nevejde ani do ma
 <button>Přidat se na Facebooku</button>
 </form>
 
+### Sociální sítě
+Samozřejmě přispíváme i na různé sociální sítě, naše "stránky", které se týkají činnosti oddílu můžete najít pod těmito odkazy:
+- [Facebook](https://www.facebook.com/zbm.zabiny/)
+- [Rajče](https://skzabovresky.rajce.idnes.cz/)
+- [Instagram](https://www.instagram.com/zabinyyy/)    
+  
 ---
 ## Zásady zpracování osobních údajů (GDPR) <a name="gdpr"></a>
 Sportovní klub pro náplň své činnosti uchovává a dále zpracovává některé Vaše osobní údaje. Část údajů dále předává třetím stranám, např. sportovnímu svazu, příslušným orgánům státní správy či účetní společnosti. Celé znění Zásad zpracování osobních údajů ve Sportovním klubu Brno – Žabovřesky z.s. si můžete přečíst <a href="{{page.url}}/Zasady_zpracovani_OU_SKZabovresky.pdf" target="_blank">zde</a>.
