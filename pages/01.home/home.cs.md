@@ -103,10 +103,11 @@ news:
         <a class="home__link external-link" href="https://kratkyden.zabiny.club/">Krátký den</a> </br>
         <a class="home__link external-link" href="https://www.orientacnisporty.cz/">Český&nbsp;svaz&nbsp;orientačních&nbsp;sportů</a>
         <a class="home__link external-link" href="https://oris.orientacnisporty.cz/">ORIS</a> </br>
-        <a class="home__link external-link" href="http://www.lpu.cz/beda/">Jak&nbsp;to&nbsp;vidí&nbsp;Béďa</a> 
-        <a class="home__link external-link" href="https://reprezentace.orientacnibeh.cz/">Reprezentace&nbsp;OB</a> </br>
         <a class="home__link external-link" href="https://tsm.zabiny.club">TSM&nbsp;Jižní&nbsp;Morava</a>
-        <a class="home__link external-link" href="https://mapy.orientacnisporty.cz/cs/clubs/zbm">Vydané&nbsp;mapy</a>
+        <a class="home__link external-link" href="https://mapy.orientacnisporty.cz/cs/clubs/zbm">Vydané&nbsp;mapy</a></br>
+        <a class="home__link external-link" href="https://www.instagram.com/zabinyyy/">Instagram</a>
+        <a class="home__link external-link" href="https://skbrnozabovresky.zonerama.com">Fotky z akcí</a></br>
+        <a class="home__link external-link" href="https://reprezentace.orientacnibeh.cz/">Reprezentace OB</a> 
     </div>
     <div>    
       <h4>Tréninkové skupiny</h4>
