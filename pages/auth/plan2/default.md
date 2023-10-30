@@ -1,6 +1,7 @@
 ---
 title: 'Týdenní plán'
 template: default
+never_cache_twig: true
 access:
     site:
         plan: true
