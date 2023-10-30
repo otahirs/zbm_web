@@ -15,6 +15,7 @@ Ladíme detaily akcí a chystáme podrobnější info...
 * Vyhlášení nejlepších o-sportovců
 * Ples O-Gala v sobotu
 * Sprintový závod v sobotu
+
 **O-víkend v Orisu:**
 * [Ples O-Gala](https://oris.orientacnisporty.cz/Zavod?id=8022)
 * [Metodický seminář rozhodčích a trenérů](https://oris.orientacnisporty.cz/Zavod?id=8023)
