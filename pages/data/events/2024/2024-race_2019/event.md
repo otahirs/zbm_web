@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - dorost
 id: 2024-race_2019
 start: '2024-01-28'
 end: '2024-01-28'

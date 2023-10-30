@@ -9,41 +9,6 @@ process:
 plan:
     thisWeek:
         monday:
-            0:
-                group:
-                    - zaci1
-                    - zaci2
-                name: Tělocvična
-                time: '17:00 – 18:30'
-                place: 'hala Rosnička'
-            1698002116303:
-                group:
-                    - dorost
-                name: Fotbal
-                time: '17:00'
-                place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
-        wednesday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '15:15 a 18:00'
-                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
-            -
-                group:
-                    - hobby
-                name: 'Mapový trénink'
-                time: '17:00 – 19:00'
-                place: 'okolí Brna'
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: samostatně
-    nextWeek:
-        monday:
             -
                 group:
                     - zaci1
@@ -127,7 +92,7 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-    next2Week:
+    nextWeek:
         monday:
             1698416362:
                 name: ''
@@ -148,7 +113,7 @@ plan:
                 name: ''
                 time: ''
                 place: ''
-    next3Week:
+    next2Week:
         monday:
             -
                 name: ''
@@ -175,6 +140,86 @@ plan:
                 time: ''
                 place: ''
         saturday:
+            -
+                name: ''
+                time: ''
+                place: ''
+    next3Week:
+        monday:
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: Tělocvična
+                time: '17:00 – 18:30'
+                place: 'hala Rosnička'
+            -
+                name: ''
+                time: ''
+                place: ''
+        tuesday:
+            0:
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                name: 'Mapový trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7'
+            1698433701244:
+                group:
+                    - zaci2
+                name: 'Běžecký trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7'
+            1698433706260:
+                name: ''
+                time: ''
+                place: ''
+        wednesday:
+            -
+                name: ''
+                time: ''
+                place: ''
+            -
+                group:
+                    - hobby
+                name: 'Mapový trénink'
+                time: '17:00 – 19:00'
+                place: 'okolí Brna'
+        thursday:
+            0:
+                group:
+                    - pulci1
+                    - pulci2
+                name: Telocvična
+                time: '16:00 - 17:00'
+                place: 'ZŠ Sirotkova 36'
+            1:
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:30 – 18:00'
+                place: 'hala Rosnička'
+            1698433775251:
+                name: ''
+                time: ''
+                place: ''
+        friday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            -
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: samostatně
+        sunday:
             -
                 name: ''
                 time: ''

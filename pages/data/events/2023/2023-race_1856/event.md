@@ -30,7 +30,7 @@ transport: "Vlakem - vede Lenka Hr.\r\nsraz: 8:00\r\nsobota: Brno Kr. pole.: 08:
 accomodation: "Jasenka rekreační středisko a restaurace Zubří\r\nKapacita je 98 ubytovaných!"
 food: 'Sobota: oběd, večere, neděle: snídaně, oběd.'
 leader: 'Jan Drábek'
-note: "**Sobota dopoledne**: Oddílový přebor, kategorie: VP, ZN, NK, VM a MM, 11:00 start, startují dřív ti, co nejedou společnou dopravou, staví Ondra Hlaváč.     \r\n**Sobota odpoledne**: GAMEBOOK - prožijte příběh Odvážného Orienťáka Oskar – vede Jana Smítalová.  \r\n**Sobotní večer**: Vyhlášení nejlepších závodníků oddílu, vyhlášení Oddílového přeboru, večerní program, losování štafet, diskotéka.   \r\n**Neděle dopoledne**: Štafety, staví Danáč."
+note: "Téma oddíláče: „Zelená\"\r\n**Sobota dopoledne**: Oddílový přebor, kategorie: VP, ZN, NK, VM a MM, 11:00 start, startují dřív ti, co nejedou společnou dopravou, staví Ondra Hlaváč.     \r\n13:00 oběd\r\n**Sobota odpoledne**:  Cca 14:00 - 16: 30 GAMEBOOK - prožijte příběh Odvážného Orienťáka Oskar. Je potřeba blok a tužka. – vede Jana Smítalová.  \r\n**Sobotní večer**: od 19:00 Vyhlášení nejlepších závodníků oddílu, vyhlášení Oddílového přeboru, večerní program, losování štafet, diskotéka.   \r\n**Neděle dopoledne**: Štafety, staví Danáč. Start 9:30"
 return: ''
 price: ''
 program: ''
@@ -39,10 +39,12 @@ signups: ''
 gps: '49.57881, 16.12636'
 ---
 
+Téma oddíláče: „Zelená"
 **Sobota dopoledne**: Oddílový přebor, kategorie: VP, ZN, NK, VM a MM, 11:00 start, startují dřív ti, co nejedou společnou dopravou, staví Ondra Hlaváč.     
-**Sobota odpoledne**: GAMEBOOK - prožijte příběh Odvážného Orienťáka Oskar – vede Jana Smítalová.  
-**Sobotní večer**: Vyhlášení nejlepších závodníků oddílu, vyhlášení Oddílového přeboru, večerní program, losování štafet, diskotéka.   
-**Neděle dopoledne**: Štafety, staví Danáč.
+13:00 oběd
+**Sobota odpoledne**:  Cca 14:00 - 16: 30 GAMEBOOK - prožijte příběh Odvážného Orienťáka Oskar. Je potřeba blok a tužka. – vede Jana Smítalová.  
+**Sobotní večer**: od 19:00 Vyhlášení nejlepších závodníků oddílu, vyhlášení Oddílového přeboru, večerní program, losování štafet, diskotéka.   
+**Neděle dopoledne**: Štafety, staví Danáč. Start 9:30
 * **doprava**: Vlakem - vede Lenka Hr.
 sraz: 8:00
 sobota: Brno Kr. pole.: 08:28 - 9:52 Olešná na Moravě (2 km od vlaku)   

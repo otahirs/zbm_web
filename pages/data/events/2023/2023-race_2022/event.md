@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - dorost
 id: 2023-race_2022
 start: '2023-12-15'
 end: '2023-12-15'
