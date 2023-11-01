@@ -58,7 +58,7 @@
                         {% for p in collection if p.header.template in ['zavod', 'trenink', 'soustredeni', 'tabor'] %}
                             {# pokud je mezi start a end datum_dne_v_tydnu, zobrazi se v tabulce#}
                             {%  if (  p.header.start <= datum_dne_v_tydnu and p.header.end >= datum_dne_v_tydnu ) %}
-                            <tr class="{% if week == 0 and day_num == "now"|date("w") %} plan--today {% endif %} {% if day_num % 2 == 0 %} plan--lichyDen  {% else %} plan--sudyDen {% endif %}">
+                            <tr class="{% if week == 0 and day_num + 1 == "now"|date("w") %} plan--today {% endif %} {% if day_num % 2 == 0 %} plan--lichyDen  {% else %} plan--sudyDen {% endif %}">
                                 <td class="den">
                                     {# zobrazi nazev dne (napr. "PO") jen pokud jiz neexistuje zaznam dne v tabulce #}
                                     {% if zapsany_den != den %}   
@@ -83,7 +83,7 @@
                             {% endif %}
                         {% endfor %}
                         {% for event in attribute(weekAr, ENGweek[day_num]) if page.header.group in event.group %}
-                        <tr class="{% if week == 0 and day_num == "now"|date("w") %} plan--today {% endif %} {% if day_num % 2 == 0 %} plan--lichyDen  {% else %} plan--sudyDen {% endif %}">
+                        <tr class="{% if week == 0 and day_num + 1 == "now"|date("w") %} plan--today {% endif %} {% if day_num % 2 == 0 %} plan--lichyDen  {% else %} plan--sudyDen {% endif %}">
                                 <td class="den">
                                     {# zobrazi nazev dne (napr. "PO") jen pokud jiz neexistuje zaznam dne v tabulce #}
                                     {% if zapsany_den != den %}   
@@ -98,7 +98,7 @@
                         {% endfor %}
                         {# pokud neni v den nic, je volno #}
                         {% if zapsany_den != den %}  {# jestli se nezapisoval den do tabulky, neni tam zadny zaznam => zapiseme ze je volno #}
-                        <tr class="{% if week == 0 and day_num == "now"|date("w") %} plan--today {% endif %} {% if day_num % 2 == 0 %} plan--lichyDen  {% else %} plan--sudyDen {% endif %}">
+                        <tr class="{% if week == 0 and day_num + 1 == "now"|date("w") %} plan--today {% endif %} {% if day_num % 2 == 0 %} plan--lichyDen  {% else %} plan--sudyDen {% endif %}">
                             <td class="den"> {{ datum_dne_v_tydnu|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper }}  </td>
                             <td class="nazev"> volno </td>
                             <td class="misto"> </td>
