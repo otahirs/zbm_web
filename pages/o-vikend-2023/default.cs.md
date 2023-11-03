@@ -85,7 +85,7 @@ Info:
     </div>
     <div class="col-md-6">
         <a href="http://www.revos.cz/" target="_blank">
-        <img class="sponsors--img" src="{{page.route()}}/Revos.svg">
+        <img class="sponsors--img" src="/sponsors/Revos.svg">
         </a>
     </div>
     <div class="col-md-6">

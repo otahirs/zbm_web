@@ -22,7 +22,7 @@ plan:
                     - dorost
                 name: Posilovna
                 time: '15:15 a 18:00'
-                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
+                place: 'Rosnička, https://en.mapy.cz/s/gejulumete'
         tuesday:
             0:
                 group:
@@ -107,7 +107,7 @@ plan:
                     - dorost
                 name: Posilovna
                 time: '18:00 a 19:00'
-                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/lagagecunu'
+                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
         tuesday:
             0:
                 group:
@@ -141,8 +141,8 @@ plan:
                 group:
                     - dorost
                 name: Posilovna
-                time: ''
-                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/lagagecunu'
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
         thursday:
             0:
                 group:
@@ -176,11 +176,6 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
     next2Week:
         monday:
             0:
@@ -195,7 +190,7 @@ plan:
                     - dorost
                 name: Posilovna
                 time: '18:00 a 19:00'
-                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/lagagecunu'
+                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
         tuesday:
             0:
                 group:
@@ -229,8 +224,8 @@ plan:
                 group:
                     - dorost
                 name: Posilovna
-                time: ''
-                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/lagagecunu'
+                time: '17:00 - 18:00'
+                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
         thursday:
             0:
                 group:
@@ -252,11 +247,6 @@ plan:
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'hala Rosnička'
-        friday:
-            -
-                name: ''
-                time: ''
-                place: ''
         saturday:
             -
                 group:
@@ -264,11 +254,6 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
     next3Week:
         monday:
             0:
@@ -283,7 +268,7 @@ plan:
                     - dorost
                 name: Posilovna
                 time: '18:00 a 19:00'
-                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/lagagecunu'
+                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
         tuesday:
             0:
                 group:
@@ -317,8 +302,8 @@ plan:
                 group:
                     - dorost
                 name: Posilovna
-                time: ''
-                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/lagagecunu'
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
         thursday:
             0:
                 group:

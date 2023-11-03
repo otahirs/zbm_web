@@ -18,3 +18,4 @@ Tedy každý, kdo bude chtít provést tuto akci hromadně a ušetřit minimáln
     Cena v závislosti na příspěvku oddílu max 250 Kč.
 
 Upozorňuji, že SportIdent doporučuje měnit baterii pravidelně každé 3 roky.
+Pozn: Vzhledem k technologii procesu výměny není možné zajistit výměnu baterie v limitovaných edicí se speciálním designem. Limitované edice je možné použít pro kontaktní ražení nebo si ponechat jako suvenýr. V případě požadavku na výměnu baterie je nutné vybrat si barevnou variantu ve standardním designu.
