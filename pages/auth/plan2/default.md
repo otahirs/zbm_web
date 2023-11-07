@@ -21,10 +21,10 @@ plan:
                 group:
                     - dorost
                 name: Posilovna
-                time: '15:15 a 18:00'
-                place: 'Rosnička, https://en.mapy.cz/s/gejulumete'
+                time: '18:00 a 19:00'
+                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
         tuesday:
-            0:
+            -
                 group:
                     - zabicky
                     - pulci1
@@ -33,16 +33,16 @@ plan:
                 name: 'Mapový trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            1:
+            -
                 group:
                     - zaci2
                 name: 'Běžecký trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            1671355812609:
+            -
                 group:
                     - dorost
-                name: 'Úvodní běžecký trénink + teorie'
+                name: 'Běžecký trénink'
                 time: '16:30'
                 place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
         wednesday:
@@ -50,8 +50,8 @@ plan:
                 group:
                     - dorost
                 name: 'Posilovna + běh dle plánu'
-                time: '15:15 a 18:00'
-                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
             -
                 group:
                     - hobby
@@ -59,21 +59,21 @@ plan:
                 time: '20:00'
                 place: meet.google.com/wed-ixsv-poc
         thursday:
-            2:
+            -
                 group:
                     - pulci1
                     - pulci2
                 name: Telocvična
                 time: '16:00 - 17:00'
-                place: 'ZŠ Sirotkova 36'
-            1671355885792:
+                place: 'hala Rosnička'
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:30 – 18:00'
                 place: 'hala Rosnička'
-            1671355913824:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink'
@@ -95,21 +95,21 @@ plan:
                 place: samostatně
     nextWeek:
         monday:
-            0:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-            1698662146676:
+            -
                 group:
                     - dorost
                 name: Posilovna
                 time: '18:00 a 19:00'
                 place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
         tuesday:
-            0:
+            -
                 group:
                     - zabicky
                     - pulci1
@@ -118,64 +118,72 @@ plan:
                 name: 'Mapový trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            1:
+            -
                 group:
                     - zaci2
                 name: 'Běžecký trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            1698662472828:
+            -
                 group:
                     - dorost
-                name: 'Běžecký trénink + teorie'
+                name: 'Běžecký trénink'
                 time: '16:30'
-                place: 'ZŠ náměstí Svornosti 7, https://en.mapy.cz/s/dafajonazu'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
         wednesday:
-            1:
+            -
+                group:
+                    - dorost
+                name: 'Posilovna + běh dle plánu'
+                time: '15:15 a 18:00'
+                place: 'Rosnička, https://en.mapy.cz/s/cerepujoca'
+            -
                 group:
                     - hobby
-                name: 'Mapový trénink'
-                time: '17:00 – 19:00'
-                place: 'okolí Brna'
-            1698662241046:
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
+                name: 'Hobby online teorie'
+                time: '20:00'
+                place: meet.google.com/wed-ixsv-poc
         thursday:
-            0:
+            -
                 group:
                     - pulci1
                     - pulci2
                 name: Telocvična
                 time: '16:00 - 17:00'
-                place: 'ZŠ Sirotkova 36'
-            1:
+                place: 'hala Rosnička'
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:30 – 18:00'
                 place: 'hala Rosnička'
-            1698662523326:
+            -
                 group:
                     - dorost
-                name: 'Běžecký trénink '
+                name: 'Běžecký trénink'
                 time: '17:00'
                 place: 'hala Rosnička'
         friday:
             -
-                name: ''
+                group:
+                    - dorost
+                name: kompenzace
                 time: ''
-                place: ''
+                place: 'samostatně dle plánu'
         saturday:
-            -
+            0:
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
+            1699279823416:
+                group:
+                    - dorost
+                name: klus
+                time: ''
+                place: 'samostatně dle plánu'
     next2Week:
         monday:
             0:
@@ -224,7 +232,7 @@ plan:
                 group:
                     - dorost
                 name: Posilovna
-                time: '17:00 - 18:00'
+                time: '17:00 a 18:00'
                 place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
         thursday:
             0:
@@ -256,21 +264,21 @@ plan:
                 place: samostatně
     next3Week:
         monday:
-            0:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-            1698662146676:
+            -
                 group:
                     - dorost
                 name: Posilovna
                 time: '18:00 a 19:00'
                 place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
         tuesday:
-            0:
+            -
                 group:
                     - zabicky
                     - pulci1
@@ -279,47 +287,47 @@ plan:
                 name: 'Mapový trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            1:
+            -
                 group:
                     - zaci2
                 name: 'Běžecký trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            1698662472828:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink + teorie'
                 time: '16:30'
                 place: 'ZŠ náměstí Svornosti 7, https://en.mapy.cz/s/dafajonazu'
         wednesday:
-            1:
+            -
                 group:
                     - hobby
                 name: 'Mapový trénink'
                 time: '17:00 – 19:00'
                 place: 'okolí Brna'
-            1698662241046:
+            -
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
         thursday:
-            0:
+            -
                 group:
                     - pulci1
                     - pulci2
                 name: Telocvična
                 time: '16:00 - 17:00'
                 place: 'ZŠ Sirotkova 36'
-            1:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:30 – 18:00'
                 place: 'hala Rosnička'
-            1698662523326:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink '

@@ -39,6 +39,11 @@ signups: ''
 gps: '49.57881, 16.12636'
 orisid: '8106'
 hasStartlist: true
+hasResults: true
+routes:
+    -
+        name: 'Oddíláč: postupy'
+        link: 'http://3drerun.worldofo.com/?id=-17005232&type=info'
 ---
 
 Téma oddíláče: „Zelená"
