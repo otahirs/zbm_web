@@ -16,7 +16,7 @@ import:
     type: members
     time: 1696447802
 meetTime: '15:00'
-meetPlace: 'Mariánské náměstí, https://en.mapy.cz/s/kezemobare'
+meetPlace: 'Parkoviště u zastávky Mariánské náměstí, https://en.mapy.cz/s/kezemobare'
 eventTypeDescription: ''
 startTime: '11:00'
 map: ''
@@ -28,13 +28,13 @@ leader: Jenda
 note: ''
 return: 'V neděli večer okolo 21 hod.'
 price: ''
-program: "V pátek noční proběhnutí s mapou.\r\nV sobotu a v neděli závody."
-thingsToTake: 'Běžecké vybavení do města a do lesa. Plavky a ručník.'
+program: "V pátek noční proběhnutí s mapou v Ostřihomu. Parkujeme [tady](https://en.mapy.cz/s/cerojopako), případně na nejbližší parkovištích okolo.\r\nV sobotu a v neděli závody."
+thingsToTake: '**SVĚTLO**. Běžecké vybavení do města a do lesa. Plavky a ručník.'
 signups: ''
 gps: '49.17692, 16.62248'
 ---
 
-* **sraz**: 15:00 Mariánské náměstí, https://en.mapy.cz/s/kezemobare
+* **sraz**: 15:00 Parkoviště u zastávky Mariánské náměstí, https://en.mapy.cz/s/kezemobare
 * **doprava**: auty, [dle tabulky](https://docs.google.com/spreadsheets/d/13nAnJUMskLVqCIEIaDftTleUtRbcFuc8Phf_JeQNO-E/edit#gid=2123661612)
 * **ubytování**: https://jonathermal.hu/en/
 * **strava**: Pátek: z vlastních zásob
