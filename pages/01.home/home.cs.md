@@ -97,18 +97,6 @@ news:
   </div> <!--  novinky -->
 
   <div id="right_box" class="col-md-4">
-    <div>
-      <h4>Odkazy</h4>
-        <a class="home__link external-link" href="https://bzl.zabiny.club/#races">BZL - Brněnská zimní liga</a>
-        <a class="home__link external-link" href="https://kratkyden.zabiny.club/">Krátký den</a> </br>
-        <a class="home__link external-link" href="https://www.orientacnisporty.cz/">Český&nbsp;svaz&nbsp;orientačních&nbsp;sportů</a>
-        <a class="home__link external-link" href="https://oris.orientacnisporty.cz/">ORIS</a> </br>
-        <a class="home__link external-link" href="https://tsm.zabiny.club">TSM&nbsp;Jižní&nbsp;Morava</a>
-        <a class="home__link external-link" href="https://mapy.orientacnisporty.cz/cs/clubs/zbm">Vydané&nbsp;mapy</a></br>
-        <a class="home__link external-link" href="https://www.instagram.com/zabinyyy/">Instagram</a>
-        <a class="home__link external-link" href="https://skbrnozabovresky.zonerama.com">Fotky z akcí</a></br>
-        <a class="home__link external-link" href="https://reprezentace.orientacnibeh.cz/">Reprezentace OB</a> 
-    </div>
     <div>    
       <h4>Tréninkové skupiny</h4>
       <div id="home__groups" style="display:flex;">
@@ -128,6 +116,23 @@ news:
             <a href="/skupiny/zabicky" class="home__groups-text">Žabičky</a>
           </div>
         </div>
+    </div>
+    <div>
+      <h4>Pořádáme</h4>
+        <a class="home__link" href="https://zabiny.club/o-vikend-2023">O-víkend</a> 
+        <a class="home__link external-link" href="https://kratkyden.zabiny.club/">Krátký den</a> 
+        <a class="home__link external-link" href="https://bzl.zabiny.club/#races">Brněnská zimní liga</a> </br>
+        <a class="home__link" href="https://zabiny.club/races">Historie závodů pro ČSOS</a> 
+    </div>
+    <div>
+      <h4>Odkazy</h4>
+        <a class="home__link external-link" href="https://www.orientacnisporty.cz/">Český&nbsp;svaz&nbsp;orientačních&nbsp;sportů</a>
+        <a class="home__link external-link" href="https://oris.orientacnisporty.cz/">ORIS</a> </br>
+        <a class="home__link external-link" href="https://tsm.zabiny.club">TSM&nbsp;Jižní&nbsp;Morava</a>
+        <a class="home__link external-link" href="https://mapy.orientacnisporty.cz/cs/clubs/zbm">Vydané&nbsp;mapy</a></br>
+        <a class="home__link external-link" href="https://www.instagram.com/zabinyyy/">Instagram</a>
+        <a class="home__link external-link" href="https://skbrnozabovresky.zonerama.com">Fotky z akcí</a></br>
+        <a class="home__link external-link" href="https://reprezentace.orientacnibeh.cz/">Reprezentace OB</a> 
     </div>
     <div>
       <h4>Události</h4>
