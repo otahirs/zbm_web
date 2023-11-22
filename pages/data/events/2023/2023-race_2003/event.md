@@ -1,6 +1,10 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - zaci1
+        - zaci2
+        - dorost
+        - hobby
 id: 2023-race_2003
 start: '2023-11-25'
 end: '2023-11-25'

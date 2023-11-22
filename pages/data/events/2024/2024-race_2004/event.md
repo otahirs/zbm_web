@@ -1,6 +1,10 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - zaci1
+        - zaci2
+        - dorost
+        - hobby
 id: 2024-race_2004
 start: '2024-01-07'
 end: '2024-01-07'
@@ -14,5 +18,21 @@ date: '2023-10-24'
 import:
     type: members
     time: 1698126012
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 

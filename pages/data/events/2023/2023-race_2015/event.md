@@ -13,17 +13,17 @@ import:
     type: members
     time: 1698313205
 place: Bystrc
-meetTime: ''
+meetTime: '10:00'
 meetPlace: 'Bystrc, Ečerova'
 link: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
+transport: 'MHD, na místě auto na věci'
 accomodation: ''
 food: ''
-leader: ''
+leader: 'Miloš, Jenda'
 note: terénem
 return: ''
 price: ''
@@ -34,4 +34,5 @@ gps: '49.21923, 16.50844'
 ---
 
 terénem
-* **sraz**: Bystrc, Ečerova
+* **sraz**: 10:00 Bystrc, Ečerova
+* **doprava**: MHD, na místě auto na věci

@@ -26,14 +26,15 @@ transport: auty
 accomodation: ''
 food: ''
 leader: ''
-note: ''
+note: 'Převlékání u Kočů doma, prosím myslete na to, že si chcete sundat ponožky než vejdete přes práh po tréninku!'
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
-gps: '49.22207, 16.62465'
+gps: '49.30967, 16.62191'
 ---
 
+Převlékání u Kočů doma, prosím myslete na to, že si chcete sundat ponožky než vejdete přes práh po tréninku!
 * **sraz**: 16:30 Lesná, LIDL
 * **doprava**: auty
