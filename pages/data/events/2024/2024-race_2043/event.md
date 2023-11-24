@@ -13,5 +13,6 @@ date: '2023-11-23'
 import:
     type: members
     time: 1700757608
+place: 'Rožnov pod Radhoštěm'
 ---
 
