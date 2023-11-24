@@ -11,25 +11,21 @@ defaultTemplate: Zimní
 templates:
     plan:
         monday:
-            0:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-            1:
+            -
                 group:
                     - dorost
                 name: Posilovna
                 time: '18:00 a 19:00'
                 place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
-            1699270752923:
-                name: ''
-                time: ''
-                place: ''
         tuesday:
-            0:
+            -
                 group:
                     - zabicky
                     - pulci1
@@ -38,112 +34,84 @@ templates:
                 name: 'Mapový trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            1:
+            -
                 group:
                     - zaci2
                 name: 'Běžecký trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            2:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink + teorie'
                 time: '16:30'
                 place: 'ZŠ náměstí Svornosti 7, https://en.mapy.cz/s/dafajonazu'
-            1699270752924:
-                name: ''
-                time: ''
-                place: ''
         wednesday:
-            0:
+            -
                 group:
                     - hobby
-                name: 'Mapový trénink'
-                time: '17:00 – 19:00'
-                place: 'okolí Brna'
-            1:
+                name: 'Hobby online teorie '
+                time: '20:00 – 21:00'
+                place: meet.google.com/kij-yeud-iwd
+            -
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
-            1699270781806:
-                name: ''
-                time: ''
-                place: ''
         thursday:
-            0:
+            -
                 group:
                     - pulci1
                     - pulci2
                 name: Telocvična
                 time: '16:00 - 17:00'
                 place: 'ZŠ Sirotkova 36'
-            1:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:30 – 18:00'
                 place: 'hala Rosnička'
-            2:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'hala Rosnička'
-            1699270752924:
-                name: ''
-                time: ''
-                place: ''
         friday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1699270752925:
+            1:
                 name: ''
                 time: ''
                 place: ''
         saturday:
-            0:
+            -
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-            1699270752925:
-                name: ''
-                time: ''
-                place: ''
         sunday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1699270752925:
+            1:
                 name: ''
                 time: ''
                 place: ''
     Letní:
         monday:
-            0:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-            1:
+            -
                 group:
                     - dorost
                 name: 'Atletické posilování'
                 time: '17:00'
                 place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
-            1699270752926:
-                name: ''
-                time: ''
-                place: ''
         tuesday:
             -
                 group:
@@ -170,7 +138,7 @@ templates:
                 time: '17:00 – 19:00'
                 place: 'okolí Brna'
         thursday:
-            0:
+            -
                 group:
                     - pulci1
                     - pulci2
@@ -179,66 +147,46 @@ templates:
                 name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            1:
+            -
                 group:
                     - dorost
                 name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            1699270752926:
-                name: ''
-                time: ''
-                place: ''
         friday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1699270752927:
+            1:
                 name: ''
                 time: ''
                 place: ''
         saturday:
-            0:
+            -
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-            1699270752927:
-                name: ''
-                time: ''
-                place: ''
         sunday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1699270752927:
+            1:
                 name: ''
                 time: ''
                 place: ''
     Zimní:
         monday:
-            0:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-            1:
+            -
                 group:
                     - dorost
                 name: Posilovna
                 time: '15:15 a 18:00'
                 place: 'Rosnička, https://mapy.cz/s/pujazepebo'
-            1699270752928:
-                name: ''
-                time: ''
-                place: ''
         tuesday:
-            0:
+            -
                 group:
                     - zabicky
                     - pulci1
@@ -247,22 +195,18 @@ templates:
                 name: 'Mapový trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            1:
+            -
                 group:
                     - zaci2
                 name: 'Běžecký trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            2:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '16:30'
                 place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
-            1699270752928:
-                name: ''
-                time: ''
-                place: ''
         wednesday:
             -
                 group:
@@ -277,174 +221,126 @@ templates:
                 time: '20:00'
                 place: meet.google.com/wed-ixsv-poc
         thursday:
-            0:
+            -
                 group:
                     - pulci1
                     - pulci2
                 name: Telocvična
                 time: '16:00 - 17:00'
                 place: 'hala Rosnička'
-            1:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:30 – 18:00'
                 place: 'hala Rosnička'
-            2:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '17:00'
                 place: 'hala Rosnička'
-            1699270752929:
-                name: ''
-                time: ''
-                place: ''
         friday:
-            0:
+            -
                 group:
                     - dorost
                 name: kompenzace
                 time: ''
                 place: 'samostatně dle plánu'
-            1699270752929:
-                name: ''
-                time: ''
-                place: ''
         saturday:
-            0:
+            -
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-            1699270752929:
-                name: ''
-                time: ''
-                place: ''
         sunday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1699270752930:
+            1:
                 name: ''
                 time: ''
                 place: ''
     Prázdniny:
         monday:
-            0:
+            -
                 group:
                     - dorost
                 name: Posilovna
                 time: '15:15 a 18:00'
                 place: 'Sokol Žabovřesky, https://en.mapy.cz/s/gavotococu'
-            1:
+            -
                 group:
                     - zaci2
                 name: 'Cvičení dle plánu'
                 time: ''
                 place: samostatně
-            1699270752930:
-                name: ''
-                time: ''
-                place: ''
         tuesday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Běh (dle víkendu)'
                 time: '16:30'
                 place: 'hala Rosnička (sraz) a okolí'
-            1:
+            -
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-            1699270752931:
-                name: ''
-                time: ''
-                place: ''
         wednesday:
-            0:
+            -
                 group:
                     - dorost
                 name: Posilovna
                 time: '15:15 a 18:00'
                 place: 'Sokol Žabovřesky, https://en.mapy.cz/s/gavotococu'
-            1699270752931:
-                name: ''
-                time: ''
-                place: ''
         thursday:
-            0:
+            -
                 group:
                     - dorost
                 name: Dráha
                 time: '17:00'
                 place: 'Areál VUT, pPv'
-            1:
+            -
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: 'samostatně (lze využít dráhu s dorostem)'
-            1699270752931:
-                name: ''
-                time: ''
-                place: ''
         friday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1699270752931:
+            1:
                 name: ''
                 time: ''
                 place: ''
         saturday:
-            0:
+            -
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-            1699270752932:
-                name: ''
-                time: ''
-                place: ''
         sunday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1699270752932:
+            1:
                 name: ''
                 time: ''
                 place: ''
     Korona:
         monday:
-            0:
+            -
                 group:
                     - dorost
                 name: Posilování
                 time: '16:45'
                 place: 'nám Svornosti, https://en.mapy.cz/s/namovudojo'
-            1:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '16:30 - 18:00'
                 place: 'hala Rosnička'
-            1699270752932:
-                name: ''
-                time: ''
-                place: ''
         tuesday:
-            0:
+            -
                 group:
                     - pulci1
                     - pulci2
@@ -453,35 +349,27 @@ templates:
                 name: 'Mapový trénink'
                 time: '16:00 - 18:00'
                 place: 'po skupinách'
-            1699270752933:
-                name: ''
-                time: ''
-                place: ''
         wednesday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Posilování + Běh dle plánu'
                 time: '16:30'
                 place: 'Rosnička, https://en.mapy.cz/s/resafolera'
-            1699270752933:
-                name: ''
-                time: ''
-                place: ''
         thursday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Intervalový trénink'
                 time: '17:00'
                 place: Podzimní
-            1:
+            -
                 group:
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:00 - 18:00'
                 place: 'viz Google Classroom'
-            2:
+            -
                 group:
                     - pulci1
                     - pulci2
@@ -489,57 +377,33 @@ templates:
                 name: 'Běžecký trénink'
                 time: '16:00'
                 place: 'Pod Palackého vrchem'
-            1699270752933:
-                name: ''
-                time: ''
-                place: ''
         friday:
-            0:
+            -
                 group:
                     - dorost
                 name: Kompenzace
                 time: ''
                 place: samostatně
-            1699270752934:
-                name: ''
-                time: ''
-                place: ''
         saturday:
-            0:
+            -
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-            1699270752934:
-                name: ''
-                time: ''
-                place: ''
         sunday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1699270752934:
+            1:
                 name: ''
                 time: ''
                 place: ''
     'Hobby onlie teorie':
         monday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1699270752935:
+            1:
                 name: ''
                 time: ''
                 place: ''
         tuesday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1699270752935:
+            1:
                 name: ''
                 time: ''
                 place: ''
@@ -551,38 +415,22 @@ templates:
                 time: '20:00'
                 place: meet.google.com/gdb-zbif-ghr
         thursday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1699270752935:
+            1:
                 name: ''
                 time: ''
                 place: ''
         friday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1699270752936:
+            1:
                 name: ''
                 time: ''
                 place: ''
         saturday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1699270752936:
+            1:
                 name: ''
                 time: ''
                 place: ''
         sunday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1699270752937:
+            1:
                 name: ''
                 time: ''
                 place: ''
