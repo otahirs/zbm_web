@@ -14,7 +14,7 @@ import:
     time: 1698313205
 place: Baba
 meetTime: '11:00'
-meetPlace: 'Řečkovice, parkoviště u bazénu'
+meetPlace: 'Řečkovice, u Kučerů v garáži'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -30,9 +30,9 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
-gps: '49.24666, 16.57701'
+gps: '49.24419, 16.57401'
 ---
 
 po cestách
-* **sraz**: 11:00 Řečkovice, parkoviště u bazénu
+* **sraz**: 11:00 Řečkovice, u Kučerů v garáži
 * **doprava**: MHD

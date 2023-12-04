@@ -4,6 +4,13 @@ primaryImage: {  }
 media_order: PNG_logo_ZBM-komplet.png
 ---
 
+Díky, že jste dorazili a udělali skvělou atmosféru nejen na O-gala.
+
+* [O-Gala fotky](https://eu.zonerama.com/OndraH/Album/10731149)
+* [Výsledky BZL: Předplesání](https://oris.orientacnisporty.cz/Vysledky?id=8051)
+
+---
+
 Přijeďte na konci listopadu do Brna a oslavte s orienťáckou komunitou konec sezóny, v rámci jednoho víkendu.
 
 Ladíme detaily akcí a chystáme podrobnější info...
@@ -28,6 +35,7 @@ Ladíme detaily akcí a chystáme podrobnější info...
 ### Vyhlášení ankety nejlepších O-sportovců
 * kdy: sobota 25. listopadu, začátek v 18:00
 * kde: Aula Q, [Technická 2](https://maps.app.goo.gl/SnqAcX66hG5V92BC8), Brno - Královo Pole
+* livestream: [YouTube](https://www.youtube.com/watch?v=cdiLjfVZe9I)
 
 Info:
 * šatna zajištěna

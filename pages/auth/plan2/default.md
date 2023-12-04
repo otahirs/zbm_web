@@ -10,21 +10,21 @@ process:
 plan:
     thisWeek:
         monday:
-            0:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-            1698662146676:
+            -
                 group:
                     - dorost
                 name: Posilovna
                 time: '18:00 a 19:00'
                 place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
         tuesday:
-            0:
+            -
                 group:
                     - zabicky
                     - pulci1
@@ -33,13 +33,13 @@ plan:
                 name: 'Mapový trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            1:
+            -
                 group:
                     - zaci2
                 name: 'Běžecký trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            1698662472828:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink + teorie'
@@ -48,42 +48,30 @@ plan:
         wednesday:
             1:
                 group:
-                    - hobby
-                name: 'Mapový trénink'
-                time: '17:00 – 19:00'
-                place: 'okolí Brna'
-            1698662241046:
-                group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
+            1701005064460:
+                group:
+                    - hobby
+                name: 'Hobby online teorie'
+                time: '20:00'
+                place: meet.google.com/kij-yeud-iwd
         thursday:
-            0:
+            -
                 group:
                     - pulci1
                     - pulci2
                 name: Telocvična
                 time: '16:00 - 17:00'
                 place: 'ZŠ Sirotkova 36'
-            1:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:30 – 18:00'
-                place: 'hala Rosnička'
-            1698662523326:
-                group:
-                    - dorost
-                name: 'Běžecký trénink '
-                time: '17:00'
-                place: 'hala Rosnička'
-            1700142285197:
-                group:
-                    - dorost
-                name: 'Beseda s reprezentatntem'
-                time: '16:00'
                 place: 'hala Rosnička'
         saturday:
             -
@@ -130,18 +118,18 @@ plan:
                 time: '16:30'
                 place: 'ZŠ náměstí Svornosti 7, https://en.mapy.cz/s/dafajonazu'
         wednesday:
-            -
-                group:
-                    - hobby
-                name: 'Mapový trénink'
-                time: '17:00 – 19:00'
-                place: 'okolí Brna'
-            -
+            1:
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
+            1701008703637:
+                group:
+                    - hobby
+                name: 'Hobby online teorie'
+                time: '20:00'
+                place: meet.google.com/kij-yeud-iwd
         thursday:
             -
                 group:
@@ -163,20 +151,19 @@ plan:
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'hala Rosnička'
-        friday:
-            1699990203477:
-                group:
-                    - dorost
-                name: kompenzace
-                time: ''
-                place: 'samostatně dle plánu'
         saturday:
-            -
+            0:
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
+            1701257873710:
+                group:
+                    - dorost
+                name: 'běh podle plánu'
+                time: ''
+                place: individuálně
     next2Week:
         monday:
             -
@@ -218,9 +205,9 @@ plan:
             -
                 group:
                     - hobby
-                name: 'Mapový trénink'
-                time: '17:00 – 19:00'
-                place: 'okolí Brna'
+                name: 'Hobby online teorie '
+                time: '20:00 – 21:00'
+                place: meet.google.com/kij-yeud-iwd
             -
                 group:
                     - dorost
@@ -242,6 +229,17 @@ plan:
                 name: 'Běžecký trénink'
                 time: '16:30 – 18:00'
                 place: 'hala Rosnička'
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink '
+                time: '17:00'
+                place: 'hala Rosnička'
+        friday:
+            1:
+                name: ''
+                time: ''
+                place: ''
         saturday:
             -
                 group:
@@ -249,27 +247,30 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
+        sunday:
+            1:
+                group:
+                    - dorost
+                name: 'běh podle plánu'
+                time: ''
+                place: individuálně
     next3Week:
         monday:
-            0:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-            1:
+            -
                 group:
                     - dorost
                 name: Posilovna
                 time: '18:00 a 19:00'
                 place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
-            1699270752923:
-                name: ''
-                time: ''
-                place: ''
         tuesday:
-            0:
+            -
                 group:
                     - zabicky
                     - pulci1
@@ -278,90 +279,66 @@ plan:
                 name: 'Mapový trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            1:
+            -
                 group:
                     - zaci2
                 name: 'Běžecký trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            2:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink + teorie'
                 time: '16:30'
                 place: 'ZŠ náměstí Svornosti 7, https://en.mapy.cz/s/dafajonazu'
-            1699270752924:
-                name: ''
-                time: ''
-                place: ''
         wednesday:
-            0:
+            -
                 group:
                     - hobby
-                name: 'Mapový trénink'
-                time: '17:00 – 19:00'
-                place: 'okolí Brna'
-            1:
+                name: 'Hobby online teorie '
+                time: '20:00 – 21:00'
+                place: meet.google.com/kij-yeud-iwd
+            -
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
-            1699270781806:
-                name: ''
-                time: ''
-                place: ''
         thursday:
-            0:
+            -
                 group:
                     - pulci1
                     - pulci2
                 name: Telocvična
                 time: '16:00 - 17:00'
                 place: 'ZŠ Sirotkova 36'
-            1:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:30 – 18:00'
                 place: 'hala Rosnička'
-            2:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'hala Rosnička'
-            1699270752924:
-                name: ''
-                time: ''
-                place: ''
         friday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1699270752925:
+            1:
                 name: ''
                 time: ''
                 place: ''
         saturday:
-            0:
+            -
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-            1699270752925:
-                name: ''
-                time: ''
-                place: ''
         sunday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1699270752925:
+            1:
                 name: ''
                 time: ''
                 place: ''

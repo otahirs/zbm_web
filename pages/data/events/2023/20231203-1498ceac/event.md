@@ -17,7 +17,7 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-note: ''
+note: 'Hlašte se přímo na stránkách Adamna cupu, včetně platby startovného!'
 return: ''
 price: ''
 program: ''
@@ -31,3 +31,4 @@ taxonomy:
         - hobby
 ---
 
+Hlašte se přímo na stránkách Adamna cupu, včetně platby startovného!
