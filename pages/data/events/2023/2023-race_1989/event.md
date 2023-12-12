@@ -8,9 +8,9 @@ title: 'Vánoční Sklené'
 place: Sklené
 type: S
 template: soustredeni
-date: '2023-11-14'
+date: '2023-12-05'
 import:
     type: members
-    time: 1699956009
+    time: 1701805807
 ---
 
