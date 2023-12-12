@@ -183,7 +183,8 @@
 		for (var i = 0, linksLength = links.length; i < linksLength; i++) {
 			if (links[i].hasAttribute("href") && 
 				links[i].hostname != window.location.hostname &&
-				!(links[i].firstElementChild && links[i].firstElementChild.tagName == "IMG")) 
+				!(links[i].firstElementChild && 
+					["IMG", "img", "picture", "PICTURE"].includes(links[i].firstElementChild.tagName))) 
 			{
 				links[i].target = '_blank';
 				links[i].classList.add('external-link');
