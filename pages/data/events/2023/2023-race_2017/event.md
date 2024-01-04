@@ -25,13 +25,15 @@ transport: 'auty, pište, kdo můžete vzít prosím'
 accomodation: ''
 food: ''
 leader: 'Saša, Jenda'
-note: ''
+note: 'Terénem, sraz v Ruprechtově v 10:10.'
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.32522, 16.84743'
 ---
 
+Terénem, sraz v Ruprechtově v 10:10.
 * **sraz**: 9:30 Brno, Juliánov, u Tesca
 * **doprava**: auty, pište, kdo můžete vzít prosím

@@ -1,11 +1,16 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - hobby
 id: 2024-race_2030
 start: '2024-01-20'
 end: '2024-01-20'
 title: 'Mapový trénink žactva'
-place: '???'
+place: 'Ochoz u Brna'
 type: T
 note: 'Budou nachystány tratě Pulců, Žáků, Hobíků a v případě zájmu i Dorostu.'
 template: trenink
@@ -20,10 +25,10 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
+transport: 'Společná IDS JmK.'
 accomodation: ''
 food: ''
-leader: ''
+leader: 'Pavel Rotek'
 return: ''
 price: ''
 program: ''
@@ -32,3 +37,4 @@ signups: ''
 ---
 
 Budou nachystány tratě Pulců, Žáků, Hobíků a v případě zájmu i Dorostu.
+* **doprava**: Společná IDS JmK.

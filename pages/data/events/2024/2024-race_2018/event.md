@@ -12,5 +12,8 @@ date: '2023-10-26'
 import:
     type: members
     time: 1698313205
+place: Křtiny
+note: terénem
 ---
 
+terénem

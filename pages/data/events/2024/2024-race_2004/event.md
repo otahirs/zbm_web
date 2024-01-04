@@ -1,6 +1,9 @@
 ---
 taxonomy:
     skupina:
+        - zabicky
+        - pulci1
+        - pulci2
         - zaci1
         - zaci2
         - dorost
@@ -21,9 +24,9 @@ import:
 meetTime: ''
 meetPlace: ''
 eventTypeDescription: ''
-startTime: ''
-map: ''
-terrain: ''
+startTime: '13:45'
+map: 'Předměstí Březiny, 1:4000, ekvidistance 2,5 m, rozměr A4, mapový klíč ISSprOM 2019-2, stav prosinec 2023'
+terrain: "Městská zástavba, kombinovaná se zahrádkami a rodinnými domy v severní části\r\nmapy. Doporučujeme hladkou obuv, pokud nebude nevlídné počasí"
 transport: ''
 accomodation: ''
 food: ''

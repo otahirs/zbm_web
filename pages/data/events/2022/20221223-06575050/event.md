@@ -17,7 +17,7 @@ transport: "[Bus č. 55](https://idos.idnes.cz/vlakyautobusymhdvse/spojeni/prehl
 accomodation: ''
 food: ''
 leader: 'Jenda, Aleš, Drbča'
-note: "Tradiční předvánočního oběhnutí Brna – Mariánské údolí – Pod Hádkem – Nový Dvůr – Březina – Zadní pole – Babice nad Svitavou – Alexandrovka – Adamov – Útěchov (cca 120 min).\r\n\r\n**Pokyny**\r\n* přijeďte v běhacím (hoďte si na to horní vrstvu oblečení)\r\n* autem vám odvezeme věci na převlečení do místa, kde budete končit, sbalte si teplé věci, ať nikdo nepromrzne\r\n* přibalte pár desítek korun na dopravu zpět (bus, vlak)\r\n\r\n**Občerstvení**\r\n* čaj a buchty v Březině a v Adamově"
+note: "Tradiční předvánočního oběhnutí Brna – Mariánské údolí – Pod Hádkem – Nový Dvůr – Březina – Zadní pole – Babice nad Svitavou – Alexandrovka – Adamov – Útěchov (cca 120 min).\r\n\r\n**Pokyny**\r\n* přijeďte v běhacím (hoďte si na to horní vrstvu oblečení)\r\n* autem vám odvezeme věci na převlečení do místa, kde budete končit, sbalte si teplé věci, ať nikdo nepromrzne\r\n* přibalte pár desítek korun na dopravu zpět (bus, vlak), nebo kartu v hodinkách :-)\r\n\r\n**Občerstvení**\r\n* čaj a buchty v Březině a v Adamově"
 return: ''
 price: ''
 program: ''
@@ -35,7 +35,7 @@ Tradiční předvánočního oběhnutí Brna – Mariánské údolí – Pod Há
 **Pokyny**
 * přijeďte v běhacím (hoďte si na to horní vrstvu oblečení)
 * autem vám odvezeme věci na převlečení do místa, kde budete končit, sbalte si teplé věci, ať nikdo nepromrzne
-* přibalte pár desítek korun na dopravu zpět (bus, vlak)
+* přibalte pár desítek korun na dopravu zpět (bus, vlak), nebo kartu v hodinkách :-)
 
 **Občerstvení**
 * čaj a buchty v Březině a v Adamově
