@@ -1,5 +1,5 @@
 ---
-title: 'Vánoční přednáška reprezentanta'
+title: 'Vánoční přednáška: "Může máma 2 dětí vozit medaile?"'
 date: '2023-12-23'
 template: novinka
 id: '20231223-174121000'
