@@ -33,6 +33,10 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.21095, 16.46187'
+routes:
+    -
+        name: Livelox
+        link: 'https://www.livelox.com/Events/Show/118517/ZBM-Nocni-mapovy-trenink-2'
 ---
 
 RED varianty - bez cest 

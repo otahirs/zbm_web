@@ -32,7 +32,11 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
-gps: '49.20491, 16.47750'
+gps: '49.20491, 16.4775'
+routes:
+    -
+        name: Livelox
+        link: 'https://www.livelox.com/Events/Show/119319/ZBM-nocni-trenink'
 ---
 
 * **sraz**: 17:00 U hájovny

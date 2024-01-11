@@ -10,78 +10,6 @@ process:
 plan:
     thisWeek:
         monday:
-            1:
-                group:
-                    - dorost
-                name: 'Individuálně dle TP'
-                time: ''
-                place: ''
-            1703182009519:
-                name: 'Štastné vykročení do Nového roku'
-                time: ''
-                place: ''
-        tuesday:
-            2:
-                group:
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00-17:30'
-                place: Rosnička
-            1703367846016:
-                group:
-                    - dorost
-                name: 'Individuálně dle TP'
-                time: ''
-                place: ''
-        wednesday:
-            -
-                group:
-                    - hobby
-                name: 'Hobby online teorie '
-                time: '20:00 – 21:00'
-                place: meet.google.com/kij-yeud-iwd
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
-        thursday:
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                name: Telocvična
-                time: '16:00 - 17:00'
-                place: 'ZŠ Sirotkova 36'
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:30 – 18:00'
-                place: 'hala Rosnička'
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink '
-                time: '17:00'
-                place: 'hala Rosnička'
-        saturday:
-            0:
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: samostatně
-            1703615946264:
-                group:
-                    - dorost
-                name: 'BBP Kuřim '
-                time: dopo
-                place: 'Kuřim https://mapy.cz/s/cezemazupo'
-    nextWeek:
-        monday:
             -
                 group:
                     - zaci1
@@ -168,6 +96,89 @@ plan:
                 name: ''
                 time: ''
                 place: ''
+    nextWeek:
+        monday:
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: Tělocvična
+                time: '17:00 – 18:30'
+                place: 'hala Rosnička'
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '18:00 a 19:00'
+                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
+        tuesday:
+            -
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                name: 'Mapový trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7'
+            -
+                group:
+                    - zaci2
+                name: 'Běžecký trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7'
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink bez teorie'
+                time: '16:30'
+                place: 'ZŠ náměstí Svornosti 7, https://en.mapy.cz/s/dafajonazu'
+        wednesday:
+            -
+                group:
+                    - hobby
+                name: 'Hobby online teorie '
+                time: '20:00 – 21:00'
+                place: meet.google.com/kij-yeud-iwd
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
+        thursday:
+            -
+                group:
+                    - pulci1
+                    - pulci2
+                name: Telocvična
+                time: '16:00 - 17:00'
+                place: 'ZŠ Sirotkova 36'
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:30 – 18:00'
+                place: 'hala Rosnička'
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink '
+                time: '17:00'
+                place: 'hala Rosnička'
+        friday:
+            1:
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            -
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: samostatně
     next2Week:
         monday:
             -
@@ -239,11 +250,6 @@ plan:
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'hala Rosnička'
-        friday:
-            1:
-                name: ''
-                time: ''
-                place: ''
         saturday:
             -
                 group:
@@ -322,11 +328,6 @@ plan:
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'hala Rosnička'
-        friday:
-            1:
-                name: ''
-                time: ''
-                place: ''
         saturday:
             -
                 group:
@@ -334,11 +335,6 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-        sunday:
-            1:
-                name: ''
-                time: ''
-                place: ''
 ---
 
 <div class="row justify-content-between"> 
