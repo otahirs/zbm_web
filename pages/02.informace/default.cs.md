@@ -103,13 +103,13 @@ V případě dotazů ohledně cesťáků nebo potřeby domluvení si výjimky na
 
 ---
 ## Oddílové příspěvky 2024 <a name="prispevky"></a>
-Členské příspěvky je potřeba zaplatit **nejpozději do 31.&nbsp;1.&nbsp;2024**.  Registrované členy zároveň prosíme - v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2023 - evidence_, dle příslušného typu příspěvku.
+Členské příspěvky je potřeba zaplatit **nejpozději do 31. 1. 2024**.  Registrované členy zároveň prosíme - v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2023 - evidence_, dle příslušného typu příspěvku.
 
 Platby proveďte bezhotovostně na účet SK Brno-Žabovřesky u Raifeisenbank 4067843369/5500, vs. xxxx (kde xxxx = registrační číslo).
 
 Ve všech typech příspěvků jsou již zahrnuty povinné odvody SK ve výši 300,–&nbsp;Kč a registrace ČSOS ve výši 100,–&nbsp;Kč.
 
-Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému. Veškeré **dluhy** z minulosti je potřeba vyrovnat taktéž nejpozději **do 31.&nbsp;1.&nbsp;2023**. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, **nebudou přihlašováni na závody!**
+Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému. Veškeré **dluhy** z minulosti je potřeba vyrovnat taktéž nejpozději **do 31. 1. 2024**. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, **nebudou přihlašováni na závody!**
 
 ### Kolik zaplatím?
 
@@ -130,7 +130,7 @@ Bonusy lze získat za:
 * účast  na alespoň jednom soustředění či táboře (Soustředění)
 * aktivní pomoc při přípravě a pořádání soustředění (Aktivní pomoc)
 
-<a href="{{page.url}}/Členské příspěvky 2022.pdf">-> Tabulka s přehledem příspěvků a možných bonusů zde <-</a>.
+<a href="https://drive.google.com/file/d/1A-Kam3SfMXsAiUkBrHRRv2TRuw59Flcr/view?usp=sharing" target=_blank> Tabulka s přehledem příspěvků a možných bonusů zde</a>.
 
 Sourozenci (Žabičky, Pulci, Žáci, Dorost) – druhý a další sourozenec sleva 30&nbsp;%. Členové oddílu, kteří nebydlí v Brně nebo jeho blízkém okolí, případně v Brně nestudují, mají slevu 500&nbsp;Kč (platí pro závodníky s licencí B a vyšší).
 
