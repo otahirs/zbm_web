@@ -115,14 +115,14 @@ Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému
 
 | Skupina | Maximální výše členského příspěvku | Dosažitelná výše příspěvku s bonusy |
 | --- | --- | --- |
-| Předškoláci | 1 500 Kč | 1500 Kč |
-| Žactvo (7–14) | 4 000 Kč | 2500 – 3000 Kč |
-| Dorost | 4 500 Kč | 3200 – 3500 Kč |
-| Dospělý | 5 500 Kč | 3200 – 5000 Kč |
-| Dospělý – neaktivní | 1 500 Kč | 1500 Kč |
-| Dospělý – registrovaný za jiný klub OB | 4 000 Kč | 4000 Kč |
+| Předškoláci | 2 000 Kč | 2000 Kč |
+| Žactvo (7–14) | 5 000 Kč | 3500 – 4000 Kč |
+| Dorost | 5 500 Kč | 4200 – 4500 Kč |
+| Dospělý | 6 500 Kč | 4200 – 5200 Kč |
+| Dospělý – neaktivní | 2 000 Kč | 2000 Kč |
+| Dospělý – registrovaný za jiný klub OB | 6 500 Kč | 6 500 Kč |
 
-Formou bonusů lze získat slevu z maximální výše členských příspěvků v rozmezí 500 až 2 400 Kč.  
+Formou bonusů lze získat slevu z maximální výše členských příspěvků v rozmezí 500 až 2 300 Kč.  
 
 Bonusy lze získat za:
 * zisk či udržení licence (Licence)
