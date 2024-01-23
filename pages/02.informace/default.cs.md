@@ -107,7 +107,7 @@ V případě dotazů ohledně cesťáků nebo potřeby domluvení si výjimky na
 
 Platby proveďte bezhotovostně na účet SK Brno-Žabovřesky u Raifeisenbank 4067843369/5500, vs. xxxx (kde xxxx = registrační číslo).
 
-Ve všech typech příspěvků jsou již zahrnuty povinné odvody SK ve výši 300,–&nbsp;Kč a registrace ČSOS ve výši 100,–&nbsp;Kč.
+Ve všech typech příspěvků jsou již zahrnuty povinné odvody SK ve výši 300,–&nbsp;Kč a registrace ČSOS ve výši 200,–&nbsp;Kč.
 
 Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému. Veškeré **dluhy** z minulosti je potřeba vyrovnat taktéž nejpozději **do 31. 1. 2024**. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, **nebudou přihlašováni na závody!**
 
