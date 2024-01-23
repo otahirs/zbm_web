@@ -102,8 +102,8 @@ je potřeba vyplnit ke každé akci samostatně
 V případě dotazů ohledně cesťáků nebo potřeby domluvení si výjimky na deadine jejich předání (pouze v relevantních případech) pište na mail: _finance@zabiny.club_
 
 ---
-## Oddílové příspěvky 2023 <a name="prispevky"></a>
-Členské příspěvky je potřeba zaplatit **nejpozději do 31.&nbsp;1.&nbsp;2023**.  Registrované členy zároveň prosíme - v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2023 - evidence_, dle příslušného typu příspěvku.
+## Oddílové příspěvky 2024 <a name="prispevky"></a>
+Členské příspěvky je potřeba zaplatit **nejpozději do 31.&nbsp;1.&nbsp;2024**.  Registrované členy zároveň prosíme - v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2023 - evidence_, dle příslušného typu příspěvku.
 
 Platby proveďte bezhotovostně na účet SK Brno-Žabovřesky u Raifeisenbank 4067843369/5500, vs. xxxx (kde xxxx = registrační číslo).
 
