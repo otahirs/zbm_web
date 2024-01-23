@@ -79,23 +79,19 @@ plan:
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'hala Rosnička'
-        friday:
-            1:
-                name: ''
-                time: ''
-                place: ''
         saturday:
-            -
+            0:
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-        sunday:
-            1:
-                name: ''
+            1705648112728:
+                group:
+                    - dorost
+                name: BBP
                 time: ''
-                place: ''
+                place: individuálně
     nextWeek:
         monday:
             -
@@ -130,7 +126,7 @@ plan:
             -
                 group:
                     - dorost
-                name: 'Běžecký trénink bez teorie'
+                name: 'Běžecký trénink + teorie'
                 time: '16:30'
                 place: 'ZŠ náměstí Svornosti 7, https://en.mapy.cz/s/dafajonazu'
         wednesday:
@@ -167,11 +163,6 @@ plan:
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'hala Rosnička'
-        friday:
-            1:
-                name: ''
-                time: ''
-                place: ''
         saturday:
             -
                 group:
@@ -188,12 +179,6 @@ plan:
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '18:00 a 19:00'
-                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
         tuesday:
             -
                 group:
@@ -210,12 +195,6 @@ plan:
                 name: 'Běžecký trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink + teorie'
-                time: '16:30'
-                place: 'ZŠ náměstí Svornosti 7, https://en.mapy.cz/s/dafajonazu'
         wednesday:
             -
                 group:
@@ -223,12 +202,6 @@ plan:
                 name: 'Hobby online teorie '
                 time: '20:00 – 21:00'
                 place: meet.google.com/kij-yeud-iwd
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
         thursday:
             -
                 group:
@@ -243,12 +216,6 @@ plan:
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:30 – 18:00'
-                place: 'hala Rosnička'
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink '
-                time: '17:00'
                 place: 'hala Rosnička'
         saturday:
             -
@@ -328,6 +295,11 @@ plan:
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'hala Rosnička'
+        friday:
+            1:
+                name: ''
+                time: ''
+                place: ''
         saturday:
             -
                 group:
@@ -335,6 +307,11 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
+        sunday:
+            1:
+                name: ''
+                time: ''
+                place: ''
 ---
 
 <div class="row justify-content-between"> 

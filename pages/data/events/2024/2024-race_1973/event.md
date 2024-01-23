@@ -35,6 +35,7 @@ thingsToTake: ''
 signups: ''
 gps: '48.91095, 17.09892'
 orisid: '8041'
+hasResults: true
 ---
 
 Informace šly e-mailem.
