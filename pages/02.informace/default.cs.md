@@ -103,6 +103,8 @@ V případě dotazů ohledně cesťáků nebo potřeby domluvení si výjimky na
 
 ---
 ## Oddílové příspěvky 2024 <a name="prispevky"></a>
+Co za ně opravdu máme je zpracováno v <a href="https://drive.google.com/file/d/1pNxd3ucGKyR-6hAgT-l7PCwKgaauNvFu/view?usp=sharing" target="_blank">tabulce</a>.
+
 Členské příspěvky je potřeba zaplatit **nejpozději do 31. 1. 2024**.  Registrované členy zároveň prosíme - v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2023 - evidence_, dle příslušného typu příspěvku.
 
 Platby proveďte bezhotovostně na účet SK Brno-Žabovřesky u Raifeisenbank 4067843369/5500, vs. xxxx (kde xxxx = registrační číslo).
