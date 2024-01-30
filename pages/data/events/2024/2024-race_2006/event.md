@@ -5,7 +5,7 @@ taxonomy:
         - hobby
 id: 2024-race_2006
 start: '2024-02-04'
-end: '2024-02-11'
+end: '2024-02-10'
 title: 'TK Jizerky'
 type: S
 note: 'běžkařské soustředění'
@@ -22,19 +22,20 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: 'auty, nebo [veřejnou dopravou](https://idos.idnes.cz/vlakyautobusymhdvse/spojeni/prehled/?p=Fyb5SSWpsOpfNdTbad2ENK5UbPC5ckqif.KrmrCP76kKl50G8WS0ffCMWN9YYwpiOzfztsq:sJE3h3IIp9GaQdWvyyeqXbzO:.9k6lnCv33a3CHGwvw:7zt4Y99hwkIpy8oLqpau1xSA1SzDmCbG6zeMtxhYQKUPUlRuMmZZ3GhYZd7OwhdJWGnFVLTRv8GrH7sqIEuH9:5677ZeRumQwOsT4J2fZSHxRQxjunSCcldcXAcFrpA6DFsWcAKz9ZwTAUJuhI9zT6iQe92nAx2ny5u0KhIdE1xk)'
+transport: "auty, nebo [veřejnou dopravou](https://idos.idnes.cz/vlakyautobusymhdvse/spojeni/prehled/?p=Fyb5SSWpsOpfNdTbad2ENK5UbPC5ckqif.KrmrCP76kKl50G8WS0ffCMWN9YYwpiOzfztsq:sJE3h3IIp9GaQdWvyyeqXbzO:.9k6lnCv33a3CHGwvw:7zt4Y99hwkIpy8oLqpau1xSA1SzDmCbG6zeMtxhYQKUPUlRuMmZZ3GhYZd7OwhdJWGnFVLTRv8GrH7sqIEuH9:5677ZeRumQwOsT4J2fZSHxRQxjunSCcldcXAcFrpA6DFsWcAKz9ZwTAUJuhI9zT6iQe92nAx2ny5u0KhIdE1xk)\r\nLyže, případně věci, pojedou do autem. Většina hromadně. Předání věcí v sobotu podle domluvy."
 accomodation: 'na posteli, v https://www.potkavarnauhavrana.cz/'
 food: 'plná penze'
 leader: Jenda
-return: 'v neděli večer'
+return: 'v sobotu večer'
 price: ''
 program: 'běžecké lyžování'
-thingsToTake: 'věci na běžky, 1x věci na běh, kdyby bylo špatné počasí'
+thingsToTake: "POZOR: dle předpovědi se může stát, že pojedem hlavně běhat\r\nvěci na běžky, 1x věci na běh, kdyby bylo špatné počasí"
 signups: ''
 gps: '50.78053, 15.19952'
 ---
 
 běžkařské soustředění
 * **doprava**: auty, nebo [veřejnou dopravou](https://idos.idnes.cz/vlakyautobusymhdvse/spojeni/prehled/?p=Fyb5SSWpsOpfNdTbad2ENK5UbPC5ckqif.KrmrCP76kKl50G8WS0ffCMWN9YYwpiOzfztsq:sJE3h3IIp9GaQdWvyyeqXbzO:.9k6lnCv33a3CHGwvw:7zt4Y99hwkIpy8oLqpau1xSA1SzDmCbG6zeMtxhYQKUPUlRuMmZZ3GhYZd7OwhdJWGnFVLTRv8GrH7sqIEuH9:5677ZeRumQwOsT4J2fZSHxRQxjunSCcldcXAcFrpA6DFsWcAKz9ZwTAUJuhI9zT6iQe92nAx2ny5u0KhIdE1xk)
+Lyže, případně věci, pojedou do autem. Většina hromadně. Předání věcí v sobotu podle domluvy.
 * **ubytování**: na posteli, v https://www.potkavarnauhavrana.cz/
 * **strava**: plná penze

@@ -80,19 +80,67 @@ plan:
                 time: '17:00'
                 place: 'hala Rosnička'
         saturday:
-            0:
+            -
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-            1705648112728:
-                group:
-                    - dorost
-                name: BBP
-                time: ''
-                place: individuálně
     nextWeek:
+        monday:
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: Tělocvična
+                time: '17:00 – 18:30'
+                place: 'hala Rosnička'
+        tuesday:
+            -
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                name: 'Mapový trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7'
+            -
+                group:
+                    - zaci2
+                name: 'Běžecký trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7'
+        wednesday:
+            -
+                group:
+                    - hobby
+                name: 'Hobby online teorie '
+                time: '20:00 – 21:00'
+                place: meet.google.com/kij-yeud-iwd
+        thursday:
+            -
+                group:
+                    - pulci1
+                    - pulci2
+                name: Telocvična
+                time: '16:00 - 17:00'
+                place: 'ZŠ Sirotkova 36'
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:30 – 18:00'
+                place: 'hala Rosnička'
+        saturday:
+            -
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: samostatně
+    next2Week:
         monday:
             -
                 group:
@@ -163,6 +211,11 @@ plan:
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'hala Rosnička'
+        friday:
+            1:
+                name: ''
+                time: ''
+                place: ''
         saturday:
             -
                 group:
@@ -170,60 +223,11 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-    next2Week:
-        monday:
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: Tělocvična
-                time: '17:00 – 18:30'
-                place: 'hala Rosnička'
-        tuesday:
-            -
-                group:
-                    - zabicky
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                name: 'Mapový trénink + teorie'
-                time: '16:00 – 18:00'
-                place: 'ZŠ náměstí Svornosti 7'
-            -
-                group:
-                    - zaci2
-                name: 'Běžecký trénink + teorie'
-                time: '16:00 – 18:00'
-                place: 'ZŠ náměstí Svornosti 7'
-        wednesday:
-            -
-                group:
-                    - hobby
-                name: 'Hobby online teorie '
-                time: '20:00 – 21:00'
-                place: meet.google.com/kij-yeud-iwd
-        thursday:
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                name: Telocvična
-                time: '16:00 - 17:00'
-                place: 'ZŠ Sirotkova 36'
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:30 – 18:00'
-                place: 'hala Rosnička'
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
+        sunday:
+            1:
+                name: ''
                 time: ''
-                place: samostatně
+                place: ''
     next3Week:
         monday:
             -
