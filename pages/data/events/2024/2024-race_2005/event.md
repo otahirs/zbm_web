@@ -1,6 +1,9 @@
 ---
 taxonomy:
     skupina:
+        - zabicky
+        - pulci1
+        - pulci2
         - zaci1
         - zaci2
         - dorost
@@ -21,8 +24,8 @@ import:
 meetTime: ''
 meetPlace: ''
 eventTypeDescription: ''
-startTime: ''
-map: ''
+startTime: '13:30'
+map: 'Přehrada 1:4000, e=2m, stav: únor 2024'
 terrain: ''
 transport: ''
 accomodation: ''
@@ -34,5 +37,8 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.2276, 16.5265'
+hasStartlist: true
+hasResults: true
 ---
 
