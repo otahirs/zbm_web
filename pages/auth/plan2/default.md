@@ -81,16 +81,24 @@ plan:
                 place: 'hala Rosnička'
         friday:
             1:
-                name: ''
+                group:
+                    - dorost
+                name: 'individuálně dle plánu'
                 time: ''
                 place: ''
         saturday:
-            -
+            0:
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
+            1708524541642:
+                group:
+                    - dorost
+                name: 'Horolozecká stěna'
+                time: '16:00'
+                place: 'https://en.mapy.cz/s/johohohono'
     nextWeek:
         monday:
             -
@@ -163,12 +171,25 @@ plan:
                 time: '17:00'
                 place: 'hala Rosnička'
         saturday:
-            -
+            0:
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
+            1708535197106:
+                group:
+                    - dorost
+                name: 'BBP Běh kolem Myslivny'
+                time: dopo
+                place: 'ZŠ Kamínky Brno-Nový Lískovec'
+        sunday:
+            1708535554862:
+                group:
+                    - dorost
+                name: 'individuálně dle plánu'
+                time: ''
+                place: ''
     next2Week:
         monday:
             -
@@ -318,11 +339,6 @@ plan:
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'hala Rosnička'
-        friday:
-            1:
-                name: ''
-                time: ''
-                place: ''
         saturday:
             -
                 group:
@@ -330,11 +346,6 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-        sunday:
-            1:
-                name: ''
-                time: ''
-                place: ''
 ---
 
 <div class="row justify-content-between"> 

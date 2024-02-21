@@ -14,7 +14,7 @@ import:
     time: 1698313805
 place: Macocha
 meetTime: '9:00'
-meetPlace: 'KR.Pole hl. nádraží, https://mapy.cz/s/menufocupe'
+meetPlace: 'Královo pole, nádraží, https://mapy.cz/s/menufocupe'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -33,5 +33,5 @@ signups: ''
 gps: '49.36186, 16.70984'
 ---
 
-* **sraz**: 9:00 KR.Pole hl. nádraží, https://mapy.cz/s/menufocupe
+* **sraz**: 9:00 Královo pole, nádraží, https://mapy.cz/s/menufocupe
 * **doprava**: auty
