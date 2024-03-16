@@ -30,11 +30,14 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-note: ''
+note: 'Startovné dobrovolné, viz. rozpis. '
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasStartlist: true
+hasResults: true
 ---
 
+Startovné dobrovolné, viz. rozpis. 

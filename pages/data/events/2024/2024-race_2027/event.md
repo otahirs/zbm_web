@@ -2,6 +2,7 @@
 taxonomy:
     skupina:
         - dorost
+        - hobby
 id: 2024-race_2027
 start: '2024-03-15'
 end: '2024-03-15'
@@ -24,13 +25,15 @@ transport: auty
 accomodation: ''
 food: ''
 leader: ''
-note: ''
+note: 'Zázemí u Kočů. Start a cíl v lese na doběhnutí, na jednom místě.'
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.30966, 16.62193'
 ---
 
+Zázemí u Kočů. Start a cíl v lese na doběhnutí, na jednom místě.
 * **sraz**: 17:30 Lesná, Lidl
 * **doprava**: auty

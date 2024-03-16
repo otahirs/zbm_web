@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - hobby
 id: 2024-race_2057
 start: '2024-03-23'
 end: '2024-03-23'

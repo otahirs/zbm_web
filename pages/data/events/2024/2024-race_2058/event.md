@@ -1,10 +1,10 @@
 ---
 taxonomy:
     skupina:
-        - dorost
-        - hobby
-        - zaci2
         - zaci1
+        - zaci2
+        - hobby
+        - dorost
 id: 2024-race_2058
 start: '2024-03-24'
 end: '2024-03-24'

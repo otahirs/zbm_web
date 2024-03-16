@@ -79,13 +79,6 @@ plan:
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'hala Rosnička'
-        friday:
-            1:
-                group:
-                    - dorost
-                name: 'individuálně dle plánu'
-                time: ''
-                place: ''
         saturday:
             0:
                 group:
@@ -93,12 +86,19 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-            1708524541642:
+            1710140865290:
                 group:
                     - dorost
-                name: 'Horolozecká stěna'
-                time: '16:00'
-                place: 'https://en.mapy.cz/s/johohohono'
+                name: individuálně
+                time: ''
+                place: ''
+        sunday:
+            1710140806728:
+                group:
+                    - dorost
+                name: 'BBP nebo Kauflauf'
+                time: ''
+                place: ''
     nextWeek:
         monday:
             -
@@ -170,6 +170,13 @@ plan:
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'hala Rosnička'
+        friday:
+            1:
+                group:
+                    - dorost
+                name: individuálně
+                time: ''
+                place: ''
         saturday:
             0:
                 group:
@@ -177,17 +184,17 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-            1708535197106:
+            1710140941561:
                 group:
                     - dorost
-                name: 'BBP Běh kolem Myslivny'
-                time: dopo
-                place: 'ZŠ Kamínky Brno-Nový Lískovec'
+                name: individuálně
+                time: ''
+                place: ''
         sunday:
-            1708535554862:
+            1710140959996:
                 group:
                     - dorost
-                name: 'individuálně dle plánu'
+                name: individuálně
                 time: ''
                 place: ''
     next2Week:
@@ -241,33 +248,12 @@ plan:
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
         thursday:
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                name: Telocvična
-                time: '16:00 - 17:00'
-                place: 'ZŠ Sirotkova 36'
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:30 – 18:00'
-                place: 'hala Rosnička'
-            -
+            2:
                 group:
                     - dorost
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'hala Rosnička'
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: samostatně
     next3Week:
         monday:
             -
@@ -339,6 +325,11 @@ plan:
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'hala Rosnička'
+        friday:
+            1:
+                name: ''
+                time: ''
+                place: ''
         saturday:
             -
                 group:
@@ -346,6 +337,11 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
+        sunday:
+            1:
+                name: ''
+                time: ''
+                place: ''
 ---
 
 <div class="row justify-content-between"> 
