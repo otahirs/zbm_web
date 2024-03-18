@@ -188,6 +188,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
             $page_url = "/data/events/". substr($event["id"], 0, 4) ."/". $event["id"];
 
             $changed = false;
+            $is_first_import = false;
 
             $pages = Grav::instance()['pages'];
             $pages->init();
@@ -196,6 +197,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
                 $page = new Page();
                 $page->filePath("./user/pages{$page_url}/event.md");
                 $changed = true;
+                $is_first_import = true;
             }
             else {
                 $frontmatter = (array)$page->header();
@@ -205,20 +207,22 @@ class Events extends \Grav\Common\Twig\TwigExtension
             if(!isset($frontmatter['taxonomy']['skupina'])){
                 $frontmatter['taxonomy']['skupina'] = array();
             }
-                 
-            foreach($event as $key => $attribute){
-                // add group to taxonomy
-                if(in_array($key, ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost", "hobby"]) && $attribute == "1"){
-                    if(!in_array($key, $frontmatter['taxonomy']['skupina'])){
-                        $frontmatter['taxonomy']['skupina'][] = $key;
-                        $changed = true;
+
+            if ($is_first_import) {
+                foreach($event as $key => $attribute){
+                    // add group to taxonomy
+                    if(in_array($key, ["zabicky", "pulci1", "pulci2", "zaci1", "zaci2", "dorost", "hobby"]) && $attribute == "1"){
+                        if(!in_array($key, $frontmatter['taxonomy']['skupina'])){
+                            $frontmatter['taxonomy']['skupina'][] = $key;
+                            // $changed = true;
+                        }
+                        continue;
                     }
-                    continue;
-                }
-                // if no info set, overwrite from given file
-                if(empty($frontmatter[$key]) && $attribute){
-                    $frontmatter[$key] = $attribute;
-                    $changed = true;
+                    // if no info set, overwrite from given file
+                    if(empty($frontmatter[$key]) && $attribute){
+                        $frontmatter[$key] = $attribute;
+                        // $changed = true;
+                    }
                 }
             }
             
