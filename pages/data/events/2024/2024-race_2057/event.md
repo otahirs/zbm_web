@@ -15,5 +15,22 @@ date: '2024-02-15'
 import:
     type: members
     time: 1708026014
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: 'pouze vlastní'
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
+* **doprava**: pouze vlastní

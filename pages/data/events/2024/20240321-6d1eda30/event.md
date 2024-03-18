@@ -1,7 +1,7 @@
 ---
 id: 20240321-6d1eda30
-template: akce
-type: J
+template: trenink
+type: T
 title: 'Přednáška o výživě'
 start: '2024-03-21'
 end: '2024-03-21'
