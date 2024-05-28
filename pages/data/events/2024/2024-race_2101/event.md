@@ -1,10 +1,10 @@
 ---
 taxonomy:
     skupina:
+        - zaci1
+        - zaci2
         - dorost
         - hobby
-        - zaci2
-        - zaci1
 id: 2024-race_2101
 start: '2024-05-19'
 end: '2024-05-19'
@@ -13,12 +13,28 @@ link: 'https://oris.orientacnisporty.cz/Zavod?id=7608'
 orisid: '7608'
 place: 'Moravské Budějovice'
 type: Z
-note: 'Den po mistrovství ve sprintu se bude bojovat i o medaile ve čtyřčlenných smíšených sprintových štafetách. Pořadatelé ze Spartaku 1. Brněnská uspořádají závod v jiném městě, než se poběží sprint. O štafetové tituly se bude bojovat v Moravských Budějovicích, tratě postaví Libor Zřídkaveselý v městské zástavba, ve sportovním areálu, v areálech základních škol, na koupališti, v zámku a jeho okolí a v par'
+note: ''
 template: zavod
 date: '2024-03-18'
 import:
     type: members
     time: 1710751205
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: '[auty](https://docs.google.com/spreadsheets/d/13nAnJUMskLVqCIEIaDftTleUtRbcFuc8Phf_JeQNO-E/edit#gid=1750351609)'
+accomodation: ''
+food: ''
+leader: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+hasResults: true
 ---
 
-Den po mistrovství ve sprintu se bude bojovat i o medaile ve čtyřčlenných smíšených sprintových štafetách. Pořadatelé ze Spartaku 1. Brněnská uspořádají závod v jiném městě, než se poběží sprint. O štafetové tituly se bude bojovat v Moravských Budějovicích, tratě postaví Libor Zřídkaveselý v městské zástavba, ve sportovním areálu, v areálech základních škol, na koupališti, v zámku a jeho okolí a v par
+* **doprava**: [auty](https://docs.google.com/spreadsheets/d/13nAnJUMskLVqCIEIaDftTleUtRbcFuc8Phf_JeQNO-E/edit#gid=1750351609)

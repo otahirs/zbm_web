@@ -31,6 +31,8 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasStartlist: true
+hasResults: true
 ---
 
 * **doprava**: pouze vlastní
