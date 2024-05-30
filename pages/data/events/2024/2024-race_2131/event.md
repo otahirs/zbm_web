@@ -15,6 +15,7 @@ date: '2024-05-14'
 import:
     type: members
     time: 1715679007
+hasStartlist: true
 ---
 
 Nominační závody na MED.

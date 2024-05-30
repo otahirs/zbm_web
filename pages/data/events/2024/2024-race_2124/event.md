@@ -13,5 +13,23 @@ date: '2024-04-03'
 import:
     type: members
     time: 1712131807
+meetTime: '16:30'
+meetPlace: 'Tesco Juliánov'
+link: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
+* **sraz**: 16:30 Tesco Juliánov
