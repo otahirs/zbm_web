@@ -7,7 +7,7 @@ access:
 process:
     markdown: false
 cache_enable: false
-defaultTemplate: Zimní
+defaultTemplate: Letní
 templates:
     plan:
         monday:
@@ -21,9 +21,9 @@ templates:
             -
                 group:
                     - dorost
-                name: Posilovna
-                time: '18:00 a 19:00'
-                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
+                name: 'Atletické posilování'
+                time: '17:00'
+                place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
         tuesday:
             -
                 group:
@@ -31,28 +31,18 @@ templates:
                     - pulci1
                     - pulci2
                     - zaci1
-                name: 'Mapový trénink + teorie'
-                time: '16:00 – 18:00'
-                place: 'ZŠ náměstí Svornosti 7'
-            -
-                group:
                     - zaci2
-                name: 'Běžecký trénink + teorie'
+                    - hobby
+                name: 'Mapový trénink'
                 time: '16:00 – 18:00'
-                place: 'ZŠ náměstí Svornosti 7'
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink + teorie'
-                time: '16:30'
-                place: 'ZŠ náměstí Svornosti 7, https://en.mapy.cz/s/dafajonazu'
+                place: 'okolí Brna'
         wednesday:
             -
                 group:
                     - hobby
-                name: 'Hobby online teorie '
-                time: '20:00 – 21:00'
-                place: meet.google.com/kij-yeud-iwd
+                name: 'Mapový trénink'
+                time: '17:00 – 19:00'
+                place: 'okolí Brna'
             -
                 group:
                     - dorost
@@ -64,24 +54,19 @@ templates:
                 group:
                     - pulci1
                     - pulci2
-                name: Telocvična
-                time: '16:00 - 17:00'
-                place: 'ZŠ Sirotkova 36'
-            -
-                group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
-                time: '16:30 – 18:00'
-                place: 'hala Rosnička'
+                time: '16:00 – 18:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
             -
                 group:
                     - dorost
                 name: 'Běžecký trénink '
                 time: '17:00'
-                place: 'hala Rosnička'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
         friday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -93,7 +78,7 @@ templates:
                 time: ''
                 place: samostatně
         sunday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -154,7 +139,7 @@ templates:
                 time: '17:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
         friday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -166,7 +151,7 @@ templates:
                 time: ''
                 place: samostatně
         sunday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -256,7 +241,7 @@ templates:
                 time: ''
                 place: samostatně
         sunday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -308,7 +293,7 @@ templates:
                 time: ''
                 place: 'samostatně (lze využít dráhu s dorostem)'
         friday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -320,7 +305,7 @@ templates:
                 time: ''
                 place: samostatně
         sunday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -392,18 +377,18 @@ templates:
                 time: ''
                 place: samostatně
         sunday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
     'Hobby onlie teorie':
         monday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
         tuesday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -415,22 +400,22 @@ templates:
                 time: '20:00'
                 place: meet.google.com/gdb-zbif-ghr
         thursday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
         friday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
         saturday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
         sunday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''

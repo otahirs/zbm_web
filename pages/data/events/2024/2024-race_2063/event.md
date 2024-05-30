@@ -21,5 +21,25 @@ date: '2024-02-22'
 import:
     type: members
     time: 1708587608
+meetTime: '9:05'
+meetPlace: 'před budovou hlavního vlakového nádraží'
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: 'MHD trolejbusem č.31 do Šlapanic (odjezd 9:13)'
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+hasStartlist: true
+hasResults: true
 ---
 
+* **sraz**: 9:05 před budovou hlavního vlakového nádraží
+* **doprava**: MHD trolejbusem č.31 do Šlapanic (odjezd 9:13)

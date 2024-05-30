@@ -1,13 +1,13 @@
 ---
 taxonomy:
     skupina:
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
         - dorost
         - hobby
-        - zaci2
-        - zaci1
-        - pulci2
-        - pulci1
-        - zabicky
 id: 2024-race_2065
 start: '2024-05-01'
 end: '2024-05-01'
@@ -22,6 +22,24 @@ date: '2024-02-22'
 import:
     type: members
     time: 1708587608
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: 'Společná doprava vlakem. Sraz v 8:10 na hlavním nádraží.'
+accomodation: ''
+food: ''
+leader: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+hasStartlist: true
+hasResults: true
 ---
 
 Pořádá Dorost +.
+* **doprava**: Společná doprava vlakem. Sraz v 8:10 na hlavním nádraží.

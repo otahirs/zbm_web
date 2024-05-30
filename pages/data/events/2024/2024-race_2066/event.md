@@ -1,13 +1,13 @@
 ---
 taxonomy:
     skupina:
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
         - dorost
         - hobby
-        - zaci2
-        - zaci1
-        - pulci2
-        - pulci1
-        - zabicky
 id: 2024-race_2066
 start: '2024-05-11'
 end: '2024-05-11'
@@ -21,5 +21,7 @@ date: '2024-02-22'
 import:
     type: members
     time: 1708587608
+hasStartlist: true
+hasResults: true
 ---
 

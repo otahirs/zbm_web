@@ -17,6 +17,8 @@ date: '2024-03-18'
 import:
     type: members
     time: 1710751205
+hasStartlist: true
+hasResults: true
 ---
 
 Šampionát v KO sprintu se uskuteční ve svátek 8. května v centru Prostějova. Kvalifikace, semifinále a finále proběhnou v prostoru ohraničením ulicemi Českobratrská, Jihoslovanská, Wolkerova, Źeranovská, Drozdovice, Anenská, Plumlovská, Nerudova, U stadionu, Martinákova a Sladkovského, kde je rovinatý terén, městská a sídlištní zástavba i park. V prostoru již byla celá řada map, tou poslední pak mapa Máneska z roku 2019. Tratě staví trio Jiří Otrusina, Ondřej Vystavěl a Marcel Skřivánek na mapě, kterou připravuje Zdeněk Rajnošek.

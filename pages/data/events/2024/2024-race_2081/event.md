@@ -1,10 +1,10 @@
 ---
 taxonomy:
     skupina:
+        - zaci1
+        - zaci2
         - dorost
         - hobby
-        - zaci2
-        - zaci1
 id: 2024-race_2081
 start: '2024-06-02'
 end: '2024-06-02'
@@ -19,6 +19,7 @@ date: '2024-03-02'
 import:
     type: members
     time: 1709402412
+hasStartlist: true
 ---
 
 22. – 23. 6. 2024 – ŽB – Směr Kroměříž
