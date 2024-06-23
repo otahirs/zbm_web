@@ -13,14 +13,37 @@ link: 'https://oris.orientacnisporty.cz/Zavod?id=7743'
 orisid: '7743'
 place: Lačnov
 type: Z
-note: "22. – 23. 6. 2024 – ŽB – Směr Kroměříž\r\nSobotní klasická a nedělní krátká trať mají centrum na koupališti v Roštíně. Poběží se v kopcovitém dobře až středně průběžném terénu s množstvím cest, pískovcových skalek, terénních prvků a relikty nedokončené „Baťovy“ dálnice. Z hlavního hřebene vybíhají úzké, často skalnaté hřbety, oddělené hluboko zařezanými údolími potoků s příkrými, místy suťovými svahy. Je tam zachovalý komplex převážně bukových a v nižších polohách dubohabrových lesů. Tratě klasiky postavil Pavel Dittrich, krátkou trať pak Roman Vlček na mapě, kterou mapoval Vítězslav Pěček (předchozí mapa Brdo byla z roku 2010)."
+note: "ŽB – OB Vizovice - 1. – 2. 6. 2024\r\nCentrem obou závodů je areál Muzea Vařákových pasek v Lačnově.\r\nDalší viz [sobota](https://zabiny.club/data/events/2024/2024-race_2080).\r\n\r\nUbytování: Střední odborné učiliště Valašské Klobouky, spí se na postelích\r\nJídlo vlastní, jen v sobotu se půjde společně na večeři (vemte si s sebou peníze).\r\nS sebou plavky, ručník - již bude otevřeno koupaliště. Pokud nevyjde koupání, dáme výlet z Valašských Klobouků."
 template: zavod
 date: '2024-03-02'
 import:
     type: members
     time: 1709402412
 hasStartlist: true
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: 'U obou závodů je postaví Jan Vyoral.'
+startTime: '00 = 9:00, 1,5 km, 90m převýšení'
+map: 'Vařákovy paseky 1:15000 pro DH16-DH40, ostatní 1:10000, e=5 m, stav květen 2024, mapový klíč ISOM 2017-2.<BR>V prostoru již byla mapa <A HREF='
+terrain: 'Smíšený les podhorského charakteru, minimum podrostu, svažité partie s bažinkami, místy těžší kamenitá podložka, v části prostoru náročné sesuviště s velmi těžkou podložkou, v části prostoru pískovcové skály. Porostově velmi zajímavý prostor s členitými terénními prvky - to je charakteristika sobotní krátké a nedělní klasické tratě.'
+transport: 'Společným autobusem, předpokládaný návrat po 16 hodině k Bohémě'
+accomodation: ''
+food: ''
+leader: Luf
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.1921, 18.0094'
+hasResults: true
 ---
 
-22. – 23. 6. 2024 – ŽB – Směr Kroměříž
-Sobotní klasická a nedělní krátká trať mají centrum na koupališti v Roštíně. Poběží se v kopcovitém dobře až středně průběžném terénu s množstvím cest, pískovcových skalek, terénních prvků a relikty nedokončené „Baťovy“ dálnice. Z hlavního hřebene vybíhají úzké, často skalnaté hřbety, oddělené hluboko zařezanými údolími potoků s příkrými, místy suťovými svahy. Je tam zachovalý komplex převážně bukových a v nižších polohách dubohabrových lesů. Tratě klasiky postavil Pavel Dittrich, krátkou trať pak Roman Vlček na mapě, kterou mapoval Vítězslav Pěček (předchozí mapa Brdo byla z roku 2010).
+ŽB – OB Vizovice - 1. – 2. 6. 2024
+Centrem obou závodů je areál Muzea Vařákových pasek v Lačnově.
+Další viz [sobota](https://zabiny.club/data/events/2024/2024-race_2080).
+
+Ubytování: Střední odborné učiliště Valašské Klobouky, spí se na postelích
+Jídlo vlastní, jen v sobotu se půjde společně na večeři (vemte si s sebou peníze).
+S sebou plavky, ručník - již bude otevřeno koupaliště. Pokud nevyjde koupání, dáme výlet z Valašských Klobouků.
+* **doprava**: Společným autobusem, předpokládaný návrat po 16 hodině k Bohémě

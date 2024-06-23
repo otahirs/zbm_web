@@ -7,35 +7,23 @@ access:
 process:
     markdown: false
 cache_enable: false
-defaultTemplate: Letní
+defaultTemplate: Prázdniny
 templates:
     plan:
         monday:
             -
                 group:
-                    - zaci1
-                    - zaci2
-                name: Tělocvična
-                time: '17:00 – 18:30'
-                place: 'hala Rosnička'
-            -
-                group:
                     - dorost
-                name: 'Atletické posilování'
+                name: Posilovna
                 time: '17:00'
-                place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
+                place: 'Kampus FSpS MUni, Bohunice'
         tuesday:
             -
                 group:
-                    - zabicky
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-                    - hobby
-                name: 'Mapový trénink'
-                time: '16:00 – 18:00'
-                place: 'okolí Brna'
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '17:00'
+                place: 'dle domluvy'
         wednesday:
             -
                 group:
@@ -47,18 +35,9 @@ templates:
                 group:
                     - dorost
                 name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
+                time: '18:30'
+                place: 'Kampus FSpS MUni, Bohunice'
         thursday:
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 – 18:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
             -
                 group:
                     - dorost
@@ -72,11 +51,9 @@ templates:
                 place: ''
         saturday:
             -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
+                name: ''
                 time: ''
-                place: samostatně
+                place: ''
         sunday:
             -
                 name: ''

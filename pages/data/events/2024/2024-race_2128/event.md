@@ -15,6 +15,8 @@ date: '2024-04-26'
 import:
     type: members
     time: 1714109407
+hasStartlist: true
+hasResults: true
 ---
 
 Jen přihláška pro pořadatele.

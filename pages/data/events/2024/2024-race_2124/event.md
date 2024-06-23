@@ -20,16 +20,18 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
+transport: auty
 accomodation: ''
 food: ''
-leader: ''
+leader: Barča
 note: ''
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.18762, 17.36532'
 ---
 
 * **sraz**: 16:30 Tesco Juliánov
+* **doprava**: auty

@@ -13,7 +13,7 @@ eventTypeDescription: "P, A - hvězdice,\r\nB - okruhy,\r\nC, K - azimuťák bez
 startTime: ''
 map: 'Velká Baba'
 terrain: ''
-transport: ''
+transport: "MHD na zastávku Kouty - vzdálenost na start 1.5km\r\nPřibližovací srazy:\r\nHalasovo náměstí 15:10\r\nSkácelova 15:15\r\nparkování na ulici Kouty"
 accomodation: ''
 food: ''
 leader: ''
@@ -34,3 +34,8 @@ taxonomy:
 ---
 
 * **sraz**: 16:15
+* **doprava**: MHD na zastávku Kouty - vzdálenost na start 1.5km
+Přibližovací srazy:
+Halasovo náměstí 15:10
+Skácelova 15:15
+parkování na ulici Kouty

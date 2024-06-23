@@ -14,15 +14,15 @@ plan:
                 group:
                     - zaci1
                     - zaci2
-                name: Tělocvična
+                name: 'Běžecký trénink venku'
                 time: '17:00 – 18:30'
-                place: 'hala Rosnička'
+                place: 'sraz u haly Rosnička'
             -
                 group:
                     - dorost
                 name: 'Atletické posilování'
                 time: '17:00'
-                place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
+                place: 'ZŠ Hudcova, https://en.mapy.cz/s/namupujugu'
         wednesday:
             -
                 group:
@@ -34,8 +34,8 @@ plan:
                 group:
                     - dorost
                 name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
+                time: '18:30'
+                place: 'Kampus FSpS MUni, Bohunice'
         thursday:
             -
                 group:
@@ -70,144 +70,35 @@ plan:
                 group:
                     - zaci1
                     - zaci2
-                name: Tělocvična
+                name: Fotbal/Přehazka/Vybíjená
                 time: '17:00 – 18:30'
-                place: 'hala Rosnička'
-            -
-                group:
-                    - dorost
-                name: 'Atletické posilování'
-                time: '17:00'
-                place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
-        wednesday:
-            -
-                group:
-                    - hobby
-                name: 'Mapový trénink'
-                time: '17:00 – 19:00'
-                place: 'okolí Brna'
+                place: 'sraz u haly Rosnička'
             -
                 group:
                     - dorost
                 name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
+                time: '17:00'
+                place: 'Kampus FSpS MUni, Bohunice'
         thursday:
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 – 18:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
+            1:
                 group:
                     - dorost
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-        friday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
     next2Week:
         monday:
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: Tělocvična
-                time: '17:00 – 18:30'
-                place: 'hala Rosnička'
-            -
-                group:
-                    - dorost
-                name: 'Atletické posilování'
-                time: '17:00'
-                place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
-        wednesday:
-            -
-                group:
-                    - hobby
-                name: 'Mapový trénink'
-                time: '17:00 – 19:00'
-                place: 'okolí Brna'
-            -
+            1:
                 group:
                     - dorost
                 name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
-        thursday:
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 – 18:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink '
                 time: '17:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-        friday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: samostatně
-    next3Week:
-        monday:
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: Tělocvična
-                time: '17:00 – 18:30'
-                place: 'hala Rosnička'
-            -
-                group:
-                    - dorost
-                name: 'Atletické posilování'
-                time: '17:00'
-                place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
+                place: 'Kampus FSpS MUni, Bohunice'
         tuesday:
-            -
-                group:
-                    - zabicky
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-                    - hobby
-                name: 'Mapový trénink'
-                time: '16:00 – 18:00'
-                place: 'okolí Brna'
+            1718684480440:
+                name: ''
+                time: ''
+                place: ''
         wednesday:
             -
                 group:
@@ -219,41 +110,53 @@ plan:
                 group:
                     - dorost
                 name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Brno, třída Kapitána Jaroše, https://en.mapy.cz/s/gejulumete'
+                time: '18:30'
+                place: 'Kampus FSpS MUni, Bohunice'
         thursday:
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 – 18:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
+            1:
                 group:
                     - dorost
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-        friday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: samostatně
         sunday:
             -
                 name: ''
                 time: ''
                 place: ''
+    next3Week:
+        monday:
+            1:
+                group:
+                    - dorost
+                name: Posilovna
+                time: '17:00'
+                place: 'Kampus FSpS MUni, Bohunice'
+        tuesday:
+            1718684492793:
+                name: ''
+                time: ''
+                place: ''
+        wednesday:
+            -
+                group:
+                    - hobby
+                name: 'Mapový trénink'
+                time: '17:00 – 19:00'
+                place: 'okolí Brna'
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '18:30'
+                place: 'Kampus FSpS MUni, Bohunice'
+        thursday:
+            1:
+                group:
+                    - dorost
+                name: 'Běžecký trénink '
+                time: '17:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
 ---
 
 <div class="row justify-content-between"> 

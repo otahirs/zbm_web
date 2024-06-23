@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - hobby
 id: 2024-race_2053
 start: '2024-06-30'
 end: '2024-06-30'
@@ -14,5 +15,22 @@ date: '2024-01-24'
 import:
     type: members
     time: 1706129407
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+hasStartlist: true
 ---
 

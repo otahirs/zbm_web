@@ -6,7 +6,7 @@ id: 2024-race_2116
 start: '2024-06-05'
 end: '2024-06-05'
 title: '8. hobby mapáč 2024'
-place: Žebětín
+place: Myslivna
 type: T
 template: trenink
 date: '2024-03-28'
@@ -20,7 +20,7 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
+transport: 'Pozor změna, sraz dole u Anthroposu u Střeláku.'
 accomodation: ''
 food: ''
 leader: ''
@@ -30,6 +30,8 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.19180, 16.56536'
 ---
 
 * **sraz**: 17:00
+* **doprava**: Pozor změna, sraz dole u Anthroposu u Střeláku.

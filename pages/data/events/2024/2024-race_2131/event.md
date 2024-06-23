@@ -16,6 +16,7 @@ import:
     type: members
     time: 1715679007
 hasStartlist: true
+hasResults: true
 ---
 
 Nominační závody na MED.
