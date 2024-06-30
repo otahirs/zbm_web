@@ -38,6 +38,7 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.20842, 16.72776'
+hasResults: true
 ---
 
 DH10 – všechny úseky stejně dlouhé – délka úseku 15 min
