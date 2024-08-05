@@ -1,6 +1,8 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - zaci2
+        - hobby
 id: 2024-race_2133
 start: '2024-07-30'
 end: '2024-07-30'
@@ -14,5 +16,22 @@ date: '2024-06-20'
 import:
     type: members
     time: 1718875207
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+hasResults: true
 ---
 

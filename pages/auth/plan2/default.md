@@ -12,37 +12,51 @@ plan:
         monday:
             -
                 group:
-                    - zaci1
-                    - zaci2
-                name: Fotbal/Přehazka/Vybíjená
-                time: '17:00 – 18:30'
-                place: 'sraz u haly Rosnička'
+                    - dorost
+                name: Posilovna
+                time: '17:00'
+                place: 'Kampus FSpS MUni, Bohunice'
+        tuesday:
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '17:00'
+                place: 'dle domluvy'
+        wednesday:
+            1:
+                group:
+                    - dorost
+                name: Posilovna
+                time: '18:30'
+                place: 'Kampus FSpS MUni, Bohunice'
+        thursday:
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink '
+                time: '17:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+        friday:
+            -
+                name: ''
+                time: ''
+                place: ''
+    nextWeek:
+        monday:
             -
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00'
                 place: 'Kampus FSpS MUni, Bohunice'
-        thursday:
-            1:
-                group:
-                    - dorost
-                name: 'Běžecký trénink '
-                time: '17:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-    nextWeek:
-        monday:
-            1:
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00'
-                place: 'Kampus FSpS MUni, Bohunice'
         tuesday:
-            1718684480440:
-                name: ''
-                time: ''
-                place: ''
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '17:00'
+                place: 'dle domluvy'
         wednesday:
             -
                 group:
@@ -57,12 +71,22 @@ plan:
                 time: '18:30'
                 place: 'Kampus FSpS MUni, Bohunice'
         thursday:
-            1:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
+        friday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            -
+                name: ''
+                time: ''
+                place: ''
         sunday:
             -
                 name: ''
@@ -70,17 +94,19 @@ plan:
                 place: ''
     next2Week:
         monday:
-            1:
+            -
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00'
                 place: 'Kampus FSpS MUni, Bohunice'
         tuesday:
-            1718684492793:
-                name: ''
-                time: ''
-                place: ''
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '17:00'
+                place: 'dle domluvy'
         wednesday:
             -
                 group:
@@ -95,12 +121,27 @@ plan:
                 time: '18:30'
                 place: 'Kampus FSpS MUni, Bohunice'
         thursday:
-            1:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
+        friday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        sunday:
+            -
+                name: ''
+                time: ''
+                place: ''
     next3Week:
         monday:
             -

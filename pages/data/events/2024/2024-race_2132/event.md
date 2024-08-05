@@ -14,5 +14,6 @@ date: '2024-06-20'
 import:
     type: members
     time: 1718875207
+hasResults: true
 ---
 
