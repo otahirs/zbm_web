@@ -3,13 +3,6 @@
 <html lang="{{ grav.language.getActive ?: config.site.default_lang }}">
 <head>
 {% block head %}
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TLPM9D5');</script>
-    <!-- End Google Tag Manager -->
     <meta charset="utf-8" />
     <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +10,7 @@
     {% include 'partials/metadata.html.twig' %}
     <link rel="icon" type="image/png" href="{{ url('theme://images/frog.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
-
+    <script defer src="https://analytics.oresults.eu/script.js" data-website-id="6524919e-8e40-46d1-b665-c00516f61b98"></script>
     {% block stylesheets %}
         {% do assets.addCss('theme://css/main.css', 101) %}
         {% do assets.addCss('theme://css/bootstrap-grid.min.css', 99) %}
@@ -51,11 +44,6 @@
 {% endblock head%}
 </head>
 <body class="{{ page.header.body_classes }}">
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLPM9D5"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <div id="wrapper">
 
@@ -101,9 +89,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 {% block bottom %}
     {{ assets.js('bottom') }}
 
-<!-- Plausible - simple website analytics - https://plausible.io/ --> 
-<script async defer data-domain="zabiny.club" src="https://anal.zabiny.club/js/plausible.js"></script>
-<!-- / Plausible -->
 
 <!-- Appzi - feedback button - https://www.appzi.com -->
 <script async src="https://w.appzi.io/w.js?token=m8wXI"></script>
