@@ -28,7 +28,7 @@ terrain: ''
 transport: 'Společná auty.'
 accomodation: ''
 food: 'Plná penze včetně pitného režimu.'
-leader: Luf
+leader: ''
 return: ''
 price: ''
 program: ''

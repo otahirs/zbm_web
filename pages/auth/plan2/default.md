@@ -10,12 +10,122 @@ process:
 plan:
     thisWeek:
         monday:
-            -
+            0:
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00'
                 place: 'Kampus FSpS MUni, Bohunice'
+            1722934464135:
+                name: ''
+                time: ''
+                place: ''
+        tuesday:
+            0:
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '17:00'
+                place: 'dle domluvy'
+            1722934464135:
+                name: ''
+                time: ''
+                place: ''
+        wednesday:
+            1:
+                group:
+                    - dorost
+                name: Posilovna
+                time: '18:30'
+                place: 'Kampus FSpS MUni, Bohunice'
+        thursday:
+            0:
+                group:
+                    - dorost
+                name: 'Běžecký trénink '
+                time: '17:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+            1722934464135:
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            1722934464136:
+                name: ''
+                time: ''
+                place: ''
+        sunday:
+            1722934464136:
+                name: ''
+                time: ''
+                place: ''
+    nextWeek:
+        monday:
+            0:
+                group:
+                    - dorost
+                name: Posilovna
+                time: '17:00'
+                place: 'Kampus FSpS MUni, Bohunice'
+            1722934464137:
+                name: ''
+                time: ''
+                place: ''
+        tuesday:
+            0:
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '17:00'
+                place: 'dle domluvy'
+            1722934464137:
+                name: ''
+                time: ''
+                place: ''
+        wednesday:
+            1:
+                group:
+                    - dorost
+                name: Posilovna
+                time: '18:30'
+                place: 'Kampus FSpS MUni, Bohunice'
+            1722934472680:
+                name: ''
+                time: ''
+                place: ''
+        thursday:
+            0:
+                group:
+                    - dorost
+                name: 'Běžecký trénink '
+                time: '17:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+            1722934464137:
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            1722934464138:
+                name: ''
+                time: ''
+                place: ''
+        sunday:
+            1722934464138:
+                name: ''
+                time: ''
+                place: ''
+    next2Week:
+        monday:
+            0:
+                group:
+                    - dorost
+                name: Posilovna
+                time: '17:00'
+                place: 'Kampus FSpS MUni, Bohunice'
+            1722934464138:
+                name: ''
+                time: ''
+                place: ''
         tuesday:
             -
                 group:
@@ -30,115 +140,28 @@ plan:
                 name: Posilovna
                 time: '18:30'
                 place: 'Kampus FSpS MUni, Bohunice'
-        thursday:
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink '
-                time: '17:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-        friday:
-            -
+            1722934476499:
                 name: ''
                 time: ''
                 place: ''
-    nextWeek:
-        monday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00'
-                place: 'Kampus FSpS MUni, Bohunice'
-        tuesday:
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink'
-                time: '17:00'
-                place: 'dle domluvy'
-        wednesday:
-            -
-                group:
-                    - hobby
-                name: 'Mapový trénink'
-                time: '17:00 – 19:00'
-                place: 'okolí Brna'
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '18:30'
-                place: 'Kampus FSpS MUni, Bohunice'
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-        friday:
-            -
+            1722934464139:
                 name: ''
                 time: ''
                 place: ''
         saturday:
-            -
+            1722934464139:
                 name: ''
                 time: ''
                 place: ''
         sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
-    next2Week:
-        monday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00'
-                place: 'Kampus FSpS MUni, Bohunice'
-        tuesday:
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink'
-                time: '17:00'
-                place: 'dle domluvy'
-        wednesday:
-            -
-                group:
-                    - hobby
-                name: 'Mapový trénink'
-                time: '17:00 – 19:00'
-                place: 'okolí Brna'
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '18:30'
-                place: 'Kampus FSpS MUni, Bohunice'
-        thursday:
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink '
-                time: '17:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-        friday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        sunday:
-            -
+            1722934464139:
                 name: ''
                 time: ''
                 place: ''
