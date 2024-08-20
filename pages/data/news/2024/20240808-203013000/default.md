@@ -1,5 +1,5 @@
 ---
-title: 'IX. Oddílová přebor Žabin v triatlónu'
+title: 'IX. Oddílový přebor Žabin v triatlónu'
 date: '2024-08-08'
 template: novinka
 id: '20240808-203013000'

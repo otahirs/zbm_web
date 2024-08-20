@@ -13,7 +13,7 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: "📆 STŘEDA 21. srpna, 17:30\r\n📍 Sraz: Hády - parkoviště nad Velkou Klajdovkou (https://en.mapy.cz/s/cahokelole)\r\n👟 Co se poběží: doplním\r\n💪🏼 Dovednost: doplním\r\n\r\nJak to bude probíhat:\r\nZe srazu dáme rozklus a zahřátí, pak cca 30 min výběhy do kopce. Každý pěkně svým tempem a pak ještě vyklusat."
+transport: "📆 STŘEDA 21. srpna, 17:30\r\n📍 Sraz: Hády - parkoviště nad Velkou Klajdovkou (https://en.mapy.cz/s/cahokelole)\r\n👟 Co se poběží: okruh (mírny seběh, z části technický)\r\n💪🏼 Dovednost: rychlost, vizualizace\r\n\r\nJak to bude probíhat:\r\nZe srazu dáme rozklus a zahřátí, pak cca 30 min hlavní část tréninku. Každý pěkně svým tempem a pak ještě vyklusat."
 accomodation: ''
 food: ''
 leader: ''
@@ -31,8 +31,8 @@ taxonomy:
 * **sraz**: 17:30
 * **doprava**: 📆 STŘEDA 21. srpna, 17:30
 📍 Sraz: Hády - parkoviště nad Velkou Klajdovkou (https://en.mapy.cz/s/cahokelole)
-👟 Co se poběží: doplním
-💪🏼 Dovednost: doplním
+👟 Co se poběží: okruh (mírny seběh, z části technický)
+💪🏼 Dovednost: rychlost, vizualizace
 
 Jak to bude probíhat:
-Ze srazu dáme rozklus a zahřátí, pak cca 30 min výběhy do kopce. Každý pěkně svým tempem a pak ještě vyklusat.
+Ze srazu dáme rozklus a zahřátí, pak cca 30 min hlavní část tréninku. Každý pěkně svým tempem a pak ještě vyklusat.
