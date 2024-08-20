@@ -29,38 +29,6 @@ primaryImage: {  }
 **Správce map:** Stanislav Mokrý - mokry.stanislav@gmail.com
 **Oddílové oblečení:** Barbora Zháňalová - barborazhanalova@gmail.com
 <div class="row">
-    <!--
-    <div class="col-lg-6">  
-        <h4>Finance - Věra Mádlová</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>vera.madlova@centrum.cz</li>
-            </ul>
-    </div>
-    <div class="col-lg-6">
-        <h4>Přihlášky na závody + Polaris - Jan Drábek</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>drbca@centrum.cz</li>
-            </ul>
-    </div>
-    <div class="col-lg-6">
-        <h3>IT</h3>
-            <h4>Richard Pátek</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>arnost.p@centrum.cz</li>
-            </ul>
-            <h4>Otakar Hirš</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>otakar.hirs@gmail.com</li>
-            </ul>
-    </div>
-    <div class="col-lg-6">
-        <h4>Sklad - Štěpán Zimmermann</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>stepazdepa@seznam.cz</li>
-            </ul>
-    </div>
-    **Trenéři:** Jan Drábek, Alena Finstrlová, Aleš Finstrle, Luděk Finstrle, Andrea Firešová, Daniel Hájek, Lenka Hrušková, Dobra Janotová, Jitka Kabáthová, Lenka Kočová, Hana Nedbálková, Pavel Zelený, Jan Zháňal, Štěpán Zimmermann
-    -->
     <div class="col-12"> 
     <hr>
     <h1>Trenéři</h1>
@@ -72,7 +40,7 @@ primaryImage: {  }
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>fricco@seznam.cz</li>
             </ul>
-            <h4>Stachoňová	Barbara</h4>
+            <h4>Stachoňová Barbara</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>reibara@seznam.cz</li>
             </ul>
@@ -117,28 +85,34 @@ primaryImage: {  }
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-phone"></i>728 362 804</li>
                 <li><i class="fa-li fa fa-envelope"></i>a.firesova@seznam.cz</li>
-            </ul>            
+            </ul>   
+            <h4>Věra Nováčková Obelczová</h4>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-envelope"></i>vobelczova@gmail.com</li>
+            </ul>     
             </div>
     </div>
     <div class="divOuter col-lg-6" id="zaci2">
        <div class="contact--divInner">
         <h3>Žáci 2 - od 12 let</h3>
-            <h4>Luděk Finstrle</h4>
+            <h4>Julie Finstrlová</h4>
             <ul class="fa-ul">
-                <li><i class="fa-li fa fa-phone"></i>+420 603 874 687</li>
-                <li><i class="fa-li fa fa-envelope"></i>luf@seznam.cz</li>
+                <li><i class="fa-li fa fa-phone"></i>+420 702 244 733</li>
+                <li><i class="fa-li fa fa-envelope"></i>julie.finstrlova@zabiny.club</li>
             </ul>
             <h4>Pavel Rotek</h4>
             <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>pavel.rotek@gmail.com</li>
+                <li><i class="fa-li fa fa-phone"></i>+420 603 884 000</li>
+                <li><i class="fa-li fa fa-envelope"></i>pavel.rotek@zabiny.club</li>
             </ul>
-            <h4>Daniel Hájek</h4>
+            <h4>Adam Urbánek</h4>
             <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>daniel@hajci.cz</li>
+                <li><i class="fa-li fa fa-phone"></i>+420 605 744 159</li>
+                <li><i class="fa-li fa fa-envelope"></i>adam.urbanek@zabiny.club</li>
             </ul>
             <h4>Štěpán Zimmermann</h4>
             <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>stepazdepa@seznam.cz</li>
+                <li><i class="fa-li fa fa-envelope"></i>stepan.zimmermann@zabiny.club</li>
             </ul>
         </div>
     </div>
@@ -148,7 +122,7 @@ primaryImage: {  }
             <h4>Jan Zháňal</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-phone"></i>725 258 326</li>
-                <li><i class="fa-li fa fa-envelope"></i>jenda.zh@gmail.com</li>
+                <li><i class="fa-li fa fa-envelope"></i>jan.zhanal@zabiny.club</li>
             </ul>
             <h4>Alexandr Jordanov</h4>
             <ul class="fa-ul">
@@ -170,6 +144,10 @@ primaryImage: {  }
             <h4>Jan Drábek</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>drbca@centrum.cz</li>
+            </ul>
+            <h4>Adam Jurák</h4>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-envelope"></i>kontakt@adamjurak.cz</li>
             </ul>
         </div>
     </div>
