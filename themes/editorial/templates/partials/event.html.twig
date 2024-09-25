@@ -1,9 +1,20 @@
 {% extends 'partials/base.html.twig' %}
 
+{% block stylesheets %}
+{{ parent() }}
+{% do assets.addCss('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css', {
+        integrity: 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=',
+        crossorigin: ''
+   }) %}
+{% endblock %}
+
 {% block javascripts %}
 {{ parent() }}
-{% do assets.addJs('https://api4.mapy.cz/loader.js', 1) %}
-{% do assets.addJs('theme://js/loadMap.js', 1) %}
+{% do assets.addJs('https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', {
+        integrity: 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=',
+        crossorigin: '',
+        priority: 1
+   }) %}
 {% endblock %}
 
     {% block header %}
@@ -165,49 +176,65 @@
     <script type="text/javascript">
     window.addEventListener('DOMContentLoaded', function () {
 
-        // nacteni mapy
+        // mapy.cz api key
+            const MAPY_API_KEY = 'eg6r8JBA06Kc-nlr8X8xY1F81YZHJXTX41XKmLUwLHE';
+
+
+        // nacteni mapy s logem a copyrightem
             var alt = {{ page.header.gps|split(',')|first }};
             var lng = {{ page.header.gps|split(',')|last }};
 
-            var center = SMap.Coords.fromWGS84( lng,alt );
-            var m = new SMap(JAK.gel("map"), center, 10);
-            m.addDefaultLayer(SMap.DEF_TURIST).enable();
-            m.addDefaultControls();	 
-            
-        
-        // marker    
-            var layer = new SMap.Layer.Marker();
-            m.addLayer(layer);
-            layer.enable();
-            var marker = new SMap.Marker(center, "myMarker");
-            layer.addMarker(marker);    
-            
+            const map = L.map('map', {
+                scrollWheelZoom: false,
+            }).setView([alt, lng], 10);
 
-        // autorezize
-            var sync = new SMap.Control.Sync();
-            m.addControl(sync);      
+            const outdoor = L.tileLayer(`https://api.mapy.cz/v1/maptiles/outdoor/256/{z}/{x}/{y}?apikey=${MAPY_API_KEY}`, {
+                attribution: '<a href="https://api.mapy.cz/copyright" target="_blank">&copy; Seznam.cz a.s. a další</a>',
+                maxZoom: 19,
+                minZoom: 0
+            }).addTo(map);
+            const MapyLogo = L.Control.extend({
+                options: {
+                    position: 'bottomleft',
+                },
+                onAdd: function (map) {
+                    const container = L.DomUtil.create('div');
+                    const link = L.DomUtil.create('a', '', container);
+                    link.setAttribute('href', 'http://mapy.cz/');
+                    link.setAttribute('target', '_blank');
+                    link.innerHTML = '<img src="https://api.mapy.cz/img/api/logo.svg" />';
+                    L.DomEvent.disableClickPropagation(link);
+                    return container;
+                },
+            });
+            new MapyLogo().addTo(map);
+            const MapyLink = L.Control.extend({
+                options: {
+                    position: 'topright',
+                },
+                onAdd: function (map) {
+                    const container = L.DomUtil.create('div');
+                    const link = L.DomUtil.create('a', '', container);
+                    link.setAttribute('href', 'http://mapy.cz/turisticka?x=' + lng + '&y=' + alt + '&z=15&source=coor&id=' + lng + '%2C' + alt);
+                    link.setAttribute('target', '_blank');
+                    link.innerHTML = 'Zobrazit na Mapy.cz';
+                    link.style.cssText = "display:block; padding:4px 8px;"+
+                        "background-color:#e65a51; border:medium none;"+
+                        "border-radius:3px;"+
+                        "box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3);"+
+                        "text-decoration:none; color:#fff;";
+                    L.DomEvent.disableClickPropagation(link);
+                    return container;
+                },
+            });
+            new MapyLink().addTo(map);
 
-        
-            var controls = m.getControls();
-            for (var i=0;i<controls.length;i++) {
-                // zakázání scrollovacího zoomování
-                if (controls[i] instanceof SMap.Control.Mouse) {
-                    controls[i].configure(SMap.MOUSE_PAN | SMap.MOUSE_ZOOM);
-                }
-                // remove compass
-                if (controls[i] instanceof SMap.Control.Compass) {
-                    m.removeControl(controls[i]);
-                }
-            }
 
-            var lnt = "Zobrazit na Mapy.cz";
-            var link = 'https://mapy.cz/zakladni?x=' + lng + '&y=' + alt + '&z=15&source=coor&id=' + lng + '%2C' + alt;
-            var lnd = JAK.mel("a", {href: link, target:"_blank", innerHTML:lnt});
-            lnd.style.cssText = "position:absolute;left:8px; bottom:54px;"+
-            "display:block; padding:4px 8px; background-color:#e65a51; border:medium none;"+
-            "border-radius:3px; box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3);"+
-            "text-decoration:none; color:#fff;";
-            m.getContainer().appendChild(lnd);
+        // red marker
+            const marker = L.marker([alt, lng]).addTo(map);
+            marker._icon.style.filter = "hue-rotate(150deg)"
+
+
     });
     </script>
     {% endif %}
