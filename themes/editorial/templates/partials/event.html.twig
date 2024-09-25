@@ -25,9 +25,9 @@
                 <h1>{{ page.title }}</h1>
                 {% set group = page.header.taxonomy.skupina %}
                 {% if group|length > 0 and group|length < 6 %}
-                    {% if "zabicky" in group %} žabičky {% endif %} 
-                    {% if "pulci1" in group and "pulci2" in group %} pulci {% elseif "pulci1" in group %} pulci1 {% elseif "pulci2" in group %} pulci2 {% endif %} 
-                    {% if "zaci1" in group and "zaci2" in group %} žáci {% elseif "zaci1" in group %} žáci1 {% elseif "zaci2" in group %} žáci2 {% endif %} 
+                    {% if "zabicky" in group %} žabičky {% endif %}
+                    {% if "pulci1" in group and "pulci2" in group %} pulci {% elseif "pulci1" in group %} pulci1 {% elseif "pulci2" in group %} pulci2 {% endif %}
+                    {% if "zaci1" in group and "zaci2" in group %} žáci {% elseif "zaci1" in group %} žáci1 {% elseif "zaci2" in group %} žáci2 {% endif %}
                     {% if "dorost" in group %} dorost+ {% endif %}
                     {% if "hobby" in group %} hobby {% endif %}
                 {% else %}
@@ -39,9 +39,9 @@
             <div class="col-4">
 
                 <span class="day-month">
-                    
+
                 </span>
-                
+
                 {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
                 {% if page.header.start|localizeddate('medium', 'none','cs','Europe/Prague', 'M') != page.header.end|localizeddate('medium', 'none','cs','Europe/Prague', 'M')%}
                 {{page.header.start|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc d. MMMM') ~ ' — '~ page.header.end|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccc d. MMMM') }}
@@ -59,13 +59,13 @@
         </div>
     </header>
     {% endblock %}
-         
-    {% block content %}	 
-        
+
+    {% block content %}
+
 
         {% if page.header.results %}
             <h4>Výsledky</h4>
-            <ul>    
+            <ul>
                 {% for r in page.header.results %}
                 <li><a href="{{ r.link }}">{{ r.name }}</a></li>
                 {% endfor %}
@@ -73,31 +73,31 @@
             <hr>
         {% endif %}
 
-	{% if page.header.routes or page.header.type !='Z' %}
+        {% if page.header.routes or page.header.type !='Z' %}
         <h4>Postupy</h4>
         <ul>
-	  {% if page.header.routes %}
+          {% if page.header.routes %}
               {% for r in page.header.routes %}
                 <li><a href="{{ r.link }}">{{ r.name }}</a></li>
               {% endfor %}
-	        {% endif %}
-		          <li><a href="https://www.livelox.com/?tab=allEvents&timePeriod=customTimePeriod&from={{page.header.start}}&to={{page.header.end}}&q=sk%20brno%20%C5%BEabov%C5%99esky&sorting=time">Livelox oddílové akce v čase události</a></li>
-            </ul>
-	{% endif %}
+          {% endif %}
+                <li><a href="https://www.livelox.com/?tab=allEvents&timePeriod=customTimePeriod&from={{page.header.start}}&to={{page.header.end}}&q=sk%20brno%20%C5%BEabov%C5%99esky&sorting=time">Livelox oddílové akce v čase události</a></li>
+        </ul>
+        {% endif %}
             <hr>
 
         {% if page.header.link and not (page.header.link ends with page.url) %}
             <a href="{{page.header.link}}">{{page.header.link}}</a>
             <br>
         {% endif %}
-        
+
 
         {% if page.header.note %}
             <p> {{ page.header.note|markdown }}</p>
             <hr>
         {% endif %}
 
-        
+
         <dl>
             {% if page.header.meetTime or page.header.meetPlace  %}
                 <dt>Sraz</dt>
@@ -240,18 +240,4 @@
     {% endif %}
 
 
-	
-
-
-
-
-
-
-
-	
-
-
-
-	   {% endblock %}
-            
-
+    {% endblock %}
