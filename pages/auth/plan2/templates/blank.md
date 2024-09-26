@@ -7,42 +7,50 @@ access:
 process:
     markdown: false
 cache_enable: false
-defaultTemplate: Prázdniny
+defaultTemplate: Letní
 templates:
     plan:
         monday:
             -
                 group:
                     - dorost
-                name: Posilovna
+                name: 'Atletické posilování'
                 time: '17:00'
-                place: 'Kampus FSpS MUni, Bohunice'
-        tuesday:
+                place: 'ZŠ nám. Svornosti'
             -
                 group:
-                    - dorost
-                name: 'Běžecký trénink'
-                time: '17:00'
-                place: 'dle domluvy'
+                    - zaci1
+                    - zaci2
+                name: 'Tělocvična '
+                time: '17:00 - 18:30'
+                place: Rosnička
+        tuesday:
+            -
+                name: ''
+                time: ''
+                place: ''
         wednesday:
             -
                 group:
-                    - hobby
-                name: 'Mapový trénink'
-                time: '17:00 – 19:00'
-                place: 'okolí Brna'
-            -
-                group:
                     - dorost
                 name: Posilovna
-                time: '18:30'
-                place: 'Kampus FSpS MUni, Bohunice'
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
         thursday:
             -
                 group:
                     - dorost
                 name: 'Běžecký trénink '
                 time: '17:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+            -
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 -  17:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
         friday:
             -

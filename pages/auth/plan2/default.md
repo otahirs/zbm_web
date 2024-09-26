@@ -13,35 +13,23 @@ plan:
             0:
                 group:
                     - dorost
-                name: Posilovna
+                name: 'Atletické posilování'
                 time: '17:00'
-                place: 'Kampus FSpS MUni, Bohunice'
-            1722934464137:
-                name: ''
-                time: ''
-                place: ''
-        tuesday:
-            0:
+                place: 'ZŠ nám. Svornosti'
+            1725224167560:
                 group:
-                    - dorost
-                name: 'Běžecký trénink'
-                time: '17:00'
-                place: 'dle domluvy'
-            1722934464137:
-                name: ''
-                time: ''
-                place: ''
+                    - zaci1
+                    - zaci2
+                name: 'Tělocvična '
+                time: '17:00 - 18:30'
+                place: Rosnička
         wednesday:
             1:
                 group:
                     - dorost
                 name: Posilovna
-                time: '18:30'
-                place: 'Kampus FSpS MUni, Bohunice'
-            1722934472680:
-                name: ''
-                time: ''
-                place: ''
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
         thursday:
             0:
                 group:
@@ -49,50 +37,42 @@ plan:
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            1722934464137:
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            1722934464138:
-                name: ''
-                time: ''
-                place: ''
-        sunday:
-            1722934464138:
-                name: ''
+            1725224270830:
+                group:
+                    - pulci1
+                    - pulci2
+                name: 'Běžecký trénink'
+                time: '16:00 -  17:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+            1725614625993:
+                group:
+                    - zaci1
+                    - zaci2
+                name: volno
                 time: ''
                 place: ''
     nextWeek:
         monday:
-            0:
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00'
-                place: 'Kampus FSpS MUni, Bohunice'
-            1722934464138:
-                name: ''
-                time: ''
-                place: ''
-        tuesday:
             -
                 group:
                     - dorost
-                name: 'Běžecký trénink'
+                name: 'Atletické posilování'
                 time: '17:00'
-                place: 'dle domluvy'
+                place: 'ZŠ nám. Svornosti'
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Tělocvična '
+                time: '17:00 - 18:30'
+                place: Rosnička
         wednesday:
-            1:
+            -
                 group:
                     - dorost
                 name: Posilovna
-                time: '18:30'
-                place: 'Kampus FSpS MUni, Bohunice'
-            1722934476499:
-                name: ''
-                time: ''
-                place: ''
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
         thursday:
             0:
                 group:
@@ -100,17 +80,22 @@ plan:
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            1722934464139:
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            1722934464139:
-                name: ''
-                time: ''
-                place: ''
-        sunday:
-            1722934464139:
+            1:
+                group:
+                    - pulci1
+                    - pulci2
+                name: 'Běžecký trénink'
+                time: '16:00 -  17:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+            1726408108538:
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 - 17:30'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+        friday:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -119,47 +104,47 @@ plan:
             -
                 group:
                     - dorost
-                name: Posilovna
+                name: 'Atletické posilování'
                 time: '17:00'
-                place: 'Kampus FSpS MUni, Bohunice'
-        tuesday:
+                place: 'ZŠ nám. Svornosti'
             -
                 group:
-                    - dorost
-                name: 'Běžecký trénink'
-                time: '17:00'
-                place: 'dle domluvy'
+                    - zaci1
+                    - zaci2
+                name: 'Tělocvična '
+                time: '17:00 - 18:30'
+                place: Rosnička
         wednesday:
             -
                 group:
-                    - hobby
-                name: 'Mapový trénink'
-                time: '17:00 – 19:00'
-                place: 'okolí Brna'
-            -
-                group:
                     - dorost
                 name: Posilovna
-                time: '18:30'
-                place: 'Kampus FSpS MUni, Bohunice'
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
+            1:
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 -  17:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+            1727204447050:
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 - 17:30'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
         friday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        sunday:
             -
                 name: ''
                 time: ''
@@ -169,47 +154,47 @@ plan:
             -
                 group:
                     - dorost
-                name: Posilovna
+                name: 'Atletické posilování'
                 time: '17:00'
-                place: 'Kampus FSpS MUni, Bohunice'
-        tuesday:
+                place: 'ZŠ nám. Svornosti'
             -
                 group:
-                    - dorost
-                name: 'Běžecký trénink'
-                time: '17:00'
-                place: 'dle domluvy'
+                    - zaci1
+                    - zaci2
+                name: 'Tělocvična '
+                time: '17:00 - 18:30'
+                place: Rosnička
         wednesday:
             -
                 group:
-                    - hobby
-                name: 'Mapový trénink'
-                time: '17:00 – 19:00'
-                place: 'okolí Brna'
-            -
-                group:
                     - dorost
                 name: Posilovna
-                time: '18:30'
-                place: 'Kampus FSpS MUni, Bohunice'
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Běžecký trénink '
                 time: '17:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
+            1:
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 -  17:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+            1727204500149:
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 - 17:30'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
         friday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        sunday:
             -
                 name: ''
                 time: ''

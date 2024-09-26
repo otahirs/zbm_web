@@ -20,7 +20,7 @@ eventTypeDescription: "Orange m: 3,64 km\r\norange s: 2,8 km\r\ngreen s: 2,1 km\
 startTime: ''
 map: ''
 terrain: ''
-transport: "Parkování v zatáčce k odboičce k archivu.\r\nKrátká trať."
+transport: "Parkování v zatáčce k odbočce k archivu.\r\nKrátká trať."
 accomodation: ''
 food: ''
 leader: ''
@@ -34,5 +34,5 @@ gps: '49.24095, 16.71362'
 ---
 
 * **sraz**: 17:00 Odbočka k archivu
-* **doprava**: Parkování v zatáčce k odboičce k archivu.
+* **doprava**: Parkování v zatáčce k odbočce k archivu.
 Krátká trať.

@@ -1,6 +1,6 @@
 ---
 title: 'Partneři klubu'
-media_order: 'Brno.svg,gpsCentrum.svg,Revos.svg,JMK.svg,Lucifer_Logo_White02.svg'
+media_order: 'Brno.svg,Revos.svg,JMK.svg,Lucifer_Logo_White02.svg,Naskok.svg,SAP.svg,Sportuj.svg,BonaVita_ logo.png'
 date: '2018-10-29'
 primaryImage: {  }
 ---
@@ -36,6 +36,11 @@ primaryImage: {  }
     <div class="col-md-6">
         <a href="https://www.cus-sportujsnami.cz/" target="_blank">
         <img class="sponsors--img" src="{{page.route()}}/Sportuj.svg">
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a href="https://www.bonavita.cz/" target="_blank">
+        <img class="sponsors--img" src="{{page.route()}}/BonaVita_ logo.png">
         </a>
     </div>
     <div class="col-md-6">

@@ -13,7 +13,7 @@ eventTypeDescription: "P, A - okruhy,\r\nB - azimuty,\r\nC, K - krátké postupy
 startTime: ''
 map: Myslivna
 terrain: ''
-transport: ''
+transport: "MHD na zastávku Šárka - vzdálenost na start 1km - značeno fáborky\r\nPřibližovací  srazy:\r\nSkácelova 15:10\r\nHalasovo náměstí 15:10\r\nParkování https: https://mapy.cz/s/dekokotabo"
 accomodation: ''
 food: ''
 leader: ''
@@ -31,6 +31,12 @@ taxonomy:
         - zaci1
         - zaci2
         - hobby
+gps: '49.18577, 16.55525'
 ---
 
 * **sraz**: 16:15
+* **doprava**: MHD na zastávku Šárka - vzdálenost na start 1km - značeno fáborky
+Přibližovací  srazy:
+Skácelova 15:10
+Halasovo náměstí 15:10
+Parkování https: https://mapy.cz/s/dekokotabo

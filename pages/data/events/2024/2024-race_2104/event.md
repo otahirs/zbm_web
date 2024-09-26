@@ -16,5 +16,22 @@ date: '2024-03-18'
 import:
     type: members
     time: 1710751806
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: '9:30'
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '48.93560, 17.17600'
 ---
 

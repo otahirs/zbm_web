@@ -5,13 +5,13 @@ type: M
 title: 'Mapový trénink žactva'
 start: '2024-10-08'
 end: '2024-10-08'
-place: Vranov
+place: x
 meetTime: '16:15'
 meetPlace: ''
 link: ''
-eventTypeDescription: "P - linie s kontrolami,\r\nA - linie\r\nB, C, K - paměťák,"
+eventTypeDescription: ''
 startTime: ''
-map: Vranov
+map: ''
 terrain: ''
 transport: ''
 accomodation: ''

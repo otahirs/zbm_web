@@ -5,15 +5,15 @@ type: M
 title: 'Mapový trénink žactva'
 start: '2024-09-24'
 end: '2024-09-24'
-place: Palačák
+place: 'Mariánské údolí'
 meetTime: '16:15'
 meetPlace: ''
 link: ''
-eventTypeDescription: "P, A - hvězdice,\r\nB - krátké postupy,\r\nC - hagaby,\r\nK - paměťové tandemy"
+eventTypeDescription: "P, A - fáborková linie\r\nB - okruhy\r\nC, K - SUI hra"
 startTime: ''
-map: 'Kozí hora'
+map: 'Říčky - jih'
 terrain: ''
-transport: ''
+transport: "MHD na zastávku Mariánské údolí - vzdálenost na start 650m\r\npřibližovací srazy:\r\nSkácelova: 14:50\r\nHalasovo náměstí 15:15\r\nDoporučené parkování: https://mapy.cz/s/badajocete"
 accomodation: ''
 food: ''
 leader: ''
@@ -31,6 +31,12 @@ taxonomy:
         - zaci1
         - zaci2
         - hobby
+gps: '49.20417, 16.72259'
 ---
 
 * **sraz**: 16:15
+* **doprava**: MHD na zastávku Mariánské údolí - vzdálenost na start 650m
+přibližovací srazy:
+Skácelova: 14:50
+Halasovo náměstí 15:15
+Doporučené parkování: https://mapy.cz/s/badajocete

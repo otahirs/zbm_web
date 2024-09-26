@@ -18,33 +18,34 @@ date: '2024-03-01'
 import:
     type: members
     time: 1709321405
-note: "<BR>VM - Velká Mistrovská: H18 - H40\r\n<BR>MM - Malá Mistrovská: D16 - D40, H16\r\n<BR>VP - Veteránský pohár: DH40+\r\n<BR>ZN - Závod nadějí: DH12, DH14\r\n<BR>BK - Nováčkovský kufr: DH10, HDR"
+note: "VM - Velká Mistrovská: H18 - H40\r\nMM - Malá Mistrovská: D16 - D40, H16\r\nVP - Veteránský pohár: DH40+\r\nZN - Závod nadějí: DH12, DH14\r\nNK - Nováčkovský kufr: DH10, HDR"
 place: Roštín
-meetTime: ''
-meetPlace: ''
+meetTime: '8:00'
+meetPlace: Bohéma
 link: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: Autobusem
-accomodation: "48 míst na postelích - rodiny s malými dětmi, žabičky, veteráni, pulci\r\nZbytek v tělocvičně na vlastních spacích pytlech, karimatkách."
+transport: 'Autobusem od Bohémy, auty.'
+accomodation: "48 míst na postelích - rodiny s malými dětmi, žabičky, pulci, veteráni. (V tomto pořadí.)\r\nZbytek v tělocvičně na vlastních spacích pytlech, karimatkách."
 food: 'Sobotní oběd, sobotní večeře, nedělní snídaně a nedělní oběd.'
 leader: ''
 return: 'Okolo 15 v neděli.'
-price: ''
+price: '1 300 Kč'
 program: "Sobota dopoledne - Oddílový přebor\r\nSobota odpoledne - Hra, výstup na Brdo?\r\nSobota večer - vyhlášení nejlepších členů oddílu, večerní program, diskotéka\r\nNeděle dopoledne - štafety"
 thingsToTake: 'Věci na běhání, masku podle téma.'
 signups: ''
-gps: '49.19040, 17.28507'
+gps: '49.1904, 17.28507'
 ---
 
-<BR>VM - Velká Mistrovská: H18 - H40
-<BR>MM - Malá Mistrovská: D16 - D40, H16
-<BR>VP - Veteránský pohár: DH40+
-<BR>ZN - Závod nadějí: DH12, DH14
-<BR>BK - Nováčkovský kufr: DH10, HDR
-* **doprava**: Autobusem
-* **ubytování**: 48 míst na postelích - rodiny s malými dětmi, žabičky, veteráni, pulci
+VM - Velká Mistrovská: H18 - H40
+MM - Malá Mistrovská: D16 - D40, H16
+VP - Veteránský pohár: DH40+
+ZN - Závod nadějí: DH12, DH14
+NK - Nováčkovský kufr: DH10, HDR
+* **sraz**: 8:00 Bohéma
+* **doprava**: Autobusem od Bohémy, auty.
+* **ubytování**: 48 míst na postelích - rodiny s malými dětmi, žabičky, pulci, veteráni. (V tomto pořadí.)
 Zbytek v tělocvičně na vlastních spacích pytlech, karimatkách.
 * **strava**: Sobotní oběd, sobotní večeře, nedělní snídaně a nedělní oběd.

@@ -5,13 +5,13 @@ type: M
 title: 'Mapový trénink žactva'
 start: '2024-10-15'
 end: '2024-10-15'
-place: 'Zadní Hády'
+place: .
 meetTime: '16:15'
 meetPlace: ''
 link: ''
-eventTypeDescription: "P, A - COB\r\nB - scorelauf\r\nC, K - vrstevnicovka"
+eventTypeDescription: ''
 startTime: ''
-map: 'Pod Šumberou'
+map: ''
 terrain: ''
 transport: ''
 accomodation: ''
