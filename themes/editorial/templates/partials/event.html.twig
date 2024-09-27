@@ -6,6 +6,7 @@
         integrity: 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=',
         crossorigin: ''
    }) %}
+{% do assets.addCss('theme://css/mapy.css') %}
 {% endblock %}
 
 {% block javascripts %}
@@ -13,8 +14,9 @@
 {% do assets.addJs('https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', {
         integrity: 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=',
         crossorigin: '',
-        priority: 1
+        priority: 2
    }) %}
+{% do assets.addJs('theme://js/mapy.js', 1) %}
 {% endblock %}
 
     {% block header %}
@@ -180,54 +182,41 @@
             const MAPY_API_KEY = 'eg6r8JBA06Kc-nlr8X8xY1F81YZHJXTX41XKmLUwLHE';
 
 
-        // nacteni mapy s logem a copyrightem
+        // nacteni mapy s copyrightem
             var alt = {{ page.header.gps|split(',')|first }};
             var lng = {{ page.header.gps|split(',')|last }};
+            var lang = navigator.language || navigator.userLanguage;
 
             const map = L.map('map', {
-                scrollWheelZoom: false,
+                attributionControl: false,
+                scrollWheelZoom: false
             }).setView([alt, lng], 10);
 
             const outdoor = L.tileLayer(`https://api.mapy.cz/v1/maptiles/outdoor/256/{z}/{x}/{y}?apikey=${MAPY_API_KEY}`, {
-                attribution: '<a href="https://api.mapy.cz/copyright" target="_blank">&copy; Seznam.cz a.s. a další</a>',
+                attribution: '<a href="https://api.mapy.cz/copyright" target="_blank">&copy; Seznam.cz a.s. ' + ((lang == 'cs' || lang.startsWith('cs-')) ? 'a další' : 'and others') + '</a>',
                 maxZoom: 19,
                 minZoom: 0
             }).addTo(map);
-            const MapyLogo = L.Control.extend({
-                options: {
-                    position: 'bottomleft',
-                },
-                onAdd: function (map) {
-                    const container = L.DomUtil.create('div');
-                    const link = L.DomUtil.create('a', '', container);
-                    link.setAttribute('href', 'http://mapy.cz/');
-                    link.setAttribute('target', '_blank');
-                    link.innerHTML = '<img src="https://api.mapy.cz/img/api/logo.svg" />';
-                    L.DomEvent.disableClickPropagation(link);
-                    return container;
-                },
-            });
-            new MapyLogo().addTo(map);
-            const MapyLink = L.Control.extend({
-                options: {
-                    position: 'topright',
-                },
-                onAdd: function (map) {
-                    const container = L.DomUtil.create('div');
-                    const link = L.DomUtil.create('a', '', container);
-                    link.setAttribute('href', 'http://mapy.cz/turisticka?x=' + lng + '&y=' + alt + '&z=15&source=coor&id=' + lng + '%2C' + alt);
-                    link.setAttribute('target', '_blank');
-                    link.innerHTML = 'Zobrazit na Mapy.cz';
-                    link.style.cssText = "display:block; padding:4px 8px;"+
-                        "background-color:#e65a51; border:medium none;"+
-                        "border-radius:3px;"+
-                        "box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3);"+
-                        "text-decoration:none; color:#fff;";
-                    L.DomEvent.disableClickPropagation(link);
-                    return container;
-                },
-            });
-            new MapyLink().addTo(map);
+            L.control.attribution({
+                position: "bottomleft"
+            }).addTo(map);
+
+
+         // logo mapy.cz
+            new MapyLogo({
+                position: "bottomright"
+            }).addTo(map);
+
+
+        // tlacitko Zobrazit na Mapy.cz
+            new MapyLink({
+                latitude: alt,
+                longitude: lng
+            }).addTo(map);
+
+
+        // graficke meritko
+            new MapyMeritko().addTo(map);
 
 
         // red marker
