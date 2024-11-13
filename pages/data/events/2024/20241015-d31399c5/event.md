@@ -5,15 +5,15 @@ type: M
 title: 'Mapový trénink žactva'
 start: '2024-10-15'
 end: '2024-10-15'
-place: .
+place: 'Palackého vrch'
 meetTime: '16:15'
 meetPlace: ''
 link: ''
-eventTypeDescription: ''
+eventTypeDescription: "P, A - hvězdice\r\nB - krátké postupy\r\nC - hagaby\r\nK - paměťové tandemy"
 startTime: ''
-map: ''
+map: 'Kozí hora'
 terrain: ''
-transport: ''
+transport: "MHD na zastávku Kolejní, vzdálenost na start je 900m.\r\nPřibližovací srazy:\r\nSkácelova 15:35\r\nHalasovo náměstí 15:30\r\nParkování https://mapy.cz/s/cerekutota"
 accomodation: ''
 food: ''
 leader: ''
@@ -30,7 +30,14 @@ taxonomy:
         - pulci2
         - zaci1
         - zaci2
+        - dorost
         - hobby
+gps: '49.23602, 16.56581'
 ---
 
 * **sraz**: 16:15
+* **doprava**: MHD na zastávku Kolejní, vzdálenost na start je 900m.
+Přibližovací srazy:
+Skácelova 15:35
+Halasovo náměstí 15:30
+Parkování https://mapy.cz/s/cerekutota

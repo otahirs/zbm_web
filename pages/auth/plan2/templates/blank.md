@@ -14,9 +14,9 @@ templates:
             -
                 group:
                     - dorost
-                name: 'Atletické posilování'
-                time: '17:00'
-                place: 'ZŠ nám. Svornosti'
+                name: Posilovna
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
             -
                 group:
                     - zaci1
@@ -40,9 +40,9 @@ templates:
             -
                 group:
                     - dorost
-                name: 'Běžecký trénink '
+                name: 'Běžecký trénink (světlo, hladké boty)'
                 time: '17:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
+                place: Rosnička
             -
                 group:
                     - pulci1

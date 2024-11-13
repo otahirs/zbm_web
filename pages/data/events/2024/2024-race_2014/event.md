@@ -27,13 +27,13 @@ map: ''
 terrain: ''
 transport: auty
 accomodation: 'na postelích'
-food: 'v řešení'
+food: 'plná penze'
 leader: 'Anička A.'
 note: 'Koncem října se vydáme na podzimní prázdniny do CHKO Broumovsko. Čekají nás nejen české pískovce a skalní bludiště, ale i polský Park Narodowy Gór Stolowych. Regenerace bude následovat v aquaparku se slanou vodou, takže i skoromoře bude! V případě zájmu a přejícího počasí se zastavíme i v lanovém parku. [Motivační obrázek](https://eu.zonerama.com/SKBrnoZabovresky/Photo/12086528/485730050).'
 return: ''
-price: ''
+price: '3 500,-  Kč'
 program: 'Koncem října se vydáme na podzimní prázdniny do CHKO Broumovsko. Čekají nás nejen české pískovce a skalní bludiště, ale i polský Park Narodowy Gór Stolowych. Regenerace bude následovat v aquaparku se slanou vodou, takže i skoromoře bude! V případě zájmu se zastavíme i v lanovém parku.'
-thingsToTake: ''
+thingsToTake: "Doklady (občanky/pasy) - jedeme i do Polska.\r\nDěti, které ještě jezdí v autosedačkách - doneste si na sraz svůj podsedák.\r\nPlavky - půjdeme i do aquaparku"
 signups: ''
 gps: '50.56868, 16.24018'
 ---
@@ -42,4 +42,4 @@ Koncem října se vydáme na podzimní prázdniny do CHKO Broumovsko. Čekají n
 * **sraz**: 9:00 Královo Pole nádraží
 * **doprava**: auty
 * **ubytování**: na postelích
-* **strava**: v řešení
+* **strava**: plná penze

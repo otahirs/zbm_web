@@ -21,5 +21,26 @@ date: '2024-02-22'
 import:
     type: members
     time: 1708589414
+meetTime: '7:50'
+meetPlace: Bohéma
+eventTypeDescription: ''
+startTime: '10:30'
+map: 'Mapa Maxmilián 1:10 000, E =5 m pro všechny kategorie Mapoval: Petr Mareček 2023, revize 9/2024. Mapy budou vodovzdorně upraveny (Pretex).'
+terrain: 'Typický vysočinský, porostově rozmanitý, místy podmáčený, s hustou sítí komunikací.'
+transport: 'Společná busem od Bohémy, návrat do Brna cca po 16, mrkněte do Pokynů a přičtěte tak 2 hodiny po vyhlášení výsledků.'
+accomodation: ''
+food: ''
+leader: 'Míra Beránek'
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.63684, 16.07527'
+hasStartlist: true
+hasResults: true
 ---
 
+* **sraz**: 7:50 Bohéma
+* **doprava**: Společná busem od Bohémy, návrat do Brna cca po 16, mrkněte do Pokynů a přičtěte tak 2 hodiny po vyhlášení výsledků.

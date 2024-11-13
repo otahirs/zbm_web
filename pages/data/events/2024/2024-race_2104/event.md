@@ -16,22 +16,26 @@ date: '2024-03-18'
 import:
     type: members
     time: 1710751806
-meetTime: ''
-meetPlace: ''
+meetTime: '6:50'
+meetPlace: Bohéma
 eventTypeDescription: ''
 startTime: '9:30'
 map: ''
 terrain: ''
-transport: ''
+transport: "Odjezd v 7:00. \r\nCca v 7:30 z Kyjova."
 accomodation: ''
 food: ''
-leader: ''
+leader: '???'
 note: ''
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
-gps: '48.93560, 17.17600'
+gps: '48.9356, 17.176'
+hasResults: true
 ---
 
+* **sraz**: 6:50 Bohéma
+* **doprava**: Odjezd v 7:00. 
+Cca v 7:30 z Kyjova.

@@ -35,6 +35,8 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasStartlist: true
+hasResults: true
 ---
 
 přihlašte se, kdo je přihlášený na soustředění.

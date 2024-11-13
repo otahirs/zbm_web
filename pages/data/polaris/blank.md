@@ -3,6 +3,7 @@ routable: false
 visible: false
 polaris:
     2024:
+        p02: Polaris_2024_02.pdf
         p01: Polaris_2024_01.pdf
     2023:
         p04: Polaris_2023_04.pdf
