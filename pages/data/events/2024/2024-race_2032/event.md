@@ -30,7 +30,7 @@ accomodation: ''
 food: ''
 leader: Luf
 return: ''
-price: '500 Kč'
+price: ''
 program: "| Den |  | Čas | Sraz | Konec | Trénink | Poznámka\r\n|-----|------|-----|-----|-----|-----|\r\n| pátek | odpoledne | 16:00 | [Lužánky](https://mapy.cz/s/cegehutone) | 17:30 | sprintové štafety | |\r\n| sobota | dopoledne | 7:20 | [Brno, vestibul hlávního nádraží](https://mapy.cz/s/posunofube) | | hvězdice a azimuty | |\r\n| | odpoledne | 18:10 | | [Brno, hlavní nádraží (vlak z Tetčic)](https://mapy.cz/s/posunofube) | sudá lichá a krátké postupy | |\r\n| neděle | dopoledne | 8:30 | [Brno, Bystrc - MHD Ruda](https://en.mapy.cz/s/jomulocelo) |  | hvězdice, odbočovák a vrstevnice | oběd a SI čip s sebou |\r\n| | odpoledne | 16:30 | | [Brno, Bystrc - MHD Ruda](https://en.mapy.cz/s/jomulocelo) | COB na SI čipy | |"
 thingsToTake: 'Věci na 2 tréninky (v pátek jen jeden), pláštěnku, svačinu, pití, buzolu, mapník a dobrou náladu.'
 signups: ''

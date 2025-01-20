@@ -24,7 +24,7 @@ transport: "odjezd v **sobotu 8.2.** \r\n* společným autobusem/vlakem do Vídn
 accomodation: 'doplníme, jakmile bude potvrzeno, ale mělo by být na postelích s přikrývkami'
 food: 'po skupinkách'
 leader: Jenda
-note: 'mapové soustředění ve slunečném Španělsku s účastí na závodech https://maximusocamp.com/%f0%9f%8c%8d-maximus-o-meeting-2025/'
+note: "mapové soustředění ve slunečném Španělsku s účastí na závodech https://maximusocamp.com/%f0%9f%8c%8d-maximus-o-meeting-2025/\r\nVíce info od španělských organizátorů [ZDE](https://drive.google.com/file/d/1sn7hRvoEddiWPPjXIme83_4LXFZhNwvv/view?usp=sharing)."
 return: ''
 price: 'bez letenky 8000'
 program: ''
@@ -33,6 +33,7 @@ signups: ''
 ---
 
 mapové soustředění ve slunečném Španělsku s účastí na závodech https://maximusocamp.com/%f0%9f%8c%8d-maximus-o-meeting-2025/
+Více info od španělských organizátorů [ZDE](https://drive.google.com/file/d/1sn7hRvoEddiWPPjXIme83_4LXFZhNwvv/view?usp=sharing).
 * **doprava**: odjezd v **sobotu 8.2.** 
 * společným autobusem/vlakem do Vídně (doplníme dle DPMB)
 * letadlo: Ryanair, odlet z Vídně 16:10 (Madrid 19:25)

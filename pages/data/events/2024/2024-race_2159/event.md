@@ -14,7 +14,7 @@ import:
     type: members
     time: 1730277005
 place: 'Nová Ves'
-meetTime: '10:00'
+meetTime: '9:45'
 meetPlace: 'Kampus MUni, Bohunice'
 link: ''
 eventTypeDescription: ''
@@ -34,5 +34,5 @@ signups: ''
 gps: '49.11818, 16.29632'
 ---
 
-* **sraz**: 10:00 Kampus MUni, Bohunice
+* **sraz**: 9:45 Kampus MUni, Bohunice
 * **doprava**: Auty dle members.

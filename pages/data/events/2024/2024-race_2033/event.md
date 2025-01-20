@@ -30,7 +30,7 @@ accomodation: 'Autocamping Luhačovice'
 food: 'Plná penze včetně pitného režimu. Začínáme obědem.'
 leader: 'Aleš Finstrle'
 return: 'V neděli 12. 5. v podvečer.'
-price: 'do 3500,-Kč'
+price: ''
 program: "Tréninky OB, rozbory, hry, výlet.\r\n\r\n| Den | Mapa | Typy |\r\n|-----|------|-----|\r\n| 8.5. dopo | Kamenná | hvězdice, odbočovák, věšák/sběrák |\r\n| 8.5. odpo | Přečkovice | okruhy, azimutové hvězdice, azimutové okruhy, azimutová linie |\r\n| 9.5. dopo | Kamenná | sudá/lichá, krátké postupy, sem/tamy |\r\n| 9.5. odpo | Kamenná | COB, sem/tamy, krátké postupy bez cest, COB bez cest |\r\n| 10.5. | | odpočinek a výlet |\r\n| 11.5. dopo | Přečkovice | hvězdice, okruhy, SUI hra |\r\n| 11.5. odpo | Přečkovice | měřený COB |\r\n| 12.5. dopo | Přečkovice | linie, koridor/had |\r\n| 8.5. dopo | Přečkovice | první úsek štafet |\r\n\r\nPředpokládaná místa parkování a startů najdete na mapách: https://en.mapy.cz/s/gokotogafu"
 thingsToTake: "buzola, čip, věci na běhání, běháme za každého počasí, takže nezapomeňte si přibalit teplouše...\r\nI oblečení na sebe přizpůsobit počasí. Plavky, psací potřeby, tréninkový deník"
 signups: ''

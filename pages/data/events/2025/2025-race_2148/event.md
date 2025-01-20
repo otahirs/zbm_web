@@ -20,21 +20,24 @@ import:
     time: 1726647606
 meetTime: '8:00'
 meetPlace: 'SC Želva, Dubňany'
-eventTypeDescription: ''
+eventTypeDescription: 'Dospělí, Masters, Žáci'
 startTime: '12:00'
-map: ''
-terrain: ''
-transport: ''
+map: 'Studniční alej 1:10 000'
+terrain: Rovina
+transport: 'Viz poslaný dokument.'
 accomodation: ''
 food: ''
 leader: 'Jan Drábek'
-note: ''
+note: 'Info e-mailem/discordu - kanál Krátký den, objednávejte tam jídlo, domluvte společnou dopravu a podobně.'
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
 gps: '48.91083, 17.09906'
+hasResults: true
 ---
 
+Info e-mailem/discordu - kanál Krátký den, objednávejte tam jídlo, domluvte společnou dopravu a podobně.
 * **sraz**: 8:00 SC Želva, Dubňany
+* **doprava**: Viz poslaný dokument.

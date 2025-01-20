@@ -32,7 +32,7 @@ accomodation: "48 míst na postelích - rodiny s malými dětmi, žabičky, pulc
 food: "Sobotní oběd, sobotní večeře, nedělní snídaně a nedělní oběd.\r\n\r\nPro ty, co nepřespávají, tak počítám, že se zúčastní odpoledního programu a podvečerního vyhlášení nejlepších členů oddílu. Tak budou mít objednaný oběd a večeři."
 leader: ''
 return: 'Okolo 15 v neděli.'
-price: '1 300 Kč'
+price: ''
 program: "Sobota dopoledne - Oddílový přebor - krátká trať, popisníky, čipy rozhodně s sebou! Bude to krušné! Staví Danáč.\r\nSobota odpoledne - Hra, Pomůžete Oskarovi? Vede Jana Smítalová\r\nSobota večer - vyhlášení nejlepších členů oddílu, večerní program - pirátskou show pod vedením Kučiho a Vojty, soutěž o nejlepší masku! diskotéka?\r\nNeděle dopoledne - štafety  na hřebeni - staví Luf."
 thingsToTake: "Věci na běhání, pirátskou masku!\r\nSeznam, kdo spí na postelích bude zveřejněn v týdnu před odíláčem.\r\nAle od žáků a starších počítajte s karimatkou a spacákem."
 signups: ''

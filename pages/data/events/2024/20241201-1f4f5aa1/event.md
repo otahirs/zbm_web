@@ -1,7 +1,7 @@
 ---
 id: 20241201-1f4f5aa1
-template: akce
-type: J
+template: zavod
+type: BZL
 title: '1. BZL: Adamna cup'
 start: '2024-12-01'
 end: '2024-12-01'

@@ -30,10 +30,10 @@ accomodation: 'spí se na postelích'
 food: 'Plná penze včetně pitného režimu.'
 leader: Andrea
 return: 'v neděli odpoledne'
-price: 'do 1.800,- Kč'
+price: ''
 program: "pá: 2x trénink\r\nso: 2x trénink\r\nne: 1x trénink"
 thingsToTake: "Věci na běhání přiměřeně počasí.\r\nBěháme za každého počasí..\r\nNezapomenout buzolu a čip."
-signups: 'do 1.9.'
+signups: ''
 ---
 
 Pravidelné podzimní mapové soustředení bez JmL.

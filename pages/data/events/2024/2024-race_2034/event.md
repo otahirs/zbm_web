@@ -29,7 +29,7 @@ accomodation: 'V kempu v chatkách: http://www.camp-hluboky.cz/'
 food: 'Plná penze včetně pitného režimu, začínáme večeří.'
 leader: Luf
 return: 'V sobotu večer. Účastníky rozvezeme po Brně domů.'
-price: 'maximální cena 5000,-Kč'
+price: ''
 program: "Přehledná mapka s parkováním a místy startu: \r\nhttps://mapy.cz/s/felehucoha\r\n\r\n| Den | Trénink A | Trénink B | Trénink C | Trénink K | \r\n|-----|-----|-----|-----|-----|\r\n| 20.7. so dopo | hvězdice | linie | věšák - sběrák | linie |\r\n| 20.7. so odpo | okruhy | okruhy | SUI hra | SUI hra |\r\n| 21.7. ne dopo | linie s kontrolami | azimuty | vrstevnicovka | vrstevnicovka |\r\n| 21.7. ne odpo | paměťák | paměťák | sem/tamy | sem/tamy |\r\n| 22.7. po | | odpočinek | | |\r\n| 22.7. út dopo | COB | krátké postupy | krátké postupy | krátké postupy |\r\n| 23.7. út odpo | hvězdice | azimutové hvězdice | porostovka | porostovka |\r\n| 24.7. st dopo | mCOB | mCOB | mCOB | mCOB | \r\n| 24.7. st odpo | linie | odbočovák | azimuty | azimuty |\r\n| 25.7. čt | | odpočinek | | |\r\n| 26.7. pá dopo | sudá - lichá | sudá - lichá | had | had |\r\n| 26.7. pá odpo | hvězdice | azimuty | vrstevnicovka | vrstevnicovka |\r\n| 27.7. so dopo | štafety | štafety | štafety | štafety |\r\n| 27.7. so odpo | | koupání a návrat domů | | |"
 thingsToTake: "Nezapomeňte si plavky a věci na OB včetně čipu a popisníku.\r\nTaké si vemte misku/plastovou krabičku na snídani (müesli s mlékem či jogurtem) a velkou i malou lžičku.\r\nVhodná je i velká PET lahev na vodu, neboť některé dny bude potřeba vydržet se zásobami od rána až do večera.\r\nUvítáme spíše karty, společenské hry či míče před telefony a tablety."
 signups: ''

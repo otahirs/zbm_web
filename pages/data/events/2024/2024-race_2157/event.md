@@ -18,15 +18,15 @@ import:
 meetTime: '16:30'
 meetPlace: 'Kampus MUni, Bohunice'
 link: ''
-eventTypeDescription: 'COB, se startovkou'
-startTime: ''
+eventTypeDescription: COB
+startTime: 'intervalový, bude startovka'
 map: ''
-terrain: ''
+terrain: 'v prudších kamenných pasážích dávejte pozor, doporučuji tejpy'
 transport: 'auty dle members'
 accomodation: ''
 food: ''
 leader: Jenda
-note: 'U aut moc neprovokujte světlama. :D'
+note: ''
 return: ''
 price: ''
 program: ''
@@ -35,6 +35,5 @@ signups: ''
 gps: '49.15868, 16.06598'
 ---
 
-U aut moc neprovokujte světlama. :D
 * **sraz**: 16:30 Kampus MUni, Bohunice
 * **doprava**: auty dle members
