@@ -102,16 +102,16 @@ je potřeba vyplnit ke každé akci samostatně
 V případě dotazů ohledně cesťáků nebo potřeby domluvení si výjimky na deadine jejich předání (pouze v relevantních případech) pište na mail: _finance@zabiny.club_
 
 ---
-## Oddílové příspěvky 2024 <a name="prispevky"></a>
+## Oddílové příspěvky 2025 <a name="prispevky"></a>
 Co za ně opravdu máme je zpracováno v <a href="https://drive.google.com/file/d/1pNxd3ucGKyR-6hAgT-l7PCwKgaauNvFu/view?usp=sharing" target="_blank">tabulce</a>.
 
-Členské příspěvky je potřeba zaplatit **nejpozději do 31. 1. 2024**.  Registrované členy zároveň prosíme - v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2023 - evidence_, dle příslušného typu příspěvku.
+Členské příspěvky je potřeba zaplatit **nejpozději do 15. 2. 2025**.  Registrované členy zároveň prosíme - v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2025 - evidence_, dle příslušného typu příspěvku.
 
 Platby proveďte bezhotovostně na účet SK Brno-Žabovřesky u Raifeisenbank 4067843369/5500, vs. xxxx (kde xxxx = registrační číslo).
 
 Ve všech typech příspěvků jsou již zahrnuty povinné odvody SK ve výši 300,–&nbsp;Kč a registrace ČSOS ve výši 200,–&nbsp;Kč.
 
-Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému. Veškeré **dluhy** z minulosti je potřeba vyrovnat taktéž nejpozději **do 31. 1. 2024**. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, **nebudou přihlašováni na závody!**
+Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému. Veškeré **dluhy** z minulosti je potřeba vyrovnat taktéž nejpozději **do 31. 1. 2025**. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, **nebudou přihlašováni na závody!**
 
 ### Kolik zaplatím?
 

@@ -1,6 +1,8 @@
 ---
 taxonomy:
     skupina:
+        - zaci2
+        - dorost
         - hobby
 id: 2025-race_2203
 start: '2025-01-25'
@@ -16,11 +18,11 @@ import:
     type: members
     time: 1736337607
 meetTime: ''
-meetPlace: ''
+meetPlace: 'ZŠ Salmova'
 eventTypeDescription: ''
-startTime: ''
-map: ''
-terrain: ''
+startTime: '10:30'
+map: '1:4000, revize leden 2025'
+terrain: "Občanská zástavba, sídliště, park, kousek příměstského lesa.\r\nObutí dle rady stavitele tratí, může to klouzat.\r\nPřebíhání frekventovaných komunikací pouze ve vyznačených\r\nmístech (přechodech), bude kontrolováno pořadateli.\r\nDbejte zvýšené opatrnosti."
 transport: ''
 accomodation: ''
 food: ''
@@ -31,5 +33,9 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.36535, 16.65580'
+hasStartlist: true
+hasResults: true
 ---
 
+* **sraz**: ZŠ Salmova

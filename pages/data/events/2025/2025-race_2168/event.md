@@ -24,9 +24,9 @@ import:
 meetTime: ''
 meetPlace: Líšeň
 eventTypeDescription: ''
-startTime: '10:30'
+startTime: '13:00'
 map: 'Měřítko 1:4000 ,stav leden 2025'
-terrain: 'Občanská zástavba, sídliště, park,možná i kousek lesa, letos navíc i centrum města'
+terrain: 'městská zástavba, sídliště'
 transport: ''
 accomodation: ''
 food: ''
@@ -37,7 +37,9 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
-gps: '49.36535, 16.6558'
+gps: '49.20516, 16.67546'
+hasStartlist: true
+hasResults: true
 ---
 
 * **sraz**: Líšeň
