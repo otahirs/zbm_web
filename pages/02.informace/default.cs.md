@@ -74,7 +74,7 @@ Všechny důležité kontakty najdete na <a href="./kontakty"> vlastní stránce
 Aktuální stav je on-line v „Přihláškovém systému".
 
 ### Členské příspěvky a dary oddílu
-- Zasílejte výhradně bezhotovostně na účet u Raiffeisenbank 4067843369/5500 (změna - jiné číslo banky než minulé roky), v.s. xxxx (xxxx = registrační číslo).
+- Zasílejte výhradně bezhotovostně na účet u Raiffeisenbank 4067843369/5500, v.s. xxxx (xxxx = registrační číslo).
 - Do poznámky vždy připište: "Členské příspěvky", případně "Dar".
 - V případě, že chcete přispět oddílu darem (který lze odečíst ze základu daně při ročním zúčtování daně z příjmu), kontaktujte předem Honzu (predseda@zabiny.club). Darovaná částka nesmí být nižší než 1 000,– Kč. Maximální možnost odečtu ze základu daně je 15%.
 
