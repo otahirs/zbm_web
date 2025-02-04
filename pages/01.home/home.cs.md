@@ -119,7 +119,7 @@ news:
     </div>
     <div>
       <h4>Pořádáme</h4>
-        <a class="home__link" href="https://zabiny.club/o-vikend-2023">O-víkend</a> 
+        <a class="home__link external-link" href="https://eyoc2025.cz/">EYOC 2025</a> 
         <a class="home__link external-link" href="https://kratkyden.zabiny.club/">Krátký den</a> 
         <a class="home__link external-link" href="https://bzl.zabiny.club/#races">Brněnská zimní liga</a> </br>
         <a class="home__link" href="https://zabiny.club/races">Historie závodů pro ČSOS</a> 
@@ -130,7 +130,7 @@ news:
         <a class="home__link external-link" href="https://oris.orientacnisporty.cz/">ORIS</a> </br>
         <a class="home__link external-link" href="https://tsm.zabiny.club">TSM&nbsp;Jižní&nbsp;Morava</a>
         <a class="home__link external-link" href="https://mapy.orientacnisporty.cz/cs/clubs/zbm">Vydané&nbsp;mapy</a></br>
-        <a class="home__link external-link" href="https://www.instagram.com/zabinyyy/">Instagram</a>
+        <a class="home__link external-link" href="https://www.facebook.com/zbm.zabiny">Facebook</a>
         <a class="home__link external-link" href="https://skbrnozabovresky.zonerama.com">Fotky z akcí</a></br>
         <a class="home__link external-link" href="https://reprezentace.orientacnibeh.cz/">Reprezentace OB</a> 
     </div>
