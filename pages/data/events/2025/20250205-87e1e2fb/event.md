@@ -3,8 +3,8 @@ id: 20250205-87e1e2fb
 template: trenink
 type: T
 title: 'Hobby online teorie'
-start: '2025-02-05'
-end: '2025-02-05'
+start: '2025-02-06'
+end: '2025-02-06'
 place: online
 meetTime: '20:00'
 meetPlace: ''

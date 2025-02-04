@@ -91,15 +91,7 @@ Klub proplácí (od roku 2021) náklady na pohonné hmoty.
 - předat vyplněný a podepsaný cesťák vedoucímu akce do 2 týdnů po jejím skončení
 
 #### Jak vyplnit cesťák
-je potřeba vyplnit ke každé akci samostatně  
-1. vzor najdete <a href="https://drive.google.com/drive/folders/1w-NfqqugbB9czti9dgmAtg8hYdgyYxBk?usp=sharing" target="_blank">zde</a>
-2. vzor si zkopírujte, nazvěte vlastním jménem a uložte do stejné složky
-3. následně pro každou akci během roku vždy kopírujte do nové záložky nazvané podle akce a vyplňte (viz např. Jendův cesťák, který zde už je uložený).
-4. z administrativních důvodů je nutné cesťák následně i vytisknout, podepsat na kolonce "Částku vyúčtoval a převzal" a předat vedoucímu akce (většinou Jenda). Ten je také podepíše a předá k zaúčtování.
-5. peníze vám budou časem připsány na účet
-
-
-V případě dotazů ohledně cesťáků nebo potřeby domluvení si výjimky na deadine jejich předání (pouze v relevantních případech) pište na mail: _finance@zabiny.club_
+- je popsáno na [wiki](https://wiki.zabiny.club/doc/cestak-bBRRw99NKx)
 
 ---
 ## Oddílové příspěvky 2025 <a name="prispevky"></a>
