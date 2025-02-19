@@ -78,13 +78,6 @@ plan:
                 name: ''
                 time: ''
                 place: ''
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh podle plánu'
-                time: ''
-                place: samostatně
     nextWeek:
         monday:
             -
@@ -94,15 +87,25 @@ plan:
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
             -
+                group:
+                    - zaci1
+                    - zaci2
                 name: 'Tělocvična '
                 time: '17:00 - 18:30'
                 place: 'hala Rosnička'
         tuesday:
             0:
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
                 name: 'Mapový trénink + teorie'
                 time: '16:00 - 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
             1:
+                group:
+                    - zaci2
                 name: 'Běžecký trénink + teorie'
                 time: '16:00 - 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
@@ -127,15 +130,23 @@ plan:
                 time: '17:00'
                 place: Rosnička
             -
+                group:
+                    - pulci1
+                    - pulci2
                 name: Tělocvična
                 time: '16:00 -  17:00'
                 place: 'ZŠ Sirotkova'
             -
+                group:
+                    - zaci1
+                    - zaci2
                 name: 'Běžecký trénink'
                 time: '16:30 - 18:00'
                 place: 'hala Rosnička'
         saturday:
             -
+                group:
+                    - zaci2
                 name: 'Běh podle plánu'
                 time: ''
                 place: samostatně
