@@ -103,7 +103,7 @@ Platby proveďte bezhotovostně na účet SK Brno-Žabovřesky u Raifeisenbank 4
 
 Ve všech typech příspěvků jsou již zahrnuty povinné odvody SK ve výši 300,–&nbsp;Kč a registrace ČSOS ve výši 200,–&nbsp;Kč.
 
-Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému. Veškeré **dluhy** z minulosti je potřeba vyrovnat taktéž nejpozději **do 31. 1. 2025**. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, **nebudou přihlašováni na závody!**
+Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému. Veškeré **dluhy** z minulosti je potřeba vyrovnat taktéž nejpozději **do 31. 1. 2025**. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, **nebudou přihlašováni na závody!**. Preferujeme udržovat své konto "v plusu" nicméně je třeba provést kontrolu svého zůstatku a vyrovnat nedoplatky na svém oddílovém účtu nejpozději na vyzvání provedené v Discordu (cca 2x - 3x ročně).
 
 ### Kolik zaplatím?
 
@@ -111,7 +111,7 @@ Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému
 | --- | --- | --- |
 | Předškoláci | 2 000 Kč | 2000 Kč |
 | Žactvo (7–14) | 5 000 Kč | 3500 – 4000 Kč |
-| Dorost | 5 500 Kč | 4200 – 4500 Kč |
+| Dorost, junioři | 5 500 Kč | 4200 – 4500 Kč |
 | Dospělý | 6 500 Kč | 4200 – 5200 Kč |
 | Dospělý – neaktivní | 2 000 Kč | 2000 Kč |
 | Dospělý – registrovaný za jiný klub OB | 6 500 Kč | 6 500 Kč |
