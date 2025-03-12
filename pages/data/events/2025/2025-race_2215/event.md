@@ -14,22 +14,28 @@ date: '2025-01-14'
 import:
     type: members
     time: 1736845806
-meetTime: ''
-meetPlace: ''
+meetTime: '10:00'
+meetPlace: 'U Kočů'
 link: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
+transport: 'MHD, vlastní'
 accomodation: ''
 food: ''
-leader: ''
-note: ''
+leader: Jenda
+note: "**Pozor, sraz už v 10:00 - vytrvalost není po nočáku**\r\n\r\nPoběžíme mj na rozhlednu Babí lom, počítejte s tím, že na hřebenu jsou kameny."
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.30975, 16.62186'
 ---
 
+**Pozor, sraz už v 10:00 - vytrvalost není po nočáku**
+
+Poběžíme mj na rozhlednu Babí lom, počítejte s tím, že na hřebenu jsou kameny.
+* **sraz**: 10:00 U Kočů
+* **doprava**: MHD, vlastní
