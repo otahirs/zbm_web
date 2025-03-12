@@ -7,7 +7,7 @@ id: 2025-race_2208
 start: '2025-02-28'
 end: '2025-02-28'
 title: 'D+: NOB'
-place: Březina
+place: Ochoz
 type: T
 template: trenink
 date: '2025-01-14'
@@ -31,6 +31,7 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.25598, 16.74049'
 ---
 
 * **sraz**: 16:30 Tesco Juliánov

@@ -45,6 +45,12 @@ plan:
                 name: 'Běžecký trénink (světlo, hladké boty) + teorie'
                 time: '16:30'
                 place: 'ZŠ náměstí Svornosti 7, https://en.mapy.cz/s/nafehohamo'
+            1741155120907:
+                group:
+                    - hobby
+                name: 'Společný běh'
+                time: '16:00'
+                place: 'ZŠ Nám. Svornosti'
         wednesday:
             -
                 group:
@@ -73,11 +79,13 @@ plan:
                 name: 'Běžecký trénink'
                 time: '16:30 - 18:00'
                 place: 'hala Rosnička'
-        friday:
+        saturday:
             -
-                name: ''
+                group:
+                    - zaci2
+                name: 'Běh podle plánu'
                 time: ''
-                place: ''
+                place: samostatně
     nextWeek:
         monday:
             -
@@ -115,6 +123,12 @@ plan:
                 name: 'Běžecký trénink (světlo, hladké boty) + teorie'
                 time: '16:30'
                 place: 'ZŠ náměstí Svornosti 7, https://en.mapy.cz/s/nafehohamo'
+            1741155120914:
+                group:
+                    - hobby
+                name: 'Společný běh'
+                time: '16:00'
+                place: 'ZŠ Nám. Svornosti'
         wednesday:
             -
                 group:
@@ -143,13 +157,6 @@ plan:
                 name: 'Běžecký trénink'
                 time: '16:30 - 18:00'
                 place: 'hala Rosnička'
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh podle plánu'
-                time: ''
-                place: samostatně
     next2Week:
         monday:
             -
@@ -178,7 +185,7 @@ plan:
             1:
                 group:
                     - zaci2
-                name: 'Běžecký trénink + teorie'
+                name: 'Mapový trénink'
                 time: '16:00 - 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
             1736193467089:
@@ -187,6 +194,12 @@ plan:
                 name: 'Běžecký trénink (světlo, hladké boty) + teorie'
                 time: '16:30'
                 place: 'ZŠ náměstí Svornosti 7, https://en.mapy.cz/s/nafehohamo'
+            1741155120919:
+                group:
+                    - hobby
+                name: 'Společný běh'
+                time: '16:00'
+                place: 'ZŠ Nám. Svornosti'
         wednesday:
             -
                 group:
@@ -215,11 +228,6 @@ plan:
                 name: 'Běžecký trénink'
                 time: '16:30 - 18:00'
                 place: 'hala Rosnička'
-        friday:
-            -
-                name: ''
-                time: ''
-                place: ''
         saturday:
             -
                 group:
@@ -292,13 +300,6 @@ plan:
                 name: 'Běžecký trénink'
                 time: '16:30 - 18:00'
                 place: 'hala Rosnička'
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh podle plánu'
-                time: ''
-                place: samostatně
 ---
 
 <div class="row justify-content-between"> 

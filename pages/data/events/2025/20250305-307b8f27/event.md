@@ -1,7 +1,7 @@
 ---
 id: 20250305-307b8f27
-template: akce
-type: J
+template: trenink
+type: T
 title: 'Hobby online teorie'
 start: '2025-03-05'
 end: '2025-03-05'

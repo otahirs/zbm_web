@@ -1,13 +1,13 @@
 ---
 taxonomy:
     skupina:
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
         - dorost
         - hobby
-        - zaci2
-        - zaci1
-        - pulci2
-        - pulci1
-        - zabicky
 id: 2025-race_2188
 start: '2025-04-05'
 end: '2025-04-05'
@@ -20,5 +20,22 @@ date: '2024-12-19'
 import:
     type: members
     time: 1734594606
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: Lenka
+note: 'Pořádají DH16+ - skupina dorostenců. Vede Petr Macháček'
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
+Pořádají DH16+ - skupina dorostenců. Vede Petr Macháček
