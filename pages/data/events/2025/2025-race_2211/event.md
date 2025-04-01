@@ -15,22 +15,25 @@ date: '2025-01-14'
 import:
     type: members
     time: 1736845806
-meetTime: ''
-meetPlace: ''
+meetTime: '18:00'
+meetPlace: 'Tesco, Juliánov'
 link: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
+transport: auty
 accomodation: ''
 food: ''
-leader: ''
+leader: Jenda
 note: ''
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.18539, 17.30347'
 ---
 
+* **sraz**: 18:00 Tesco, Juliánov
+* **doprava**: auty

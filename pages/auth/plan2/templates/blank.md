@@ -7,7 +7,7 @@ access:
 process:
     markdown: false
 cache_enable: false
-defaultTemplate: Zimní
+defaultTemplate: Letní
 templates:
     plan:
         monday:
@@ -25,27 +25,23 @@ templates:
                 time: '17:00 - 18:30'
                 place: 'hala Rosnička'
         tuesday:
-            0:
+            -
                 group:
                     - zabicky
                     - pulci1
                     - pulci2
                     - zaci1
-                name: 'Mapový trénink + teorie'
-                time: '16:00 - 18:00'
-                place: 'ZŠ náměstí Svornosti 7'
-            1:
-                group:
                     - zaci2
-                name: 'Běžecký trénink + teorie'
-                time: '16:00 - 18:00'
-                place: 'ZŠ náměstí Svornosti 7'
-            1736193467089:
+                    - hobby
+                name: 'Mapový trénink'
+                time: '16:15 - 18:00'
+                place: 'okolí Brna'
+            -
                 group:
                     - dorost
-                name: 'Běžecký trénink (světlo, hladké boty) + teorie'
+                name: 'Běžecký trénink (hladké boty)'
                 time: '16:30'
-                place: 'ZŠ náměstí Svornosti 7, https://en.mapy.cz/s/nafehohamo'
+                place: Rosnička
         wednesday:
             -
                 group:
@@ -57,23 +53,18 @@ templates:
             -
                 group:
                     - dorost
-                name: 'Běžecký trénink (světlo, hladké boty)'
+                name: 'Atletický trénink (hladké, čisté boty)'
                 time: '17:00'
-                place: Rosnička
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
             -
                 group:
                     - pulci1
                     - pulci2
-                name: Tělocvična
-                time: '16:00 -  17:00'
-                place: 'ZŠ Sirotkova'
-            -
-                group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
-                time: '16:30 - 18:00'
-                place: 'hala Rosnička'
+                time: '16:00 - 18:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
         friday:
             -
                 name: ''
@@ -116,7 +107,7 @@ templates:
                     - zaci2
                     - hobby
                 name: 'Mapový trénink'
-                time: '16:00 – 18:00'
+                time: '16:15 – 18:00'
                 place: 'okolí Brna'
         wednesday:
             -

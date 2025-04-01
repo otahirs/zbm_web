@@ -14,22 +14,25 @@ date: '2025-01-14'
 import:
     type: members
     time: 1736846405
-meetTime: ''
-meetPlace: ''
+meetTime: '10:00'
+meetPlace: 'U křivé borovice, Bystrc'
 link: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
+transport: MHD
 accomodation: ''
 food: ''
-leader: ''
+leader: Jenda
 note: ''
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.22102, 16.49412'
 ---
 
+* **sraz**: 10:00 U křivé borovice, Bystrc
+* **doprava**: MHD

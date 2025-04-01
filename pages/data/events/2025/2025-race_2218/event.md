@@ -27,19 +27,19 @@ startTime: ''
 map: ''
 terrain: ''
 transport: 'Společná - v pátek kombinace vlak / bus.'
-accomodation: 'Camp Velkopařezitý v ubytovně a v chatkách.'
+accomodation: 'Camp Velkopařezitý v ubytovně a v chatkách, v budově.'
 food: 'Sobotní snídaně, oběd, večeře, nedělní snídaně a oběd.'
 leader: ''
 note: 'Letos se jede už od pátku!'
 return: 'V neděli odpoledne, večer.'
-price: ''
+price: '2 300 Kč'
 program: "Sobota dopoledne - oddílový přebor.\r\nSobota odpoledne - ?\r\nSobota večer - vyhlášení nej. sezóny, oddílového přeboru...\r\nNeděle dopoledne - štafety"
 thingsToTake: 'Věci na běhání. Masku.'
-signups: ''
+signups: 'polovina října'
 gps: '49.22827, 15.38442'
 ---
 
 Letos se jede už od pátku!
 * **doprava**: Společná - v pátek kombinace vlak / bus.
-* **ubytování**: Camp Velkopařezitý v ubytovně a v chatkách.
+* **ubytování**: Camp Velkopařezitý v ubytovně a v chatkách, v budově.
 * **strava**: Sobotní snídaně, oběd, večeře, nedělní snídaně a oběd.

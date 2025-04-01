@@ -20,22 +20,26 @@ date: '2024-12-19'
 import:
     type: members
     time: 1734594606
-meetTime: ''
-meetPlace: ''
+meetTime: '8:20'
+meetPlace: 'Hl. nádraží - vestibul'
 eventTypeDescription: ''
-startTime: ''
+startTime: '10:30'
 map: ''
 terrain: ''
-transport: ''
+transport: "Společná vlakem. Vlak nečeká, přijďte včas!\r\nV 8:30 kupujeme  lístek, kdo nebude na srazu, tak mu lístek nekoupíme."
 accomodation: ''
 food: ''
-leader: Lenka
+leader: 'Jitka Kabáthová'
 note: 'Pořádají DH16+ - skupina dorostenců. Vede Petr Macháček'
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.17165, 16.40486'
 ---
 
 Pořádají DH16+ - skupina dorostenců. Vede Petr Macháček
+* **sraz**: 8:20 Hl. nádraží - vestibul
+* **doprava**: Společná vlakem. Vlak nečeká, přijďte včas!
+V 8:30 kupujeme  lístek, kdo nebude na srazu, tak mu lístek nekoupíme.

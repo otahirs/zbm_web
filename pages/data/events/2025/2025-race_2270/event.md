@@ -14,7 +14,7 @@ import:
     type: members
     time: 1741031404
 meetTime: '17:00'
-meetPlace: ''
+meetPlace: 'Veselka z východu'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -24,13 +24,14 @@ transport: ''
 accomodation: ''
 food: ''
 leader: Drbča
-note: ''
+note: 'Parkovat by mělo jít zde u [staré dálnice](https://mapy.cz/s/lerokegaha).'
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
-gps: '49.19209, 16.49461'
+gps: '49.18773, 16.49997'
 ---
 
-* **sraz**: 17:00
+Parkovat by mělo jít zde u [staré dálnice](https://mapy.cz/s/lerokegaha).
+* **sraz**: 17:00 Veselka z východu

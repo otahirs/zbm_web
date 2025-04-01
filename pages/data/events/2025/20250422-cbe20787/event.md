@@ -17,7 +17,7 @@ transport: ''
 accomodation: ''
 food: ''
 leader: 'Jana Smítalová'
-note: 'I letos se zapojíme do tradiční akce "Ukliďme ČR". Letos uklidíme les okolo bývalého hotelu Myslivna. Rukavice, odpadkové pytle budou k dispozici. Vemte si dobrou obuv!'
+note: 'I letos se zapojíme do tradiční akce "Ukliďme ČR". Letos uklidíme les okolo bývalého hotelu Myslivna. Rukavice, odpadkové pytle budou k dispozici. Vemte si dobrou obuv a oddílové oblečení ať děláme hezkou reklamu!'
 return: ''
 price: ''
 program: ''
@@ -30,9 +30,10 @@ taxonomy:
         - pulci2
         - zaci1
         - zaci2
+        - dorost
         - hobby
 gps: '49.18805, 16.55223'
 ---
 
-I letos se zapojíme do tradiční akce "Ukliďme ČR". Letos uklidíme les okolo bývalého hotelu Myslivna. Rukavice, odpadkové pytle budou k dispozici. Vemte si dobrou obuv!
+I letos se zapojíme do tradiční akce "Ukliďme ČR". Letos uklidíme les okolo bývalého hotelu Myslivna. Rukavice, odpadkové pytle budou k dispozici. Vemte si dobrou obuv a oddílové oblečení ať děláme hezkou reklamu!
 * **sraz**: 16:00
