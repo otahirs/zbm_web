@@ -13,68 +13,9 @@ plan:
             -
                 group:
                     - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: 'Tělocvična '
-                time: '17:00 - 18:30'
-                place: 'hala Rosnička'
-        tuesday:
-            0:
-                group:
-                    - zabicky
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                name: 'Mapový trénink '
-                time: '16:15 - 18:00'
-                place: 'Kněží hora 475, Soběšice,fáborky na start ze zastávky U buku, hromadné srazy: Skácelova 15:10, Halasovo náměstí 15:30'
-            1736193467089:
-                group:
-                    - dorost
-                name: 'Běžecký trénink (hladké boty)'
-                time: '16:30'
-                place: Rosnička
-        wednesday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
-        thursday:
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink'
+                name: 'Atletické posilování, hra dle domluvy'
                 time: '17:00'
-                place: 'atletická dráha, Palackého vrch'
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                name: Tělocvična
-                time: '16:00 -  17:00'
-                place: 'ZŠ Sirotkova'
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 - 18:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem, sraz 15:45'
-    nextWeek:
-        monday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
+                place: 'Dráha Medlánky, https://mapy.com/s/jehugaboso'
             -
                 group:
                     - zaci1
@@ -89,12 +30,6 @@ plan:
                     - pulci1
                     - pulci2
                     - zaci1
-                name: 'Mapový trénink'
-                time: '16:00 - 18:00'
-                place: 'Pohádka Máje (Augšperák)'
-            1:
-                group:
-                    - zaci2
                 name: 'Mapový trénink'
                 time: '16:00 - 18:00'
                 place: 'Pohádka Máje (Augšperák)'
@@ -133,18 +68,18 @@ plan:
                 time: '16:00 - 18:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem, sraz 15:45'
         friday:
-            1742843368330:
+            1743594225183:
                 name: ''
                 time: ''
                 place: ''
-    next2Week:
+    nextWeek:
         monday:
             -
                 group:
                     - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
+                name: 'Atletické posilování, hra dle domluvy'
+                time: '17:00'
+                place: 'Dráha Medlánky, https://mapy.com/s/jehugaboso'
             -
                 group:
                     - zaci1
@@ -159,12 +94,6 @@ plan:
                     - pulci1
                     - pulci2
                     - zaci1
-                name: 'Mapový trénink'
-                time: '16:15 - 18:00'
-                place: 'mapa Kozí hora, Střelecký kopec, hromadné srazy: Skácelova 15:25, Halasovo náměsté 15:15'
-            1:
-                group:
-                    - zaci2
                 name: 'Mapový trénink'
                 time: '16:15 - 18:00'
                 place: 'mapa Kozí hora, Střelecký kopec, hromadné srazy: Skácelova 15:25, Halasovo náměsté 15:15'
@@ -186,28 +115,20 @@ plan:
                 group:
                     - pulci1
                     - pulci2
-                name: Tělocvična
-                time: '16:00 -  17:00'
-                place: 'ZŠ Sirotkova'
+                name: 'Velikonoční prázdniny'
+                time: '-'
+                place: ''
             2:
                 group:
                     - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 - 18:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-    next3Week:
+                name: 'Velikonoční prázdniny'
+                time: '-'
+                place: ''
+    next2Week:
         monday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
-            -
+            1:
                 group:
                     - zaci1
-                    - zaci2
                 name: 'Tělocvična '
                 time: '17:00 - 18:30'
                 place: 'hala Rosnička'
@@ -240,7 +161,7 @@ plan:
                 group:
                     - dorost
                 name: 'Atletický trénink (hladké, čisté boty)'
-                time: '17:00'
+                time: '16:50'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
             -
                 group:
@@ -252,10 +173,65 @@ plan:
                 time: '16:00 - 18:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
         friday:
-            -
+            1743594225187:
                 name: ''
                 time: ''
                 place: ''
+        sunday:
+            1743594225187:
+                name: ''
+                time: ''
+                place: ''
+    next3Week:
+        monday:
+            -
+                group:
+                    - dorost
+                name: 'Atletické posilování, hra dle domluvy'
+                time: '17:00'
+                place: 'Dráha Medlánky, https://mapy.com/s/jehugaboso'
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Tělocvična '
+                time: '17:00 - 18:30'
+                place: 'hala Rosnička'
+        tuesday:
+            -
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                    - hobby
+                name: 'Mapový trénink'
+                time: '16:15 - 18:00'
+                place: 'okolí Brna'
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink (hladké boty)'
+                time: '16:30'
+                place: Rosnička
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
+        thursday:
+            1:
+                group:
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 - 18:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
         saturday:
             -
                 group:
@@ -263,11 +239,6 @@ plan:
                 name: 'Běh podle plánu'
                 time: ''
                 place: samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
 ---
 
 <div class="row justify-content-between"> 

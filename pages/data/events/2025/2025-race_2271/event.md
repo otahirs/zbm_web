@@ -13,10 +13,10 @@ import:
     type: members
     time: 1741780205
 place: 'Mariánské údolí'
-meetTime: ''
-meetPlace: ''
+meetTime: '17:00'
+meetPlace: 'Mú parkoviště U Raka'
 link: ''
-eventTypeDescription: ''
+eventTypeDescription: "Orange -M: 4 km, převýšení nezanedbatelné.\r\nOrange -S: 3,4 km převýšení v pohodě."
 startTime: ''
 map: ''
 terrain: ''
@@ -24,11 +24,15 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-note: ''
+note: "Shluky s delšími postupy.\r\nNeklikám do map.cz bod startu, protože tam ta mapa vůbec nesedí s tréninkovou mapou. :-)"
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.207, 16.71946'
 ---
 
+Shluky s delšími postupy.
+Neklikám do map.cz bod startu, protože tam ta mapa vůbec nesedí s tréninkovou mapou. :-)
+* **sraz**: 17:00 Mú parkoviště U Raka

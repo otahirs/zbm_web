@@ -31,6 +31,10 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.18773, 16.49997'
+routes:
+    -
+        name: '1. hobby mapáč'
+        link: 'https://www.livelox.com/Events/Show/151945/Hobby-1-2025'
 ---
 
 Parkovat by mělo jít zde u [staré dálnice](https://mapy.cz/s/lerokegaha).

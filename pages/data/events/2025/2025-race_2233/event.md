@@ -1,10 +1,10 @@
 ---
 taxonomy:
     skupina:
+        - zaci1
+        - zaci2
         - dorost
         - hobby
-        - zaci2
-        - zaci1
 id: 2025-race_2233
 start: '2025-05-25'
 end: '2025-05-25'
@@ -19,7 +19,25 @@ date: '2025-01-20'
 import:
     type: members
     time: 1737358808
+meetTime: '8:30'
+meetPlace: 'tělocvična Zábřeh'
+eventTypeDescription: 'Klasická trať.'
+startTime: '10:00'
+map: ''
+terrain: ''
+transport: 'viz sobota. Návrat kolem 15:00.'
+accomodation: ''
+food: ''
+leader: 'Jan Drábek'
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.87426, 16.77150'
 ---
 
 Kopcovitý les, jsou zde části listnaté, jehličnaté i smíšené. Ve větší části plochy dobře
 průběžný, s nižší až střední hustotou komunikací.
+* **sraz**: 8:30 tělocvična Zábřeh
+* **doprava**: viz sobota. Návrat kolem 15:00.

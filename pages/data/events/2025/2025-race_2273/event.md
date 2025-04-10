@@ -13,14 +13,14 @@ import:
     type: members
     time: 1741780205
 place: Březina
-meetTime: ''
-meetPlace: ''
+meetTime: '17:00'
+meetPlace: Březina
 link: ''
 eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
+transport: auty
 accomodation: ''
 food: ''
 leader: ''
@@ -30,5 +30,8 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.28677, 16.76473'
 ---
 
+* **sraz**: 17:00 Březina
+* **doprava**: auty

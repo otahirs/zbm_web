@@ -13,8 +13,8 @@ import:
     type: members
     time: 1741780205
 place: 'Bystrc: U Křivé borovice'
-meetTime: ''
-meetPlace: ''
+meetTime: '17:00'
+meetPlace: 'Bystrc - U křivé borovice'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -30,5 +30,7 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.22098, 16.49408'
 ---
 
+* **sraz**: 17:00 Bystrc - U křivé borovice

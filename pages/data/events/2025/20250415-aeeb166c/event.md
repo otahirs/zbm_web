@@ -2,22 +2,22 @@
 id: 20250415-aeeb166c
 template: trenink
 type: M
-title: 'Kozí hora, Střelecký kopec'
+title: 'Mapový trénink žactva'
 start: '2025-04-15'
 end: '2025-04-15'
-place: 'Střelecký kopec'
+place: 'Kozí hora'
 meetTime: '16:15'
-meetPlace: 'Střelecký kopec, Medlánky'
+meetPlace: ''
 link: ''
-eventTypeDescription: 'P - linie, A - linie, B - odbočovák, C - seběhy, K - odbočovák'
+eventTypeDescription: 'Pulci 1 a Pulci 2: linie, Žáci 1: odbočovák, Žáci 2: seběhy, Hobby: odbočovák'
 startTime: ''
-map: ''
+map: 'Kozí hora'
 terrain: ''
-transport: "Hromadné srazy:\r\n\t- Skácelova 15:15\r\n\t-  Halasovo náměstí 15:15"
+transport: "MHD na zastávku Kolejní - vzdálenost na start 600 m, značeno fáborky\r\nPřibližovací srazy: \r\nSkácelova 15:35, zastávka směrem na Žabovřesky\r\nHalasovo náměstí 15:20\r\nParkování: v areálu kolejí Pod Palackého vrchem https://mapy.cz/s/goposuzame"
 accomodation: ''
 food: ''
 leader: ''
-note: 'https://mapy.com/s/hopanezule'
+note: ''
 return: ''
 price: ''
 program: ''
@@ -30,11 +30,13 @@ taxonomy:
         - pulci2
         - zaci1
         - zaci2
-gps: '49.23439, 16.56787'
+        - hobby
+gps: '49.23169, 16.57079'
 ---
 
-https://mapy.com/s/hopanezule
-* **sraz**: 16:15 Střelecký kopec, Medlánky
-* **doprava**: Hromadné srazy:
-	- Skácelova 15:15
-	-  Halasovo náměstí 15:15
+* **sraz**: 16:15
+* **doprava**: MHD na zastávku Kolejní - vzdálenost na start 600 m, značeno fáborky
+Přibližovací srazy: 
+Skácelova 15:35, zastávka směrem na Žabovřesky
+Halasovo náměstí 15:20
+Parkování: v areálu kolejí Pod Palackého vrchem https://mapy.cz/s/goposuzame

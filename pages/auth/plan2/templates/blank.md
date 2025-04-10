@@ -14,9 +14,9 @@ templates:
             -
                 group:
                     - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
+                name: 'Atletické posilování, hra dle domluvy'
+                time: '17:00'
+                place: 'Dráha Medlánky, https://mapy.com/s/jehugaboso'
             -
                 group:
                     - zaci1
