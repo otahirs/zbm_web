@@ -8,24 +8,16 @@ primaryImage: {  }
 
 **Předseda:** Jan Fiala - predseda@zabiny.club
 **Trenér dorostu:** Jan Zháňal - dorost@zabiny.club
-**Trenér žactva:** Andrea Firešová - zactvo@zabiny.club
+**Trenér žactva:** Barbara Stachoňová - zactvo@zabiny.club
 **Pořadatel závodů:** Jan Drábek - poradatel@zabiny.club
 **Koordinátor:** Aleš Finstrle - koordinator@zabiny.club
-<!--
-<h4>Libor Zřídkaveselý - předseda</h4>
-<ul class="fa-ul">
-    <li><i class="fa-li fa fa-phone"></i>604 996 773</li>
-    <li><i class="fa-li fa fa-envelope"></i>zr@sky.cz</li>
-    <li><i class="fa-li fa fa-home"></i>Skorkovského 153<br>Brno, 636 00</li>
-</ul>
--->
+
 <hr>
 <h2>Další užitečné kontakty</h2>
 **Finance:** Aleš Finstrle - koordinator@zabiny.club
 **Přihlášky na závody:** Jan Drábek - prihlasky@zabiny.club
 **IT - přihláškový systém:** Lukáš König - kenia@seznam.cz  
 **IT - web:** Otakar Hirš - otakar.hirs@gmail.com
-**Sklad:** Štěpán Zimmermann - stepazdepa@seznam.cz
 **Správce map:** Stanislav Mokrý - mokry.stanislav@gmail.com
 **Oddílové oblečení:** Barbora Zháňalová - barborazhanalova@gmail.com
 <div class="row">
@@ -42,7 +34,7 @@ primaryImage: {  }
             </ul>
             <h4>Stachoňová Barbara</h4>
             <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>reibara@seznam.cz</li>
+                <li><i class="fa-li fa fa-envelope"></i>bara.stachonova@zabiny.club</li>
             </ul>
         </div>
     </div>
@@ -53,10 +45,6 @@ primaryImage: {  }
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-phone"></i>777 631 615</li>
                 <li><i class="fa-li fa fa-envelope"></i>kocovalenka@gmail.com</li>
-            </ul>    
-            <h4>Jan Drábek</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>drbca@centrum.cz</li>
             </ul>      
         </div>
     </div>
@@ -90,7 +78,10 @@ primaryImage: {  }
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>vobelczova@gmail.com</li>
             </ul>     
-            </div>
+            <h4>Jan Drábek</h4>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-envelope"></i>jan.drabek@zabiny.club</li>
+            </ul>    
     </div>
     <div class="divOuter col-lg-6" id="zaci2">
        <div class="contact--divInner">
@@ -151,7 +142,7 @@ primaryImage: {  }
         <h3>Hobby</h3>
             <h4>Jan Drábek</h4>
             <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>drbca@centrum.cz</li>
+                <li><i class="fa-li fa fa-envelope"></i>jan.drabek@zabiny.club</li>
             </ul>
             <h4>Adam Jurák</h4>
             <ul class="fa-ul">
