@@ -16,7 +16,7 @@ place: 'Bystrc: U Křivé borovice'
 meetTime: '17:00'
 meetPlace: 'Bystrc - U křivé borovice'
 link: ''
-eventTypeDescription: ''
+eventTypeDescription: "Orange -M: 5,6 km\r\nOrange -S: 4,3 km"
 startTime: ''
 map: ''
 terrain: ''

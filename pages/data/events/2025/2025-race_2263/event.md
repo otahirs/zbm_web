@@ -3,7 +3,7 @@ taxonomy:
     skupina:
         - dorost
 id: 2025-race_2263
-start: '2025-07-27'
+start: '2025-07-26'
 end: '2025-08-03'
 title: 'TK Silica'
 place: Slovensko

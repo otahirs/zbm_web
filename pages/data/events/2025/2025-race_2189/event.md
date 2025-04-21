@@ -39,6 +39,7 @@ thingsToTake: ''
 signups: ''
 gps: '49.13243, 16.47924'
 hasStartlist: true
+hasResults: true
 ---
 
 Děti DH10 - 14 raději jeďtě převlečení do běhacího, ať v pohodě stihnete start

@@ -16,7 +16,7 @@ place: Březina
 meetTime: '17:00'
 meetPlace: Březina
 link: ''
-eventTypeDescription: ''
+eventTypeDescription: "Rozležený první úsek štafet.\r\nOrange M: 4,8 km\r\nOrange S: 4km"
 startTime: ''
 map: ''
 terrain: ''
@@ -24,7 +24,7 @@ transport: auty
 accomodation: ''
 food: ''
 leader: ''
-note: ''
+note: 'Kdybyste nestíhali, tak mapy budou za stěračem. Podle pana H. má paní eM. upéct buchtu, tak doražte. :-)'
 return: ''
 price: ''
 program: ''
@@ -33,5 +33,6 @@ signups: ''
 gps: '49.28677, 16.76473'
 ---
 
+Kdybyste nestíhali, tak mapy budou za stěračem. Podle pana H. má paní eM. upéct buchtu, tak doražte. :-)
 * **sraz**: 17:00 Březina
 * **doprava**: auty

@@ -16,7 +16,7 @@ templates:
                     - dorost
                 name: 'Atletické posilování, hra dle domluvy'
                 time: '17:00'
-                place: 'Dráha Medlánky, https://mapy.com/s/jehugaboso'
+                place: 'Dráha ZŠ nám Svornosti, https://mapy.com/s/rerakofuco'
             -
                 group:
                     - zaci1
@@ -54,7 +54,7 @@ templates:
                 group:
                     - dorost
                 name: 'Atletický trénink (hladké, čisté boty)'
-                time: '17:00'
+                time: '16:50'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
             -
                 group:
@@ -96,7 +96,7 @@ templates:
                     - dorost
                 name: 'Atletické posilování'
                 time: '17:00'
-                place: 'ZŠ Nám. Svornosti, https://en.mapy.cz/s/pozafokugo'
+                place: 'Dráha ZŠ nám Svornosti, https://mapy.com/s/rerakofuco'
         tuesday:
             -
                 group:
@@ -115,7 +115,7 @@ templates:
                     - dorost
                 name: Posilovna
                 time: '15:15 a 18:00'
-                place: 'Rosnička, https://mapy.cz/s/pujazepebo'
+                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
             -
                 group:
                     - hobby
