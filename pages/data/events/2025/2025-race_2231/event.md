@@ -1,8 +1,6 @@
 ---
 taxonomy:
     skupina:
-        - zaci1
-        - zaci2
         - dorost
         - hobby
 id: 2025-race_2231
@@ -12,13 +10,27 @@ title: 'Mistrovství ČR sprintových štafet'
 link: 'http://oris.orientacnisporty.cz/Zavod?id=8224'
 place: 'Buštěhrad, zámek'
 type: Z
-note: "Kopcovatý, členitý, dobře průběžný, smíšený les, četné náletové listnaté hustníky, lokálně\r\npískovcové skalní útvary, hustá síť komunikací "
+note: 'Úzké uličky v členitém svahu středověkého Buštěhradu, okolí zámku a zámecký park.'
 template: zavod
 date: '2025-01-20'
 import:
     type: members
     time: 1737358808
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
-Kopcovatý, členitý, dobře průběžný, smíšený les, četné náletové listnaté hustníky, lokálně
-pískovcové skalní útvary, hustá síť komunikací 
+Úzké uličky v členitém svahu středověkého Buštěhradu, okolí zámku a zámecký park.

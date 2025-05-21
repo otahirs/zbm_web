@@ -13,7 +13,7 @@ date: '2025-01-31'
 import:
     type: members
     time: 1738340405
-meetTime: '8:30'
+meetTime: '10:00'
 meetPlace: 'Kr. Pole, nádraží'
 link: ''
 eventTypeDescription: ''
@@ -27,13 +27,13 @@ leader: Jenda
 note: ''
 return: 'v neděli večer'
 price: '~ 3200,-'
-program: '4 lesní a 2 sprintové tréninky v přípravě na MČR middle a sprint'
+program: "| Den |      |          typ tréninku D+      |      mapa      |      rychlost      |      parkování      |\r\n|-----|------|:----------------------------------|-----------------|----------------|-----------|\r\n| čt  | dopo | - | - | - | - |\r\n|     | odpo | seznamovák, model |            Nad koupalištěm | volně | https://mapy.cz/s/kuhejomeko |\r\n| pá  | dopo | sprintové intervaly               | Žižkův vrch  | rychle       | https://mapy.cz/s/mumutegute |\r\n|     | odpo |  mapové seběhy           | Černá studnice   | volně, mapově rychle      | https://mapy.cz/s/lokepefevu |\r\n| so  | dopo |  middle                        | Černá studnice  | rychle        | https://mapy.cz/s/halegudoju |\r\n|     | odpo | -      | -               | -              | - |\r\n| ne  | dopo | překreslování + paměťové tandemy     | Kančák | volně        | https://mapy.cz/s/nujumuteda |\r\n|     | odpo |   sprintové štafety              | Kutná Hora         | rychle | https://mapy.cz/s/jozevoguga |"
 thingsToTake: ''
 signups: ''
-gps: '50.78058, 15.19920'
+gps: '50.78058, 15.1992'
 ---
 
-* **sraz**: 8:30 Kr. Pole, nádraží
+* **sraz**: 10:00 Kr. Pole, nádraží
 * **doprava**: auty
 * **ubytování**: na postelích
 * **strava**: zajištěna plná penze

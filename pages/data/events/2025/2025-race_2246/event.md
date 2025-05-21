@@ -1,10 +1,9 @@
 ---
 taxonomy:
     skupina:
+        - zaci2
         - dorost
         - hobby
-        - zaci2
-        - zaci1
 id: 2025-race_2246
 start: '2025-09-20'
 end: '2025-09-20'
@@ -19,6 +18,21 @@ date: '2025-01-20'
 import:
     type: members
     time: 1737361807
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
 Kopcovitý terén se středně hustou sítí cest, porostově rozmanitý, velké množství kamenů,

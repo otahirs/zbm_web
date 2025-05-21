@@ -25,7 +25,7 @@ eventTypeDescription: 'Klasická trať.'
 startTime: '10:00'
 map: ''
 terrain: ''
-transport: 'viz sobota. Návrat kolem 15:00.'
+transport: 'viz sobota. Návrat kolem 15:00+.'
 accomodation: ''
 food: ''
 leader: 'Jan Drábek'
@@ -34,10 +34,10 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
-gps: '49.87426, 16.77150'
+gps: '49.87426, 16.7715'
 ---
 
 Kopcovitý les, jsou zde části listnaté, jehličnaté i smíšené. Ve větší části plochy dobře
 průběžný, s nižší až střední hustotou komunikací.
 * **sraz**: 8:30 tělocvična Zábřeh
-* **doprava**: viz sobota. Návrat kolem 15:00.
+* **doprava**: viz sobota. Návrat kolem 15:00+.

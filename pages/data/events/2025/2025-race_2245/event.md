@@ -17,6 +17,21 @@ date: '2025-01-20'
 import:
     type: members
     time: 1737361207
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
 Nepravidelná uliční síť, částečně na rovině, částečně ve svahu s absolutním převýšením 35

@@ -9,6 +9,20 @@ process:
     markdown: false
 plan:
     thisWeek:
+        monday:
+            -
+                group:
+                    - dorost
+                name: 'Atletické posilování, hra dle domluvy'
+                time: '17:00'
+                place: 'Dráha ZŠ nám Svornosti, https://mapy.com/s/rerakofuco'
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Tělocvična '
+                time: '17:00 - 18:30'
+                place: 'hala Rosnička'
         tuesday:
             -
                 group:
@@ -17,9 +31,9 @@ plan:
                     - pulci2
                     - zaci1
                     - hobby
-                name: 'Ukliďmě Myslivnu'
-                time: '16:00 - 18:00'
-                place: 'Kohoutovice, Hromadné srazy: Skácelova 15:10, Halasovo náměstí 15:00'
+                name: 'Mapový trénink'
+                time: '16:15 - 18:00'
+                place: 'okolí Brna'
             -
                 group:
                     - dorost
@@ -44,23 +58,18 @@ plan:
                 group:
                     - pulci1
                     - pulci2
-                name: Tělocvična
-                time: '16:00 - 17:00'
-                place: 'tělocvična ZŠ Sirotkova'
-            1744965130925:
+                name: 'Běžecká příprava'
+                time: '16:00 - 17:30'
+                place: 'sraz 16:00 u vchodu Areálu VUT zde: https://mapy.com/s/dunesos'
+            1747032726257:
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
-                time: '16:00-18:00'
+                time: '16:00 - 18:00'
                 place: 'sraz 15:45, Areál VUT, Stadion pod Palackého vrchem'
         friday:
-            1745228763591:
-                name: ''
-                time: ''
-                place: ''
-        sunday:
-            1745228763592:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -86,7 +95,6 @@ plan:
                     - pulci1
                     - pulci2
                     - zaci1
-                    - zaci2
                     - hobby
                 name: 'Mapový trénink'
                 time: '16:15 - 18:00'
@@ -104,6 +112,37 @@ plan:
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
+        thursday:
+            0:
+                group:
+                    - dorost
+                name: 'Atletický trénink (hladké, čisté boty)'
+                time: '16:50'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+            1:
+                group:
+                    - pulci1
+                    - pulci2
+                name: 'Běžecká příprava'
+                time: '16:00 - 17:30'
+                place: 'sraz 16:00 u vchodu Areálu VUT zde: https://mapy.com/s/dunesos'
+            1747032765253:
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 - 18:00'
+                place: 'sraz 15:45, Areál VUT, Stadion pod Palackého vrchem'
+        friday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        sunday:
+            -
+                name: ''
+                time: ''
+                place: ''
     next2Week:
         monday:
             -
@@ -126,7 +165,6 @@ plan:
                     - pulci1
                     - pulci2
                     - zaci1
-                    - zaci2
                     - hobby
                 name: 'Mapový trénink'
                 time: '16:15 - 18:00'
@@ -145,26 +183,36 @@ plan:
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
         thursday:
+            0:
+                group:
+                    - dorost
+                name: 'Atletický trénink (hladké, čisté boty)'
+                time: '16:50'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
             1:
                 group:
                     - pulci1
                     - pulci2
+                name: 'Běžecká příprava'
+                time: '16:00 - 17:30'
+                place: 'sraz 16:00 u vchodu Areálu VUT zde: https://mapy.com/s/dunesos'
+            1747032794420:
+                group:
                     - zaci1
+                    - zaci2
                 name: 'Běžecký trénink'
                 time: '16:00 - 18:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
+                place: 'sraz 15:45, Areál VUT, Stadion pod Palackého vrchem'
         friday:
-            1745228763595:
+            -
                 name: ''
                 time: ''
                 place: ''
-        saturday:
+        sunday:
             -
-                group:
-                    - zaci2
-                name: 'Běh podle plánu'
+                name: ''
                 time: ''
-                place: samostatně
+                place: ''
     next3Week:
         monday:
             -
@@ -222,7 +270,19 @@ plan:
                 time: '16:00 - 18:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
         friday:
-            1745228763596:
+            -
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            -
+                group:
+                    - zaci2
+                name: 'Běh podle plánu'
+                time: ''
+                place: samostatně
+        sunday:
+            -
                 name: ''
                 time: ''
                 place: ''

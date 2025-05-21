@@ -20,17 +20,17 @@ date: '2024-12-19'
 import:
     type: members
     time: 1734595206
-meetTime: ''
-meetPlace: ''
+meetTime: '8:25'
+meetPlace: 'https://mapy.com/s/degokacege'
 eventTypeDescription: ''
 startTime: '10:30'
 map: ''
 terrain: 'Intravilán obce Mokrá a okolní zalesněné části.'
-transport: 'Bude upřesněno.'
+transport: "Autobusem 701 ze zastávky Úzká.\r\nOdjezd autobusu 8:41.\r\nPřijďte včas!"
 accomodation: ''
 food: ''
 leader: 'Mira Beránek'
-note: ''
+note: 'Zpět autobusem 701 v 14:15 z Mokré, příjezd do Brna 14:42 nebo odjezd 15:01 z Mokré, příjezd do Brna 15:28.'
 return: ''
 price: ''
 program: ''
@@ -39,4 +39,8 @@ signups: ''
 gps: '49.2205, 16.7504'
 ---
 
-* **doprava**: Bude upřesněno.
+Zpět autobusem 701 v 14:15 z Mokré, příjezd do Brna 14:42 nebo odjezd 15:01 z Mokré, příjezd do Brna 15:28.
+* **sraz**: 8:25 https://mapy.com/s/degokacege
+* **doprava**: Autobusem 701 ze zastávky Úzká.
+Odjezd autobusu 8:41.
+Přijďte včas!

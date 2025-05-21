@@ -13,23 +13,26 @@ import:
     type: members
     time: 1741780205
 place: Omice
-meetTime: ''
-meetPlace: ''
+meetTime: '17:00'
+meetPlace: 'Omice u lesa'
 link: ''
-eventTypeDescription: ''
+eventTypeDescription: "Orange -M: 4,4 km\r\nOrange -S: 3,2 km"
 startTime: ''
-map: ''
+map: Šibeník
 terrain: ''
-transport: ''
+transport: 'Společná. Sraz na parkovišti v kampusu 16:45: https://mapy.cz/s/hosacamucu. Není moc míst na zaparkování auta, jinak by se muselo až dál z Omic...'
 accomodation: ''
 food: ''
-leader: ''
-note: ''
+leader: 'Jan Drábek'
+note: 'https://mapy.cz/s/dokasavadu'
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
-gps: '49.17285, 16.46233'
+gps: '49.173, 16.46234'
 ---
 
+https://mapy.cz/s/dokasavadu
+* **sraz**: 17:00 Omice u lesa
+* **doprava**: Společná. Sraz na parkovišti v kampusu 16:45: https://mapy.cz/s/hosacamucu. Není moc míst na zaparkování auta, jinak by se muselo až dál z Omic...

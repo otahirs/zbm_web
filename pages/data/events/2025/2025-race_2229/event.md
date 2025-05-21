@@ -1,7 +1,6 @@
 ---
 taxonomy:
     skupina:
-        - zaci1
         - dorost
         - hobby
 id: 2025-race_2229
@@ -17,5 +16,23 @@ date: '2025-01-20'
 import:
     type: members
     time: 1737358207
+meetTime: '8:30'
+meetPlace: Tělárna
+eventTypeDescription: ''
+startTime: '10:00'
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+hasResults: true
 ---
 
+* **sraz**: 8:30 Tělárna

@@ -32,10 +32,10 @@ food: 'Sobotní snídaně, oběd, večeře, nedělní snídaně a oběd.'
 leader: ''
 note: 'Letos se jede už od pátku!'
 return: 'V neděli odpoledne, večer.'
-price: '2 300 Kč'
+price: 'Do 2 300 Kč.'
 program: "Sobota dopoledne - oddílový přebor.\r\nSobota odpoledne - ?\r\nSobota večer - vyhlášení nej. sezóny, oddílového přeboru...\r\nNeděle dopoledne - štafety"
 thingsToTake: 'Věci na běhání. Masku.'
-signups: 'polovina října'
+signups: ''
 gps: '49.22827, 15.38442'
 ---
 
