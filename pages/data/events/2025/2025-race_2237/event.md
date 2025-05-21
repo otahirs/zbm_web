@@ -1,10 +1,10 @@
 ---
 taxonomy:
     skupina:
+        - zaci1
+        - zaci2
         - dorost
         - hobby
-        - zaci2
-        - zaci1
 id: 2025-race_2237
 start: '2025-06-15'
 end: '2025-06-15'

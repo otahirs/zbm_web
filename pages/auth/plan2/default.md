@@ -60,7 +60,7 @@ plan:
                     - pulci2
                 name: 'Běžecká příprava'
                 time: '16:00 - 17:30'
-                place: 'sraz 16:00 u vchodu Areálu VUT zde: https://mapy.com/s/dunesos'
+                place: 'sraz 16:00 u vchodu Areálu VUT zde: https://mapy.com/s/kajocadomo'
             1747032726257:
                 group:
                     - zaci1
@@ -125,7 +125,7 @@ plan:
                     - pulci2
                 name: 'Běžecká příprava'
                 time: '16:00 - 17:30'
-                place: 'sraz 16:00 u vchodu Areálu VUT zde: https://mapy.com/s/dunesos'
+                place: 'sraz 16:00 u vchodu Areálu VUT zde: https://mapy.com/s/kajocadomo'
             1747032765253:
                 group:
                     - zaci1
@@ -195,7 +195,7 @@ plan:
                     - pulci2
                 name: 'Běžecká příprava'
                 time: '16:00 - 17:30'
-                place: 'sraz 16:00 u vchodu Areálu VUT zde: https://mapy.com/s/dunesos'
+                place: 'sraz 16:00 u vchodu Areálu VUT zde: https://mapy.com/s/kajocadomo'
             1747032794420:
                 group:
                     - zaci1
@@ -281,11 +281,6 @@ plan:
                 name: 'Běh podle plánu'
                 time: ''
                 place: samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
 ---
 
 <div class="row justify-content-between"> 
