@@ -81,7 +81,8 @@ primaryImage: {  }
             <h4>Jan Drábek</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>jan.drabek@zabiny.club</li>
-            </ul>    
+            </ul>
+       </div>
     </div>
     <div class="divOuter col-lg-6" id="zaci2">
        <div class="contact--divInner">
