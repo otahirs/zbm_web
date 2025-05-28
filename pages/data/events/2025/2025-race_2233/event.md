@@ -36,6 +36,7 @@ thingsToTake: ''
 signups: ''
 gps: '49.87426, 16.7715'
 hasStartlist: true
+hasResults: true
 ---
 
 Kopcovitý les, jsou zde části listnaté, jehličnaté i smíšené. Ve větší části plochy dobře
