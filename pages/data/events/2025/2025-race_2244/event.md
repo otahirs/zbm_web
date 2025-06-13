@@ -11,14 +11,30 @@ link: 'https://oris.orientacnisporty.cz/Zavod?id=8620'
 orisid: '8620'
 place: 'Horní Lhota (okr. Zlín)'
 type: Z
-note: "Na východě silnice č. 492, na severu vrch Tutkova, Horský p. a údolí svažující se k potoku\r\nObůrek, na západě silnice vedoucí od Želechovic do Provodova, dále Malenisko a žlutá\r\nturistická značka, z jihu obce Řetechov, Podhradí a Horní Lhota"
+note: "Na východě silnice č. 492, na severu vrch Tutkova, Horský p. a údolí svažující se k potoku\r\nObůrek, na západě silnice vedoucí od Želechovic do Provodova, dále Malenisko a žlutá\r\nturistická značka, z jihu obce Řetechov, Podhradí a Horní Lhota\r\n**Ubytování** na postelích https://www.revika.cz/  včetně stravy (sobotní večeře + nedělní snídaně)"
 template: zavod
 date: '2025-01-20'
 import:
     type: members
     time: 1737360607
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
 Na východě silnice č. 492, na severu vrch Tutkova, Horský p. a údolí svažující se k potoku
 Obůrek, na západě silnice vedoucí od Želechovic do Provodova, dále Malenisko a žlutá
 turistická značka, z jihu obce Řetechov, Podhradí a Horní Lhota
+**Ubytování** na postelích https://www.revika.cz/  včetně stravy (sobotní večeře + nedělní snídaně)

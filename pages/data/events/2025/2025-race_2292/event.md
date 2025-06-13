@@ -16,7 +16,7 @@ import:
 meetTime: '17:00'
 meetPlace: 'Dub Troják'
 link: ''
-eventTypeDescription: ''
+eventTypeDescription: "Orange -M: 4,8 km\r\nOrange -S: 3,4 km\r\nGreen -S: 2,5 km"
 startTime: ''
 map: ''
 terrain: ''
@@ -24,14 +24,14 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-note: 'Vrstevnicovka i na hradiště, podle přání. :-)'
+note: 'I na hradiště, podle přání. :-)'
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
-gps: '49.19303, 16.51520'
+gps: '49.18989, 16.52733'
 ---
 
-Vrstevnicovka i na hradiště, podle přání. :-)
+I na hradiště, podle přání. :-)
 * **sraz**: 17:00 Dub Troják

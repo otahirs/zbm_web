@@ -31,7 +31,7 @@ leader: 'Pavel Rotek'
 note: "Tradiční letní vícedenní soustředenní spojené se závody. \r\nPočet tréninků 4. \r\nPočet závodních dnů: 5 [Bohemia Orienteering 2025](https://bohemia2025.ok-bor.cz/cs/)\r\nUbytování - [Penzion pod Lipou](http://www.penzionpodlipou.wz.cz/?ukaz=informace)"
 return: ''
 price: ''
-program: ''
+program: "| Den |  | Mapa |Typ tréninku |\r\n| -------- | -------- | -------- |\r\n| neděle | odpo | Slavíček | všichni: COB |\r\n| pondělí | dopo | Velenice | P2: hvězdice, Žáci 1+2: krátké postupy, Hobby: dlouhé postupy |\r\n| pondělí | odpo | Lasvice | P2 + Žáci 1+2: odbočovák, Hobby: sudá x lichá |\r\n| úterý | dopo | Záhořín | P2: linie, Žáci 1: okruhy, Žáci 2 + Hobby: vrstenickovka + skály |\r\n\r\n| Den | Mapa |Typ závodu |\r\n| -------- | -------- | -------- |\r\n| středa | Liščí vrch | E1 middle |\r\n| čtvrtek | Borecký les | E2 long |\r\n| pátek | Vřesoviště | E3 lesní sprint |\r\n| sobota | Lipský kužel | E4 middle |\r\n| neděle | Kummerská cesta | E5 long |"
 thingsToTake: ''
 signups: ''
 gps: '50.73775, 14.58879'

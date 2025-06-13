@@ -32,6 +32,7 @@ program: ''
 thingsToTake: ''
 signups: ''
 hasStartlist: true
+hasResults: true
 ---
 
 Zvlněný terén s porostovými i terénními detaily, místy s melioracemi, přechází ve výrazný

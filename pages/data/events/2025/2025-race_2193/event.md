@@ -38,6 +38,8 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.33107, 16.76364'
+hasStartlist: true
+hasResults: true
 ---
 
 * **sraz**: 8:05 Stará Osada, zastávka MHD BUS 201

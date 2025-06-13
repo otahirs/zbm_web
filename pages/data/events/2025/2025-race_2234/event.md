@@ -33,6 +33,7 @@ thingsToTake: ''
 signups: ''
 hasStartlist: true
 gps: '50.15013, 13.83045'
+hasResults: true
 ---
 
 Zvlněný terén s porostovými i terénními detaily, místy s melioracemi, přechází ve výrazný

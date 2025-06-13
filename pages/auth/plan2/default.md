@@ -24,7 +24,17 @@ plan:
                 time: '17:00 - 18:30'
                 place: 'hala Rosnička'
         tuesday:
-            1:
+            -
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - hobby
+                name: 'Mapový trénink'
+                time: '16:15 - 18:00'
+                place: 'okolí Brna'
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink (hladké boty)'
@@ -46,24 +56,19 @@ plan:
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
             1:
                 group:
-                    - pulci1
-                    - pulci2
-                name: 'Běžecká příprava'
-                time: '16:00 - 17:30'
-                place: 'sraz 16:00 u vchodu Areálu VUT zde: https://mapy.com/s/kajocadomo'
-            1747032765253:
-                group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:00 - 18:00'
                 place: 'sraz 15:45, Areál VUT, Stadion pod Palackého vrchem'
+            1749450380205:
+                group:
+                    - pulci1
+                    - pulci2
+                name: 'Běžecká příprava'
+                time: '16:00 - 17:30'
+                place: 'sraz 16:00, Areál VUT, https://mapy.com/s/jesosakezo'
         friday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        sunday:
             -
                 name: ''
                 time: ''
@@ -116,24 +121,19 @@ plan:
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
             1:
                 group:
-                    - pulci1
-                    - pulci2
-                name: 'Běžecká příprava'
-                time: '16:00 - 17:30'
-                place: 'sraz 16:00 u vchodu Areálu VUT zde: https://mapy.com/s/kajocadomo'
-            1747032794420:
-                group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:00 - 18:00'
                 place: 'sraz 15:45, Areál VUT, Stadion pod Palackého vrchem'
+            1749450438203:
+                group:
+                    - pulci1
+                    - pulci2
+                name: 'Běžecká příprava'
+                time: '16:00 - 17:30'
+                place: 'sraz 16:00, Areál VUT, https://mapy.com/s/jesosakezo'
         friday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        sunday:
             -
                 name: ''
                 time: ''
@@ -184,20 +184,13 @@ plan:
                 name: 'Atletický trénink (hladké, čisté boty)'
                 time: '16:50'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
+        saturday:
             -
                 group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
                     - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 - 18:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-        friday:
-            -
-                name: ''
+                name: 'Běh podle plánu'
                 time: ''
-                place: ''
+                place: samostatně
     next3Week:
         monday:
             -
@@ -254,11 +247,6 @@ plan:
                 name: 'Běžecký trénink'
                 time: '16:00 - 18:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-        friday:
-            -
-                name: ''
-                time: ''
-                place: ''
         saturday:
             -
                 group:
@@ -266,11 +254,6 @@ plan:
                 name: 'Běh podle plánu'
                 time: ''
                 place: samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
 ---
 
 <div class="row justify-content-between"> 

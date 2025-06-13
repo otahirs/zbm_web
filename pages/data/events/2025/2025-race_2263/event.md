@@ -22,7 +22,7 @@ map: ''
 terrain: ''
 transport: 'auty dle tabulky'
 accomodation: "26.7. - 31.7. Školský internát pri\_Obchodnej akadémii v\_Rožňave https://www.oarv.sk/a/skolsky-internat\r\n31.7. - 3.8. hotelové ubytování Kolejí Technické univerzity Košice https://sdaj.tuke.sk/nemcovej1-hotelove_ubytovanie/"
-food: 'bude dořešena'
+food: 'Bude dořešeno. Košice - možnost využití menzy https://jedalen.tuke.sk/'
 leader: Jenda
 note: "Ukázky map:\r\nhttps://www.livelox.com/Viewer/WMOC-Sprint-Final/M35-A?classId=645376&tab=player\r\nhttps://www.livelox.com/Viewer/WMOC-Middle-Final/W35-A?classId=647261&tab=player\r\nhttps://www.livelox.com/Viewer/WMOC-Long-Final/W35-A?classId=648496&tab=player"
 return: ''
@@ -40,4 +40,4 @@ https://www.livelox.com/Viewer/WMOC-Long-Final/W35-A?classId=648496&tab=player
 * **doprava**: auty dle tabulky
 * **ubytování**: 26.7. - 31.7. Školský internát pri Obchodnej akadémii v Rožňave https://www.oarv.sk/a/skolsky-internat
 31.7. - 3.8. hotelové ubytování Kolejí Technické univerzity Košice https://sdaj.tuke.sk/nemcovej1-hotelove_ubytovanie/
-* **strava**: bude dořešena
+* **strava**: Bude dořešeno. Košice - možnost využití menzy https://jedalen.tuke.sk/

@@ -14,7 +14,7 @@ import:
     type: members
     time: 1744887004
 meetTime: '17:00'
-meetPlace: Louka
+meetPlace: 'V lese'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -23,14 +23,16 @@ terrain: ''
 transport: ''
 accomodation: ''
 food: ''
-leader: ''
-note: ''
+leader: 'Jan Drábek'
+note: "Start: https://mapy.com/s/mubajehaca\r\n5x okruh: cca 1,2 - 1,5 km, orange bez cest, green s cestami."
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
-gps: '49.20288, 16.47392'
+gps: '49.19867, 16.47826'
 ---
 
-* **sraz**: 17:00 Louka
+Start: https://mapy.com/s/mubajehaca
+5x okruh: cca 1,2 - 1,5 km, orange bez cest, green s cestami.
+* **sraz**: 17:00 V lese
