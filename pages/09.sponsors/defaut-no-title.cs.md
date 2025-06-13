@@ -7,9 +7,14 @@ primaryImage: {  }
 
 <div class="row align-items-center">
     <div class="col-md-6">
-        <a href="https://www.brno.cz/uvodni-strana/" target="_blank">
-        <img class="sponsors--img" src="{{page.route()}}/Brno.svg">
-        </a>
+        <div>
+            <a href="https://www.brno.cz/uvodni-strana/" target="_blank">
+            <img class="sponsors--img" src="{{page.route()}}/Brno.svg">
+            </a>
+        </div>
+        <div>
+            <p>Statutární město Brno podpořilo náš klub částkou 1 633 tisíc Kč (z toho 169 tis. Kč na vrcholový sport).</p>
+        </div>
     </div>
     <div class="col-md-6">
         <a href="https://www.kr-jihomoravsky.cz/" target="_blank">
