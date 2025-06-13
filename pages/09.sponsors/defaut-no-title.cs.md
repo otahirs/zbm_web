@@ -13,7 +13,7 @@ primaryImage: {  }
             </a>
         </div>
         <div>
-            <p>Statutární město Brno podpořilo náš klub částkou 1 633 tisíc Kč, z toho 169 tisíc Kč na vrcholový sport.</p>
+            <p>Statutární město Brno podpořilo náš klub částkou 1&nbsp;633&nbsp;tisíc&nbsp;Kč, z toho 169&nbsp;tisíc&nbsp;Kč na vrcholový sport.</p>
         </div>
     </div>
     <div class="col-md-6">
