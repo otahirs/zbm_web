@@ -17,6 +17,8 @@ date: '2025-01-20'
 import:
     type: members
     time: 1737360007
+hasStartlist: true
+hasResults: true
 ---
 
 Historická i novější zástavba, školní a jiné areály, parková zeleň, téměř bez převýšení

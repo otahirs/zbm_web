@@ -13,11 +13,11 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
+transport: "MHD na zastávku Haškova - vzdálenost na start 333 m - značeno fáborky\r\nPřibližovací srazy:\r\nSkácelova 15:29 na zastávce směr Slovaňák\r\nHalasovo náměstí sraz nebude, dojděte rovnou na místo\r\nParkování: https://mapy.com/s/robusugumu"
 accomodation: ''
 food: ''
 leader: ''
-note: ''
+note: 'Vezměte si s sebou čip! Buzolu samozřejmě taky.'
 return: ''
 price: ''
 program: ''
@@ -32,6 +32,13 @@ taxonomy:
         - zaci2
         - dorost
         - hobby
+gps: '49.23480, 16.62105'
 ---
 
+Vezměte si s sebou čip! Buzolu samozřejmě taky.
 * **sraz**: 16:15
+* **doprava**: MHD na zastávku Haškova - vzdálenost na start 333 m - značeno fáborky
+Přibližovací srazy:
+Skácelova 15:29 na zastávce směr Slovaňák
+Halasovo náměstí sraz nebude, dojděte rovnou na místo
+Parkování: https://mapy.com/s/robusugumu

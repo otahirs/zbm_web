@@ -7,35 +7,29 @@ access:
 process:
     markdown: false
 cache_enable: false
-defaultTemplate: Letní
+defaultTemplate: Prázdniny
 templates:
     plan:
         monday:
             -
                 group:
                     - dorost
-                name: 'Atletické posilování, hra dle domluvy'
-                time: '17:00'
-                place: 'Dráha ZŠ nám Svornosti, https://mapy.com/s/rerakofuco'
+                name: Posilovna
+                time: '18:00'
+                place: ''
             -
                 group:
-                    - zaci1
                     - zaci2
-                name: 'Tělocvična '
-                time: '17:00 - 18:30'
-                place: 'hala Rosnička'
+                name: 'Cvičení dle plánu'
+                time: ''
+                place: samostatně
         tuesday:
             -
                 group:
-                    - zabicky
-                    - pulci1
-                    - pulci2
-                    - zaci1
                     - zaci2
-                    - hobby
-                name: 'Mapový trénink'
-                time: '16:15 - 18:00'
-                place: 'okolí Brna'
+                name: 'Běh dle plánu'
+                time: ''
+                place: samostatně
             -
                 group:
                     - dorost
@@ -47,8 +41,8 @@ templates:
                 group:
                     - dorost
                 name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
+                time: '18:00'
+                place: ''
         thursday:
             -
                 group:
@@ -58,13 +52,10 @@ templates:
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
             -
                 group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
                     - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 - 18:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
+                name: 'Běh dle plánu'
+                time: ''
+                place: samostatně
         friday:
             -
                 name: ''
@@ -74,7 +65,7 @@ templates:
             -
                 group:
                     - zaci2
-                name: 'Běh podle plánu'
+                name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
         sunday:

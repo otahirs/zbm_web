@@ -36,6 +36,7 @@ thingsToTake: ''
 signups: ''
 gps: '49.83001, 18.09054'
 hasStartlist: true
+hasResults: true
 ---
 
 Spaní je zajištěno v centru nedělního závodu v tělocvičně na ZŠ Srbská 2,  Ostrava-Výškovice. Vezměte si proto karimatky a spacáky. 
