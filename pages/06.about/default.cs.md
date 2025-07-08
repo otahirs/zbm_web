@@ -380,13 +380,6 @@ Tento přehled je trochu zjednodušený. Ve skutečnosti je společných trénin
           1993
         </div>
         <div class="content_timeline_body">
-           Jako nový mistrovský závod se začíná běhat noční OB.
-        </div>
-      </div>
-    </div>
-    <div class="container_timeline right">
-      <div class="content_timeline black">
-        <div class="content_timeline_body">
            Dorostenecké a juniorské kategorie se do roku 1993 označovaly jako DH 15, 17, 19.
            Od roku 1993 se označení mění na DH 16, 18, 20.
         </div>
@@ -478,7 +471,7 @@ Tento přehled je trochu zjednodušený. Ve skutečnosti je společných trénin
     <div class="container_timeline main left black">
       <div class="content_timeline black">
         <div class="content_timeline_header">
-          2012
+          2010
         </div>
         <div class="content_timeline_body">
            Od tohoto roku nepatří mezi mistrovské závody dlouhá trať.
