@@ -10,84 +10,6 @@ process:
 plan:
     thisWeek:
         monday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00'
-                place: 'Kampus, Bohunice, https://mapy.com/s/hagonugono'
-            -
-                group:
-                    - zaci2
-                name: 'Cvičení dle plánu'
-                time: ''
-                place: samostatně
-        tuesday:
-            0:
-                group:
-                    - zabicky
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - hobby
-                name: 'Mapový trénink'
-                time: '16:15 - 18:00'
-                place: 'okolí Brna'
-            1:
-                group:
-                    - dorost
-                name: 'Běžecký trénink (hladké boty)'
-                time: '16:30'
-                place: Rosnička
-            1750359872828:
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: samostatně
-        wednesday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00'
-                place: 'Kampus, Bohunice, https://mapy.com/s/hagonugono'
-        thursday:
-            -
-                group:
-                    - dorost
-                name: 'Atletický trénink (hladké, čisté boty)'
-                time: '16:50'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: samostatně
-        friday:
-            1751294966432:
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            0:
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: samostatně
-            1751294966433:
-                name: ''
-                time: ''
-                place: ''
-        sunday:
-            1751294966433:
-                name: ''
-                time: ''
-                place: ''
-    nextWeek:
-        monday:
             1:
                 group:
                     - zaci2
@@ -164,7 +86,7 @@ plan:
                 name: ''
                 time: ''
                 place: ''
-    next2Week:
+    nextWeek:
         monday:
             -
                 group:
@@ -232,7 +154,7 @@ plan:
                 name: ''
                 time: ''
                 place: ''
-    next3Week:
+    next2Week:
         monday:
             -
                 group:
@@ -297,6 +219,70 @@ plan:
                 place: samostatně
         sunday:
             1751294966437:
+                name: ''
+                time: ''
+                place: ''
+    next3Week:
+        monday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '18:00'
+                place: ''
+            -
+                group:
+                    - zaci2
+                name: 'Cvičení dle plánu'
+                time: ''
+                place: samostatně
+        tuesday:
+            -
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: samostatně
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink (hladké boty)'
+                time: '16:30'
+                place: Rosnička
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '18:00'
+                place: ''
+        thursday:
+            -
+                group:
+                    - dorost
+                name: 'Atletický trénink (hladké, čisté boty)'
+                time: '16:50'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+            -
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: samostatně
+        friday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            -
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: samostatně
+        sunday:
+            -
                 name: ''
                 time: ''
                 place: ''
