@@ -2,7 +2,6 @@
 taxonomy:
     skupina:
         - dorost
-        - hobby
 id: 2025-race_2244
 start: '2025-09-13'
 end: '2025-09-13'
@@ -11,30 +10,33 @@ link: 'https://oris.orientacnisporty.cz/Zavod?id=8620'
 orisid: '8620'
 place: 'Horní Lhota (okr. Zlín)'
 type: Z
-note: "Na východě silnice č. 492, na severu vrch Tutkova, Horský p. a údolí svažující se k potoku\r\nObůrek, na západě silnice vedoucí od Želechovic do Provodova, dále Malenisko a žlutá\r\nturistická značka, z jihu obce Řetechov, Podhradí a Horní Lhota\r\n**Ubytování** na postelích https://www.revika.cz/  včetně stravy (sobotní večeře + nedělní snídaně)"
+note: "**Ubytování** na postelích https://www.revika.cz/  včetně stravy (sobotní večeře + nedělní snídaně)\r\nhttps://mapy.com/s/japehepoke"
 template: zavod
 date: '2025-01-20'
 import:
     type: members
     time: 1737360607
-meetTime: ''
-meetPlace: ''
+meetTime: '9:30'
+meetPlace: Bohéma
 eventTypeDescription: ''
-startTime: ''
-map: ''
-terrain: ''
-transport: ''
+startTime: '12:00'
+map: KOMONEC
+terrain: 'Středoevropský, kontinentální terén. Prostor se nachází v západní části Vizovických vrchů nadm. výška 330 - 672 m n.m., místy velmi strmé svahy, ojedinělé skalnaté útvary, středně hustá síť komunikací. Vegetace je různorodá, částečně poznamenaná kůrovcovou kalamitou z minulých let. Místy vrstevnicová členitost.'
+transport: 'Dodávky + auta.'
 accomodation: ''
 food: ''
-leader: ''
+leader: 'Jan Drábek'
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.15521, 17.79295'
+hasStartlist: true
+hasResults: true
 ---
 
-Na východě silnice č. 492, na severu vrch Tutkova, Horský p. a údolí svažující se k potoku
-Obůrek, na západě silnice vedoucí od Želechovic do Provodova, dále Malenisko a žlutá
-turistická značka, z jihu obce Řetechov, Podhradí a Horní Lhota
 **Ubytování** na postelích https://www.revika.cz/  včetně stravy (sobotní večeře + nedělní snídaně)
+https://mapy.com/s/japehepoke
+* **sraz**: 9:30 Bohéma
+* **doprava**: Dodávky + auta.

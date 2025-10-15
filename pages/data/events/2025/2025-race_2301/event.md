@@ -32,6 +32,7 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.18817, 16.53581'
+hasResults: true
 ---
 
 * **sraz**: 17:00

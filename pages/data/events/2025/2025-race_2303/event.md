@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - hobby
 id: 2025-race_2303
 start: '2025-08-26'
 end: '2025-08-26'
@@ -14,5 +15,26 @@ date: '2025-06-20'
 import:
     type: members
     time: 1750411205
+meetTime: '17:00'
+meetPlace: 'Prýgl - pláž u sirky'
+eventTypeDescription: ''
+startTime: '17-18:30'
+map: Prýgl
+terrain: ''
+transport: 'Kolmo, šalinou nebo autem.'
+accomodation: ''
+food: ''
+leader: ''
+note: "Od šaliny jdetě přes parkoviště a po \"promenádě\" až do centra. Nezkracujte si cestu přes louky, ať nepřijdete o to nejlepší! Díky\r\nBacha, na trati budou umělé ploty - v reálu to bude červenobílé mlíko."
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.22833, 16.51257'
 ---
 
+Od šaliny jdetě přes parkoviště a po "promenádě" až do centra. Nezkracujte si cestu přes louky, ať nepřijdete o to nejlepší! Díky
+Bacha, na trati budou umělé ploty - v reálu to bude červenobílé mlíko.
+* **sraz**: 17:00 Prýgl - pláž u sirky
+* **doprava**: Kolmo, šalinou nebo autem.

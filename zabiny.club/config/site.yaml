@@ -1,0 +1,23 @@
+title: 'SK Brno Žabovřesky'
+default_lang: cs
+author:
+  name: 'Otakar Hirš'
+  email: otakar.hirs@gmail.com
+taxonomies:
+  - category
+  - tag
+  - skupina
+  - typ
+  - ubytovani
+metadata:
+  description: 'SK Brno Žabovřesky (ZBM) - oddíl orientačního běhu - oficiální stránky. Společné tréninky, závody, soustřední.'
+  keywords: 'ob, orienteering, ZBM, SK, Brno, Žabovřesky, zabiny, žabiny, mapy, soustředění, závody, čsos'
+summary:
+  enabled: true
+  format: long
+  size: 300
+  delimiter: '==='
+redirects: null
+routes: null
+blog:
+  route: /blog
