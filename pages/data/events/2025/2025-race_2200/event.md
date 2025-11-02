@@ -38,6 +38,8 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.63112, 16.04360'
+hasStartlist: true
+hasResults: true
 ---
 
 * **sraz**: 7:55 Janáčkovo divadlo

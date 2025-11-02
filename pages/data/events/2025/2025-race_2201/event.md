@@ -38,6 +38,8 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.55513, 15.87633'
+hasStartlist: true
+hasResults: true
 ---
 
 * **sraz**: 8:30 Zastávka trolejbusu Pisárky, směr z města, ulice Hlinky

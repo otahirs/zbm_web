@@ -30,6 +30,7 @@ taxonomy:
         - pulci2
         - zaci1
         - zaci2
+        - dorost
         - hobby
 gps: '49.22909, 16.60488'
 ---
