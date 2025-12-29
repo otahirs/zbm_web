@@ -7,8 +7,8 @@ taxonomy:
         - zaci2
         - hobby
 id: 2026-race_2329
-start: '2026-01-10'
-end: '2026-01-10'
+start: '2026-01-18'
+end: '2026-01-18'
 title: '4. Zimní mapový výjezd'
 place: Senorady
 type: T
