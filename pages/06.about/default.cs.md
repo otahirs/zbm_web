@@ -159,14 +159,14 @@ primaryImage: {  }
 
 /*Make sure that all arrows are pointing leftwards*/
   .container_timeline.main.right::before, .container_timeline.main.left::before {
-    left: 55px;
+    left: 56px;
     border: medium solid #e03a35;
     border-width: 15px 15px 15px 0;
     border-color: transparent #e03a35 transparent transparent;
   }
 
   .container_timeline.main.right.black::before, .container_timeline.main.left.black::before {
-    left: 55px;
+    left: 56px;
     border: medium solid #000000;
     border-width: 15px 15px 15px 0;
     border-color: transparent #000000 transparent transparent;
@@ -539,6 +539,16 @@ Tento přehled je trochu zjednodušený. Ve skutečnosti je společných trénin
         </div>
         <div class="content_timeline_body">
            Na mistrovstvích republiky jsme mezi lety 1990 a 2022 získali v dorosteneckých a dospělých kategoriích celkem 330 mistrovských medailí. 
+        </div>
+      </div>
+    </div>
+    <div class="container_timeline main left">
+      <div class="content_timeline">
+        <div class="content_timeline_header">
+          2025
+        </div>
+        <div class="content_timeline_body">
+           Úspěšně jsme uspořádali Mistrovství Evropy dorostu přímo u nás v Brně.
         </div>
       </div>
     </div>
