@@ -15,19 +15,19 @@ title: 'BLZ: Lesný sprint'
 link: 'https://oris.orientacnisporty.cz/Zavod?id=9517'
 orisid: '9517'
 place: Lesná
-type: Z
+type: BZL
 template: zavod
 date: '2025-10-31'
 import:
     type: members
     time: 1761908405
 meetTime: ''
-meetPlace: ''
-eventTypeDescription: ''
-startTime: ''
-map: ''
+meetPlace: 'bazén Tesla'
+eventTypeDescription: 'D, Expert D, Expert H, H, HDD, ZV'
+startTime: '13:00'
+map: 'Lesnázev mapy'
 terrain: ''
-transport: ''
+transport: Vlastní
 accomodation: ''
 food: ''
 leader: ''
@@ -37,5 +37,8 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.22926, 16.62405'
 ---
 
+* **sraz**: bazén Tesla
+* **doprava**: Vlastní
