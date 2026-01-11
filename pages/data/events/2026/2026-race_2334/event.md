@@ -37,7 +37,8 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
-gps: '49.22926, 16.62405'
+gps: '49.2235, 16.6248'
+hasStartlist: true
 ---
 
 * **sraz**: bazén Tesla
