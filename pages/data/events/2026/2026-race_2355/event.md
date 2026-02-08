@@ -13,7 +13,7 @@ date: '2025-11-03'
 import:
     type: members
     time: 1762175405
-meetTime: '10:30'
+meetTime: '10:00'
 meetPlace: 'U Kočů doma'
 link: ''
 eventTypeDescription: ''
@@ -33,5 +33,5 @@ signups: ''
 gps: '49.30966, 16.62192'
 ---
 
-* **sraz**: 10:30 U Kočů doma
+* **sraz**: 10:00 U Kočů doma
 * **doprava**: auty, MHD, domluvte se prosim na Discordu

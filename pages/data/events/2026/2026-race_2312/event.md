@@ -35,6 +35,7 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.13254, 16.47908'
+hasResults: true
 ---
 
 Čeká nás uspořádat 4. ročník štafetového závodu Krátký den.

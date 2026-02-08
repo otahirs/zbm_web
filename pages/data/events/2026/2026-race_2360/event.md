@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - zaci2
 id: 2026-race_2360
 start: '2026-03-01'
 end: '2026-03-01'

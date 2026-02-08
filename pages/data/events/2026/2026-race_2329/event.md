@@ -24,7 +24,7 @@ eventTypeDescription: 'Pulci 1: COB "změny směru" - VÝPRAVA, Pulci 2: COB "zm
 startTime: '10.00'
 map: Doubravka
 terrain: ''
-transport: "Společná auty, vedoucí dopravy (bude doplněno)\r\n•\tkdo potřebuje, nezapomeňte si podsedák\r\nParkování v blízkosti tréninku https://mapy.com/s/nufosujezo, vzdálenost na mapový start 0,5 km."
+transport: "Společná auty, vedoucí dopravy Věrka Nováčková\r\n•\tkdo potřebuje, nezapomeňte si podsedák\r\nParkování v blízkosti tréninku https://mapy.com/s/nufosujezo, vzdálenost na mapový start 0,5 km."
 accomodation: ''
 food: ''
 leader: 'Tomáš Kyncl'
@@ -42,6 +42,6 @@ Doporučené náhradní oblečení: teplé ponožky
 
 Vyznačení **místa srazu v Brně** + **mapového startu** + **parkování** k nahlédnutí zde: https://mapy.com/s/nufosujezo
 * **sraz**: 9:15 Kampus, parkoviště Akademická
-* **doprava**: Společná auty, vedoucí dopravy (bude doplněno)
+* **doprava**: Společná auty, vedoucí dopravy Věrka Nováčková
 •	kdo potřebuje, nezapomeňte si podsedák
 Parkování v blízkosti tréninku https://mapy.com/s/nufosujezo, vzdálenost na mapový start 0,5 km.
