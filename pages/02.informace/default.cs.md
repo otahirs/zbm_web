@@ -99,6 +99,7 @@ Náklady na použití vlastního auta na soustředění se budou proplácet form
 - správně vyplněný a podepsaný cestovní příkaz (Vámi + vedoucím akce) odešlete na email faktury@zabiny.club, kde bude zpracován a předán k proplacení
 - proplacení bude provedeno odesláním platby na Váš bankovní účet (v případě že si v průběhu času změníte účet, upozorněte na to v cestovním příkaze červeným zvýrazněním - podbarvením čísla účtu)
 - při nedodržení lhůty a postupu, nebude cestovní příkaz proplacen
+
 #### Jak postupovat při proplacení výdaje, který se váže k akci
 - na každé akci je maximální snaha o platbu oddílovou kartou, což zajišťuje vedoucí, který ji má s sebou
 - v případě úhrady z vlastních zdrojů, odevzdejte účtenky ([dle tohoto vzoru](https://drive.google.com/drive/folders/1WtsEQZBYhId3ZbgCMYz7kYQO4eNUOk7w?usp=sharing)) do rukou vedoucího nejpozději do 5 dnů po ukončení akce (nebo během ní, ale jen dle vzoru!)
