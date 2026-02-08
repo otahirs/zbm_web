@@ -82,16 +82,28 @@ Aktuální stav je on-line v „Přihláškovém systému".
 - Finance z oddílového účtu lze použít zejména na zaplacení oddílových příspěvků, soustředění, startovného na nedotované závody (např. prázdninové vícedenní závody, LOB, MTBO) či oddílového oblečení. Členské příspěvky a dary poskytnuté na oddílový účet již nelze poslat zpět na účet soukromý.
 
 ### Cestovní příkazy <a name="cestaky"></a>
-Klub proplácí (od roku 2021) náklady na pohonné hmoty. 
+Klub proplácí každému, kdo nabídne svůj vůz na **sdílenou dopravu** (skrze členskou sekci), náklady na pohonné hmoty.
 
-#### Podmínky
-- přibíráte ostatní členy klubu jako spolucestující
-- jedná se o závod, kde oddíl hradí dopravu nebo o vybraný mapový trénink (soutředění jsou řešeny slevou z ceny akce)
-- vyplnit cesťák 
-- předat vyplněný a podepsaný cesťák vedoucímu akce do 2 týdnů po jejím skončení
+#### Cestovní příkazy se vystavují pouze na akce:
+- Pořádané závody oddílem SK Brno Žabovřesky
+- Závody žebříčku A + B
+- Tréninky:
+    - **Dorost**: vytrvalost, nočáky, mapové výjezdy
+    - **Žactvo**: zimní mapové výjezdy		
 
-#### Jak vyplnit cesťák
-- je popsáno na [wiki](https://wiki.zabiny.club/doc/cestak-bBRRw99NKx)
+Náklady na použití vlastního auta na soustředění se budou proplácet formou slevy z dané akce - snížení administrativní zátěže.
+
+#### Podmínky proplacení cestovného
+- do 5 dnů po akci si vystavte ve své režii [cestovní příkaz](https://docs.google.com/spreadsheets/d/16YeSxXnkchyskXz2GXUETHdQtAGSv8k2/edit?usp=sharing&ouid=105448721499210837265&rtpof=true&sd=true) na základě konzultace - pokynů od vedoucího akce a zaříďte si **svépomocí** podpis vedoucího akce
+- jediná přijatelná forma podpisu je digitální podoba ([návod ja na něj](https://docs.google.com/document/d/1PY41ifxWNva8jTSg3VRJnio8HDJn3en1aD9_Mp-XBkw/edit?usp=sharing))
+- správně vyplněný a podepsaný cestovní příkaz (Vámi + vedoucím akce) odešlete na email faktury@zabiny.club, kde bude zpracován a předán k proplacení
+- proplacení bude provedeno odesláním platby na Váš bankovní účet (v případě že si v průběhu času změníte účet, upozorněte na to v cestovním příkaze červeným zvýrazněním - podbarvením čísla účtu)
+- při nedodržení lhůty a postupu, nebude cestovní příkaz proplacen
+#### Jak postupovat při proplacení výdaje, který se váže k akci
+- na každé akci je maximální snaha o platbu oddílovou kartou, což zajišťuje vedoucí, který ji má s sebou
+- v případě úhrady z vlastních zdrojů, odevzdejte účtenky ([dle tohoto vzoru](https://drive.google.com/drive/folders/1WtsEQZBYhId3ZbgCMYz7kYQO4eNUOk7w?usp=sharing)) do rukou vedoucího nejpozději do 5 dnů po ukončení akce (nebo během ní, ale jen dle vzoru!)
+- při nedodržení lhůty a postupu, nebude účtenka zahrnuta do vyúčtování akce
+
 
 ---
 ## Oddílové příspěvky 2025 <a name="prispevky"></a>
