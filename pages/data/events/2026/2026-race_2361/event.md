@@ -1,6 +1,12 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - hobby
 id: 2026-race_2361
 start: '2026-03-08'
 end: '2026-03-08'
@@ -14,5 +20,21 @@ date: '2025-11-12'
 import:
     type: members
     time: 1762953005
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 

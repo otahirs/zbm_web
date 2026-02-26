@@ -61,45 +61,42 @@ plan:
             1767681211545:
                 group:
                     - hobby
-                name: O
-                time: ''
-                place: ''
-            1770109727913:
                 name: ''
                 time: ''
                 place: ''
         thursday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '16:45'
                 place: 'hala Rosnička'
-            1:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:30 – 18:00'
                 place: 'hala Rosnička'
-            2:
+            -
                 group:
                     - pulci1
                     - pulci2
                 name: Tělocvična
                 time: '16:00 - 17:00'
                 place: 'ZŠ Sirotkova'
-            1770035273500:
-                group:
-                    - hobby
-                name: 'Online teorie'
-                time: '20:00'
-                place: meet.google.com/rwz-ugkn-kgu
-        sunday:
-            1770109727914:
+        friday:
+            1770109727919:
                 name: ''
                 time: ''
                 place: ''
+        saturday:
+            -
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: samostatně
     nextWeek:
         monday:
             -
@@ -153,13 +150,9 @@ plan:
             1767681211545:
                 group:
                     - hobby
-                name: ''
-                time: ''
-                place: ''
-            1770109727915:
-                name: ''
-                time: ''
-                place: ''
+                name: 'Online teorie'
+                time: '20:00'
+                place: meet.google.com/rwz-ugkn-kgu
         thursday:
             -
                 group:
@@ -181,35 +174,22 @@ plan:
                 name: Tělocvična
                 time: '16:00 - 17:00'
                 place: 'ZŠ Sirotkova'
-        friday:
-            1770109727915:
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: samostatně
-        sunday:
-            1770109727916:
-                name: ''
-                time: ''
-                place: ''
     next2Week:
         monday:
-            -
+            0:
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
+                name: Tělocvična
+                time: '17:00 – 18:30'
+                place: 'hala Rosnička'
+            1767681211544:
                 name: ''
                 time: ''
                 place: ''
@@ -217,9 +197,9 @@ plan:
             -
                 group:
                     - zaci2
-                name: ''
-                time: ''
-                place: ''
+                name: 'Běžecký trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
             -
                 group:
                     - dorost
@@ -254,63 +234,79 @@ plan:
                 name: 'Online teorie'
                 time: '20:00'
                 place: meet.google.com/rwz-ugkn-kgu
-            1770109727916:
-                name: ''
-                time: ''
-                place: ''
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '16:45'
                 place: 'hala Rosnička'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
-                name: ''
-                time: ''
-                place: ''
-            -
+                name: 'Běžecký trénink'
+                time: '16:30 – 18:00'
+                place: 'hala Rosnička'
+            2:
                 group:
                     - pulci1
                     - pulci2
                 name: Tělocvična
                 time: '16:00 - 17:00'
                 place: 'ZŠ Sirotkova'
+            1767681211545:
+                name: ''
+                time: ''
+                place: ''
         friday:
-            1770109727917:
+            1767681210175:
+                name: ''
+                time: ''
+                place: ''
+            1767681211545:
                 name: ''
                 time: ''
                 place: ''
         saturday:
-            -
+            0:
                 group:
                     - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: samostatně
+            1767681211545:
                 name: ''
                 time: ''
                 place: ''
         sunday:
-            1770109727917:
+            1767681210176:
+                name: ''
+                time: ''
+                place: ''
+            1767681211546:
                 name: ''
                 time: ''
                 place: ''
     next3Week:
         monday:
-            -
+            0:
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
+            1767681211544:
+                name: ''
+                time: ''
+                place: ''
         tuesday:
             -
                 group:
@@ -349,50 +345,63 @@ plan:
             1767681211545:
                 group:
                     - hobby
-                name: ''
-                time: ''
-                place: ''
-            1770109727919:
-                name: ''
-                time: ''
-                place: ''
+                name: 'Online teorie'
+                time: '20:00'
+                place: meet.google.com/rwz-ugkn-kgu
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '16:45'
                 place: 'hala Rosnička'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:30 – 18:00'
                 place: 'hala Rosnička'
-            -
+            2:
                 group:
                     - pulci1
                     - pulci2
                 name: Tělocvična
                 time: '16:00 - 17:00'
                 place: 'ZŠ Sirotkova'
-        friday:
-            1770035273504:
+            1767681211545:
                 name: ''
                 time: ''
                 place: ''
-            1770109727919:
+        friday:
+            1767681210175:
+                name: ''
+                time: ''
+                place: ''
+            1767681211545:
                 name: ''
                 time: ''
                 place: ''
         saturday:
-            -
+            0:
                 group:
                     - zaci2
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
+            1767681211545:
+                name: ''
+                time: ''
+                place: ''
+        sunday:
+            1767681210176:
+                name: ''
+                time: ''
+                place: ''
+            1767681211546:
+                name: ''
+                time: ''
+                place: ''
 ---
 
 <div class="row justify-content-between"> 

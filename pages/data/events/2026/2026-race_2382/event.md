@@ -14,7 +14,7 @@ end: '2026-08-15'
 title: Tábor
 place: Srbsko
 type: S
-note: "Tábor se bude konat v nádherné oblasti Českého ráje s nepřeberným množstvím pískovcových skal rozličných tvarů a velikostí. Kolem základny je méně rovin a více hlubokých údolí, která jsou lemována voňavými borovicovými lesy. V blízkosti ubytování je koupací Komárovský rybník. Letos bereme s sebou kola s cyklistickou helmou a pro nejmenší dostatek pomůcek na stavby z písku.\r\n\r\n![](https://eu.zonerama.com/photos/593761147_1877x624.jpg)\r\n\r\n**Program:**\r\n*     tréninky orientačního běhu\r\n*     táborové hry\r\n*     soutěže\r\n*     koupání\r\n*     výlet\r\n*     a spousta další zábavy"
+note: "Tábor se bude konat v nádherné oblasti Českého ráje s nepřeberným množstvím pískovcových skal rozličných tvarů a velikostí. Kolem základny je méně rovin a více hlubokých údolí, která jsou lemována voňavými borovicovými lesy. V blízkosti ubytování je koupací Komárovský rybník. Letos bereme s sebou kola s cyklistickou helmou a pro nejmenší dostatek pomůcek na stavby z písku.\r\n**Upozornění:** tréninky se budou konat v prostorech v kterých se uskuteční tradiční vícedenní závod [Pěkné prázdniny](https://oris.ceskyorientak.cz/Zavod?id=9617), proto každý kdo se zúčastní táborových tréninků či roznosu, bude muset na těchto závodech běžet mimo pořadí (vyjma kategorie HDR, DH10, DH12). \r\n\r\n![](https://eu.zonerama.com/photos/593761147_1877x624.jpg)\r\n\r\n**Program:**\r\n*     tréninky orientačního běhu\r\n*     táborové hry\r\n*     soutěže\r\n*     koupání\r\n*     výlet\r\n*     a spousta další zábavy"
 template: soustredeni
 date: '2026-01-13'
 import:
@@ -40,6 +40,7 @@ gps: '50.50574, 15.10059'
 ---
 
 Tábor se bude konat v nádherné oblasti Českého ráje s nepřeberným množstvím pískovcových skal rozličných tvarů a velikostí. Kolem základny je méně rovin a více hlubokých údolí, která jsou lemována voňavými borovicovými lesy. V blízkosti ubytování je koupací Komárovský rybník. Letos bereme s sebou kola s cyklistickou helmou a pro nejmenší dostatek pomůcek na stavby z písku.
+**Upozornění:** tréninky se budou konat v prostorech v kterých se uskuteční tradiční vícedenní závod [Pěkné prázdniny](https://oris.ceskyorientak.cz/Zavod?id=9617), proto každý kdo se zúčastní táborových tréninků či roznosu, bude muset na těchto závodech běžet mimo pořadí (vyjma kategorie HDR, DH10, DH12). 
 
 ![](https://eu.zonerama.com/photos/593761147_1877x624.jpg)
 
