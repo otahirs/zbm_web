@@ -45,6 +45,11 @@ primaryImage: {  }
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-phone"></i>777 631 615</li>
                 <li><i class="fa-li fa fa-envelope"></i>kocovalenka@gmail.com</li>
+            </ul> 
+            <h4>Květa Dohnalová</h4>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-phone"></i>732 407 711</li>
+                <li><i class="fa-li fa fa-envelope"></i>kveta.dohnalova@centrum.cz</li>
             </ul>      
         </div>
     </div>
