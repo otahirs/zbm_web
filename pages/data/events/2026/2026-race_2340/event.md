@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - dorost
 id: 2026-race_2340
 start: '2026-04-02'
 end: '2026-04-06'
@@ -21,7 +22,7 @@ map: ''
 terrain: ''
 transport: ''
 accomodation: 'Hotelové ubytování kolejí ZČU Plzeň, Bolevecká 30-32 (https://www.skm.zcu.cz/cs/Hotel/) ve 2, 3 a 6-lůžkových pokojích.'
-food: ''
+food: 'Plná penze v bistru v místě ubytování. První jídlo čtvrteční večeře, poslední jídlo pondělní snídaně.'
 leader: ''
 note: ''
 return: ''
@@ -32,3 +33,4 @@ signups: ''
 ---
 
 * **ubytování**: Hotelové ubytování kolejí ZČU Plzeň, Bolevecká 30-32 (https://www.skm.zcu.cz/cs/Hotel/) ve 2, 3 a 6-lůžkových pokojích.
+* **strava**: Plná penze v bistru v místě ubytování. První jídlo čtvrteční večeře, poslední jídlo pondělní snídaně.

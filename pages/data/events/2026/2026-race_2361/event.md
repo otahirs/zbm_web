@@ -6,6 +6,7 @@ taxonomy:
         - pulci2
         - zaci1
         - zaci2
+        - dorost
         - hobby
 id: 2026-race_2361
 start: '2026-03-08'
@@ -20,13 +21,13 @@ date: '2025-11-12'
 import:
     type: members
     time: 1762953005
-meetTime: ''
-meetPlace: ''
-eventTypeDescription: ''
-startTime: ''
-map: ''
+meetTime: '13:00'
+meetPlace: 'ZŠ Masarova'
+eventTypeDescription: 'D, H, HDD, ZV'
+startTime: '13:00'
+map: 'Růženin dvůr'
 terrain: ''
-transport: ''
+transport: Vlastní.
 accomodation: ''
 food: ''
 leader: ''
@@ -36,5 +37,8 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.20519, 16.67611'
 ---
 
+* **sraz**: 13:00 ZŠ Masarova
+* **doprava**: Vlastní.
