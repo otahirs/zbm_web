@@ -38,6 +38,8 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.20519, 16.67611'
+hasStartlist: true
+hasResults: true
 ---
 
 * **sraz**: 13:00 ZŠ Masarova

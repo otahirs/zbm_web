@@ -24,10 +24,10 @@ eventTypeDescription: 'Pulci 1 + 2: COB "objekty u cesty", Žáci 1: COB, Žáci
 startTime: 'kolem 10:15'
 map: 'Malá Macocha'
 terrain: ''
-transport: "Společná auty, vedoucí dopravy ...... bude doplněn 5.3. 2026.\r\n* kdo potřebuje, nezapomeňte si podsedák\r\n  Parkování v blízkosti tréninku (v rámci pravidel silničního provozu, pamatuj na místní obyvatele) https://mapy.com/s/dofotusupa, vzdálenost na mapový start 1,2 km."
+transport: "Společná auty, vedoucí dopravy **Pavel Rotek**.\r\n* kdo potřebuje, nezapomeňte si podsedák\r\n  Parkování v blízkosti tréninku (v rámci pravidel silničního provozu, pamatuj na místní obyvatele) https://mapy.com/s/dofotusupa, vzdálenost na mapový start 1,2 km."
 accomodation: ''
 food: ''
-leader: ''
+leader: 'Rosťa S.'
 note: "Svačinu + pití v termosce dle vlastního uvážení.\r\nDoporučené náhradní oblečení: teplé ponožky\r\n**Vyznačení** místa srazu v Brně** + mapového startu + doporučeného parkování** k nahlédnutí [ZDE](https://mapy.com/s/dofotusupa)"
 return: ''
 price: ''
@@ -41,6 +41,6 @@ Svačinu + pití v termosce dle vlastního uvážení.
 Doporučené náhradní oblečení: teplé ponožky
 **Vyznačení** místa srazu v Brně** + mapového startu + doporučeného parkování** k nahlédnutí [ZDE](https://mapy.com/s/dofotusupa)
 * **sraz**: 9:15 Královo Pole nádraží
-* **doprava**: Společná auty, vedoucí dopravy ...... bude doplněn 5.3. 2026.
+* **doprava**: Společná auty, vedoucí dopravy **Pavel Rotek**.
 * kdo potřebuje, nezapomeňte si podsedák
   Parkování v blízkosti tréninku (v rámci pravidel silničního provozu, pamatuj na místní obyvatele) https://mapy.com/s/dofotusupa, vzdálenost na mapový start 1,2 km.
