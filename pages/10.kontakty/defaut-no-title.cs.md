@@ -7,21 +7,21 @@ primaryImage: {  }
 <h2>Vedení oddílu</h2>
 <ul class="list-unstyled">
     <li class="mb-3"><strong>Předseda:</strong> Jan Fiala - predseda@zabiny.club</li>
-    <li class="mb-3"><img src="jan-zhanal-2.png" alt="Jan Zháňal" class="img-fluid rounded-circle mr-2" style="max-width: 50px;"> <strong>Trenér dorostu:</strong> Jan Zháňal - dorost@zabiny.club</li>
+    <li class="mb-3"><img src="{{page.route()}}/jan-zhanal-2.png" alt="Jan Zháňal" class="img-fluid rounded-circle mr-2" style="max-width: 50px;"> <strong>Trenér dorostu:</strong> Jan Zháňal - dorost@zabiny.club</li>
     <li class="mb-3"><strong>Trenér žactva:</strong> Barbara Stachoňová - zactvo@zabiny.club</li>
-    <li class="mb-3"><img src="jan-drabek-1.png" alt="Jan Drábek" class="img-fluid rounded-circle mr-2" style="max-width: 50px;"> <strong>Pořadatel závodů:</strong> Jan Drábek - poradatel@zabiny.club</li>
-    <li class="mb-3"><img src="ales-finstrle-1.png" alt="Aleš Finstrle" class="img-fluid rounded-circle mr-2" style="max-width: 50px;"> <strong>Koordinátor:</strong> Aleš Finstrle - koordinator@zabiny.club</li>
+    <li class="mb-3"><img src="{{page.route()}}/jan-drabek-1.png" alt="Jan Drábek" class="img-fluid rounded-circle mr-2" style="max-width: 50px;"> <strong>Pořadatel závodů:</strong> Jan Drábek - poradatel@zabiny.club</li>
+    <li class="mb-3"><img src="{{page.route()}}/ales-finstrle-1.png" alt="Aleš Finstrle" class="img-fluid rounded-circle mr-2" style="max-width: 50px;"> <strong>Koordinátor:</strong> Aleš Finstrle - koordinator@zabiny.club</li>
 </ul>
 
 <hr>
 <h2>Další užitečné kontakty</h2>
 <ul class="list-unstyled">
-    <li class="mb-3"><img src="ales-finstrle-2.png" alt="Aleš Finstrle" class="img-fluid rounded-circle mr-2" style="max-width: 50px;"> <strong>Finance:</strong> Aleš Finstrle - koordinator@zabiny.club</li>
-    <li class="mb-3"><img src="jan-drabek-2.png" alt="Jan Drábek" class="img-fluid rounded-circle mr-2" style="max-width: 50px;"> <strong>Přihlášky na závody:</strong> Jan Drábek - prihlasky@zabiny.club</li>
+    <li class="mb-3"><img src="{{page.route()}}/ales-finstrle-2.png" alt="Aleš Finstrle" class="img-fluid rounded-circle mr-2" style="max-width: 50px;"> <strong>Finance:</strong> Aleš Finstrle - koordinator@zabiny.club</li>
+    <li class="mb-3"><img src="{{page.route()}}/jan-drabek-2.png" alt="Jan Drábek" class="img-fluid rounded-circle mr-2" style="max-width: 50px;"> <strong>Přihlášky na závody:</strong> Jan Drábek - prihlasky@zabiny.club</li>
     <li class="mb-3"><strong>IT - přihláškový systém:</strong> Lukáš König - kenia@seznam.cz</li>
     <li class="mb-3"><strong>IT - web:</strong> Otakar Hirš - otakar.hirs@gmail.com</li>
     <li class="mb-3"><strong>Správce map:</strong> Stanislav Mokrý - mokry.stanislav@gmail.com</li>
-    <li class="mb-3"><img src="barca-zhanalova-2.png" alt="Barbora Zháňalová" class="img-fluid rounded-circle mr-2" style="max-width: 50px;"> <strong>Oddílové oblečení:</strong> Barbora Zháňalová - barborazhanalova@gmail.com</li>
+    <li class="mb-3"><img src="{{page.route()}}/barca-zhanalova-2.png" alt="Barbora Zháňalová" class="img-fluid rounded-circle mr-2" style="max-width: 50px;"> <strong>Oddílové oblečení:</strong> Barbora Zháňalová - barborazhanalova@gmail.com</li>
 </ul>
 
 <div class="row">
@@ -45,12 +45,14 @@ primaryImage: {  }
     <div class="divOuter col-lg-6" id="pulci1">
         <div class="contact--divInner">
         <h3>Pulci 1 - od 6 let</h3>
+            <img src="{{page.route()}}/lenka-kocova-1.png" alt="Lenka Kočová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <img src="lenka-kocova-1.png" alt="Lenka Kočová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Lenka Kočová</h4>
             <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-phone"></i>777 631 615</li>
                 <li><i class="fa-li fa fa-envelope"></i>kocovalenka@gmail.com</li>
             </ul> 
+            <img src="{{page.route()}}/kveta-dohnalova-1.png" alt="Květa Dohnalová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <img src="kveta-dohnalova-1.png" alt="Květa Dohnalová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Květa Dohnalová</h4>
             <ul class="fa-ul">
@@ -62,12 +64,14 @@ primaryImage: {  }
     <div class="divOuter col-lg-6" id="pulci2">
         <div class="contact--divInner">
         <h3>Pulci 2 - od 8 let</h3>
+            <img src="{{page.route()}}/lenka-hruskova-1.png" alt="Lenka Hrušková" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <img src="lenka-hruskova-1.png" alt="Lenka Hrušková" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Lenka Hrušková</h4>
             <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-phone"></i>737 353 537</li>
                 <li><i class="fa-li fa fa-envelope"></i>japkoLenka@gmail.com</li>
             </ul>
+            <img src="{{page.route()}}/alena-finstrlova-1.png" alt="Alena Finstrlová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <img src="alena-finstrlova-1.png" alt="Alena Finstrlová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Alena Finstrlová</h4>
             <ul class="fa-ul">
@@ -78,22 +82,26 @@ primaryImage: {  }
     <div class="divOuter col-lg-6" id="zaci1">
        <div class="contact--divInner">
         <h3>Žáci 1 - od 10 let</h3>
+            <img src="{{page.route()}}/pavel-zeleny-1.png" alt="Pavel Zelený" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <img src="pavel-zeleny-1.png" alt="Pavel Zelený" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Pavel Zelený</h4>
             <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-envelope"></i>pzeleny@post.cz</li>
             </ul>
+            <img src="{{page.route()}}/andrea-firesova-1.png" alt="Andrea Firešová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <img src="andrea-firesova-1.png" alt="Andrea Firešová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Andrea Firešová</h4>
             <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-phone"></i>728 362 804</li>
                 <li><i class="fa-li fa fa-envelope"></i>a.firesova@seznam.cz</li>
             </ul>   
+            <img src="{{page.route()}}/verka-novackova-1.png" alt="Věra Nováčková Obelczová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <img src="verka-novackova-1.png" alt="Věra Nováčková Obelczová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Věra Nováčková Obelczová</h4>
             <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-envelope"></i>vobelczova@gmail.com</li>
             </ul>     
+            <img src="{{page.route()}}/jan-drabek-1.png" alt="Jan Drábek" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <img src="jan-drabek-1.png" alt="Jan Drábek" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Jan Drábek</h4>
             <ul class="fa-ul">
@@ -128,6 +136,7 @@ primaryImage: {  }
     <div class="divOuter col-lg-6" id="dorost">
         <div class="contact--divInner">
         <h3>Dorost+ - od 15 let</h3>
+            <img src="{{page.route()}}/jan-zhanal-1.png" alt="Jan Zháňal" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <img src="jan-zhanal-1.png" alt="Jan Zháňal" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Jan Zháňal</h4>
             <ul class="fa-ul mb-4">
@@ -146,11 +155,24 @@ primaryImage: {  }
             <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-envelope"></i>otakar.hirs@gmail.com</li>
             </ul>
+            <img src="{{page.route()}}/milos-nykodym-1.png" alt="Miloš Nykodým" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <img src="milos-nykodym-1.png" alt="Miloš Nykodým" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Miloš Nykodým</h4>
             <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-envelope"></i>milos.nykodym@zabiny.club</li>
             </ul>
+            <img src="{{page.route()}}/klara-barnatova-1.png" alt="Klára Barnatová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
+            <h4>Klára Barnatová</h4>
+            <ul class="fa-ul mb-4">
+                <li><i class="fa-li fa fa-envelope"></i>klara.barnatova@gmail.com</li>
+            </ul>
+            <img src="{{page.route()}}/barca-zhanalova-1.png" alt="Barbora Zháňalová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
+            <h4>Barbora Zháňalová</h4>
+            <ul class="fa-ul mb-4">
+                <li><i class="fa-li fa fa-envelope"></i>barborazhanalova@gmail.com</li>
+            </ul>
+            <h4>Michal Dvořáček</h4>
+            <ul class="fa-ul">
             <img src="klara-barnatova-1.png" alt="Klára Barnatová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Klára Barnatová</h4>
             <ul class="fa-ul mb-4">
@@ -170,6 +192,7 @@ primaryImage: {  }
     <div class="divOuter col-lg-6" id="hobby">
         <div class="contact--divInner">
         <h3>Hobby</h3>
+            <img src="{{page.route()}}/jan-drabek-1.png" alt="Jan Drábek" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <img src="jan-drabek-1.png" alt="Jan Drábek" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Jan Drábek</h4>
             <ul class="fa-ul mb-4">
