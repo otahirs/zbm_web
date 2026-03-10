@@ -107,16 +107,16 @@ Náklady na použití vlastního auta na soustředění se budou proplácet form
 
 
 ---
-## Oddílové příspěvky 2025 <a name="prispevky"></a>
+## Oddílové příspěvky 2026 <a name="prispevky"></a>
 Co za ně opravdu máme je zpracováno v <a href="https://drive.google.com/file/d/1pNxd3ucGKyR-6hAgT-l7PCwKgaauNvFu/view?usp=sharing" target="_blank">tabulce</a>.
 
-Členské příspěvky je potřeba zaplatit **nejpozději do 15. 2. 2025**.  Registrované členy zároveň prosíme - v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2025 - evidence_, dle příslušného typu příspěvku.
+Členské příspěvky je potřeba zaplatit **nejpozději do 15. 2. 2026**.  Registrované členy zároveň prosíme - v Přihláškovém systému vyplňte “závod” - _Oddílové příspěvky 2026 - evidence_, dle příslušného typu příspěvku.
 
 Platby proveďte bezhotovostně na účet SK Brno-Žabovřesky u Raifeisenbank 4067843369/5500, vs. xxxx (kde xxxx = registrační číslo).
 
 Ve všech typech příspěvků jsou již zahrnuty povinné odvody SK ve výši 300,–&nbsp;Kč a registrace ČSOS ve výši 200,–&nbsp;Kč.
 
-Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému. Veškeré **dluhy** z minulosti je potřeba vyrovnat taktéž nejpozději **do 31. 1. 2025**. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, **nebudou přihlašováni na závody!**. Preferujeme udržovat své konto "v plusu" nicméně je třeba provést kontrolu svého zůstatku a vyrovnat nedoplatky na svém oddílovém účtu nejpozději na vyzvání provedené v Discordu (cca 2x - 3x ročně).
+Vyúčtování předchozího roku vidíte aktuálně v Přihláškovém systému. Veškeré **dluhy** z minulosti je potřeba vyrovnat taktéž nejpozději **do 31. 1. 2026**. Členové, kteří nevyrovnají dlužné částky z minulého období či nezaplatí oddílové příspěvky, **nebudou přihlašováni na závody!**. Preferujeme udržovat své konto "v plusu" nicméně je třeba provést kontrolu svého zůstatku a vyrovnat nedoplatky na svém oddílovém účtu nejpozději na vyzvání provedené v Discordu (cca 2x - 3x ročně).
 
 ### Kolik zaplatím?
 
