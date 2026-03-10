@@ -7,7 +7,7 @@ access:
 process:
     markdown: false
 cache_enable: false
-defaultTemplate: Zimní
+defaultTemplate: 'Hobby onlie teorie'
 templates:
     plan:
         monday:
@@ -24,24 +24,24 @@ templates:
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-            1761808390305:
+            1767681211544:
                 name: ''
                 time: ''
                 place: ''
         tuesday:
-            0:
+            -
                 group:
                     - zaci2
                 name: 'Běžecký trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
-            1:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink + teorie'
                 time: '16:30'
                 place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
-            2:
+            -
                 group:
                     - zabicky
                     - pulci1
@@ -50,11 +50,11 @@ templates:
                 name: 'Mapový trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
-            1761808390305:
+            -
                 group:
                     - hobby
                 name: 'Společný běh'
-                time: '16:15'
+                time: '16:00'
                 place: 'ZŠ Nám. Svornosti'
         wednesday:
             0:
@@ -63,16 +63,18 @@ templates:
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
-            1761808390306:
-                name: ''
-                time: ''
-                place: ''
+            1767681211545:
+                group:
+                    - hobby
+                name: 'Online teorie'
+                time: '20:00'
+                place: meet.google.com/rwz-ugkn-kgu
         thursday:
             0:
                 group:
                     - dorost
                 name: 'Běžecký trénink'
-                time: '17:00'
+                time: '16:45'
                 place: 'hala Rosnička'
             1:
                 group:
@@ -88,16 +90,16 @@ templates:
                 name: Tělocvična
                 time: '16:00 - 17:00'
                 place: 'ZŠ Sirotkova'
-            1761808390306:
+            1767681211545:
                 name: ''
                 time: ''
                 place: ''
         friday:
-            1761808389368:
+            1767681210175:
                 name: ''
                 time: ''
                 place: ''
-            1761808390306:
+            1767681211545:
                 name: ''
                 time: ''
                 place: ''
@@ -108,16 +110,16 @@ templates:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-            1761808390307:
+            1767681211545:
                 name: ''
                 time: ''
                 place: ''
         sunday:
-            1761808389369:
+            1767681210176:
                 name: ''
                 time: ''
                 place: ''
-            1761808390307:
+            1767681211546:
                 name: ''
                 time: ''
                 place: ''
@@ -136,7 +138,7 @@ templates:
                 name: 'Atletické posilování'
                 time: '17:00'
                 place: 'Dráha ZŠ nám Svornosti, https://mapy.com/s/rerakofuco'
-            1761808390307:
+            1767681211546:
                 name: ''
                 time: ''
                 place: ''
@@ -177,7 +179,7 @@ templates:
                 group:
                     - dorost
                 name: Dráha
-                time: '17:00'
+                time: '16:45'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
             2:
                 group:
@@ -186,16 +188,16 @@ templates:
                 name: 'Běžecká příprava'
                 time: '16:00 – 17:30'
                 place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
-            1761808390308:
+            1767681211546:
                 name: ''
                 time: ''
                 place: ''
         friday:
-            1761808389371:
+            1767681210178:
                 name: ''
                 time: ''
                 place: ''
-            1761808390308:
+            1767681211546:
                 name: ''
                 time: ''
                 place: ''
@@ -206,16 +208,16 @@ templates:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-            1761808390308:
+            1767681211547:
                 name: ''
                 time: ''
                 place: ''
         sunday:
-            1761808389372:
+            1767681210178:
                 name: ''
                 time: ''
                 place: ''
-            1761808390308:
+            1767681211547:
                 name: ''
                 time: ''
                 place: ''
@@ -234,12 +236,12 @@ templates:
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
-            1761808390309:
+            1767681211547:
                 name: ''
                 time: ''
                 place: ''
         tuesday:
-            0:
+            -
                 group:
                     - zabicky
                     - pulci1
@@ -248,23 +250,23 @@ templates:
                 name: 'Mapový trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            1:
+            -
                 group:
                     - zaci2
                 name: 'Běžecký trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7'
-            2:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '16:30'
                 place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
-            1761808390309:
+            -
                 group:
                     - hobby
                 name: 'Společný běh'
-                time: '16:15'
+                time: '16:00'
                 place: 'ZŠ Nám. Svornosti'
         wednesday:
             -
@@ -278,7 +280,7 @@ templates:
                     - hobby
                 name: 'Hobby online teorie'
                 time: '20:00'
-                place: 'https://meet.google.com/dre-wxyw-fyj'
+                place: meet.google.com/rwz-ugkn-kgu
         thursday:
             0:
                 group:
@@ -300,7 +302,7 @@ templates:
                 name: 'Běžecký trénink (světlo, hladké boty)'
                 time: '17:00'
                 place: Rosnička
-            1761808390309:
+            1767681211547:
                 name: ''
                 time: ''
                 place: ''
@@ -311,7 +313,7 @@ templates:
                 name: kompenzace
                 time: ''
                 place: 'samostatně dle plánu'
-            1761808390310:
+            1767681211548:
                 name: ''
                 time: ''
                 place: ''
@@ -322,16 +324,16 @@ templates:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-            1761808390310:
+            1767681211548:
                 name: ''
                 time: ''
                 place: ''
         sunday:
-            1761808389374:
+            1767681210180:
                 name: ''
                 time: ''
                 place: ''
-            1761808390310:
+            1767681211548:
                 name: ''
                 time: ''
                 place: ''
@@ -349,7 +351,7 @@ templates:
                 name: 'Cvičení dle plánu'
                 time: ''
                 place: samostatně
-            1761808390311:
+            1767681211548:
                 name: ''
                 time: ''
                 place: ''
@@ -366,7 +368,7 @@ templates:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-            1761808390311:
+            1767681211549:
                 name: ''
                 time: ''
                 place: ''
@@ -377,7 +379,7 @@ templates:
                 name: Posilovna
                 time: '15:15 a 18:00'
                 place: 'Sokol Žabovřesky, https://en.mapy.cz/s/gavotococu'
-            1761808390311:
+            1767681211549:
                 name: ''
                 time: ''
                 place: ''
@@ -394,16 +396,16 @@ templates:
                 name: 'Běh dle plánu'
                 time: ''
                 place: 'samostatně (lze využít dráhu s dorostem)'
-            1761808390311:
+            1767681211549:
                 name: ''
                 time: ''
                 place: ''
         friday:
-            1761808389375:
+            1767681210181:
                 name: ''
                 time: ''
                 place: ''
-            1761808390312:
+            1767681211549:
                 name: ''
                 time: ''
                 place: ''
@@ -414,16 +416,16 @@ templates:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-            1761808390312:
+            1767681211550:
                 name: ''
                 time: ''
                 place: ''
         sunday:
-            1761808389376:
+            1767681210182:
                 name: ''
                 time: ''
                 place: ''
-            1761808390312:
+            1767681211550:
                 name: ''
                 time: ''
                 place: ''
@@ -442,7 +444,7 @@ templates:
                 name: Tělocvična
                 time: '16:30 - 18:00'
                 place: 'hala Rosnička'
-            1761808390313:
+            1767681211550:
                 name: ''
                 time: ''
                 place: ''
@@ -456,7 +458,7 @@ templates:
                 name: 'Mapový trénink'
                 time: '16:00 - 18:00'
                 place: 'po skupinách'
-            1761808390313:
+            1767681211550:
                 name: ''
                 time: ''
                 place: ''
@@ -467,7 +469,7 @@ templates:
                 name: 'Posilování + Běh dle plánu'
                 time: '16:30'
                 place: 'Rosnička, https://en.mapy.cz/s/resafolera'
-            1761808390313:
+            1767681211551:
                 name: ''
                 time: ''
                 place: ''
@@ -492,7 +494,7 @@ templates:
                 name: 'Běžecký trénink'
                 time: '16:00'
                 place: 'Pod Palackého vrchem'
-            1761808390314:
+            1767681211551:
                 name: ''
                 time: ''
                 place: ''
@@ -503,7 +505,7 @@ templates:
                 name: Kompenzace
                 time: ''
                 place: samostatně
-            1761808390314:
+            1767681211551:
                 name: ''
                 time: ''
                 place: ''
@@ -514,35 +516,35 @@ templates:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-            1761808390314:
+            1767681211551:
                 name: ''
                 time: ''
                 place: ''
         sunday:
-            1761808389378:
+            1767681210183:
                 name: ''
                 time: ''
                 place: ''
-            1761808390315:
+            1767681211551:
                 name: ''
                 time: ''
                 place: ''
     'Hobby onlie teorie':
         monday:
-            1761808389378:
+            1767681210184:
                 name: ''
                 time: ''
                 place: ''
-            1761808390315:
+            1767681211552:
                 name: ''
                 time: ''
                 place: ''
         tuesday:
-            1761808389379:
+            1767681210184:
                 name: ''
                 time: ''
                 place: ''
-            1761808390315:
+            1767681211552:
                 name: ''
                 time: ''
                 place: ''
@@ -552,40 +554,40 @@ templates:
                     - hobby
                 name: 'Hobby online teorie'
                 time: '20:00'
-                place: meet.google.com/gdb-zbif-ghr
+                place: meet.google.com/rwz-ugkn-kgu
         thursday:
-            1761808389379:
+            1767681210184:
                 name: ''
                 time: ''
                 place: ''
-            1761808390316:
+            1767681211552:
                 name: ''
                 time: ''
                 place: ''
         friday:
-            1761808389380:
+            1767681210185:
                 name: ''
                 time: ''
                 place: ''
-            1761808390316:
+            1767681211552:
                 name: ''
                 time: ''
                 place: ''
         saturday:
-            1761808389380:
+            1767681210185:
                 name: ''
                 time: ''
                 place: ''
-            1761808390316:
+            1767681211553:
                 name: ''
                 time: ''
                 place: ''
         sunday:
-            1761808389380:
+            1767681210185:
                 name: ''
                 time: ''
                 place: ''
-            1761808390317:
+            1767681211553:
                 name: ''
                 time: ''
                 place: ''

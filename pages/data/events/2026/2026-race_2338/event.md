@@ -1,0 +1,55 @@
+---
+taxonomy:
+    skupina:
+        - dorost
+id: 2026-race_2338
+start: '2026-02-13'
+end: '2026-02-22'
+title: 'TK Portugalsko'
+link: 'http://Do poznamky kategorii dle: http://pom.pt/2026/'
+place: Portugalsko
+type: S
+template: soustredeni
+date: '2025-11-02'
+import:
+    type: members
+    time: 1762093805
+meetTime: '6:00'
+meetPlace: 'dle tabulky s dopravou'
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: "odjezd v pátek 13.2., 6:00\r\n* auty do Krakova\r\n* letadlo: https://kiwi.com/u/uqt5hg\r\nnávrat v neděli 22.2.\r\n* letadlo: https://kiwi.com/u/uqt5hg\r\nLetenky doporučuji nakupovat přimo u Ryanairu, nikoliv na Kiwi, rozdil je i 500/osoba.\r\nObvykle se v pohodě vejdou 2 lidi do 20kg zavazadla (teplé oblečení berem na sebe :-) ) Případně se dá koupit 10kg zavazadlo na palubu, ale tam je potřeba počítat s věcmi, co na palubu nesmí.\r\n\r\nPozor - do 16-ti let věku je třeba propojit letenku s někým 18+.\r\nPokud nevíte s kým pište Jendovi co nejdřív (kupujeme letenky na konci října)"
+accomodation: "na postelích s přikrývkami\r\n13.-15.2. Hotel B&B Figueira Foz (včetně snídaní)\r\ndále\r\nRapoula do Coa \t40.420388, -7.047775\r\nPena Lobo\t40.391688, -7.206668"
+food: 'po skupinkách'
+leader: Jenda
+note: "Mapové soustředění v Portugalsku s účastí na závodech [Portugal O-meeting](https://pom.pt/2026/)\r\n\r\nVaření po společných skupinkách, které utvoříme podle kuchyně až na místě. Nákup jídla proběhne v pátek na místě a dál průběžně podle potřeby."
+return: ''
+price: 'bez letenky 8500'
+program: "| **Day |      | num. | type D+                                    | map           | speed | control eqipment | course setting | flags setting | parking  **                                       |\r\n|-----|------|------|--------------------------------------------|---------------|-------|------------------|----------------|---------------|-------------------------------------------------|\r\n| Fri | dopo |      | travel                                     |               |       |                  |                |               |                                                 |\r\n|     | odpo |      | travel                                     |               |       |                  |                |               |                                                 |\r\n| Sat | dopo |      | POM                                        |               | r     |                  |                |               |                                                 |\r\n|     | odpo |      |                                            |               |       |                  |                |               |                                                 |\r\n| Sun | dopo |      | POM                                        |               | r     |                  |                |               |                                                 |\r\n|     | odpo |      | travel                                     |               |       |                  |                |               |                                                 |\r\n| Mon | dopo | 01   | welcome                                    | Racha         | v     | flags            | Miloš          | BaJ           | https://maps.app.goo.gl/aSybvMcpyNfRP4aKA       |\r\n|     | odpo |      | výlet, mapa pro 21+                        | Monsanto      | v     |                  | TomU           |               | https://maps.app.goo.gl/EcWdYgTD8M3W5b3J6       |\r\n| Tue | dopo | 02   | compass - short legs, coridor              | Serrinha      | s     | flags            | Bára           |               | https://maps.app.goo.gl/kaNAFgXuhoBLSRrq7       |\r\n|     | odpo | 03   | sprint 3x6'                                | Pedrogao      | r     | flags            | Saša           |               | https://maps.app.goo.gl/KVn4xYvKoDYB9xcf9       |\r\n| Wed | dopo | 04   | intervals                                  | Vlla Do Touro | r     | flags            | Rouman         |               | https://maps.app.goo.gl/q6rXT2MfqkSgQwAVA       |\r\n|     | odpo |      | free                                       |               |       |                  |                |               |                                                 |\r\n| Thu | dopo | 05   | first leg                                  | Anascer       | r     | flags, number    | Jachym         |               | https://maps.app.goo.gl/dzCYD4G33cEXGKaf9       |\r\n|     | odpo | 06   | S-L                                        | Ramalhao      | v     | stripes          | Pavlik P.      |               | https://maps.app.goo.gl/XAMHt5NWVKJxh3AC9 |\r\n| Fri | dopo | 07   | planning (draw, run on full) - middle      | Racha         | s     | flags            | Jenda          |               | https://maps.app.goo.gl/aSybvMcpyNfRP4aKA |\r\n|     | odpo |      | free                                       |               |       |                  |                |               |                                                 |\r\n| Sat | dopo | 08   | middle                                     | Vlla Do Touro | r     | flags, number    | Tomáš          |               | https://maps.app.goo.gl/7q71tJvpRisR61NP8 |\r\n|     | odpo | 09   | 4 legs, 2 people sprint relay + bonus DH21 | Penamacor     | r     | flags            | Jenda          |               | https://maps.app.goo.gl/MjNxfpAX7hJS7Gn29 |\r\n| Sun | dopo |      | travel                                     |               |       |                  |                |               |                                                 |\r\n|     | odpo |      | travel                                     |               |       |                  |                |               |                                                 |"
+thingsToTake: "* oblečení do chladu, aktuální počasí je meze 5 a 10 stupni C.\r\n* jídlo na páteční cestování, láhev na pití (nezapomeňte, že je potřeba ji vypít/vylít před průchodem security)\r\n* další jídlo nakoupíme na místě (ceny podobné jako u nás)"
+signups: ''
+gps: '40.14963, -8.86453'
+---
+
+Mapové soustředění v Portugalsku s účastí na závodech [Portugal O-meeting](https://pom.pt/2026/)
+
+Vaření po společných skupinkách, které utvoříme podle kuchyně až na místě. Nákup jídla proběhne v pátek na místě a dál průběžně podle potřeby.
+* **sraz**: 6:00 dle tabulky s dopravou
+* **doprava**: odjezd v pátek 13.2., 6:00
+* auty do Krakova
+* letadlo: https://kiwi.com/u/uqt5hg
+návrat v neděli 22.2.
+* letadlo: https://kiwi.com/u/uqt5hg
+Letenky doporučuji nakupovat přimo u Ryanairu, nikoliv na Kiwi, rozdil je i 500/osoba.
+Obvykle se v pohodě vejdou 2 lidi do 20kg zavazadla (teplé oblečení berem na sebe :-) ) Případně se dá koupit 10kg zavazadlo na palubu, ale tam je potřeba počítat s věcmi, co na palubu nesmí.
+
+Pozor - do 16-ti let věku je třeba propojit letenku s někým 18+.
+Pokud nevíte s kým pište Jendovi co nejdřív (kupujeme letenky na konci října)
+* **ubytování**: na postelích s přikrývkami
+13.-15.2. Hotel B&B Figueira Foz (včetně snídaní)
+dále
+Rapoula do Coa 	40.420388, -7.047775
+Pena Lobo	40.391688, -7.206668
+* **strava**: po skupinkách

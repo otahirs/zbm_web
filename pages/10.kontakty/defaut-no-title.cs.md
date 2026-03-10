@@ -5,23 +5,6 @@ primaryImage: {  }
 ---
 
 <h2>Vedení oddílu</h2>
-<<<<<<< Updated upstream
-
-**Předseda:** Jan Fiala - predseda@zabiny.club
-**Trenér dorostu:** Jan Zháňal - dorost@zabiny.club
-**Trenér žactva:** Barbara Stachoňová - zactvo@zabiny.club
-**Pořadatel závodů:** Jan Drábek - poradatel@zabiny.club
-**Koordinátor:** Aleš Finstrle - koordinator@zabiny.club
-
-<hr>
-<h2>Další užitečné kontakty</h2>
-**Finance:** Aleš Finstrle - koordinator@zabiny.club
-**Přihlášky na závody:** Jan Drábek - prihlasky@zabiny.club
-**IT - přihláškový systém:** Lukáš König - kenia@seznam.cz  
-**IT - web:** Otakar Hirš - otakar.hirs@gmail.com
-**Správce map:** Stanislav Mokrý - mokry.stanislav@gmail.com
-**Oddílové oblečení:** Barbora Zháňalová - barborazhanalova@gmail.com
-=======
 <ul class="list-unstyled">
     <li class="mb-3"><strong>Předseda:</strong> Jan Fiala - predseda@zabiny.club</li>
     <li class="mb-3"><img src="{{page.route()}}/jan-zhanal-2.png" alt="Jan Zháňal" class="img-fluid rounded-circle mr-2" style="max-width: 50px;"> <strong>Trenér dorostu:</strong> Jan Zháňal - dorost@zabiny.club</li>
@@ -41,7 +24,6 @@ primaryImage: {  }
     <li class="mb-3"><img src="{{page.route()}}/barca-zhanalova-2.png" alt="Barbora Zháňalová" class="img-fluid rounded-circle mr-2" style="max-width: 50px;"> <strong>Oddílové oblečení:</strong> Barbora Zháňalová - barborazhanalova@gmail.com</li>
 </ul>
 
->>>>>>> Stashed changes
 <div class="row">
     <div class="col-12"> 
     <hr>
@@ -63,19 +45,15 @@ primaryImage: {  }
     <div class="divOuter col-lg-6" id="pulci1">
         <div class="contact--divInner">
         <h3>Pulci 1 - od 6 let</h3>
-<<<<<<< Updated upstream
-=======
             <img src="{{page.route()}}/lenka-kocova-1.png" alt="Lenka Kočová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
->>>>>>> Stashed changes
+            <img src="lenka-kocova-1.png" alt="Lenka Kočová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Lenka Kočová</h4>
-            <ul class="fa-ul">
+            <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-phone"></i>777 631 615</li>
                 <li><i class="fa-li fa fa-envelope"></i>kocovalenka@gmail.com</li>
             </ul> 
-<<<<<<< Updated upstream
-=======
             <img src="{{page.route()}}/kveta-dohnalova-1.png" alt="Květa Dohnalová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
->>>>>>> Stashed changes
+            <img src="kveta-dohnalova-1.png" alt="Květa Dohnalová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Květa Dohnalová</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-phone"></i>732 407 711</li>
@@ -86,19 +64,15 @@ primaryImage: {  }
     <div class="divOuter col-lg-6" id="pulci2">
         <div class="contact--divInner">
         <h3>Pulci 2 - od 8 let</h3>
-<<<<<<< Updated upstream
-=======
             <img src="{{page.route()}}/lenka-hruskova-1.png" alt="Lenka Hrušková" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
->>>>>>> Stashed changes
+            <img src="lenka-hruskova-1.png" alt="Lenka Hrušková" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Lenka Hrušková</h4>
-            <ul class="fa-ul">
+            <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-phone"></i>737 353 537</li>
                 <li><i class="fa-li fa fa-envelope"></i>japkoLenka@gmail.com</li>
             </ul>
-<<<<<<< Updated upstream
-=======
             <img src="{{page.route()}}/alena-finstrlova-1.png" alt="Alena Finstrlová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
->>>>>>> Stashed changes
+            <img src="alena-finstrlova-1.png" alt="Alena Finstrlová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Alena Finstrlová</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>finstrlova@centrum.cz</li>
@@ -108,35 +82,27 @@ primaryImage: {  }
     <div class="divOuter col-lg-6" id="zaci1">
        <div class="contact--divInner">
         <h3>Žáci 1 - od 10 let</h3>
-<<<<<<< Updated upstream
-=======
             <img src="{{page.route()}}/pavel-zeleny-1.png" alt="Pavel Zelený" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
->>>>>>> Stashed changes
+            <img src="pavel-zeleny-1.png" alt="Pavel Zelený" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Pavel Zelený</h4>
-            <ul class="fa-ul">
+            <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-envelope"></i>pzeleny@post.cz</li>
             </ul>
-<<<<<<< Updated upstream
-=======
             <img src="{{page.route()}}/andrea-firesova-1.png" alt="Andrea Firešová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
->>>>>>> Stashed changes
+            <img src="andrea-firesova-1.png" alt="Andrea Firešová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Andrea Firešová</h4>
-            <ul class="fa-ul">
+            <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-phone"></i>728 362 804</li>
                 <li><i class="fa-li fa fa-envelope"></i>a.firesova@seznam.cz</li>
             </ul>   
-<<<<<<< Updated upstream
-=======
             <img src="{{page.route()}}/verka-novackova-1.png" alt="Věra Nováčková Obelczová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
->>>>>>> Stashed changes
+            <img src="verka-novackova-1.png" alt="Věra Nováčková Obelczová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Věra Nováčková Obelczová</h4>
-            <ul class="fa-ul">
+            <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-envelope"></i>vobelczova@gmail.com</li>
             </ul>     
-<<<<<<< Updated upstream
-=======
             <img src="{{page.route()}}/jan-drabek-1.png" alt="Jan Drábek" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
->>>>>>> Stashed changes
+            <img src="jan-drabek-1.png" alt="Jan Drábek" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Jan Drábek</h4>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i>jan.drabek@zabiny.club</li>
@@ -170,38 +136,31 @@ primaryImage: {  }
     <div class="divOuter col-lg-6" id="dorost">
         <div class="contact--divInner">
         <h3>Dorost+ - od 15 let</h3>
-<<<<<<< Updated upstream
-=======
             <img src="{{page.route()}}/jan-zhanal-1.png" alt="Jan Zháňal" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
->>>>>>> Stashed changes
+            <img src="jan-zhanal-1.png" alt="Jan Zháňal" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Jan Zháňal</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-phone"></i>725 258 326</li>
+            <ul class="fa-ul mb-4">
+                <li><i class="fa-li fa fa-phone"></i>+420 725 258 326</li>
                 <li><i class="fa-li fa fa-envelope"></i>jan.zhanal@zabiny.club</li>
             </ul>
             <h4>Alexandr Jordanov</h4>
-            <ul class="fa-ul">
+            <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-envelope"></i>alexandr.jordanov95@gmail.com</li>
             </ul>
             <h4>Stanislav Mokrý</h4>
-            <ul class="fa-ul">
+            <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-envelope"></i>mokry.stanislav@gmail.com</li>
             </ul>
             <h4>Otakar Hirš</h4>
-            <ul class="fa-ul">
+            <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-envelope"></i>otakar.hirs@gmail.com</li>
             </ul>
-<<<<<<< Updated upstream
-=======
             <img src="{{page.route()}}/milos-nykodym-1.png" alt="Miloš Nykodým" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
->>>>>>> Stashed changes
+            <img src="milos-nykodym-1.png" alt="Miloš Nykodým" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Miloš Nykodým</h4>
-            <ul class="fa-ul">
+            <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-envelope"></i>milos.nykodym@zabiny.club</li>
             </ul>
-<<<<<<< Updated upstream
-            <h4>Klára Barnatová</h4>
-=======
             <img src="{{page.route()}}/klara-barnatova-1.png" alt="Klára Barnatová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Klára Barnatová</h4>
             <ul class="fa-ul mb-4">
@@ -213,21 +172,30 @@ primaryImage: {  }
                 <li><i class="fa-li fa fa-envelope"></i>barborazhanalova@gmail.com</li>
             </ul>
             <h4>Michal Dvořáček</h4>
->>>>>>> Stashed changes
             <ul class="fa-ul">
+            <img src="klara-barnatova-1.png" alt="Klára Barnatová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
+            <h4>Klára Barnatová</h4>
+            <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-envelope"></i>klara.barnatova@gmail.com</li>
+            </ul>
+            <img src="barca-zhanalova-1.png" alt="Barbora Zháňalová" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
+            <h4>Barbora Zháňalová</h4>
+            <ul class="fa-ul mb-4">
+                <li><i class="fa-li fa fa-envelope"></i>barborazhanalova@gmail.com</li>
+            </ul>
+            <h4>Michal Dvořáček</h4>
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-envelope"></i>mdvoracek3@gmail.com</li>
             </ul>
         </div>
     </div>
     <div class="divOuter col-lg-6" id="hobby">
         <div class="contact--divInner">
         <h3>Hobby</h3>
-<<<<<<< Updated upstream
-=======
             <img src="{{page.route()}}/jan-drabek-1.png" alt="Jan Drábek" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
->>>>>>> Stashed changes
+            <img src="jan-drabek-1.png" alt="Jan Drábek" class="img-fluid rounded-circle mb-2" style="max-width: 100px;">
             <h4>Jan Drábek</h4>
-            <ul class="fa-ul">
+            <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-envelope"></i>jan.drabek@zabiny.club</li>
             </ul>
             <h4>Adam Jurák</h4>

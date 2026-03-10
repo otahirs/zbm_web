@@ -1,6 +1,13 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - dorost
+        - hobby
 id: 2026-race_2334
 start: '2026-01-11'
 end: '2026-01-11'
@@ -8,11 +15,32 @@ title: 'BLZ: Lesný sprint'
 link: 'https://oris.orientacnisporty.cz/Zavod?id=9517'
 orisid: '9517'
 place: Lesná
-type: Z
+type: BZL
 template: zavod
 date: '2025-10-31'
 import:
     type: members
     time: 1761908405
+meetTime: ''
+meetPlace: 'bazén Tesla'
+eventTypeDescription: 'D, Expert D, Expert H, H, HDD, ZV'
+startTime: '13:00'
+map: 'Lesnázev mapy'
+terrain: ''
+transport: Vlastní
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.2235, 16.6248'
+hasStartlist: true
+hasResults: true
 ---
 
+* **sraz**: bazén Tesla
+* **doprava**: Vlastní
