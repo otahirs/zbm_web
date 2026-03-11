@@ -136,7 +136,6 @@ primaryImage: {  }
         <h3>Dorost+ - od 15 let</h3>
             <h4>Jan Zháňal</h4>
             <ul class="fa-ul mb-4">
-                <li><img src="{{page.route()}}/jan-zhanal-1.png" alt="Jan Zháňal" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
                 <li><i class="fa-li fa fa-phone"></i>+420 725 258 326</li>
                 <li><i class="fa-li fa fa-envelope"></i>jan.zhanal@zabiny.club</li>
 		<li><img src="{{page.route()}}/jan-zhanal-1.png" alt="Jan Zháňal" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>

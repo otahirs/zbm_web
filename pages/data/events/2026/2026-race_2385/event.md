@@ -5,7 +5,6 @@ taxonomy:
         - pulci1
         - pulci2
         - zaci1
-        - dorost
         - hobby
 id: 2026-race_2385
 start: '2026-03-21'
@@ -19,5 +18,22 @@ date: '2026-01-15'
 import:
     type: members
     time: 1768461005
+place: HK
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
