@@ -100,7 +100,7 @@
                         {% if zapsany_den != den %}  {# jestli se nezapisoval den do tabulky, neni tam zadny zaznam => zapiseme ze je volno #}
                         <tr class="{% if week == 0 and day_num + 1 == "now"|date("w") %} plan--today {% endif %} {% if day_num % 2 == 0 %} plan--lichyDen  {% else %} plan--sudyDen {% endif %}">
                             <td class="den"> {{ datum_dne_v_tydnu|localizeddate('medium', 'none', 'cs','Europe/Prague', 'cccccc')|upper }}  </td>
-                            <td class="nazev"> samostatně dle TP </td>
+                            <td class="nazev"> {% if page.header.group == 'dorost' %}samostatně dle TP{% else %}volno{% endif %} </td>
                             <td class="misto"> </td>
                             <td class="sraz"> </td>
                         </tr>
