@@ -119,7 +119,7 @@ news:
     </div>
     <div>
       <h4>Pořádáme</h4>
-        <a class="home__link external-link" href="https://eyoc2025.cz/">EYOC 2025</a> 
+        <a class="home__link external-link" href="https://oris.ceskyorientak.cz/Zavod?id=9284">MČR Sprint</a> 
         <a class="home__link external-link" href="https://kratkyden.zabiny.club/">Krátký den</a> 
         <a class="home__link external-link" href="https://bzl.zabiny.club/#races">Brněnská zimní liga</a> </br>
         <a class="home__link" href="https://zabiny.club/races">Historie závodů pro ČSOS</a> 
