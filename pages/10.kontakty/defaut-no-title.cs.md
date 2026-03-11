@@ -106,7 +106,7 @@ primaryImage: {  }
             </ul>
             <h4>Miroslav Beránek</h4>
             <ul class="fa-ul">
-                <li><img src="{{page.route()}}/mira-beranek-2.png" alt="Jan Drábek" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
+                <li><img src="{{page.route()}}/mira-beranek-2.png" alt="Miroslav Beránek" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
                 <li><i class="fa-li fa fa-envelope"></i>mira.beranek@centrum.cz</li>
             </ul>
            
