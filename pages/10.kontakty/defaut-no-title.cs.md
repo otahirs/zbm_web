@@ -47,19 +47,19 @@ primaryImage: {  }
         <h3>Pulci 1 - od 6 let</h3>
             <h4>Lenka Kočová</h4>
             <ul class="fa-ul mb-4">
-                <li><img src="{{page.route()}}/lenka-kocova-1.png" alt="Lenka Kočová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
+                <li><a href="{{page.route()}}/lenka-kocova-1.png" target="_blank"><img src="{{page.route()}}/lenka-kocova-1.png" alt="Lenka Kočová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
                 <li><i class="fa-li fa fa-phone"></i>777 631 615</li>
                 <li><i class="fa-li fa fa-envelope"></i>kocovalenka@gmail.com</li>
             </ul> 
             <h4>Květa Dohnalová</h4>
             <ul class="fa-ul">
-                <li><img src="{{page.route()}}/kveta-dohnalova-1.png" alt="Květa Dohnalová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
+                <li><a href="{{page.route()}}/kveta-dohnalova-1.png" target="_blank"><img src="{{page.route()}}/kveta-dohnalova-1.png" alt="Květa Dohnalová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
                 <li><i class="fa-li fa fa-phone"></i>732 407 711</li>
                 <li><i class="fa-li fa fa-envelope"></i>kveta.dohnalova@centrum.cz</li>
             </ul>      
             <h4>Šárka Beránková</h4>
             <ul class="fa-ul">
-                <li><img src="{{page.route()}}/sarka-berankova-2.png" alt="Šárka Beránková" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
+                <li><a href="{{page.route()}}/sarka-berankova-2.png" target="_blank"><img src="{{page.route()}}/sarka-berankova-2.png" alt="Šárka Beránková" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
                 <li><i class="fa-li fa fa-envelope"></i>sarka.lanickova@seznam.cz</li>
             </ul>  
         </div>
@@ -69,13 +69,13 @@ primaryImage: {  }
         <h3>Pulci 2 - od 8 let</h3>
             <h4>Lenka Hrušková</h4>
             <ul class="fa-ul mb-4">
-                <li><img src="{{page.route()}}/lenka-hruskova-1.png" alt="Lenka Hrušková" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
+                <li><a href="{{page.route()}}/lenka-hruskova-1.png" target="_blank"><img src="{{page.route()}}/lenka-hruskova-1.png" alt="Lenka Hrušková" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
                 <li><i class="fa-li fa fa-phone"></i>737 353 537</li>
                 <li><i class="fa-li fa fa-envelope"></i>japkoLenka@gmail.com</li>
             </ul>
             <h4>Alena Finstrlová</h4>
             <ul class="fa-ul">
-                <li><img src="{{page.route()}}/alena-finstrlova-1.png" alt="Alena Finstrlová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
+                <li><a href="{{page.route()}}/alena-finstrlova-1.png" target="_blank"><img src="{{page.route()}}/alena-finstrlova-1.png" alt="Alena Finstrlová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
                 <li><i class="fa-li fa fa-envelope"></i>finstrlova@centrum.cz</li>
             </ul>          
             </div>
@@ -85,28 +85,28 @@ primaryImage: {  }
         <h3>Žáci 1 - od 10 let</h3>
             <h4>Pavel Zelený</h4>
             <ul class="fa-ul mb-4">
-                <li><img src="{{page.route()}}/pavel-zeleny-1.png" alt="Pavel Zelený" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
+                <li><a href="{{page.route()}}/pavel-zeleny-1.png" target="_blank"><img src="{{page.route()}}/pavel-zeleny-1.png" alt="Pavel Zelený" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
                 <li><i class="fa-li fa fa-envelope"></i>pzeleny@post.cz</li>
             </ul>
             <h4>Andrea Firešová</h4>
             <ul class="fa-ul mb-4">
-                <li><img src="{{page.route()}}/andrea-firesova-1.png" alt="Andrea Firešová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
+                <li><a href="{{page.route()}}/andrea-firesova-1.png" target="_blank"><img src="{{page.route()}}/andrea-firesova-1.png" alt="Andrea Firešová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
                 <li><i class="fa-li fa fa-phone"></i>728 362 804</li>
                 <li><i class="fa-li fa fa-envelope"></i>a.firesova@seznam.cz</li>
             </ul>   
             <h4>Věra Nováčková Obelczová</h4>
             <ul class="fa-ul mb-4">
-                <li><img src="{{page.route()}}/verka-novackova-1.png" alt="Věra Nováčková Obelczová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
+                <li><a href="{{page.route()}}/verka-novackova-1.png" target="_blank"><img src="{{page.route()}}/verka-novackova-1.png" alt="Věra Nováčková Obelczová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
                 <li><i class="fa-li fa fa-envelope"></i>vobelczova@gmail.com</li>
             </ul>     
             <h4>Jan Drábek</h4>
             <ul class="fa-ul">
-                <li><img src="{{page.route()}}/jan-drabek-1.png" alt="Jan Drábek" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
+                <li><a href="{{page.route()}}/jan-drabek-1.png" target="_blank"><img src="{{page.route()}}/jan-drabek-1.png" alt="Jan Drábek" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
                 <li><i class="fa-li fa fa-envelope"></i>jan.drabek@zabiny.club</li>
             </ul>
             <h4>Miroslav Beránek</h4>
             <ul class="fa-ul">
-                <li><img src="{{page.route()}}/mira-beranek-2.png" alt="Miroslav Beránek" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
+                <li><a href="{{page.route()}}/mira-beranek-2.png" target="_blank"><img src="{{page.route()}}/mira-beranek-2.png" alt="Miroslav Beránek" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
                 <li><i class="fa-li fa fa-envelope"></i>mira.beranek@centrum.cz</li>
             </ul>
            
@@ -138,7 +138,7 @@ primaryImage: {  }
             <ul class="fa-ul mb-4">
                 <li><i class="fa-li fa fa-phone"></i>+420 725 258 326</li>
                 <li><i class="fa-li fa fa-envelope"></i>jan.zhanal@zabiny.club</li>
-		<li><img src="{{page.route()}}/jan-zhanal-1.png" alt="Jan Zháňal" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
+		<li><a href="{{page.route()}}/jan-zhanal-1.png" target="_blank"><img src="{{page.route()}}/jan-zhanal-1.png" alt="Jan Zháňal" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
             </ul>
             <h4>Alexandr Jordanov</h4>
             <ul class="fa-ul mb-4">
@@ -158,12 +158,12 @@ primaryImage: {  }
             </ul>
             <h4>Klára Barnatová</h4>
             <ul class="fa-ul mb-4">
-                <li><img src="{{page.route()}}/klara-barnatova-1.png" alt="Klára Barnatová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
+                <li><a href="{{page.route()}}/klara-barnatova-1.png" target="_blank"><img src="{{page.route()}}/klara-barnatova-1.png" alt="Klára Barnatová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
                 <li><i class="fa-li fa fa-envelope"></i>klara.barnatova@gmail.com</li>
             </ul>
             <h4>Barbora Zháňalová</h4>
             <ul class="fa-ul mb-4">
-                <li><img src="{{page.route()}}/barca-zhanalova-1.png" alt="Barbora Zháňalová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
+                <li><a href="{{page.route()}}/barca-zhanalova-1.png" target="_blank"><img src="{{page.route()}}/barca-zhanalova-1.png" alt="Barbora Zháňalová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
                 <li><i class="fa-li fa fa-envelope"></i>barborazhanalova@gmail.com</li>
             </ul>
             <h4>Michal Dvořáček</h4>
@@ -177,7 +177,7 @@ primaryImage: {  }
         <h3>Hobby</h3>
             <h4>Jan Drábek</h4>
             <ul class="fa-ul mb-4">
-                <li><img src="{{page.route()}}/jan-drabek-1.png" alt="Jan Drábek" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></li>
+                <li><a href="{{page.route()}}/jan-drabek-1.png" target="_blank"><img src="{{page.route()}}/jan-drabek-1.png" alt="Jan Drábek" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
                 <li><i class="fa-li fa fa-envelope"></i>jan.drabek@zabiny.club</li>
             </ul>
             <h4>Adam Jurák</h4>
