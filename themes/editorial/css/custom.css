@@ -251,6 +251,25 @@
     margin-bottom: 3em;
     height: 95%;
 }
+.contact-trainer {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+.contact-trainer__photo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.contact-trainer__info {
+    flex: 1;
+    min-width: 0;
+}
+.contact-trainer__info h4 {
+    margin-top: 0;
+}
 /* sponzori */
 .sponsors--img {
     padding: 10%;
