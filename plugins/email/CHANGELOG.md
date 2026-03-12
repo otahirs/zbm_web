@@ -1,3 +1,45 @@
+# v4.2.2
+## 12/10/2025
+
+1. [](#bugfix)
+    * Fixed `createAddress()` to gracefully handle empty or invalid email addresses instead of throwing RFC 2822 errors
+    * Fixed Twig processing to bypass Grav 1.8's security filter for trusted email config (fixes issues with `{% include %}` and field names containing `mail`)
+
+# v4.2.1
+## 11/24/2025
+
+1. [](#improved)
+    * Added more details for HTTP error logs when using API-based email providers
+    * Addressed a compatibility issue with Grav 1.8beta
+
+# v4.2.0
+## 08/25/2025
+
+1. [](#new)
+    * PHP 8.4 compatibility
+1. [](#improved)
+    * Vendor library updates
+
+# v4.1.2
+## 01/06/2025
+
+1. [](#improved)
+    * Updated to latest symfony libraries (`v5.4.45`)
+    * Added a note about Google App Passwords for authentication in the README.md
+
+# v4.1.1
+## 10/28/2024
+
+1. [](#improved)
+  * Updated logging methods to support Monolog2+
+
+# v4.1.0
+## 04/09/2024
+
+1. [](#improved)
+   * Update vendor libraries for Mailer to latest `5.4` versions
+   * When you send an email you can use `Email::getLastSendMessage()` and `Email::getLastSendDebug()` methods to get information about the email processing.
+
 # v4.0.4
 ## 07/10/2023
 

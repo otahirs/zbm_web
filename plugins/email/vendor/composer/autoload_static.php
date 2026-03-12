@@ -31,7 +31,6 @@ class ComposerStaticInit73924571ea6ee98bb12d10ff20aff2ab
         ),
         'P' => 
         array (
-            'Psr\\Log\\' => 8,
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
         ),
@@ -46,6 +45,7 @@ class ComposerStaticInit73924571ea6ee98bb12d10ff20aff2ab
         ),
         'D' => 
         array (
+            'Doctrine\\Deprecations\\' => 22,
             'Doctrine\\Common\\Lexer\\' => 22,
         ),
     );
@@ -99,10 +99,6 @@ class ComposerStaticInit73924571ea6ee98bb12d10ff20aff2ab
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
         ),
-        'Psr\\Log\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
-        ),
         'Psr\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/event-dispatcher/src',
@@ -123,9 +119,13 @@ class ComposerStaticInit73924571ea6ee98bb12d10ff20aff2ab
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/src',
         ),
+        'Doctrine\\Deprecations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/deprecations/src',
+        ),
         'Doctrine\\Common\\Lexer\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
+            0 => __DIR__ . '/..' . '/doctrine/lexer/src',
         ),
     );
 

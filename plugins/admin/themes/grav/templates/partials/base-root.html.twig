@@ -1,6 +1,6 @@
 {% if uri.extension() == 'json' %}{% include 'default.json.twig' %}{% else %}
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="{{ user.language|default( 'en' ) }}">
     <head>
     {% block head %}
         <meta charset="utf-8" />
@@ -33,13 +33,11 @@
         {{ assets.js()|raw }}
     {% endblock %}
 
-    <noscript>
-        <style>
-            .simplebar-content-wrapper {
-                overflow: auto;
-            }
-        </style>
-    </noscript>
+    <style>
+       .simplebar-content-wrapper {
+           overflow: auto;
+       }
+    </style>
 
     </head>
     {% block body %}

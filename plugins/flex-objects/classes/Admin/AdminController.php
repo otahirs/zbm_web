@@ -857,6 +857,13 @@ class AdminController
             $form = $this->getForm($object);
 
             $callable = function (array $data, array $files, FlexObject $object) use ($form) {
+                if (!empty($data['frontmatter']) && !$this->user->authorize('admin.super')) {
+                    throw new RuntimeException(
+                        $this->admin::translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK') . ' edit frontmatter.',
+                        403
+                    );
+                }
+
                 if (method_exists($object, 'storeOriginal')) {
                     $object->storeOriginal();
                 }
@@ -864,10 +871,6 @@ class AdminController
 
                 // Support for expert mode.
                 if (str_ends_with($form->getId(), '-raw') && isset($data['frontmatter']) && is_callable([$object, 'frontmatter'])) {
-                    if (!$this->user->authorize('admin.super')) {
-                        throw new RuntimeException($this->admin::translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK') . ' save raw.',
-                        403);
-                    }
                     $object->frontmatter($data['frontmatter']);
                     unset($data['frontmatter']);
                 }
@@ -1472,7 +1475,7 @@ class AdminController
      * @param FlexObjectInterface|null $object
      * @return FlexFormInterface
      */
-    public function getForm(FlexObjectInterface $object = null): FlexFormInterface
+    public function getForm(?FlexObjectInterface $object = null): FlexFormInterface
     {
         $object = $object ?? $this->getObject();
         if (!$object) {
@@ -1508,7 +1511,7 @@ class AdminController
      * @param FlexDirectoryInterface|null $directory
      * @return FlexFormInterface
      */
-    public function getDirectoryForm(FlexDirectoryInterface $directory = null): FlexFormInterface
+    public function getDirectoryForm(?FlexDirectoryInterface $directory = null): FlexFormInterface
     {
         $directory = $directory ?? $this->getDirectory();
         if (!$directory) {
@@ -1541,7 +1544,7 @@ class AdminController
      * @param string|null $key
      * @return FlexObjectInterface|null
      */
-    public function getObject(string $key = null): ?FlexObjectInterface
+    public function getObject(?string $key = null): ?FlexObjectInterface
     {
         if (null === $this->object) {
             $key = $key ?? $this->id;
@@ -1588,7 +1591,7 @@ class AdminController
      * @param string|null $type
      * @return FlexDirectoryInterface|null
      */
-    public function getDirectory(string $type = null): ?FlexDirectoryInterface
+    public function getDirectory(?string $type = null): ?FlexDirectoryInterface
     {
         $type = $type ?? $this->target;
 

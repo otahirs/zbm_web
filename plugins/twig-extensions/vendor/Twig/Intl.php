@@ -4,6 +4,7 @@
  * This file is part of Twig.
  *
  * (c) 2010 Fabien Potencier
+ * (c) 2023 Sebastian Laube
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -51,27 +52,45 @@ function twig_localized_date_filter(Twig_Environment $env, $date, $dateFormat = 
         'full' => IntlDateFormatter::FULL,
     );
 
+    $intDateFormat = $dateFormat;
+    $customDateFormat = null;
+    if  ( !array_key_exists( $dateFormat, $formatValues ) )
+    {
+        $intDateFormat = 'none';
+        $customDateFormat = $dateFormat;
+    }
+
     if (PHP_VERSION_ID < 50500 || !class_exists('IntlTimeZone')) {
         $formatter = IntlDateFormatter::create(
             $locale,
-            $formatValues[$dateFormat],
+            $formatValues[$intDateFormat],
             $formatValues[$timeFormat],
             $date->getTimezone()->getName(),
             'gregorian' === $calendar ? IntlDateFormatter::GREGORIAN : IntlDateFormatter::TRADITIONAL,
             $format
         );
 
+        if ( $customDateFormat )
+        {
+            $formatter->setPattern( $customDateFormat );
+        }
+
         return $formatter->format($date->getTimestamp());
     }
 
     $formatter = IntlDateFormatter::create(
         $locale,
-        $formatValues[$dateFormat],
+        $formatValues[$intDateFormat],
         $formatValues[$timeFormat],
         IntlTimeZone::createTimeZone($date->getTimezone()->getName()),
         'gregorian' === $calendar ? IntlDateFormatter::GREGORIAN : IntlDateFormatter::TRADITIONAL,
         $format
     );
+
+    if ( $customDateFormat )
+    {
+        $formatter->setPattern( $customDateFormat );
+    }
 
     return $formatter->format($date->getTimestamp());
 }

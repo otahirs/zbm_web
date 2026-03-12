@@ -39,7 +39,7 @@ class SendFailedMessageForRetryListener implements EventSubscriberInterface
     private $eventDispatcher;
     private $historySize;
 
-    public function __construct(ContainerInterface $sendersLocator, ContainerInterface $retryStrategyLocator, LoggerInterface $logger = null, EventDispatcherInterface $eventDispatcher = null, int $historySize = 10)
+    public function __construct(ContainerInterface $sendersLocator, ContainerInterface $retryStrategyLocator, ?LoggerInterface $logger = null, ?EventDispatcherInterface $eventDispatcher = null, int $historySize = 10)
     {
         $this->sendersLocator = $sendersLocator;
         $this->retryStrategyLocator = $retryStrategyLocator;
@@ -77,7 +77,7 @@ class SendFailedMessageForRetryListener implements EventSubscriberInterface
             $retryEnvelope = $this->withLimitedHistory($envelope, new DelayStamp($delay), new RedeliveryStamp($retryCount));
 
             // re-send the message for retry
-            $this->getSenderForTransport($event->getReceiverName())->send($retryEnvelope);
+            $retryEnvelope = $this->getSenderForTransport($event->getReceiverName())->send($retryEnvelope);
 
             if (null !== $this->eventDispatcher) {
                 $this->eventDispatcher->dispatch(new WorkerMessageRetriedEvent($retryEnvelope, $event->getReceiverName()));

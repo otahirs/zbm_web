@@ -23,6 +23,7 @@ use Symfony\Component\Messenger\Exception\TransportException;
  * @author Robin Chalas <robin.chalas@gmail.com>
  *
  * @internal
+ *
  * @final
  */
 class Connection
@@ -116,7 +117,25 @@ class Connection
      */
     private static function initializeRedis(\Redis $redis, string $host, int $port, $auth, int $serializer, int $dbIndex): \Redis
     {
-        $redis->connect($host, $port);
+        if ($redis->isConnected()) {
+            return $redis;
+        }
+
+        @$redis->connect($host, $port);
+
+        $error = null;
+        set_error_handler(function ($type, $msg) use (&$error) { $error = $msg; });
+
+        try {
+            $isConnected = $redis->isConnected();
+        } finally {
+            restore_error_handler();
+        }
+
+        if (!$isConnected) {
+            throw new InvalidArgumentException('Redis connection failed: '.(preg_match('/^Redis::p?connect\(\): (.*)/', $error ?? $redis->getLastError() ?? '', $matches) ? \sprintf(' (%s)', $matches[1]) : ''));
+        }
+
         $redis->setOption(\Redis::OPT_SERIALIZER, $serializer);
 
         if (null !== $auth && !$redis->auth($auth)) {
@@ -150,7 +169,7 @@ class Connection
     public static function fromDsn(string $dsn, array $redisOptions = [], $redis = null): self
     {
         if (false === strpos($dsn, ',')) {
-            $parsedUrl = self::parseDsn($dsn, $redisOptions);
+            $params = self::parseDsn($dsn, $redisOptions);
         } else {
             $dsns = explode(',', $dsn);
             $parsedUrls = array_map(function ($dsn) use (&$redisOptions) {
@@ -158,12 +177,12 @@ class Connection
             }, $dsns);
 
             // Merge all the URLs, the last one overrides the previous ones
-            $parsedUrl = array_merge(...$parsedUrls);
+            $params = array_merge(...$parsedUrls);
 
             // Regroup all the hosts in an array interpretable by RedisCluster
-            $parsedUrl['host'] = array_map(function ($parsedUrl, $dsn) {
+            $params['host'] = array_map(function ($parsedUrl) {
                 if (!isset($parsedUrl['host'])) {
-                    throw new InvalidArgumentException(sprintf('Missing host in DSN part "%s", it must be defined when using Redis Cluster.', $dsn));
+                    throw new InvalidArgumentException('Missing host in DSN, it must be defined when using Redis Cluster.');
                 }
 
                 return $parsedUrl['host'].':'.($parsedUrl['port'] ?? 6379);
@@ -204,7 +223,7 @@ class Connection
             unset($redisOptions['dbindex']);
         }
 
-        $tls = 'rediss' === $parsedUrl['scheme'];
+        $tls = 'rediss' === $params['scheme'];
         if (\array_key_exists('tls', $redisOptions)) {
             trigger_deprecation('symfony/redis-messenger', '5.3', 'Providing "tls" parameter is deprecated, use "rediss://" DSN scheme instead');
             $tls = filter_var($redisOptions['tls'], \FILTER_VALIDATE_BOOLEAN);
@@ -237,17 +256,17 @@ class Connection
             'claim_interval' => $claimInterval,
         ];
 
-        if (isset($parsedUrl['host'])) {
-            $pass = '' !== ($parsedUrl['pass'] ?? '') ? urldecode($parsedUrl['pass']) : null;
-            $user = '' !== ($parsedUrl['user'] ?? '') ? urldecode($parsedUrl['user']) : null;
+        if (isset($params['host'])) {
+            $user = isset($params['user']) && '' !== $params['user'] ? rawurldecode($params['user']) : null;
+            $pass = isset($params['pass']) && '' !== $params['pass'] ? rawurldecode($params['pass']) : null;
             $connectionCredentials = [
-                'host' => $parsedUrl['host'] ?? '127.0.0.1',
-                'port' => $parsedUrl['port'] ?? 6379,
+                'host' => $params['host'],
+                'port' => $params['port'] ?? 6379,
                 // See: https://github.com/phpredis/phpredis/#auth
                 'auth' => $redisOptions['auth'] ?? (null !== $pass && null !== $user ? [$user, $pass] : ($pass ?? $user)),
             ];
 
-            $pathParts = explode('/', rtrim($parsedUrl['path'] ?? '', '/'));
+            $pathParts = explode('/', rtrim($params['path'] ?? '', '/'));
 
             $configuration['stream'] = $pathParts[1] ?? $configuration['stream'];
             $configuration['group'] = $pathParts[2] ?? $configuration['group'];
@@ -257,7 +276,7 @@ class Connection
             }
         } else {
             $connectionCredentials = [
-                'host' => $parsedUrl['path'],
+                'host' => $params['path'],
                 'port' => 0,
             ];
         }
@@ -274,15 +293,15 @@ class Connection
             $url = str_replace($scheme.':', 'file:', $dsn);
         }
 
-        if (false === $parsedUrl = parse_url($url)) {
-            throw new InvalidArgumentException(sprintf('The given Redis DSN "%s" is invalid.', $dsn));
+        if (false === $params = parse_url($url)) {
+            throw new InvalidArgumentException('The given Redis DSN is invalid.');
         }
-        if (isset($parsedUrl['query'])) {
-            parse_str($parsedUrl['query'], $dsnOptions);
+        if (isset($params['query'])) {
+            parse_str($params['query'], $dsnOptions);
             $redisOptions = array_merge($redisOptions, $dsnOptions);
         }
 
-        return $parsedUrl;
+        return $params;
     }
 
     private static function validateOptions(array $options): void
@@ -299,7 +318,7 @@ class Connection
         try {
             // This could soon be optimized with https://github.com/antirez/redis/issues/5212 or
             // https://github.com/antirez/redis/issues/6256
-            $pendingMessages = $this->connection->xpending($this->stream, $this->group, '-', '+', 1);
+            $pendingMessages = $this->connection->xpending($this->stream, $this->group, '-', '+', 1) ?: [];
         } catch (\RedisException $e) {
             throw new TransportException($e->getMessage(), 0, $e);
         }
@@ -345,7 +364,7 @@ class Connection
         $now = microtime();
         $now = substr($now, 11).substr($now, 2, 3);
 
-        $queuedMessageCount = $this->rawCommand('ZCOUNT', 0, $now);
+        $queuedMessageCount = $this->rawCommand('ZCOUNT', 0, $now) ?? 0;
 
         while ($queuedMessageCount--) {
             if (!$message = $this->rawCommand('ZPOPMIN', 1)) {
@@ -384,6 +403,7 @@ class Connection
                 $this->group,
                 $this->consumer,
                 [$this->stream => $messageId],
+                1,
                 1
             );
         } catch (\RedisException $e) {

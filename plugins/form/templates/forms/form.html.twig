@@ -27,3 +27,8 @@ templates/forms/fields/text/text.html.twig -> templates/forms/fields/text/tailwi
 
 #}
 {% extends "forms/default/form.html.twig" %}
+
+{% block xhr %}
+{% include 'forms/layouts/xhr.html.twig' %}
+{% endblock %}
+

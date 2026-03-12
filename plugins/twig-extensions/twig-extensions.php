@@ -33,10 +33,12 @@ class TwigExtensionsPlugin extends Plugin
     public function onPluginsInitialized()
     {
         // Don't proceed if we are in the admin plugin
-        if ($this->isAdmin()) {
+        if (
+            $this->isAdmin()
+            && $this->grav['config']->get('plugins.twig-extensions["in_admin"]') == 'false'
+        ) {
             return;
         }
-
         // Enable the main event we are interested in
         $this->enable([
             'onTwigExtensions' => ['onTwigExtensions', -100],

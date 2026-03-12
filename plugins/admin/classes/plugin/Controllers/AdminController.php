@@ -3,7 +3,7 @@
 /**
  * @package    Grav\Plugin\Admin
  *
- * @copyright  Copyright (c) 2015 - 2023 Trilby Media, LLC. All rights reserved.
+ * @copyright  Copyright (c) 2015 - 2024 Trilby Media, LLC. All rights reserved.
  * @license    MIT License; see LICENSE file for details.
  */
 
@@ -117,7 +117,7 @@ abstract class AdminController
      * @param string|null $lang
      * @return string
      */
-    public function getAdminUrl(string $route, string $lang = null): string
+    public function getAdminUrl(string $route, ?string $lang = null): string
     {
         /** @var Pages $pages */
         $pages = $this->grav['pages'];
@@ -131,7 +131,7 @@ abstract class AdminController
      * @param string|null $lang
      * @return string
      */
-    public function getAbsoluteAdminUrl(string $route, string $lang = null): string
+    public function getAbsoluteAdminUrl(string $route, ?string $lang = null): string
     {
         /** @var Pages $pages */
         $pages = $this->grav['pages'];
@@ -319,7 +319,7 @@ abstract class AdminController
      * @param int|null $code
      * @return ResponseInterface
      */
-    protected function createRedirectResponse(string $url = null, int $code = null): ResponseInterface
+    protected function createRedirectResponse(?string $url = null, ?int $code = null): ResponseInterface
     {
         $request = $this->getRequest();
 

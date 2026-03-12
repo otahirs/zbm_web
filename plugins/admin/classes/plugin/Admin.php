@@ -3,7 +3,7 @@
 /**
  * @package    Grav\Plugin\Admin
  *
- * @copyright  Copyright (c) 2015 - 2023 Trilby Media, LLC. All rights reserved.
+ * @copyright  Copyright (c) 2015 - 2024 Trilby Media, LLC. All rights reserved.
  * @license    MIT License; see LICENSE file for details.
  */
 
@@ -904,7 +904,7 @@ class Admin
      * @return object
      * @throws \RuntimeException
      */
-    public function getConfigurationData($type, array $post = null)
+    public function getConfigurationData($type, ?array $post = null)
     {
         static $data = [];
 
@@ -2413,7 +2413,7 @@ class Admin
      */
     public function getLogFiles()
     {
-        $logs = new GravData(['grav.log' => 'Grav System Log', 'email.log' => 'Email Log']);
+        $logs = new GravData(['grav.log' => 'Grav System Log', 'email.log' => 'Email Log', 'scheduler.log' => 'Scheduler Log']);
         Grav::instance()->fireEvent('onAdminLogFiles', new Event(['logs' => &$logs]));
         return $logs->toArray();
     }

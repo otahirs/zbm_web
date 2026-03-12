@@ -3,7 +3,7 @@
 /**
  * @package    Grav\Plugin\Admin
  *
- * @copyright  Copyright (c) 2015 - 2023 Trilby Media, LLC. All rights reserved.
+ * @copyright  Copyright (c) 2015 - 2024 Trilby Media, LLC. All rights reserved.
  * @license    MIT License; see LICENSE file for details.
  */
 
@@ -71,7 +71,7 @@ class LoginController extends AdminController
      * @param string|null $token
      * @return ResponseInterface
      */
-    public function displayReset(string $username = null, string $token = null): ResponseInterface
+    public function displayReset(?string $username = null, ?string $token = null): ResponseInterface
     {
         if ('' === (string)$username || '' === (string)$token) {
             $this->setMessage($this->translate('PLUGIN_ADMIN.RESET_INVALID_LINK'), 'error');
@@ -318,7 +318,7 @@ class LoginController extends AdminController
      * @param string|null $token
      * @return ResponseInterface
      */
-    public function taskReset(string $username = null, string $token = null): ResponseInterface
+    public function taskReset(?string $username = null, ?string $token = null): ResponseInterface
     {
         $this->page = $this->createPage('reset');
         $this->form = $this->getForm('admin-login-reset');
@@ -469,7 +469,15 @@ class LoginController extends AdminController
         $fullname = $user->fullname ?: $username;
         $author = $config->get('site.author.name', '');
         $sitename = $config->get('site.title', 'Website');
-        $reset_link = $this->getAbsoluteAdminUrl("/reset/u/{$username}/{$token}");
+        $reset_route = "/reset/u/{$username}/{$token}";
+
+        $site_host = $config->get('plugins.login.site_host');
+        if (!empty($site_host)) {
+            $admin = $this->getAdmin();
+            $reset_link = rtrim($site_host, '/') . '/' . trim($admin->base, '/') . '/' . ltrim($reset_route, '/');
+        } else {
+            $reset_link = $this->getAbsoluteAdminUrl($reset_route);
+        }
 
         // For testing only!
         //Admin::DEBUG && Admin::addDebugMessage(sprintf('Reset link: %s', $reset_link));

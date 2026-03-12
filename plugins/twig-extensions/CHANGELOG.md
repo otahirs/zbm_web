@@ -1,5 +1,19 @@
+# v1.2.2
+##  2023-12-03
+
+1. [](#improved)
+   * Setting to enable the plugin for the admin interface as well
+
+# v1.2.1
+##  2023-11-24
+
+1. [](#improved)
+   * You can now use custom formats for dates in `localizeddate` filter
+   * Enhanced Readme
+
 # v1.2.0
 ##  2022-10-17
+
 1. [](#new)
     * Added `array_push` filter to overcome some issues with `merge`
 2. [](#improved)

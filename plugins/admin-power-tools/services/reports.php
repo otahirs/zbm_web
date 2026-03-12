@@ -31,20 +31,21 @@
         include_once __DIR__ . '/../classes/ReportUtil.php';
 
         /**
-         * Search the array for an item an returns the first one found.
+         * Search the array for an item and returns the first one found.
+         * (Built-in to PHP 8.4; defined here for earlier PHP versions.)
          * @param $array
          * @param $filter
          * @return mixed
          */
-        function array_find($filter, $array)
+        if (!function_exists('array_find')) { function array_find($array, $filter)
         {
-            foreach ($array as $item) {
-                if ($filter($item)) {
-                    return $item;
+            foreach ($array as $key => $val) {
+                if ($filter($val, $key)) {
+                    return $val;
                 }
             }
             return null;
-        }
+        }}
 
         $manager->registerService('report', [
             "caption" => "All Pages",
@@ -172,9 +173,9 @@
                         if (!isset($mapA[$value])) {
                             $mapA[$value] = [];
                         }
-                        if (array_find(function ($a) use (&$page) {
+                        if (array_find($mapA[$value], function ($a,$disregarded_key) use (&$page) {
                                 return $a->title() === $page->title();
-                            }, $mapA[$value]) === null) {
+                            }) === null) {
                             $mapA[$value][] = $page;
                         }
                     }
@@ -188,9 +189,9 @@
                         if (!isset($mapImg[$value])) {
                             $mapImg[$value] = [];
                         }
-                        if (array_find(function ($a) use ($page) {
+                        if (array_find($mapImg[$value], function ($a,$disregarded_key) use ($page) {
                                 return $a->title() === $page->title();
-                            }, $mapImg[$value]) === null) {
+                            }) === null) {
                             $mapImg[$value][] = $page;
                         }
                     }

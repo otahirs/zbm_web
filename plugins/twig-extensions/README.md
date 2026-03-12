@@ -26,6 +26,19 @@ You should now have all the plugin files under
 
 > NOTE: This plugin is a modular component for Grav which requires [Grav](http://github.com/getgrav/grav) and the [Error](https://github.com/getgrav/grav-plugin-error) and [Problems](https://github.com/getgrav/grav-plugin-problems) to operate.
 
+### Installation as dependency (skeleton)
+
+If you don't know this method already, check out this [example of a dependecies file](https://github.com/bitstarr/sebastianlaube/blob/main/user/.dependencies). It can hold all (external) plugins and themes you require to run your project (and are not a custom part of your project repository). When running `bin/grav install` all these will get downloaded and correctly placed automatically.
+
+Add the following to your `.dependecies` file:
+
+```
+    twig-extensions:
+        url: https://github.com/bitstarr/grav-plugin-twig-extensions
+        path: user/plugins/twig-extensions
+        branch: main
+```
+
 ## Configuration
 
 Below is the default configuration. An explanation of the various fields follows. To customize, first copy `twig-extensions.yaml` to your `user/config/plugins` folder and edit that copy.
@@ -33,12 +46,12 @@ Below is the default configuration. An explanation of the various fields follows
 ```
 enabled: true
 modules: [array, intl, date]
-
+in_admin: false
 ```
 
 * The `enabled` field turns the plugin off and on.
-
 * The `modules` array tells the plugin which modules you want imported. This plugin only imports three of the five modules. These are the only valid options.
+* `in_admin` enables the use of the extensions in the Twig templates of the admin and for plugins hooking into it with custom admin templates.
 
 ## Usage
 
@@ -66,4 +79,12 @@ For more information, read [the documentation of the original extensions](https:
 
 * The `I18n` module is omitted because Grav already has extensive i18n features.
 
+### A note on `localizeddate`
 
+Since Version 1.2.1 you can use custom date formats. This feature uses the [IntlDateFormatter::setPattern](https://www.php.net/manual/en/intldateformatter.setpattern.php) method. See the [Unicode docs](https://unicode-org.github.io/icu/userguide/format_parse/datetime/) for more information about the formatting.
+
+```
+{{ event.start|localizeddate( 'E, d. MMMM y', 'none', site.default_lang ) }}
+```
+
+Will for example output `Mo., 12. Februar 2024` in German.

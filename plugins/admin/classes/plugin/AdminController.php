@@ -3,7 +3,7 @@
 /**
  * @package    Grav\Plugin\Admin
  *
- * @copyright  Copyright (c) 2015 - 2023 Trilby Media, LLC. All rights reserved.
+ * @copyright  Copyright (c) 2015 - 2024 Trilby Media, LLC. All rights reserved.
  * @license    MIT License; see LICENSE file for details.
  */
 
@@ -62,7 +62,7 @@ class AdminController extends AdminBaseController
      * @param array|null $post
      * @return void
      */
-    public function initialize(Grav $grav = null, $view = null, $task = null, $route = null, $post = null)
+    public function initialize(?Grav $grav = null, $view = null, $task = null, $route = null, $post = null)
     {
         $this->grav = $grav;
         $this->admin = $this->grav['admin'];
@@ -1041,15 +1041,16 @@ class AdminController extends AdminBaseController
         $result = Gpm::install(array_keys($dependencies), ['theme' => $type === 'themes']);
 
         if ($result) {
-            $this->admin->json_response = ['status' => 'success', 'message' => 'Dependencies installed successfully'];
+            $json_response = ['status' => 'success', 'message' => 'Dependencies installed successfully'];
         } else {
-            $this->admin->json_response = [
+            $json_response = [
                 'status'  => 'error',
                 'message' => $this->admin::translate('PLUGIN_ADMIN.INSTALLATION_FAILED')
             ];
         }
 
-        return true;
+        // Exit early to prevent any post-install code from running with potentially mismatched autoloaders
+        $this->sendJsonResponse($json_response);
     }
 
     /**
@@ -1094,19 +1095,20 @@ class AdminController extends AdminBaseController
         }
 
         if ($result) {
-            $this->admin->json_response = [
+            $json_response = [
                 'status'  => 'success',
                 'message' => $this->admin::translate(is_string($result) ? $result : sprintf($this->admin::translate($reinstall ?: 'PLUGIN_ADMIN.PACKAGE_X_REINSTALLED_SUCCESSFULLY',
                     null), $package))
             ];
         } else {
-            $this->admin->json_response = [
+            $json_response = [
                 'status'  => 'error',
                 'message' => $this->admin::translate($reinstall ?: 'PLUGIN_ADMIN.INSTALLATION_FAILED')
             ];
         }
 
-        return true;
+        // Exit early to prevent any post-install code from running with potentially mismatched autoloaders
+        $this->sendJsonResponse($json_response);
     }
 
     /**
@@ -1219,19 +1221,20 @@ class AdminController extends AdminBaseController
         $result = Gpm::directInstall($url);
 
         if ($result === true) {
-            $this->admin->json_response = [
+            $json_response = [
                 'status'  => 'success',
                 'message' => $this->admin::translate(sprintf($this->admin::translate('PLUGIN_ADMIN.PACKAGE_X_REINSTALLED_SUCCESSFULLY',
                     null), $package_name))
             ];
         } else {
-            $this->admin->json_response = [
+            $json_response = [
                 'status'  => 'error',
                 'message' => $this->admin::translate('PLUGIN_ADMIN.REINSTALLATION_FAILED')
             ];
         }
 
-        return true;
+        // Exit early to prevent any post-install code from running with potentially mismatched autoloaders
+        $this->sendJsonResponse($json_response);
     }
 
     /**
@@ -2717,7 +2720,7 @@ class AdminController extends AdminBaseController
      * @param PageInterface|null $page
      * @return Media|null
      */
-    public function getMedia(PageInterface $page = null)
+    public function getMedia(?PageInterface $page = null)
     {
         $page = $page ?? $this->admin->page($this->route);
         if (!$page) {
