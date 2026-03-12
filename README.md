@@ -23,6 +23,14 @@ heslo: `Test1234`
 
 4. commitnuté změny poslat jako merge request na `dev` branch
 
+#### dalsi nastavení pro lokální vývoj
+* CDN plugin je vypnutý (`config/plugins/cdn.yaml`) - v produkci přepisuje URL assetů na CDN doménu, lokálně tak nefunguji styly, apod
+* PHP memory limit je potřeba zvýšit na 512M+ (stránka kontaktů s ~30 PNG obrázky vyčerpá výchozích 128M při zpracování přes GD knihovnu):
+  po prvním spuštění kontejneru:
+  `docker exec zbm_web bash -c 'echo "memory_limit=512M" >> /usr/local/etc/php/conf.d/php-recommended.ini'`
+  `docker restart zbm_web`
+  I tak je potreba stranku reloadovat nekolikrat (s tim ze vyprsi timeout 30s) nez se to nejspis nacacheuje a stranka se konecne zobrazi
+
 #### poznámky
 Postavené nad flat-file CMS Grav https://getgrav.org/.  
 Stránky jsou ve složce `pages`.  
@@ -46,6 +54,6 @@ Na vykreslování stránek a šalon se používá trochu víc fancy PHP aka [Twi
 Občas bylo třeba zašpinit si ruce vlastním PHP kódem, ten se nachází [zde](plugins/PHP/twig/).
 
 #### rozdíly oproti nasazené verzi
-* kešování je vynuto
+* kešování je vypnuto
 * `test` účet místo běžných uživatelských účtů
 * nenastavena synchronizace s gitem a spojení na mailový server
