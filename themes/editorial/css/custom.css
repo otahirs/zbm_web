@@ -509,3 +509,36 @@ p {
 .login-form input {
     width: 100%;
 }
+
+/* contact photo lightbox */
+#contact-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10002;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    cursor: pointer;
+}
+#contact-lightbox img {
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    margin: 5vh auto;
+    border-radius: 8px;
+}
+#contact-lightbox .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+.contact-photo-link {
+    cursor: pointer;
+}
