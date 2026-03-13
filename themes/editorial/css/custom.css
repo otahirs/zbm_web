@@ -243,13 +243,14 @@
 .contact--divInner {
     border: dotted;
     padding: 3em 4em 1em 4em;
-    min-width: 18.3em;
     position: relative;
     align-content: center;
     width: 90%;
     margin: 0 auto;
     margin-bottom: 3em;
     height: 95%;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 .contact-trainer {
     display: flex;
@@ -560,4 +561,10 @@ p {
 }
 .contact-photo-link {
     cursor: pointer;
+}
+@media screen and (max-width: 735px) {
+    .contact--divInner {
+        padding: 1.5em 1.5em 0.5em 1.5em;
+        width: 100%;
+    }
 }
