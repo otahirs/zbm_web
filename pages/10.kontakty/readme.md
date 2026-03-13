@@ -33,3 +33,26 @@ done
 Formát: `jmeno-prijmeni-N.jpg` kde `N` je číslo fotky (1, 2, případně 3).
 
 Příklad: `jan-novak-1.jpg`, `jan-novak-1-thumb.jpg`, `jan-novak-2.jpg`, `jan-novak-2-thumb.jpg`
+
+## Přidání / úprava trenéra na stránce
+
+Seznam trenérů se spravuje v souboru `pages/10.kontakty/defaut-no-title.cs.md`.
+
+Každý trenér se vkládá pomocí Twig include:
+
+```twig
+{% include 'partials/trainer.html.twig' with {
+    name: 'Jméno Příjmení',
+    email: 'email@example.com',
+    phone: '777 123 456',
+    photo: 'jmeno-prijmeni-1'
+} %}
+```
+
+Parametry:
+- **name** (povinný) — jméno trenéra
+- **email** (povinný) — e-mail
+- **phone** (volitelný) — telefonní číslo
+- **photo** (volitelný) — název fotky bez přípony (např. `jan-novak-1`). Pokud není uveden, trenér se zobrazí bez fotky.
+
+Trenéři jsou seskupeni podle tréninkových skupin v `<div>` blocích s ID odpovídajícím skupině (`zabicky`, `pulci1`, `pulci2`, `zaci1`, `zaci2`, `dorost`, `hobby`).
