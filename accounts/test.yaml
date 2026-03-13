@@ -3,11 +3,23 @@ email: test@test.com
 fullname: 'Test account'
 title: 'Test account'
 access:
+  site:
+    login: true
+    plan: true
   admin:
     login: true
     super: true
-  site:
-    login: true
+    cache: true
+    configuration: true
+    pages: true
+    maintenance: true
+    statistics: true
+    plugins: true
+    themes: true
+    tools: true
+    users: true
+    flex-objects: true
+    editable: true
 hashed_password: $2y$10$wK94yj/9EdNiv/gLnwbdIuBauARVOrhGWCADAwJ42622mm.mkFrwu
 groups:
   - 'site - plná práva'
