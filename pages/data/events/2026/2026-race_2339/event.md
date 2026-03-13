@@ -21,7 +21,7 @@ startTime: ''
 map: ''
 terrain: ''
 transport: 'auty dle members'
-accomodation: 'na postelích'
+accomodation: 'na postelích - penzion Poslední Míle, bungalovy po 7'
 food: 'plná penze'
 leader: 'Jenda, Klárka'
 note: 'Pojedem na ubytko, dáme lehkou večeři před 6 tou, potom NOB => vemte si jídlo po nočáku!'
@@ -36,5 +36,5 @@ gps: '49.66872, 16.08724'
 Pojedem na ubytko, dáme lehkou večeři před 6 tou, potom NOB => vemte si jídlo po nočáku!
 * **sraz**: 16:30 Kr. Pole, nádraží
 * **doprava**: auty dle members
-* **ubytování**: na postelích
+* **ubytování**: na postelích - penzion Poslední Míle, bungalovy po 7
 * **strava**: plná penze
