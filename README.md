@@ -23,6 +23,8 @@ heslo: `Test1234`
 
 4. commitnuté změny poslat jako merge request na `dev` branch
 
+ps: se zbm web deploymentem se v gitu synchronizuji pouze slozky `pages`, `themes` a `plugins`, ostatni muze byt upraveno pro lokalni deployment
+
 #### poznámky
 Postavené nad flat-file CMS Grav https://getgrav.org/.  
 Stránky jsou ve složce `pages`.  
