@@ -243,13 +243,33 @@
 .contact--divInner {
     border: dotted;
     padding: 3em 4em 1em 4em;
-    min-width: 18.3em;
     position: relative;
-    align-content: center;
+    align-content: start;
     width: 90%;
     margin: 0 auto;
     margin-bottom: 3em;
     height: 95%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+.contact-trainer {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+.contact-trainer__photo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.contact-trainer__info {
+    flex: 1;
+    min-width: 0;
+}
+.contact-trainer__info h4 {
+    margin-top: 0;
 }
 /* sponzori */
 .sponsors--img {
@@ -541,4 +561,10 @@ p {
 }
 .contact-photo-link {
     cursor: pointer;
+}
+@media screen and (max-width: 735px) {
+    .contact--divInner {
+        padding: 1.5em 1.5em 0.5em 1.5em;
+        width: 100%;
+    }
 }

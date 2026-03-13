@@ -25,169 +25,72 @@ primaryImage: {  }
 </ul>
 
 <div class="row">
-    <div class="col-12"> 
+    <div class="col-12">
     <hr>
     <h1>Trenéři</h1>
     </div>
     <div class="divOuter col-lg-6" id="zabicky">
         <div class="contact--divInner">
         <h3>Žabičky - do 6 let</h3>
-            <h4>Veronika Křístková</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>fricco@seznam.cz</li>
-            </ul>
-            <h4>Stachoňová Barbara</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>bara.stachonova@zabiny.club</li>
-            </ul>
+            {% include 'partials/trainer.html.twig' with {name: 'Veronika Křístková', email: 'fricco@seznam.cz'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Stachoňová Barbara', email: 'bara.stachonova@zabiny.club'} %}
         </div>
     </div>
     <div class="divOuter col-lg-6" id="pulci1">
         <div class="contact--divInner">
         <h3>Pulci 1 - od 6 let</h3>
-            <h4>Lenka Kočová</h4>
-            <ul class="fa-ul mb-4">
-                <li><a class="contact-photo-link" data-full="{{page.route()}}/lenka-kocova-1.png"><img src="{{page.route()}}/lenka-kocova-1-thumb.jpg" alt="Lenka Kočová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
-                <li><i class="fa-li fa fa-phone"></i>777 631 615</li>
-                <li><i class="fa-li fa fa-envelope"></i>kocovalenka@gmail.com</li>
-            </ul> 
-            <h4>Květa Dohnalová</h4>
-            <ul class="fa-ul">
-                <li><a class="contact-photo-link" data-full="{{page.route()}}/kveta-dohnalova-1.png"><img src="{{page.route()}}/kveta-dohnalova-1-thumb.jpg" alt="Květa Dohnalová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
-                <li><i class="fa-li fa fa-phone"></i>732 407 711</li>
-                <li><i class="fa-li fa fa-envelope"></i>kveta.dohnalova@centrum.cz</li>
-            </ul>      
-            <h4>Šárka Beránková</h4>
-            <ul class="fa-ul">
-                <li><a class="contact-photo-link" data-full="{{page.route()}}/sarka-berankova-2.png"><img src="{{page.route()}}/sarka-berankova-2-thumb.jpg" alt="Šárka Beránková" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
-                <li><i class="fa-li fa fa-envelope"></i>sarka.lanickova@seznam.cz</li>
-            </ul>  
+            {% include 'partials/trainer.html.twig' with {name: 'Lenka Kočová', email: 'kocovalenka@gmail.com', phone: '777 631 615', photo: 'lenka-kocova-1'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Květa Dohnalová', email: 'kveta.dohnalova@centrum.cz', phone: '732 407 711', photo: 'kveta-dohnalova-1'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Šárka Beránková', email: 'sarka.lanickova@seznam.cz', photo: 'sarka-berankova-2'} %}
         </div>
     </div>
     <div class="divOuter col-lg-6" id="pulci2">
         <div class="contact--divInner">
         <h3>Pulci 2 - od 8 let</h3>
-            <h4>Lenka Hrušková</h4>
-            <ul class="fa-ul mb-4">
-                <li><a class="contact-photo-link" data-full="{{page.route()}}/lenka-hruskova-1.png"><img src="{{page.route()}}/lenka-hruskova-1-thumb.jpg" alt="Lenka Hrušková" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
-                <li><i class="fa-li fa fa-phone"></i>737 353 537</li>
-                <li><i class="fa-li fa fa-envelope"></i>japkoLenka@gmail.com</li>
-            </ul>
-            <h4>Alena Finstrlová</h4>
-            <ul class="fa-ul">
-                <li><a class="contact-photo-link" data-full="{{page.route()}}/alena-finstrlova-1.png"><img src="{{page.route()}}/alena-finstrlova-1-thumb.jpg" alt="Alena Finstrlová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
-                <li><i class="fa-li fa fa-envelope"></i>finstrlova@centrum.cz</li>
-            </ul>          
-            </div>
+            {% include 'partials/trainer.html.twig' with {name: 'Lenka Hrušková', email: 'japkoLenka@gmail.com', phone: '737 353 537', photo: 'lenka-hruskova-1'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Alena Finstrlová', email: 'finstrlova@centrum.cz', photo: 'alena-finstrlova-1'} %}
+        </div>
     </div>
     <div class="divOuter col-lg-6" id="zaci1">
        <div class="contact--divInner">
         <h3>Žáci 1 - od 10 let</h3>
-            <h4>Pavel Zelený</h4>
-            <ul class="fa-ul mb-4">
-                <li><a class="contact-photo-link" data-full="{{page.route()}}/pavel-zeleny-1.png"><img src="{{page.route()}}/pavel-zeleny-1-thumb.jpg" alt="Pavel Zelený" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
-                <li><i class="fa-li fa fa-envelope"></i>pzeleny@post.cz</li>
-            </ul>
-            <h4>Andrea Firešová</h4>
-            <ul class="fa-ul mb-4">
-                <li><a class="contact-photo-link" data-full="{{page.route()}}/andrea-firesova-1.png"><img src="{{page.route()}}/andrea-firesova-1-thumb.jpg" alt="Andrea Firešová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
-                <li><i class="fa-li fa fa-phone"></i>728 362 804</li>
-                <li><i class="fa-li fa fa-envelope"></i>a.firesova@seznam.cz</li>
-            </ul>   
-            <h4>Věra Nováčková Obelczová</h4>
-            <ul class="fa-ul mb-4">
-                <li><a class="contact-photo-link" data-full="{{page.route()}}/verka-novackova-1.png"><img src="{{page.route()}}/verka-novackova-1-thumb.jpg" alt="Věra Nováčková Obelczová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
-                <li><i class="fa-li fa fa-envelope"></i>vobelczova@gmail.com</li>
-            </ul>     
-            <h4>Jan Drábek</h4>
-            <ul class="fa-ul">
-                <li><a class="contact-photo-link" data-full="{{page.route()}}/jan-drabek-1.png"><img src="{{page.route()}}/jan-drabek-1-thumb.jpg" alt="Jan Drábek" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
-                <li><i class="fa-li fa fa-envelope"></i>jan.drabek@zabiny.club</li>
-            </ul>
-            <h4>Miroslav Beránek</h4>
-            <ul class="fa-ul">
-                <li><a class="contact-photo-link" data-full="{{page.route()}}/mira-beranek-2.png"><img src="{{page.route()}}/mira-beranek-2-thumb.jpg" alt="Miroslav Beránek" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
-                <li><i class="fa-li fa fa-envelope"></i>mira.beranek@centrum.cz</li>
-            </ul>
-           
+            {% include 'partials/trainer.html.twig' with {name: 'Pavel Zelený', email: 'pzeleny@post.cz', photo: 'pavel-zeleny-1'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Andrea Firešová', email: 'a.firesova@seznam.cz', phone: '728 362 804', photo: 'andrea-firesova-1'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Věra Nováčková Obelczová', email: 'vobelczova@gmail.com', photo: 'verka-novackova-1'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Jan Drábek', email: 'jan.drabek@zabiny.club', photo: 'jan-drabek-1'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Miroslav Beránek', email: 'mira.beranek@centrum.cz', photo: 'mira-beranek-2'} %}
        </div>
     </div>
     <div class="divOuter col-lg-6" id="zaci2">
        <div class="contact--divInner">
         <h3>Žáci 2 - od 12 let</h3>
-            <h4>Julie Finstrlová</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-phone"></i>+420 702 244 733</li>
-                <li><i class="fa-li fa fa-envelope"></i>julie.finstrlova@zabiny.club</li>
-            </ul>
-            <h4>Pavel Rotek</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-phone"></i>+420 603 884 000</li>
-                <li><i class="fa-li fa fa-envelope"></i>pavel.rotek@zabiny.club</li>
-            </ul>
-            <h4>Štěpán Zimmermann</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>stepan.zimmermann@zabiny.club</li>
-            </ul>
+            {% include 'partials/trainer.html.twig' with {name: 'Julie Finstrlová', email: 'julie.finstrlova@zabiny.club', phone: '+420 702 244 733'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Pavel Rotek', email: 'pavel.rotek@zabiny.club', phone: '+420 603 884 000'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Štěpán Zimmermann', email: 'stepan.zimmermann@zabiny.club'} %}
         </div>
     </div>
     <div class="divOuter col-lg-6" id="dorost">
         <div class="contact--divInner">
         <h3>Dorost+ - od 15 let</h3>
-            <h4>Jan Zháňal</h4>
-            <ul class="fa-ul mb-4">
-                <li><i class="fa-li fa fa-phone"></i>+420 725 258 326</li>
-                <li><i class="fa-li fa fa-envelope"></i>jan.zhanal@zabiny.club</li>
-		<li><a class="contact-photo-link" data-full="{{page.route()}}/jan-zhanal-1.png"><img src="{{page.route()}}/jan-zhanal-1-thumb.jpg" alt="Jan Zháňal" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
-            </ul>
-            <h4>Alexandr Jordanov</h4>
-            <ul class="fa-ul mb-4">
-                <li><i class="fa-li fa fa-envelope"></i>alexandr.jordanov95@gmail.com</li>
-            </ul>
-            <h4>Stanislav Mokrý</h4>
-            <ul class="fa-ul mb-4">
-                <li><i class="fa-li fa fa-envelope"></i>mokry.stanislav@gmail.com</li>
-            </ul>
-            <h4>Otakar Hirš</h4>
-            <ul class="fa-ul mb-4">
-                <li><i class="fa-li fa fa-envelope"></i>otakar.hirs@gmail.com</li>
-            </ul>
-            <h4>Miloš Nykodým</h4>
-            <ul class="fa-ul mb-4">
-                <li><i class="fa-li fa fa-envelope"></i>milos.nykodym@zabiny.club</li>
-            </ul>
-            <h4>Klára Barnatová</h4>
-            <ul class="fa-ul mb-4">
-                <li><a class="contact-photo-link" data-full="{{page.route()}}/klara-barnatova-1.png"><img src="{{page.route()}}/klara-barnatova-1-thumb.jpg" alt="Klára Barnatová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
-                <li><i class="fa-li fa fa-envelope"></i>klara.barnatova@gmail.com</li>
-            </ul>
-            <h4>Barbora Zháňalová</h4>
-            <ul class="fa-ul mb-4">
-                <li><a class="contact-photo-link" data-full="{{page.route()}}/barca-zhanalova-1.png"><img src="{{page.route()}}/barca-zhanalova-1-thumb.jpg" alt="Barbora Zháňalová" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
-                <li><i class="fa-li fa fa-envelope"></i>barborazhanalova@gmail.com</li>
-            </ul>
-            <h4>Michal Dvořáček</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>mdvoracek3@gmail.com</li>
-            </ul>
+            {% include 'partials/trainer.html.twig' with {name: 'Jan Zháňal', email: 'jan.zhanal@zabiny.club', phone: '+420 725 258 326', photo: 'jan-zhanal-1'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Alexandr Jordanov', email: 'alexandr.jordanov95@gmail.com'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Stanislav Mokrý', email: 'mokry.stanislav@gmail.com'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Otakar Hirš', email: 'otakar.hirs@gmail.com'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Miloš Nykodým', email: 'milos.nykodym@zabiny.club'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Klára Barnatová', email: 'klara.barnatova@gmail.com', photo: 'klara-barnatova-1'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Barbora Zháňalová', email: 'barborazhanalova@gmail.com', photo: 'barca-zhanalova-1'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Michal Dvořáček', email: 'mdvoracek3@gmail.com'} %}
         </div>
     </div>
     <div class="divOuter col-lg-6" id="hobby">
         <div class="contact--divInner">
         <h3>Hobby</h3>
-            <h4>Jan Drábek</h4>
-            <ul class="fa-ul mb-4">
-                <li><a class="contact-photo-link" data-full="{{page.route()}}/jan-drabek-1.png"><img src="{{page.route()}}/jan-drabek-1-thumb.jpg" alt="Jan Drábek" class="img-fluid rounded-circle mb-2" style="max-width: 200px;"></a></li>
-                <li><i class="fa-li fa fa-envelope"></i>jan.drabek@zabiny.club</li>
-            </ul>
-            <h4>Adam Jurák</h4>
-            <ul class="fa-ul">
-                <li><i class="fa-li fa fa-envelope"></i>kontakt@adamjurak.cz</li>
-            </ul>
+            {% include 'partials/trainer.html.twig' with {name: 'Jan Drábek', email: 'jan.drabek@zabiny.club', photo: 'jan-drabek-1'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Adam Jurák', email: 'kontakt@adamjurak.cz'} %}
         </div>
     </div>
 </div>
-    
+
 <hr>
 <h2>Údaje sportovního klubu</h2>
 <h4>Sportovní klub Brno - Žabovřesky z.s.</h4>
@@ -205,10 +108,16 @@ primaryImage: {  }
     var lightbox = document.createElement('div');
     lightbox.id = 'contact-lightbox';
     lightbox.style.cssText = 'display:none;position:fixed;z-index:10002;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);cursor:pointer;overflow:hidden;';
-    lightbox.innerHTML = '<span style="position:absolute;top:20px;right:30px;color:#fff;font-size:2.5rem;font-weight:bold;cursor:pointer;line-height:1;z-index:1">&times;</span><img id="lightbox-img" style="display:block;max-width:90%;max-height:90vh;margin:5vh auto;border-radius:8px" src="" alt="">';
+    var closeBtn = document.createElement('span');
+    closeBtn.style.cssText = 'position:absolute;top:20px;right:30px;color:#fff;font-size:2.5rem;font-weight:bold;cursor:pointer;line-height:1;z-index:1';
+    closeBtn.textContent = '\u00D7';
+    var lightboxImg = document.createElement('img');
+    lightboxImg.id = 'lightbox-img';
+    lightboxImg.style.cssText = 'display:block;max-width:90%;max-height:90vh;margin:5vh auto;border-radius:8px';
+    lightbox.appendChild(closeBtn);
+    lightbox.appendChild(lightboxImg);
     document.body.appendChild(lightbox);
 
-    var lightboxImg = document.getElementById('lightbox-img');
     var links = document.querySelectorAll('.contact-photo-link');
 
     links.forEach(function(link) {
@@ -234,13 +143,3 @@ primaryImage: {  }
     });
 })();
 </script>
-
-
-
- 
-
-
-
- 
-
-
