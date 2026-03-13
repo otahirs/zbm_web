@@ -48,7 +48,7 @@ Na vykreslování stránek a šalon se používá trochu víc fancy PHP aka [Twi
 Občas bylo třeba zašpinit si ruce vlastním PHP kódem, ten se nachází [zde](plugins/PHP/twig/).
 
 #### rozdíly oproti nasazené verzi
-* kešování je vynuto
+* kešování je vypnuto
 * `test` účet místo běžných uživatelských účtů
 * nenastavena synchronizace s gitem a spojení na mailový server
 * CDN plugin je nakonfigurovany na localhost:8000 (`config/plugins/cdn.yaml`)
