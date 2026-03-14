@@ -14,7 +14,7 @@ budeš potřebovat Linux a nainstalován Docker
 
 2. sestavit a spustit docker image  
 `docker build -t zbm_web_img --build-arg USER_ID=$(id -u) .`  
-`docker run --name zbm_web -d -p 8000:80 -v $(pwd):/var/www/html/user:Z zbm_web_img`  
+`docker run --name zbm_web --rm -d -p 8000:80 -v $(pwd):/var/www/html/user:Z zbm_web_img`  
 
 3. na `localhost:8000` beží web, stačí upravovat soubory v lokálním naklonovaném repozitáři.  
 pro přihlášení do /auth (editorská sekce) nebo /admin (Grav admin sekce) se jde přihlásit pomocí:  
