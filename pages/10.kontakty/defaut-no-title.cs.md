@@ -76,7 +76,7 @@ primaryImage: {  }
             {% include 'partials/trainer.html.twig' with {name: 'Alexandr Jordanov', email: 'alexandr.jordanov95@gmail.com'} %}
             {% include 'partials/trainer.html.twig' with {name: 'Stanislav Mokrý', email: 'mokry.stanislav@gmail.com'} %}
             {% include 'partials/trainer.html.twig' with {name: 'Otakar Hirš', email: 'otakar.hirs@gmail.com'} %}
-            {% include 'partials/trainer.html.twig' with {name: 'Miloš Nykodým', email: 'milos.nykodym@zabiny.club'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Miloš Nykodým', email: 'milos.nykodym@zabiny.club', photo: 'milos-nykodym-1'} %}
             {% include 'partials/trainer.html.twig' with {name: 'Klára Barnatová', email: 'klara.barnatova@gmail.com', photo: 'klara-barnatova-1'} %}
             {% include 'partials/trainer.html.twig' with {name: 'Barbora Zháňalová', email: 'barborazhanalova@gmail.com', photo: 'barca-zhanalova-1'} %}
             {% include 'partials/trainer.html.twig' with {name: 'Michal Dvořáček', email: 'mdvoracek3@gmail.com'} %}
