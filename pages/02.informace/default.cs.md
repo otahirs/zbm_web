@@ -6,50 +6,6 @@ menu: Informace
 primaryImage: {  }
 ---
 
- <!--
-<div class="row">
-<div class="col-sm-6 col-lg-3">
-<h3>Základní informace</h3>
-<ul>
- <li><a href="#vedeni">Vedení oddílu</a></li>
-
-</ul>
-</div>
-<div class="col-sm-6 col-lg-3">
-<ul>
-<h3>Finance</h3>
- <li><a href="#finance">Financování a osobní účty</a></li>
- <li><a href="#prispevky">Oddílové příspěvky</a></li>
- <!--
- <li><a href="#vrcholovy">Vrcholový fond ZBM</a></li>
- <li><a href="#trenersky">Trenérský fond ZBM</a></li>
- </ul>
-</div>
-<div class="col-sm-6 col-lg-3">
-<ul>
-<h3>Přihlášky</h3>
- <li><a href="#zavody">Přihlašování na závody</a></li>
- <li><a href="#kdoakam">Kdo se může a kam přihlásit</a></li>
-</ul>
-</div>
-<div class="col-sm-6 col-lg-3">
-<ul>
-<h3>Organizace/pořádání</h3>
- <li><a href="#vedouci">Vedoucí na závodech</a></li>
- <li><a href="#poradani">Pořádání závodů</a></li>
-</ul>
-</div>
-<div class="col-sm-6 col-lg-3">
-<ul>
-<h3>Ostatní</h3>
- <li><a href="#zabiny">Emailová skupina</a></li>
- <li><a href="#zabiny">Sociální sítě</a></li>
- </ul>
-</div>
-</div>
- -->
-
-
 <h3>Obsah</h3>
 <ul>
  <li><a href="#kontakty">Kontakty</a></li>
@@ -88,7 +44,7 @@ Klub proplácí každému, kdo nabídne svůj vůz na **sdílenou dopravu** (skr
 - Pořádané závody oddílem SK Brno Žabovřesky
 - Závody žebříčku A + B
 - Tréninky:
-    - **Dorost**: vytrvalost, nočáky, mapové výjezdy
+    - **Dorost**: vytrvalost, nočáky, mapové tréninky (včetně roznosu)
     - **Žactvo**: zimní mapové výjezdy		
 
 Náklady na použití vlastního auta na soustředění se budou proplácet formou slevy z dané akce - snížení administrativní zátěže.
@@ -159,62 +115,6 @@ Sourozenci (Žabičky, Pulci, Žáci, Dorost) – druhý a další sourozenec sl
 - závody přesahující zvolený typ členských příspěvků
 
 I na tyto akce se lze většinou přihlásit pomocí Přihláškového systému. Při účasti na těchto závodech se na osobním účtu objeví náklady klubu s tímto závodem spojené (vklady, ubytování, doprava, ...), které je třeba vyrovnat.
-
-<!--
-
-
-
-## Vrcholový fond ZBM <a name="vrcholovy"></a>
-
-Tento fond je určen pro podporu talentů a úspěšných závodníků našeho oddílu.  
-- Při prvním získání licence E, A odbrží závodník od oddílu nový dres.
-
-#### Podpora členů reprezentačních výběrů v orientačním běhu:
-Dospělí
-
-| RD E | RD A | RD B | U23 |
-| --- | --- | --- | --- |
-| 4 000,– Kč | 3 000,– Kč | 2 000,– Kč | 1 000,– Kč |
-
-Junioři
-
-| JRD A | JRD B | Sledovaní |
-| --- | --- | --- | --- |
-| 3 000,– Kč |2 000,– Kč | 1 000,– Kč |
-
-Všechny reprezentace (všechny týmy) – dres OB (při objednání nové klubové sady)
-
-#### Podpora členů podle jejich výsledků v roce 2018: 
-| Výsledky 2018 |Částka |
-| --- | ---|
-| MS, WG, ME (individuální) – do 6. místa <br> MS, WG, ME (štafety) – do 3. místa | 15 000,– Kč |
-| MS, WG, ME (individuální) – 7. až 15. místo <br> MS, WG, ME (štafety) – 4. až 6. místo | 10 000,– Kč |
-| AMS, JMS (individuální) – do 8. místa <br> AMS, JMS (štafety) – do 3. místa <br> SP (individuální) – 5 x bodování <br> M ČR (D21, H21) sprint, krátká, klasika – 1. místo | 5 000,– Kč |
-| SP (individuální) – 3 x bodování  <br> MS, WG, ME – nominace <br> M ČR (D21, H21) sprint, krátká, klasika – 2. a 3.místo <br> M ČR (junioři) sprint, krátká, klasika – 1. místo | 3 000,– Kč |
-| AMS, JMS – nominace <br> M ČR (HD21) štafety, družstva, NOB – 1. až 3. místo | 2 000,– Kč | 
-| SP (individuální) – 1 x bodování <br> M ČR (D21, H21) sprint, krátká, klasika – 4. až 6.místo <br> M ČR (junioři) sprint, krátká, klasika – 2. a 3. místo <br> M ČR (junioři) NOB – 1. až 3. místo | 1 000,– Kč |
-| M ČR (D21, H21) sprint, krátká, klasika – 7. až 10.místo <br> M ČR (HD21) štafety, družstva, NOB – 4. a 6. místo | 500,– Kč |
-
-Počítají se vždy 3 nejlepší výsledky v hodnoceném roce, jejichž sečtením vznikne výsledná částka.  Tato  podpora  je  určena  pro  závodníky  kategorie  HD20  a  HD21,  kteří  nemají podporu v rámci TSM
-
-
-#### Odměna za umístění na vrcholových závodech v orientačním běhu:
-| Odměny | M ČR | EYOC | JWOC | WOC |
-| --- | --- | --- | --- | --- |
-| **Jednotlivci** |   |   |   |   |
-| 1. místo | 1 000,– Kč | 7 000,– Kč | 10 000,– Kč | 20 000,– Kč |
-| 2. a 3. místo | 500,– Kč | 4 000,– Kč | 7 000,– Kč | 10 000,– Kč |
-| 4. až 6. místo | – | 2 000,– Kč | 4 000,– Kč | 7 000,– Kč |
-| 7. až 10. místo | – | – | 2 000,– Kč | 4 000,– Kč |
-| 11. až 16. místo | – | – | – | 2 000,– Kč |
-| **Štafety** |   |   |   |   |
-| 1. místo | 500,– Kč | 2 000,– Kč | 4 000,– Kč | 8 000,– Kč |
-| 2. a 3. místo | 250,– Kč | 1 000,– Kč | 2 000,– Kč | 4 000,– Kč |
-| 4. až 6. místo | – | – | 1 000,– Kč | 2 000,– Kč |
-
-Finanční prostředky lze čerpat na: sportovní soustředění, materiální vybavení pro orientační běh, vklady na zahraniční závody v OB. Peníze lze čerpat od okamžiku nabytí v příslušném a následujícím kalendářním roce.
--->
-
 
 ---
 ## Přihlašování na závody <a name="zavody"></a>
