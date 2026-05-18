@@ -15,7 +15,7 @@ import:
     type: members
     time: 1649050802
 meetTime: '16:00'
-meetPlace: 'Kampus, parkoviště, https://en.mapy.cz/s/mehopomeno'
+meetPlace: 'Kampus, parkoviště, https://mapy.com/s/mehopomeno'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -34,5 +34,5 @@ signups: ''
 gps: '49.14950, 16.08598'
 ---
 
-* **sraz**: 16:00 Kampus, parkoviště, https://en.mapy.cz/s/mehopomeno
+* **sraz**: 16:00 Kampus, parkoviště, https://mapy.com/s/mehopomeno
 * **doprava**: auty

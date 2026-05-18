@@ -22,7 +22,7 @@ id: 20200229-3cd89343
 startTime: ''
 terrain: ''
 leader: 'Jenda, LuF'
-note: "Sraz je [zde](https://mapy.cz/s/nabomekoza)\r\n[Excel s dopravou](https://docs.google.com/spreadsheets/d/1Dv3AXXl3HYc-EmDyEqJs_e_nmn7VF6ktLXh5GA3oCQs/edit?fbclid=IwAR3tje0ApVlR2fGwMEli5sru8EnzJnFb-RZKqipVsvv9SpwcfHU-rbodQ2I#gid=0)"
+note: "Sraz je [zde](https://mapy.com/s/nabomekoza)\r\n[Excel s dopravou](https://docs.google.com/spreadsheets/d/1Dv3AXXl3HYc-EmDyEqJs_e_nmn7VF6ktLXh5GA3oCQs/edit?fbclid=IwAR3tje0ApVlR2fGwMEli5sru8EnzJnFb-RZKqipVsvv9SpwcfHU-rbodQ2I#gid=0)"
 routes:
     -
         name: D+

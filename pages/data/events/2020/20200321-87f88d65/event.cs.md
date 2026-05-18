@@ -8,7 +8,7 @@ place: Žebětín
 meetTime: kdykoli
 meetPlace: 'Žebětín, viz GPS'
 eventTypeDescription: ''
-startTime: 'https://mapy.cz/s/kadugezof'
+startTime: 'https://mapy.com/s/kadugezof'
 map: ''
 terrain: ''
 transport: 'Vlastními auty nebo na kole (nejezděte MHD)'

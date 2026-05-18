@@ -16,7 +16,7 @@ import:
     time: 1698316206
 place: Březina
 meetTime: '17:00'
-meetPlace: 'Juliánov, Tesco, https://en.mapy.cz/s/jakobelare'
+meetPlace: 'Juliánov, Tesco, https://mapy.com/s/jakobelare'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -35,5 +35,5 @@ signups: ''
 gps: '49.28063, 16.75489'
 ---
 
-* **sraz**: 17:00 Juliánov, Tesco, https://en.mapy.cz/s/jakobelare
+* **sraz**: 17:00 Juliánov, Tesco, https://mapy.com/s/jakobelare
 * **doprava**: auty

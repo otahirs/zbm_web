@@ -8,7 +8,7 @@ end: '2021-06-02'
 title: 'Hobby: mapáč'
 place: Holedná
 type: T
-note: "Vrstevnicovka na Holedné.\nSraz: cca tady: https://mapy.cz/s/devezeceju\nv 17:00."
+note: "Vrstevnicovka na Holedné.\nSraz: cca tady: https://mapy.com/s/devezeceju\nv 17:00."
 template: trenink
 date: '2021-05-28'
 import:

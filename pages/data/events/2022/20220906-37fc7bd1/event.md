@@ -7,7 +7,7 @@ start: '2022-09-06'
 end: '2022-09-06'
 place: 'Kohoutovice, Myslivna'
 meetTime: '16:15'
-meetPlace: 'https://mapy.cz/s/jojopadenu'
+meetPlace: 'https://mapy.com/s/jojopadenu'
 link: ''
 eventTypeDescription: 'Z+A - hvězdice, B - azimutové hvězdice, C - okruhy'
 startTime: ''
@@ -32,7 +32,7 @@ taxonomy:
 gps: '49.18931, 16.55307'
 ---
 
-* **sraz**: 16:15 https://mapy.cz/s/jojopadenu
+* **sraz**: 16:15 https://mapy.com/s/jojopadenu
 * **doprava**: MHD - značeno fáborky ze zastávky Šárka
 Přibližovací srazy:
 Skácelova - 15:30

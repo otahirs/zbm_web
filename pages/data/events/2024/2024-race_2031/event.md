@@ -12,7 +12,7 @@ end: '2024-02-24'
 title: 'Mapový trénink žactva'
 place: Uhřice
 type: T
-note: "Jsou nachystány tratě na obejití pro Pulce (výprava - oblečte se teple na chození) a tréninkové tratě pro Žáky, Hobíky a Dorost (věci na běhání).\r\nMapa s body srazu, parkování a startu: https://en.mapy.cz/s/jocolasaja\r\nPojedeme cca 12 auty, tak ideálně parkujte na vyznačeném místě, popř. alespoň ohleduplně k místním, ať můžeme v lesích běhat i nadále.\r\nSamozřejmostí je po doběhu teplý čaj a buchta."
+note: "Jsou nachystány tratě na obejití pro Pulce (výprava - oblečte se teple na chození) a tréninkové tratě pro Žáky, Hobíky a Dorost (věci na běhání).\r\nMapa s body srazu, parkování a startu: https://mapy.com/s/jocolasaja\r\nPojedeme cca 12 auty, tak ideálně parkujte na vyznačeném místě, popř. alespoň ohleduplně k místním, ať můžeme v lesích běhat i nadále.\r\nSamozřejmostí je po doběhu teplý čaj a buchta."
 template: trenink
 date: '2023-10-29'
 import:
@@ -57,7 +57,7 @@ routes:
 ---
 
 Jsou nachystány tratě na obejití pro Pulce (výprava - oblečte se teple na chození) a tréninkové tratě pro Žáky, Hobíky a Dorost (věci na běhání).
-Mapa s body srazu, parkování a startu: https://en.mapy.cz/s/jocolasaja
+Mapa s body srazu, parkování a startu: https://mapy.com/s/jocolasaja
 Pojedeme cca 12 auty, tak ideálně parkujte na vyznačeném místě, popř. alespoň ohleduplně k místním, ať můžeme v lesích běhat i nadále.
 Samozřejmostí je po doběhu teplý čaj a buchta.
 * **sraz**: 8:00 Brno, u hlavního nádraží

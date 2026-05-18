@@ -7,7 +7,7 @@ start: '2022-06-28'
 end: '2022-06-28'
 place: 'Pod Palackého vrchem'
 meetTime: '16:15'
-meetPlace: 'Pod Palackého vrchem, https://mapy.cz/s/nukesunofa'
+meetPlace: 'Pod Palackého vrchem, https://mapy.com/s/nukesunofa'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -36,7 +36,7 @@ taxonomy:
 
 Na tento poslední trénink před prázdninami zveme i všechny rodiče, sourozence, případně kamarády, kteří si chtějí vyzkoušet orienťák.
 S sebou čipy, papír a tužku (zapomenete-li pujčíme vám).
-* **sraz**: 16:15 Pod Palackého vrchem, https://mapy.cz/s/nukesunofa
+* **sraz**: 16:15 Pod Palackého vrchem, https://mapy.com/s/nukesunofa
 * **doprava**: přibližovací srazy:
 Skácelova 15:40
 Halasovo náměstí 15:40

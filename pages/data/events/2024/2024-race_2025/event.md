@@ -16,10 +16,10 @@ import:
     time: 1698316206
 place: 'Nová Ves'
 meetTime: '16:30'
-meetPlace: 'Kampus, https://en.mapy.cz/s/labedebapo'
+meetPlace: 'Kampus, https://mapy.com/s/labedebapo'
 link: ''
 eventTypeDescription: 'hromadný start, přijďte včas'
-startTime: 'Diamant, https://mapy.cz/s/gejojeceta'
+startTime: 'Diamant, https://mapy.com/s/gejojeceta'
 map: Doubravka
 terrain: 'Erozní rýhy.'
 transport: auty
@@ -35,5 +35,5 @@ signups: ''
 gps: '49.11816, 16.29627'
 ---
 
-* **sraz**: 16:30 Kampus, https://en.mapy.cz/s/labedebapo
+* **sraz**: 16:30 Kampus, https://mapy.com/s/labedebapo
 * **doprava**: auty

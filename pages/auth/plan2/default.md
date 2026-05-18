@@ -13,9 +13,9 @@ plan:
             -
                 group:
                     - dorost
-                name: 'Atletické posilování'
-                time: '17:00'
-                place: 'Dráha ZŠ nám Svornosti, https://mapy.com/s/rerakofuco'
+                name: Posilovna
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
             -
                 group:
                     - zaci1
@@ -24,18 +24,106 @@ plan:
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
         tuesday:
-            1774955110909:
-                name: ''
-                time: ''
-                place: ''
+            -
+                group:
+                    - zaci2
+                name: 'Běžecký trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink + teorie'
+                time: '16:30'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
+            -
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                name: 'Mapový trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
+            -
+                group:
+                    - hobby
+                name: 'Společný běh'
+                time: '16:00'
+                place: 'ZŠ Nám. Svornosti'
         wednesday:
             -
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
+                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
+        thursday:
             -
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '16:45'
+                place: 'hala Rosnička'
+            -
+                group:
+                    - zaci1
+                name: VOLNO
+                time: ''
+                place: 'Velikonoční prázdniny'
+            -
+                group:
+                    - pulci1
+                    - pulci2
+                name: VOLNO
+                time: ''
+                place: 'Velikonoční prázdniny'
+    nextWeek:
+        monday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
+            -
+                group:
+                    - zaci1
+                name: VOLNO
+                time: ''
+                place: 'Velikonoční prázdniny'
+        tuesday:
+            1:
+                group:
+                    - dorost
+                name: 'Běžecký trénink + teorie'
+                time: '16:30'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
+            2:
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                    - zaci2
+                    - hobby
+                name: 'Mapový trénink '
+                time: '16:15– 18:00'
+                place: 'Kozí hora (Palačák)'
+            3:
+                group:
+                    - hobby
+                name: 'Společný běh'
+                time: '16:00'
+                place: 'ZŠ Nám. Svornosti'
+        wednesday:
+            0:
+                group:
+                    - dorost
+                name: Posilovna
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
+            1767681211545:
                 group:
                     - hobby
                 name: 'Online teorie'
@@ -84,9 +172,9 @@ plan:
             -
                 group:
                     - dorost
-                name: 'Atletické posilování'
-                time: '17:00'
-                place: 'Dráha ZŠ nám Svornosti, https://mapy.com/s/rerakofuco'
+                name: Posilovna
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
             -
                 group:
                     - zaci1
@@ -95,18 +183,41 @@ plan:
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
         tuesday:
-            1774955110909:
-                name: ''
-                time: ''
-                place: ''
+            -
+                group:
+                    - zaci2
+                name: 'Mapový trénink'
+                time: '16:15– 18:00'
+                place: 'okolí Brna'
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink + teorie'
+                time: '16:30'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
+            -
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                name: 'Mapový trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
+            -
+                group:
+                    - hobby
+                name: 'Společný běh'
+                time: '16:00'
+                place: 'ZŠ Nám. Svornosti'
         wednesday:
             -
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
-            -
+                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
+            1767681211545:
                 group:
                     - hobby
                 name: 'Online teorie'
@@ -226,9 +337,9 @@ plan:
             -
                 group:
                     - dorost
-                name: 'Atletické posilování'
-                time: '17:00'
-                place: 'Dráha ZŠ nám Svornosti, https://mapy.com/s/rerakofuco'
+                name: Posilovna
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
             -
                 group:
                     - zaci1
@@ -237,18 +348,41 @@ plan:
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
         tuesday:
-            1774955110909:
-                name: ''
-                time: ''
-                place: ''
+            -
+                group:
+                    - zaci2
+                name: 'Mapový trénink'
+                time: '16:15– 18:00'
+                place: 'okolí Brna'
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink + teorie'
+                time: '16:30'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
+            -
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                name: 'Mapový trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
+            -
+                group:
+                    - hobby
+                name: 'Společný běh'
+                time: '16:00'
+                place: 'ZŠ Nám. Svornosti'
         wednesday:
             -
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
-            -
+                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
+            1767681211545:
                 group:
                     - hobby
                 name: 'Online teorie'

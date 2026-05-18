@@ -10,7 +10,7 @@ meetTime: '16:15'
 meetPlace: 'značeno fáborky ze zastávky Kouty'
 link: ''
 eventTypeDescription: 'Z+A - COB, B - azimutové okruhy, C - SUI hra'
-startTime: 'https://mapy.cz/s/pamavubofa'
+startTime: 'https://mapy.com/s/pamavubofa'
 map: ''
 terrain: ''
 transport: "Kouty - zastávka MHD 41, 71\r\npřibližovací srazy:\r\nSkácelova 15:30 (odjezd 72 v 15:35)\r\nHalasovo náměstí 15:30 - auty"

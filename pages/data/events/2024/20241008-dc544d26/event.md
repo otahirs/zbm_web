@@ -13,7 +13,7 @@ eventTypeDescription: "A, P - COB\r\nB - scorelauf\r\nC, K - vrstevnicovka"
 startTime: ''
 map: Hády
 terrain: ''
-transport: "MHD na zastávku Na spáleništi, vzdálenost na start 800m - pozor - je potřeba mít jízdenku na další zónu mimo zónu 100 a 101\r\npřibližovací srazy:\r\nSkácelova 15:00\r\nHalasovo náměstí 15:20\r\nparkování https://mapy.cz/s/mehamudume"
+transport: "MHD na zastávku Na spáleništi, vzdálenost na start 800m - pozor - je potřeba mít jízdenku na další zónu mimo zónu 100 a 101\r\npřibližovací srazy:\r\nSkácelova 15:00\r\nHalasovo náměstí 15:20\r\nparkování https://mapy.com/s/mehamudume"
 accomodation: ''
 food: ''
 leader: ''
@@ -39,4 +39,4 @@ gps: '49.24812, 16.70786'
 přibližovací srazy:
 Skácelova 15:00
 Halasovo náměstí 15:20
-parkování https://mapy.cz/s/mehamudume
+parkování https://mapy.com/s/mehamudume

@@ -13,7 +13,7 @@ end: '2023-03-26'
 title: 'VT Brno'
 place: 'Brno a blízké okolí, Borský Mikuláš'
 type: S
-note: "Klasické předzávodní mapové soustředění pro všechny kategorie.\r\nhttps://en.mapy.cz/s/fabukasuto\r\nDorost v pátek NOB a v sobotu vytrvalost po cestách (bez obědu), viz samostatné akce."
+note: "Klasické předzávodní mapové soustředění pro všechny kategorie.\r\nhttps://mapy.com/s/fabukasuto\r\nDorost v pátek NOB a v sobotu vytrvalost po cestách (bez obědu), viz samostatné akce."
 template: soustredeni
 date: '2022-10-06'
 import:
@@ -78,7 +78,7 @@ routes:
 ---
 
 Klasické předzávodní mapové soustředění pro všechny kategorie.
-https://en.mapy.cz/s/fabukasuto
+https://mapy.com/s/fabukasuto
 Dorost v pátek NOB a v sobotu vytrvalost po cestách (bez obědu), viz samostatné akce.
 * **doprava**: Pátek - začátek tréninku v 16:15
 značeno fáborky ze zastávky Antonína Procházky (mapa Myslivna)

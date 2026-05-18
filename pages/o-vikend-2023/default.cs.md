@@ -60,7 +60,7 @@ Info:
 
 ### Sprintový závod
 * kdy: sobota 25. listopadu, 14:00
-* kde: [ZŠ náměstí Svornosti](https://mapy.cz/turisticka?q=49.2145N%2016.5802E&source=coor&id=16.5802%2C49.2145&x=16.5814285&y=49.2146367&z=17), Brno - Žabovřesky
+* kde: [ZŠ náměstí Svornosti](https://mapy.com/turisticka?q=49.2145N%2016.5802E&source=coor&id=16.5802%2C49.2145&x=16.5814285&y=49.2146367&z=17), Brno - Žabovřesky
 
 Info:
 * tradiční [zimní liga](https://bzl.zabiny.club/)

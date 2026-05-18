@@ -15,7 +15,7 @@ import:
     type: members
     time: 1649049602
 meetTime: '16:30'
-meetPlace: 'Juliánov, Tesco, https://mapy.cz/s/kemetesuna'
+meetPlace: 'Juliánov, Tesco, https://mapy.com/s/kemetesuna'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -41,5 +41,5 @@ routes:
         link: 'http://3drerun.worldofo.com/?id=-16912828&type=info'
 ---
 
-* **sraz**: 16:30 Juliánov, Tesco, https://mapy.cz/s/kemetesuna
+* **sraz**: 16:30 Juliánov, Tesco, https://mapy.com/s/kemetesuna
 * **doprava**: auty, pište do přihlášky, můžete-li ho vzít

@@ -15,7 +15,7 @@ import:
     type: members
     time: 1636318202
 meetTime: '16:15'
-meetPlace: 'Naproti Bille, Líšeň, https://mapy.cz/s/cuhopehora'
+meetPlace: 'Naproti Bille, Líšeň, https://mapy.com/s/cuhopehora'
 link: ''
 eventTypeDescription: Hromadně
 startTime: ''
@@ -44,5 +44,5 @@ routes:
         link: 'http://3drerun.worldofo.com/index.php?id=-16894600&type=info'
 ---
 
-* **sraz**: 16:15 Naproti Bille, Líšeň, https://mapy.cz/s/cuhopehora
+* **sraz**: 16:15 Naproti Bille, Líšeň, https://mapy.com/s/cuhopehora
 * **doprava**: auty

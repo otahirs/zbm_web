@@ -27,7 +27,7 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: "v sobotu 12. srpna 2023 v 6:56 hodin z Hlavního nádraží Brno. Cestovat budeme vlaky a autobusem. Sraz na letošní tábor proběhne na parkovišti u Tesca (za hlavním nádražím).\r\nDo přistavených aut bude potřeba v čase 6:15 – 6:30 hodin naložit zavazadla dětí.\r\nŽádáme vás o dochvilnost, aby se podařila zavazadla plynule naložit.\r\nOdkaz na přesnou polohu: [zde](https://mapy.cz/s/2VLd3)\r\nDěti si v 6:30 hodin přepočítáme a vyrazíme s nimi na nástupiště na vlak.\r\nPokud s námi nebudou děti cestovat, je možné je předat v táboře mezi 14:00 a 15:00 hodin, případně dle předchozí individuální domluvy."
+transport: "v sobotu 12. srpna 2023 v 6:56 hodin z Hlavního nádraží Brno. Cestovat budeme vlaky a autobusem. Sraz na letošní tábor proběhne na parkovišti u Tesca (za hlavním nádražím).\r\nDo přistavených aut bude potřeba v čase 6:15 – 6:30 hodin naložit zavazadla dětí.\r\nŽádáme vás o dochvilnost, aby se podařila zavazadla plynule naložit.\r\nOdkaz na přesnou polohu: [zde](https://mapy.com/s/2VLd3)\r\nDěti si v 6:30 hodin přepočítáme a vyrazíme s nimi na nástupiště na vlak.\r\nPokud s námi nebudou děti cestovat, je možné je předat v táboře mezi 14:00 a 15:00 hodin, případně dle předchozí individuální domluvy."
 accomodation: ''
 food: ''
 leader: Aleš
@@ -108,6 +108,6 @@ routes:
 * **doprava**: v sobotu 12. srpna 2023 v 6:56 hodin z Hlavního nádraží Brno. Cestovat budeme vlaky a autobusem. Sraz na letošní tábor proběhne na parkovišti u Tesca (za hlavním nádražím).
 Do přistavených aut bude potřeba v čase 6:15 – 6:30 hodin naložit zavazadla dětí.
 Žádáme vás o dochvilnost, aby se podařila zavazadla plynule naložit.
-Odkaz na přesnou polohu: [zde](https://mapy.cz/s/2VLd3)
+Odkaz na přesnou polohu: [zde](https://mapy.com/s/2VLd3)
 Děti si v 6:30 hodin přepočítáme a vyrazíme s nimi na nástupiště na vlak.
 Pokud s námi nebudou děti cestovat, je možné je předat v táboře mezi 14:00 a 15:00 hodin, případně dle předchozí individuální domluvy.

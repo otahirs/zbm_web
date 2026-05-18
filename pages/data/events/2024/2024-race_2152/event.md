@@ -26,7 +26,7 @@ transport: 'auty ([dle dokumentu s dopravou](https://docs.google.com/spreadsheet
 accomodation: ''
 food: ''
 leader: Drbča
-note: "Ubytování na postelích v pokojít po dvou a více.https://www.lanwood.cz  https://mapy.cz/s/coravojulo\r\nkontaktní osoba Tomáš Kout 605 517 177, příjezd nahlášený cca od 17:00.\r\nVčetně večeře (19:00) špagety bolognese (bude na přidání) a snídaně ve formě bufetu 7:30-8:30."
+note: "Ubytování na postelích v pokojít po dvou a více.https://www.lanwood.cz  https://mapy.com/s/coravojulo\r\nkontaktní osoba Tomáš Kout 605 517 177, příjezd nahlášený cca od 17:00.\r\nVčetně večeře (19:00) špagety bolognese (bude na přidání) a snídaně ve formě bufetu 7:30-8:30."
 return: ''
 price: ''
 program: ''
@@ -37,7 +37,7 @@ hasStartlist: true
 hasResults: true
 ---
 
-Ubytování na postelích v pokojít po dvou a více.https://www.lanwood.cz  https://mapy.cz/s/coravojulo
+Ubytování na postelích v pokojít po dvou a více.https://www.lanwood.cz  https://mapy.com/s/coravojulo
 kontaktní osoba Tomáš Kout 605 517 177, příjezd nahlášený cca od 17:00.
 Včetně večeře (19:00) špagety bolognese (bude na přidání) a snídaně ve formě bufetu 7:30-8:30.
 * **sraz**: 8:15 Kr. Pole nádraží

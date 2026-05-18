@@ -17,7 +17,7 @@ transport: 'individuální - autmo, kolmo nebo hromadnou dopravou v 17:00 z Brna
 accomodation: ''
 food: ''
 leader: Kulda
-note: "**Parkování**: 49.2709136N, 16.7043928E\r\n**Start**: 49.2690517N, 16.7010667E\r\nhttps://mapy.cz/s/polalanumu\r\n\r\nSem-tamy, celkem 4 tratě po 1,4km. Kolem 19. hodiny půjdeme balit."
+note: "**Parkování**: 49.2709136N, 16.7043928E\r\n**Start**: 49.2690517N, 16.7010667E\r\nhttps://mapy.com/s/polalanumu\r\n\r\nSem-tamy, celkem 4 tratě po 1,4km. Kolem 19. hodiny půjdeme balit."
 return: ''
 price: ''
 program: ''
@@ -36,7 +36,7 @@ routes:
 
 **Parkování**: 49.2709136N, 16.7043928E
 **Start**: 49.2690517N, 16.7010667E
-https://mapy.cz/s/polalanumu
+https://mapy.com/s/polalanumu
 
 Sem-tamy, celkem 4 tratě po 1,4km. Kolem 19. hodiny půjdeme balit.
 * **sraz**: 17:30 plácek u Srnčí studánky

@@ -17,7 +17,7 @@ transport: Vlastní
 accomodation: ''
 food: ''
 leader: 'Luděk Finstrle'
-note: "[Tabulka příjezdů](https://docs.google.com/spreadsheets/d/169AMYFS8CeF3RCt75M1r6Ske82T1aq92jIy1sqxUo6k/edit#gid=290019149)\r\n[Mapy ke stažení](https://drive.google.com/drive/folders/1ZCiaxyLC_uA_DxJVAO9f_9zFvdI3cdjz) - na kontrolách budou fáborky z mlíka\r\n[Doporučené parkování](https://en.mapy.cz/s/femalekobu)"
+note: "[Tabulka příjezdů](https://docs.google.com/spreadsheets/d/169AMYFS8CeF3RCt75M1r6Ske82T1aq92jIy1sqxUo6k/edit#gid=290019149)\r\n[Mapy ke stažení](https://drive.google.com/drive/folders/1ZCiaxyLC_uA_DxJVAO9f_9zFvdI3cdjz) - na kontrolách budou fáborky z mlíka\r\n[Doporučené parkování](https://mapy.com/s/femalekobu)"
 return: ''
 price: ''
 program: ''
@@ -36,6 +36,6 @@ gps: '49.29319, 16.81424'
 
 [Tabulka příjezdů](https://docs.google.com/spreadsheets/d/169AMYFS8CeF3RCt75M1r6Ske82T1aq92jIy1sqxUo6k/edit#gid=290019149)  
 [Mapy ke stažení](https://drive.google.com/drive/folders/1ZCiaxyLC_uA_DxJVAO9f_9zFvdI3cdjz)
-[Doporučené parkování](https://en.mapy.cz/s/femalekobu)
+[Doporučené parkování](https://mapy.com/s/femalekobu)
 
 Doprava vlastní.

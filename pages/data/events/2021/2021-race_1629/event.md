@@ -24,7 +24,7 @@ eventTypeDescription: ''
 startTime: '12:00'
 map: ''
 terrain: ''
-transport: 'autobusem; sraz [zde](https://mapy.cz/s/mugedevole)'
+transport: 'autobusem; sraz [zde](https://mapy.com/s/mugedevole)'
 accomodation: ''
 food: ''
 leader: Jenda
@@ -41,4 +41,4 @@ hasResults: true
 Sobota večeře na 19 hod
 Neděle snídaně na 7:00 hod
 * **sraz**: 7:30 za Lužánkami
-* **doprava**: autobusem; sraz [zde](https://mapy.cz/s/mugedevole)
+* **doprava**: autobusem; sraz [zde](https://mapy.com/s/mugedevole)

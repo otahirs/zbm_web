@@ -15,7 +15,7 @@ import:
     type: members
     time: 1736845806
 meetTime: '16:30'
-meetPlace: 'Tesco, Juliánov, https://mapy.cz/s/huhazubuma'
+meetPlace: 'Tesco, Juliánov, https://mapy.com/s/huhazubuma'
 link: ''
 eventTypeDescription: 'směry + COB'
 startTime: intervalový
@@ -34,5 +34,5 @@ signups: ''
 gps: '49.21043, 17.22737'
 ---
 
-* **sraz**: 16:30 Tesco, Juliánov, https://mapy.cz/s/huhazubuma
+* **sraz**: 16:30 Tesco, Juliánov, https://mapy.com/s/huhazubuma
 * **doprava**: auty

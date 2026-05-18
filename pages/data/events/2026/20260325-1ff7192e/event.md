@@ -17,7 +17,7 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-note: "📆 STŘEDA 25. března, 16:30\r\n📍 Sraz: Pod Stránskou skálou (https://en.mapy.cz/s/jomupevoje), parkování: nějaké místo je přímo tam, jinak ulice Stránská, případně Podstránská\r\n👟 Co se poběží: seběhy v lehce technickém terénu\r\n💪🏼 Dovednost: rychlost, technika seběhu\r\n\r\nJak to bude probíhat:\r\nZe srazu dáme rozklus a zahřátí, pak cca 30-40 min hlavní část tréninku. Každý pěkně svým tempem a pak ještě vyklusat."
+note: "📆 STŘEDA 25. března, 16:30\r\n📍 Sraz: Pod Stránskou skálou (https://mapy.com/s/jomupevoje), parkování: nějaké místo je přímo tam, jinak ulice Stránská, případně Podstránská\r\n👟 Co se poběží: seběhy v lehce technickém terénu\r\n💪🏼 Dovednost: rychlost, technika seběhu\r\n\r\nJak to bude probíhat:\r\nZe srazu dáme rozklus a zahřátí, pak cca 30-40 min hlavní část tréninku. Každý pěkně svým tempem a pak ještě vyklusat."
 return: ''
 price: ''
 program: ''
@@ -30,7 +30,7 @@ gps: '49.18834, 16.67107'
 ---
 
 📆 STŘEDA 25. března, 16:30
-📍 Sraz: Pod Stránskou skálou (https://en.mapy.cz/s/jomupevoje), parkování: nějaké místo je přímo tam, jinak ulice Stránská, případně Podstránská
+📍 Sraz: Pod Stránskou skálou (https://mapy.com/s/jomupevoje), parkování: nějaké místo je přímo tam, jinak ulice Stránská, případně Podstránská
 👟 Co se poběží: seběhy v lehce technickém terénu
 💪🏼 Dovednost: rychlost, technika seběhu
 

@@ -14,7 +14,7 @@ import:
     type: members
     time: 1620119401
 meetTime: '16:30'
-meetPlace: 'https://en.mapy.cz/s/dakekokeje'
+meetPlace: 'https://mapy.com/s/dakekokeje'
 link: ''
 eventTypeDescription: 'Sprintové intervaly'
 startTime: ''

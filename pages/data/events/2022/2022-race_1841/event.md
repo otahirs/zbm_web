@@ -11,7 +11,7 @@ start: '2022-11-26'
 end: '2022-11-26'
 title: 'Mapový trénink žactva'
 type: T
-note: "Budou nachystány tratě Pulců, Žáků, Hobíků.\r\nMapa s body srazu, parkování a autobusu: https://en.mapy.cz/s/jupatemefa"
+note: "Budou nachystány tratě Pulců, Žáků, Hobíků.\r\nMapa s body srazu, parkování a autobusu: https://mapy.com/s/jupatemefa"
 template: trenink
 date: '2022-10-06'
 import:
@@ -38,7 +38,7 @@ gps: '49.31987, 16.76692'
 ---
 
 Budou nachystány tratě Pulců, Žáků, Hobíků.
-Mapa s body srazu, parkování a autobusu: https://en.mapy.cz/s/jupatemefa
+Mapa s body srazu, parkování a autobusu: https://mapy.com/s/jupatemefa
 * **sraz**: 9:50 rozcestí Proklest, Paseky
 * **doprava**: <UL>
 <LI>auty (řidiči, domluvte se s Pavlem/Andreou)</LI>

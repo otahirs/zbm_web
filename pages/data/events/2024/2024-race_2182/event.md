@@ -24,7 +24,7 @@ eventTypeDescription: "A - COB,\r\nB - odbočovák,\r\nC - seběhy,\r\nHobby - k
 startTime: '10:30'
 map: Chocholuše
 terrain: ''
-transport: "**Sraz 9:30 Královo pole nádraží**\r\nSpolečná doprava auty - kdo potřebuje, nezapomeňte si podsedák\r\nParkování:https://mapy.cz/s/jufufuhaja\r\nVzdálenost parkování - start je 1,6 - 2 km"
+transport: "**Sraz 9:30 Královo pole nádraží**\r\nSpolečná doprava auty - kdo potřebuje, nezapomeňte si podsedák\r\nParkování:https://mapy.com/s/jufufuhaja\r\nVzdálenost parkování - start je 1,6 - 2 km"
 accomodation: ''
 food: ''
 leader: 'Tomáš K.'
@@ -40,5 +40,5 @@ gps: '49.34897, 16.5723'
 * **sraz**: 10:15 Lipůvka - Chocholuše
 * **doprava**: **Sraz 9:30 Královo pole nádraží**
 Společná doprava auty - kdo potřebuje, nezapomeňte si podsedák
-Parkování:https://mapy.cz/s/jufufuhaja
+Parkování:https://mapy.com/s/jufufuhaja
 Vzdálenost parkování - start je 1,6 - 2 km

@@ -14,7 +14,7 @@ import:
     type: members
     time: 1712131207
 meetTime: '16:30'
-meetPlace: 'Parkoviště u Nového hřbitova, https://mapy.cz/s/lokurosufu'
+meetPlace: 'Parkoviště u Nového hřbitova, https://mapy.com/s/lokurosufu'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -33,5 +33,5 @@ signups: ''
 gps: '48.80272, 16.63254'
 ---
 
-* **sraz**: 16:30 Parkoviště u Nového hřbitova, https://mapy.cz/s/lokurosufu
+* **sraz**: 16:30 Parkoviště u Nového hřbitova, https://mapy.com/s/lokurosufu
 * **doprava**: auty

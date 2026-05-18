@@ -15,7 +15,7 @@ import:
     type: members
     time: 1665952802
 meetTime: '16:00'
-meetPlace: 'https://en.mapy.cz/s/cavusajevu'
+meetPlace: 'https://mapy.com/s/cavusajevu'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -34,5 +34,5 @@ gps: '49.26051, 17.29411'
 ---
 
 mapa: Věžky
-* **sraz**: 16:00 https://en.mapy.cz/s/cavusajevu
+* **sraz**: 16:00 https://mapy.com/s/cavusajevu
 * **doprava**: auty

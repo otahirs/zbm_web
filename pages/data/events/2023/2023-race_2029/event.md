@@ -25,7 +25,7 @@ eventTypeDescription: "Pulci - výprava/COB s trenérem<BR>\r\nŽáci 1 - azimut
 startTime: ''
 map: ''
 terrain: 'Velmi rovinatý, prostor posledních 2 Krátkých dnů, sousední prostor letošních MČR štafet a družstev.'
-transport: "Auty (prosíme parkujte v Dubňanech u haly Želva).\r\nSraz a odjezd 8:00 [z parkoviště mezi hl. nádráží a Tescem](https://mapy.cz/s/lodukabofu) - odjíždí se odtud pravidelně na tábor\r\nNávrat mezi 12 a 13 hodinou.\r\n[Napište se do tabulky dopravy](https://docs.google.com/spreadsheets/d/1_erxE8i7zDS8cAePlCGwF3Q6EVJDQM9InHixYtAoOFI/edit?usp=sharing)."
+transport: "Auty (prosíme parkujte v Dubňanech u haly Želva).\r\nSraz a odjezd 8:00 [z parkoviště mezi hl. nádráží a Tescem](https://mapy.com/s/lodukabofu) - odjíždí se odtud pravidelně na tábor\r\nNávrat mezi 12 a 13 hodinou.\r\n[Napište se do tabulky dopravy](https://docs.google.com/spreadsheets/d/1_erxE8i7zDS8cAePlCGwF3Q6EVJDQM9InHixYtAoOFI/edit?usp=sharing)."
 accomodation: ''
 food: ''
 leader: Mira
@@ -68,6 +68,6 @@ routes:
 Jsou nachystány tratě na obejití pro Pulce (výprava - oblečte se tepla na chození) a tréninkové tratě pro Žáky a Hobíky (věci na běhání).
 * **sraz**: 9:00 Dubňany u haly Želva
 * **doprava**: Auty (prosíme parkujte v Dubňanech u haly Želva).
-Sraz a odjezd 8:00 [z parkoviště mezi hl. nádráží a Tescem](https://mapy.cz/s/lodukabofu) - odjíždí se odtud pravidelně na tábor
+Sraz a odjezd 8:00 [z parkoviště mezi hl. nádráží a Tescem](https://mapy.com/s/lodukabofu) - odjíždí se odtud pravidelně na tábor
 Návrat mezi 12 a 13 hodinou.
 [Napište se do tabulky dopravy](https://docs.google.com/spreadsheets/d/1_erxE8i7zDS8cAePlCGwF3Q6EVJDQM9InHixYtAoOFI/edit?usp=sharing).

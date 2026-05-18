@@ -14,7 +14,7 @@ import:
     type: members
     time: 1604902808
 meetTime: '16:00'
-meetPlace: 'Slatina, parkoviště u Lidlu, https://mapy.cz/s/borenocupa'
+meetPlace: 'Slatina, parkoviště u Lidlu, https://mapy.com/s/borenocupa'
 link: ''
 eventTypeDescription: 'H, D'
 startTime: '17:15'

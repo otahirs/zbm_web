@@ -24,7 +24,7 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-note: 'https://mapy.cz/s/curucedugu'
+note: 'https://mapy.com/s/curucedugu'
 return: ''
 price: ''
 program: ''
@@ -37,5 +37,5 @@ routes:
         link: 'http://3drerun.worldofo.com/?id=-16922125&type=info'
 ---
 
-https://mapy.cz/s/curucedugu
+https://mapy.com/s/curucedugu
 * **sraz**: 17:00

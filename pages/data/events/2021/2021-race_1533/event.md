@@ -25,8 +25,8 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: "auty, [zapište se ke svému řidiči,](https://docs.google.com/spreadsheets/d/1W9S6pKS_s_MA_NzcA01Q2oIXY2CfCOg2GTk9b0oH5tI/edit?), třeba vás vyzvedne blíž, než na srazu\r\n[Sraz ZDE!](https://mapy.cz/s/gobadabufo)"
-accomodation: 'Jitřetín pod Jedlovou, Rekreační areál pod Jedlovou, https://mapy.cz/s/pabelaguda'
+transport: "auty, [zapište se ke svému řidiči,](https://docs.google.com/spreadsheets/d/1W9S6pKS_s_MA_NzcA01Q2oIXY2CfCOg2GTk9b0oH5tI/edit?), třeba vás vyzvedne blíž, než na srazu\r\n[Sraz ZDE!](https://mapy.com/s/gobadabufo)"
+accomodation: 'Jitřetín pod Jedlovou, Rekreační areál pod Jedlovou, https://mapy.com/s/pabelaguda'
 food: polopenze
 leader: Jenda
 note: 'COVID pravidla drržíme, návod [zde](https://covid.gov.cz/)'
@@ -41,6 +41,6 @@ gps: '49.17724, 16.56424'
 COVID pravidla drržíme, návod [zde](https://covid.gov.cz/)
 * **sraz**: 9:00 Bohunice, parkoviště u Kampusu
 * **doprava**: auty, [zapište se ke svému řidiči,](https://docs.google.com/spreadsheets/d/1W9S6pKS_s_MA_NzcA01Q2oIXY2CfCOg2GTk9b0oH5tI/edit?), třeba vás vyzvedne blíž, než na srazu
-[Sraz ZDE!](https://mapy.cz/s/gobadabufo)
-* **ubytování**: Jitřetín pod Jedlovou, Rekreační areál pod Jedlovou, https://mapy.cz/s/pabelaguda
+[Sraz ZDE!](https://mapy.com/s/gobadabufo)
+* **ubytování**: Jitřetín pod Jedlovou, Rekreační areál pod Jedlovou, https://mapy.com/s/pabelaguda
 * **strava**: polopenze

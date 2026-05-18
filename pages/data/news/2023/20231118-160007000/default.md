@@ -11,7 +11,7 @@ pictures:
 *Ilustrační obrázek z Kohoutovického rýhobraní. *
 Ahoj, tak jedeme dál. Druhý extra trénink se koná od 20.11. do 3.12. U Buku.  
 Na kontrolách jsou stejná mlíka s číslem kontroly a malým reflexním prvkem po obou stranách + datum uklizení kontrol jako minule.  
-Místo startu: [https://mapy.cz/s/hosuhogohu](https://mapy.cz/s/hosuhogohu)  
+Místo startu: [https://mapy.com/s/hosuhogohu](https://mapy.com/s/hosuhogohu)  
 Označení:  
 Red - nejtěžší možné (3 varianty / L,M,S / s dalšími 3 podvariantami - labůžo / bez cest / normal)  
 Orange - střední obtížnost (2 varianty M a S)  

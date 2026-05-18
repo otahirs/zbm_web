@@ -1,4 +1,4 @@
-// mapy.cz logo
+// mapy.com logo
 MapyLogo = L.Control.extend({
     options: {
         position: 'bottomleft',
@@ -6,15 +6,15 @@ MapyLogo = L.Control.extend({
     onAdd: function (map) {
         const container = L.DomUtil.create('div');
         const link = L.DomUtil.create('a', '', container);
-        link.setAttribute('href', 'http://mapy.cz/');
+         link.setAttribute('href', 'https://mapy.com/');
         link.setAttribute('target', '_blank');
-        link.innerHTML = '<img src="https://api.mapy.cz/img/api/logo.svg" />';
+         link.innerHTML = '<img src="https://api.mapy.com/img/api/logo.svg" />';
         L.DomEvent.disableClickPropagation(link);
         return container;
     },
 });
 
-// tlacitko Zobrazit na Mapy.cz
+// tlacitko Zobrazit na Mapy.com
 MapyLink = L.Control.extend({
     options: {
         position: 'topright',
@@ -24,9 +24,9 @@ MapyLink = L.Control.extend({
     onAdd: function (map) {
         const container = L.DomUtil.create('div');
         const link = L.DomUtil.create('a', '', container);
-        link.setAttribute('href', 'http://mapy.cz/turisticka?x=' + this.options.longitude + '&y=' + this.options.latitude + '&z=15&source=coor&id=' + this.options.longitude + '%2C' + this.options.latitude);
+         link.setAttribute('href', 'https://mapy.com/turisticka?x=' + this.options.longitude + '&y=' + this.options.latitude + '&z=15&source=coor&id=' + this.options.longitude + '%2C' + this.options.latitude);
         link.setAttribute('target', '_blank');
-        link.innerHTML = 'Zobrazit na Mapy.cz';
+         link.innerHTML = 'Zobrazit na Mapy.com';
         link.style.cssText = "display:block; padding:4px 8px;"+
             "background-color:#e65a51; border:medium none;"+
             "border-radius:3px;"+

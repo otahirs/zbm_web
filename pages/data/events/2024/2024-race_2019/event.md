@@ -15,7 +15,7 @@ import:
 place: Soběšice
 note: 'po cestách'
 meetTime: '10:15'
-meetPlace: 'U Buku (mezi Soběšicemi a Útěchovem) https://mapy.cz/s/hahobotana'
+meetPlace: 'U Buku (mezi Soběšicemi a Útěchovem) https://mapy.com/s/hahobotana'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -33,4 +33,4 @@ signups: ''
 ---
 
 po cestách
-* **sraz**: 10:15 U Buku (mezi Soběšicemi a Útěchovem) https://mapy.cz/s/hahobotana
+* **sraz**: 10:15 U Buku (mezi Soběšicemi a Útěchovem) https://mapy.com/s/hahobotana

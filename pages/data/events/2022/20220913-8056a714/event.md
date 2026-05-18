@@ -7,7 +7,7 @@ start: '2022-09-13'
 end: '2022-09-13'
 place: 'Útěchov, U buku - mapa Melatín'
 meetTime: '16:15'
-meetPlace: 'https://mapy.cz/s/motejuvamo'
+meetPlace: 'https://mapy.com/s/motejuvamo'
 link: ''
 eventTypeDescription: 'Z+A - fáborková linie, B - odbočovák, C - shluky'
 startTime: ''
@@ -32,7 +32,7 @@ taxonomy:
 gps: '49.27190, 16.6405'
 ---
 
-* **sraz**: 16:15 https://mapy.cz/s/motejuvamo
+* **sraz**: 16:15 https://mapy.com/s/motejuvamo
 * **doprava**: Přibližovací srazy:
 Skácelova 15:15
 Halasovo náměstí 15:25

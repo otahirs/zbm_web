@@ -14,7 +14,7 @@ import:
     type: members
     time: 1665953402
 meetTime: '9:20'
-meetPlace: 'Juliánov, Tesco, https://en.mapy.cz/s/jovevosogu'
+meetPlace: 'Juliánov, Tesco, https://mapy.com/s/jovevosogu'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -33,7 +33,7 @@ signups: ''
 gps: '49.33326, 16.76539'
 ---
 
-* **sraz**: 9:20 Juliánov, Tesco, https://en.mapy.cz/s/jovevosogu
+* **sraz**: 9:20 Juliánov, Tesco, https://mapy.com/s/jovevosogu
 * **doprava**: auta:
 * Saša
 * Klárka

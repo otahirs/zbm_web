@@ -13,7 +13,7 @@ eventTypeDescription: "Pulci  1 a 2: COB\r\nŽáci 1: odbočovák - využití vr
 startTime: ''
 map: 'Hornek (Spáleniště)'
 terrain: ''
-transport: "Autobus 201 na zastávku Na Spáleništi (zóna 210) - vzdálenost na start 500m - značeno fáborky\r\nPřibližovací srazy:\r\nSkácelova 14:58, zastávka směrem na Slovaňák\r\nHalasovo náměstí 15:08, sraz na obvyklém místě\r\nParkování: https://mapy.cz/s/hakejapako"
+transport: "Autobus 201 na zastávku Na Spáleništi (zóna 210) - vzdálenost na start 500m - značeno fáborky\r\nPřibližovací srazy:\r\nSkácelova 14:58, zastávka směrem na Slovaňák\r\nHalasovo náměstí 15:08, sraz na obvyklém místě\r\nParkování: https://mapy.com/s/hakejapako"
 accomodation: ''
 food: ''
 leader: ''
@@ -39,4 +39,4 @@ gps: '49.24383, 16.71307'
 Přibližovací srazy:
 Skácelova 14:58, zastávka směrem na Slovaňák
 Halasovo náměstí 15:08, sraz na obvyklém místě
-Parkování: https://mapy.cz/s/hakejapako
+Parkování: https://mapy.com/s/hakejapako

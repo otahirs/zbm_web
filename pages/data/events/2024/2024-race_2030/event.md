@@ -12,7 +12,7 @@ end: '2024-01-20'
 title: 'Mapový trénink žactva'
 place: 'Ochoz u Brna'
 type: T
-note: "Jsou nachystány tratě na obejití pro Pulce (výprava - oblečte se teple na chození) a tréninkové tratě pro Žáky a Hobíky (věci na běhání).\r\nMapa s body srazu, parkování a autobusu: https://en.mapy.cz/s/pehabecepu"
+note: "Jsou nachystány tratě na obejití pro Pulce (výprava - oblečte se teple na chození) a tréninkové tratě pro Žáky a Hobíky (věci na běhání).\r\nMapa s body srazu, parkování a autobusu: https://mapy.com/s/pehabecepu"
 template: trenink
 date: '2023-10-29'
 import:
@@ -54,7 +54,7 @@ routes:
 ---
 
 Jsou nachystány tratě na obejití pro Pulce (výprava - oblečte se teple na chození) a tréninkové tratě pro Žáky a Hobíky (věci na běhání).
-Mapa s body srazu, parkování a autobusu: https://en.mapy.cz/s/pehabecepu
+Mapa s body srazu, parkování a autobusu: https://mapy.com/s/pehabecepu
 * **sraz**: 9:30 rozcestí nad Ochozem u Brna
 * **doprava**: * auty - prosíme, nenajíždějte do lesa (řidiči, domluvte se s Pavlem)
 * [autobusem 201](https://idos.idnes.cz/vlakyautobusymhdvse/spojeni/draha/?p=Fyb5SSWpsOpfNdTbad2ENE6AFz6uSaftZ9mSp:JbjSCSAhBwuZkoo8XOwdNQtalNWmHEyc:ULO0-&from=2842&to=24550&depTime=8:45&arrTime=9:05): (sraz 8:35 a mějte prosím lístky na zóny 100, 101 a 210 - autobusem pojede Lenka Hrušková jako doprovod pro děti, kteří nejedou autem)

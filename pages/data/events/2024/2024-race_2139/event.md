@@ -14,7 +14,7 @@ import:
     time: 1722579008
 place: Dubňany
 meetTime: '16:15'
-meetPlace: 'Lidl, Dornych, https://en.mapy.cz/s/nupofavetu'
+meetPlace: 'Lidl, Dornych, https://mapy.com/s/nupofavetu'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -33,5 +33,5 @@ signups: ''
 gps: '48.90373, 17.10457'
 ---
 
-* **sraz**: 16:15 Lidl, Dornych, https://en.mapy.cz/s/nupofavetu
+* **sraz**: 16:15 Lidl, Dornych, https://mapy.com/s/nupofavetu
 * **doprava**: auty, pokud nestihate sraz, mrknete do prihlasek a domluvte se s nekterym ridicem!

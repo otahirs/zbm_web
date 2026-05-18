@@ -10,7 +10,7 @@ meetTime: '16:15'
 meetPlace: 'ze zastávky U buku značeno fáborky'
 link: ''
 eventTypeDescription: "Typy tréninků:\r\nzačátečníci + A - hvězdice + krátké okruhy\r\nB - sudá/lichá\r\nC - azimutové okruhy"
-startTime: 'https://mapy.cz/turisticka?vlastni-body&x=16.6255011&y=49.2786481&z=16&ut=%C5%BD%C3%A1ci%20Map%C3%A1%C4%8D%20Start%205.4.(ZBM)%20a%206.4.(TBM)%202022&uc=9mOl1x8R-3&ud=49%C2%B016%2740.021%22N%2C%2016%C2%B037%2734.701%22E'
+startTime: 'https://mapy.com/turisticka?vlastni-body&x=16.6255011&y=49.2786481&z=16&ut=%C5%BD%C3%A1ci%20Map%C3%A1%C4%8D%20Start%205.4.(ZBM)%20a%206.4.(TBM)%202022&uc=9mOl1x8R-3&ud=49%C2%B016%2740.021%22N%2C%2016%C2%B037%2734.701%22E'
 map: ''
 terrain: ''
 transport: "MHD 57 na zastávku U buku\r\npřibližovací srazy:\r\nSkácelova 15:30\r\nHalasovo náměstí 15:45"

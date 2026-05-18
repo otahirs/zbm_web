@@ -14,7 +14,7 @@ import:
     type: members
     time: 1598613546
 meetTime: '16:30'
-meetPlace: 'Parkoviště u Lidlu, Slatina (https://en.mapy.cz/s/noposazesu)'
+meetPlace: 'Parkoviště u Lidlu, Slatina (https://mapy.com/s/noposazesu)'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -40,4 +40,4 @@ routes:
         link: 'http://3drerun.worldofo.com/index.php?id=-16805265&type=info'
 ---
 
-*   **sraz**: 16:30 Parkoviště u Lidlu, Slatina [mapy.cz/s/noposazesu](https://en.mapy.cz/s/noposazesu). Doprava auty.
+*   **sraz**: 16:30 Parkoviště u Lidlu, Slatina [mapy.com/s/noposazesu](https://mapy.com/s/noposazesu). Doprava auty.

@@ -10,7 +10,7 @@ title: 'Předvánoční Sklené'
 place: Sklené
 gps: '49.61037, 16.00859'
 meetTime: '16:30'
-meetPlace: 'https://mapy.cz/s/jacubofuco'
+meetPlace: 'https://mapy.com/s/jacubofuco'
 transport: auty
 accomodation: 'Na posteli'
 food: 'od páteční snídaně, vemte si s sebou večeři na čtvrtek!!!'

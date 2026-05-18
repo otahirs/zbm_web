@@ -18,7 +18,7 @@ import:
     type: members
     time: 1664624402
 meetTime: '15:00'
-meetPlace: 'Parkoviště v Komárově, https://en.mapy.cz/s/mamolavopa'
+meetPlace: 'Parkoviště v Komárově, https://mapy.com/s/mamolavopa'
 link: 'https://www.astrois.hu/boroka-osz/2022/en_invit.html'
 eventTypeDescription: ''
 startTime: ''
@@ -30,7 +30,7 @@ food: "Bude zajištěn sobotní oběd (studenou formou hned po/na závodech), \r
 leader: Jenda
 return: 'V neděli večer, okolo 8 hodiny.'
 price: ''
-program: "1. Noční proběhnutí v Bratislavě\r\n  * parkujeme [zde](https://en.mapy.cz/s/loropuzodu)\r\n  * [cesta na start](https://en.mapy.cz/s/hacavotaro)\r\n2. Závody v pískových dunách\r\n3. Termální lázně v blízkosti ubytování"
+program: "1. Noční proběhnutí v Bratislavě\r\n  * parkujeme [zde](https://mapy.com/s/loropuzodu)\r\n  * [cesta na start](https://mapy.com/s/hacavotaro)\r\n2. Závody v pískových dunách\r\n3. Termální lázně v blízkosti ubytování"
 thingsToTake: "* **světlo**, může být i bludička, ve městě to do mapy stačí\r\n* Věci na ob\r\n* běžecké boty do města i do lesa\r\n* **PLAVKY**\r\n* V Maďarsku jde vcelku bez problémů platit kartou, ale peníze se můžou hodit..."
 signups: ''
 gps: '48.1399, 17.11443'
@@ -40,7 +40,7 @@ gps: '48.1399, 17.11443'
 [Web ubytování 1](https://bocsa.hu/boroka-ifjusagi-szallashely/)
 [Web ubytování 2](http://www.hoteljuniperus.hu/)
 Oddíl nezajišťuje žádné připojištění. (Jako obvykle v zemích eu se k vám musí chovat jako k místnímu občanovi, ale klidně si zařiďte)
-* **sraz**: 15:00 Parkoviště v Komárově, https://en.mapy.cz/s/mamolavopa
+* **sraz**: 15:00 Parkoviště v Komárově, https://mapy.com/s/mamolavopa
 * **doprava**: auty, [rozpis dopravy k úpravám zde](https://docs.google.com/spreadsheets/d/13nAnJUMskLVqCIEIaDftTleUtRbcFuc8Phf_JeQNO-E/edit?usp=sharing)
 * **ubytování**: Na 2 místech, na postelích.
 Auta LuF a Jenda v Kecskemetu, zbytek v Bocse.

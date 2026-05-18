@@ -7,6 +7,6 @@ user: 'Jenda'
 pictures:
 ---
 Navzdory slibu nebylo pro oddíl od nového roku zajištěno prodloužení smlouvy na Milénové, proto musíme operativně změnit místa tréninků.
-Od 20. ledna tedy bude dorost+ v úterky chodit na [Purkyňovu](https://en.mapy.cz/s/kosefahotu) a ve středy na  [Novoměstskou](https://en.mapy.cz/s/gajohubucu).
-Žáci prozatím v úterý zůstávají na Kotlářské, ve středy budou, stejně jako dorost+, chodit na [Novoměstskou](https://en.mapy.cz/s/gajohubucu).
+Od 20. ledna tedy bude dorost+ v úterky chodit na [Purkyňovu](https://mapy.com/s/kosefahotu) a ve středy na  [Novoměstskou](https://mapy.com/s/gajohubucu).
+Žáci prozatím v úterý zůstávají na Kotlářské, ve středy budou, stejně jako dorost+, chodit na [Novoměstskou](https://mapy.com/s/gajohubucu).
 Děkujeme všem trenérům za pomoc s nalezením náhradního řešení!

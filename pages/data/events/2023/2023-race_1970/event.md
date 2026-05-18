@@ -24,7 +24,7 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-note: "Centrum závodů je ZŠ Hudcova v Brně-Medlánkách.\r\nhttps://mapy.cz/s/cuzufagefa\r\n\r\nSraz dětí bude v sobotu v 9:30 přímo ve škole. Předpokládáme, že děti zůstanou na akci přes noc až do neděle.\r\nSpí se v tělocvičně, takže s sebou spacák, karimatku a přezůvky s bílou podrážkou.\r\n\r\nV sobotu je zajištěna večeře a v neděli pak snídaně a obědový balíček.\r\nDejte, prosím, dětem na sobotu větší svačinu nebo větší kapesné a nebo obojí :)\r\nNa místě bude prodej palačinek, párků v rohlíku, buchet a limonády.\r\n\r\nDalší informace najdete na webových stránkách nebo v ORISU.\r\nhttps://rfz2023.webnode.cz/"
+note: "Centrum závodů je ZŠ Hudcova v Brně-Medlánkách.\r\nhttps://mapy.com/s/cuzufagefa\r\n\r\nSraz dětí bude v sobotu v 9:30 přímo ve škole. Předpokládáme, že děti zůstanou na akci přes noc až do neděle.\r\nSpí se v tělocvičně, takže s sebou spacák, karimatku a přezůvky s bílou podrážkou.\r\n\r\nV sobotu je zajištěna večeře a v neděli pak snídaně a obědový balíček.\r\nDejte, prosím, dětem na sobotu větší svačinu nebo větší kapesné a nebo obojí :)\r\nNa místě bude prodej palačinek, párků v rohlíku, buchet a limonády.\r\n\r\nDalší informace najdete na webových stránkách nebo v ORISU.\r\nhttps://rfz2023.webnode.cz/"
 return: ''
 price: ''
 program: ''
@@ -35,7 +35,7 @@ hasResults: true
 ---
 
 Centrum závodů je ZŠ Hudcova v Brně-Medlánkách.
-https://mapy.cz/s/cuzufagefa
+https://mapy.com/s/cuzufagefa
 
 Sraz dětí bude v sobotu v 9:30 přímo ve škole. Předpokládáme, že děti zůstanou na akci přes noc až do neděle.
 Spí se v tělocvičně, takže s sebou spacák, karimatku a přezůvky s bílou podrážkou.

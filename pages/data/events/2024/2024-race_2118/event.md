@@ -14,7 +14,7 @@ import:
     time: 1712055607
 place: Nížkovice
 meetTime: '16:30'
-meetPlace: 'Tesco, Juliánov, https://en.mapy.cz/s/korerusucu'
+meetPlace: 'Tesco, Juliánov, https://mapy.com/s/korerusucu'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -33,5 +33,5 @@ signups: ''
 gps: '49.09448, 16.91373'
 ---
 
-* **sraz**: 16:30 Tesco, Juliánov, https://en.mapy.cz/s/korerusucu
+* **sraz**: 16:30 Tesco, Juliánov, https://mapy.com/s/korerusucu
 * **doprava**: auty

@@ -28,7 +28,7 @@ transport: "Společná auty, vedoucí dopravy Květa Dohnalová\r\n* kdo potřeb
 accomodation: ''
 food: ''
 leader: 'Rostislav Smítal'
-note: "Svačinu + pití v termosce dle vlastního uvážení.\r\nDoporučené náhradní oblečení: teplé ponožky\r\n**Vyznačení** místa srazu v Brně + **mapového startu** + **doporučeného parkování** k nahlédnutí [ZDE](http://mapy.com/s/fobecevate)"
+note: "Svačinu + pití v termosce dle vlastního uvážení.\r\nDoporučené náhradní oblečení: teplé ponožky\r\n**Vyznačení** místa srazu v Brně + **mapového startu** + **doporučeného parkování** k nahlédnutí [ZDE](https://mapy.com/s/fobecevate)"
 return: ''
 price: ''
 program: ''
@@ -39,7 +39,7 @@ gps: '49.28531, 16.77146'
 
 Svačinu + pití v termosce dle vlastního uvážení.
 Doporučené náhradní oblečení: teplé ponožky
-**Vyznačení** místa srazu v Brně + **mapového startu** + **doporučeného parkování** k nahlédnutí [ZDE](http://mapy.com/s/fobecevate)
+**Vyznačení** místa srazu v Brně + **mapového startu** + **doporučeného parkování** k nahlédnutí [ZDE](https://mapy.com/s/fobecevate)
 * **sraz**: 9:15 Královo Pole nádraží
 * **doprava**: Společná auty, vedoucí dopravy Květa Dohnalová
 * kdo potřebuje, nezapomeňte si podsedák

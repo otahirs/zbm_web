@@ -28,7 +28,7 @@ transport: "společná doprava - auty\r\nKdo potřebujete podsedák, přineste s
 accomodation: ''
 food: ''
 leader: 'Tom Š.'
-note: "Sraz na parkovišti ve Valchově 10:00\r\nParkování, místo startu: https://mapy.cz/s/momeredana"
+note: "Sraz na parkovišti ve Valchově 10:00\r\nParkování, místo startu: https://mapy.com/s/momeredana"
 return: ''
 price: ''
 program: ''
@@ -38,7 +38,7 @@ gps: '49.4721, 16.71148'
 ---
 
 Sraz na parkovišti ve Valchově 10:00
-Parkování, místo startu: https://mapy.cz/s/momeredana
+Parkování, místo startu: https://mapy.com/s/momeredana
 * **sraz**: 9:00 Královo Pole nádraží
 * **doprava**: společná doprava - auty
 Kdo potřebujete podsedák, přineste si ho s sebou.

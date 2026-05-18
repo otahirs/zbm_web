@@ -14,7 +14,7 @@ import:
     type: members
     time: 1682063403
 meetTime: '16:45'
-meetPlace: 'https://en.mapy.cz/s/dohorugafe'
+meetPlace: 'https://mapy.com/s/dohorugafe'
 link: ''
 eventTypeDescription: 'vrstevnicovka/mapa bez cest'
 startTime: ''
@@ -34,5 +34,5 @@ gps: '49.22209, 16.48679'
 ---
 
 stavba: VojtaM
-* **sraz**: 16:45 https://en.mapy.cz/s/dohorugafe
+* **sraz**: 16:45 https://mapy.com/s/dohorugafe
 * **doprava**: MHD

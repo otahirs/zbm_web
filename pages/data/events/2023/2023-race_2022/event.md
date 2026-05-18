@@ -16,7 +16,7 @@ import:
     time: 1698316206
 place: 'nad Žebětínem u Masarykova okruhu'
 meetTime: '16:30'
-meetPlace: 'Kohoutovice, u Lidlu, https://en.mapy.cz/s/duvasemufa'
+meetPlace: 'Kohoutovice, u Lidlu, https://mapy.com/s/duvasemufa'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -41,5 +41,5 @@ routes:
 
 RED varianty - bez cest 
 ORANGE a GREEN - s cestama
-* **sraz**: 16:30 Kohoutovice, u Lidlu, https://en.mapy.cz/s/duvasemufa
+* **sraz**: 16:30 Kohoutovice, u Lidlu, https://mapy.com/s/duvasemufa
 * **doprava**: **auty, prosím pište do přihlášek, kdo můžete auto vzít, je nás hodně!**

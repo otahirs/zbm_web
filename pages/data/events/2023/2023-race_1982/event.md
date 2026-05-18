@@ -8,7 +8,7 @@ end: '2023-07-09'
 title: 'Vysočina: les + les'
 place: Vysočina
 type: T
-note: "mapová příprava směrem k MČR na krátké trati\r\n\r\n| Den |      | typ                                           | sraz                |                     | parkování                    |\r\n|-----|------|------------------------------------------|--------------------|-----------------|------------------------------|\r\n|     | dopo | dvoukolový middle                  | Milovy            | 10:00           | ??? |\r\n|     | odpo | middle                                     | Křižánky         | 15:00           | https://mapy.cz/s/jujupezejo |"
+note: "mapová příprava směrem k MČR na krátké trati\r\n\r\n| Den |      | typ                                           | sraz                |                     | parkování                    |\r\n|-----|------|------------------------------------------|--------------------|-----------------|------------------------------|\r\n|     | dopo | dvoukolový middle                  | Milovy            | 10:00           | ??? |\r\n|     | odpo | middle                                     | Křižánky         | 15:00           | https://mapy.com/s/jujupezejo |"
 template: trenink
 date: '2023-07-01'
 import:
@@ -47,6 +47,6 @@ mapová příprava směrem k MČR na krátké trati
 | Den |      | typ                                           | sraz                |                     | parkování                    |
 |-----|------|------------------------------------------|--------------------|-----------------|------------------------------|
 |     | dopo | dvoukolový middle                  | Milovy            | 10:00           | ??? |
-|     | odpo | middle                                     | Křižánky         | 15:00           | https://mapy.cz/s/jujupezejo |
+|     | odpo | middle                                     | Křižánky         | 15:00           | https://mapy.com/s/jujupezejo |
 * **sraz**: 8:30 Krpole nádraží
 * **doprava**: auty

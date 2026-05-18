@@ -12,7 +12,7 @@ start: '2022-12-10'
 end: '2022-12-10'
 title: 'Mapový trénink žactva'
 type: T
-note: "Jsou nachystány tratě Pulců, Žáků a Hobíků.\r\nMapa s body srazu, parkování a autobusu: https://mapy.cz/s/copusoguku"
+note: "Jsou nachystány tratě Pulců, Žáků a Hobíků.\r\nMapa s body srazu, parkování a autobusu: https://mapy.com/s/copusoguku"
 template: trenink
 date: '2022-10-06'
 import:
@@ -39,7 +39,7 @@ gps: '49.26247, 16.7507'
 ---
 
 Jsou nachystány tratě Pulců, Žáků a Hobíků.
-Mapa s body srazu, parkování a autobusu: https://mapy.cz/s/copusoguku
+Mapa s body srazu, parkování a autobusu: https://mapy.com/s/copusoguku
 * **sraz**: 9:30 rozcestí nad Ochozem u Brna
 * **doprava**: * auty - prosíme, nenajíždějte do lesa (řidiči, domluvte se s Alfem)
 * [autobusem 201](https://idos.idnes.cz/vlakyautobusymhdvse/spojeni/draha/?p=Fyb5SSWpsOpfNdTbad2ENE6AFz6uSaftb:gwYMBxU27wfMknHFCQFhshJQGsxU5NaCD64TC.vTg-&from=2842&to=24550&depTime=8:42&arrTime=9:02): (autobusem pojede Lenka Hrušková jako doprovod pro děti, kteří nejedou autem)

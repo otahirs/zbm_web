@@ -14,7 +14,7 @@ import:
     type: members
     time: 1629699602
 meetTime: '16:30'
-meetPlace: 'Lesná, parkoviště Lidlu na Halasově náměstí, https://mapy.cz/s/begogafobu'
+meetPlace: 'Lesná, parkoviště Lidlu na Halasově náměstí, https://mapy.com/s/begogafobu'
 link: ''
 eventTypeDescription: ''
 startTime: ''

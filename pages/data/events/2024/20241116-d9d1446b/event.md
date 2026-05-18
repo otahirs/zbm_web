@@ -17,7 +17,7 @@ transport: "Doprava auty. \r\nKdo můžete vzít auto, napište se prosím do ta
 accomodation: ''
 food: ''
 leader: ''
-note: 'parkování: https://mapy.cz/s/duzogaluzo'
+note: 'parkování: https://mapy.com/s/duzogaluzo'
 return: ''
 price: ''
 program: ''
@@ -34,7 +34,7 @@ taxonomy:
 gps: '49.11818, 16.29632'
 ---
 
-parkování: https://mapy.cz/s/duzogaluzo
+parkování: https://mapy.com/s/duzogaluzo
 * **sraz**: 9:15 u Bohémy
 * **doprava**: Doprava auty. 
 Kdo můžete vzít auto, napište se prosím do tabulky: https://docs.google.com/spreadsheets/d/1o5EqLgm4GfHSBYkfy-U8zoIxw-WRSG2vkXtRcyep70E/edit?usp=sharing

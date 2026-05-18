@@ -14,7 +14,7 @@ import:
     time: 1722579008
 place: Březina
 meetTime: '16:15'
-meetPlace: 'Parkovište u Billy, Líšeň, https://en.mapy.cz/s/cobuhepoho'
+meetPlace: 'Parkovište u Billy, Líšeň, https://mapy.com/s/cobuhepoho'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -33,5 +33,5 @@ signups: ''
 gps: '49.28679, 16.76458'
 ---
 
-* **sraz**: 16:15 Parkovište u Billy, Líšeň, https://en.mapy.cz/s/cobuhepoho
+* **sraz**: 16:15 Parkovište u Billy, Líšeň, https://mapy.com/s/cobuhepoho
 * **doprava**: auty

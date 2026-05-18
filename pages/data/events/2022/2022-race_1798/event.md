@@ -24,7 +24,7 @@ transport: MHD
 accomodation: ''
 food: ''
 leader: Saša
-note: '[Místo startu](https://mapy.cz/s/kelaboruve)'
+note: '[Místo startu](https://mapy.com/s/kelaboruve)'
 return: ''
 price: ''
 program: ''
@@ -37,6 +37,6 @@ routes:
         link: 'http://3drerun.worldofo.com/index.php?id=-16921189&type=info'
 ---
 
-[Místo startu](https://mapy.cz/s/kelaboruve)
+[Místo startu](https://mapy.com/s/kelaboruve)
 * **sraz**: 17:00 Žebětín
 * **doprava**: MHD

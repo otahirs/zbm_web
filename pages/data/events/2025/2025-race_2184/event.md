@@ -25,7 +25,7 @@ eventTypeDescription: "P, A - COB,\r\nB - krátké postupy\r\nC - dohledávka\r\
 startTime: '10:30'
 map: Pinkoviště
 terrain: ''
-transport: "Auty\r\nSraz 9:00 v Králově Poli nádraží\r\nKdo potřebuje podsedák, přineste si jej s sebou.\r\nParkování https://mapy.cz/s/lomoradogo\r\nVzdálenost z parkování na start 1,9 km."
+transport: "Auty\r\nSraz 9:00 v Králově Poli nádraží\r\nKdo potřebuje podsedák, přineste si jej s sebou.\r\nParkování https://mapy.com/s/lomoradogo\r\nVzdálenost z parkování na start 1,9 km."
 accomodation: ''
 food: ''
 leader: ''
@@ -42,5 +42,5 @@ gps: '49.33497, 16.69793'
 * **doprava**: Auty
 Sraz 9:00 v Králově Poli nádraží
 Kdo potřebuje podsedák, přineste si jej s sebou.
-Parkování https://mapy.cz/s/lomoradogo
+Parkování https://mapy.com/s/lomoradogo
 Vzdálenost z parkování na start 1,9 km.

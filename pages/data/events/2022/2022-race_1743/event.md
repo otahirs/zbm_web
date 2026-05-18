@@ -23,7 +23,7 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: "společná autobusem\r\nOdjíždí se odtud:  https://mapy.cz/s/ledohukefu"
+transport: "společná autobusem\r\nOdjíždí se odtud:  https://mapy.com/s/ledohukefu"
 accomodation: ''
 food: ''
 leader: Jenda
@@ -40,4 +40,4 @@ hasResults: true
 Ubytování na postelích. Zajištěna sobotní snídaně, večeře a nedělní snídaně.
 * **sraz**: 16:00 (pátek) Akadamická u Campusu
 * **doprava**: společná autobusem
-Odjíždí se odtud:  https://mapy.cz/s/ledohukefu
+Odjíždí se odtud:  https://mapy.com/s/ledohukefu

@@ -7,7 +7,7 @@ start: '2020-10-10'
 end: '2020-10-10'
 place: Mikulčice
 meetTime: '9:00'
-meetPlace: 'Parkoviště u Lidlu na Dornychu, https://mapy.cz/s/nocekodopo'
+meetPlace: 'Parkoviště u Lidlu na Dornychu, https://mapy.com/s/nocekodopo'
 link: ''
 eventTypeDescription: ''
 startTime: ''

@@ -12,7 +12,7 @@ start: '2023-02-18'
 end: '2023-02-18'
 title: 'Mapový trénink žactva a dorostu'
 type: T
-note: "Budou nachystány tratě Pulců, Žáků, Hobíků  i Dorostu.\r\nMapa s body srazu, parkování, vlaku a startu: https://en.mapy.cz/s/cadumasela"
+note: "Budou nachystány tratě Pulců, Žáků, Hobíků  i Dorostu.\r\nMapa s body srazu, parkování, vlaku a startu: https://mapy.com/s/cadumasela"
 template: trenink
 date: '2022-10-06'
 import:
@@ -70,7 +70,7 @@ routes:
 ---
 
 Budou nachystány tratě Pulců, Žáků, Hobíků  i Dorostu.
-Mapa s body srazu, parkování, vlaku a startu: https://en.mapy.cz/s/cadumasela
+Mapa s body srazu, parkování, vlaku a startu: https://mapy.com/s/cadumasela
 * **sraz**: 8:55 Vracov - okraj (turistický rozcestník)
 * **doprava**: * auty - [tabulka na dopravu](https://docs.google.com/spreadsheets/d/1ez9TkmoFIWUik2DDK3Us7pQU1q8ofow1CsRD0jWLFWo/edit?usp=sharing)
 

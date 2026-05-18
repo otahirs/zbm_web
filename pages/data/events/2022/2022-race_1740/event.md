@@ -24,7 +24,7 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: 'autobusem - odjezd [zde](https://mapy.cz/s/haronalobu)'
+transport: 'autobusem - odjezd [zde](https://mapy.com/s/haronalobu)'
 accomodation: ''
 food: ''
 leader: Jenda
@@ -42,4 +42,4 @@ spí se na postelích a matracích (přistýlkách); Kdo je zimomřivější, ur
 
 Jídlo je domluvené - sobotní snídaně, sobotní večeře a nedělní snídaně.
 * **sraz**: pátek, 15:30 Královo Pole nádraží
-* **doprava**: autobusem - odjezd [zde](https://mapy.cz/s/haronalobu)
+* **doprava**: autobusem - odjezd [zde](https://mapy.com/s/haronalobu)

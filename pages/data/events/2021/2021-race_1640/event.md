@@ -15,7 +15,7 @@ import:
     type: members
     time: 1629699602
 meetTime: '16:30'
-meetPlace: 'Líšeň, parkoviště u Billy: https://en.mapy.cz/s/hufemapeno'
+meetPlace: 'Líšeň, parkoviště u Billy: https://mapy.com/s/hufemapeno'
 link: ''
 eventTypeDescription: ''
 startTime: ''

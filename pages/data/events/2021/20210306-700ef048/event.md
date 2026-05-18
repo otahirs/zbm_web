@@ -17,7 +17,7 @@ transport: Vlastní
 accomodation: ''
 food: ''
 leader: VBM
-note: "Osvědčený formát po rodinách nebo jiných spolubydlících, respektujte prosím vládní nařízení.\r\n\r\nVBM připravilo trénink u Žebětína na mapě Pohádka máje.\r\nA, B, C, D, H plná mapa, C, D a H i mapa bez cest. Na kontrolách plastový fáborek s kódem.\r\n\r\nOd parkování ke [startu](https://mapy.cz/s/hojefodalo) 250 m po lesní silničce na J.\r\n\r\n[Tabulka příjezdů](https://docs.google.com/spreadsheets/d/1cA7XP0pu4rwqnmNPZroAu3oFF69cwh5vSr_mYpUs56c/edit?usp=sharing)\r\n[Mapy ke stažení](https://drive.google.com/drive/folders/1cd2_wPXWh1zgbO4RUq0u6zoZQrTZLmpX?usp=sharing) - na kontrolách budou fáborky z mlíka\r\n[Doporučené parkování](https://mapy.cz/s/hojefodalo)\r\n\r\nDíky za hezký trénink kamarádům z VSK Mendelu Brno!"
+note: "Osvědčený formát po rodinách nebo jiných spolubydlících, respektujte prosím vládní nařízení.\r\n\r\nVBM připravilo trénink u Žebětína na mapě Pohádka máje.\r\nA, B, C, D, H plná mapa, C, D a H i mapa bez cest. Na kontrolách plastový fáborek s kódem.\r\n\r\nOd parkování ke [startu](https://mapy.com/s/hojefodalo) 250 m po lesní silničce na J.\r\n\r\n[Tabulka příjezdů](https://docs.google.com/spreadsheets/d/1cA7XP0pu4rwqnmNPZroAu3oFF69cwh5vSr_mYpUs56c/edit?usp=sharing)\r\n[Mapy ke stažení](https://drive.google.com/drive/folders/1cd2_wPXWh1zgbO4RUq0u6zoZQrTZLmpX?usp=sharing) - na kontrolách budou fáborky z mlíka\r\n[Doporučené parkování](https://mapy.com/s/hojefodalo)\r\n\r\nDíky za hezký trénink kamarádům z VSK Mendelu Brno!"
 return: ''
 price: ''
 program: ''

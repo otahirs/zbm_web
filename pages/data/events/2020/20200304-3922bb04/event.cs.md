@@ -16,7 +16,7 @@ accomodation: 'na posteli'
 food: polopenze
 return: '21:00'
 price: ''
-program: "* středa: odjezd do Slovinska\r\n* čtvrtek: \r\n\t* seznamovací trénink ([Vilenica](https://en.mapy.cz/s/cejemebuho))\r\n\t* COB ([Vilenica-Divača](https://en.mapy.cz/s/gucobakere))\r\n* pátek: \r\n * sprint (Izola)\r\n * věšák-sběrák ([Pliskovica](https://en.mapy.cz/s/dujecubone))\r\n* sobota a neděle - účast na závodech Lipica Open"
+program: "* středa: odjezd do Slovinska\r\n* čtvrtek: \r\n\t* seznamovací trénink ([Vilenica](https://mapy.com/s/cejemebuho))\r\n\t* COB ([Vilenica-Divača](https://mapy.com/s/gucobakere))\r\n* pátek: \r\n * sprint (Izola)\r\n * věšák-sběrák ([Pliskovica](https://mapy.com/s/dujecubone))\r\n* sobota a neděle - účast na závodech Lipica Open"
 thingsToTake: 'Věci na běhání (teplota v okolí Lipice je podle předpovědi okolo 10°C přes den, v noci méně a loni ještě i foukalo), plavky (na ubyování je bazén se slanou vodou).'
 signups: ''
 template: soustredeni

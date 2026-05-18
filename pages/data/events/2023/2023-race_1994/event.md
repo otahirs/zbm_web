@@ -14,7 +14,7 @@ import:
     type: members
     time: 1693081802
 meetTime: '16:30'
-meetPlace: 'Líšeň, u Billy, https://en.mapy.cz/s/nucuzogova'
+meetPlace: 'Líšeň, u Billy, https://mapy.com/s/nucuzogova'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -33,5 +33,5 @@ signups: ''
 gps: '49.25649, 16.74727'
 ---
 
-* **sraz**: 16:30 Líšeň, u Billy, https://en.mapy.cz/s/nucuzogova
+* **sraz**: 16:30 Líšeň, u Billy, https://mapy.com/s/nucuzogova
 * **doprava**: auty

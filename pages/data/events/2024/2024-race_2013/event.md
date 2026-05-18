@@ -14,7 +14,7 @@ import:
     time: 1698313205
 place: 'Šaštín a Dubňany'
 meetTime: '8:00'
-meetPlace: 'Brno, Dornych, Lidl, https://en.mapy.cz/s/hepoduneco'
+meetPlace: 'Brno, Dornych, Lidl, https://mapy.com/s/hepoduneco'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -27,12 +27,12 @@ leader: Jenda
 note: ''
 return: 'V neděli večer'
 price: ''
-program: "|       | | číslo | typ tréninku | mapa                     | rychlost | na kontrole | stavba            | roznos | misto parkovani | Start         |\r\n| ----- | ----- | ------------ | ------------------------ | -------- | ----------- | ----------------- | ------ | --------------- | ------------------------------------------------------------------ | ------------- |\r\n| so    | dopo  | 1            | Krátké postupy a azimuty | Dubnany  | V           | Lampiony          | Jenda  |                 | [https://en.mapy.cz/s/cobuvupede](https://en.mapy.cz/s/cobuvupede) |  |\r\n| 7.10. | odpo  | 2            | štafetové intervaly      | Šaštín   | R           | Lampiony          | Barča  |                 | [https://en.mapy.cz/s/docetecoho](https://en.mapy.cz/s/docetecoho) |  [https://en.mapy.cz/s/jesapoloke](https://en.mapy.cz/s/jesapoloke) |\r\n| ne    | dopo  | 3            | 1\\. úsek                 | Šaštín   | R           | SI+stojan+lampion | Jenda  |                 | [https://en.mapy.cz/s/docetecoho](https://en.mapy.cz/s/docetecoho) |  |\r\n| 8.10. | odpo  | 4            | S+L                      | Šaštín   | V           | Lampiony          | Saša   |                 |  [https://en.mapy.cz/s/docetecoho](https://en.mapy.cz/s/docetecoho) |               |"
+program: "|       | | číslo | typ tréninku | mapa                     | rychlost | na kontrole | stavba            | roznos | misto parkovani | Start         |\r\n| ----- | ----- | ------------ | ------------------------ | -------- | ----------- | ----------------- | ------ | --------------- | ------------------------------------------------------------------ | ------------- |\r\n| so    | dopo  | 1            | Krátké postupy a azimuty | Dubnany  | V           | Lampiony          | Jenda  |                 | [https://mapy.com/s/cobuvupede](https://mapy.com/s/cobuvupede) |  |\r\n| 7.10. | odpo  | 2            | štafetové intervaly      | Šaštín   | R           | Lampiony          | Barča  |                 | [https://mapy.com/s/docetecoho](https://mapy.com/s/docetecoho) |  [https://mapy.com/s/jesapoloke](https://mapy.com/s/jesapoloke) |\r\n| ne    | dopo  | 3            | 1\\. úsek                 | Šaštín   | R           | SI+stojan+lampion | Jenda  |                 | [https://mapy.com/s/docetecoho](https://mapy.com/s/docetecoho) |  |\r\n| 8.10. | odpo  | 4            | S+L                      | Šaštín   | V           | Lampiony          | Saša   |                 |  [https://mapy.com/s/docetecoho](https://mapy.com/s/docetecoho) |               |"
 thingsToTake: "* Buzolu\r\n* čip\r\n* sobotní oběd"
 signups: ''
 ---
 
-* **sraz**: 8:00 Brno, Dornych, Lidl, https://en.mapy.cz/s/hepoduneco
+* **sraz**: 8:00 Brno, Dornych, Lidl, https://mapy.com/s/hepoduneco
 * **doprava**: auty dle members
 * **ubytování**: Není - vracíme se do Brna
 * **strava**: V sobotu vlastní v neděli půjdeme na oběd do restaurace.

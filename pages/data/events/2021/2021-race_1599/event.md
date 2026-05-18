@@ -24,7 +24,7 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: "**Autobusem**, sraz: https://mapy.cz/s/povekumeta\r\nPříjezd na místo (Hradec Králové) do 9:00\r\nBěhem dne dle dohody na místě přejezd:\r\ncca 13:00 hod z HK do [Dolní Olešnice](https://mapy.cz/s/ladugasure)\r\ncca 17:30 hod odjezd do Studence na přespání a večeři)\r\nNeděle cca 8:45 hod přejezd ze Studence do [Dolní Olešnice](https://mapy.cz/s/ladugasure)\r\nOdjezd do Brna cca 15:00 hod do Brna.\r\nPředpokládaný příjezd do Brna cca 18:00 hod"
+transport: "**Autobusem**, sraz: https://mapy.com/s/povekumeta\r\nPříjezd na místo (Hradec Králové) do 9:00\r\nBěhem dne dle dohody na místě přejezd:\r\ncca 13:00 hod z HK do [Dolní Olešnice](https://mapy.com/s/ladugasure)\r\ncca 17:30 hod odjezd do Studence na přespání a večeři)\r\nNeděle cca 8:45 hod přejezd ze Studence do [Dolní Olešnice](https://mapy.com/s/ladugasure)\r\nOdjezd do Brna cca 15:00 hod do Brna.\r\nPředpokládaný příjezd do Brna cca 18:00 hod"
 accomodation: ''
 food: ''
 leader: Jenda
@@ -41,11 +41,11 @@ hasResults: true
 **Strava**: zajištěna sobotní večeře (řízek a brambory), 
 BTW: uvítám dobrovolníka na pozici stravovacího referenta
 * **sraz**: 6:00
-* **doprava**: **Autobusem**, sraz: https://mapy.cz/s/povekumeta
+* **doprava**: **Autobusem**, sraz: https://mapy.com/s/povekumeta
 Příjezd na místo (Hradec Králové) do 9:00
 Během dne dle dohody na místě přejezd:
-cca 13:00 hod z HK do [Dolní Olešnice](https://mapy.cz/s/ladugasure)
+cca 13:00 hod z HK do [Dolní Olešnice](https://mapy.com/s/ladugasure)
 cca 17:30 hod odjezd do Studence na přespání a večeři)
-Neděle cca 8:45 hod přejezd ze Studence do [Dolní Olešnice](https://mapy.cz/s/ladugasure)
+Neděle cca 8:45 hod přejezd ze Studence do [Dolní Olešnice](https://mapy.com/s/ladugasure)
 Odjezd do Brna cca 15:00 hod do Brna.
 Předpokládaný příjezd do Brna cca 18:00 hod

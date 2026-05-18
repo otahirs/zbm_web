@@ -13,7 +13,7 @@ eventTypeDescription: 'Pulci 1 a Pulci 2: linie, Žáci 1: odbočovák, Žáci 2
 startTime: ''
 map: 'Kozí hora'
 terrain: ''
-transport: "MHD na zastávku Kolejní - vzdálenost na start 600 m, značeno fáborky\r\nPřibližovací srazy: \r\nSkácelova 15:35, zastávka směrem na Žabovřesky\r\nHalasovo náměstí 15:20\r\nParkování: v areálu kolejí Pod Palackého vrchem https://mapy.cz/s/goposuzame"
+transport: "MHD na zastávku Kolejní - vzdálenost na start 600 m, značeno fáborky\r\nPřibližovací srazy: \r\nSkácelova 15:35, zastávka směrem na Žabovřesky\r\nHalasovo náměstí 15:20\r\nParkování: v areálu kolejí Pod Palackého vrchem https://mapy.com/s/goposuzame"
 accomodation: ''
 food: ''
 leader: ''
@@ -39,4 +39,4 @@ gps: '49.23169, 16.57079'
 Přibližovací srazy: 
 Skácelova 15:35, zastávka směrem na Žabovřesky
 Halasovo náměstí 15:20
-Parkování: v areálu kolejí Pod Palackého vrchem https://mapy.cz/s/goposuzame
+Parkování: v areálu kolejí Pod Palackého vrchem https://mapy.com/s/goposuzame

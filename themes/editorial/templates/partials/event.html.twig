@@ -178,7 +178,7 @@
     <script type="text/javascript">
     window.addEventListener('DOMContentLoaded', function () {
 
-        // mapy.cz api key
+        // mapy.com api key
             const MAPY_API_KEY = 'eg6r8JBA06Kc-nlr8X8xY1F81YZHJXTX41XKmLUwLHE';
 
 
@@ -192,8 +192,8 @@
                 scrollWheelZoom: false
             }).setView([alt, lng], 10);
 
-            const outdoor = L.tileLayer(`https://api.mapy.cz/v1/maptiles/outdoor/256/{z}/{x}/{y}?apikey=${MAPY_API_KEY}`, {
-                attribution: '<a href="https://api.mapy.cz/copyright" target="_blank">&copy; Seznam.cz a.s. ' + ((lang == 'cs' || lang.startsWith('cs-')) ? 'a další' : 'and others') + '</a>',
+            const outdoor = L.tileLayer(`https://api.mapy.com/v1/maptiles/outdoor/256/{z}/{x}/{y}?apikey=${MAPY_API_KEY}`, {
+                attribution: '<a href="https://developer.mapy.com/copyright" target="_blank">&copy; Seznam.cz a.s. ' + ((lang == 'cs' || lang.startsWith('cs-')) ? 'a další' : 'and others') + '</a>',
                 maxZoom: 19,
                 minZoom: 0
             }).addTo(map);
@@ -202,13 +202,13 @@
             }).addTo(map);
 
 
-         // logo mapy.cz
+         // logo mapy.com
             new MapyLogo({
                 position: "bottomright"
             }).addTo(map);
 
 
-        // tlacitko Zobrazit na Mapy.cz
+        // tlacitko Zobrazit na Mapy.com
             new MapyLink({
                 latitude: alt,
                 longitude: lng

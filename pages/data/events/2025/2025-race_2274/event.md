@@ -20,11 +20,11 @@ eventTypeDescription: "Orange -M: 4,4 km\r\nOrange -S: 3,2 km"
 startTime: ''
 map: Šibeník
 terrain: ''
-transport: 'Společná. Sraz na parkovišti v kampusu 16:45: https://mapy.cz/s/hosacamucu. Není moc míst na zaparkování auta, jinak by se muselo až dál z Omic...'
+transport: 'Společná. Sraz na parkovišti v kampusu 16:45: https://mapy.com/s/hosacamucu. Není moc míst na zaparkování auta, jinak by se muselo až dál z Omic...'
 accomodation: ''
 food: ''
 leader: 'Jan Drábek'
-note: 'https://mapy.cz/s/dokasavadu'
+note: 'https://mapy.com/s/dokasavadu'
 return: ''
 price: ''
 program: ''
@@ -33,6 +33,6 @@ signups: ''
 gps: '49.173, 16.46234'
 ---
 
-https://mapy.cz/s/dokasavadu
+https://mapy.com/s/dokasavadu
 * **sraz**: 17:00 Omice u lesa
-* **doprava**: Společná. Sraz na parkovišti v kampusu 16:45: https://mapy.cz/s/hosacamucu. Není moc míst na zaparkování auta, jinak by se muselo až dál z Omic...
+* **doprava**: Společná. Sraz na parkovišti v kampusu 16:45: https://mapy.com/s/hosacamucu. Není moc míst na zaparkování auta, jinak by se muselo až dál z Omic...

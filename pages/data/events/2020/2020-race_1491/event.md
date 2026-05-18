@@ -14,7 +14,7 @@ import:
     type: members
     time: 1598613546
 meetTime: '16:30'
-meetPlace: 'Slatina, parkoviště u Lidlu ((https://en.mapy.cz/s/noposazesu)'
+meetPlace: 'Slatina, parkoviště u Lidlu ((https://mapy.com/s/noposazesu)'
 link: ''
 eventTypeDescription: ''
 startTime: ''

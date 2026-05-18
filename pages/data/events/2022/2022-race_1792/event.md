@@ -17,7 +17,7 @@ meetTime: '17:00'
 meetPlace: ''
 link: ''
 eventTypeDescription: ''
-startTime: 'https://mapy.cz/s/budotalumu'
+startTime: 'https://mapy.com/s/budotalumu'
 map: Melatín
 terrain: ''
 transport: ''

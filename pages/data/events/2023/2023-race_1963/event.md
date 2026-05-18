@@ -15,7 +15,7 @@ import:
     type: members
     time: 1682063403
 meetTime: '16:30'
-meetPlace: 'Kampus Bohunice, https://en.mapy.cz/s/kuparusebe'
+meetPlace: 'Kampus Bohunice, https://mapy.com/s/kuparusebe'
 link: ''
 eventTypeDescription: klasika
 startTime: ''
@@ -47,5 +47,5 @@ routes:
         link: 'http://3drerun.worldofo.com/index.php?id=-16979551&type=info'
 ---
 
-* **sraz**: 16:30 Kampus Bohunice, https://en.mapy.cz/s/kuparusebe
+* **sraz**: 16:30 Kampus Bohunice, https://mapy.com/s/kuparusebe
 * **doprava**: auty

@@ -24,7 +24,7 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-note: "Ceka na vas 5 okruhu od cca 700 metru do 1,5 km.\r\nStart: https://mapy.cz/s/fokakuzuvo"
+note: "Ceka na vas 5 okruhu od cca 700 metru do 1,5 km.\r\nStart: https://mapy.com/s/fokakuzuvo"
 return: ''
 price: ''
 program: ''
@@ -34,5 +34,5 @@ gps: '49.27719, 16.63179'
 ---
 
 Ceka na vas 5 okruhu od cca 700 metru do 1,5 km.
-Start: https://mapy.cz/s/fokakuzuvo
+Start: https://mapy.com/s/fokakuzuvo
 * **sraz**: 16:30

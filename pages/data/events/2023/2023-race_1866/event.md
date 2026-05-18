@@ -16,7 +16,7 @@ import:
     type: members
     time: 1665952802
 meetTime: '16:00'
-meetPlace: 'Bohunice, kampus, https://en.mapy.cz/s/nujumocefo'
+meetPlace: 'Bohunice, kampus, https://mapy.com/s/nujumocefo'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -49,5 +49,5 @@ routes:
 
 mapa: Omický les
 Na místě cíle je restaurace, skočte se po tréninku zahřát nebo i najíst.
-* **sraz**: 16:00 Bohunice, kampus, https://en.mapy.cz/s/nujumocefo
+* **sraz**: 16:00 Bohunice, kampus, https://mapy.com/s/nujumocefo
 * **doprava**: auty

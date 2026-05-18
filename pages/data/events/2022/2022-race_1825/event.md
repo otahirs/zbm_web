@@ -28,7 +28,7 @@ leader: Jenda
 note: 'odjezd v pátek, 4 mapové tréninky'
 return: ''
 price: ''
-program: "4 krátké fáze\r\n* 1. a 4. trénink https://mapy.cz/s/doropokopa\r\n* 2. trénink https://en.mapy.cz/s/mofajorosa\r\n* 3. trénink https://en.mapy.cz/s/bugapedelu"
+program: "4 krátké fáze\r\n* 1. a 4. trénink https://mapy.com/s/doropokopa\r\n* 2. trénink https://mapy.com/s/mofajorosa\r\n* 3. trénink https://mapy.com/s/bugapedelu"
 thingsToTake: "* dvoje věci na běhání (běháme za každého počasí)\r\n* **čip** a **buzolu**"
 signups: ''
 routes:

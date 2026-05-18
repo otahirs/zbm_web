@@ -17,7 +17,7 @@ transport: "Koniklecová - zastávka MHD 26, 37\r\nPřibližovací srazy:\r\nSk�
 accomodation: ''
 food: ''
 leader: ''
-note: '![Start]()https://mapy.cz/s/benecologa'
+note: '![Start]()https://mapy.com/s/benecologa'
 return: ''
 price: ''
 program: ''
@@ -32,7 +32,7 @@ taxonomy:
         - zaci2
 ---
 
-![Start]()https://mapy.cz/s/benecologa
+![Start]()https://mapy.com/s/benecologa
 * **sraz**: 16:15 značeno fáborky ze zastávky Koniklecová
 * **doprava**: Koniklecová - zastávka MHD 26, 37
 Přibližovací srazy:

@@ -14,7 +14,7 @@ import:
     type: members
     time: 1682063403
 meetTime: '16:30'
-meetPlace: 'Brno, Juliánov, parkoviště u Tesca, https://en.mapy.cz/s/molesadore'
+meetPlace: 'Brno, Juliánov, parkoviště u Tesca, https://mapy.com/s/molesadore'
 link: ''
 eventTypeDescription: middle
 startTime: ''
@@ -46,5 +46,5 @@ routes:
         link: 'http://3drerun.worldofo.com/index.php?id=-16977330&type=info'
 ---
 
-* **sraz**: 16:30 Brno, Juliánov, parkoviště u Tesca, https://en.mapy.cz/s/molesadore
+* **sraz**: 16:30 Brno, Juliánov, parkoviště u Tesca, https://mapy.com/s/molesadore
 * **doprava**: auty

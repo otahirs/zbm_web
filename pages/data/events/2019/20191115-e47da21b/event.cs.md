@@ -20,7 +20,7 @@ date: '2019-11-11'
 id: 20191115-e47da21b
 terrain: ''
 leader: Jenda
-note: "Sraz zde: https://en.mapy.cz/s/jedufegape\r\n<br>Nejezděte trolejákem, nabírá obrovské zpoždění!"
+note: "Sraz zde: https://mapy.com/s/jedufegape\r\n<br>Nejezděte trolejákem, nabírá obrovské zpoždění!"
 gps: '49.31848, 16.74495'
 routes:
     -

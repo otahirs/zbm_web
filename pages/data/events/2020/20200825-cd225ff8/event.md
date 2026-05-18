@@ -7,7 +7,7 @@ start: '2020-08-29'
 end: '2020-08-29'
 place: Vyškov
 meetTime: '9:00'
-meetPlace: 'Parkoviště u Lidlu na Dornychu (https://en.mapy.cz/s/gumaladuge)'
+meetPlace: 'Parkoviště u Lidlu na Dornychu (https://mapy.com/s/gumaladuge)'
 link: 'http://reprezentace.orientacnibeh.cz/novinky/cist/1139'
 eventTypeDescription: '3000m, písemné testy, o-400'
 startTime: '10:30'

@@ -15,7 +15,7 @@ import:
     type: members
     time: 1649050802
 meetTime: '16:30'
-meetPlace: 'STK Nový Lískovec, https://en.mapy.cz/s/bovedofotu'
+meetPlace: 'STK Nový Lískovec, https://mapy.com/s/bovedofotu'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -44,5 +44,5 @@ routes:
         link: 'http://3drerun.worldofo.com/?id=-16941347&type=info'
 ---
 
-* **sraz**: 16:30 STK Nový Lískovec, https://en.mapy.cz/s/bovedofotu
+* **sraz**: 16:30 STK Nový Lískovec, https://mapy.com/s/bovedofotu
 * **doprava**: auty

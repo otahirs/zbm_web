@@ -13,7 +13,7 @@ eventTypeDescription: "P - okruhy<BR>\r\nA - sudá/lichá<BR>\r\nB - azimuty<BR>
 startTime: ''
 map: Veselka
 terrain: ''
-transport: "MHD na zastávku Borovník - vzdálenost na start 1km\r\nPřibližovací srazy:\r\nHalasovo náměstí 15:15 - pojede se auty = nahlaste se Alči - do pondělí 18:00\r\nSkácelova 15:20\r\n\r\nParkujte zde: https://mapy.cz/s/necabadala"
+transport: "MHD na zastávku Borovník - vzdálenost na start 1km\r\nPřibližovací srazy:\r\nHalasovo náměstí 15:15 - pojede se auty = nahlaste se Alči - do pondělí 18:00\r\nSkácelova 15:20\r\n\r\nParkujte zde: https://mapy.com/s/necabadala"
 accomodation: ''
 food: ''
 leader: ''
@@ -58,4 +58,4 @@ Přibližovací srazy:
 Halasovo náměstí 15:15 - pojede se auty = nahlaste se Alči - do pondělí 18:00
 Skácelova 15:20
 
-Parkujte zde: https://mapy.cz/s/necabadala
+Parkujte zde: https://mapy.com/s/necabadala

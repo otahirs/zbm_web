@@ -27,7 +27,7 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: "[Odjezd zde](https://en.mapy.cz/s/hulofatodo)\r\nspolečně auty"
+transport: "[Odjezd zde](https://mapy.com/s/hulofatodo)\r\nspolečně auty"
 accomodation: 'na postelích'
 food: "Polopenze na ubytování.\r\nObědy - společně formou balíčků."
 leader: 'Anička Auerműllerová'
@@ -48,7 +48,7 @@ S sebou kapesné na vstupy do jeskyní, na lanovky apod.
 
 **Kdo půjde na ferraty, doporučujeme uzavření připojištění na tuto aktivitu**
 * **sraz**: 8:00 Komárov, smyčka
-* **doprava**: [Odjezd zde](https://en.mapy.cz/s/hulofatodo)
+* **doprava**: [Odjezd zde](https://mapy.com/s/hulofatodo)
 společně auty
 * **ubytování**: na postelích
 * **strava**: Polopenze na ubytování.

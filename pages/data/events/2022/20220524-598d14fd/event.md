@@ -7,7 +7,7 @@ start: '2022-05-24'
 end: '2022-05-24'
 place: 'Bystrc, U křivé borovice'
 meetTime: '16:15'
-meetPlace: 'https://mapy.cz/s/fabupuvabe'
+meetPlace: 'https://mapy.com/s/fabupuvabe'
 link: ''
 eventTypeDescription: 'P + A - fáborková linie, B - paměťák, C - shluky'
 startTime: ''
@@ -32,7 +32,7 @@ taxonomy:
         - zaci2
 ---
 
-* **sraz**: 16:15 https://mapy.cz/s/fabupuvabe
+* **sraz**: 16:15 https://mapy.com/s/fabupuvabe
 * **doprava**: MHD - značeno fáborky ze zastávky Ruda
 Přibližovací srazy:
 Skácelova 15:20

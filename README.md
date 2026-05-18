@@ -21,7 +21,7 @@ pro přihlášení do /auth (editorská sekce) nebo /admin (Grav admin sekce) se
 jméno: `test`  
 heslo: `Test1234`
 
-4. commitnuté změny poslat jako merge request na `dev` branch
+4. commitnuté změny poslat jako merge request na `master` branch
 
 ps: se zbm web deploymentem se v gitu synchronizuji pouze slozky `pages`, `themes` a `plugins`, ostatni muze byt upraveno pro lokalni deployment
 

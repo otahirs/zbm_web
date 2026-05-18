@@ -17,7 +17,7 @@ transport: "MHD na zastávku Ruda: pozor - vzdálenost na start je 2 km\r\nPřib
 accomodation: ''
 food: ''
 leader: ''
-note: "[Parkování zde](https://en.mapy.cz/s/hekuhoruko).\r\nVzdálenost na start 1,4 km"
+note: "[Parkování zde](https://mapy.com/s/hekuhoruko).\r\nVzdálenost na start 1,4 km"
 return: ''
 price: ''
 program: ''
@@ -52,7 +52,7 @@ routes:
         link: 'https://www.livelox.com/Events/Show/130072/Uterni-mapovy-trenink-zactvo-07'
 ---
 
-[Parkování zde](https://en.mapy.cz/s/hekuhoruko).
+[Parkování zde](https://mapy.com/s/hekuhoruko).
 Vzdálenost na start 1,4 km
 * **sraz**: 16:15
 * **doprava**: MHD na zastávku Ruda: pozor - vzdálenost na start je 2 km

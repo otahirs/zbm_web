@@ -24,7 +24,7 @@ eventTypeDescription: ''
 startTime: '12:00'
 map: ''
 terrain: ''
-transport: 'autobusem; sraz [zde](https://mapy.cz/s/mugedevole)'
+transport: 'autobusem; sraz [zde](https://mapy.com/s/mugedevole)'
 accomodation: ''
 food: ''
 leader: Jenda
@@ -40,4 +40,4 @@ hasResults: true
 
 Společné ubytování na postelích v Jeseníku; v rámci ubytování zajištěna sobotní večeře a nedělní snídaně
 * **sraz**: 7:30 za Lužánkami
-* **doprava**: autobusem; sraz [zde](https://mapy.cz/s/mugedevole)
+* **doprava**: autobusem; sraz [zde](https://mapy.com/s/mugedevole)

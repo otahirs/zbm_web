@@ -14,7 +14,7 @@ import:
     type: members
     time: 1712131807
 meetTime: '16:30'
-meetPlace: 'Lesná, parkoviště u Lidlu, https://en.mapy.cz/s/rafejefola'
+meetPlace: 'Lesná, parkoviště u Lidlu, https://mapy.com/s/rafejefola'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -33,5 +33,5 @@ signups: ''
 gps: '49.30967, 16.62190'
 ---
 
-* **sraz**: 16:30 Lesná, parkoviště u Lidlu, https://en.mapy.cz/s/rafejefola
+* **sraz**: 16:30 Lesná, parkoviště u Lidlu, https://mapy.com/s/rafejefola
 * **doprava**: auty nebo MHD

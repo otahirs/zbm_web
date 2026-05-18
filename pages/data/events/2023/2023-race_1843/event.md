@@ -12,7 +12,7 @@ start: '2023-01-14'
 end: '2023-01-14'
 title: 'Mapový trénink žactva'
 type: T
-note: "Jsou nachystány tratě Pulců, Žáků, Hobíků a Dorostu.\r\nMapa s body srazu, parkování a autobusu: https://en.mapy.cz/s/jelekegoho"
+note: "Jsou nachystány tratě Pulců, Žáků, Hobíků a Dorostu.\r\nMapa s body srazu, parkování a autobusu: https://mapy.com/s/jelekegoho"
 template: trenink
 date: '2022-10-06'
 import:
@@ -39,7 +39,7 @@ gps: '49.23925, 16.74738'
 ---
 
 Jsou nachystány tratě Pulců, Žáků, Hobíků a Dorostu.
-Mapa s body srazu, parkování a autobusu: https://en.mapy.cz/s/jelekegoho
+Mapa s body srazu, parkování a autobusu: https://mapy.com/s/jelekegoho
 * **sraz**: 9:20 Hostěníce, u ČOV (parkování)
 * **doprava**: * auty
 * [autobusem 701](https://idos.idnes.cz/vlakyautobusymhdvse/spojeni/draha/?p=Fyb5SSWpsOpfNdTbad2ENE6AFz6uSaftWJJUrnhlvqBx936SfoDH9h0yIXSxFqlBljmm9umGHjc-&from=2776&to=10234&depTime=8:41&arrTime=9:14): (autobusem pojede Lenka Hrušková jako doprovod pro děti, kteří nejedou autem)

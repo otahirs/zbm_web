@@ -8,7 +8,7 @@ end: '2022-07-16'
 title: '2 mapové tréninky na Vysočině'
 place: Odranec
 type: T
-note: "|      | typ                                           | mapa              | parkování                    |\r\n|------|-----------------------------------------------|-------------------|------------------------------|\r\n| dopo | mapové intervaly | Odranec          | https://mapy.cz/s/fazekekafe |\r\n| odpo | COB s kratšími i delšími postupy           | Odranec         | https://mapy.cz/s/povonuvabe |"
+note: "|      | typ                                           | mapa              | parkování                    |\r\n|------|-----------------------------------------------|-------------------|------------------------------|\r\n| dopo | mapové intervaly | Odranec          | https://mapy.com/s/fazekekafe |\r\n| odpo | COB s kratšími i delšími postupy           | Odranec         | https://mapy.com/s/povonuvabe |"
 template: trenink
 date: '2022-07-05'
 import:
@@ -34,7 +34,7 @@ signups: ''
 
 |      | typ                                           | mapa              | parkování                    |
 |------|-----------------------------------------------|-------------------|------------------------------|
-| dopo | mapové intervaly | Odranec          | https://mapy.cz/s/fazekekafe |
-| odpo | COB s kratšími i delšími postupy           | Odranec         | https://mapy.cz/s/povonuvabe |
+| dopo | mapové intervaly | Odranec          | https://mapy.com/s/fazekekafe |
+| odpo | COB s kratšími i delšími postupy           | Odranec         | https://mapy.com/s/povonuvabe |
 * **sraz**: 8:30 Kr. Pole nádraží
 * **doprava**: auty

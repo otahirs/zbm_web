@@ -16,7 +16,7 @@ import:
     type: members
     time: 1665952802
 meetTime: '17:00'
-meetPlace: 'Kouhoutovice, https://en.mapy.cz/s/netagufofu'
+meetPlace: 'Kouhoutovice, https://mapy.com/s/netagufofu'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -45,5 +45,5 @@ routes:
 ---
 
 mapa: Kočičí žleb
-* **sraz**: 17:00 Kouhoutovice, https://en.mapy.cz/s/netagufofu
+* **sraz**: 17:00 Kouhoutovice, https://mapy.com/s/netagufofu
 * **doprava**: auty z Kohoutovic

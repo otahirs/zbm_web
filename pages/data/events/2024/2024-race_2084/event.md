@@ -24,7 +24,7 @@ transport: 'auty, [dle dokumentu s dopravou](https://docs.google.com/spreadsheet
 accomodation: 'na posteli, vlastní spacák'
 food: 'zajitěna páteční a sobotní večeře. jinak vlastní.'
 leader: ''
-note: "Informace k závodům:\r\nCEYOC https://adatbank.mtfsz.hu/en/esemeny/show/esemeny_id/8039\r\nSpring cup https://adatbank.mtfsz.hu/en/esemeny/show/esemeny_id/8235\r\nv pravo v odkazech jsou buletiny i startovky\r\n\r\npátek:\r\nhttps://en.mapy.cz/s/baracohadu\r\nCEYOC\r\n - příjezd 13:30, start 15:00, \r\n - jen pro DH16, máme tři štafety (M16E ZBM, M16E TBM, W16E mix)  \r\nMass start\r\n - start 17:00, 4km jinde\r\n - DH18 už se dle pořadatelů nevešly na start CEYOCu, takže jdou taky mass start, viz [startovku](https://admin.mtfsz.hu/fajl/get/fajl_id/31738/tipus/render#10000471)"
+note: "Informace k závodům:\r\nCEYOC https://adatbank.mtfsz.hu/en/esemeny/show/esemeny_id/8039\r\nSpring cup https://adatbank.mtfsz.hu/en/esemeny/show/esemeny_id/8235\r\nv pravo v odkazech jsou buletiny i startovky\r\n\r\npátek:\r\nhttps://mapy.com/s/baracohadu\r\nCEYOC\r\n - příjezd 13:30, start 15:00, \r\n - jen pro DH16, máme tři štafety (M16E ZBM, M16E TBM, W16E mix)  \r\nMass start\r\n - start 17:00, 4km jinde\r\n - DH18 už se dle pořadatelů nevešly na start CEYOCu, takže jdou taky mass start, viz [startovku](https://admin.mtfsz.hu/fajl/get/fajl_id/31738/tipus/render#10000471)"
 return: ''
 price: ''
 program: ''
@@ -38,7 +38,7 @@ Spring cup https://adatbank.mtfsz.hu/en/esemeny/show/esemeny_id/8235
 v pravo v odkazech jsou buletiny i startovky
 
 pátek:
-https://en.mapy.cz/s/baracohadu
+https://mapy.com/s/baracohadu
 CEYOC
  - příjezd 13:30, start 15:00, 
  - jen pro DH16, máme tři štafety (M16E ZBM, M16E TBM, W16E mix)  

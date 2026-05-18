@@ -15,7 +15,7 @@ import:
     type: members
     time: 1681675802
 meetTime: '16:30'
-meetPlace: 'Kohoutovice, https://en.mapy.cz/s/kafapamelu'
+meetPlace: 'Kohoutovice, https://mapy.com/s/kafapamelu'
 link: ''
 eventTypeDescription: 'Věšák - sběrák'
 startTime: ''
@@ -35,5 +35,5 @@ gps: '49.20487, 16.47763'
 ---
 
 Start cca od 17:00
-* **sraz**: 16:30 Kohoutovice, https://en.mapy.cz/s/kafapamelu
+* **sraz**: 16:30 Kohoutovice, https://mapy.com/s/kafapamelu
 * **doprava**: auty, případně doplníme možnost MHD

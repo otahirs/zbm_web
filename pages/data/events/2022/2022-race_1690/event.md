@@ -15,7 +15,7 @@ import:
     type: members
     time: 1636318202
 meetTime: '16:30'
-meetPlace: 'Lesná, Halasovo náměstí, u Lidlu, https://mapy.cz/s/hufavoramo'
+meetPlace: 'Lesná, Halasovo náměstí, u Lidlu, https://mapy.com/s/hufavoramo'
 link: ''
 eventTypeDescription: 'Individuálně, část mapy pouze vrstevnicovka.'
 startTime: ''
@@ -34,5 +34,5 @@ signups: ''
 gps: '49.24592, 16.67578'
 ---
 
-* **sraz**: 16:30 Lesná, Halasovo náměstí, u Lidlu, https://mapy.cz/s/hufavoramo
+* **sraz**: 16:30 Lesná, Halasovo náměstí, u Lidlu, https://mapy.com/s/hufavoramo
 * **doprava**: auty

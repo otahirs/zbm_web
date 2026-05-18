@@ -17,7 +17,7 @@ transport: vlastní
 accomodation: ''
 food: ''
 leader: ABM
-note: "* [Tabulka příjezdů](https://docs.google.com/spreadsheets/d/1kBkz4fRNtzndRUKCsunOPk2Y1SbF5ij5ZxqUe33MZ1w/edit?usp=sharing)\r\n* [Tady najdete parkoviště a start](https://mapy.cz/s/lobevedosa)\r\n* [Mapy](https://drive.google.com/drive/folders/1F42Z8Xk1iWjiUSXP_dhQFzexIXtiELM_?usp=sharing)\r\n* na kontrolách budou fáborky z mlíka\r\n* díky ABM za trénink!"
+note: "* [Tabulka příjezdů](https://docs.google.com/spreadsheets/d/1kBkz4fRNtzndRUKCsunOPk2Y1SbF5ij5ZxqUe33MZ1w/edit?usp=sharing)\r\n* [Tady najdete parkoviště a start](https://mapy.com/s/lobevedosa)\r\n* [Mapy](https://drive.google.com/drive/folders/1F42Z8Xk1iWjiUSXP_dhQFzexIXtiELM_?usp=sharing)\r\n* na kontrolách budou fáborky z mlíka\r\n* díky ABM za trénink!"
 return: ''
 price: ''
 program: ''

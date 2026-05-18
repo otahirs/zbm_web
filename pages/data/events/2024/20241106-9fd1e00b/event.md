@@ -17,7 +17,7 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-note: "Čelovky s sebou 😉\r\n\r\n📆 STŘEDA 06. listopadu, 17:00\r\n📍 Sraz: Hády - parkoviště nad Velkou Klajdovkou (https://en.mapy.cz/s/lezakupepu)\r\n👟 Co se poběží: fartlek, technika\r\n💪🏼 Dovednost: trénink rozvíjí rychlost, vytrvalost a techniku v terénu\r\n\r\nJak to bude probíhat:\r\nZe srazu dáme rozklus a zahřátí, pak cca 30-40 min hlavní část tréninku. Každý pěkně svým tempem a pak ještě vyklusat."
+note: "Čelovky s sebou 😉\r\n\r\n📆 STŘEDA 06. listopadu, 17:00\r\n📍 Sraz: Hády - parkoviště nad Velkou Klajdovkou (https://mapy.com/s/lezakupepu)\r\n👟 Co se poběží: fartlek, technika\r\n💪🏼 Dovednost: trénink rozvíjí rychlost, vytrvalost a techniku v terénu\r\n\r\nJak to bude probíhat:\r\nZe srazu dáme rozklus a zahřátí, pak cca 30-40 min hlavní část tréninku. Každý pěkně svým tempem a pak ještě vyklusat."
 return: ''
 price: ''
 program: ''
@@ -31,7 +31,7 @@ taxonomy:
 Čelovky s sebou 😉
 
 📆 STŘEDA 06. listopadu, 17:00
-📍 Sraz: Hády - parkoviště nad Velkou Klajdovkou (https://en.mapy.cz/s/lezakupepu)
+📍 Sraz: Hády - parkoviště nad Velkou Klajdovkou (https://mapy.com/s/lezakupepu)
 👟 Co se poběží: fartlek, technika
 💪🏼 Dovednost: trénink rozvíjí rychlost, vytrvalost a techniku v terénu
 

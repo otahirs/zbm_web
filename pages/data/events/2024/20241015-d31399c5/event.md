@@ -13,7 +13,7 @@ eventTypeDescription: "P, A - hvězdice\r\nB - krátké postupy\r\nC - hagaby\r\
 startTime: ''
 map: 'Kozí hora'
 terrain: ''
-transport: "MHD na zastávku Kolejní, vzdálenost na start je 900m.\r\nPřibližovací srazy:\r\nSkácelova 15:35\r\nHalasovo náměstí 15:30\r\nParkování https://mapy.cz/s/cerekutota"
+transport: "MHD na zastávku Kolejní, vzdálenost na start je 900m.\r\nPřibližovací srazy:\r\nSkácelova 15:35\r\nHalasovo náměstí 15:30\r\nParkování https://mapy.com/s/cerekutota"
 accomodation: ''
 food: ''
 leader: ''
@@ -40,4 +40,4 @@ gps: '49.23602, 16.56581'
 Přibližovací srazy:
 Skácelova 15:35
 Halasovo náměstí 15:30
-Parkování https://mapy.cz/s/cerekutota
+Parkování https://mapy.com/s/cerekutota

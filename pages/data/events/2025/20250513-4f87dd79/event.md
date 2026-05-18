@@ -13,7 +13,7 @@ eventTypeDescription: "Pulci 1 a 2: linie s kontrolami\r\nŽáci 1: krátké pos
 startTime: ''
 map: 'Kočičí žleb'
 terrain: ''
-transport: "MHD na zastávku Říčanská - vzdálenost na start 1300m - značeno fáborky\r\nPřibližovací srazy:\r\nSkácelova 15:18, zastávka směrem na Žabovřesky\r\nHalasovo náměstí 15:25 na obvyklém místě, pojede se autem, nahlaste se nejpozději v pondělí večer na 605 440 445 (Alča Finstrlová), ať je pro vás místo\r\nParkování: https://mapy.cz/s/basakovosu"
+transport: "MHD na zastávku Říčanská - vzdálenost na start 1300m - značeno fáborky\r\nPřibližovací srazy:\r\nSkácelova 15:18, zastávka směrem na Žabovřesky\r\nHalasovo náměstí 15:25 na obvyklém místě, pojede se autem, nahlaste se nejpozději v pondělí večer na 605 440 445 (Alča Finstrlová), ať je pro vás místo\r\nParkování: https://mapy.com/s/basakovosu"
 accomodation: ''
 food: ''
 leader: ''
@@ -39,4 +39,4 @@ gps: '49.21866, 16.49328'
 Přibližovací srazy:
 Skácelova 15:18, zastávka směrem na Žabovřesky
 Halasovo náměstí 15:25 na obvyklém místě, pojede se autem, nahlaste se nejpozději v pondělí večer na 605 440 445 (Alča Finstrlová), ať je pro vás místo
-Parkování: https://mapy.cz/s/basakovosu
+Parkování: https://mapy.com/s/basakovosu

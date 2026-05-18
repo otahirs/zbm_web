@@ -9,7 +9,7 @@ pictures:
 Vzhledem k vyhlášenému zákazu jsme nuceni zrušit organizovaný trénink. Pro tento týden to znamená změnu u **pátečního nočáku** tak, abyste mohli trénovat i dále:
 
 *   reflexy budou v lese
-*   mapy budou k samostatnému odebrání v [blízkosti startu a cíle](https://en.mapy.cz/s/repukovame)
+*   mapy budou k samostatnému odebrání v [blízkosti startu a cíle](https://mapy.com/s/repukovame)
 *   od 16:00 do 18:00
 *   reflexy z lesa začnou mizet cca v 19:00
 *   k dispozici nebude žádné společné občerstvení

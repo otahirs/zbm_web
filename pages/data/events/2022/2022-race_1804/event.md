@@ -14,7 +14,7 @@ import:
     type: members
     time: 1649050802
 meetTime: '16:30'
-meetPlace: 'Brno, Kohoutovice, parkoviště u Lidlu, https://en.mapy.cz/s/dabesenehu'
+meetPlace: 'Brno, Kohoutovice, parkoviště u Lidlu, https://mapy.com/s/dabesenehu'
 link: ''
 eventTypeDescription: ''
 startTime: '~ 17:15'
@@ -33,5 +33,5 @@ signups: ''
 gps: '49.19223, 16.49478'
 ---
 
-* **sraz**: 16:30 Brno, Kohoutovice, parkoviště u Lidlu, https://en.mapy.cz/s/dabesenehu
+* **sraz**: 16:30 Brno, Kohoutovice, parkoviště u Lidlu, https://mapy.com/s/dabesenehu
 * **doprava**: auty nebo MHD 51 na zastávku Borovník

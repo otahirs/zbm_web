@@ -14,7 +14,7 @@ import:
     type: members
     time: 1590357602
 meetTime: ''
-meetPlace: 'bude upřesněno, cíl -> https://mapy.cz/s/babesevobu'
+meetPlace: 'bude upřesněno, cíl -> https://mapy.com/s/babesevobu'
 link: ''
 eventTypeDescription: ''
 startTime: ''

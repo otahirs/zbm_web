@@ -10,7 +10,7 @@ meetTime: '16:15'
 meetPlace: ''
 link: ''
 eventTypeDescription: 'P + A - hvězdice, B + C - okruhy'
-startTime: 'https://mapy.cz/s/cavazovure'
+startTime: 'https://mapy.com/s/cavazovure'
 map: ''
 terrain: ''
 transport: "MHD  201- zastávka Na Spáleníšti\r\nPřibližovací srazy:\r\nSkácelova 15:05 (odjezd \"84\" - 15:10)\r\nHalasova náměstí 15:25 (odjezd \"57\" - 15:30)"

@@ -7,7 +7,7 @@ end: '2021-07-25'
 title: 'VT Bohemka'
 place: 'Nový Bor'
 type: S
-note: "**s sebou je nutné mít s sebou podepsané COVID prohlášení + potvrzení (certifikát) o provedeném testu** - stáhnout [zde](https://ok-bor.cz/bohemia2021/wp-content/uploads/2021/07/BOH-cestne-prohlaseni-CZE.pdf)\r\n(PCR ne starší 7 dnů a Antigen ne starší 3 dnů k datu 21.7.2021)\r\n\r\n[Rozpis dopravy](https://docs.google.com/spreadsheets/d/1Q-TOaAh9-OPuY-jbYGVhigO3n6MQpJdhxrUvpYWtOas/edit?usp=sharing/)\r\n\r\n[Místo srazu](https://mapy.cz/s/hehekagora)"
+note: "**s sebou je nutné mít s sebou podepsané COVID prohlášení + potvrzení (certifikát) o provedeném testu** - stáhnout [zde](https://ok-bor.cz/bohemia2021/wp-content/uploads/2021/07/BOH-cestne-prohlaseni-CZE.pdf)\r\n(PCR ne starší 7 dnů a Antigen ne starší 3 dnů k datu 21.7.2021)\r\n\r\n[Rozpis dopravy](https://docs.google.com/spreadsheets/d/1Q-TOaAh9-OPuY-jbYGVhigO3n6MQpJdhxrUvpYWtOas/edit?usp=sharing/)\r\n\r\n[Místo srazu](https://mapy.com/s/hehekagora)"
 template: soustredeni
 date: '2020-11-18'
 import:

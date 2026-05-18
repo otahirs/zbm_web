@@ -17,7 +17,7 @@ transport: vlastní
 accomodation: ''
 food: ''
 leader: 'Luděk Finstrle'
-note: "* [Tabulka příjezdů](https://docs.google.com/spreadsheets/d/1kBkz4fRNtzndRUKCsunOPk2Y1SbF5ij5ZxqUe33MZ1w/edit?usp=sharing)\r\n* [Mapy](https://drive.google.com/drive/folders/1zOQNihp1oiz0lBW_1fLmaeacFdeZCGqq?usp=sharing)\r\n* na kontrolách budou fáborky z mlíka a na některých i reflexy\r\n* [Doporučené parkování](https://en.mapy.cz/s/nejavaruro) - jen pozor, už se nám několikrát stalo, že někdo auta na těchto místech vykradl"
+note: "* [Tabulka příjezdů](https://docs.google.com/spreadsheets/d/1kBkz4fRNtzndRUKCsunOPk2Y1SbF5ij5ZxqUe33MZ1w/edit?usp=sharing)\r\n* [Mapy](https://drive.google.com/drive/folders/1zOQNihp1oiz0lBW_1fLmaeacFdeZCGqq?usp=sharing)\r\n* na kontrolách budou fáborky z mlíka a na některých i reflexy\r\n* [Doporučené parkování](https://mapy.com/s/nejavaruro) - jen pozor, už se nám několikrát stalo, že někdo auta na těchto místech vykradl"
 return: ''
 price: ''
 program: ''

@@ -14,7 +14,7 @@ import:
     type: members
     time: 1619554801
 meetTime: '9:30'
-meetPlace: 'https://mapy.cz/s/bocapazulo'
+meetPlace: 'https://mapy.com/s/bocapazulo'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -24,7 +24,7 @@ transport: vlastní
 accomodation: doma
 food: 'Doneste si krabičku a teplejší oblečení, karimatku, bude-li rozumné počasí, dáme v neděli piknik na Medláneckém kopci.'
 leader: Jenda
-note: "**Sobota**:\r\n- middle [měřený trénink v Ochozu](https://oris.orientacnisporty.cz/Zavod?id=6508), všechny přihlášené na soustředění přihlásíme i na měřený trénink.\r\n\r\n**Neděle**:\r\n- sprintové štafety Medlánky, start 10:00, SI, [soupisky](https://docs.google.com/spreadsheets/d/1chpMrMUTFwihu5k-OuHQOanEHamHPSdatkv3rstcF5s/edit#gid=0), sraz do 9:30, [tady](https://mapy.cz/s/bocapazulo)\r\n- sprint Kohoutovice, [startovka](https://docs.google.com/spreadsheets/d/1RIwuM6mWvuUaXWZzsQWFgxcM__-ICccBTxPV3IUy9JU/edit#gid=0), [místo srazu](https://mapy.cz/s/cuposolube), start od 14:30\r\n\r\n** Vemte si vlastní mapník A4**\r\n\r\nPozor na obou trénincích můžou být umělé překážky a další jiné zašrafované věci!\r\n\r\n**Štafety:**\r\n* rychlé, s volbami měly by být dobrou přípravou na MČR\r\n* nominační - disk nechci vidět\r\n\r\n**Sprint:**\r\n* volby a jejich řešení budou důležité i příští týden\r\n* nezapomeň, že vrstevnice můžou hodně ovlivnit délku tvého postupu!"
+note: "**Sobota**:\r\n- middle [měřený trénink v Ochozu](https://oris.orientacnisporty.cz/Zavod?id=6508), všechny přihlášené na soustředění přihlásíme i na měřený trénink.\r\n\r\n**Neděle**:\r\n- sprintové štafety Medlánky, start 10:00, SI, [soupisky](https://docs.google.com/spreadsheets/d/1chpMrMUTFwihu5k-OuHQOanEHamHPSdatkv3rstcF5s/edit#gid=0), sraz do 9:30, [tady](https://mapy.com/s/bocapazulo)\r\n- sprint Kohoutovice, [startovka](https://docs.google.com/spreadsheets/d/1RIwuM6mWvuUaXWZzsQWFgxcM__-ICccBTxPV3IUy9JU/edit#gid=0), [místo srazu](https://mapy.com/s/cuposolube), start od 14:30\r\n\r\n** Vemte si vlastní mapník A4**\r\n\r\nPozor na obou trénincích můžou být umělé překážky a další jiné zašrafované věci!\r\n\r\n**Štafety:**\r\n* rychlé, s volbami měly by být dobrou přípravou na MČR\r\n* nominační - disk nechci vidět\r\n\r\n**Sprint:**\r\n* volby a jejich řešení budou důležité i příští týden\r\n* nezapomeň, že vrstevnice můžou hodně ovlivnit délku tvého postupu!"
 return: ''
 price: '0,-'
 program: "**Sobota**:\r\n- middle, Ochoz u Brna\r\n\r\n**Neděle**:\r\n- sprintové štafety Medlánky, start 10:00, SI\r\n- sprint Kohoutovice, start 14:30, SI"

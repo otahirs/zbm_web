@@ -15,7 +15,7 @@ import:
     type: members
     time: 1589320801
 meetTime: '16:30'
-meetPlace: 'Parkoviště naproti Bille, Líšeň, https://en.mapy.cz/s/koferobugo'
+meetPlace: 'Parkoviště naproti Bille, Líšeň, https://mapy.com/s/koferobugo'
 eventTypeDescription: 'Nachytávaná (ve dvojicích), super trať od Miloše!'
 startTime: '17:15'
 map: ''

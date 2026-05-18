@@ -10,7 +10,7 @@ meetTime: '16:15'
 meetPlace: 'značeno fáborky ze zastávky Kolejní'
 link: ''
 eventTypeDescription: 'Z - hvězdice, A - COB, B - krátké postupy, C - linie'
-startTime: 'https://en.mapy.cz/s/mepafazozo'
+startTime: 'https://mapy.com/s/mepafazozo'
 map: ''
 terrain: ''
 transport: "Kolejní - zastávka MHD 12, 53\r\nPřibližovací srazy:\r\nSkácelova 15:45\r\nHalasovo náměstí 15:35"

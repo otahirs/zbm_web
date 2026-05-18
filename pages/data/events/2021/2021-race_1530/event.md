@@ -21,7 +21,7 @@ import:
     time: 1605697203
 note: "**Zdravotní dokumentace** (odevzdáte při odjezdu na tábor nebo při příjezdu do tábora)\r\n•\tprohlášení o bezinfekčnosti (tiskopis v emailu)\r\n•\tpotvrzení o zdravotní způsobilosti (vydá lékař, platí 2 roky)\r\n•\t**potvrzení ohledně covidu** – jedna ze 4 možností:\r\n  a)\tPCR test maximálně 7 dní starý\r\n  b)\tantigenní test maximálně 72 hodin starý\r\n  c)\tpotvrzení o prodělané nemoci (platí 180 dnů)\r\n  d)\točkování – minimálně 22 dní po 1. dávce"
 meetTime: '6:00'
-meetPlace: 'Brno, na parkovišti u Tesca: https://mapy.cz/s/2VLd3'
+meetPlace: 'Brno, na parkovišti u Tesca: https://mapy.com/s/2VLd3'
 link: ''
 eventTypeDescription: ''
 startTime: ''

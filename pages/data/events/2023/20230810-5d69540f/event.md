@@ -17,7 +17,7 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-note: 'Beh s TT na uvod: https://en.mapy.cz/s/gujocatedu'
+note: 'Beh s TT na uvod: https://mapy.com/s/gujocatedu'
 return: ''
 price: ''
 program: ''
@@ -29,5 +29,5 @@ taxonomy:
 gps: '49.22666, 16.69311'
 ---
 
-Beh s TT na uvod: https://en.mapy.cz/s/gujocatedu
+Beh s TT na uvod: https://mapy.com/s/gujocatedu
 * **sraz**: 16:30

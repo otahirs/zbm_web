@@ -26,7 +26,7 @@ transport: '[tabulka](https://docs.google.com/spreadsheets/d/1W9S6pKS_s_MA_NzcA0
 accomodation: ''
 food: ''
 leader: ''
-note: 'Společné [ubytování](https://en.mapy.cz/s/luvufamuro) na postelích včetně snídaně, příspěvek 200 Kč za osobu.'
+note: 'Společné [ubytování](https://mapy.com/s/luvufamuro) na postelích včetně snídaně, příspěvek 200 Kč za osobu.'
 return: ''
 price: ''
 program: ''
@@ -36,5 +36,5 @@ hasStartlist: true
 hasResults: true
 ---
 
-Společné [ubytování](https://en.mapy.cz/s/luvufamuro) na postelích včetně snídaně, příspěvek 200 Kč za osobu.
+Společné [ubytování](https://mapy.com/s/luvufamuro) na postelích včetně snídaně, příspěvek 200 Kč za osobu.
 * **doprava**: [tabulka](https://docs.google.com/spreadsheets/d/1W9S6pKS_s_MA_NzcA01Q2oIXY2CfCOg2GTk9b0oH5tI/edit?fbclid=IwAR2NXJvvAsozd_qXLGbvf1TwBuZJi9IPYtpqEiiUBZuDO9BdkJk_Fw4ZdYc#gid=1588252110)

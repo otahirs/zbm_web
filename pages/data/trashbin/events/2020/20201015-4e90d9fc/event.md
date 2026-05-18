@@ -17,7 +17,7 @@ transport: ''
 accomodation: ''
 food: ''
 leader: Luděk
-note: "karimatku (nebo deku na cvičení) a švihadlo\n\n16:00 - 18:00 - Rozvodna nad Lesnou (Zastávka autobusu) - https://en.mapy.cz/s/humujumole"
+note: "karimatku (nebo deku na cvičení) a švihadlo\n\n16:00 - 18:00 - Rozvodna nad Lesnou (Zastávka autobusu) - https://mapy.com/s/humujumole"
 return: ''
 price: ''
 program: ''

@@ -13,7 +13,7 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: "MHD na zastávku Jírovcova - sraz v 16:00 přímo na zastávce\r\nPřibližovací srazy: \r\nSkácelova 15:10, zastávka směrem na Žabovřesky\r\nHalasovo náměstí 15:00\r\nParkování: plocha u ulice Nad Pisárkami https://mapy.cz/s/damokugunu\r\nSraz pro ty, co přijedou autem, bude 16:15 přímo v místě parkování."
+transport: "MHD na zastávku Jírovcova - sraz v 16:00 přímo na zastávce\r\nPřibližovací srazy: \r\nSkácelova 15:10, zastávka směrem na Žabovřesky\r\nHalasovo náměstí 15:00\r\nParkování: plocha u ulice Nad Pisárkami https://mapy.com/s/damokugunu\r\nSraz pro ty, co přijedou autem, bude 16:15 přímo v místě parkování."
 accomodation: ''
 food: ''
 leader: ''
@@ -41,5 +41,5 @@ https://www.uklidmecesko.cz/event/48994
 Přibližovací srazy: 
 Skácelova 15:10, zastávka směrem na Žabovřesky
 Halasovo náměstí 15:00
-Parkování: plocha u ulice Nad Pisárkami https://mapy.cz/s/damokugunu
+Parkování: plocha u ulice Nad Pisárkami https://mapy.com/s/damokugunu
 Sraz pro ty, co přijedou autem, bude 16:15 přímo v místě parkování.

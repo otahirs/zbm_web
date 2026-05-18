@@ -16,7 +16,7 @@ import:
     type: members
     time: 1665952802
 meetTime: '16:00'
-meetPlace: 'Tesco Juliánov, https://en.mapy.cz/s/cavusajevu'
+meetPlace: 'Tesco Juliánov, https://mapy.com/s/cavusajevu'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -51,5 +51,5 @@ routes:
 ---
 
 čip s sebou
-* **sraz**: 16:00 Tesco Juliánov, https://en.mapy.cz/s/cavusajevu
+* **sraz**: 16:00 Tesco Juliánov, https://mapy.com/s/cavusajevu
 * **doprava**: auty

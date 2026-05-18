@@ -15,7 +15,7 @@ import:
     type: members
     time: 1622803201
 meetTime: '16:30'
-meetPlace: 'Parkoviště u ZOO (https://mapy.cz/s/hojezesape)'
+meetPlace: 'Parkoviště u ZOO (https://mapy.com/s/hojezesape)'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -47,5 +47,5 @@ routes:
 ---
 
 middle
-* **sraz**: 16:30 Parkoviště u ZOO (https://mapy.cz/s/hojezesape)
+* **sraz**: 16:30 Parkoviště u ZOO (https://mapy.com/s/hojezesape)
 * **doprava**: společná

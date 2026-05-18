@@ -14,7 +14,7 @@ import:
     type: members
     time: 1649050802
 meetTime: '16:30'
-meetPlace: 'Tesco Bělohorská, https://en.mapy.cz/s/fefuremozo'
+meetPlace: 'Tesco Bělohorská, https://mapy.com/s/fefuremozo'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -43,5 +43,5 @@ routes:
         link: 'http://3drerun.worldofo.com/index.php?id=-16940225&type=info'
 ---
 
-* **sraz**: 16:30 Tesco Bělohorská, https://en.mapy.cz/s/fefuremozo
+* **sraz**: 16:30 Tesco Bělohorská, https://mapy.com/s/fefuremozo
 * **doprava**: auty

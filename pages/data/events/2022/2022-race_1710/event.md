@@ -28,12 +28,12 @@ startTime: ''
 map: ''
 terrain: ''
 transport: auty
-accomodation: 'https://www.atcluhacovice.cz/skola/ - https://mapy.cz/s/fazubogebu'
+accomodation: 'https://www.atcluhacovice.cz/skola/ - https://mapy.com/s/fazubogebu'
 food: 'plná penze, začínáme večeří'
 leader: Andrea
 return: 'neděle 8. 5. cca v 15:00'
 price: ''
-program: "| Den | Mapa | A | B | C | Hobíci | Parkování |\r\n| -------- | -------- | -------- |-------- | -------- | -------- | -------- |\r\n| Pá odpo | Gaborka | hvězdice | linie | linie | linie |[start, parkování](https://en.mapy.cz/s/godemozako) |\r\n| So dopo | Maršov | linie | COB | souboje | SUI hra | |\r\n| So odpo | Gaborka | COB/dlouhé okruhy | SUI hra | SUI hra/vrstevnice | vrstevnice | |\r\n| Ne dopo | Gaborka | štafety | štafety | štafety | štafety | |"
+program: "| Den | Mapa | A | B | C | Hobíci | Parkování |\r\n| -------- | -------- | -------- |-------- | -------- | -------- | -------- |\r\n| Pá odpo | Gaborka | hvězdice | linie | linie | linie |[start, parkování](https://mapy.com/s/godemozako) |\r\n| So dopo | Maršov | linie | COB | souboje | SUI hra | |\r\n| So odpo | Gaborka | COB/dlouhé okruhy | SUI hra | SUI hra/vrstevnice | vrstevnice | |\r\n| Ne dopo | Gaborka | štafety | štafety | štafety | štafety | |"
 thingsToTake: "* věci na běhání (aspoň 2x)\r\n* čip, buzolu\r\n* společenské hry na večer\r\n* dobrou náladu"
 signups: ''
 ---
@@ -41,5 +41,5 @@ signups: ''
 Květnové soustředění v Luhačovicích.
 * **sraz**: 15:00 U Bohémy
 * **doprava**: auty
-* **ubytování**: https://www.atcluhacovice.cz/skola/ - https://mapy.cz/s/fazubogebu
+* **ubytování**: https://www.atcluhacovice.cz/skola/ - https://mapy.com/s/fazubogebu
 * **strava**: plná penze, začínáme večeří

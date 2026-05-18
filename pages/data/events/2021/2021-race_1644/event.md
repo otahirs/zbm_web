@@ -14,7 +14,7 @@ import:
     type: members
     time: 1629699602
 meetTime: '17:30'
-meetPlace: 'Líšeň, parkoviště naproti Bille, https://mapy.cz/s/kobovetozu'
+meetPlace: 'Líšeň, parkoviště naproti Bille, https://mapy.com/s/kobovetozu'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -46,5 +46,5 @@ routes:
         link: 'http://3drerun.worldofo.com/?id=-16883651&type=info'
 ---
 
-* **sraz**: 17:30 Líšeň, parkoviště naproti Bille, https://mapy.cz/s/kobovetozu
+* **sraz**: 17:30 Líšeň, parkoviště naproti Bille, https://mapy.com/s/kobovetozu
 * **doprava**: auty

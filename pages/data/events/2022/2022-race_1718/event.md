@@ -23,7 +23,7 @@ eventTypeDescription: 'staví Petr Bořánek.'
 startTime: ''
 map: 'Připravuje Petr Uher (předchozí mapa v tomto prostoru měla název Holý vrch a byla z roku 2013)'
 terrain: 'Kopcovitý až mírně zvlněný terén, kde je velké množství situačních detailů – kameny, balvany, skály a skalky, skupiny kamenů, převážně říčanská žula. V prostoru jsou různorodé porosty – listnaté (zejména buky) i jehličnany místy s náletovými hustníky. Je tam středně hustá síť komunikací, průběžnost lesa spíše dobrá.'
-transport: "[Auty viz standardní dokument](https://docs.google.com/spreadsheets/d/13nAnJUMskLVqCIEIaDftTleUtRbcFuc8Phf_JeQNO-E/edit#gid=1764760810)\r\n**Ubytovaní** jsme v [Kotvě](https://www.kotvabranik.cz), [klikni pro mapu](https://mapy.cz/s/koforukomu), včetně snídaně."
+transport: "[Auty viz standardní dokument](https://docs.google.com/spreadsheets/d/13nAnJUMskLVqCIEIaDftTleUtRbcFuc8Phf_JeQNO-E/edit#gid=1764760810)\r\n**Ubytovaní** jsme v [Kotvě](https://www.kotvabranik.cz), [klikni pro mapu](https://mapy.com/s/koforukomu), včetně snídaně."
 accomodation: ''
 food: ''
 leader: Jenda
@@ -40,4 +40,4 @@ hasResults: true
 Centrem závodu je Struhařov, lesní prostor je vymezen obcemi Struhařov, Svojetice, Černé Voděrady, Zvánovice.
 * **sraz**: dle dopravy a domluvy s řidičem
 * **doprava**: [Auty viz standardní dokument](https://docs.google.com/spreadsheets/d/13nAnJUMskLVqCIEIaDftTleUtRbcFuc8Phf_JeQNO-E/edit#gid=1764760810)
-**Ubytovaní** jsme v [Kotvě](https://www.kotvabranik.cz), [klikni pro mapu](https://mapy.cz/s/koforukomu), včetně snídaně.
+**Ubytovaní** jsme v [Kotvě](https://www.kotvabranik.cz), [klikni pro mapu](https://mapy.com/s/koforukomu), včetně snídaně.

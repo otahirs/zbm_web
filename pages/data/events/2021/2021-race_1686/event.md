@@ -14,7 +14,7 @@ import:
     type: members
     time: 1636317601
 meetTime: '15:00'
-meetPlace: 'Tesco Juliánov, https://mapy.cz/s/lapetegaja'
+meetPlace: 'Tesco Juliánov, https://mapy.com/s/lapetegaja'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -44,5 +44,5 @@ routes:
 ---
 
 **POZOR: sobota**
-* **sraz**: 15:00 Tesco Juliánov, https://mapy.cz/s/lapetegaja
+* **sraz**: 15:00 Tesco Juliánov, https://mapy.com/s/lapetegaja
 * **doprava**: auty

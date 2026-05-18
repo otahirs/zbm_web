@@ -19,7 +19,7 @@ date: '2019-12-28'
 id: 20200110-ab07e695
 terrain: krásný
 leader: Jenda
-note: "Jeďte šalinou, ostatní MHD bude stát v koloně.\r\nSraz je [zde](https://en.mapy.cz/s/cacajojavo)"
+note: "Jeďte šalinou, ostatní MHD bude stát v koloně.\r\nSraz je [zde](https://mapy.com/s/cacajojavo)"
 routes:
     -
         name: H

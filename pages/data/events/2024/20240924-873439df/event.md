@@ -13,7 +13,7 @@ eventTypeDescription: "P, A - fáborková linie\r\nB - okruhy\r\nC, K - SUI hra"
 startTime: ''
 map: 'Říčky - jih'
 terrain: ''
-transport: "MHD na zastávku Mariánské údolí - vzdálenost na start 650m\r\npřibližovací srazy:\r\nSkácelova: 14:50\r\nHalasovo náměstí 15:15\r\nDoporučené parkování: https://mapy.cz/s/badajocete"
+transport: "MHD na zastávku Mariánské údolí - vzdálenost na start 650m\r\npřibližovací srazy:\r\nSkácelova: 14:50\r\nHalasovo náměstí 15:15\r\nDoporučené parkování: https://mapy.com/s/badajocete"
 accomodation: ''
 food: ''
 leader: ''
@@ -39,4 +39,4 @@ gps: '49.20417, 16.72259'
 přibližovací srazy:
 Skácelova: 14:50
 Halasovo náměstí 15:15
-Doporučené parkování: https://mapy.cz/s/badajocete
+Doporučené parkování: https://mapy.com/s/badajocete

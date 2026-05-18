@@ -17,7 +17,7 @@ import:
     time: 1620994202
 place: 'Pohoří (Jílové u Prahy)'
 meetTime: '7:00'
-meetPlace: 'parkoviště Akademická (u Campusu) Pozice na mapě https://mapy.cz/s/cugevedemu'
+meetPlace: 'parkoviště Akademická (u Campusu) Pozice na mapě https://mapy.com/s/cugevedemu'
 eventTypeDescription: ''
 startTime: ''
 map: ''
@@ -26,7 +26,7 @@ transport: autobusem
 accomodation: ''
 food: ''
 leader: Jenda
-note: 'Spí se na povlečených postelích. Součástí ubytování je sobotní večeře (kuře, brambor) a nedělní snídaně (švédský stůl). Ubytování [zde](https://mapy.cz/s/hemevesemo)'
+note: 'Spí se na povlečených postelích. Součástí ubytování je sobotní večeře (kuře, brambor) a nedělní snídaně (švédský stůl). Ubytování [zde](https://mapy.com/s/hemevesemo)'
 return: ''
 price: ''
 program: ''
@@ -37,6 +37,6 @@ hasStartlist: true
 hasResults: true
 ---
 
-Spí se na povlečených postelích. Součástí ubytování je sobotní večeře (kuře, brambor) a nedělní snídaně (švédský stůl). Ubytování [zde](https://mapy.cz/s/hemevesemo)
-* **sraz**: 7:00 parkoviště Akademická (u Campusu) Pozice na mapě https://mapy.cz/s/cugevedemu
+Spí se na povlečených postelích. Součástí ubytování je sobotní večeře (kuře, brambor) a nedělní snídaně (švédský stůl). Ubytování [zde](https://mapy.com/s/hemevesemo)
+* **sraz**: 7:00 parkoviště Akademická (u Campusu) Pozice na mapě https://mapy.com/s/cugevedemu
 * **doprava**: autobusem

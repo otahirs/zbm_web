@@ -25,7 +25,7 @@ transport: 'https://docs.google.com/spreadsheets/d/1vsKFEvrJvzvkAMsMPKFscyXqP1qF
 accomodation: ''
 food: ''
 leader: Saša
-note: "**Tréninky**:\n* úseky, 11:00, sraz [tady](https://mapy.cz/s/belahovopa)\n* delší postupy na mapě bez cest (práce s buzolou), 15:00, [tady](https://mapy.cz/s/fetepuvebo)"
+note: "**Tréninky**:\n* úseky, 11:00, sraz [tady](https://mapy.com/s/belahovopa)\n* delší postupy na mapě bez cest (práce s buzolou), 15:00, [tady](https://mapy.com/s/fetepuvebo)"
 return: ''
 price: ''
 program: ''

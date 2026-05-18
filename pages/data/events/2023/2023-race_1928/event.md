@@ -28,7 +28,7 @@ transport: 'společně 2x dodávky + auta'
 accomodation: ''
 food: ''
 leader: 'Míra B.'
-note: "spí se na postelích - [zde](https://mapy.cz/s/notedagohu); kontakt: [www](https://www.apartmany55.cz/)\r\nstrava vlastní, případně v sobotu večer v restauraci"
+note: "spí se na postelích - [zde](https://mapy.com/s/notedagohu); kontakt: [www](https://www.apartmany55.cz/)\r\nstrava vlastní, případně v sobotu večer v restauraci"
 return: ''
 price: ''
 program: ''
@@ -38,7 +38,7 @@ hasStartlist: true
 hasResults: true
 ---
 
-spí se na postelích - [zde](https://mapy.cz/s/notedagohu); kontakt: [www](https://www.apartmany55.cz/)
+spí se na postelích - [zde](https://mapy.com/s/notedagohu); kontakt: [www](https://www.apartmany55.cz/)
 strava vlastní, případně v sobotu večer v restauraci
 * **sraz**: sobota 8:30 U Bohémy, ul. Roosveltova
 * **doprava**: společně 2x dodávky + auta

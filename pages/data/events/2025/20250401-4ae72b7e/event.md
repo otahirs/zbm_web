@@ -13,7 +13,7 @@ eventTypeDescription: 'Pulci 1: hvězdice Pulci 2: okruhy Žáci 1: azimutové h
 startTime: ''
 map: 'Kněží hora'
 terrain: ''
-transport: "MHD na zastávku U Buku - vzdálenost na start 500m - značeno fáborky\r\nPřibližovací srazy:\r\nSkácelova 15:20\r\nHalasovo náměstí 15:30\r\nParkování: https://mapy.cz/s/jufuhavofo"
+transport: "MHD na zastávku U Buku - vzdálenost na start 500m - značeno fáborky\r\nPřibližovací srazy:\r\nSkácelova 15:20\r\nHalasovo náměstí 15:30\r\nParkování: https://mapy.com/s/jufuhavofo"
 accomodation: ''
 food: ''
 leader: ''
@@ -39,4 +39,4 @@ gps: '49.27709, 16.63198'
 Přibližovací srazy:
 Skácelova 15:20
 Halasovo náměstí 15:30
-Parkování: https://mapy.cz/s/jufuhavofo
+Parkování: https://mapy.com/s/jufuhavofo

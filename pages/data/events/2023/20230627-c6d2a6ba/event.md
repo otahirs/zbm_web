@@ -7,7 +7,7 @@ start: '2023-06-27'
 end: '2023-06-27'
 place: Kohoutovice
 meetTime: '16:30'
-meetPlace: 'https://en.mapy.cz/s/nezalofuho'
+meetPlace: 'https://mapy.com/s/nezalofuho'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -36,7 +36,7 @@ gps: '49.18552, 16.54612'
 
 Vemte si s sebou čip, papír a něco na psaní. 
 Můžete přijít i s celou rodinou a klidně vemte někoho, komu chcete orienťák ukázat!
-* **sraz**: 16:30 https://en.mapy.cz/s/nezalofuho
+* **sraz**: 16:30 https://mapy.com/s/nezalofuho
 * **doprava**: MHD zastávka Kohoutovice Jírovcova
 vzdálenost od zastávky na start je 900 m.
 Přibližovací srazy:

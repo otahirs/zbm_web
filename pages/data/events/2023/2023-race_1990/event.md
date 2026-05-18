@@ -30,7 +30,7 @@ leader: Jenda
 note: 'Máte-li čas, je možno jet už v pátek a v sobotu se déle vyspat.'
 return: ''
 price: ''
-program: "Kratší tréninky ke srovnání se s mapou před družstvy\r\nSobota:\r\n* úvodní trénink, [sraz](https://en.mapy.cz/s/nuvanotave)\r\n* 1. úsek štafet, [sraz](https://en.mapy.cz/s/menocatevo)\r\n\r\nNeděle:\r\n* štafetové úseky, z ubytování, 10:00\r\n* štafety, z ubytování, po obědě"
+program: "Kratší tréninky ke srovnání se s mapou před družstvy\r\nSobota:\r\n* úvodní trénink, [sraz](https://mapy.com/s/nuvanotave)\r\n* 1. úsek štafet, [sraz](https://mapy.com/s/menocatevo)\r\n\r\nNeděle:\r\n* štafetové úseky, z ubytování, 10:00\r\n* štafety, z ubytování, po obědě"
 thingsToTake: KARIMATKU
 signups: ''
 gps: '49.7294, 16.04396'

@@ -25,7 +25,7 @@ transport: ''
 accomodation: ''
 food: ''
 leader: ''
-note: "Veteraniáda: společné ubytko v chaloupce u Rýmařova.\r\n www.skpolomouc.g6.cz\r\n https://mapy.cz/s/kutohahaga"
+note: "Veteraniáda: společné ubytko v chaloupce u Rýmařova.\r\n www.skpolomouc.g6.cz\r\n https://mapy.com/s/kutohahaga"
 return: ''
 price: ''
 program: ''
@@ -38,4 +38,4 @@ hasResults: true
 
 Veteraniáda: společné ubytko v chaloupce u Rýmařova.
  www.skpolomouc.g6.cz
- https://mapy.cz/s/kutohahaga
+ https://mapy.com/s/kutohahaga

@@ -11,7 +11,7 @@ start: '2023-03-04'
 end: '2023-03-04'
 title: 'Mapový trénink žactva'
 type: T
-note: "Ahoj,\r\n\r\nuž přes rok trvá válka na Ukrajině vyvolaná ruskou agresí. ČSOS vyhlašuje 2. ročník akce na podporu Ukrajiny, tentokrát zaměřené na podporu ukrajinských orienťáckých klubů.  \r\n\r\nV rámci 2. ročníku Týdne orienťáku pro Ukrajinu české kluby organizují tréninky, veřejné soutěže a další akce, kde propagují sbírku pořádanou ČSOS. Celkovou vybranou částku nakonec ČSOS zdvojnásobí a předá ukrajinské orienťácké federaci.\r\nVíce [zde](https://www.okdobris.cz/news/tyden-orientaku-pro-ukrajinu/?fbclid=IwAR06YP8WudVadwG-ALx56766l9BQORq6ETOWgRmj25GXvbNeZz2RqoHWfoQ).\r\nČíslo speciálního orienťáckého účtu pro Ukrajinu: 214575416 / 0600.\r\nNa tréninku bude připravena mapa ve speciálním modro-žlutém ukrajinském designu, včetně QR kódu bankovního účtu akce, na který můžete přispět.\r\nDíky 💙 💛 \r\n\r\nBudou nachystány tratě Pulců, Žáků, Hobíků. Dorost jde dle plánu BBP.\r\nMapa s body srazu a parkování: https://en.mapy.cz/s/folohopoja"
+note: "Ahoj,\r\n\r\nuž přes rok trvá válka na Ukrajině vyvolaná ruskou agresí. ČSOS vyhlašuje 2. ročník akce na podporu Ukrajiny, tentokrát zaměřené na podporu ukrajinských orienťáckých klubů.  \r\n\r\nV rámci 2. ročníku Týdne orienťáku pro Ukrajinu české kluby organizují tréninky, veřejné soutěže a další akce, kde propagují sbírku pořádanou ČSOS. Celkovou vybranou částku nakonec ČSOS zdvojnásobí a předá ukrajinské orienťácké federaci.\r\nVíce [zde](https://www.okdobris.cz/news/tyden-orientaku-pro-ukrajinu/?fbclid=IwAR06YP8WudVadwG-ALx56766l9BQORq6ETOWgRmj25GXvbNeZz2RqoHWfoQ).\r\nČíslo speciálního orienťáckého účtu pro Ukrajinu: 214575416 / 0600.\r\nNa tréninku bude připravena mapa ve speciálním modro-žlutém ukrajinském designu, včetně QR kódu bankovního účtu akce, na který můžete přispět.\r\nDíky 💙 💛 \r\n\r\nBudou nachystány tratě Pulců, Žáků, Hobíků. Dorost jde dle plánu BBP.\r\nMapa s body srazu a parkování: https://mapy.com/s/folohopoja"
 template: trenink
 date: '2022-10-06'
 import:
@@ -25,7 +25,7 @@ eventTypeDescription: "<UL>\r\n<LI>Pulci 1, 2: okruhy</LI>\r\n<LI>Žáci 1: SUI 
 startTime: '9:45'
 map: 'Skřipov (2022)'
 terrain: 'Pěkný listnatý les s dobrou viditelností i průběžností.'
-transport: "Auty, z Brna, odjezd 8:30 od [Bohémy](https://en.mapy.cz/s/caredegova).\r\nNávrat je plánován na 12:30 zpátky k Bohémě.\r\nKdo z dětí bude potřebovat do auta sedačku, či podsedák, prosím vzít vlastní s sebou na sraz."
+transport: "Auty, z Brna, odjezd 8:30 od [Bohémy](https://mapy.com/s/caredegova).\r\nNávrat je plánován na 12:30 zpátky k Bohémě.\r\nKdo z dětí bude potřebovat do auta sedačku, či podsedák, prosím vzít vlastní s sebou na sraz."
 accomodation: ''
 food: ''
 leader: 'Luděk Finstrle'
@@ -58,8 +58,8 @@ Na tréninku bude připravena mapa ve speciálním modro-žlutém ukrajinském d
 Díky 💙 💛 
 
 Budou nachystány tratě Pulců, Žáků, Hobíků. Dorost jde dle plánu BBP.
-Mapa s body srazu a parkování: https://en.mapy.cz/s/folohopoja
+Mapa s body srazu a parkování: https://mapy.com/s/folohopoja
 * **sraz**: 9:30 rozcestí nad Dambořicemi
-* **doprava**: Auty, z Brna, odjezd 8:30 od [Bohémy](https://en.mapy.cz/s/caredegova).
+* **doprava**: Auty, z Brna, odjezd 8:30 od [Bohémy](https://mapy.com/s/caredegova).
 Návrat je plánován na 12:30 zpátky k Bohémě.
 Kdo z dětí bude potřebovat do auta sedačku, či podsedák, prosím vzít vlastní s sebou na sraz.

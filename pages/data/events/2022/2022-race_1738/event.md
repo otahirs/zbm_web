@@ -23,7 +23,7 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: 'autobusem - odjezd [zde](https://mapy.cz/s/ledohukefu)'
+transport: 'autobusem - odjezd [zde](https://mapy.com/s/ledohukefu)'
 accomodation: ''
 food: ''
 leader: Saša
@@ -43,4 +43,4 @@ Jídlo (od sobotní snídaně!): sobota snídaně a večeře, neděle snídaně
 
 Návrat zpět do Brna 20:00-22:00.
 * **sraz**: pátek, 15:30 Akademická
-* **doprava**: autobusem - odjezd [zde](https://mapy.cz/s/ledohukefu)
+* **doprava**: autobusem - odjezd [zde](https://mapy.com/s/ledohukefu)

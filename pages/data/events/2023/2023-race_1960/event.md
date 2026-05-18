@@ -15,7 +15,7 @@ import:
     type: members
     time: 1682063402
 meetTime: '16:30'
-meetPlace: 'Kampus Bohunice,  https://en.mapy.cz/s/gerunegalo'
+meetPlace: 'Kampus Bohunice,  https://mapy.com/s/gerunegalo'
 link: ''
 eventTypeDescription: 'Mapové úseky. Každý se svým zaměřením, ale s cílem absolvovat v závodní rychlosti. Intervalově.'
 startTime: ''
@@ -34,5 +34,5 @@ signups: ''
 gps: '49.17303, 16.4623'
 ---
 
-* **sraz**: 16:30 Kampus Bohunice,  https://en.mapy.cz/s/gerunegalo
+* **sraz**: 16:30 Kampus Bohunice,  https://mapy.com/s/gerunegalo
 * **doprava**: auty

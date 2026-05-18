@@ -20,14 +20,14 @@ import:
     type: members
     time: 1590616801
 meetTime: '15:50'
-meetPlace: 'Slatina, ul. Hviezdoslavova, zastávka Vozovna Slatina (https://mapy.cz/s/belozujuke)'
+meetPlace: 'Slatina, ul. Hviezdoslavova, zastávka Vozovna Slatina (https://mapy.com/s/belozujuke)'
 eventTypeDescription: ''
 startTime: '17:30'
 map: ''
 terrain: ''
 transport: 'Společná: autobusem - odjezd od vozovny Slatina, cesta zpět bude možnost dopravy až k Bohémě.'
 leader: 'Lenka H. (737 353 537)'
-note: "https://mapy.cz/s/belozujuke\r\n**Přibližovací srazy**\r\n* \tsraz **Skácelova** 15:05 (odjezd 15:07\tTramvaj 12 - Masná 15:28, 15:30\tTrolejbus 33 - Vozovna Slatina 15:39)\r\n* \tsraz **Halasovo náměstí** 15:00 (odjezd 15:02 Tramvaj 9 - Hlavní nádraží 15:19, přesun, 15:23 Trolejbus 33 - Vozovna Slatina 15:35)\r\n\r\n**POZOR:  změna místa přibližovacího srazu v Žabinách -> Kr. Poli!!!**"
+note: "https://mapy.com/s/belozujuke\r\n**Přibližovací srazy**\r\n* \tsraz **Skácelova** 15:05 (odjezd 15:07\tTramvaj 12 - Masná 15:28, 15:30\tTrolejbus 33 - Vozovna Slatina 15:39)\r\n* \tsraz **Halasovo náměstí** 15:00 (odjezd 15:02 Tramvaj 9 - Hlavní nádraží 15:19, přesun, 15:23 Trolejbus 33 - Vozovna Slatina 15:35)\r\n\r\n**POZOR:  změna místa přibližovacího srazu v Žabinách -> Kr. Poli!!!**"
 gps: '49.18291, 16.67322'
 ---
 {{page.header.note}}

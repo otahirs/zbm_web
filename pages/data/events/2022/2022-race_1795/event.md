@@ -15,7 +15,7 @@ import:
     type: members
     time: 1649050202
 meetTime: '16:30'
-meetPlace: 'Tesco, Bělohorská, https://mapy.cz/s/lefemumupo'
+meetPlace: 'Tesco, Bělohorská, https://mapy.com/s/lefemumupo'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -34,5 +34,5 @@ signups: ''
 gps: '49.33403, 16.76054'
 ---
 
-* **sraz**: 16:30 Tesco, Bělohorská, https://mapy.cz/s/lefemumupo
+* **sraz**: 16:30 Tesco, Bělohorská, https://mapy.com/s/lefemumupo
 * **doprava**: auty

@@ -40,7 +40,7 @@ gps: '49.66872, 16.08724'
 routes:
     -
         name: 'Žákovské starty'
-        link: 'https://en.mapy.cz/s/cugunojahu'
+        link: 'https://mapy.com/s/cugunojahu'
 ---
 
 **Zdravotní dokumentace** (odevzdáte při odjezdu na tábor nebo při příjezdu do tábora)

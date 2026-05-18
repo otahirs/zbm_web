@@ -11,7 +11,7 @@ link: 'https://oris.orientacnisporty.cz/Zavod?id=5798'
 orisid: '5798'
 place: Praha
 type: Z
-note: '**Ubytování na postelích včetně snídaně [zde](http://halaradotin.cz/ubytovani/), [na mapě](https://mapy.cz/s/jujecodaja).**'
+note: '**Ubytování na postelích včetně snídaně [zde](http://halaradotin.cz/ubytovani/), [na mapě](https://mapy.com/s/jujecodaja).**'
 template: zavod
 date: '2022-01-07'
 import:
@@ -37,6 +37,6 @@ hasStartlist: true
 hasResults: true
 ---
 
-**Ubytování na postelích včetně snídaně [zde](http://halaradotin.cz/ubytovani/), [na mapě](https://mapy.cz/s/jujecodaja).**
+**Ubytování na postelích včetně snídaně [zde](http://halaradotin.cz/ubytovani/), [na mapě](https://mapy.com/s/jujecodaja).**
 * **sraz**: dle rozpisu aut dle rozpisu aut
 * **doprava**: [Auty, viz dokument](https://docs.google.com/spreadsheets/d/13nAnJUMskLVqCIEIaDftTleUtRbcFuc8Phf_JeQNO-E/edit?usp=sharing)

@@ -23,7 +23,7 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: "BUS DPmB, odjezd od Campusu v Bohunicích, ale z jiného místa. \r\nZMĚNA!!!\r\nOdjíždět se bude [zde](https://mapy.cz/s/ledohukefu)."
+transport: "BUS DPmB, odjezd od Campusu v Bohunicích, ale z jiného místa. \r\nZMĚNA!!!\r\nOdjíždět se bude [zde](https://mapy.com/s/ledohukefu)."
 accomodation: ''
 food: ''
 leader: Jenda
@@ -45,4 +45,4 @@ Lesy v prostoru Nová Ves nad Nisou, Horní Černá Studnice, Dolní Černá Stu
 * **sraz**: pátek 3. 6. 2022, 15:45 Campus ul. Akademická
 * **doprava**: BUS DPmB, odjezd od Campusu v Bohunicích, ale z jiného místa. 
 ZMĚNA!!!
-Odjíždět se bude [zde](https://mapy.cz/s/ledohukefu).
+Odjíždět se bude [zde](https://mapy.com/s/ledohukefu).

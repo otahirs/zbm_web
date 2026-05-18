@@ -24,10 +24,10 @@ transport: auty
 accomodation: 'na postelích'
 food: 'plná penze od páteční večeře'
 leader: Jenda
-note: "**Testy**: Prosím každého, aby si nejlépe ve čtvrtek před odjezdem zařídil antigenní test.\n[Místo ubytování](https://mapy.cz/s/jafosepasa)"
+note: "**Testy**: Prosím každého, aby si nejlépe ve čtvrtek před odjezdem zařídil antigenní test.\n[Místo ubytování](https://mapy.com/s/jafosepasa)"
 return: ''
 price: ''
-program: "- [semtamy](https://en.mapy.cz/s/cazarenolo), [start](https://mapy.cz/s/lemorotava)\n- [vrstevnicovka](https://mapy.cz/s/hapucenero)\n- [middle](https://mapy.cz/s/nelujovata)\n- [dvojice](https://mapy.cz/s/dozeparera)"
+program: "- [semtamy](https://mapy.com/s/cazarenolo), [start](https://mapy.com/s/lemorotava)\n- [vrstevnicovka](https://mapy.com/s/hapucenero)\n- [middle](https://mapy.com/s/nelujovata)\n- [dvojice](https://mapy.com/s/dozeparera)"
 thingsToTake: 'Věci na OB, převlečení. Upozorňuju, že v lese bude fakt mokro...'
 signups: ''
 gps: '50.20135, 16.98732'

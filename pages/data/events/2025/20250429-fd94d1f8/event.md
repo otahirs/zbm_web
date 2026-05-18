@@ -13,7 +13,7 @@ eventTypeDescription: 'Pulci 1 a 2: COB    Žáci 1: sudá-lichá   Žáci 2: sh
 startTime: ''
 map: 'Kamechy Shwerwood'
 terrain: ''
-transport: "MHD na zastávku Chvalovka - vzdálenost na start 100m - značeno fáborky\r\nPřibližovací srazy:\r\nSkácelova 15:15, zastávka směrem na Žabovřesky\r\nHalasovo náměstí 15:30 na obvyklém místě, pojede se autem, nahlaste se nejpozději v pondělí večer na 605 440 445 (Alča Finstrlová), ať je pro vás místo\r\nParkování: v okolních ulicích https://mapy.cz/s/jalemejefe"
+transport: "MHD na zastávku Chvalovka - vzdálenost na start 100m - značeno fáborky\r\nPřibližovací srazy:\r\nSkácelova 15:15, zastávka směrem na Žabovřesky\r\nHalasovo náměstí 15:30 na obvyklém místě, pojede se autem, nahlaste se nejpozději v pondělí večer na 605 440 445 (Alča Finstrlová), ať je pro vás místo\r\nParkování: v okolních ulicích https://mapy.com/s/jalemejefe"
 accomodation: ''
 food: ''
 leader: ''
@@ -39,4 +39,4 @@ gps: '49.21458, 16.49915'
 Přibližovací srazy:
 Skácelova 15:15, zastávka směrem na Žabovřesky
 Halasovo náměstí 15:30 na obvyklém místě, pojede se autem, nahlaste se nejpozději v pondělí večer na 605 440 445 (Alča Finstrlová), ať je pro vás místo
-Parkování: v okolních ulicích https://mapy.cz/s/jalemejefe
+Parkování: v okolních ulicích https://mapy.com/s/jalemejefe

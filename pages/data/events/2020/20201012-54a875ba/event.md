@@ -17,7 +17,7 @@ transport: ''
 accomodation: ''
 food: ''
 leader: Luděk
-note: "karimatku (nebo deku na cvičení) a švihadlo\n\n16:30 - 18:00 - Kohoutovice (Sraz na parkovišti nad fotbalovým hřištěm, zastávka Voříškova) - https://en.mapy.cz/s/jusetapave"
+note: "karimatku (nebo deku na cvičení) a švihadlo\n\n16:30 - 18:00 - Kohoutovice (Sraz na parkovišti nad fotbalovým hřištěm, zastávka Voříškova) - https://mapy.com/s/jusetapave"
 return: ''
 price: ''
 program: ''

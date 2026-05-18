@@ -24,7 +24,7 @@ transport: ''
 accomodation: ''
 food: ''
 leader: Drbča
-note: 'Parkovat by mělo jít zde u [staré dálnice](https://mapy.cz/s/lerokegaha).'
+note: 'Parkovat by mělo jít zde u [staré dálnice](https://mapy.com/s/lerokegaha).'
 return: ''
 price: ''
 program: ''
@@ -37,5 +37,5 @@ routes:
         link: 'https://www.livelox.com/Events/Show/151945/Hobby-1-2025'
 ---
 
-Parkovat by mělo jít zde u [staré dálnice](https://mapy.cz/s/lerokegaha).
+Parkovat by mělo jít zde u [staré dálnice](https://mapy.com/s/lerokegaha).
 * **sraz**: 17:00 Veselka z východu
