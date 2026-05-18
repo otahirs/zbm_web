@@ -3,8 +3,6 @@ taxonomy:
     skupina:
         - dorost
         - hobby
-        - zaci2
-        - zaci1
 id: 2026-race_2462
 start: '2026-05-10'
 end: '2026-05-10'
@@ -18,5 +16,6 @@ date: '2026-03-25'
 import:
     type: members
     time: 1774440605
+hasResults: true
 ---
 

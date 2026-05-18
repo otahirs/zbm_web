@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - hobby
 id: 2026-race_2363
 start: '2026-04-11'
 end: '2026-04-11'

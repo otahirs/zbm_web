@@ -14,9 +14,9 @@ templates:
             -
                 group:
                     - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://en.mapy.cz/s/losesugahu'
+                name: 'Atletické posilování'
+                time: '17:00'
+                place: 'Dráha ZŠ nám Svornosti, https://mapy.com/s/rerakofuco'
             -
                 group:
                     - zaci1
@@ -25,33 +25,10 @@ templates:
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
         tuesday:
-            -
-                group:
-                    - zaci2
-                name: 'Mapový trénink'
-                time: '16:15 – 18:00'
-                place: 'okolí Brna'
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink + teorie'
-                time: '16:30'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
-            -
-                group:
-                    - zabicky
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                name: 'Mapový trénink + teorie'
-                time: '16:00 – 18:00'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.cz/s/mozefojego'
-            -
-                group:
-                    - hobby
-                name: 'Společný běh'
-                time: '16:00'
-                place: 'ZŠ Nám. Svornosti'
+            1774955110909:
+                name: ''
+                time: ''
+                place: ''
         wednesday:
             -
                 group:
@@ -70,8 +47,8 @@ templates:
                 group:
                     - dorost
                 name: 'Běžecký trénink'
-                time: '16:45'
-                place: 'hala Rosnička'
+                time: '16:50'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
             -
                 group:
                     - zaci1
@@ -83,11 +60,11 @@ templates:
                 group:
                     - pulci1
                     - pulci2
-                name: Tělocvična
-                time: '16:00 - 17:00'
-                place: 'ZŠ Sirotkova'
+                name: 'Běžecký trénink'
+                time: '16:00 – 17:30'
+                place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
         friday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -99,7 +76,7 @@ templates:
                 time: ''
                 place: samostatně
         sunday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -165,7 +142,7 @@ templates:
                 time: '16:00 – 17:30'
                 place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
         friday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -177,7 +154,7 @@ templates:
                 time: ''
                 place: samostatně
         sunday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -273,7 +250,7 @@ templates:
                 time: ''
                 place: samostatně
         sunday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -325,7 +302,7 @@ templates:
                 time: ''
                 place: 'samostatně (lze využít dráhu s dorostem)'
         friday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -337,7 +314,7 @@ templates:
                 time: ''
                 place: samostatně
         sunday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -409,18 +386,18 @@ templates:
                 time: ''
                 place: samostatně
         sunday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
     'Hobby onlie teorie':
         monday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
         tuesday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -432,22 +409,22 @@ templates:
                 time: '20:00'
                 place: meet.google.com/rwz-ugkn-kgu
         thursday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
         friday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
         saturday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''
         sunday:
-            1:
+            -
                 name: ''
                 time: ''
                 place: ''

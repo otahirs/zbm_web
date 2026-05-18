@@ -2,7 +2,6 @@
 taxonomy:
     skupina:
         - dorost
-        - hobby
 id: 2026-race_2390
 start: '2026-04-11'
 end: '2026-04-11'
@@ -16,5 +15,23 @@ date: '2026-02-08'
 import:
     type: members
     time: 1770579005
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+hasStartlist: true
+hasResults: true
 ---
 

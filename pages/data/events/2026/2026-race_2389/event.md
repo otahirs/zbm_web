@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - hobby
 id: 2026-race_2389
 start: '2026-04-03'
 end: '2026-04-05'
@@ -13,5 +14,6 @@ date: '2026-02-08'
 import:
     type: members
     time: 1770579005
+hasResults: true
 ---
 

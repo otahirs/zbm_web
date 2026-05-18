@@ -38,6 +38,8 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.11690, 16.30486'
+hasStartlist: true
+hasResults: true
 ---
 
 Pořadatel: TJ Spartak první brněnská, oddíl orientačního běhu (PBM)
