@@ -1,113 +1,4 @@
 ---
-title: plan2
-plan:
-    thisWeek: null
-    nextWeek: null
-    next2Week: null
-    next3Week:
-        monday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: Tělocvična
-                time: '17:00 – 18:30'
-                place: 'hala Rosnička'
-        tuesday:
-            -
-                group:
-                    - zaci2
-                name: 'Mapový trénink'
-                time: '16:15 – 18:00'
-                place: 'okolí Brna'
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink + teorie'
-                time: '16:30'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
-            -
-                group:
-                    - zabicky
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                name: 'Mapový trénink + teorie'
-                time: '16:00 – 18:00'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
-            -
-                group:
-                    - hobby
-                name: 'Společný běh'
-                time: '16:00'
-                place: 'ZŠ Nám. Svornosti'
-        wednesday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
-            -
-                group:
-                    - hobby
-                name: 'Online teorie'
-                time: '20:00'
-                place: meet.google.com/rwz-ugkn-kgu
-        thursday:
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink'
-                time: '16:50'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 – 18:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                name: 'Běžecký trénink'
-                time: '16:00 – 17:30'
-                place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
-        friday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
----
-
-# Chyba: Chybná hlavička
-
-Cesta: `/var/www/html/zbm/user/pages/auth/plan2/default.md`
-
-**Failed to read /var/www/html/zbm/user/pages/auth/plan2/default.md: You cannot define a mapping item when in a sequence at line 7 (near "1767681211545:")**
-
-```
----
 title: 'Týdenní plán'
 template: default
 never_cache_twig: true
@@ -122,9 +13,9 @@ plan:
             -
                 group:
                     - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
+                name: 'Atletické posilování'
+                time: '17:00'
+                place: 'Dráha ZŠ nám Svornosti, https://mapy.com/s/rerakofuco'
             -
                 group:
                     - zaci1
@@ -192,98 +83,9 @@ plan:
             -
                 group:
                     - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
-            -
-                group:
-                    - zaci1
-                name: VOLNO
-                time: ''
-                place: 'Velikonoční prázdniny'
-        tuesday:
-            1:
-                group:
-                    - dorost
-                name: 'Běžecký trénink + teorie'
-                time: '16:30'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
-            2:
-                group:
-                    - zabicky
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-                    - hobby
-                name: 'Mapový trénink '
-                time: '16:15– 18:00'
-                place: 'Kozí hora (Palačák)'
-            3:
-                group:
-                    - hobby
-                name: 'Společný běh'
-                time: '16:00'
-                place: 'ZŠ Nám. Svornosti'
-        wednesday:
-            0:
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
-            1767681211545:
-                group:
-                    - hobby
-                name: 'Online teorie'
-                time: '20:00'
-                place: meet.google.com/rwz-ugkn-kgu
-        thursday:
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink'
-                time: '16:50'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 – 18:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                name: 'Běžecký trénink'
-                time: '16:00 – 17:30'
-                place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
-        friday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
-    nextWeek:
-        monday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
+                name: 'Atletické posilování'
+                time: '17:00'
+                place: 'Dráha ZŠ nám Svornosti, https://mapy.com/s/rerakofuco'
             -
                 group:
                     - zaci1
@@ -326,7 +128,7 @@ plan:
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
-            1767681211545:
+            -
                 group:
                     - hobby
                 name: 'Online teorie'
@@ -446,9 +248,9 @@ plan:
             -
                 group:
                     - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
+                name: 'Atletické posilování'
+                time: '17:00'
+                place: 'Dráha ZŠ nám Svornosti, https://mapy.com/s/rerakofuco'
             -
                 group:
                     - zaci1
@@ -461,7 +263,7 @@ plan:
                 group:
                     - zaci2
                 name: 'Mapový trénink'
-                time: '16:15– 18:00'
+                time: '16:15 – 18:00'
                 place: 'okolí Brna'
             -
                 group:
@@ -491,7 +293,7 @@ plan:
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
-            1767681211545:
+            -
                 group:
                     - hobby
                 name: 'Online teorie'
@@ -939,7 +741,6 @@ plan:
     })
 
     
-    
+
 
 </script>
-```
