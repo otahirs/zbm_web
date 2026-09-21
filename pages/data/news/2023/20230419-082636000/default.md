@@ -15,6 +15,6 @@ pictures:
       ratio: '3'
 ---
 V sobotu se 84 žabiňáků zúčastnilo 2.JML v Bystrci na louce U Křivé borovice.  
-Počasí bylo velmi aprílové. Chladno, studený vítr a jenom občasné vykouknutí sluníčka moc nepřidalo. Pokud vás zajímají výsledky, jak se nám dařilo, tak se můžete podívat [zde](https://oris.orientacnisporty.cz/Vysledky?id=7525). A pokud chcete vidět ještě něco víc, naše rajče vám je k dispozici [zde](https://skzabovresky.rajce.idnes.cz/2._JML_-_Bystrc-Kamechy/).
+Počasí bylo velmi aprílové. Chladno, studený vítr a jenom občasné vykouknutí sluníčka moc nepřidalo. Pokud vás zajímají výsledky, jak se nám dařilo, tak se můžete podívat [zde](https://oris.ceskyorientak.cz/Vysledky?id=7525). A pokud chcete vidět ještě něco víc, naše rajče vám je k dispozici [zde](https://skzabovresky.rajce.idnes.cz/2._JML_-_Bystrc-Kamechy/).
 
 Autor příspěrku: Kamča Beránková

@@ -6,7 +6,7 @@ id: 2020-race_1456
 start: '2020-10-02'
 end: '2020-10-03'
 title: 'MČR na krátké trati'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=4915'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=4915'
 orisid: '4915'
 place: 'Kunratice u České Kamenice'
 type: Z

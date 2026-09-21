@@ -6,7 +6,7 @@ id: 2022-race_1880
 start: '2022-11-12'
 end: '2022-11-12'
 title: 'Zimní liga Hulín'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7435'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7435'
 orisid: '7435'
 place: Hulín
 type: Z

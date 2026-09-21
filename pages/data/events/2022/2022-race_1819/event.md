@@ -6,7 +6,7 @@ id: 2022-race_1819
 start: '2022-07-26'
 end: '2022-07-26'
 title: '2. Brněnská letní liga'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7285'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7285'
 orisid: '7285'
 place: Juliánov
 type: Z

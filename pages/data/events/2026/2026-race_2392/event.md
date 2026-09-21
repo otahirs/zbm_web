@@ -12,7 +12,7 @@ id: 2026-race_2392
 start: '2026-04-18'
 end: '2026-04-18'
 title: '3. JML: MD - Střední trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9856'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9856'
 orisid: '9856'
 type: Z
 template: zavod

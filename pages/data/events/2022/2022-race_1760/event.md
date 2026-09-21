@@ -12,7 +12,7 @@ id: 2022-race_1760
 start: '2022-05-14'
 end: '2022-05-14'
 title: '5. JML - klasika'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7006'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7006'
 orisid: '7006'
 place: Neslovice
 type: Z

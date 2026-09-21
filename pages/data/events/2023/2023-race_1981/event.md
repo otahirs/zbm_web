@@ -9,7 +9,7 @@ id: 2023-race_1981
 start: '2023-07-18'
 end: '2023-07-18'
 title: '1. Brněnská letní liga 2023'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7990'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7990'
 orisid: '7990'
 place: Špilberk
 type: Z

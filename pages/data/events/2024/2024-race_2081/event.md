@@ -9,7 +9,7 @@ id: 2024-race_2081
 start: '2024-06-02'
 end: '2024-06-02'
 title: '4. Žebříček B-Morava, klasika'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7743'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7743'
 orisid: '7743'
 place: Lačnov
 type: Z

@@ -9,7 +9,7 @@ id: 2024-race_2078
 start: '2024-05-05'
 end: '2024-05-05'
 title: '2. Žebříček B-Morava, krátká trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7754'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7754'
 orisid: '7754'
 place: 'Nové Heřminovy'
 type: Z
@@ -23,7 +23,7 @@ meetTime: ''
 meetPlace: ''
 eventTypeDescription: 'krátka trať'
 startTime: '10:00'
-map: '1:10 000, hlavní kartograf: Petr Matula , mapa bude vytištěna na voděodolný papír pretex, předchozí mapa prostoru z roku 1994 -Střelnice, https://mapy.orientacnisporty.cz/mapa/strelnice-1992'
+map: '1:10 000, hlavní kartograf: Petr Matula , mapa bude vytištěna na voděodolný papír pretex, předchozí mapa prostoru z roku 1994 -Střelnice, https://mapy.ceskyorientak.cz/mapa/strelnice-1992'
 terrain: "převážně listnatý les v nadmořské výšce 430 – 635 mnm se střední hustotou\r\ncest, místy čistý bukový les, místy pestrá směsice porostů i podrostů všech\r\nstupňů průběžností, oblast s výskytem pohraničního opevnění a zajímavou\r\nčlenitostí"
 transport: ''
 accomodation: ''

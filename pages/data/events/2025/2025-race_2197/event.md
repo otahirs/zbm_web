@@ -12,7 +12,7 @@ id: 2025-race_2197
 start: '2025-09-13'
 end: '2025-09-13'
 title: '9. JML: krátká „pořádáme'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=8974'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=8974'
 place: Kohoutovice
 type: Z
 note: "Hobby skupina pořádá, informace od ředitele Toma Kyncla. \r\nSraz pořadatelů: 7:00.\r\nPomoc s pořádáním může každý, kdo se bude chtít na místě zapojit! :-)"

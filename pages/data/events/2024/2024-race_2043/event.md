@@ -5,7 +5,7 @@ id: 2024-race_2043
 start: '2024-10-26'
 end: '2024-10-28'
 title: 'Kwak Czech O-Tour - podzim'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8128'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8128'
 orisid: '8128'
 type: Z
 template: zavod

@@ -5,7 +5,7 @@ id: 2022-race_1777
 start: '2022-07-08'
 end: '2022-07-10'
 title: 'Grand prix Silesia'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6788'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6788'
 orisid: '6788'
 type: Z
 template: zavod

@@ -5,7 +5,7 @@ id: 2021-race_1568
 start: '2021-05-01'
 end: '2021-05-01'
 title: 'měřený mapový trénink 2'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6509'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6509'
 orisid: '6509'
 place: Mokrá-Horákov
 type: Z

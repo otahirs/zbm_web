@@ -6,7 +6,7 @@ id: 2026-race_2406
 start: '2026-03-14'
 end: '2026-03-14'
 title: 'Brutus Extreme Orienteering'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9765'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9765'
 orisid: '9765'
 type: Z
 template: zavod

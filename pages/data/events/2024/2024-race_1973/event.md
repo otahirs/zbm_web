@@ -18,7 +18,7 @@ import:
     time: 1685539802
 meetTime: ''
 meetPlace: '8:00'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8041'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8041'
 eventTypeDescription: 'Dospělí, žáci'
 startTime: '13:00'
 map: 'Zlodějská alej, 1 : 10 000, E= 2,5m, mapový klíč ISSOM 2017-2, stav prosinec 2023'

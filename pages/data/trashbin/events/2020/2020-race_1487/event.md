@@ -11,7 +11,7 @@ id: 2020-race_1487
 start: '2020-10-17'
 end: '2020-10-17'
 title: '7. JML - klasická trať'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=5663'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=5663'
 place: Jedovnice
 type: Z
 template: zavod

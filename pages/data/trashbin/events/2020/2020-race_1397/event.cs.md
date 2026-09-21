@@ -8,7 +8,7 @@ id: 2020-race_1397
 start: '2020-09-13'
 end: '2020-09-13'
 title: '7. ŽB Morava - krátká'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5294'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5294'
 orisid: '5294'
 place: 'Ski areál Tesák'
 type: Z

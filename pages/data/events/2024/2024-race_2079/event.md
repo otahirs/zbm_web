@@ -9,7 +9,7 @@ id: 2024-race_2079
 start: '2024-06-23'
 end: '2024-06-23'
 title: '6. Žebříček B-Morava, krátká trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7745'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7745'
 orisid: '7745'
 place: Roštín
 type: Z

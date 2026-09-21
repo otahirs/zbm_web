@@ -7,7 +7,7 @@ id: 2022-race_1715
 start: '2022-03-19'
 end: '2022-03-19'
 title: 'Jarní pohár - klasika'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6732'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6732'
 orisid: '6732'
 place: 'Hradec Králové'
 type: Z

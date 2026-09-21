@@ -21,4 +21,4 @@ D20 bronz Klára Barnatová a 7. místo Markéta Rotková
 H18 4. místo Tomáš Kučera  
 H21 stříbro Miloš Nykodým, 4. místo Adam Jonáš, 5. místo Jáchym Coufal
 
-Kompletní výsledky ZBM [zde](https://oris.orientacnisporty.cz/Vysledky?id=6803&amp;club=ZBM)
+Kompletní výsledky ZBM [zde](https://oris.ceskyorientak.cz/Vysledky?id=6803&amp;club=ZBM)

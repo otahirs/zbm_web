@@ -12,7 +12,7 @@ id: 2026-race_2425
 start: '2026-09-26'
 end: '2026-09-26'
 title: 'Oblastní žebříček'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9861'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9861'
 orisid: '9861'
 type: Z
 template: zavod

@@ -12,7 +12,7 @@ id: 2025-race_2191
 start: '2025-05-08'
 end: '2025-05-08'
 title: '4. JML: Mistrovství oblasti na krátké trati'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8969'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8969'
 orisid: '8969'
 place: Kohoutovice
 type: Z

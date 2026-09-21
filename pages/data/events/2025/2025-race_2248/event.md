@@ -7,7 +7,7 @@ id: 2025-race_2248
 start: '2025-10-04'
 end: '2025-10-04'
 title: 'Mistrovství a Veteraniáda ČR štafet'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8509'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8509'
 orisid: '8509'
 place: 'Boudy, louka jižně od osady U Nováka'
 type: Z

@@ -17,7 +17,7 @@ primaryImage: {  }
 <h2>Závody v rámci ČSOS</h2>
 
 {% try %}
-    {% set oris = "https://oris.orientacnisporty.cz/API/?format=json&method=getEventList&club=205&datefrom=1970-01-01"|getJson %}
+    {% set oris = "https://oris.ceskyorientak.cz/API/?format=json&method=getEventList&club=205&datefrom=1970-01-01"|getJson %}
     {% set year = 0 %}
     {% for race in oris.Data|reverse if race.Cancelled != "1" %}
         {% if race.Date[0:4] != year %}
@@ -27,7 +27,7 @@ primaryImage: {  }
             <div class="row">
         {% endif %}
         <span class="col-4 col-xs-3 col-md-2">{{ race.Date|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM') }}</span>
-        <span class="col-8 col-xs-9 col-md-10"><a href="https://oris.orientacnisporty.cz/Zavod?id={{race.ID}}">{{race.Name}}</a></span>
+        <span class="col-8 col-xs-9 col-md-10"><a href="https://oris.ceskyorientak.cz/Zavod?id={{race.ID}}">{{race.Name}}</a></span>
     {% endfor %}
     </div>
 {% catch %}

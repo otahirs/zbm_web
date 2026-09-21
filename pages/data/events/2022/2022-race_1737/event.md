@@ -9,7 +9,7 @@ id: 2022-race_1737
 start: '2022-09-11'
 end: '2022-09-11'
 title: 'ČP, ŽA, ŽB Morava - krátká trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5554'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5554'
 orisid: '5554'
 place: Ráztoka
 type: Z

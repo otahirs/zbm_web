@@ -7,7 +7,7 @@ id: 2022-race_1718
 start: '2022-04-09'
 end: '2022-04-09'
 title: 'Mistrovství a Veteraniáda ČR v nočním OB'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6112'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6112'
 orisid: '6112'
 place: Struhařov
 type: Z

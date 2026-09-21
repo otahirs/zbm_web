@@ -6,7 +6,7 @@ id: 2023-race_1925
 start: '2023-09-17'
 end: '2023-09-17'
 title: 'Mistrovství ČR na krátké trati'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6807'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6807'
 orisid: '6807'
 type: Z
 template: zavod

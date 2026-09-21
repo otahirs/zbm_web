@@ -7,7 +7,7 @@ id: 2025-race_2240
 start: '2025-06-28'
 end: '2025-06-28'
 title: 'Veteraniáda ČR na klasické trati'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8226'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8226'
 orisid: '8226'
 place: Bělečko
 type: Z

@@ -8,7 +8,7 @@ id: 2020-race_1388
 start: '2020-09-27'
 end: '2020-09-27'
 title: 'Český pohár štafet (B),'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5288'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5288'
 orisid: '5288'
 place: 'louka u silnice spojující Mostek a Dolní Olešnici'
 type: Z

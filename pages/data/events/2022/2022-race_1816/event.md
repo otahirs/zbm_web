@@ -6,7 +6,7 @@ id: 2022-race_1816
 start: '2022-08-26'
 end: '2022-08-28'
 title: 'West cup'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6948&fbclid=IwAR1Uz1sqznouyWpjDjTVU6wT5rdQPYR94DovtEYU99cb'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6948&fbclid=IwAR1Uz1sqznouyWpjDjTVU6wT5rdQPYR94DovtEYU99cb'
 orisid: '6948&fbclid=IwAR1Uz1sqznouyWpjDjTVU6wT5rdQPYR94DovtEYU99cb'
 place: Pernink
 type: Z

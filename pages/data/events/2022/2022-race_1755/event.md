@@ -12,7 +12,7 @@ id: 2022-race_1755
 start: '2022-04-02'
 end: '2022-04-02'
 title: 'Mistrovství oblasti ve sprintu'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7002'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7002'
 orisid: '7002'
 place: Miroslav
 type: Z

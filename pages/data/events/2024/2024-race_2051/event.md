@@ -6,7 +6,7 @@ id: 2024-race_2051
 start: '2024-06-29'
 end: '2024-06-29'
 title: 'Veteraniáda ČR na klasické trati'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7501'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7501'
 orisid: '7501'
 place: Okřešice
 type: Z

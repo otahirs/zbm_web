@@ -12,7 +12,7 @@ id: 2023-race_1901
 start: '2023-10-21'
 end: '2023-10-21'
 title: '12. JML: krátká trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7595'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7595'
 orisid: '7595'
 type: Z
 template: zavod

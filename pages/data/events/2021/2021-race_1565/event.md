@@ -9,7 +9,7 @@ id: 2021-race_1565
 start: '2021-05-08'
 end: '2021-05-08'
 title: 'Veřejný trénink - POŘÁDÁME'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6501'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6501'
 orisid: '6501'
 place: Vinohrady
 type: Z

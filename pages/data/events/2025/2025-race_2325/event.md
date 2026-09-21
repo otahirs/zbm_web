@@ -6,7 +6,7 @@ id: 2025-race_2325
 start: '2025-11-22'
 end: '2025-11-22'
 title: 'O-GALA 2025'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9506'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9506'
 orisid: '9506'
 place: 'Adalbertinum, Hradec Králové'
 type: Z

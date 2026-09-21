@@ -9,7 +9,7 @@ id: 2023-race_1860
 start: '2023-01-21'
 end: '2023-01-21'
 title: 'Krátký den 2023'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7324'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7324'
 orisid: '7324'
 place: Dubňany
 type: Z

@@ -6,7 +6,7 @@ id: '20210429-164012000'
 user: 'Jan Zháňal'
 pictures:
 ---
-Závodů se mohou zúčastnit pouze závodníci v souladu se sdělením sekce [OB/7](https://www.orientacnisporty.cz/upload/dokumenty/sekce-ob/sdeleni-sekceob7-21.pdf), ostatní (včetně řidičů a trenérů) nebudou vpuštěni do centra.  
+Závodů se mohou zúčastnit pouze závodníci v souladu se sdělením sekce [OB/7](https://www.ceskyorientak.cz/upload/dokumenty/sekce-ob/sdeleni-sekceob7-21.pdf), ostatní (včetně řidičů a trenérů) nebudou vpuštěni do centra.  
 Závodníci se při vstupu na shromaždiště prokážou negativním PCR testem + vyplněným [Self-reporting formulářem](http://cp2021.okjihlava.cz/subdom/cp2021/data/uploads/formular-selfreporting.pdf).
 
 ČSOS zajistil hromadné samotestování. Samozřejmě je možné zajistit si testy **PCR** individuálně. Všichni, kteří chtějí využít testy hromadné, pokračují informacemi níže.

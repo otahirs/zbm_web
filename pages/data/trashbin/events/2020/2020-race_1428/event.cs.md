@@ -11,7 +11,7 @@ id: 2020-race_1428
 start: '2020-10-03'
 end: '2020-10-03'
 title: '9. Jml: krátká'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5662'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5662'
 orisid: '5662'
 place: Troubsko
 type: Z

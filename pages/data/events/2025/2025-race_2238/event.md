@@ -7,7 +7,7 @@ id: 2025-race_2238
 start: '2025-06-21'
 end: '2025-06-21'
 title: 'Mistrovství ČR na krátké trati'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8596'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8596'
 orisid: '8596'
 place: 'Rádlo, část Milíře'
 type: Z

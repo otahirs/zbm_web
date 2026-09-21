@@ -12,7 +12,7 @@ id: 2025-race_2190
 start: '2025-04-26'
 end: '2025-04-26'
 title: '3. JML: Mistrovství oblasti ve sprintu'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=8968'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=8968'
 place: 'Mokrá-Horákov, koupaliště'
 type: Z
 template: zavod

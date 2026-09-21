@@ -6,7 +6,7 @@ id: 2026-race_2390
 start: '2026-04-11'
 end: '2026-04-11'
 title: 'Grant Thornton Mistrovství ČR v knock-out sprintu (kvalifikace)'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9400'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9400'
 orisid: '9400'
 place: Třebíč
 type: Z

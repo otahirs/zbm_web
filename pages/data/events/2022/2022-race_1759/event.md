@@ -12,7 +12,7 @@ id: 2022-race_1759
 start: '2022-04-30'
 end: '2022-04-30'
 title: '4. JML - klasika'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7005'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7005'
 orisid: '7005'
 type: Z
 template: zavod

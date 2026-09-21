@@ -7,7 +7,7 @@ id: 2024-race_2103
 start: '2024-10-05'
 end: '2024-10-05'
 title: 'Mistrovství a Veteraniáda ČR štafet'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7512'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7512'
 orisid: '7512'
 place: Vacenovice
 type: Z

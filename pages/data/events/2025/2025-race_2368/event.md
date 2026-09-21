@@ -6,7 +6,7 @@ id: 2025-race_2368
 start: '2025-12-13'
 end: '2025-12-13'
 title: 'Běh na Býčí skálu - 63. ročník'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=7819'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=7819'
 place: 'Brno - Řečkovice, Zamilovaný háj'
 type: Z
 template: zavod

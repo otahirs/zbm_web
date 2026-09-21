@@ -6,7 +6,7 @@ id: 2024-race_2097
 start: '2024-08-23'
 end: '2024-08-25'
 title: 'Pěkné prázdniny s orientačním během v Českém ráji'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8210'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8210'
 orisid: '8210'
 place: Maloskalsko
 type: Z

@@ -6,7 +6,7 @@ id: 2025-race_2252
 start: '2025-07-03'
 end: '2025-07-06'
 title: 'Cena Střední Moravy'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8929'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8929'
 orisid: '8929'
 type: Z
 template: zavod

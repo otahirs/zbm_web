@@ -26,6 +26,6 @@ H18 - 1. Filip Finstrle
 H21C - 2. Standa Mokrý, 3. Saša Jordanov
 H35 - 3. Matěj Rajnošek
 
-[Oris](https://oris.orientacnisporty.cz/Zavod?id=8967) a [fotky](https://eu.zonerama.com/SKBrnoZabovresky/Album/13112317).
+[Oris](https://oris.ceskyorientak.cz/Zavod?id=8967) a [fotky](https://eu.zonerama.com/SKBrnoZabovresky/Album/13112317).
 
 Míra Beránek

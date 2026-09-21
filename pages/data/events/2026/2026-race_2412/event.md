@@ -8,7 +8,7 @@ id: 2026-race_2412
 start: '2026-05-24'
 end: '2026-05-24'
 title: 'Přihláška do Žebříčke B-Morava 2026'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9870'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9870'
 orisid: '9870'
 type: Z
 template: zavod

@@ -12,7 +12,7 @@ Určitě není nutné přestat sportovat či trénovat. Děti nechodí do školy
 Pokud to bude možné, trenéři nabídnou svým svěřencům tréninky takové, aby je mohli svěřenci sami ve volném čase absolvovat. Ať už půjde o individuální mapové tréninky, tréninkové plány, GPS trasy, atd. 
 Plány budou trenéři distibuovat standardně **přes oddílové webové stránky** nebo přes sociální sítě, a vyhodnocovat je obdobně (je-li to vhodné a nutné), tak, aby nedocházelo k osobnímu setkávání.
 Vyjádření svazu:
-http://www.orientacnisporty.cz/o-csos/csos-informuje/aktualizace-doporuceni-csos-k-aktualni-situaci-v-cr
+http://www.ceskyorientak.cz/o-csos/csos-informuje/aktualizace-doporuceni-csos-k-aktualni-situaci-v-cr
 Děkuji všem za pochopení a spolupráci.
 Jménem celého vedení 
 

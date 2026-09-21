@@ -12,7 +12,7 @@ id: 2024-race_2064
 start: '2024-04-20'
 end: '2024-04-20'
 title: '3. JML: krátká trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8350'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8350'
 orisid: '8350'
 place: 'Vranov u Brna'
 type: Z

@@ -6,7 +6,7 @@ id: 2021-race_1558
 start: '2021-05-23'
 end: '2021-05-23'
 title: 'Mistrovství ČR sprintových štafet'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5182'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5182'
 orisid: '5182'
 place: 'Litovel, areál TJ Tatran Litovel'
 type: Z

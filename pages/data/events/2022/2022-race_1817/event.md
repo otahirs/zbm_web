@@ -5,7 +5,7 @@ id: 2022-race_1817
 start: '2022-07-15'
 end: '2022-07-15'
 title: 'Czech O-Tour 2022 - Jizerky - Lucifer cup'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7246'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7246'
 orisid: '7246'
 place: 'autokemp Tanvaldský Špičák'
 type: Z

@@ -12,4 +12,4 @@ pictures:
     - name: '1646342165703_trenink Lipica 01.C.png'
       ratio: '6'
 ---
-Tento týden veřejně propagujeme [svazovou sbírku](https://www.orientacnisporty.cz/o-csos/csos-informuje/tyden-orientaku-pro-ukrajinu-zapojte-se) a snažíme se zapojit do pomoci Ukrajině. Můžete-li, prosím pomožte také, jakkoli.
+Tento týden veřejně propagujeme [svazovou sbírku](https://www.ceskyorientak.cz/o-csos/csos-informuje/tyden-orientaku-pro-ukrajinu-zapojte-se) a snažíme se zapojit do pomoci Ukrajině. Můžete-li, prosím pomožte také, jakkoli.

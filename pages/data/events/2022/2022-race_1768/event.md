@@ -12,7 +12,7 @@ id: 2022-race_1768
 start: '2022-10-15'
 end: '2022-10-15'
 title: '13. JML - klasická'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7012'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7012'
 orisid: '7012'
 type: Z
 template: zavod

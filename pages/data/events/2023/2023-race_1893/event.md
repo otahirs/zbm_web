@@ -19,7 +19,7 @@ import:
     type: members
     time: 1673858402
 place: 'Nová Ves (u Oslavan)'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7589'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7589'
 orisid: '7589'
 meetTime: '8:45'
 meetPlace: 'u Bohémy (ul. Roosveltova)'

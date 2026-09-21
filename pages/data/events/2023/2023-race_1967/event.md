@@ -12,7 +12,7 @@ id: 2023-race_1967
 start: '2023-05-02'
 end: '2023-05-02'
 title: 'Dráhový test TSM Jižní Morava'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7901'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7901'
 orisid: '7901'
 place: 'Sportovní areál PPV'
 type: Z

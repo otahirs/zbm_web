@@ -7,7 +7,7 @@ id: 2021-race_1561
 start: '2021-06-12'
 end: '2021-06-13'
 title: 'MČR na krátké trati'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5802'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5802'
 orisid: '5802'
 place: Vojtíškov
 type: Z

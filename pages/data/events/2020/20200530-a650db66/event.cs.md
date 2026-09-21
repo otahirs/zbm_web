@@ -8,7 +8,7 @@ end: '2020-05-30'
 place: 'Zamilovaný hájek'
 meetTime: '10:00'
 meetPlace: ''
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5977'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5977'
 eventTypeDescription: 'D12     D14     D16     D18     D21     D35     D45     D55     H12     H14     H21     H35     H45     H55     HD10'
 startTime: ''
 map: Kubelín

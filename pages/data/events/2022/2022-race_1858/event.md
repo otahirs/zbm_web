@@ -12,7 +12,7 @@ id: 2022-race_1858
 start: '2022-12-04'
 end: '2022-12-04'
 title: 'BZL: BURE Cup'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7347'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7347'
 orisid: '7347'
 place: Žebětín
 type: Z

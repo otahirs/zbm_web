@@ -5,7 +5,7 @@ id: 2025-race_2254
 start: '2025-07-30'
 end: '2025-08-03'
 title: 'Bohemia orienteering 2025'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8711'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8711'
 orisid: '8711'
 place: 'Nový Bor'
 type: Z

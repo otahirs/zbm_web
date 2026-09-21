@@ -5,7 +5,7 @@ id: 2021-race_1544
 start: '2021-08-27'
 end: '2021-08-29'
 title: 'Cena východních Čech'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6210'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6210'
 orisid: '6210'
 place: 'Pustá Rybná'
 type: Z

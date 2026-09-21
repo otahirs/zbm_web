@@ -11,7 +11,7 @@ id: 2024-race_2046
 start: '2024-03-03'
 end: '2024-03-03'
 title: 'BZL: Adamovský sprint'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8384'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8384'
 orisid: '8384'
 place: 'ZŠ Ronovská, Adamov'
 type: Z

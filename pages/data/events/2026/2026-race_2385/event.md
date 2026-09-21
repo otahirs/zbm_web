@@ -10,7 +10,7 @@ id: 2026-race_2385
 start: '2026-03-21'
 end: '2026-03-21'
 title: 'Oblastní žebříček (Jarní pohár)'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9567'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9567'
 orisid: '9567'
 type: Z
 template: zavod

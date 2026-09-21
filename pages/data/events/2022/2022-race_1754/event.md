@@ -22,7 +22,7 @@ place: Rusava
 note: "Jestli nemáte zájem o ubytování, napište to do poznámky.\r\nV sobotu dopoledneá krátká trať, odpoledne společný program - připravuje Lenka Hrušková, v neděli štafety.\r\n\r\n**Spacáky s sebou !!!**"
 meetTime: '7:30'
 meetPlace: 'u Bohémy'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7433'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7433'
 eventTypeDescription: "Sobota: krátká trať  \r\nNováčkovský kufr (pulci): 2,03km, 90m  \r\nZávod nadějí (žáci): 2,5km, 90m   \r\nMalá Mistrovská (dorostenci, ženy): 4,25km, 220m   \r\nVelká Mistrovská (všichni ostatní): 5,39km, 305m   \r\nVeteránský pohár (DH40+): 3,14km, 160m   \r\n  \r\nNeděle: štafety  \r\nVM: 5,3km, 290m  \r\nMM: 4,2km, 290m  \r\nVP: 3,2km, 170m  \r\nZN: 2,4km, 170m  \r\nNK: 1,8km, 110m"
 startTime: 'sobota 10:30, neděle 9:00'
 map: 'Rusava 2022'
@@ -44,7 +44,7 @@ routes:
 results:
     -
         name: 'sobotní výsledky'
-        link: 'https://oris.orientacnisporty.cz/Vysledky?id=7433'
+        link: 'https://oris.ceskyorientak.cz/Vysledky?id=7433'
 ---
 
 Jestli nemáte zájem o ubytování, napište to do poznámky.

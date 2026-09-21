@@ -9,7 +9,7 @@ id: 2021-race_1564
 start: '2021-09-12'
 end: '2021-09-12'
 title: 'Žebříček B-Morava - Krátká trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6025'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6025'
 orisid: '6025'
 place: Petříkovice
 type: Z

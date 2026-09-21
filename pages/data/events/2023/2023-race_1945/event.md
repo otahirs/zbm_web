@@ -9,7 +9,7 @@ id: 2023-race_1945
 start: '2023-05-21'
 end: '2023-05-21'
 title: 'Žebříček B-Morava 2023'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7712'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7712'
 orisid: '7712'
 place: Morava
 type: Z

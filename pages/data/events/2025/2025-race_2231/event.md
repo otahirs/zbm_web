@@ -7,7 +7,7 @@ id: 2025-race_2231
 start: '2025-05-18'
 end: '2025-05-18'
 title: 'Mistrovství ČR sprintových štafet'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=8224'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=8224'
 place: 'Buštěhrad, zámek'
 type: Z
 note: 'Úzké uličky v členitém svahu středověkého Buštěhradu, okolí zámku a zámecký park.'

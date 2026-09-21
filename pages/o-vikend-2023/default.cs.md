@@ -7,7 +7,7 @@ media_order: PNG_logo_ZBM-komplet.png
 Díky, že jste dorazili a udělali skvělou atmosféru nejen na O-gala.
 
 * [O-Gala fotky](https://eu.zonerama.com/OndraH/Album/10731149)
-* [Výsledky BZL: Předplesání](https://oris.orientacnisporty.cz/Vysledky?id=8051)
+* [Výsledky BZL: Předplesání](https://oris.ceskyorientak.cz/Vysledky?id=8051)
 
 ---
 
@@ -24,9 +24,9 @@ Ladíme detaily akcí a chystáme podrobnější info...
 * Sprintový závod v sobotu
 
 **O-víkend v Orisu:**
-* [Ples O-Gala](https://oris.orientacnisporty.cz/Zavod?id=8022)
-* [Metodický seminář rozhodčích a trenérů](https://oris.orientacnisporty.cz/Zavod?id=8023)
-* [Sprintový závod](https://oris.orientacnisporty.cz/Zavod?id=8051)
+* [Ples O-Gala](https://oris.ceskyorientak.cz/Zavod?id=8022)
+* [Metodický seminář rozhodčích a trenérů](https://oris.ceskyorientak.cz/Zavod?id=8023)
+* [Sprintový závod](https://oris.ceskyorientak.cz/Zavod?id=8051)
 
 <p>&nbsp;</p>
 
@@ -115,7 +115,7 @@ Info:
     </div>
     <div class="col-md-6">
         <a href="https://www.obnadace.cz/" target="_blank">
-        <img class="sponsors--img" src="http://www.orientacnisporty.cz/upload/ilustracni-obrazky/nadaceob.PNG">
+        <img class="sponsors--img" src="http://www.ceskyorientak.cz/upload/ilustracni-obrazky/nadaceob.PNG">
         </a>
     </div>
     <div class="col-md-6">

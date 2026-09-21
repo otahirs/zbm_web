@@ -8,7 +8,7 @@ id: 2021-race_1551
 start: '2021-05-23'
 end: '2021-05-23'
 title: 'Žebříček B Morava'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6292'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6292'
 orisid: '6292'
 place: Morava
 type: Z

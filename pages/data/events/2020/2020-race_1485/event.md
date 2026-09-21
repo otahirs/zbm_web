@@ -11,7 +11,7 @@ id: 2020-race_1485
 start: '2020-10-04'
 end: '2020-10-04'
 title: '5. JML - krátká trať'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=5662'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=5662'
 place: Troubsko
 type: Z
 template: zavod

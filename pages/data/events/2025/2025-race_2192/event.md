@@ -12,7 +12,7 @@ id: 2025-race_2192
 start: '2025-05-17'
 end: '2025-05-17'
 title: '5. JML - krátká'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=8989'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=8989'
 place: 'Pohora - louka'
 type: Z
 template: zavod

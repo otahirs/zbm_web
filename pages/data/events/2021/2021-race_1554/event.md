@@ -6,7 +6,7 @@ id: 2021-race_1554
 start: '2021-05-02'
 end: '2021-05-02'
 title: 'Žebříček A'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6289'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6289'
 orisid: '6289'
 place: ČR
 type: Z

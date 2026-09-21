@@ -9,7 +9,7 @@ id: 2021-race_1611
 start: '2021-06-23'
 end: '2021-06-23'
 title: 'Mistrovství oblasti štafet'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6419'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6419'
 orisid: '6419'
 place: Hostěnice
 type: Z

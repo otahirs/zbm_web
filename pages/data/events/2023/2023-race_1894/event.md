@@ -12,7 +12,7 @@ id: 2023-race_1894
 start: '2023-06-03'
 end: '2023-06-03'
 title: '7. JML: krátká trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7590'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7590'
 orisid: '7590'
 place: Mokrá-Horákov
 type: Z

@@ -11,7 +11,7 @@ id: 2020-race_1484
 start: '2020-09-28'
 end: '2020-09-28'
 title: '4. JML - krátká trať'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=6036'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=6036'
 place: Křižánky
 type: Z
 template: zavod

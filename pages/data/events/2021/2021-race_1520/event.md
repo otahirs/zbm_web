@@ -5,7 +5,7 @@ id: 2021-race_1520
 start: '2021-07-21'
 end: '2021-07-25'
 title: 'Bohemia Orienteering'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6147'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6147'
 orisid: '6147'
 place: 'Nový Bor'
 type: Z

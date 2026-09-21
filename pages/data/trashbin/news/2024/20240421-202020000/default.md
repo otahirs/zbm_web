@@ -15,5 +15,5 @@ K tomu fůra druhých 🥈 míst: Barča Machová, Thea Coufalová, Eva Hiklová
 A k tomu několik míst třetích 🥉pro Ottu Meissnera, Vítka Kocourka, Vendu Smítala, Matěje Tomana a Sašu Jordanova.  
 Gratulujeme! Ať se dál takto daří.  
 Výsledky a fotky, za které patří díky, najdete na sránce v orisu:  
-[https://oris.orientacnisporty.cz/Vysledky?id=8350&amp;amp;club=ZBM](https://oris.orientacnisporty.cz/Vysledky?id=8350&amp;amp%3Bclub=ZBM)  
+[https://oris.ceskyorientak.cz/Vysledky?id=8350&amp;amp;club=ZBM](https://oris.ceskyorientak.cz/Vysledky?id=8350&amp;amp%3Bclub=ZBM)  
 Díky moc Teslákům za krásný oblž a těšíme se za týden na Mistrovství oblasti na Krátké trati v Nové Vsi u Oslavan.

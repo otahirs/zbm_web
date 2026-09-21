@@ -7,7 +7,7 @@ id: 2025-race_2228
 start: '2025-05-10'
 end: '2025-05-10'
 title: '1. Český pohár štafet 2025'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8221'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8221'
 orisid: '8221'
 place: 'Louka mezi osadami Nový Vojířov a Lhota'
 type: Z

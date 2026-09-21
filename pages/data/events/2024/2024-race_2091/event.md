@@ -7,7 +7,7 @@ id: 2024-race_2091
 start: '2024-06-08'
 end: '2024-06-08'
 title: 'Mistrovství ČR na krátké trati (kvalifikace)'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7498'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7498'
 orisid: '7498'
 place: Pastuchovice
 type: Z

@@ -12,7 +12,7 @@ id: 2025-race_2199
 start: '2025-10-11'
 end: '2025-10-11'
 title: '11. JML: klasika'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8993'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8993'
 orisid: '8993'
 place: Vacenovice
 type: Z

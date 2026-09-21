@@ -9,7 +9,7 @@ id: 2025-race_2187
 start: '2025-09-06'
 end: '2025-09-06'
 title: 'ČP, WRE, ŽA, 5. ŽB - Morava 2025'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8228'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8228'
 orisid: '8229'
 type: Z
 template: zavod

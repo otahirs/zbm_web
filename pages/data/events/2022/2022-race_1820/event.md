@@ -6,7 +6,7 @@ id: 2022-race_1820
 start: '2022-08-23'
 end: '2022-08-23'
 title: '3. .Brněnská letní liga'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7286'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7286'
 orisid: '7286'
 place: 'Královo pole'
 type: Z

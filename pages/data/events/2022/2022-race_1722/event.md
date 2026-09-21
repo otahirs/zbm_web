@@ -9,7 +9,7 @@ id: 2022-race_1722
 start: '2022-04-23'
 end: '2022-04-23'
 title: 'Český pohár štafet'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5547'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5547'
 orisid: '5547'
 type: Z
 template: zavod

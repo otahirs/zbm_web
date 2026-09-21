@@ -12,7 +12,7 @@ id: 2023-race_1902
 start: '2023-10-28'
 end: '2023-10-28'
 title: '13. JML: klasická trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7596'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7596'
 orisid: '7596'
 type: Z
 template: zavod

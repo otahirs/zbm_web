@@ -7,7 +7,7 @@ id: 2021-race_1597
 start: '2021-09-18'
 end: '2021-09-18'
 title: 'Mistrovství ČR na klasické trati (kvalifikace)'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5898'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5898'
 orisid: '5898'
 type: Z
 template: zavod

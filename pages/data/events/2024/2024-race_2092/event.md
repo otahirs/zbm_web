@@ -6,7 +6,7 @@ id: 2024-race_2092
 start: '2024-08-16'
 end: '2024-08-18'
 title: 'Sandstones | Pískovce 2024'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8219'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8219'
 orisid: '8219'
 place: Hradčany
 type: Z

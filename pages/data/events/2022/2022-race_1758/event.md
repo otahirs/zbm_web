@@ -12,7 +12,7 @@ id: 2022-race_1758
 start: '2022-04-23'
 end: '2022-04-23'
 title: '3. JML - Mistrovství oblasti na krátké trati'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7004'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7004'
 orisid: '7004'
 type: Z
 template: zavod

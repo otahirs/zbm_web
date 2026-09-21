@@ -5,7 +5,7 @@ id: 2020-race_1410
 start: '2020-08-07'
 end: '2020-08-09'
 title: 'Zlínský (Š)krpál'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5711'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5711'
 orisid: '5711'
 type: Z
 template: zavod

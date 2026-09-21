@@ -9,7 +9,7 @@ id: 2026-race_2434
 start: '2026-09-19'
 end: '2026-09-19'
 title: 'Český pohár štafet, mistrovství oblasti'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8953'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8953'
 orisid: '8953'
 type: Z
 template: zavod
