@@ -7,7 +7,7 @@ id: 2022-race_1772
 start: '2022-02-26'
 end: '2022-02-26'
 title: 'ZLOM + Zimní liga Vracov'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6783'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6783'
 orisid: '6783'
 place: Vracov
 type: Z

@@ -11,7 +11,7 @@ id: 20200620-Race_1425
 start: '2020-06-20'
 end: '2020-06-20'
 title: '7. Jml: klasika'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5660'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5660'
 orisid: '5660'
 place: Tetčice
 type: Z

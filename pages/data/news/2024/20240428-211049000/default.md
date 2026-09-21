@@ -14,5 +14,5 @@ pictures:
 Získali jsme mnoho skvělých umístění na bedně:  
 Anička Jašová a Elisa Křížová 1. a 2. místo D10N, Terka Palá 3.místo D10, Thea Coufalová a Kamila   Beránková 1. a 2. místo D14, Tereza Kučerová 2. místo D16, Markéta Kaiser a Natália Hiklová 1. a 2.  místo D21, Vlasta Podešvová 1. místo D21D, Marie Janíková 1. místo D35, Leny Lvovská 3. místo D45,  Jitka Kabáthová 2. místo D65.   Víťa Kocourek a Mark Maksimenko 1. a 2. místo H10, Vendelín Smítal 3. místo H12, Franta Koča 2.   místo H14, Matěj Toman a Radek Florian 2. a 3. místo H16, Tomáš Kučera a Filip Finstrle 1. a 2. místo   H18, Standa Mokrý a Štěpán Zimmermann 2. a 3. místo H21, Jarda Koča a Rosťa Smítal 2. a 3. místo  H35, Aleš Finstrle 2. místo H45.  
 Fotky [pořadatelů](https://eu.zonerama.com/JKorpas/Album/11374132) a [naše](https://eu.zonerama.com/SKBrnoZabovresky/Album/11373739).  
-[Stránka závodu](https://oris.orientacnisporty.cz/Zavod?id=8351).  
+[Stránka závodu](https://oris.ceskyorientak.cz/Zavod?id=8351).  
 Jitka Kabáthová

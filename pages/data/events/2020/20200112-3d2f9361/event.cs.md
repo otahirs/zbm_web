@@ -7,7 +7,7 @@ end: '2020-01-12'
 place: 'Brno - Žabovřesky'
 meetTime: ''
 meetPlace: 'hala Rosnička'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5520'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5520'
 eventTypeDescription: ''
 startTime: '14:00'
 map: Rosnička

@@ -12,7 +12,7 @@ id: 2025-race_2198
 start: '2025-09-27'
 end: '2025-09-27'
 title: '10. JML: krátká'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=8992'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=8992'
 place: 'Ochoz u Brna'
 type: Z
 template: zavod

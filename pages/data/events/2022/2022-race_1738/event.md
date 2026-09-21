@@ -7,7 +7,7 @@ id: 2022-race_1738
 start: '2022-09-17'
 end: '2022-09-17'
 title: 'Mistrovství ČR na klasické trati (kvalifikace)'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6013'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6013'
 orisid: '6013'
 type: Z
 template: zavod

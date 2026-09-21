@@ -6,7 +6,7 @@ id: 2020-race_1391
 start: '2020-09-06'
 end: '2020-09-06'
 title: 'INOV-8 CUP - žebříček A'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=4917'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=4917'
 orisid: '4917'
 place: 'louka v SZ cípu obce Ždírec'
 type: Z

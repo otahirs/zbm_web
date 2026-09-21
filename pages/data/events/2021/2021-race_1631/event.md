@@ -9,7 +9,7 @@ id: 2021-race_1631
 start: '2021-10-10'
 end: '2021-10-10'
 title: 'Mistrovství ČR klubů'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6031'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6031'
 orisid: '6031'
 place: 'Kobylá nad Vidnavkou'
 type: Z

@@ -7,7 +7,7 @@ id: 2022-race_1730
 start: '2022-06-04'
 end: '2022-06-04'
 title: 'Mistrovství ČR na krátké trati (kvalifikace)'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6232'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6232'
 orisid: '6232'
 place: 'Nová Ves nad Nisou'
 type: Z

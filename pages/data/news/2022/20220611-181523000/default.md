@@ -22,4 +22,4 @@ Jako obvykle při JML, kterou pořádají orienťáci z Adamova, se bojovalo o p
 Do cíle doběhlo krásných 77 Žabiňáků a Žabiňaček, mnozí si doběhli i pro pěkné ceny na stupních vítězů. Jen ten Pohár Adastu nám vyfoukl Osvald Kozák. Tak příště a lepšeji.  
 Také bylo pěkné, že od Bohémy odjížděl plný autobus.  
 Nezvyklým bylo, že i některé veteránské kategorie dostaly mapu 1: 15 000, ale myslím, že 15 na klasiku prostě patří.  
-Další fotky z vyhlášení jsou [tu](https://skzabovresky.rajce.idnes.cz/43._zavod_o_Pohar_Adastu_a_8._JML/) a výsledky najdete na [orisu](https://oris.orientacnisporty.cz/Vysledky?id=7008).
+Další fotky z vyhlášení jsou [tu](https://skzabovresky.rajce.idnes.cz/43._zavod_o_Pohar_Adastu_a_8._JML/) a výsledky najdete na [orisu](https://oris.ceskyorientak.cz/Vysledky?id=7008).

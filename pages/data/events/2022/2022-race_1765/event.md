@@ -12,7 +12,7 @@ id: 2022-race_1765
 start: '2022-09-24'
 end: '2022-09-24'
 title: '10. JML - krátká'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7011'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7011'
 orisid: '7011'
 type: Z
 template: zavod

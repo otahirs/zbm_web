@@ -17,7 +17,7 @@ import:
     time: 1710751205
 meetTime: '08:30'
 meetPlace: 'u Bohémy'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7618'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7618'
 eventTypeDescription: 'Dbejte zvýšené opatrnosti – v prostoru závodu je velké množství kontrol a tratě se kříží. Kontrolujte kódy a spojnici ke kontrole, na kterou máte běžet.'
 startTime: '12:00 (karanténa 11:45)'
 map: 'Jemnice, květen 2024'

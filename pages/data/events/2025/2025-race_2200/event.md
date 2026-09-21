@@ -12,7 +12,7 @@ id: 2025-race_2200
 start: '2025-10-18'
 end: '2025-10-18'
 title: '12. JML: klasika'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8976'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8976'
 orisid: '8976'
 place: Fryšava
 type: Z

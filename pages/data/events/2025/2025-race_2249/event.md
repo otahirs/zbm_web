@@ -7,7 +7,7 @@ id: 2025-race_2249
 start: '2025-10-05'
 end: '2025-10-05'
 title: 'Mistrovství a Veteraniáda ČR klubů'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=8510'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=8510'
 place: 'Boudy, louka jižně od osady U Nováka'
 type: Z
 note: 'Návrat kolem 18.'

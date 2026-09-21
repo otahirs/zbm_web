@@ -21,7 +21,7 @@ Oba poslední dubnové víkendy vyrazili Žabiňáci na dvě naprosto odlišná 
 
 Obě soboty se nesly v duchu zábavy, spousty společných zážitků i získávání nových kamarádů i cenných zkušeností.  
 Z obou akcí jsou fotky na oddílovém Rajčeti ([3\. JmL Pacetluky](https://skzabovresky.rajce.idnes.cz/3._JML_Pacetluky/), [4\. JmL Židlochovice](https://skzabovresky.rajce.idnes.cz/4._JML_Zidlochovice/)).  
-Pokud vás zajímají výsledky (i když ne vždy odpovídají nasazení, tréninkové píli či práci na sobě samém), pak tu máme ORIS ([3\. JmL Pacetluky](https://oris.orientacnisporty.cz/Vysledky?id=7526&amp;club=ZBM), [4\. JmL Židlochovice](https://oris.orientacnisporty.cz/Vysledky?id=7587&amp;club=ZBM)).  
+Pokud vás zajímají výsledky (i když ne vždy odpovídají nasazení, tréninkové píli či práci na sobě samém), pak tu máme ORIS ([3\. JmL Pacetluky](https://oris.ceskyorientak.cz/Vysledky?id=7526&amp;club=ZBM), [4\. JmL Židlochovice](https://oris.ceskyorientak.cz/Vysledky?id=7587&amp;club=ZBM)).  
 Těšíme se na další soustředění i závody a snad se nám letos podaří vrátit k účasti na JmL před Covidem, kdy nas bývalo i přes 100.
 
 Prosím, potkejme se vždy všichni na shromaždišti u Žabiňácké vlajky/stanu a na vyhlášení choďme v oddílovém oblečení. #JedenOddíl #Žabiny

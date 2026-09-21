@@ -9,7 +9,7 @@ id: 2025-race_2288
 start: '2025-05-19'
 end: '2025-05-19'
 title: 'Žebříček B-Morava'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9207'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9207'
 orisid: '9207'
 place: Morava
 type: Z

@@ -7,7 +7,7 @@ id: 2025-race_2245
 start: '2025-09-20'
 end: '2025-09-20'
 title: 'ČP, ŽA – sprint'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8230'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8230'
 orisid: '8230'
 place: 'Klášter Hradiště nad Jizerou'
 type: Z

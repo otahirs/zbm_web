@@ -11,7 +11,7 @@ id: 2020-race_1472
 start: '2020-09-20'
 end: '2020-09-20'
 title: 'Veteraniáda ČR na klasické trati + oblastní závod'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=6035'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=6035'
 place: 'Kemp Na Kopci - Vír'
 type: Z
 template: zavod

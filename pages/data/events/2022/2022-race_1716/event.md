@@ -9,7 +9,7 @@ id: 2022-race_1716
 start: '2022-03-20'
 end: '2022-03-20'
 title: 'Jarní pohár - štafety'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6825'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6825'
 orisid: '6825'
 place: 'Hradec Králové'
 type: Z

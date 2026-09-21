@@ -7,7 +7,7 @@ id: 2022-race_1714
 start: '2022-03-18'
 end: '2022-03-18'
 title: 'Jarní pohár - nočák'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6824'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6824'
 orisid: '6824'
 place: 'Hradec Králové'
 type: Z

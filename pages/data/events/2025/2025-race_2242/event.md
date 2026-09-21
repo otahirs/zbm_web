@@ -7,7 +7,7 @@ id: 2025-race_2242
 start: '2025-08-02'
 end: '2025-08-02'
 title: 'Mistrovství ČR v knock-out sprintu'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8506'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8506'
 orisid: '8506'
 place: 'Staré Město'
 type: Z

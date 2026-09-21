@@ -126,10 +126,10 @@ news:
     </div>
     <div>
       <h4>Odkazy</h4>
-        <a class="home__link external-link" href="https://www.orientacnisporty.cz/">Český&nbsp;svaz&nbsp;orientačních&nbsp;sportů</a>
-        <a class="home__link external-link" href="https://oris.orientacnisporty.cz/">ORIS</a> </br>
+        <a class="home__link external-link" href="https://www.ceskyorientak.cz/">Český&nbsp;svaz&nbsp;orientačních&nbsp;sportů</a>
+        <a class="home__link external-link" href="https://oris.ceskyorientak.cz/">ORIS</a> </br>
         <a class="home__link external-link" href="https://tsm.zabiny.club">TSM&nbsp;Jižní&nbsp;Morava</a>
-        <a class="home__link external-link" href="https://mapy.orientacnisporty.cz/cs/clubs/zbm">Vydané&nbsp;mapy</a></br>
+        <a class="home__link external-link" href="https://mapy.ceskyorientak.cz/cs/clubs/zbm">Vydané&nbsp;mapy</a></br>
         <a class="home__link external-link" href="https://www.facebook.com/zbm.zabiny">Facebook</a>
         <a class="home__link external-link" href="https://skbrnozabovresky.zonerama.com">Fotky z akcí</a></br>
         <a class="home__link external-link" href="https://reprezentace.orientacnibeh.cz/">Reprezentace OB</a> 
@@ -161,10 +161,10 @@ news:
             </a>
             <article class="soon__content" data-orisid="{{p.header.orisid}}" data-history="true">
               {% if p.header.hasStartist %}
-                <a class="external-link" href='https://oris.orientacnisporty.cz/Startovka?id={{p.header.orisid}}' target="_blank">startovky</a><br>
+                <a class="external-link" href='https://oris.ceskyorientak.cz/Startovka?id={{p.header.orisid}}' target="_blank">startovky</a><br>
               {% endif %}
               {% if p.header.hasResults %}
-                <a class="external-link" href='https://oris.orientacnisporty.cz/Vysledky?id={{p.header.orisid}}' target="_blank">výsledky</a>
+                <a class="external-link" href='https://oris.ceskyorientak.cz/Vysledky?id={{p.header.orisid}}' target="_blank">výsledky</a>
               {% endif %}
             </article>
           </section>
@@ -238,10 +238,10 @@ news:
                   <article class="soon__content" data-id="{{p.header.id}}" data-template="{{p.header.template}}" data-orisid="{{p.header.orisid}}">
                     {{p.content|markdown}}
                     {% if p.header.hasStartlist %}
-                      <a class="external-link" href='https://oris.orientacnisporty.cz/Startovka?id={{p.header.orisid}}' target="_blank">startovky</a><br>
+                      <a class="external-link" href='https://oris.ceskyorientak.cz/Startovka?id={{p.header.orisid}}' target="_blank">startovky</a><br>
                     {% endif %}
                     {% if p.header.hasResults %}
-                      <a class="external-link" href='https://oris.orientacnisporty.cz/Vysledky?id={{p.header.orisid}}' target="_blank">výsledky</a>
+                      <a class="external-link" href='https://oris.ceskyorientak.cz/Vysledky?id={{p.header.orisid}}' target="_blank">výsledky</a>
                     {% endif %}
                   </article>
                 </section>

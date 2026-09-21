@@ -9,7 +9,7 @@ id: 2025-race_2233
 start: '2025-05-25'
 end: '2025-05-25'
 title: '2. Žebříček B-Morava 2025– klasická trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8499'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8499'
 orisid: '8499'
 place: 'Hoštejn, hřiště'
 type: Z

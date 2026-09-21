@@ -5,7 +5,7 @@ id: 2025-race_2304
 start: '2025-08-02'
 end: '2025-08-03'
 title: 'KO weekend'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9332'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9332'
 orisid: '9332'
 place: 'Staré Město'
 type: Z

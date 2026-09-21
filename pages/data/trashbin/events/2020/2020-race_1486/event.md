@@ -11,7 +11,7 @@ id: 2020-race_1486
 start: '2020-10-10'
 end: '2020-10-10'
 title: '6. JML - klasická trať'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=6052'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=6052'
 place: Kobeřice
 type: Z
 template: zavod

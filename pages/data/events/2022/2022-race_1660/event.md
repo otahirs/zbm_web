@@ -12,7 +12,7 @@ id: 2022-race_1660
 start: '2022-01-22'
 end: '2022-01-22'
 title: 'Krátký den'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6648'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6648'
 orisid: '6648'
 place: Dubňany
 type: Z

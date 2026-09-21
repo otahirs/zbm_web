@@ -12,7 +12,7 @@ id: 2023-race_1888
 start: '2023-04-01'
 end: '2023-04-01'
 title: '1. JML: klasická trať: Pořádáme'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7586'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7586'
 orisid: '7586'
 place: Březina
 type: Z

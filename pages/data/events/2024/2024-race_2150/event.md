@@ -12,7 +12,7 @@ id: 2024-race_2150
 start: '2024-10-13'
 end: '2024-10-13'
 title: '11. JML klasická trať'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=8778'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=8778'
 place: Blansko-Klepačov
 type: Z
 template: zavod

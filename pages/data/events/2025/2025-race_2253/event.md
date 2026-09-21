@@ -6,7 +6,7 @@ id: 2025-race_2253
 start: '2025-07-11'
 end: '2025-07-13'
 title: 'H.S.H. Vysočina cup'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9166'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9166'
 orisid: '9166'
 type: Z
 template: zavod

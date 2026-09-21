@@ -13,7 +13,7 @@ meetPlace: 'Parkoviště u Lidlu, Dornych'
 template: zavod
 date: '2019-11-11'
 id: 20191130-a0aaadbd
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5510'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5510'
 eventTypeDescription: 'T1, T2, T3, T4, T5, T6'
 startTime: '11:00'
 map: 'Vracovské duny'

@@ -7,7 +7,7 @@ id: 2025-race_2247
 start: '2025-09-21'
 end: '2025-09-21'
 title: '4. Český pohár štafet'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8232'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8232'
 orisid: '8232'
 place: Lukášov
 type: Z

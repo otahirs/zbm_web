@@ -7,7 +7,7 @@ id: 2022-race_1724
 start: '2022-05-14'
 end: '2022-05-14'
 title: 'Mistrovství ČR ve sprintu'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5798'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5798'
 orisid: '5798'
 place: Praha
 type: Z

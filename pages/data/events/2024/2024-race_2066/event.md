@@ -12,7 +12,7 @@ id: 2024-race_2066
 start: '2024-05-11'
 end: '2024-05-11'
 title: '6. JML: klasická trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8261'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8261'
 orisid: '8261'
 place: Velenov
 type: Z

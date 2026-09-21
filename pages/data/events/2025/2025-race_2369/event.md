@@ -6,7 +6,7 @@ id: 2025-race_2369
 start: '2025-12-29'
 end: '2025-12-29'
 title: 'Předsilvestrovský (mini)rogaining'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9699'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9699'
 orisid: '9699'
 place: 'Rudka (u Domašova)'
 type: Z

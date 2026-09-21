@@ -5,7 +5,7 @@ id: 2024-race_2130
 start: '2024-06-01'
 end: '2024-06-01'
 title: 'Žebříček B-Čechy - Nominačky MED'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7732'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7732'
 orisid: '7732'
 place: Chvaletice
 type: Z

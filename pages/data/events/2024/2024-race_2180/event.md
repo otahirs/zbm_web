@@ -6,7 +6,7 @@ id: 2024-race_2180
 start: '2024-12-07'
 end: '2024-12-07'
 title: 'Mistrovství HO ve SMIKu'
-link: 'https:// https://oris.orientacnisporty.cz/Zavod?id=8868'
+link: 'https:// https://oris.ceskyorientak.cz/Zavod?id=8868'
 place: 'Sluňákov, Horka nad Moravou'
 type: Z
 template: zavod

@@ -9,7 +9,7 @@ id: 2022-race_1731
 start: '2022-06-18'
 end: '2022-06-18'
 title: 'Žebříček B-Morava'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6649'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6649'
 orisid: '6649'
 type: Z
 template: zavod
@@ -20,7 +20,7 @@ import:
 place: Přečkovice
 meetTime: '8:30'
 meetPlace: Bohéma
-eventTypeDescription: 'https://obpostupy.orientacnisporty.cz/zavod/43f27605823a40aba877c93c6c23c71b'
+eventTypeDescription: 'https://obpostupy.ceskyorientak.cz/zavod/43f27605823a40aba877c93c6c23c71b'
 startTime: ''
 map: ''
 terrain: ''

@@ -13,7 +13,7 @@ pictures:
 Máme za sebou náročnou trojkombinaci sprintu a dvou štafet.  
 Nejprve sprint na Žlutém kopci s cílem na Mendláku.  
 Jen týden před mistrovskými sprinty se konečně ukázal Urboš 3. místem v H18A, brambory braly Kika (D16A) a Eliška (D18). V první desítce byli ještě Marky a Klárka v juniorkách, Kuči a Miloš.  
-Tak snad se bude na MČR v [Opavě](http://mcr2023.obopava.cz/) a [Písku](https://oris.orientacnisporty.cz/Zavod?id=7983) dařit ještě více!  
+Tak snad se bude na MČR v [Opavě](http://mcr2023.obopava.cz/) a [Písku](https://oris.ceskyorientak.cz/Zavod?id=7983) dařit ještě více!  
 Závod byl také zajímavý tím, že karanténa nebyla jen pro áčkaře a eliťáky, ale předzávodní napětí si mohli zažít všichni účastníci závodu, u nás to byla novinka především pro mnohé hobíky, které zlákal sprint ve známé lokalitě. Tak to měli se vším všude.  
 Odpoledne jsme se pak přesunuli do Vranova, kde, v nám známém středisku na motokrosu, startuje tu BBP, byly na programu štafety.  
 A že nám „náš" brněnský terén seděl! Pobrali jsme fůru krásných umístění! 1. byli muži (Jáchym, Minda, Miloš), nejmladší veteráni (Tom Kyncl, Tom Hikl, Drbča), 2. zkušené veteránky (Alena, Jitka a Lenka), 3. pak ženy (Natálka, Terka a Barča) a nejmladší veteránky (Jana, Lenka a Lucka).  

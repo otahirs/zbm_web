@@ -6,7 +6,7 @@ id: 2025-race_2235
 start: '2025-06-01'
 end: '2025-06-01'
 title: 'ČP, ŽA - klasická trať WRE'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8501'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8501'
 orisid: '8500'
 place: 'Řevničov, U Nádraží'
 type: Z

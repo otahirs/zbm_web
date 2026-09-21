@@ -12,7 +12,7 @@ id: 2023-race_1899
 start: '2023-09-28'
 end: '2023-09-28'
 title: '10. JML: krátká trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7594'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7594'
 orisid: '7594'
 place: Lipůvka
 type: Z

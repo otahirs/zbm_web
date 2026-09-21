@@ -12,7 +12,7 @@ id: 2025-race_2188
 start: '2025-04-05'
 end: '2025-04-05'
 title: '1. JML: klasika „pořádáme“'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=8966'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=8966'
 place: Tetčice
 type: Z
 template: zavod

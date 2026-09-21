@@ -7,7 +7,7 @@ id: 2021-race_1626
 start: '2021-10-16'
 end: '2021-10-16'
 title: 'Mistrovství ČR v nočním OB'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5544'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5544'
 orisid: '5544'
 place: 'Plzeň – Aktivity centrum Krašovská'
 type: Z

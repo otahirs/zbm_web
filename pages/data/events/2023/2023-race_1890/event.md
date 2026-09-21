@@ -12,7 +12,7 @@ id: 2023-race_1890
 start: '2023-04-22'
 end: '2023-04-22'
 title: '3. JML: klasická trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7526'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7526'
 orisid: '7526'
 place: Pacetluky
 type: Z

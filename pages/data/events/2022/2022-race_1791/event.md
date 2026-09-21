@@ -9,7 +9,7 @@ id: 2022-race_1791
 start: '2022-05-20'
 end: '2022-05-20'
 title: 'Přihláška do Žebříčku B Morava'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6934'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6934'
 orisid: '6934'
 place: Morava
 type: Z

@@ -12,7 +12,7 @@ id: 2026-race_2388
 start: '2026-03-28'
 end: '2026-03-28'
 title: '1. JML: MD - Střední trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9854'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9854'
 orisid: '9854'
 place: 'Brno - Kohoutovice, ZŠ Pavlovská'
 type: Z

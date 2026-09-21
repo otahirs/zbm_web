@@ -7,7 +7,7 @@ id: 2024-race_2099
 start: '2024-05-08'
 end: '2024-05-08'
 title: 'Mistrovství ČR v knock-out sprintu'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8513'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8513'
 orisid: '8513'
 place: Prostějov
 type: Z

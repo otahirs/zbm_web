@@ -6,7 +6,7 @@ id: 2024-race_2102
 start: '2024-09-14'
 end: '2024-09-14'
 title: 'Mistrovství ČR na klasické trati (kvalifikace)'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7507'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7507'
 orisid: '7507'
 place: Tatenice
 type: Z

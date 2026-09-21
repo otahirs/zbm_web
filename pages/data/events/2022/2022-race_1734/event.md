@@ -6,7 +6,7 @@ id: 2022-race_1734
 start: '2022-06-25'
 end: '2022-06-25'
 title: 'Veteraniáda ČR na klasické trati'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6686'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6686'
 orisid: '6686'
 type: Z
 template: zavod

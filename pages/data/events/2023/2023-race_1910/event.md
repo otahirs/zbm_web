@@ -7,7 +7,7 @@ id: 2023-race_1910
 start: '2023-09-10'
 end: '2023-09-10'
 title: 'Český pohár, žebříček A - klasická trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6813'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6813'
 orisid: '6813'
 place: 'Hradec Králové'
 type: Z

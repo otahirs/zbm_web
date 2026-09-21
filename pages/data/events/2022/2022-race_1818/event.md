@@ -7,7 +7,7 @@ id: 2022-race_1818
 start: '2022-07-12'
 end: '2022-07-12'
 title: '1. Brněnská letní liga'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7284'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7284'
 orisid: '7284'
 place: Komín
 type: M

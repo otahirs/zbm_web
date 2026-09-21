@@ -5,7 +5,7 @@ id: 2022-race_1720
 start: '2022-04-15'
 end: '2022-04-17'
 title: 'Velikonoce ve skalách'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6759'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6759'
 orisid: '6759'
 place: Jestřebí
 type: Z

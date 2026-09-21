@@ -5,7 +5,7 @@ id: 2024-race_2131
 start: '2024-06-02'
 end: '2024-06-02'
 title: 'Žebříček B-Čechy - Nominačky MED'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7733'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7733'
 orisid: '7733'
 place: Zdechovice
 type: Z

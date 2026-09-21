@@ -12,7 +12,7 @@ id: 2023-race_1891
 start: '2023-04-29'
 end: '2023-04-29'
 title: '4. JML: sprint'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7587'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7587'
 orisid: '7587'
 place: Židlochovice
 type: Z

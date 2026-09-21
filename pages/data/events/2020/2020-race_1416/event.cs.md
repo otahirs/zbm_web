@@ -8,7 +8,7 @@ id: 2020-race_1416
 start: '2020-03-31'
 end: '2020-03-31'
 title: 'Žebříček B-Morava 2020'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5765'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5765'
 orisid: '5765'
 place: Morava
 type: Z

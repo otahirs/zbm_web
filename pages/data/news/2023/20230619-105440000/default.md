@@ -34,5 +34,5 @@ D65B: 🥈Jitka Kabáthová
 H14C: 🥇Radek Florian
 H50B: 🥉Jan Fiala
 
-🔢 https://oris.orientacnisporty.cz/Zavod?id=7097
+🔢 https://oris.ceskyorientak.cz/Zavod?id=7097
 📷 https://www.facebook.com/Bubos

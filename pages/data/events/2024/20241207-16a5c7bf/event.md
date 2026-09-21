@@ -8,7 +8,7 @@ end: '2024-12-14'
 place: Zamilec
 meetTime: ''
 meetPlace: ''
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7820'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7820'
 eventTypeDescription: ''
 startTime: ''
 map: ''

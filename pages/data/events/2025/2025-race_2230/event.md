@@ -7,7 +7,7 @@ id: 2025-race_2230
 start: '2025-05-17'
 end: '2025-05-17'
 title: 'Mistrovství ČR ve sprintu'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=8223'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=8223'
 place: 'Benešov, ZŠ Dukelská'
 type: Z
 note: "Ubyování: Sport Penzion Hostivice\r\n[Hájecká 1866, 25301 Hostivice - Břve](https://mapy.com/s/furazeseda)"

@@ -6,7 +6,7 @@ id: 2023-race_1887
 start: '2023-03-12'
 end: '2023-03-12'
 title: 'BZL: Adamovský sprint'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7479'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7479'
 orisid: '7479'
 place: 'ZŠ Ronovská, Adamov'
 type: Z

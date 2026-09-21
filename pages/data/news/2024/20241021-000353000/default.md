@@ -8,7 +8,7 @@ pictures:
     - name: '1729462693646_Lucifer_Logo_White02.jpg'
       ratio: '6'
 ---
-Sezóna sotva skončila, ještě jsme si tu proběhnutou ani nestihli vyhodnotit, ale už je třeba se chystat na další. Proto stejně jako loni budeme objednávat čelovky [Lucifer dle nabídky](https://www.orientacnisporty.cz/upload/partners/csos/NabidkaOBklubyLucifer2024.pdf).
+Sezóna sotva skončila, ještě jsme si tu proběhnutou ani nestihli vyhodnotit, ale už je třeba se chystat na další. Proto stejně jako loni budeme objednávat čelovky [Lucifer dle nabídky](https://www.ceskyorientak.cz/upload/partners/csos/NabidkaOBklubyLucifer2024.pdf).
 
 Prosím neváhejte, objednávku bychom rádi poslali co nejdřív (do 31.10.) [v již odzkoušeném excelu](https://docs.google.com/spreadsheets/d/1ppVhqymmShyeyTaQqHolC_C5lbDnNqRtfdXaCXeznK0/edit?usp=sharing).
 

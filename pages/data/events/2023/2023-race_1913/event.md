@@ -7,7 +7,7 @@ id: 2023-race_1913
 start: '2023-09-28'
 end: '2023-09-28'
 title: 'Mistrovství ČR v knock-out sprintu'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7280'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7280'
 orisid: '7280'
 place: Písek
 type: Z

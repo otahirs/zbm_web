@@ -12,7 +12,7 @@ id: 2021-race_1620
 start: '2021-10-24'
 end: '2021-10-24'
 title: '11. JML'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6425'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6425'
 orisid: '6425'
 place: Křižánky
 type: Z

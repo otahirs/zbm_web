@@ -28,5 +28,5 @@ Na stupeň nejvyšší vystoupalo neuvěřitelných 14 Žabiňáků (z 20 možn�
 K tomu fůra druhých míst: Barča Machová, Thea Coufalová, Eva Hiklová, Barča Zháňalová, Leny Lvovská, Mára Papež, Matěj Šicha, Petr Václavek a Matěj Rajnošek.  
 A k tomu několik míst třetích pro Ottu Meissnera, Vítka Kocourka, Vendu Smítala, Matěje Tomana a Sašu Jordanova.  
 Gratulujeme! Ať se dál takto daří.  
-Zde jsou fotky ze [závodu](https://photos.google.com/share/AF1QipMaWKCxBXfisrGSXgB04p_Ym9WmWyBI3dQ7UjSRyPrrapfB7blqbG0JRLHeiMr1Hw?key=SDFvcXR1OXdZQnBDTVhWZFJDWWNkTmJBNUZBNXZB), za které patří díky, a fotky od [stanu](https://eu.zonerama.com/SKBrnoZabovresky/Album/11347415), vše ostatní najdete na sránce v [orisu](https://oris.orientacnisporty.cz/Zavod?id=8350).  
+Zde jsou fotky ze [závodu](https://photos.google.com/share/AF1QipMaWKCxBXfisrGSXgB04p_Ym9WmWyBI3dQ7UjSRyPrrapfB7blqbG0JRLHeiMr1Hw?key=SDFvcXR1OXdZQnBDTVhWZFJDWWNkTmJBNUZBNXZB), za které patří díky, a fotky od [stanu](https://eu.zonerama.com/SKBrnoZabovresky/Album/11347415), vše ostatní najdete na sránce v [orisu](https://oris.ceskyorientak.cz/Zavod?id=8350).  
 Díky moc Teslákům za krásný oblž a těšíme se za týden na Mistrovství oblasti na Krátké trati v Nové Vsi u Oslavan.

@@ -5,7 +5,7 @@ id: 2023-race_1953
 start: '2023-09-01'
 end: '2023-09-03'
 title: 'Interkompas 49'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7393'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7393'
 orisid: '7393'
 place: 'Číměř, LDT Bílá skála'
 type: Z

@@ -5,7 +5,7 @@ id: 2023-race_1936
 start: '2023-07-02'
 end: '2023-07-02'
 title: 'Veteraniáda ČR na krátké trati, oblastní žebříček'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6811'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6811'
 orisid: '6811'
 type: Z
 template: zavod

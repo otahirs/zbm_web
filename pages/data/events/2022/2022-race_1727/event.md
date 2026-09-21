@@ -9,7 +9,7 @@ id: 2022-race_1727
 start: '2022-05-22'
 end: '2022-05-22'
 title: 'Žebříček B-Morava - pořádáme'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6684'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6684'
 orisid: '6684'
 place: 'Ochoz u Brna'
 type: Z

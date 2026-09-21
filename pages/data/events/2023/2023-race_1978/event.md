@@ -5,7 +5,7 @@ id: 2023-race_1978
 start: '2023-08-11'
 end: '2023-08-13'
 title: Rumpál
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7672'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7672'
 orisid: '7672'
 place: 'Přečkovice, areál fotbalového hřiště'
 type: Z

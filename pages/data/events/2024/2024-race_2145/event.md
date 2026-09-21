@@ -10,7 +10,7 @@ id: 2024-race_2145
 start: '2024-09-29'
 end: '2024-09-29'
 title: 'Veřejný závod'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8731'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8731'
 orisid: '8731'
 place: Šaštín
 type: Z

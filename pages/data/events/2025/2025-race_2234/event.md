@@ -6,7 +6,7 @@ id: 2025-race_2234
 start: '2025-05-31'
 end: '2025-05-31'
 title: 'ČP, ŽA - krátká trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8500'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8500'
 orisid: '8500'
 place: 'Řevničov, U Nádraží'
 type: Z

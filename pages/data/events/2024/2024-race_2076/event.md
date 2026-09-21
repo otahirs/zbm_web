@@ -18,7 +18,7 @@ date: '2024-03-01'
 import:
     type: members
     time: 1709321405
-note: "Téma oddílové přeboru: **Piráti**\r\n[Orientační pirát](https://drive.google.com/file/d/1_thrXoCDoIJhnMOjjG2D4Kn81stI4SS5/view?usp=sharing)  \r\n\r\nDalší odpoledne s orienťákem Oskarem!\r\nJsi Pulec nebo Žák a máš rád týmové hry? Jsi Dorostenec nebo Hobík a máš rád běhání a paměťák? Rád sázíš, ať jsi kdokoliv? Ať už jsi na otázky odpověděl ano nebo ne, odpoledne na oddíláči si určitě užiješ :).\r\n\r\nVM - Velká Mistrovská: H18 - H40\r\nMM - Malá Mistrovská: D16 - D40, H16\r\nVP - Veteránský pohár: DH40+\r\nZN - Závod nadějí: DH12, DH14\r\nNK - Nováčkovský kufr: DH10, HDR\r\n\r\nIdeálně ti se společnou dopravou jeďte nachystaní skoro vyběhnout, v Roštíně nebude žádný dlouhý čas na přebalování. Ubytování proběhne až po závodě.\r\nOris: https://oris.orientacnisporty.cz/Zavod?id=8864"
+note: "Téma oddílové přeboru: **Piráti**\r\n[Orientační pirát](https://drive.google.com/file/d/1_thrXoCDoIJhnMOjjG2D4Kn81stI4SS5/view?usp=sharing)  \r\n\r\nDalší odpoledne s orienťákem Oskarem!\r\nJsi Pulec nebo Žák a máš rád týmové hry? Jsi Dorostenec nebo Hobík a máš rád běhání a paměťák? Rád sázíš, ať jsi kdokoliv? Ať už jsi na otázky odpověděl ano nebo ne, odpoledne na oddíláči si určitě užiješ :).\r\n\r\nVM - Velká Mistrovská: H18 - H40\r\nMM - Malá Mistrovská: D16 - D40, H16\r\nVP - Veteránský pohár: DH40+\r\nZN - Závod nadějí: DH12, DH14\r\nNK - Nováčkovský kufr: DH10, HDR\r\n\r\nIdeálně ti se společnou dopravou jeďte nachystaní skoro vyběhnout, v Roštíně nebude žádný dlouhý čas na přebalování. Ubytování proběhne až po závodě.\r\nOris: https://oris.ceskyorientak.cz/Zavod?id=8864"
 place: Roštín
 meetTime: '7:50'
 meetPlace: Bohéma
@@ -52,7 +52,7 @@ ZN - Závod nadějí: DH12, DH14
 NK - Nováčkovský kufr: DH10, HDR
 
 Ideálně ti se společnou dopravou jeďte nachystaní skoro vyběhnout, v Roštíně nebude žádný dlouhý čas na přebalování. Ubytování proběhne až po závodě.
-Oris: https://oris.orientacnisporty.cz/Zavod?id=8864
+Oris: https://oris.ceskyorientak.cz/Zavod?id=8864
 * **sraz**: 7:50 Bohéma
 * **doprava**: Autobusem od Bohémy, auty - je nás hodně.
 Vedoucí busu - Míra Beránek.

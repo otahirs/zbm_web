@@ -5,7 +5,7 @@ id: 2022-race_1748
 start: '2022-03-26'
 end: '2022-03-26'
 title: 'Czech O-Tour 2022 (1. závod) - Terezín - E1'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6656'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6656'
 orisid: '6656'
 place: Terezín
 type: Z

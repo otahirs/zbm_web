@@ -5,7 +5,7 @@ id: 2023-race_1949
 start: '2023-07-14'
 end: '2023-07-16'
 title: 'H.S.H. Vysočina Cup'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7458'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7458'
 orisid: '7458'
 place: Lubná
 type: Z

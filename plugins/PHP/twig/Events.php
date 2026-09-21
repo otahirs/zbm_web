@@ -67,7 +67,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
                 $orisid = $frontmatter['orisid'];
                 $changed = false;
                 if(empty($frontmatter['hasStartlist'])) {
-                    $body = Response::get('https://oris.orientacnisporty.cz/API/?format=json&method=getEventStartLists&eventid=' . $orisid);
+                    $body = Response::get('https://oris.ceskyorientak.cz/API/?format=json&method=getEventStartLists&eventid=' . $orisid);
                     $data = json_decode($body, true);
                     if(!empty($data["Data"])) {
                         $frontmatter['hasStartlist'] = true;
@@ -76,7 +76,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
                     }
                 }
                 if(empty($frontmatter['hasResults'])) {
-                    $body = Response::get('https://oris.orientacnisporty.cz/API/?format=json&method=getEventResults&eventid=' . $orisid);
+                    $body = Response::get('https://oris.ceskyorientak.cz/API/?format=json&method=getEventResults&eventid=' . $orisid);
                     $data = json_decode($body, true);
                     if(!empty($data["Data"])) {
                         $frontmatter['hasResults'] = true;
@@ -123,8 +123,8 @@ class Events extends \Grav\Common\Twig\TwigExtension
                 $link = "https://" . $link;
             }
             $event_list[$num]["link"] = $link;
-            if(Utils::startsWith($link, "https://oris.orientacnisporty.cz/Zavod?id=" )) {
-                $event_list[$num]["orisid"] = substr($link, strlen("https://oris.orientacnisporty.cz/Zavod?id="));
+            if(Utils::startsWith($link, "https://oris.ceskyorientak.cz/Zavod?id=" )) {
+                $event_list[$num]["orisid"] = substr($link, strlen("https://oris.ceskyorientak.cz/Zavod?id="));
             }
             $event_list[$num]["place"] = $event["Place"];
             $event_list[$num]["type"] = $event["Type"];

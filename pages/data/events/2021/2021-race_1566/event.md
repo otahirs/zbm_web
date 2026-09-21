@@ -10,7 +10,7 @@ id: 2021-race_1566
 start: '2021-04-17'
 end: '2021-04-17'
 title: 'Zhusto liga'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6497'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6497'
 orisid: '6497'
 place: Melatín
 type: Z

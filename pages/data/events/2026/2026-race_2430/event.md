@@ -7,7 +7,7 @@ id: 2026-race_2430
 start: '2026-10-11'
 end: '2026-10-11'
 title: 'Mistrovství a Veteraniáda ČR klubů a oblastních výběrů žactva'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9289'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9289'
 orisid: '9289'
 type: Z
 template: zavod

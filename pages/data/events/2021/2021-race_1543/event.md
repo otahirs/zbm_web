@@ -5,7 +5,7 @@ id: 2021-race_1543
 start: '2021-08-27'
 end: '2021-08-29'
 title: 'Interkompas 47'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6206'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6206'
 orisid: '6206'
 place: 'Staré Město pod Landštejnem'
 type: Z

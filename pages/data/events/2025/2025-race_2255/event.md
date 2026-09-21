@@ -5,7 +5,7 @@ id: 2025-race_2255
 start: '2025-08-15'
 end: '2025-08-17'
 title: 'Rumcajsovy míle'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9172'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9172'
 orisid: '9172'
 place: 'Chotěvice: RZ Svatá Kateřina'
 type: Z

@@ -6,7 +6,7 @@ id: 2022-race_1752
 start: '2022-10-29'
 end: '2022-10-30'
 title: 'Czech O-Tour 2022 - Kokořínsko (6. & 7.E)'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7020'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7020'
 orisid: '7020'
 place: 'Kokořínsko, Dubá'
 type: Z

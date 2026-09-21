@@ -18,7 +18,7 @@ date: '2020-06-18'
 import:
     type: members
     time: 1598514617
-link: 'http://oris.orientacnisporty.cz/Zavod?id=6035'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=6035'
 meetTime: ''
 meetPlace: ''
 eventTypeDescription: ''

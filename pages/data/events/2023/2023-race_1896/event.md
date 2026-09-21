@@ -12,7 +12,7 @@ id: 2023-race_1896
 start: '2023-09-03'
 end: '2023-09-03'
 title: 'Mistrovství JmK ve sprintu'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7592'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7592'
 orisid: '7592'
 place: Hodonín
 type: Z

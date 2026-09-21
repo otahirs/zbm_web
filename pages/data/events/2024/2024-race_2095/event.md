@@ -6,7 +6,7 @@ id: 2024-race_2095
 start: '2024-06-28'
 end: '2024-06-30'
 title: 'Cena střední Moravy – Šumperský divočák'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8181'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8181'
 orisid: '8181'
 place: Přemyslov
 type: Z

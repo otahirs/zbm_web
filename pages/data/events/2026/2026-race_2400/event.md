@@ -12,7 +12,7 @@ id: 2026-race_2400
 start: '2026-05-23'
 end: '2026-05-23'
 title: 'Oblastní žebříček'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9858'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9858'
 orisid: '9858'
 type: Z
 template: zavod

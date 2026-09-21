@@ -6,7 +6,7 @@ id: 2025-race_2251
 start: '2025-07-03'
 end: '2025-07-06'
 title: 'Orienteering Adventure'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8964'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8964'
 orisid: '8964'
 place: Šediviny
 type: Z

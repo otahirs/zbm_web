@@ -5,7 +5,7 @@ id: 2024-race_2093
 start: '2024-08-17'
 end: '2024-08-18'
 title: 'Rumcajsovy míle 2024'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8238'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8238'
 orisid: '8238'
 place: 'Boseň, Valečov'
 type: Z

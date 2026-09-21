@@ -12,7 +12,7 @@ id: 2024-race_2071
 start: '2024-09-14'
 end: '2024-09-14'
 title: '10. JML: klasická trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8248'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8248'
 orisid: '8248'
 place: 'Blansko, Klepáčov'
 type: Z

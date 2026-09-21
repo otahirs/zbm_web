@@ -7,7 +7,7 @@ id: 2025-race_2309
 start: '2025-11-01'
 end: '2025-11-01'
 title: 'Mistrovství oblasti v nočním OB'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=9046'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=9046'
 place: 'Vysočina aréna Nové Město na Moravě'
 type: Z
 template: zavod

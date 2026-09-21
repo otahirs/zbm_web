@@ -5,7 +5,7 @@ id: 2026-race_2404
 start: '2026-05-01'
 end: '2026-05-03'
 title: 'Rumcajsovy míle'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9621'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9621'
 orisid: '9621'
 place: Jinolice
 type: Z

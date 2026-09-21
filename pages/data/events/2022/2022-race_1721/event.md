@@ -7,7 +7,7 @@ id: 2022-race_1721
 start: '2022-04-23'
 end: '2022-04-23'
 title: 'Český pohár, žebříček A'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5546'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5546'
 orisid: '5546'
 place: NMnM
 type: Z

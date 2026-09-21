@@ -6,7 +6,7 @@ id: 2022-race_1781
 start: '2022-08-26'
 end: '2022-08-28'
 title: 'Cena východních Čech'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6772'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6772'
 orisid: '6772'
 place: 'Vysoká u Holice'
 type: Z

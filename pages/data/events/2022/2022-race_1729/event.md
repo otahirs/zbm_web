@@ -7,7 +7,7 @@ id: 2022-race_1729
 start: '2022-05-22'
 end: '2022-05-22'
 title: 'Český pohár, žebříček A kl'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5550'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5550'
 orisid: '5550'
 type: Z
 template: zavod

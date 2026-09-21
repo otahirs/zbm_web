@@ -12,7 +12,7 @@ id: 2025-race_2201
 start: '2025-10-19'
 end: '2025-10-19'
 title: '13. JML: klasika'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8982'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8982'
 orisid: '8982'
 place: 'Hamry nad Sázavou'
 type: Z

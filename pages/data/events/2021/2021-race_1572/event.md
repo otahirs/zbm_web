@@ -10,7 +10,7 @@ id: 2021-race_1572
 start: '2021-05-15'
 end: '2021-05-15'
 title: 'Měřený mapový trénink'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6508'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6508'
 orisid: '6508'
 place: 'Ochoz u Brna'
 type: Z

@@ -12,7 +12,7 @@ id: 2022-race_1769
 start: '2022-10-22'
 end: '2022-10-22'
 title: '14. JML - krátká'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6977'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6977'
 orisid: '6977'
 type: Z
 template: zavod

@@ -9,7 +9,7 @@ id: 2025-race_2243
 start: '2025-09-07'
 end: '2025-09-07'
 title: 'ČP, WRE, ŽA, 6. ŽB - Morava 2025'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=8229'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=8229'
 place: Hraběšice
 type: Z
 note: "Horský a podhorský les v nadmořské výšce 450 - 964 m n.m. Porostově členité, řídká síť\r\nkomunikací. Skalnaté pasáže v prudkých svazích, bažiny, prameniště potoků."

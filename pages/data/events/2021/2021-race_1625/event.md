@@ -7,7 +7,7 @@ id: 2021-race_1625
 start: '2021-10-16'
 end: '2021-10-16'
 title: 'Veteraniáda ČR v nočním OB'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6242'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6242'
 orisid: '6242'
 type: Z
 template: zavod
