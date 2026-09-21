@@ -35,6 +35,8 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.52678, 18.75952'
+hasStartlist: true
+hasResults: true
 ---
 
 Spí se v tělocvičně - vlastní spacák a karimatku (polšťářek, špunty do uší, mišáka a vše, co si unesete).

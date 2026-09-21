@@ -13,5 +13,25 @@ date: '2026-03-23'
 import:
     type: members
     time: 1774257605
+meetTime: '16:30'
+meetPlace: 'Tesco, Juliánov'
+link: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: auty
+accomodation: ''
+food: ''
+leader: Michal
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.18164, 17.34667'
 ---
 
+* **sraz**: 16:30 Tesco, Juliánov
+* **doprava**: auty

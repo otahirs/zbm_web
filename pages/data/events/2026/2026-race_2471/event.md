@@ -34,6 +34,8 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.21837, 17.69249'
+hasStartlist: true
+hasResults: true
 ---
 
 ubytování: tělocvična a třídy Gymnázia Zlín (karimatka, spacák)

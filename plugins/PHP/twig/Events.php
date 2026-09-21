@@ -103,10 +103,12 @@ class Events extends \Grav\Common\Twig\TwigExtension
             Utils::return_ERROR("Cannot fetch API data from members");
         }
         $num = 0;
+        $seen_ids = [];
         foreach( $data["Data"] as $id => $event) {
             if (!in_array($event["Type"], ["Z", "S", "T", "V"])) // zavod, soustredeni, trenink, vysetreni
                 continue;
             $event_id = date_format(date_create($event["Date1"]), "Y") . "-" . strtolower($id);
+            $seen_ids[$event_id] = true;
             if ($event["Cancelled"] == "1") {
                 self::trashEvent($event_id);
                 continue;
@@ -169,6 +171,29 @@ class Events extends \Grav\Common\Twig\TwigExtension
         }
         //print_r($event_list);
         self::ImportEvents($event_list, "members");
+        self::trashOrphanedMembersRaces($seen_ids);
+    }
+
+    // races imported from members that no longer appear in the feed at all
+    // (hard-deleted in members, not just cancelled) - trash them too.
+    // Only considers events whose end date hasn't passed yet, since
+    // api_racelist.php itself only returns races with datum(2) >= today,
+    // so past events are legitimately absent from $seen_ids.
+    public static function trashOrphanedMembersRaces($seen_ids) {
+        $page = Grav::instance()['page'];
+        $collection = $page->evaluate(['@page.descendants' => '/data/events'])->routable();
+        $today = strtotime("today");
+        foreach($collection as $event_page) {
+            $frontmatter = (array)$event_page->header();
+            if (empty($frontmatter['import']['type']) || $frontmatter['import']['type'] != 'members')
+                continue;
+            if (empty($frontmatter['id']) || isset($seen_ids[$frontmatter['id']]))
+                continue;
+            $end = !empty($frontmatter['end']) ? strtotime($frontmatter['end']) : strtotime($frontmatter['start']);
+            if ($end === false || $end < $today)
+                continue;
+            self::trashEvent($frontmatter['id']);
+        }
     }
 
     // nahrat program

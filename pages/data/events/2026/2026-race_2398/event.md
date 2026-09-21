@@ -35,6 +35,8 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.52504, 18.75958'
+hasStartlist: true
+hasResults: true
 ---
 
 Návrat do Brna po 17:00.

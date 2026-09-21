@@ -12,5 +12,23 @@ date: '2025-11-02'
 import:
     type: members
     time: 1762095005
+meetTime: ''
+meetPlace: ''
+link: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: ''
+accomodation: 'https://mapy.com/s/rahumubupo'
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
+* **ubytování**: https://mapy.com/s/rahumubupo
