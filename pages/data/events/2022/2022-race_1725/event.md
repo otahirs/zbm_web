@@ -9,7 +9,7 @@ id: 2022-race_1725
 start: '2022-05-15'
 end: '2022-05-15'
 title: 'Mistrovství ČR sprintových štafet'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5799'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5799'
 orisid: '5799'
 place: Praha
 type: Z

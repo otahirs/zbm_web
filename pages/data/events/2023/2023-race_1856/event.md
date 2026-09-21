@@ -24,7 +24,7 @@ meetPlace: ''
 link: 'https://zabiny.club/data/events/2023/2023-race_1856'
 eventTypeDescription: "Oddílový přebor, kategorie:  \r\nVP: Veteránský pohár (DH45+)   \r\nVM: Velká Mistrovská (H18+)   \r\nMM: Malá Mistrovská (D16+, H16)   \r\nZN: Závod nadějí (HD12-14)   \r\nNK: Nováčkovský kufr (HD10)   \r\n   \r\nŠtafety - podle soboty."
 startTime: '11:00'
-map: 'U Pytláka https://mapy.orientacnisporty.cz/mapa/u-pytlaka-2022'
+map: 'U Pytláka https://mapy.ceskyorientak.cz/mapa/u-pytlaka-2022'
 terrain: 'Typický vysočinský'
 transport: "Vlakem - vede Lenka Hr.\r\nsraz: 8:00\r\nsobota: Brno Kr. pole.: 08:28 - 9:52 Olešná na Moravě (2 km od vlaku)   \r\nneděle: Olešná na Moravě: 15:05 - 17:06"
 accomodation: "Jasenka rekreační středisko a restaurace Zubří\r\nKapacita je 98 ubytovaných!\r\nNetřeba spacák."

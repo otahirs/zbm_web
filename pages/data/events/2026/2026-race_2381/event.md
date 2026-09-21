@@ -6,7 +6,7 @@ id: 2026-race_2381
 start: '2026-02-08'
 end: '2026-02-08'
 title: 'XXIII. O-mikron'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9545'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9545'
 orisid: '9545'
 place: 'Louka nad údolím Zaječího potoka'
 type: Z

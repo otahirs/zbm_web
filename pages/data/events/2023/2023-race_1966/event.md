@@ -5,7 +5,7 @@ id: 2023-race_1966
 start: '2023-07-07'
 end: '2023-07-09'
 title: 'Cena střední Moravy'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7667'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7667'
 orisid: '7667'
 place: 'Žďárský Potok u Staré Vsi'
 type: Z

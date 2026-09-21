@@ -12,7 +12,7 @@ id: 2026-race_2334
 start: '2026-01-11'
 end: '2026-01-11'
 title: 'BLZ: Lesný sprint'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9517'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9517'
 orisid: '9517'
 place: Lesná
 type: BZL

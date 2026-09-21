@@ -5,7 +5,7 @@ id: 2022-race_1750
 start: '2022-07-16'
 end: '2022-07-17'
 title: 'Czech O-Tour 2022 - Jizerky'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7018'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7018'
 orisid: '7018'
 place: 'Jizerské hory, Smržovka'
 type: Z

@@ -6,7 +6,7 @@ id: 2025-race_2268
 start: '2025-03-08'
 end: '2025-03-08'
 title: ZLOM
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9236'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9236'
 orisid: '9236'
 place: Vacenovice
 type: Z

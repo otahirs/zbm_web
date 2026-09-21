@@ -12,7 +12,7 @@ id: 2022-race_1756
 start: '2022-04-09'
 end: '2022-04-09'
 title: '2. JML - klasika'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7003'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7003'
 orisid: '7003'
 type: Z
 template: zavod
@@ -23,7 +23,7 @@ import:
 place: Žebětín
 meetTime: '9:30'
 meetPlace: 'louka nad zastávkou Ríšova'
-eventTypeDescription: 'https://obpostupy.orientacnisporty.cz/zavod/31dc15305eb845119bd5519ca8008875'
+eventTypeDescription: 'https://obpostupy.ceskyorientak.cz/zavod/31dc15305eb845119bd5519ca8008875'
 startTime: ''
 map: ''
 terrain: ''

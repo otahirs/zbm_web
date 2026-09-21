@@ -12,7 +12,7 @@ id: 2024-race_2063
 start: '2024-04-13'
 end: '2024-04-13'
 title: '2. JML: Mistrovství oblasti ve sprintu'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8349'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8349'
 orisid: '8349'
 place: Šlapanice
 type: Z

@@ -5,7 +5,7 @@ id: 2024-race_2041
 start: '2024-03-24'
 end: '2024-03-22'
 title: 'Kwak Czech O-Tour 2024 - jaro'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8119'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8119'
 orisid: '8119'
 place: 'park Mirakulum, Milovice'
 type: Z

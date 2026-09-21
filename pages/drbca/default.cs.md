@@ -21,7 +21,7 @@ never_cache_twig: true
     <input class="search" placeholder="Hledat.." />
     <hr>
     <div class="list">
-    {% set url = 'https://oris.orientacnisporty.cz/API/?format=json&method=getEventList&sport=1&datefrom=' ~ "now"|date("Y-m-d") ~ "&dateto=" ~ "now +1 year"|date("Y-12-31") %}
+    {% set url = 'https://oris.ceskyorientak.cz/API/?format=json&method=getEventList&sport=1&datefrom=' ~ "now"|date("Y-m-d") ~ "&dateto=" ~ "now +1 year"|date("Y-12-31") %}
     {% set oris = url|getJson %}
     {% for race in oris.Data %}
         <div class="row">

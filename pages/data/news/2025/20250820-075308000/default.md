@@ -19,5 +19,5 @@ Výsledky:
 Muži: Filip Adámek z Tesly vyhrál o 5 vteřin před Jáchymem, třetí Víťa Čech z Kamenice ztratil minutu.  
 
 Díky Pavlovi, Květě, Elišce a Alešovi za zorganizování pěkného závodu!  
-Kompletní výsledky najdete na [Orisu](https://oris.orientacnisporty.cz/Zavod?id=9466) a fotky [tu](https://eu.zonerama.com/SKBrnoZabovresky/Album/13742006).  
-Těšíme se příští týden na [Prýglu](https://oris.orientacnisporty.cz/Zavod?id=9466) nebo pro děti chystáme krátký závod v pátek v rámci [Štetl festu: Makadiádě](https://oris.orientacnisporty.cz/Zavod?id=9489)!
+Kompletní výsledky najdete na [Orisu](https://oris.ceskyorientak.cz/Zavod?id=9466) a fotky [tu](https://eu.zonerama.com/SKBrnoZabovresky/Album/13742006).  
+Těšíme se příští týden na [Prýglu](https://oris.ceskyorientak.cz/Zavod?id=9466) nebo pro děti chystáme krátký závod v pátek v rámci [Štetl festu: Makadiádě](https://oris.ceskyorientak.cz/Zavod?id=9489)!

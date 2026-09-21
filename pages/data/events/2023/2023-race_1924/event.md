@@ -7,7 +7,7 @@ id: 2023-race_1924
 start: '2023-04-15'
 end: '2023-04-15'
 title: 'Mistrovství ČR v nočním OB, Veteraniáda ČR v noční'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6803'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6803'
 orisid: '6803'
 place: Petrohrad
 type: Z

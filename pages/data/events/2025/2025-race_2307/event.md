@@ -6,7 +6,7 @@ id: 2025-race_2307
 start: '2025-11-01'
 end: '2025-11-02'
 title: 'MČR v horském orientačním běhu'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9319'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9319'
 orisid: '9319'
 place: 'Malá Skála'
 type: Z

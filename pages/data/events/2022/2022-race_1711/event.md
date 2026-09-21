@@ -11,7 +11,7 @@ start: '2022-07-01'
 end: '2022-07-06'
 title: 'VT CSM'
 type: S
-note: 'Soustředění s účastí na [Ceně střední Moravy](https://oris.orientacnisporty.cz/Zavod?id=6249).'
+note: 'Soustředění s účastí na [Ceně střední Moravy](https://oris.ceskyorientak.cz/Zavod?id=6249).'
 template: soustredeni
 date: '2021-11-15'
 import:
@@ -61,29 +61,29 @@ routes:
         link: 'http://3drerun.worldofo.com/index.php?id=-16925858&type=info'
     -
         name: 'CSM E1'
-        link: 'https://obpostupy.orientacnisporty.cz/zavod/043fbe5681f34957a581c7e515395821'
+        link: 'https://obpostupy.ceskyorientak.cz/zavod/043fbe5681f34957a581c7e515395821'
     -
         name: 'CSM E2'
-        link: 'https://obpostupy.orientacnisporty.cz/zavod/f46ef2add4174f05ab246fea9e0b31f1'
+        link: 'https://obpostupy.ceskyorientak.cz/zavod/f46ef2add4174f05ab246fea9e0b31f1'
     -
         name: 'CSM E3'
-        link: 'https://obpostupy.orientacnisporty.cz/zavod/e74e2a2e7f184409837dc54dc58c4044'
+        link: 'https://obpostupy.ceskyorientak.cz/zavod/e74e2a2e7f184409837dc54dc58c4044'
 results:
     -
         name: 'CSM celkové'
-        link: 'https://oris.orientacnisporty.cz/files/6249_83aeaf8a74036169ae8b1c4e9c641472.pdf'
+        link: 'https://oris.ceskyorientak.cz/files/6249_83aeaf8a74036169ae8b1c4e9c641472.pdf'
     -
         name: 'CSM E1'
-        link: 'https://oris.orientacnisporty.cz/Vysledky?id=6246'
+        link: 'https://oris.ceskyorientak.cz/Vysledky?id=6246'
     -
         name: 'CSM E2'
-        link: 'https://oris.orientacnisporty.cz/Vysledky?id=6247'
+        link: 'https://oris.ceskyorientak.cz/Vysledky?id=6247'
     -
         name: 'CSM E3'
-        link: 'https://oris.orientacnisporty.cz/Vysledky?id=6248'
+        link: 'https://oris.ceskyorientak.cz/Vysledky?id=6248'
 ---
 
-Soustředění s účastí na [Ceně střední Moravy](https://oris.orientacnisporty.cz/Zavod?id=6249).
+Soustředění s účastí na [Ceně střední Moravy](https://oris.ceskyorientak.cz/Zavod?id=6249).
 * **sraz**: 13:00 u Bohémy (Janáčkovo divadlo)
 * **doprava**: 2x dodávka
 * **ubytování**: Na postelích na chatě Ztracenka.

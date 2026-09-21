@@ -5,7 +5,7 @@ id: 2023-race_1881
 start: '2023-04-01'
 end: '2023-04-01'
 title: 'Czech O-Tour 2023 - seriál'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7483'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7483'
 orisid: '7483'
 place: ČR
 type: Z

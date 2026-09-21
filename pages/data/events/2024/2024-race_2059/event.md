@@ -12,7 +12,7 @@ id: 2024-race_2059
 start: '2024-04-27'
 end: '2024-04-27'
 title: '4. JmL Mistrovství oblasti na krátké trati'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8351'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8351'
 orisid: '8351'
 place: 'Nová Ves (u Oslavan)'
 type: Z

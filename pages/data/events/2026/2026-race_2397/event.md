@@ -5,9 +5,9 @@ taxonomy:
         - hobby
 id: 2026-race_2397
 start: '2026-06-06'
-end: '2026-06-07'
-title: 'Grant Thornton Mistrovství ČR na střední trati (kvalifikace + finále)'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9286'
+end: '2026-06-06'
+title: 'Grant Thornton Mistrovství ČR na střední trati'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9286'
 orisid: '9286'
 type: Z
 template: zavod

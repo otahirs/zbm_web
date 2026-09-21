@@ -9,7 +9,7 @@ id: 2025-race_2237
 start: '2025-06-15'
 end: '2025-06-15'
 title: '4. ŽB-Morava – sprint'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8505'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8505'
 orisid: '8505'
 place: Ostrava-Výškovice
 type: Z

@@ -8,8 +8,9 @@ taxonomy:
 id: 2026-race_2396
 start: '2026-06-21'
 end: '2026-06-21'
-title: '4. Žebříček B-Morava'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=9384'
+title: 'Žebříček B-Morava'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9384'
+orisid: '9384'
 place: 'Luhačovice - Řetechov'
 type: Z
 template: zavod

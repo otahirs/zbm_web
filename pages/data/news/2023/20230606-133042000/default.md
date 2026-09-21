@@ -24,4 +24,4 @@ pictures:
 ---
 V sobotu 3.6. se uskutečnila v režii PBM již 7. JML v Mokré-Horákov. Zúčastnilo se nás 69. Bylo krásně a teplo a centrum bylo na koupališti, akorát ještě bez napuštěné vody. Ale písčité hřiště na plážový volejbal bylo pro hodně dětí dostatečnou náhradou. Les byl dost zelený, ale i přesto na bedně byly naše barvy vidět. Dopravu jsme měli městskými autobusy a to hned dvěma. Na odpolední cestu zpět dojel jiný řidič, který při pokynu dovézt skupinu k Bohémě usoudil, že se bude jednat o místní důchodce jedoucí do Brna do divadla. Jeho údiv a smích po zjištění skutečnosti byly super a sranda byla i cestou. No a někteří zakončili cestu u moře (na Moraváku).
 
-Fotky na Rajčeti [zde](https://skzabovresky.rajce.idnes.cz/7._JML_Mokra-Horakov/), výsledky v Orisu [zde](https://oris.orientacnisporty.cz/Vysledky?id=7590).
+Fotky na Rajčeti [zde](https://skzabovresky.rajce.idnes.cz/7._JML_Mokra-Horakov/), výsledky v Orisu [zde](https://oris.ceskyorientak.cz/Vysledky?id=7590).

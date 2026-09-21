@@ -9,7 +9,7 @@ id: 2024-race_2107
 start: '2024-09-21'
 end: '2024-09-21'
 title: '3. Český pohár štafet'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7510'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7510'
 orisid: '7510'
 place: Zlivice
 type: Z

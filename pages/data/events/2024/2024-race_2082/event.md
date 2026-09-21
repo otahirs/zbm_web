@@ -9,7 +9,7 @@ id: 2024-race_2082
 start: '2024-09-07'
 end: '2024-09-07'
 title: 'Český pohár, žebříček A, 7. žebříček B-Morava'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7503'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7503'
 orisid: '7503'
 place: 'Nová Ves u Rýmařova'
 type: Z

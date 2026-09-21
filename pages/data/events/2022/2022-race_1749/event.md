@@ -5,7 +5,7 @@ id: 2022-race_1749
 start: '2022-03-26'
 end: '2022-03-26'
 title: 'Czech O-Tour 2022 (2. závod) - Terezín - E2'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6657'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6657'
 orisid: '6657'
 place: Terezín
 type: Z

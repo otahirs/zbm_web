@@ -5,7 +5,7 @@ id: 2021-race_1538
 start: '2021-07-16'
 end: '2021-07-18'
 title: 'HSH Vysočina cup 2021'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6192'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6192'
 orisid: '6192'
 type: Z
 template: zavod

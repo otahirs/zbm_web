@@ -9,7 +9,7 @@ id: 2024-race_2101
 start: '2024-05-19'
 end: '2024-05-19'
 title: 'Mistrovství ČR sprintových štafet'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7608'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7608'
 orisid: '7608'
 place: 'Moravské Budějovice'
 type: Z

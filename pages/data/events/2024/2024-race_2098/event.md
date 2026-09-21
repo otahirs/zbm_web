@@ -5,7 +5,7 @@ id: 2024-race_2098
 start: '2024-09-30'
 end: '2024-09-01'
 title: 'Interkompas 50'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8153'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8153'
 orisid: '8153'
 place: 'Sedlo u Číměře'
 type: Z

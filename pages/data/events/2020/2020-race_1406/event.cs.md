@@ -5,7 +5,7 @@ id: 2020-race_1406
 start: '2020-07-17'
 end: '2020-07-19'
 title: 'GP Silesia 2020'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5509'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5509'
 orisid: '5509'
 place: ' Bohdanovice'
 type: Z

@@ -12,7 +12,7 @@ id: 2021-race_1607
 start: '2021-06-05'
 end: '2021-06-05'
 title: 'Měřený mapový trénink - 8. jarní jihomoravská liga'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6550'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6550'
 orisid: '6550'
 place: Jedovnice
 type: Z

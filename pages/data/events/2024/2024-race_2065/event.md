@@ -12,7 +12,7 @@ id: 2024-race_2065
 start: '2024-05-01'
 end: '2024-05-01'
 title: '5.JML: Mistrovství oblasti na klasické trati'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8352'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8352'
 orisid: '8352'
 place: Tetčice
 type: Z

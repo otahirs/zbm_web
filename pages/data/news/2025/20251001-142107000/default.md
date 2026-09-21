@@ -22,7 +22,7 @@ A navíc naši nejúspěšnější závodníci v konkurenci nejen z Jihomoravsk�
 🥈2. Páťa Sýkora, 🥉3. Kuba Vácha (H10N)
 🥉3. Matěj Balogh (H18)
 
-Pořadatelské fotky a oficiální výsledky najdete [zde](https://oris.orientacnisporty.cz/Zavod?id=8992) a naše [fotky](https://eu.zonerama.com/SKBrnoZabovresky/Album/13938803). 
+Pořadatelské fotky a oficiální výsledky najdete [zde](https://oris.ceskyorientak.cz/Zavod?id=8992) a naše [fotky](https://eu.zonerama.com/SKBrnoZabovresky/Album/13938803). 
 
 Květa Dohnalová
 

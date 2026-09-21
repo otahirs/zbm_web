@@ -5,7 +5,7 @@ id: 2021-race_1542
 start: '2021-08-20'
 end: '2021-08-22'
 title: 'Pěkné prázdniny s OB v Českém ráji'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6202'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6202'
 orisid: '6202'
 place: Kacanovy
 type: Z

@@ -9,7 +9,7 @@ id: 2025-race_2148
 start: '2025-01-18'
 end: '2025-01-18'
 title: 'Krátký den 2025'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8777'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8777'
 orisid: '8777'
 place: Dubňany
 type: Z

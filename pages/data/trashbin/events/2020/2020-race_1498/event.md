@@ -5,7 +5,7 @@ id: 2020-race_1498
 start: '2020-10-28'
 end: '2020-10-28'
 title: 'Euromeeting - doprovodný závod'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6047'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6047'
 orisid: '6047'
 place: 'Železný Brod'
 type: Z

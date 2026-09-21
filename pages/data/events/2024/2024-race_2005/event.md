@@ -12,7 +12,7 @@ id: 2024-race_2005
 start: '2024-02-18'
 end: '2024-02-18'
 title: 'BZL: BURE Cup'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8053'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8053'
 orisid: '8053'
 place: 'Brno - Bystrc'
 type: Z

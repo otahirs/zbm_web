@@ -14,7 +14,7 @@ pictures:
     - name: '1699256906257_IMG_0757.jpg'
       ratio: '3'
 ---
-Tradičním zakončením sezóny 2023 byl oddílový přebor. Letos se přes 100 Žabiňáků utkalo na krátké trati u Zubří. Rychlé tratě postavil Ondra Hlaváč, vítězové jednotlivých kategorií jsou Nováčkovský kufr: Lucka Marková, Závod nadějí Martin Hikl, Veteránský pohár Jan Fiala, Malá mistrovská Barča Zháňalová a Velká mistrovská Miloš Nykodým. Byl to dost těsný závod, můžete se podívat na [výsledky](https://oris.orientacnisporty.cz/Vysledky?id=8106#179046).   
+Tradičním zakončením sezóny 2023 byl oddílový přebor. Letos se přes 100 Žabiňáků utkalo na krátké trati u Zubří. Rychlé tratě postavil Ondra Hlaváč, vítězové jednotlivých kategorií jsou Nováčkovský kufr: Lucka Marková, Závod nadějí Martin Hikl, Veteránský pohár Jan Fiala, Malá mistrovská Barča Zháňalová a Velká mistrovská Miloš Nykodým. Byl to dost těsný závod, můžete se podívat na [výsledky](https://oris.ceskyorientak.cz/Vysledky?id=8106#179046).   
 Odpoledne pak následovala hra [Gamebook](https://eu.zonerama.com/SKBrnoZabovresky/Photo/10622067/422821555) pod vedení Jany Smítalové. Snažili jsme se v rolik orienťáka Oskara nezabloudit a najít odměnu, což se vše nakonec po kratší nebo delší době povedlo.   
 Večer následovalo vyhlášení nejlepších Žabiňák sezóny a pár slov o sezóně slovy Honzi Fialy. A kdo tedy jsou nejlepší Žabiňáci sezóny? Žáci Kamča Beránková, Rea Coufalová a Matej Toman, dorostenci Kristýna Finstrlová a Tomáš Kučera, dospělí Johanka Šimková a Miloš Nykodým a veteráni Natálka Hiklová a Jan Drábek.  
 Následoval kvíz o tom, jak moc nebo málo známe Žabiny. Můžete si ho vyzkoušet [tady](https://docs.google.com/presentation/d/1QtAp7cPN4829GZ5ASP6uTTjvvpCq6Nv8TOyd913HQyw/edit?usp=sharing).  

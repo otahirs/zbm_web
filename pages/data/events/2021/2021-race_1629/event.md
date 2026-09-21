@@ -16,7 +16,7 @@ date: '2021-06-29'
 import:
     type: members
     time: 1624952401
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6030'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6030'
 orisid: '6030'
 meetTime: '7:30'
 meetPlace: 'za Lužánkami'

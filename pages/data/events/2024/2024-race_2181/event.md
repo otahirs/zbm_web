@@ -6,7 +6,7 @@ id: 2024-race_2181
 start: '2024-12-29'
 end: '2024-12-29'
 title: 'Předsilvestrovský (mini)rogaining'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8931'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8931'
 orisid: '8931'
 place: Rudka
 type: BZL

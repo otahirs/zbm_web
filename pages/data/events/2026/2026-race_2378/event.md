@@ -9,7 +9,7 @@ id: 2026-race_2378
 start: '2026-05-30'
 end: '2026-05-30'
 title: 'Žebříček B-Morava, oblastní žebříček'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9361'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9361'
 orisid: '9361'
 place: 'Mosty u Jablunkova'
 type: Z

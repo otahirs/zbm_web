@@ -11,6 +11,6 @@ V sobotu 31.5. se v Jedovnicích na 6. JML sešlo kolem 80 závodníků ZBM. Byl
 všichni byli doma. Porost byl jarně bujný, tratě zvláště pro méně zkušené závodníky těžší, ale z lesa se  
 vrátili úplně všichni.  
 Ve všech žákovský kategoriích měl náš oddíl na stupních vítězů zástupce.  
-[Výsledky](https://oris.orientacnisporty.cz/Vysledky?id=8970).
+[Výsledky](https://oris.ceskyorientak.cz/Vysledky?id=8970).
 
 Jitka

@@ -5,7 +5,7 @@ id: 2023-race_1937
 start: '2023-03-18'
 end: '2023-03-18'
 title: 'Jarní pohár'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7412'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7412'
 orisid: '7412'
 place: 'Běleč nad Orlicí'
 type: Z

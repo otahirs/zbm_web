@@ -11,7 +11,7 @@ id: 2026-race_2360
 start: '2026-03-01'
 end: '2026-03-01'
 title: 'Sportega BZL: Bure cup'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9518'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9518'
 orisid: '9518'
 place: Bystrc
 type: Z

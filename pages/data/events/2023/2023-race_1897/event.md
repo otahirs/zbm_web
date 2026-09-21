@@ -12,7 +12,7 @@ id: 2023-race_1897
 start: '2023-09-17'
 end: '2023-09-17'
 title: '9. JML: krátká trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7593'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7593'
 orisid: '7593'
 place: Kadov
 type: Z

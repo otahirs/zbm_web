@@ -12,7 +12,7 @@ id: 2026-race_2426
 start: '2026-10-03'
 end: '2026-10-03'
 title: 'Oblastní žebříček'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9862'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9862'
 orisid: '9862'
 place: Olomučany
 type: Z

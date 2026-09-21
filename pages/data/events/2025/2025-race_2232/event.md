@@ -9,7 +9,7 @@ id: 2025-race_2232
 start: '2025-05-24'
 end: '2025-05-24'
 title: '1. Žebříček B-Morava 2025– krátká trať'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=8497'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=8497'
 place: 'Hoštejn, hřiště'
 type: Z
 note: "Kopcovitý les, jsou zde části listnaté, jehličnaté i smíšené. Ve větší části plochy dobře průběžný, s nižší až střední hustotou komunikací.\r\nSpí se v Zábřehu v tělocvičně - vlastní spací pytel a kalimatka.\r\n\r\nInfo pro ty, co letos jedou poprvé na béčka, vícedenní závody: \r\nSpíme v tělocvičně, tak si vemte karimatku, spacák, dobrá výbava jsou špunty do uší nebo klapky na oči.\r\nNa shromaždišti jde koupit nějaké jídlo, těstoviny, párek a podobně. Ale určitě si vemte nějakou sváču. \r\nPo závodě půjdeme večer na společnou večeři někam do hospody, tak si vemte nějaké peníze na ni. S tím budeme dělat rozbor.\r\nSnídá se v tělocvičně, tak si kupte závin, jogurt či podobné, co máte rádi. Ale v neděli je klasika, tak je dobré se dobře najíst.\r\nRozhodně berte s sebou dvoje běhací věci, když bude pršet, tak nechcete běžet druhý den v mokrém. \r\nPokud budete mít s sebou plavky, tak s tím nic nezkazíte, pokud bude hezky, tak zajdeme nějak do bazénu, jako regeneraci."

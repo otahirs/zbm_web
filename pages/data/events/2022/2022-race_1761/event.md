@@ -12,7 +12,7 @@ id: 2022-race_1761
 start: '2022-05-28'
 end: '2022-05-28'
 title: '7. JML - krátká trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7007'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7007'
 orisid: '7007'
 type: Z
 template: zavod

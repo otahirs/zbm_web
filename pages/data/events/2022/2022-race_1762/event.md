@@ -12,7 +12,7 @@ id: 2022-race_1762
 start: '2022-06-11'
 end: '2022-06-11'
 title: '8. JML Mistrovství oblasti na klasické trati'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7008'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7008'
 orisid: '7008'
 type: Z
 template: zavod

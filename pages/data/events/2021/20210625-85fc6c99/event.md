@@ -30,23 +30,23 @@ gps: '49.99421, 17.2647'
 routes:
     -
         name: 'Veteraniáda ve sprintu'
-        link: 'https://obpostupy.orientacnisporty.cz/zavod/527071d4bd1f4e9d92b25db051d1f438'
+        link: 'https://obpostupy.ceskyorientak.cz/zavod/527071d4bd1f4e9d92b25db051d1f438'
     -
         name: 'Veteraniáda na klasické trati'
-        link: 'https://obpostupy.orientacnisporty.cz/zavod/a2ace584932241b096e177a650df06ac'
+        link: 'https://obpostupy.ceskyorientak.cz/zavod/a2ace584932241b096e177a650df06ac'
     -
         name: 'Veteraniáda na krátké trati'
-        link: 'https://obpostupy.orientacnisporty.cz/zavod/3cad98747ca24ce98894a1a0daf26b0c'
+        link: 'https://obpostupy.ceskyorientak.cz/zavod/3cad98747ca24ce98894a1a0daf26b0c'
 results:
     -
         name: 'Veteraniáda ČR ve sprintu'
-        link: 'https://oris.orientacnisporty.cz/Vysledky?id=6238'
+        link: 'https://oris.ceskyorientak.cz/Vysledky?id=6238'
     -
         name: 'Veteraniáda ČR na krátké trati'
-        link: 'https://oris.orientacnisporty.cz/Vysledky?id=6240'
+        link: 'https://oris.ceskyorientak.cz/Vysledky?id=6240'
     -
         name: 'Veteraniáda ČR na klasické trati'
-        link: 'https://oris.orientacnisporty.cz/Vysledky?id=6239'
+        link: 'https://oris.ceskyorientak.cz/Vysledky?id=6239'
 ---
 
  Doprava {{page.header.transport}}.

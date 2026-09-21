@@ -11,7 +11,7 @@ id: 2020-race_1482
 start: '2020-09-12'
 end: '2020-09-12'
 title: '2. JML - klasická trať'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=6051'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=6051'
 place: Tetčice
 type: Z
 template: zavod

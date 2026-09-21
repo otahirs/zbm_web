@@ -6,7 +6,7 @@ id: 2026-race_2371
 start: '2026-02-22'
 end: '2026-02-22'
 title: 'Medvědí tlapka'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=9698'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=9698'
 place: Rosice
 type: BZL
 template: zavod

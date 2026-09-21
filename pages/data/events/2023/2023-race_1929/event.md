@@ -9,7 +9,7 @@ id: 2023-race_1929
 start: '2023-09-09'
 end: '2023-09-09'
 title: '5. žebříček B-Morava - klasika'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7092'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7092'
 orisid: '7092'
 type: Z
 template: zavod

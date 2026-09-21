@@ -15,6 +15,6 @@ V sobotu 13. září uspořádala skupina hobby s podporou vybraných trenér�
 2.  místo: D10N Theodora Papežová; D12 Lucie Marková; H14 Vendelín Smítal; H16 František Kopáč
 3.  místo: H10 Marek Papež; H12 Vít Kocourek; H14 František Koča; H35 Jaroslav Brabec
 
-[Oris závodu](https://oris.orientacnisporty.cz/Zavod?id=8974), fotky z [výhlášení](https://eu.zonerama.com/SKBrnoZabovresky/Album/13857399) a ze [sběrky](https://eu.zonerama.com/SKBrnoZabovresky/Album/13864840).  
+[Oris závodu](https://oris.ceskyorientak.cz/Zavod?id=8974), fotky z [výhlášení](https://eu.zonerama.com/SKBrnoZabovresky/Album/13857399) a ze [sběrky](https://eu.zonerama.com/SKBrnoZabovresky/Album/13864840).  
 
 Tom Kyncl

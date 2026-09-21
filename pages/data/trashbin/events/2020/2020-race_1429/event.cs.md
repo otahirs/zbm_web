@@ -11,7 +11,7 @@ id: 2020-race_1429
 start: '2020-10-17'
 end: '2020-10-17'
 title: '10. Jml: klasika'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5663'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5663'
 orisid: '5663'
 place: Kobeřice
 type: Z

@@ -5,7 +5,7 @@ id: 2025-race_2156
 start: '2025-01-18'
 end: '2025-01-18'
 title: 'Školení trenérů OB 3. třídy'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8749'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8749'
 orisid: '8749'
 place: 'Dubňany, online'
 type: Z

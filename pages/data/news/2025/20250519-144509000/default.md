@@ -22,12 +22,12 @@ Senzační – a přesto jen mírně překvapivou – bronzovou medaili vybojova
 
 Medaile se očekávala i od Tomáše Urbánka, čerstvého reprezentanta nominovaného na juniorské MS v Itálii – a Tomáš nezklamal. Vybojoval stříbro, a potvrdil tak svoji výkonnost.
 
-Další pěkná umístění těsně pod stupni vítězů najdete v [Orisu](https://oris.orientacnisporty.cz/Vysledky?id=8223).
+Další pěkná umístění těsně pod stupni vítězů najdete v [Orisu](https://oris.ceskyorientak.cz/Vysledky?id=8223).
 
 **Sprintové štafety: bronz a naděje do budoucna**
 
 V neděli se oba úspěšní junioři – Eliška a Tomáš – představili i ve sprintových štafetách, kde spojili síly s dospělými běžci. Čtveřice Eliška T. – Tomáš U. – Jáchym C. – Maky K. podala vyrovnaný a velmi kvalitní výkon, díky kterému se celý závod držela v boji o vítězství. Nakonec z toho byl skvělý bronz – výsledek, který předčil očekávání a zároveň ukázal velký potenciál do budoucna.
 
-Malou kaňkou na jinak povedeném víkendu bylo, že ze šesti našich štafet skončily hned tři diskvalifikací (2× dorost, 1× dospělí). Jak k tomu došlo, můžete podrobněji zjistit ve [výsledcích a Liveloxu](https://oris.orientacnisporty.cz/Zavod?id=8224).
+Malou kaňkou na jinak povedeném víkendu bylo, že ze šesti našich štafet skončily hned tři diskvalifikací (2× dorost, 1× dospělí). Jak k tomu došlo, můžete podrobněji zjistit ve [výsledcích a Liveloxu](https://oris.ceskyorientak.cz/Zavod?id=8224).
 
 Pokud jste neviděli napínavý přímý přenos ze závodů, určitě doporučujeme zhlédnout záznam na svazovém [YouTube kanálu](https://www.youtube.com/watch?v=Sc5dOpew20o&amp;ab_channel=%C4%8Cesk%C3%BDorien%C5%A5%C3%A1k).

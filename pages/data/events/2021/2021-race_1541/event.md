@@ -5,7 +5,7 @@ id: 2021-race_1541
 start: '2021-08-13'
 end: '2021-08-15'
 title: 'Rumcajsovy míle'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6214'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6214'
 orisid: '6214'
 place: 'Svatá Kateřina'
 type: Z

@@ -12,7 +12,7 @@ id: 2023-race_1900
 start: '2023-10-07'
 end: '2023-10-07'
 title: '11. JML: klasická trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7535'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7535'
 orisid: '7535'
 place: Uhřice
 type: Z

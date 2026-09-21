@@ -9,7 +9,7 @@ id: 2025-race_2236
 start: '2025-06-14'
 end: '2025-06-14'
 title: '3. ŽB-Morava 2025– krátká trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8503'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8503'
 orisid: '8503'
 place: 'louka v Čavisově'
 type: Z

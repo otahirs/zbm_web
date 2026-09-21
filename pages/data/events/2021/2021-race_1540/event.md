@@ -5,7 +5,7 @@ id: 2021-race_1540
 start: '2021-08-06'
 end: '2021-08-08'
 title: 'Zlínský (Š)krpál'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5711'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5711'
 orisid: '5711'
 place: Lukoveček
 type: Z

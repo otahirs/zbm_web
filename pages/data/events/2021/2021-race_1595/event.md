@@ -5,7 +5,7 @@ id: 2021-race_1595
 start: '2021-09-06'
 end: '2021-09-06'
 title: 'Veřejný závod (Akademické M ČR) sprint'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6492'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6492'
 orisid: '6492'
 place: 'Areál FTK UPOL Olomouc - Neředín'
 type: Z

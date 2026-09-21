@@ -7,7 +7,7 @@ id: 2025-race_2367
 start: '2025-11-30'
 end: '2025-11-30'
 title: '1. BZL: Adamna cup + TRAIL-O Brno – nedělní TempO'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9595'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9595'
 orisid: '9595'
 place: Mokrá
 type: Z

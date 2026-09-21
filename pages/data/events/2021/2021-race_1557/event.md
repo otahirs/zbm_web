@@ -6,7 +6,7 @@ id: 2021-race_1557
 start: '2021-05-22'
 end: '2021-05-22'
 title: 'Mistrovství ČR ve sprintu'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=4979'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=4979'
 orisid: '4979'
 place: 'Šternberk, hala Ecce Homo'
 type: Z

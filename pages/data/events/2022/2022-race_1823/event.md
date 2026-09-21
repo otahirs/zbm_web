@@ -5,7 +5,7 @@ id: 2022-race_1823
 start: '2022-08-27'
 end: '2022-08-27'
 title: 'WestCup 2022 - noční závod'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7173'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7173'
 orisid: '7173'
 place: Pernink
 type: Z

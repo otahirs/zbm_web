@@ -64,7 +64,7 @@ results:
         link: 'http://obasen.orientering.se/winsplits/online/en/default.asp?page=classes&databaseId=70503'
     -
         name: 'Sandstones - 2. etapa'
-        link: 'https://oris.orientacnisporty.cz/Vysledky?id=5493'
+        link: 'https://oris.ceskyorientak.cz/Vysledky?id=5493'
 ---
 {{page.header.note}}
 * **sraz**: {{page.header.meetTime}} {{page.header.meetPlace}}. Doprava {{page.header.transport}}.

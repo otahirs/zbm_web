@@ -12,7 +12,7 @@ id: 2024-race_2062
 start: '2024-04-06'
 end: '2024-04-06'
 title: '1. JML: klasická trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8348'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8348'
 orisid: '8348'
 place: Radostice
 type: Z

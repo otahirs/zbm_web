@@ -12,7 +12,7 @@ id: 2022-race_1666
 start: '2022-01-09'
 end: '2022-01-09'
 title: 'BZL - Pohár Legendy'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6669'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6669'
 orisid: '6669'
 place: 'Brno - Vinohrady'
 type: M
@@ -46,6 +46,6 @@ routes:
 results:
     -
         name: 'Pohár legendy'
-        link: 'https://oris.orientacnisporty.cz/Vysledky?id=6669'
+        link: 'https://oris.ceskyorientak.cz/Vysledky?id=6669'
 ---
 

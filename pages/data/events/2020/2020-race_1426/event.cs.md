@@ -11,7 +11,7 @@ id: 2020-race_1426
 start: '2020-06-24'
 end: '2020-06-24'
 title: 'JML: Mistrovství oblasti ve štafetách'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=5521'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=5521'
 place: Mokrá-Horákov
 type: Z
 template: zavod

@@ -6,7 +6,7 @@ id: 2021-race_1632
 start: '2021-07-13'
 end: '2021-07-13'
 title: 'Letní měřený trénink ve sprintu'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6593'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6593'
 orisid: '6593'
 place: Bystrc
 type: M
@@ -40,6 +40,6 @@ routes:
 results:
     -
         name: 'Výsledky Bystrc'
-        link: 'https://oris.orientacnisporty.cz/Vysledky?id=6593'
+        link: 'https://oris.ceskyorientak.cz/Vysledky?id=6593'
 ---
 

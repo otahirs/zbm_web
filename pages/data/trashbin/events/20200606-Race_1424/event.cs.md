@@ -11,7 +11,7 @@ id: 20200606-Race_1424
 start: '2020-06-06'
 end: '2020-06-06'
 title: '6. Jml: krátká'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5659'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5659'
 orisid: '5659'
 place: Moravec
 type: Z

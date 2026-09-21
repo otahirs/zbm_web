@@ -6,7 +6,7 @@ id: 2025-race_2244
 start: '2025-09-13'
 end: '2025-09-13'
 title: 'Mistrovství ČR na klasické trati'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8620'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8620'
 orisid: '8620'
 place: 'Horní Lhota (okr. Zlín)'
 type: Z

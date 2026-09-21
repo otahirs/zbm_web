@@ -5,7 +5,7 @@ id: 2023-race_1903
 start: '2023-04-07'
 end: '2023-04-09'
 title: 'Velikonoce ve skalách'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7407'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7407'
 orisid: '7407'
 place: Kozly
 type: Z

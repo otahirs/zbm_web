@@ -7,7 +7,7 @@ id: 2025-race_2310
 start: '2025-11-01'
 end: '2025-11-01'
 title: 'Oblastní žebříček'
-link: 'http://oris.orientacnisporty.cz/Zavod?id=9045'
+link: 'http://oris.ceskyorientak.cz/Zavod?id=9045'
 place: 'Vysočina aréna Nové Město na Moravě'
 type: Z
 template: zavod

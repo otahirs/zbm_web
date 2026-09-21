@@ -7,7 +7,7 @@ end: '2020-03-01'
 place: 'Brno, ZŠ Vedlejší'
 meetTime: '14:00'
 meetPlace: 'Brno, ZŠ Vedlejší'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5529'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5529'
 eventTypeDescription: 'H, D, ZV, HDD'
 startTime: '14:00'
 map: Bohunice

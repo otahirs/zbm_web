@@ -5,7 +5,7 @@ id: 2020-race_1412
 start: '2020-08-21'
 end: '2020-08-23'
 title: 'Helfenburk 2020'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5587'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5587'
 orisid: '5587'
 place: ' Kemp Bavorov'
 type: Z

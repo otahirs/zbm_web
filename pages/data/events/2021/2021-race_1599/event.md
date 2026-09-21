@@ -9,7 +9,7 @@ id: 2021-race_1599
 start: '2021-09-25'
 end: '2021-09-25'
 title: 'Český pohár štafet (B), Česká liga klubů (B)'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5288'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5288'
 orisid: '5288'
 place: 'Dolní Olešnice'
 type: Z

@@ -12,7 +12,7 @@ id: 2022-race_1766
 start: '2022-09-28'
 end: '2022-09-28'
 title: '11. JML - klasika'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6973'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6973'
 orisid: '6973'
 type: Z
 template: zavod

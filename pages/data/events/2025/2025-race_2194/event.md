@@ -12,7 +12,7 @@ id: 2025-race_2194
 start: '2025-06-07'
 end: '2025-06-07'
 title: '7. JML: Mistrovství oblasti na klasické trati'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8971'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8971'
 orisid: '8971'
 place: 'Mokrá - Horákov'
 type: Z

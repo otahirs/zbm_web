@@ -16,7 +16,7 @@ date: '2021-05-13'
 import:
     type: members
     time: 1620932401
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6529'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6529'
 orisid: '6529'
 meetTime: ''
 meetPlace: ''

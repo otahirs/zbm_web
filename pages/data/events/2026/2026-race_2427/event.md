@@ -12,7 +12,7 @@ id: 2026-race_2427
 start: '2026-10-17'
 end: '2026-10-17'
 title: 'Oblastní žebříček'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9863'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9863'
 orisid: '9863'
 place: Březina
 type: Z

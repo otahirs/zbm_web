@@ -6,7 +6,7 @@ id: 2023-race_1917
 start: '2023-02-12'
 end: '2023-02-12'
 title: 'BZL: XX. O-mikron'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7439'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7439'
 orisid: '7439'
 place: Brno-Lesná
 type: Z

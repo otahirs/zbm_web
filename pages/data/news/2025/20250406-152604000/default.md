@@ -15,4 +15,4 @@ Dorostenci pod vedením Petra Macháčka uspořádali velmi pěkný závod Jihom
 Díky za hezký závod pro necelých 400 závodníků.
 
 Mezi závodníky bylo i 94 Žabiňáků, kteří ukázali, jak přes zimu trénovali. Nejlépe se dařilo Kamče Beránkové (D14), Lence Ondrůjové (D21D), Jitce Kabáthové (D65), Václavovi Liškovi (H10N), Markovi Papežovi (H10), Martinu Hiklovi (H14), kteří vyhráli. Ale měli jsme i další fůru pěkných umístěných. Tak ať se v sezóně dál daří!  
-Všechno o závodě najdete na orisu: [výsledky](https://oris.orientacnisporty.cz/Vysledky?id=8966), [livelox](https://www.livelox.com/Events/Show/152131) a také fůru [fotek](https://eu.zonerama.com/SKBrnoZabovresky/1311431) ze závodu.
+Všechno o závodě najdete na orisu: [výsledky](https://oris.ceskyorientak.cz/Vysledky?id=8966), [livelox](https://www.livelox.com/Events/Show/152131) a také fůru [fotek](https://eu.zonerama.com/SKBrnoZabovresky/1311431) ze závodu.

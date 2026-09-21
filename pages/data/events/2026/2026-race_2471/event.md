@@ -8,7 +8,7 @@ id: 2026-race_2471
 start: '2026-06-06'
 end: '2026-06-06'
 title: 'Republikový festival žactva'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=9526'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=9526'
 orisid: '9526'
 place: 'Zlín, Gymnázium Lesní čtvrť'
 type: Z

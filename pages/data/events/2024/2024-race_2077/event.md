@@ -9,7 +9,7 @@ id: 2024-race_2077
 start: '2024-05-04'
 end: '2024-05-04'
 title: '1. Žebříček B-Morava, klasika'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7753'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7753'
 orisid: '7753'
 place: 'Nové Heřminovy'
 type: Z

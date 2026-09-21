@@ -5,7 +5,7 @@ id: 2021-race_1539
 start: '2021-08-06'
 end: '2021-08-08'
 title: O-Adventure
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6198'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6198'
 orisid: '6198'
 place: Dědov
 type: Z

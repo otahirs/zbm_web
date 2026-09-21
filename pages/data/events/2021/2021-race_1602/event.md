@@ -9,7 +9,7 @@ id: 2021-race_1602
 start: '2021-06-19'
 end: '2021-06-19'
 title: 'ŽB Morava - krátká trať'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6028'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6028'
 orisid: '6028'
 place: "Ludvíkov, autocamp Dolina\t"
 type: Z

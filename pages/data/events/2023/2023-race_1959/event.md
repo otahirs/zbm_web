@@ -11,7 +11,7 @@ id: 2023-race_1959
 start: '2023-06-21'
 end: '2023-06-21'
 title: 'Veřejný závod štafet'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7591'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7591'
 orisid: '7591'
 place: 'Brno, Líšeň'
 type: Z

@@ -6,7 +6,7 @@ id: 2024-race_2179
 start: '2024-12-08'
 end: '2024-12-08'
 title: 'XXII. O-mikron'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8924'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8924'
 orisid: '8924'
 place: 'Louka nad údolím Zaječího potoka'
 type: BZL

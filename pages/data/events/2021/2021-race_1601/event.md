@@ -9,7 +9,7 @@ id: 2021-race_1601
 start: '2021-09-18'
 end: '2021-09-18'
 title: 'Mistrovství ČR oblastních výběrů žactva'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6241'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6241'
 orisid: '6241'
 type: Z
 template: zavod

@@ -5,7 +5,7 @@ id: 2024-race_2128
 start: '2024-06-12'
 end: '2024-06-12'
 title: 'Finále přeboru škol'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8651'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8651'
 orisid: '8651'
 place: Rosnička
 type: Z

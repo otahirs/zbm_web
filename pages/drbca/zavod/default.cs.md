@@ -14,7 +14,7 @@ never_cache_twig: true
 </style>
 {% try %}
    
-    {% set url = "https://oris.orientacnisporty.cz/API/?format=json&method=getEvent&id=" ~ uri.query('id') %}
+    {% set url = "https://oris.ceskyorientak.cz/API/?format=json&method=getEvent&id=" ~ uri.query('id') %}
     {% set oris = url|getJson %}
     {{dump(oris)}}
     {% if uri.query('id') == null or oris.Status != "OK" %}
@@ -48,7 +48,7 @@ never_cache_twig: true
         <div class="col-9">{{oris.Ranking ? 'Ano' : 'Ne'}}</div>
 
         <div class="col-3">Odkaz</div>
-        <div class="col-9">https://oris.orientacnisporty.cz/Zavod?id={{uri.query('id')}}</div>
+        <div class="col-9">https://oris.ceskyorientak.cz/Zavod?id={{uri.query('id')}}</div>
 
         <div class="col-3">1. datum přihlášek</div>
         <div class="col-9">{{ (oris.EntryDate1 ~ "-1 day")|date("d.m.Y") }}</div>

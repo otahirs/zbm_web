@@ -10,7 +10,7 @@ id: 2023-race_1979
 start: '2023-08-22'
 end: '2023-08-22'
 title: '3. Brněnská letní liga 2023'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=7992'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=7992'
 orisid: '7992'
 place: 'Kraví Hora'
 type: Z

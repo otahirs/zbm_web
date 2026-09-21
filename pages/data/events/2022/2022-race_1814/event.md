@@ -5,7 +5,7 @@ id: 2022-race_1814
 start: '2022-06-19'
 end: '2022-06-19'
 title: 'ŽB Čechy'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=5553'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=5553'
 orisid: '5553'
 place: Číměř
 type: Z

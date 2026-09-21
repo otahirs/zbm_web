@@ -5,7 +5,7 @@ id: 2021-race_1545
 start: '2021-08-27'
 end: '2021-08-29'
 title: 'West cup'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=6225'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=6225'
 orisid: '6225'
 place: Perninek
 type: Z

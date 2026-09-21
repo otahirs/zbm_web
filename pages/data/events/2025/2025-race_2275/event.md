@@ -5,7 +5,7 @@ id: 2025-race_2275
 start: '2025-04-18'
 end: '2025-04-20'
 title: 'Velikonoce ve skalách'
-link: 'https://oris.orientacnisporty.cz/Zavod?id=8843'
+link: 'https://oris.ceskyorientak.cz/Zavod?id=8843'
 orisid: '8843'
 place: Jestřebí
 type: Z
