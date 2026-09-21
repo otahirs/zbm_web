@@ -1,21 +1,39 @@
 ---
 taxonomy:
     skupina:
+        - zaci1
+        - zaci2
         - dorost
         - hobby
-        - zaci2
-        - zaci1
 id: 2026-race_2379
 start: '2026-06-20'
 end: '2026-06-20'
 title: 'Žebříček B-Morava'
 link: 'https://oris.ceskyorientak.cz/Zavod?id=9383'
+place: 'Luhačovice - Řetechov'
 orisid: '9383'
 type: Z
 template: zavod
-date: '2026-01-09'
+date: '2026-06-16'
 import:
     type: members
-    time: 1767991206
+    time: 1781598005
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: busem
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
 ---
 
+* **doprava**: busem

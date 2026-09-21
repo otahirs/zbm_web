@@ -14,9 +14,9 @@ templates:
             -
                 group:
                     - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
+                name: 'Atletické posilko + fotbálek'
+                time: '17:00'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/madenopesa'
             -
                 group:
                     - zaci1
@@ -27,38 +27,17 @@ templates:
         tuesday:
             -
                 group:
-                    - zaci2
-                name: 'Mapový trénink'
-                time: '16:15 – 18:00'
-                place: 'okolí Brna'
-            -
-                group:
                     - dorost
-                name: 'Běžecký trénink + teorie'
-                time: '16:30'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
-            -
-                group:
-                    - zabicky
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                name: 'Mapový trénink + teorie'
-                time: '16:00 – 18:00'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
-            -
-                group:
-                    - hobby
-                name: 'Společný běh'
-                time: '16:00'
-                place: 'ZŠ Nám. Svornosti'
+                name: 'Běh dle plánu'
+                time: '17:00'
+                place: Anthropos
         wednesday:
             -
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
+                place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
             -
                 group:
                     - hobby
@@ -115,9 +94,9 @@ templates:
             -
                 group:
                     - dorost
-                name: 'Atletické posilování'
+                name: 'Atletické posilko + fotbálek'
                 time: '17:00'
-                place: 'Dráha ZŠ nám Svornosti, https://mapy.com/s/rerakofuco'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/madenopesa'
         tuesday:
             -
                 group:
@@ -136,7 +115,7 @@ templates:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
+                place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
             -
                 group:
                     - hobby
@@ -155,7 +134,7 @@ templates:
                 group:
                     - dorost
                 name: Dráha
-                time: '16:45'
+                time: '16:50'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
             -
                 group:
@@ -283,8 +262,8 @@ templates:
                 group:
                     - dorost
                 name: Posilovna
-                time: '15:15 a 18:00'
-                place: 'Sokol Žabovřesky, https://mapy.com/s/gavotococu'
+                time: '8:45'
+                place: 'MUni, FSpS, kampus Bohunice'
             -
                 group:
                     - zaci2
@@ -295,9 +274,9 @@ templates:
             -
                 group:
                     - dorost
-                name: 'Běh (dle víkendu)'
-                time: '16:30'
-                place: 'hala Rosnička (sraz) a okolí'
+                name: 'Běh dle plánu'
+                time: '17:00'
+                place: 'Anthropos (sraz) a okolí'
             -
                 group:
                     - zaci2
@@ -309,8 +288,8 @@ templates:
                 group:
                     - dorost
                 name: Posilovna
-                time: '15:15 a 18:00'
-                place: 'Sokol Žabovřesky, https://mapy.com/s/gavotococu'
+                time: '17:00'
+                place: 'MUni, FSpS, kampus Bohunice'
         thursday:
             -
                 group:
@@ -329,78 +308,6 @@ templates:
                 name: ''
                 time: ''
                 place: ''
-        saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
-                time: ''
-                place: samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
-    Korona:
-        monday:
-            -
-                group:
-                    - dorost
-                name: Posilování
-                time: '16:45'
-                place: 'nám Svornosti, https://mapy.com/s/namovudojo'
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: Tělocvična
-                time: '16:30 - 18:00'
-                place: 'hala Rosnička'
-        tuesday:
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                    - zaci2
-                name: 'Mapový trénink'
-                time: '16:00 - 18:00'
-                place: 'po skupinách'
-        wednesday:
-            -
-                group:
-                    - dorost
-                name: 'Posilování + Běh dle plánu'
-                time: '16:30'
-                place: 'Rosnička, https://mapy.com/s/resafolera'
-        thursday:
-            -
-                group:
-                    - dorost
-                name: 'Intervalový trénink'
-                time: '17:00'
-                place: Podzimní
-            -
-                group:
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 - 18:00'
-                place: 'viz Google Classroom'
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                    - zaci1
-                name: 'Běžecký trénink'
-                time: '16:00'
-                place: 'Pod Palackého vrchem'
-        friday:
-            -
-                group:
-                    - dorost
-                name: Kompenzace
-                time: ''
-                place: samostatně
         saturday:
             -
                 group:
