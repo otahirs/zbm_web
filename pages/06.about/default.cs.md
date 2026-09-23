@@ -185,7 +185,7 @@ primaryImage: {  }
 }
 </style>
 
-Dlouhodobě patříme mezi největší a nejúspěšnější oddíly orientačního běhu v České republice. Naše členy najdete i v českých reprezentačních týmech. Protože reprezentační týmy se pravdidelně mění, se seznam k dispozici na stránkách [reprezentace](https://reprezentace.orientacnibeh.cz).
+Dlouhodobě patříme mezi největší a nejúspěšnější oddíly orientačního běhu v České republice. Naše členy najdete i v českých reprezentačních týmech. Protože reprezentační týmy se pravdidelně mění, se seznam k dispozici na stránkách [reprezentace](https://ob.ceskyorientak.cz/reprezentace/).
 
 Oddíl pořádá každoročně několik závodů. Pravidelně to jsou oblastní žebříčky či závody Brněnské zimní ligy. Od začátku století jsme uspořádali také všechny možné větší akce spojené s českým orientačním během. Tou největší byl Světový pohár v orientačním běhu v roce 2002 v režii všech brněnských oddílů. Dále jsme uspořádali všechny typy Mistrovství ČR: na krátké trati (2006, Růžená), na dlouhé trati (2008, Jedovnice), na klasické trati (2009, Blansko-Palava, 2020, Vír, 2023, Neslovice), noční (2011, Ruprechtov, 2015, Bukovinka), štafet a klubů (2012, Březina), a sprintu a sprintových štafet (2017, Brno).
 V roce 2025 bude oddíl organizovat Mistrovství Evropy dorostu.
