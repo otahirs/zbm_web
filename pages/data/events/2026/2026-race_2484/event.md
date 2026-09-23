@@ -30,6 +30,7 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.30977, 16.62187'
 ---
 
 * **sraz**: 17:15 Vranov, u Kočů

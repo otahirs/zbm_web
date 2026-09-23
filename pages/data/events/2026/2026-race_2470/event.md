@@ -12,14 +12,14 @@ end: '2026-09-28'
 title: 'VT Svratouch'
 place: Vysočina
 type: S
-note: '****Podzimní mapové soustředění pro Žactvo v okolí městečka Svratouch.'
+note: "****Podzimní mapové soustředění pro Žactvo v okolí městečka Svratouch.\r\nV sobotu budeme celý den venku, oběd dostaneme s sebou. Vemte si něco na sednutí venku, bundu na víc."
 template: soustredeni
 date: '2026-04-29'
 import:
     type: members
     time: 1777441205
 meetTime: 'KrPole nádraží pod mostem 16:00'
-meetPlace: '49.2300350N, 16.5958442E'
+meetPlace: '49°13''47.973"N, 16°35''45.163"E'
 link: ''
 eventTypeDescription: ''
 startTime: ''
@@ -38,7 +38,8 @@ gps: '49.72493, 16.05023'
 ---
 
 ****Podzimní mapové soustředění pro Žactvo v okolí městečka Svratouch.
-* **sraz**: KrPole nádraží pod mostem 16:00 49.2300350N, 16.5958442E
+V sobotu budeme celý den venku, oběd dostaneme s sebou. Vemte si něco na sednutí venku, bundu na víc.
+* **sraz**: KrPole nádraží pod mostem 16:00 49°13'47.973"N, 16°35'45.163"E
 * **doprava**: společná auty a dodávkami. Kdo potřebuje podsedák, vemte si s sebou
 * **ubytování**: RS Naděje, budova i chatky
 https://www.rekreace-deti.cz/stredisko/nadeje/
