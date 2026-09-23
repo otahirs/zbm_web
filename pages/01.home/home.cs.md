@@ -132,7 +132,8 @@ news:
         <a class="home__link external-link" href="https://mapy.ceskyorientak.cz/cs/clubs/zbm">Vydané&nbsp;mapy</a></br>
         <a class="home__link external-link" href="https://www.facebook.com/zbm.zabiny">Facebook</a>
         <a class="home__link external-link" href="https://skbrnozabovresky.zonerama.com">Fotky z akcí</a></br>
-        <a class="home__link external-link" href="https://reprezentace.orientacnibeh.cz/">Reprezentace OB</a> 
+        <a class="home__link external-link" href="https://ob.ceskyorientak.cz/reprezentace/">Reprezentace OB</a> 
+        <a class="home__link external-link" href="https://jmo.ceskyorientak.cz">Stránky Jihomoravské oblasti</a> 
     </div>
     <div>
       <h4>Události</h4>
