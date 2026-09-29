@@ -1,18 +1,19 @@
 ---
 title: 'Areály pevných kontrol'
-media_order: 'kohoutovice.png,sobesice.png,rosnicka.png,kohoutovice.pdf,sobesice.pdf,rosnicka.pdf,rosnicka-venku-qr.png'
+media_order: 'kohoutovice.png,sobesice.png,kohoutovice.pdf,sobesice.pdf,rosnicka-venku-qr.png'
 date: '2019-06-19'
 primaryImage: {  }
 ---
 
+<p><b>Náš klub postupně přechází od&nbsp;areálů pevných kontrol k&nbsp;projektu <a href="https://www.venku.app/" target="_blank">Venku.app</a>.</b> Venku.app je mobilní aplikace, se&nbsp;kterou můžete hledat kontrolní stanoviště přímo v&nbsp;terénu bez&nbsp;nutnosti tisknout mapu &ndash; stačí si aplikaci stáhnout na&nbsp;telefon a&nbsp;vyrazit do&nbsp;lesa. Lokality, u&nbsp;kterých už proběhl přechod na&nbsp;Venku.app, jsou níže označeny a&nbsp;popsány zvlášť, ostatní areály zatím fungují po&nbsp;staru s&nbsp;mapou ke&nbsp;stažení.</p>
 <p>Vítejte na&nbsp;stránkách brněnských areálů pevných kontrol, které mají za&nbsp;cíl přiblížit přírodu lidem a&nbsp;lidi přírodě. S&nbsp;pomocí speciální mapy, kterou využívají příznivci orientačních sportů, se&nbsp;můžete dostat do&nbsp;míst, kam by Vás běžné putování lesem asi nezavedlo. V&nbsp;každém lese je pro vás připraveno mezi 10&nbsp;až&nbsp;15 kontrolními stanovišti, ke&nbsp;kterým se můžete 'promapovat'. Vyzkoušejte si to, kvůli čemu příznivci orientačních sportů brázdí svět.</p>
 <p>Co všechno potřebujete před vyražením do lesa? Především mapu. Tu zde naleznete ke stažení.<!-- Tu získáte na vybraných místech, nebo si ji můžete stáhnout z&nbsp;těchto internetových stránek. --> Dále se hodí přibalit si s&nbsp;sebou buzolu, která Vám pomůže mapu zkrotit a udržet si správný směr. Základy, co to ten orienťák vlastně je a legendu k&nbsp;mapě, můžete nalézt na&nbsp;webu <a href="https://zacitorientak.cz/brno/co-to-je/190" target="_blank">zacitorientak.cz</a>. Je&nbsp;jen na Vás, kolik stanovišť najdete. Kontroly můžete absolvovat v&nbsp;libovolném pořadí. </p>
 <p>Přehled areálů pevných kontrol o které se stará náš klub je k&nbsp;dispozici níže. Pokud se vám hledání kontrol zalíbí, můžete si orientační běh vyzkoušet i v&nbsp;jiných koutech České republiky. Přehled všech českých areáů pevných kontrol naleznete <a href="https://zacitorientak.cz/brno/zkusit/190#pevne-kontroly" target="_blank">zde</a>. </p>
 <p><b>Přejeme Vám neobvyklé zážitky při hledání kontrolních stanovišť a příjemný pobyt v&nbsp;brněnských lesích. </b></p>
 <hr>
 <div class="row">
-    <div class="col-sm-6">
-        <h2>Rosnička</h2>
+    <div class="col-sm-12">
+        <h2>Rosnička &ndash; nyní na Venku.app</h2>
         <p>Areál pevných kontrol Rosnička byl změněn na lokalitu <a href="https://www.venku.app/lokalita/brno-rosnicka/" target="_blank">Venku.app</a>. Nachází se v městské části Brno - Žabovřesky <a href="https://mapy.com/s/3u04J" target="_blank">ve&nbsp;Wilsonově lese (mapa)</a>.</p>
         <h4>Kde je možné získat mapu?</h4>
         <p>Kontrolní body můžete nadále hledat s&nbsp;pomocí aplikace Venku.app, kterou si můžete stáhnout na&nbsp;QR&nbsp;kódech níže.</p>
@@ -25,9 +26,6 @@ primaryImage: {  }
                 <a href="https://apps.apple.com/us/app/venku-app/id6744280311" target="_blank">iOS (App Store)</a></p>
             </div>
         </div>
-    </div>
-    <div class="col-sm-6">
-        <img src="{{page.url}}/rosnicka.png" style="padding: 0 1em;">
     </div>
 </div>
 <hr>
