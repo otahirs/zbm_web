@@ -1,6 +1,6 @@
 ---
 title: 'Areály pevných kontrol'
-media_order: 'kohoutovice.png,sobesice.png,rosnicka.png,kohoutovice.pdf,sobesice.pdf,rosnicka.pdf'
+media_order: 'kohoutovice.png,sobesice.png,rosnicka.png,kohoutovice.pdf,sobesice.pdf,rosnicka.pdf,rosnicka-venku-qr.png'
 date: '2019-06-19'
 primaryImage: {  }
 ---
@@ -13,13 +13,18 @@ primaryImage: {  }
 <div class="row">
     <div class="col-sm-6">
         <h2>Rosnička</h2>
-        <p>Areálu pevných kontrol Rosnička se nachází v městské části Brno - Žabovřesky <a href="https://mapy.com/s/3u04J" target="_blank"> ve&nbsp;Wilsonově lese (mapa)</a>. V&nbsp;tomto areálu můžete nalézt celkem 13&nbsp;kontrolních stanovišť. </p>
+        <p>Areál pevných kontrol Rosnička byl změněn na lokalitu <a href="https://www.venku.app/lokalita/brno-rosnicka/" target="_blank">Venku.app</a>. Nachází se v městské části Brno - Žabovřesky <a href="https://mapy.com/s/3u04J" target="_blank">ve&nbsp;Wilsonově lese (mapa)</a>.</p>
         <h4>Kde je možné získat mapu?</h4>
-        <!--<p>Mapy jsou k dispozoci na vrátnici <a href="https://mapy.com/s/3u0fX" target="_blank">v&nbsp;hale&nbsp;SK&nbsp;Brno&nbsp;-&nbsp;Žabovřesky</a>, nebo si ji můžete stáhnout <a href="{{page.url}}/rosnicka.pdf" target="_blank">ve&nbsp;formátu&nbsp;PDF</a>.</p>-->
-        <p><a href="{{page.url}}/rosnicka.pdf" target="_blank">zde (ve&nbsp;formátu&nbsp;PDF)</a></p>
-        <!-- 
-        <h4>Jak se tam dostanu?</h4>
-        <p>Výchozí bod areálu se nachází <a href="https://mapy.com/s/3u04J" target="_blank">zde (mapa)</a>. Tady najdete informační tabuli a toto místo je zároveň vyznačeno červeným trojúhelníkem na vaší orienťácké mapě. Hned vedle najdete sportovní halu Rosnička, kde si můžete vyzvednout mapu. Podblíž se nachází zastávky MHD <em>Burianovo náměstí (3, 11)</em> a&nbsp;<em>Bráfova (1)</em>. </p>-->
+        <p>Kontrolní body můžete nadále hledat s&nbsp;pomocí aplikace Venku.app, kterou si můžete stáhnout na&nbsp;QR&nbsp;kódech níže.</p>
+        <div class="row align-items-center">
+            <div class="col-6 col-sm-4">
+                <img src="{{page.url}}/rosnicka-venku-qr.png" style="width:100%;">
+            </div>
+            <div class="col-6 col-sm-4">
+                <p><a href="https://play.google.com/store/apps/details?id=cz.ceskyorientak.venku.app" target="_blank">Android (Google Play)</a><br>
+                <a href="https://apps.apple.com/us/app/venku-app/id6744280311" target="_blank">iOS (App Store)</a></p>
+            </div>
+        </div>
     </div>
     <div class="col-sm-6">
         <img src="{{page.url}}/rosnicka.png" style="padding: 0 1em;">
