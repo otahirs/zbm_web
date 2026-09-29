@@ -15,5 +15,25 @@ date: '2026-03-01'
 import:
     type: members
     time: 1772394005
+place: 'Láz u Příbrami'
+meetTime: ''
+meetPlace: ''
+eventTypeDescription: ''
+startTime: '9:30'
+map: ''
+terrain: ''
+transport: 'Odejzd busu z tělárny: přibližně v 8:00.'
+accomodation: ''
+food: ''
+leader: Jenda
+note: 'Návrat ke Kampusu, Bohémě.'
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.64829, 13.90195'
 ---
 
+Návrat ke Kampusu, Bohémě.
+* **doprava**: Odejzd busu z tělárny: přibližně v 8:00.

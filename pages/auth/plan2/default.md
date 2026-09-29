@@ -19,7 +19,6 @@ plan:
             -
                 group:
                     - zaci1
-                    - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
@@ -28,63 +27,8 @@ plan:
                 group:
                     - dorost
                 name: 'Běh dle plánu'
-                time: '17:00'
-                place: Anthropos
-        wednesday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
-            -
-                group:
-                    - hobby
-                name: 'Online teorie'
-                time: '20:00'
-                place: meet.google.com/rwz-ugkn-kgu
-        thursday:
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink'
-                time: '16:50'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:00 – 18:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                name: 'Běžecký trénink'
-                time: '16:00 – 17:30'
-                place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
-    nextWeek:
-        monday:
-            -
-                group:
-                    - dorost
-                name: 'Atletické posilko + fotbálek'
-                time: '17:00'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/madenopesa'
-            -
-                group:
-                    - zaci1
-                name: Tělocvična
-                time: '17:00 – 18:30'
-                place: 'hala Rosnička'
-        tuesday:
-            -
-                group:
-                    - dorost
-                name: 'Běh dle plánu'
-                time: '17:00'
-                place: Anthropos
+                time: '16:30'
+                place: 'Rosnička (auta/sklad)'
         wednesday:
             -
                 group:
@@ -120,7 +64,11 @@ plan:
                 time: '16:00 – 17:30'
                 place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
         friday:
-            -
+            0:
+                name: ''
+                time: ''
+                place: ''
+            1790610339921:
                 name: ''
                 time: ''
                 place: ''
@@ -132,10 +80,79 @@ plan:
                 time: ''
                 place: samostatně
         sunday:
-            -
+            0:
                 name: ''
                 time: ''
                 place: ''
+            1790610339922:
+                name: ''
+                time: ''
+                place: ''
+    nextWeek:
+        monday:
+            -
+                group:
+                    - dorost
+                name: 'Atletické posilko + fotbálek'
+                time: '17:00'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/madenopesa'
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: Tělocvična
+                time: '17:00 – 18:30'
+                place: 'hala Rosnička'
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
+            -
+                group:
+                    - hobby
+                name: 'Online teorie'
+                time: '20:00'
+                place: meet.google.com/rwz-ugkn-kgu
+        thursday:
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '16:50'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:00 – 18:00'
+                place: 'Areál VUT, Stadion pod Palackého vrchem'
+            -
+                group:
+                    - pulci1
+                    - pulci2
+                name: 'Běžecký trénink'
+                time: '16:00 – 17:30'
+                place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
+        friday:
+            0:
+                name: ''
+                time: ''
+                place: ''
+            1790610339922:
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            -
+                group:
+                    - zaci2
+                name: 'Běh dle plánu'
+                time: ''
+                place: samostatně
     next2Week:
         monday:
             -
@@ -193,7 +210,11 @@ plan:
                 time: '16:00 – 17:30'
                 place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
         friday:
-            -
+            0:
+                name: ''
+                time: ''
+                place: ''
+            1790610339923:
                 name: ''
                 time: ''
                 place: ''
@@ -261,7 +282,11 @@ plan:
                 time: '16:00 – 17:30'
                 place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
         friday:
-            -
+            0:
+                name: ''
+                time: ''
+                place: ''
+            1790610339923:
                 name: ''
                 time: ''
                 place: ''
@@ -272,6 +297,11 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
+        sunday:
+            1790610339924:
+                name: ''
+                time: ''
+                place: ''
 ---
 
 <div class="row justify-content-between"> 

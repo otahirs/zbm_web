@@ -15,5 +15,27 @@ date: '2026-03-01'
 import:
     type: members
     time: 1772394005
+place: 'Láz u Příbrami'
+meetTime: '17:25'
+meetPlace: Kampus
+eventTypeDescription: ''
+startTime: '11:00 (MČR), 13:00 (vet)'
+map: ''
+terrain: ''
+transport: "Společná busem, autobus stojí u kampusu přímo u zastávky 8.\r\nCca 9:15 - odjezd v sobotu ráno z haly do centra závodu."
+accomodation: ''
+food: ''
+leader: Jenda
+note: '**Ubytování** - sportovní hala Dobříš (vlastní karimatky a spacáky) - [https://mapy.com/s/panobasaba]'
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.64831, 13.90191'
 ---
 
+**Ubytování** - sportovní hala Dobříš (vlastní karimatky a spacáky) - [https://mapy.com/s/panobasaba]
+* **sraz**: 17:25 Kampus
+* **doprava**: Společná busem, autobus stojí u kampusu přímo u zastávky 8.
+Cca 9:15 - odjezd v sobotu ráno z haly do centra závodu.
