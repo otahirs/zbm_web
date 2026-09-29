@@ -1,6 +1,6 @@
 ---
 title: 'Partneři klubu'
-media_order: 'Brno.svg,Revos.svg,JMK.svg,Lucifer_Logo_White02.svg,Naskok.svg,SAP.svg,Sportuj.svg,BonaVita_ logo.png'
+media_order: 'Brno.svg,Revos.svg,JMK.svg,Lucifer_Logo_White02.svg,Naskok.svg,SAP.svg,Sportuj.svg,BonaVita_ logo.png,Plnobarevne_logo_EASYCON.png'
 date: '2018-10-29'
 primaryImage: {  }
 ---
@@ -49,6 +49,11 @@ primaryImage: {  }
     <div class="col-md-6">
         <a href="https://luciferlights.net/" target="_blank">
         <img class="sponsors--img" src="{{page.route()}}/\Lucifer_Logo_White02.svg">
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a href="https://www.easycon.cz/" target="_blank">
+        <img class="sponsors--img" src="{{page.route()}}/Plnobarevne_logo_EASYCON.png">
         </a>
     </div>
 </div>
