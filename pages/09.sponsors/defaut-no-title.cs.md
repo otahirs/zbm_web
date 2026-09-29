@@ -1,6 +1,6 @@
 ---
 title: 'Partneři klubu'
-media_order: 'Brno.svg,Revos.svg,JMK.svg,Lucifer_Logo_White02.svg,Naskok.svg,SAP.svg,Sportuj.svg,BonaVita_ logo.png,Plnobarevne_logo_EASYCON.png'
+media_order: 'Brno.svg,JMK.svg,Revos.svg,Plnobarevne_logo_EASYCON.png,BonaVita_ logo.png,Lucifer_Logo_White02.svg,Sportuj.svg,SAP.svg'
 date: '2018-10-29'
 primaryImage: {  }
 ---
@@ -27,13 +27,8 @@ primaryImage: {  }
         </a>
     </div>
     <div class="col-md-6">
-        <a href="https://www.naskok.cz/" target="_blank">
-        <img class="sponsors--img" src="{{page.route()}}/Naskok.svg">
-        </a>
-    </div>
-    <div class="col-md-6">
-        <a href="https://www.cus-sportujsnami.cz/" target="_blank">
-        <img class="sponsors--img" src="{{page.route()}}/Sportuj.svg">
+        <a href="https://www.easycon.cz/" target="_blank">
+        <img class="sponsors--img" src="{{page.route()}}/Plnobarevne_logo_EASYCON.png">
         </a>
     </div>
     <div class="col-md-6">
@@ -42,18 +37,18 @@ primaryImage: {  }
         </a>
     </div>
     <div class="col-md-6">
-        <a href="https://www.obnadace.cz/" target="_blank">
-        <img class="sponsors--img" src="https://www.ceskyorientak.cz/wp-content/uploads/2025/05/headline_20170115101132.jpg.webp">
-        </a>
-    </div>
-    <div class="col-md-6">
         <a href="https://luciferlights.net/" target="_blank">
         <img class="sponsors--img" src="{{page.route()}}/\Lucifer_Logo_White02.svg">
         </a>
     </div>
     <div class="col-md-6">
-        <a href="https://www.easycon.cz/" target="_blank">
-        <img class="sponsors--img" src="{{page.route()}}/Plnobarevne_logo_EASYCON.png">
+        <a href="https://www.obnadace.cz/" target="_blank">
+        <img class="sponsors--img" src="https://www.ceskyorientak.cz/wp-content/uploads/2025/05/headline_20170115101132.jpg.webp">
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a href="https://www.cus-sportujsnami.cz/" target="_blank">
+        <img class="sponsors--img" src="{{page.route()}}/Sportuj.svg">
         </a>
     </div>
 </div>
