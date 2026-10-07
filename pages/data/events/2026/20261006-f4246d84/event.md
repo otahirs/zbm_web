@@ -31,6 +31,7 @@ taxonomy:
         - zaci1
         - zaci2
         - hobby
+gps: '49.21810, 16.68070'
 ---
 
 * **sraz**: 16:15

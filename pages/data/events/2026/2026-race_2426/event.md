@@ -37,6 +37,8 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+hasStartlist: true
+hasResults: true
 ---
 
 * **sraz**: 8:30 Bohéma

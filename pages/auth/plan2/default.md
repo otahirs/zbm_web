@@ -10,25 +10,23 @@ process:
 plan:
     thisWeek:
         monday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Atletické posilko + fotbálek'
                 time: '17:00'
                 place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/madenopesa'
-            -
+            1:
                 group:
                     - zaci1
+                    - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-        tuesday:
-            -
-                group:
-                    - dorost
-                name: 'Běh dle plánu'
-                time: '16:30'
-                place: 'Rosnička (auta/sklad)'
+            1790918227102:
+                name: ''
+                time: ''
+                place: ''
         wednesday:
             -
                 group:
@@ -36,39 +34,37 @@ plan:
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
-            -
-                group:
-                    - hobby
-                name: 'Online teorie'
-                time: '20:00'
-                place: meet.google.com/rwz-ugkn-kgu
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '16:50'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
+            2:
                 group:
                     - pulci1
                     - pulci2
                 name: 'Běžecký trénink'
                 time: '16:00 – 17:30'
                 place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
-        friday:
-            0:
+            1790918227102:
                 name: ''
                 time: ''
                 place: ''
-            1790610339921:
+        friday:
+            1790918225534:
+                name: ''
+                time: ''
+                place: ''
+            1790918227102:
                 name: ''
                 time: ''
                 place: ''
@@ -79,70 +75,74 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-        sunday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1790610339922:
-                name: ''
-                time: ''
-                place: ''
     nextWeek:
         monday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Atletické posilko + fotbálek'
                 time: '17:00'
                 place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/madenopesa'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-        wednesday:
+            1790918227102:
+                name: ''
+                time: ''
+                place: ''
+        tuesday:
             -
+                group:
+                    - dorost
+                name: 'Běh dle plánu'
+                time: '17:00'
+                place: Anthropos
+        wednesday:
+            0:
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
-            -
-                group:
-                    - hobby
-                name: 'Online teorie'
-                time: '20:00'
-                place: meet.google.com/rwz-ugkn-kgu
+            1790918235313:
+                name: ''
+                time: ''
+                place: ''
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '16:50'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
+            2:
                 group:
                     - pulci1
                     - pulci2
                 name: 'Běžecký trénink'
                 time: '16:00 – 17:30'
                 place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
-        friday:
-            0:
+            1790918227103:
                 name: ''
                 time: ''
                 place: ''
-            1790610339922:
+        friday:
+            1790918225536:
+                name: ''
+                time: ''
+                place: ''
+            1790918227103:
                 name: ''
                 time: ''
                 place: ''
@@ -155,66 +155,76 @@ plan:
                 place: samostatně
     next2Week:
         monday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Atletické posilko + fotbálek'
                 time: '17:00'
                 place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/madenopesa'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
+            1790918227103:
+                name: ''
+                time: ''
+                place: ''
         tuesday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Běh dle plánu'
                 time: '17:00'
                 place: Anthropos
+            1790918227103:
+                name: ''
+                time: ''
+                place: ''
         wednesday:
-            -
+            0:
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
-            -
-                group:
-                    - hobby
-                name: 'Online teorie'
-                time: '20:00'
-                place: meet.google.com/rwz-ugkn-kgu
+            1790918237528:
+                name: ''
+                time: ''
+                place: ''
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '16:50'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            -
+            2:
                 group:
                     - pulci1
                     - pulci2
                 name: 'Běžecký trénink'
                 time: '16:00 – 17:30'
                 place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
-        friday:
-            0:
+            1790918227103:
                 name: ''
                 time: ''
                 place: ''
-            1790610339923:
+        friday:
+            1790918225538:
+                name: ''
+                time: ''
+                place: ''
+            1790918227103:
                 name: ''
                 time: ''
                 place: ''
@@ -225,6 +235,11 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
+        sunday:
+            1790918227103:
+                name: ''
+                time: ''
+                place: ''
     next3Week:
         monday:
             -
@@ -282,11 +297,7 @@ plan:
                 time: '16:00 – 17:30'
                 place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
         friday:
-            0:
-                name: ''
-                time: ''
-                place: ''
-            1790610339923:
+            -
                 name: ''
                 time: ''
                 place: ''
@@ -298,7 +309,7 @@ plan:
                 time: ''
                 place: samostatně
         sunday:
-            1790610339924:
+            -
                 name: ''
                 time: ''
                 place: ''
