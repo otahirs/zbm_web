@@ -47,7 +47,12 @@ Stránky jako novinky a události však obsahují většinou pouze YAML data a v
 Na vykreslování stránek a šalon se používá trochu víc fancy PHP aka [Twig](https://twig.symfony.com/doc/3.x/templates.html).  
 Občas bylo třeba zašpinit si ruce vlastním PHP kódem, ten se nachází [zde](plugins/PHP/twig/).
 
+##### Media
+
+Pro fotky pouzivejte primarne zkomprimovane formaty (JPG, apod). Nekomprimovane formaty jako PNG nejsou vhodne pro webovou prezentaci (bavime se o rozdilu mezi ~600kB JPG vs ~6-10MB PNG na kazdou fotku kterou uzivatele musi stahnout)
+
 #### rozdíly oproti nasazené verzi
-* kešování je vynuto
+* kešování je vypnuto
 * `test` účet místo běžných uživatelských účtů
 * nenastavena synchronizace s gitem a spojení na mailový server
+* CDN plugin je nakonfigurovany na localhost:8000 (`config/plugins/cdn.yaml`)
