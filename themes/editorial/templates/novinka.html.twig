@@ -1,7 +1,6 @@
 {% extends 'partials/base.html.twig' %}
 {% block javascripts %}
     {{ parent() }}
-    {% do assets.addJs('https://commento.zabiny.club/js/commento.js', {'group':'defer'}) %}
 {% endblock %}
 
 {% block header %}
@@ -47,7 +46,6 @@
 	  {{ page.content }}
     <i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;{{page.header.user}}
     <hr>
-    <div id="commento"></div>
 
 
 
