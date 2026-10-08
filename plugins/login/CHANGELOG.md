@@ -1,3 +1,215 @@
+# v3.9.13
+## 10/06/2026
+
+1. [](#bugfix)
+    * An invitation form can now only be sent by a signed-in user who manages accounts, and only a super user can invite someone into super access or into groups
+
+# v3.9.12
+## 09/28/2026
+
+1. [](#bugfix)
+    * Retrying a login while locked out no longer extends the lockout, and the error now says how many minutes are actually left. Thanks @wakqasahmed [#343](https://github.com/getgrav/grav-plugin-login/pull/343) [#335](https://github.com/getgrav/grav-plugin-login/issues/335)
+
+# v3.9.11
+## 09/23/2026
+
+1. [](#improved)
+    * With Grav 2.2's lazy sessions turned on, visitors who are only reading pages no longer get a session cookie from the login plugin, so a proxy or CDN can cache those pages.
+    * With lazy sessions turned on, a visitor who opens the login page is still sent back to the page they came from once they have logged in.
+
+# v3.9.10
+## 09/22/2026
+
+1. [](#new)
+    * The German translation now covers the rest of the plugin's messages. Thanks @Tanzzwerg [#342](https://github.com/getgrav/grav-plugin-login/pull/342)
+
+1. [](#improved)
+    * The fields on the registration, profile, forgot-password and magic-link pages carry an id, so clicking a field's label puts the cursor in it and screen readers announce the two together. Thanks @Tanzzwerg [#342](https://github.com/getgrav/grav-plugin-login/pull/342)
+
+1. [](#bugfix)
+    * The two-factor setup on the profile page works on themes that write their scripts into the page head. The jQuery library it needs was registered too late to reach those pages, so the button that generates a new secret did nothing. Thanks @onetrev [grav-plugin-form#656](https://github.com/getgrav/grav-plugin-form/issues/656)
+
+# v3.9.9
+## 09/17/2026
+
+1. [](#bugfix)
+    * **[security] Someone who has entered a correct password but not yet answered the two-factor prompt can no longer change the account's profile.** The profile form only checked that a user was in the session, not that they had finished logging in, so the second factor could be sidestepped by editing the account it protects. Thanks to @redwolf1919
+    * **[security] "Remember me" no longer skips the two-factor prompt.** The cookie was written as soon as the password was accepted, and returning with it logged you straight in. It is now written only after the second factor succeeds, and restoring a session from it asks for the code again. Devices remembered before this release will ask for a code on their next visit. Thanks to @redwolf1919
+    * **[security] The password reset page is now always the one this plugin ships.** A reset link carries a credential in its URL, and a page authored in the site's own content could be placed on that route and read it. Any custom body on the reset page is no longer rendered. Thanks to @redwolf1919
+
+# v3.9.8
+## 09/13/2026
+
+1. [](#bugfix)
+    * Clearing an optional field on the frontend profile form now actually clears it, instead of silently keeping the previous value. Thanks @sridharkalaibala [#340](https://github.com/getgrav/grav-plugin-login/pull/340)
+    * A profile form that fails validation now says so, rather than reporting the profile as updated while discarding the changes
+
+# v3.9.7
+## 09/09/2026
+
+1. [](#improved)
+    * **Content hidden behind the `authenticated()` Twig function or the `[authenticated]` shortcode is no longer shown to someone who has entered a correct password but has not yet answered the two-factor prompt.** Thanks to @geoffrey-diederichs and @AlpetGexha
+    * **Logging out now requires the request to have come from your own site**, so another site can no longer sign your visitors out by linking to it. This also stopped a forged link from clearing a person's "remember me" login on their other devices. Thanks to @manus-use
+
+1. [](#new)
+    * The titles and headings on the login, forgot, reset, register, profile and unauthorized pages now come from translation keys, so they follow the visitor's language instead of always showing English. Thanks to @NoNoNo [#300](https://github.com/getgrav/grav-plugin-login/issues/300)
+1. [](#bugfix)
+    * Media stored in a modular subfolder of a login-protected page is no longer served to visitors who are not logged in. Thanks to @clesmian [#294](https://github.com/getgrav/grav-plugin-login/issues/294)
+    * The password reset page no longer jumps from a first-level to a third-level heading
+1. [](#improved)
+    * The description of the "Protect a login-protected page media" setting now explains that it covers media requested through the page route, and cannot cover a request made straight to the file's own path. Thanks to @complanar [#45](https://github.com/getgrav/grav-plugin-login/issues/45)
+
+# v3.9.6
+## 09/03/2026
+
+1. [](#improved)
+    * An account file with no `state` set is treated as enabled when a login is refused, matching how Grav itself reads it, so the refusal message is right either way
+
+# v3.9.5
+## 09/02/2026
+
+1. [](#improved)
+    * The German login screens no longer show English for the profile-updated message, the email and password field labels, and the two Submit buttons. Thanks to @nerdyjan [#338](https://github.com/getgrav/grav-plugin-login/issues/338)
+1. [](#bugfix)
+    * A stray quotation mark no longer appears after the German label for protecting media on login-protected pages.
+
+# v3.9.4
+## 08/24/2026
+
+1. [](#new)
+    * Added German and French translations for the magic-link login screens, emails and settings. Thanks to @nerdyjan for contributing the German and French wording [#337](https://github.com/getgrav/grav-plugin-login/issues/337)
+1. [](#bugfix)
+    * The German and French "password reset sent" message no longer confirms whether an account exists for the address entered, matching the English wording
+
+# v3.9.3
+## 08/21/2026
+
+1. [](#bugfix)
+    * [security] The two-factor step now limits how many wrong codes may be submitted for an account, with its own counter that a fresh password login does not reset, so a six-digit code can no longer be guessed without limit by someone who already has the password ([GHSA-9j6w-2q6c-q3q8](https://github.com/getgrav/grav-plugin-login/security/advisories/GHSA-9j6w-2q6c-q3q8)).
+    * [security] Administrators who hold super access only through a group are now recognised as super when guarding account actions, so a lower-privileged user manager can no longer act on them ([GHSA-vv8m-jqpm-38x4](https://github.com/getgrav/grav-plugin-login/security/advisories/GHSA-vv8m-jqpm-38x4)).
+
+# v3.9.2
+## 08/07/2026
+
+1. [](#bugfix)
+    * [security] Invitation emails now honour the Site Host setting like the other login emails do, so an invitation link can no longer be pointed at a spoofed host by the address the request arrived on ([GHSA-69vf-mjxw-x79j](https://github.com/getgrav/grav/security/advisories/GHSA-69vf-mjxw-x79j)).
+    * [security] With Require Trusted Host enabled, activation, magic login and invitation emails are now held back as well, where previously only password reset emails were ([GHSA-69vf-mjxw-x79j](https://github.com/getgrav/grav/security/advisories/GHSA-69vf-mjxw-x79j)).
+    * [security] An account that can manage users but is not a super admin can no longer clear a super admin's login lockout from the Users list ([GHSA-985r-mpj8-5rqw](https://github.com/getgrav/grav/security/advisories/GHSA-985r-mpj8-5rqw)).
+    * The Site Host and Require Trusted Host settings now describe every kind of email they affect, rather than naming only password reset and activation.
+
+# v3.9.1
+## 08/05/2026
+
+1. [](#bugfix)
+    * [security] Password reset and account activation links are now checked with a routine that takes the same amount of time whichever characters differ, so the check can no longer hint at how much of a guess was right ([GHSA-x239-6jqx-5hjh](https://github.com/getgrav/grav/security/advisories/GHSA-x239-6jqx-5hjh)).
+    * [security] Repeatedly submitting a wrong password reset or activation link for the same account is now refused after a handful of tries, configurable under the plugin's security settings.
+    * [security] When registration finishes over email, submitting an address that already has an account now gives the same answer as any other address, and a notice goes to the account holder instead, so the form no longer confirms who is registered ([GHSA-crh8-xm27-j9g9](https://github.com/getgrav/grav/security/advisories/GHSA-crh8-xm27-j9g9)).
+    * [security] Registration attempts from one address are now capped over a time window, configurable under the plugin's user registration settings.
+
+# v3.9.0
+## 07/30/2026
+
+1. [](#new)
+    * Added a `bin/plugin login unlock-user` command to clear the temporary lockout applied after too many failed logins, by username, by IP address, or all at once.
+    * The Admin Next users list now shows which accounts are locked out, with a button to clear the lockout.
+
+# v3.8.13
+## 07/14/2026
+
+1. [](#bugfix)
+    * [security] Remember Me login tokens now actually expire after the configured timeout, closing a gap where a captured cookie stayed valid indefinitely instead of the default 7 days (GHSA-mj78-8gwc-vxjj). Thanks to chakrapani150 for the report.
+
+# v3.8.12
+## 07/08/2026
+
+1. [](#bugfix)
+    * [security] The profile self-update form now ignores client-supplied `groups` and `access` fields, closing a privilege-escalation gap where a logged-in user could grant themselves super-admin if an administrator had added those fields to the registration allowlist (GHSA-h33v-82r9-v8pm). Thanks to zx (Jace) for the report.
+
+# v3.8.11
+## 06/29/2026
+
+1. [](#bugfix)
+    * [security] Regenerating a user's two-factor secret now requires a fully authorized session, closing a window where someone who had the victim's password could rotate the secret and bypass the second factor (GHSA-7mgc-c7pq-3rr3).
+    * [security] Regenerating a two-factor secret now requires a POST request with a valid form nonce, preventing an off-site page from silently resetting a logged-in user's secret (GHSA-4px8-7p53-282r).
+
+# v3.8.10
+## 06/22/2026
+
+1. [](#improved)
+    * The `form_button_classes` and `form_button_outer_classes` theme variables now apply to the forgot, reset, magic-link and logout buttons too, so a theme can restyle every login button by setting them once instead of overriding each template. Thanks to @3e33 for the report.
+
+# v3.8.9
+## 06/19/2026
+
+1. [](#improved)
+    * Simplified the admin warning shown when email links are not pinned to a trusted host, and linked it to a new documentation page that explains the issue and how to fix it.
+
+# v3.8.8
+## 06/17/2026
+
+1. [](#bugfix)
+    * The new `authenticated()` Twig function no longer uses syntax that only works on PHP 8.1 and newer, so the plugin loads again on Grav 1.7 sites running older PHP instead of failing with a parse error.
+
+# v3.8.7
+## 06/17/2026
+
+1. [](#new)
+    * Added an `authenticated()` Twig function that lets page content check whether the current visitor is logged in, optionally requiring a given permission or group, working inside the Grav 2 content sandbox where the `grav.user` object is blocked.
+    * Added optional `[authenticated]` and `[guest]` shortcodes that run the same login, permission and group checks for sites that use shortcodes instead of Twig in content.
+2. [](#improved)
+    * The password reset page now shows the username through a `[uri param="user" /]` shortcode instead of Twig in content, so it works out of the box on Grav 2 where Twig in content is disabled by default (adds a shortcode-core dependency).
+
+# v3.8.6
+## 06/16/2026
+
+1. [](#new)
+    * Added a "Require Trusted Host" security option that refuses to send password reset emails unless a Site Host (or the core Custom Base URL) is configured, instead of falling back to the request host.
+2. [](#improved)
+    * [security] The admin now shows a warning banner (in both the classic admin and Admin 2.0), and a line is written to the log, whenever password reset, activation, or magic-login email links are being built from the request host because neither the Site Host nor the core Custom Base URL is set, since a spoofed host could otherwise redirect those links to an attacker. Thanks to @n00o00b for the report.
+
+# v3.8.5
+## 06/08/2026
+
+1. [](#bugfix)
+    * [security] The login form no longer follows an off-site `_redirect` target, closing an open redirect that an unauthenticated request could trigger through the `twofa_cancel` task (CWE-601). Thanks to @iliaal for the report.
+
+# v3.8.4
+## 05/13/2026
+
+1. [](#improved)
+    * Vendor updates
+
+# v3.8.3
+## 04/24/2026
+
+1. [](#new)
+   * `bin/plugin login new-user` now supports picking which admin permission type(s) to grant when Admin Access is chosen: **classic Admin** (`admin.*`), **Admin2** (`api.*`), or **both**. Interactive mode adds a follow-up question with the detected default pre-selected (based on which admin plugin is installed under `user/plugins/`); scripted mode accepts a new `--admin-type admin|api|both` option and falls back to the same auto-detection when omitted.
+1. [](#bugfix)
+   * CLI-created admin users can now log into Admin2 on Grav 2.0. Previously only `admin.super` was written, which Admin2 ignores — see [#329](https://github.com/getgrav/grav-plugin-login/issues/329).
+
+# v3.8.2
+## 04/24/2026
+
+1. [](#bugfix)
+   * [security] Fixed unauthenticated privilege escalation in `Login::register` (GHSA-pxm6-mhxr-q4mj): if an admin added `groups` or `access` to `user_registration.fields`, an attacker could self-register as super-admin by POSTing those values. Registration form input for those fields is now ignored with a log warning; server-side config, `default_values`, and invitations remain authoritative.
+2. [](#improved)
+   * IP pseudonymization (rate-limit keys, remember-me cookie salt) now uses `Security::getNonceKey()` when running on Grav 2.0+, and continues to read `security.salt` from config on Grav 1.7. Tracks Grav 2.0's GHSA-3f29-pqwf-v4j4 remediation (HMAC key is no longer reachable via sandboxed Twig).
+
+# v3.8.1
+## 04/17/2026
+
+1. [](#new)
+   * **Magic Link (passwordless) login** — new `taskMagicRequest` endpoint sends a one-time, TTL-bound login link by email. Crypto-random token, SHA-256 hash stored server-side, invalidated before login, rate-limited per IP and per user. Neutral response regardless of account state to avoid enumeration. Opt-in via `magic_link.enabled` in `login.yaml` (off by default); adds a "Login by link" button on the login form when enabled. ([#326](https://github.com/getgrav/grav-plugin-login/pull/326), [#328](https://github.com/getgrav/grav-plugin-login/pull/328))
+   * Login / activation / reset / welcome / notification / invite emails are now sent as **multipart `text/html + text/plain`**, so mail clients that strip HTML still render a readable body. Shared `text` macro converts HTML → plain text while preserving paragraphs and lists. ([#325](https://github.com/getgrav/grav-plugin-login/pull/325))
+2. [](#improved)
+   * Migrated legacy CSS to CSS3 ([#312](https://github.com/getgrav/grav-plugin-login/pull/312))
+   * Switched hard-coded `http://` doc/support links to `https://` ([#313](https://github.com/getgrav/grav-plugin-login/pull/313))
+   * Improved Spanish translation ([#319](https://github.com/getgrav/grav-plugin-login/pull/319))
+   * Pruned unused i18n strings ([#301](https://github.com/getgrav/grav-plugin-login/pull/301))
+   * Documented the invite flow in the README
+3. [](#bugfix)
+   * Resending a now-invalid invite no longer returns a 500 — surfaces a clean error instead. ([#322](https://github.com/getgrav/grav-plugin-login/pull/322))
+
 # v3.8.0
 ## 08/25/2025
 
@@ -52,7 +264,7 @@
 ## 05/09/2023
 
 1. [](#improved)
-   * Removed `FILTER_SANITIZE_STRING` input filter in favor of `htmlspecialchars(strip_tags())` 
+   * Removed `FILTER_SANITIZE_STRING` input filter in favor of `htmlspecialchars(strip_tags())`
    * Require Grav `v1.7.41` for new  `UserGroupObject::groupNames` to address deprecation message
    * Updated to BaconQRCode `v2.0.8`
 
@@ -135,7 +347,7 @@
 ## 08/31/2021
 
 1. [](#bugfix)
-   * Fixed white-page during new install with admin 
+   * Fixed white-page during new install with admin
 
 # v3.5.0
 ## 08/31/2021
@@ -188,7 +400,7 @@
    * Prevent information leak on every ACL protected page by always setting Cache-Control [#264](https://github.com/getgrav/grav-plugin-login/issues/264))
 1. [](#improved)
    * Allow browser caching for all login/profile pages
-   * Composer update 
+   * Composer update
 
 # v3.3.8
 ## 12/11/2020
@@ -207,7 +419,7 @@
 
 1. [](#bugfix)
     * Fixed typos causing invalid config for logout
-    * Fixed cache issues with user login pages [#264](https://github.com/getgrav/grav-plugin-login/issues/264) 
+    * Fixed cache issues with user login pages [#264](https://github.com/getgrav/grav-plugin-login/issues/264)
 
 # v3.3.5
 ## 06/10/2020
@@ -267,7 +479,7 @@
     * CHANGE: `redirect_to_login` and `redirect_after_logout` are now boolean, with accompanying `route_after_login` and `route_after_logout` options.  NOTE: Compatibility is maintained with existing config.
 1. [](#improved)
     * Improved configuration layout
-    * Better handling of login route when that page doesn't exist 
+    * Better handling of login route when that page doesn't exist
 1. [](#bugfix)
     * Fixed guest only pages requiring login
     * Fixed issue when logging out, not redirecting, and attempting to log right back in
@@ -334,7 +546,7 @@
 
 1. [](#new)
     * Added **2-Factor Authentication** support for front-end (2FA)
-    * New CLI command to `lookup` users 
+    * New CLI command to `lookup` users
     * Check requirements to use new `lookup` command
     * Added support for the new `Flex User` object
 1. [](#improved)
@@ -345,12 +557,12 @@
     * Invalidate cache when modifying users from CLI
     * Updated code to PHP 7.1 features
 1. [](#bugfix)
-    * Fix login on registration (FlexUsers)      
+    * Fix login on registration (FlexUsers)
 
 # v2.8.4
 ## 03/20/2019
 
-1. [](#improved)  
+1. [](#improved)
   * Enable "brute force" protection by default [#195](https://github.com/getgrav/grav-plugin-login/pull/195)
   * UPdated various language translations
 1. [](#bugfix)
@@ -359,19 +571,19 @@
 
 # v2.8.3
 ## 01/25/2019
-  
+
 1. [](#new)
-  * Wrap data in `onUserLoginRegisterData` event in object to allow reference  
-1. [](#improved)  
+  * Wrap data in `onUserLoginRegisterData` event in object to allow reference
+1. [](#improved)
   * IP pseudonymization for rate limiter [#196](https://github.com/getgrav/grav-plugin-login/pull/196)
   * Made some error lang strings more generic to relfect ability to change username/password requirements
 1. [](#bugfix)
-  * Fix redirectLangSafe in login controller [#192](https://github.com/getgrav/grav-plugin-login/pull/192)      
+  * Fix redirectLangSafe in login controller [#192](https://github.com/getgrav/grav-plugin-login/pull/192)
 
 # v2.8.2
 ## 12/14/2018
-  
-1. [](#new)  
+
+1. [](#new)
   * Fire `onUserLoginRegisteredUser()` event to allow manipulation of User object after registration
 
 # v2.8.1
@@ -432,7 +644,7 @@
     * Show denied message only when authenticated but not authorized
 1. [](#bugfix)
     * Don't allow Profile saving if a Grav user account doesn't exist (OAuth/LDAP users for example)
-    * Don't allow PW reset if no current password exists (OAuth/LDAP users for example) 
+    * Don't allow PW reset if no current password exists (OAuth/LDAP users for example)
 
 # v2.6.3
 ## 04/12/2018
@@ -448,8 +660,8 @@
     * Added support for `Login::login()` and `Login::logout()` to return `UserLoginEvent` instance instead of `User`
     * Added support for custom login messages and redirects set in `UserLoginEvent`
 1. [](#bugfix)
-    * Fixed typo in activation email body [#151](https://github.com/getgrav/grav-plugin-login/issues/151) 
-    
+    * Fixed typo in activation email body [#151](https://github.com/getgrav/grav-plugin-login/issues/151)
+
 # v2.6.1
 ## 03/19/2018
 
@@ -546,7 +758,7 @@
 1. [](#bugfix)
     * Set cookie path to `/` if `base_url_relative` is empty [#102](https://github.com/getgrav/grav-plugin-login/issues/102)
     * Fixed some redirect logic
-    
+
 # v2.2.1
 ## 01/24/2017
 

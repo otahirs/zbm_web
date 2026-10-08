@@ -502,7 +502,10 @@ class Admin
             $root = '';
         }
 
-        $pattern = '`^((' . preg_quote($root, '`') . ')?(/[^/]+)?)' . preg_quote($base, '`') . '`ui';
+        // Match the base only at a path-segment boundary (followed by `/` or end of
+        // string) so a page route like `/pages/administration` is not mistaken for an
+        // existing `/admin` path just because the folder name starts with "admin".
+        $pattern = '`^((' . preg_quote($root, '`') . ')?(/[^/]+)?)' . preg_quote($base, '`') . '(?=/|$)`ui';
         // Check if we already have an admin path: /admin, /en/admin, /root/admin or /root/en/admin.
         if (preg_match($pattern, $redirect)) {
             $redirect = preg_replace('|^' . preg_quote($root, '|') . '|', '', $redirect);
@@ -622,25 +625,14 @@ class Admin
         $credentials = array_diff_key($credentials, ['admin-nonce' => true]);
         $twofa = $this->grav['config']->get('plugins.admin.twofa_enabled', false);
 
-        $rateLimiter = $login->getRateLimiter('login_attempts');
-
         $userKey = (string)($credentials['username'] ?? '');
-        $ipKey = Uri::ip();
         $redirect = $post['redirect'] ?? $this->base . $this->route;
 
-        // Pseudonymization of the IP
-        $ipKey = sha1($ipKey . $this->grav['config']->get('security.salt'));
-
-        // Check if the current IP has been used in failed login attempts.
-        $attempts = count($rateLimiter->getAttempts($ipKey, 'ip'));
-
-        $rateLimiter->registerRateLimitedAction($ipKey, 'ip')->registerRateLimitedAction($userKey);
-
-        // Check rate limit for both IP and user, but allow each IP a single try even if user is already rate limited.
-        if ($rateLimiter->isRateLimited($ipKey, 'ip') || ($attempts && $rateLimiter->isRateLimited($userKey))) {
+        // Same IP + username check the frontend and API logins use.
+        if ($interval = $login->checkLoginRateLimit($userKey)) {
             Admin::DEBUG && Admin::addDebugMessage('Admin login: rate limit, redirecting', $credentials);
 
-            $this->setMessage(static::translate(['PLUGIN_LOGIN.TOO_MANY_LOGIN_ATTEMPTS', $rateLimiter->getInterval()]), 'error');
+            $this->setMessage(static::translate(['PLUGIN_LOGIN.TOO_MANY_LOGIN_ATTEMPTS_RETRY', $interval]), 'error');
 
             $this->grav->redirect('/');
         }
@@ -658,7 +650,7 @@ class Admin
         Admin::DEBUG && Admin::addDebugMessage('Admin login: user', $user);
 
         if ($user->authenticated) {
-            $rateLimiter->resetRateLimit($ipKey, 'ip')->resetRateLimit($userKey);
+            $login->resetLoginRateLimit($userKey);
             if ($user->authorized) {
                 $event->defMessage('PLUGIN_ADMIN.LOGIN_LOGGED_IN', 'info');
 
@@ -711,6 +703,10 @@ class Admin
         $code = $data['2fa_code'] ?? null;
 
         $secret = $user->twofa_secret ?? null;
+        // Strip any whitespace from secret (fixes corrupted secrets)
+        if ($secret) {
+            $secret = preg_replace('/\s+/', '', $secret);
+        }
 
         if (!$code || !$secret || !$twoFa->verifyCode($secret, $code)) {
             $login->logout(['admin' => true]);
@@ -1047,6 +1043,11 @@ class Admin
     {
         // Clean fields for all users
         unset($post['hashed_password']);
+
+        // Sanitize twofa_secret: strip all whitespace to prevent corruption
+        if (isset($post['twofa_secret']) && is_string($post['twofa_secret'])) {
+            $post['twofa_secret'] = preg_replace('/\s+/', '', $post['twofa_secret']);
+        }
 
         // Clean field for users who shouldn't be able to modify these fields
         if (!$this->authorize(['admin.user', 'admin.super'])) {
@@ -1721,9 +1722,17 @@ class Admin
 //            $body = Response::get('http://localhost/notifications.json?' . time());
             $notifications = json_decode($body, true);
 
+            // The remote feed can hand back an empty body, an HTML error page,
+            // or otherwise invalid JSON, all of which decode to a non-array.
+            // Guard so PHP 8 doesn't fatal on usort()/array_reverse() being
+            // passed null instead of an array.
+            if (!is_array($notifications)) {
+                $notifications = [];
+            }
+
             // Sort by date
             usort($notifications, function ($a, $b) {
-                return strcmp($a['date'], $b['date']);
+                return strcmp($a['date'] ?? '', $b['date'] ?? '');
             });
 
             // Reverse order and create a new array

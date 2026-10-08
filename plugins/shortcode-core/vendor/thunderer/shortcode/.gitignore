@@ -1,0 +1,7 @@
+.idea
+.phpunit.result.cache
+infection.log
+vendor
+composer.lock
+coverage
+coverage.xml

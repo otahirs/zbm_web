@@ -6,6 +6,7 @@ use Grav\Common\Cache;
 use Grav\Common\Data\Data;
 use Grav\Common\Debugger;
 use Grav\Common\File\CompiledYamlFile;
+use Grav\Common\GPM\Upgrader;
 use Grav\Common\Grav;
 use Grav\Common\Helpers\LogViewer;
 use Grav\Common\Inflector;
@@ -239,6 +240,12 @@ class AdminPlugin extends Plugin
      */
     public function setup()
     {
+        // Admin is a web-only plugin; skip entirely in CLI to avoid redirects
+        // that call exit() and silently terminate console commands (e.g. bin/gpm).
+        if (\PHP_SAPI === 'cli') {
+            return;
+        }
+
         // Only enable admin if it has a route.
         $route = $this->config->get('plugins.admin.route');
         if (!$route) {
@@ -594,8 +601,15 @@ class AdminPlugin extends Plugin
 
                 $this->initializeController($task, $post);
             } elseif ($this->template === 'logs' && $this->route) {
-                // Display RAW error message.
-                $response = new Response(200, [], $this->admin->logEntry());
+                // Display RAW error message. Enforce the same super-admin gate the
+                // Tools > Logs menu entry carries; without it any account holding
+                // admin.login could read logs/**/*.html directly, since this route
+                // never checked a permission of its own (GHSA-52mc-3pjw-886v).
+                if (!$this->admin->authorize(['admin.super'])) {
+                    $response = new Response(403, [], $this->admin::translate('PLUGIN_ADMIN.INSUFFICIENT_PERMISSIONS_FOR_TASK'));
+                } else {
+                    $response = new Response(200, [], $this->admin->logEntry());
+                }
 
                 $this->grav->close($response);
             }
@@ -743,6 +757,21 @@ class AdminPlugin extends Plugin
         switch ($this->template) {
             case 'dashboard':
                 $twig->twig_vars['popularity'] = $this->popularity;
+
+                // Cross-family migration notice: when the remote advertises a new major,
+                // surface a one-time banner on the dashboard. Uses cached GPM data; failures
+                // must not break the dashboard.
+                try {
+                    $upgrader = new Upgrader();
+                    if (method_exists($upgrader, 'isNextMajorAvailable') && $upgrader->isNextMajorAvailable()) {
+                        $twig->twig_vars['grav_next_major'] = [
+                            'version'       => $upgrader->getNextMajorVersion(),
+                            'migration_url' => $upgrader->getMigrationUrl(),
+                        ];
+                    }
+                } catch (\Throwable $e) {
+                    // Swallow — notice is informational only.
+                }
                 break;
         }
 

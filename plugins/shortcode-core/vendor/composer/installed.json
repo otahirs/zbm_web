@@ -1,0 +1,68 @@
+{
+    "packages": [
+        {
+            "name": "thunderer/shortcode",
+            "version": "dev-add-tars-parser",
+            "version_normalized": "dev-add-tars-parser",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rhukster/Shortcode.git",
+                "reference": "e4032b4a08ef1011eec2f6f22f25c104923d1fef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rhukster/Shortcode/zipball/e4032b4a08ef1011eec2f6f22f25c104923d1fef",
+                "reference": "e4032b4a08ef1011eec2f6f22f25c104923d1fef",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.1",
+                "symfony/yaml": ">=2.0"
+            },
+            "suggest": {
+                "ext-dom": "if you want to use XML serializer",
+                "ext-json": "if you want to use JSON serializer",
+                "symfony/yaml": "if you want to use YAML serializer"
+            },
+            "time": "2026-06-24T19:42:47+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Thunder\\Shortcode\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Thunder\\Shortcode\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tomasz Kowalczyk",
+                    "email": "tomasz@kowalczyk.cc"
+                }
+            ],
+            "description": "Advanced shortcode (BBCode) parser and engine for PHP",
+            "keywords": [
+                "bbcode",
+                "engine",
+                "library",
+                "parser",
+                "shortcode"
+            ],
+            "support": {
+                "source": "https://github.com/rhukster/Shortcode/tree/add-tars-parser"
+            },
+            "install-path": "../thunderer/shortcode"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

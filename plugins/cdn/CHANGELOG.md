@@ -1,3 +1,18 @@
+# v1.5.2
+## 07/15/2026
+
+1. [](#bugfix)
+    * Responsive images now load from the CDN at every size, not just the first one in the list.
+    * Images shown inside a code example on a page are no longer rewritten to the CDN.
+    * WebP and AVIF images are now sent to the CDN by default.
+
+# v1.5.1
+## 04/30/2026
+
+1. [](#bugfix)
+    * Fixed PHP 8.1+ deprecation notice — explicit string casts where `null` was being passed to string-typed function arguments.
+    * No more "broken site after install" — removed the `yourdomain.cdn.com` placeholder default for the `pullzone` field. The plugin now skips CDN rewriting entirely when `pullzone` is empty, so it can ship enabled by default without breaking assets on a fresh install. Set your real CDN domain in plugin settings to activate rewriting.
+
 # v1.5.0
 ## 10/09/2018
 

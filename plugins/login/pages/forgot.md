@@ -7,7 +7,8 @@ login_redirect_here: false
 form:
 
     fields:
-        - name: email
+        - id: email
+          name: email
           type: email
           label: PLUGIN_LOGIN.EMAIL
           autofocus: true
@@ -17,6 +18,6 @@ form:
 ---
 
 
-# Recover your password
+# [translate=PLUGIN_LOGIN.FORGOT_PAGE_HEADING /]
 
-Enter your email to recover your password
+[translate=PLUGIN_LOGIN.FORGOT_PAGE_DESC /]

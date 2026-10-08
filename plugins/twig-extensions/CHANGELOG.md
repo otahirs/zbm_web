@@ -1,3 +1,22 @@
+# v1.3.2
+##  2026-07-24
+
+1. [](#improved)
+   * Clarify Twig version scope and Intl support (#5). Thanks to @Rotzbua
+   * Improving parameter types
+
+# v1.3.1
+##  2026-07-02
+
+1. [](#improved)
+   * Clarify archived Twig Extensions source (#4). Thanks to @Rotzbua
+
+# v1.3.0
+##  2026-07-02
+
+1. [](#improved)
+   * Updated namespacing for grav 2.0 compatibility (#3). Thanks to @sdegrande
+
 # v1.2.2
 ##  2023-12-03
 

@@ -1,3 +1,100 @@
+# v1.10.60
+## 09/28/2026
+
+1. [](#bugfix)
+    * Retrying an admin login while locked out no longer extends the lockout, and the message says how many minutes are actually left. The admin now uses the same login check as the frontend, so it needs Login 3.9.12 [getgrav/grav-plugin-login#343](https://github.com/getgrav/grav-plugin-login/pull/343)
+
+# v1.10.59
+## 09/13/2026
+
+1. [](#bugfix)
+    * The Expand All and Collapse All buttons now appear above a list field when its controls are set to `top` or `both`. Thanks @sridharkalaibala [#2503](https://github.com/getgrav/grav-plugin-admin/issues/2503)
+    * A placeholder set to `0` now shows instead of being treated as no placeholder at all. Thanks @sridharkalaibala [#2521](https://github.com/getgrav/grav-plugin-admin/pull/2521)
+    * SVG files now show a preview in the file picker, matching the media manager. Thanks @sridharkalaibala [#2522](https://github.com/getgrav/grav-plugin-admin/pull/2522)
+
+# v1.10.58
+## 09/09/2026
+
+1. [](#improved)
+    * A field's `classes` are now applied to the `array`, `column`, and `columns` field types, which previously ignored them [#2508](https://github.com/getgrav/grav-plugin-admin/pull/2508)
+    * Corrected and completed the Spanish translations [#2509](https://github.com/getgrav/grav-plugin-admin/pull/2509)
+
+1. [](#bugfix)
+    * The `array` field no longer renders a second `class` attribute for its one-child state, which meant the attribute was silently dropped
+
+# v1.10.57
+## 09/01/2026
+
+1. [](#bugfix)
+    * The plugin now states that it only supports Grav 1.7, so it is no longer offered for install on a Grav 2.0 site. Grav 2.0's admin is the separate Admin Next plugin [#4273](https://github.com/getgrav/grav/discussions/4273)
+
+# v1.10.56
+## 08/27/2026
+
+1. [](#bugfix)
+    * [security] Two-factor login now limits how many incorrect codes can be tried in a row, so a stolen password can no longer be paired with guessing the 6-digit code (GHSA-9j6w-2q6c-q3q8).
+    * [security] Viewing the admin logs now requires a super admin, matching the other system tools (GHSA-52mc-3pjw-886v).
+    * [security] An admin who can manage users but is not a super admin can no longer edit a super admin who holds that access through a group, closing a remaining privilege-escalation path (GHSA-vv8m-jqpm-38x4).
+    * [security] Restricted a non-super admin from reaching super-only configuration through the "tools" permission alias (GHSA-gxxc-pcrx-22fr).
+
+# v1.10.55
+## 08/11/2026
+
+1. [](#bugfix)
+    * [security] The page "Save As" action now rejects a language code that is not one of the site's configured languages, closing a path that let an editor write a Markdown file outside the pages folder ([GHSA-h9g9-73c3-23c9](https://github.com/getgrav/grav/security/advisories/GHSA-h9g9-73c3-23c9)).
+
+
+# v1.10.54
+## 08/07/2026
+
+1. [](#bugfix)
+    * Deleting a media file whose name contains a bracket or a similar character now removes its retina copies and metadata, which were previously left behind.
+    * Deleting a media file no longer also removes files belonging to a different item whose name ends with the same text, so deleting `banner.jpg` leaves `my-banner@2x.jpg` alone.
+
+# v1.10.53
+## 07/21/2026
+
+1. [](#bugfix)
+    * [security] An admin who can manage users but is not a super admin can no longer reset a super admin's password, closing a privilege-escalation path (GHSA-p97c-g455-q447).
+    * File field "View" links now open the file's actual stored URL and no longer trigger a broken image request ([#2517](https://github.com/getgrav/grav-plugin-admin/pull/2517)).
+1. [](#improved)
+    * Inserting a media file whose name contains spaces now produces clean, readable caption text in the Markdown instead of showing `%20`. Relates to [getgrav/grav#4197](https://github.com/getgrav/grav/issues/4197).
+    * Refreshed the admin theme's build tooling and stopped committing developer-only lockfiles so the plugin no longer raises dependency vulnerability alerts in projects that track it.
+
+# v1.10.52
+## 06/10/2026
+
+1. [](#bugfix)
+    * Fixed `bin/gpm` commands silently exiting on a fresh Grav 2.0 + Admin install before any user accounts had been created ([grav#4079](https://github.com/getgrav/grav/issues/4079)).
+    * Fixed a 404 when creating or renaming a top-level page whose folder name starts with "admin" (for example `administration`), caused by the admin redirect mistaking it for the admin route ([grav-plugin-admin#2513](https://github.com/getgrav/grav-plugin-admin/issues/2513)).
+
+# v1.10.51
+## 05/05/2026
+
+1. [](#new)
+    * Release as 1.10.51
+
+# v1.10.49.5
+## 05/05/2026
+
+1. [](#bugfix)
+    * [security] Fixed stored XSS in the page move/parents dialog (GHSA-fmg2-f5r9-24qc)
+
+# v1.10.49.4
+## 04/16/2026
+
+1. [](#new)
+    * Grav 2.0 migration banner on the dashboard — surfaces when the remote advertises a next-major release, with stacked CTAs for either "Start migration" (when migrate-grav is enabled) or "Install Migrate plugin" (deep-linking to `/admin/plugins/migrate-grav`), plus an external "Learn how to migrate" link
+2. [](#improved)
+    * Log date handling in Tools → Logs now renders more reliably ([#2497](https://github.com/getgrav/grav-plugin-admin/pull/2497))
+    * Backup dates now carry a `title` attribute for the full timestamp on hover ([#2499](https://github.com/getgrav/grav-plugin-admin/pull/2499))
+3. [](#bugfix)
+    * Scheduler status display now matches runtime enabled logic — no more "enabled" showing for jobs that won't actually run
+    * Single-file save path fixed
+    * Module folder renames now preserve the leading underscore (`_folder`)
+    * 2FA verification no longer fails when the pasted token carries trailing/embedded whitespace ([#2489](https://github.com/getgrav/grav-plugin-admin/issues/2489))
+    * scheduler-webhook plugin compatibility fixes
+
 # v1.10.49.3
 ## 01/27/2026
 
@@ -37,14 +134,14 @@
 ## 10/28/2024
 
 1. [](#improved)
-  * Treat AVIF as image when inserting / drag & dropping 
+  * Treat AVIF as image when inserting / drag & dropping
   * PHP 8.4 fixes - Implicitly nullable parameter declarations deprecate
 
 # v1.10.47
 ## 10/22/2024
 
 1. [](#improved)
-  * Added missing `show_label` logic in list field 
+  * Added missing `show_label` logic in list field
   * Use plugin's selected icon when in plugin properties
 
 # v1.10.46

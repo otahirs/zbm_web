@@ -39,6 +39,9 @@ class SitemapPlugin extends Plugin
     protected $ignore_redirect = true;
 
     protected $news_route = null;
+    protected $llms_route = null;
+    protected $llms_built = false;
+    protected $sitemap_cache_id = null;
 
     /**
      * @return array
@@ -88,7 +91,16 @@ class SitemapPlugin extends Plugin
         }
 
 
-        if ($route === $uri->route() || !empty($this->news_route)) {
+        // /llms.txt and /llms-full.txt: the site as Markdown for AI agents.
+        if ($uri->extension() === 'txt') {
+            if ($uri_route === '/llms' && $this->config()['llms_txt']) {
+                $this->llms_route = 'llms';
+            } elseif ($uri_route === '/llms-full' && $this->config()['llms_full_txt']) {
+                $this->llms_route = 'llms-full';
+            }
+        }
+
+        if ($route === $uri->route() || !empty($this->news_route) || !empty($this->llms_route)) {
 
             $this->enable([
                 'onTwigInitialized' => ['onTwigInitialized', 0],
@@ -111,9 +123,32 @@ class SitemapPlugin extends Plugin
         /** @var Pages $pages */
         $pages = $this->grav['pages'];
 
-        $cache_id = md5('sitemap-data-'.$pages->getPagesCacheId());
-//        $this->sitemap = $cache->fetch($cache_id);
+        // The cache key covers everything that decides what the sitemap
+        // contains, not just the pages.
+        //
+        // `getPagesCacheId()` alone was not enough, and that is why the fetch
+        // below spent a while commented out: this method reads a dozen of the
+        // plugin's own settings and four of Grav's language settings, and bakes
+        // the configured `additions` straight into the result. Keyed on the
+        // pages alone, changing `ignores`, `changefreq`, `priority`,
+        // `multilang_enabled` or adding an extra URL kept serving the old
+        // sitemap until something in pages/ happened to change, which is
+        // indistinguishable from the setting not working.
+        $cache_id = md5('sitemap-data-' . $pages->getPagesCacheId() . serialize([
+            $this->config->get('plugins.sitemap'),
+            $this->config->get('system.languages.supported'),
+            $this->config->get('system.languages.include_default_lang'),
+            $this->config->get('system.languages.pages_fallback_only'),
+            $this->config->get('system.languages.content_fallback'),
+        ]));
 
+        $this->sitemap_cache_id = $cache_id;
+        $this->sitemap = $cache->fetch($cache_id);
+
+        // Everything the build sets on $this — the date format, the ignore
+        // rules, the changefreq and priority defaults, the language prefixes —
+        // is read only by addRouteData(), which is only called from inside this
+        // branch. A cache hit skipping them is safe.
         if ($this->sitemap === false) {
             $this->multilang_enabled = $this->config->get('plugins.sitemap.multilang_enabled');
 
@@ -193,6 +228,23 @@ class SitemapPlugin extends Plugin
         $html_support = $this->config->get('plugins.sitemap.html_support', false);
         $extension = $this->grav['uri']->extension() ?? ($html_support ? 'html': 'xml');
 
+        if (!empty($this->llms_route)) {
+            // Grav 2.1 knows `md` as a page type and answers it with
+            // `text/markdown`; older cores serve the file as plain text.
+            $format = Utils::getMimeByExtension('md', false) === 'text/markdown' ? 'md' : 'txt';
+
+            $page = new Page;
+            $page->init(new \SplFileInfo(__DIR__ . '/pages/llms.md'));
+            $page->templateFormat($format);
+            unset($this->grav['page']);
+            $this->grav['page'] = $page;
+            // The template is chosen in onTwigSiteVariables: Twig hands out a
+            // preset template once, and building llms-full.txt renders every
+            // page first, which would use it up on a module.
+
+            return;
+        }
+
         if (is_null($page) || $uri->route() === $route || !empty($this->news_route)) {
 
             // set a dummy page
@@ -241,6 +293,114 @@ class SitemapPlugin extends Plugin
     {
         $twig = $this->grav['twig'];
         $twig->twig_vars['sitemap'] = $this->sitemap;
+
+        // Once only: building llms-full.txt renders every page through the
+        // theme, and each of those renders fires this event again.
+        if ($this->llms_route && !$this->llms_built) {
+            $this->llms_built = true;
+            if ($this->llms_route === 'llms') {
+                $twig->twig_vars['llms_sections'] = $this->llmsSections();
+            } else {
+                $twig->twig_vars['llms_full'] = $this->llmsFull();
+            }
+            $twig->template = "{$this->llms_route}.txt.twig";
+        }
+    }
+
+    /**
+     * The sitemap entries of the active language that have a Markdown URL,
+     * grouped for `llms.txt`: the home page and every top-level page under
+     * "Pages", everything deeper under the title of its top-level ancestor.
+     *
+     * @return array<string, array{title: string, entries: SitemapEntry[]}>
+     */
+    protected function llmsSections(): array
+    {
+        /** @var Language $language */
+        $language = $this->grav['language'];
+        $lang = $language->enabled() ? ($language->getActive() ?: $language->getDefault()) : null;
+
+        $entries = [];
+        foreach ((array)$this->sitemap as $entry) {
+            if (!$entry instanceof SitemapEntry || empty($entry->markdown)) {
+                continue;
+            }
+            if ($lang !== null && $entry->getLang() !== null && $entry->getLang() !== $lang) {
+                continue;
+            }
+            $entries[] = $entry;
+        }
+
+        $titles = [];
+        foreach ($entries as $entry) {
+            $segments = explode('/', trim((string)$entry->route, '/'));
+            if (count($segments) === 1 && $segments[0] !== '') {
+                $titles[$segments[0]] = $entry->title ?: ucfirst($segments[0]);
+            }
+        }
+
+        $sections = ['' => ['title' => 'Pages', 'entries' => []]];
+        foreach ($entries as $entry) {
+            $segments = explode('/', trim((string)$entry->route, '/'));
+            $key = count($segments) > 1 ? $segments[0] : '';
+            if (!isset($sections[$key])) {
+                $sections[$key] = ['title' => $titles[$key] ?? ucfirst(str_replace(['-', '_'], ' ', $key)), 'entries' => []];
+            }
+            $sections[$key]['entries'][] = $entry;
+        }
+
+        // The home page reads first, whatever its route sorts as.
+        usort($sections['']['entries'], static fn(SitemapEntry $a, SitemapEntry $b) => (int)$b->home <=> (int)$a->home);
+
+        return array_filter($sections, static fn(array $section) => $section['entries'] !== []);
+    }
+
+    /**
+     * Every page of the active language as one Markdown document, for
+     * `llms-full.txt`. Each page's own conversion is cached by Grav, and the
+     * joined result is cached against the sitemap it was built from.
+     *
+     * @return string
+     */
+    protected function llmsFull(): string
+    {
+        if (!isset($this->grav['markdown_output'])) {
+            return '';
+        }
+
+        // A page rendered for a logged-in visitor may carry that visitor's
+        // state, so only the anonymous build goes in (and comes out of) the cache.
+        $user = $this->grav['user'] ?? null;
+        $anonymous = !($user && $user->authenticated && $user->authorized);
+
+        /** @var Cache $cache */
+        $cache = $this->grav['cache'];
+        $cache_id = md5('llms-full-' . $this->sitemap_cache_id . $this->grav['config']->checksum());
+        $cached = $anonymous ? $cache->fetch($cache_id) : false;
+        if (is_string($cached)) {
+            return $cached;
+        }
+
+        /** @var Pages $pages */
+        $pages = $this->grav['pages'];
+        $output = $this->grav['markdown_output'];
+
+        $documents = [];
+        foreach ($this->llmsSections() as $section) {
+            foreach ($section['entries'] as $entry) {
+                $page = $pages->find($entry->route);
+                if ($page instanceof PageInterface && $page->routable()) {
+                    $documents[] = rtrim($output->render($page));
+                }
+            }
+        }
+
+        $full = implode("\n\n", $documents) . "\n";
+        if ($anonymous) {
+            $cache->save($cache_id, $full);
+        }
+
+        return $full;
     }
 
     /**
@@ -288,6 +448,20 @@ class SitemapPlugin extends Plugin
         return $timestamp >= $days_ago;
     }
 
+    /**
+     * A page's metadata description, if it has one, for `llms.txt`.
+     *
+     * @param PageInterface $page
+     * @return string|null
+     */
+    protected function pageDescription(PageInterface $page): ?string
+    {
+        $description = $page->header()->metadata['description'] ?? null;
+        $description = is_string($description) ? trim(preg_replace('/\s+/', ' ', $description)) : '';
+
+        return $description !== '' ? $description : null;
+    }
+
     protected function addRouteData($pages, $lang)
     {
         $routes = array_unique($pages->routes());
@@ -322,8 +496,11 @@ class SitemapPlugin extends Plugin
                     'lastmod' => date($this->datetime_format, $lastmod),
                     'longdate' => date('Y-m-d\TH:i:sP', $page->date()),
                     'shortdate' => date('Y-m-d', $page->date()),
-                    'timestamp' => $page->date(),
+                    'timestamp' => intval($page->date()),
                     'rawroute' => $page->rawRoute(),
+                    'description' => $this->pageDescription($page),
+                    'home' => $page->home(),
+                    'markdown' => isset($this->grav['markdown_output']) ? $this->grav['markdown_output']->url($page) : null,
                 ];
 
                 if ($this->include_change_freq) {

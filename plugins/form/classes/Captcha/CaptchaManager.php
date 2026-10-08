@@ -42,7 +42,7 @@ class CaptchaManager
         $captchaField = null;
         $providerName = null;
 
-        $formFields = $form->value()->blueprints()->get('form/fields');
+        $formFields = $form->getBlueprint()->get('form/fields');
         foreach ($formFields as $fieldName => $fieldDef) {
             $fieldType = $fieldDef['type'] ?? null;
 
@@ -67,11 +67,22 @@ class CaptchaManager
             return true;
         }
 
+        $captchaFieldName = $captchaField['name'] ?? $fieldName;
+
         // --- 2. Get provider and validate ---
         $provider = CaptchaFactory::getProvider($providerName);
         if (!$provider) {
             Grav::instance()['log']->error("Form Captcha: Unknown provider '{$providerName}' requested");
             return false;
+        }
+
+        // A per-form reCAPTCHA version override comes from the blueprint field
+        // definition, on the server -- never from the submitted payload. Hand it to the
+        // provider as a validation parameter so it does not have to sniff the request to
+        // find it (GHSA-89j6-8h38-2cc3).
+        if (!isset($params['recaptcha_version']) && is_array($captchaField) && isset($captchaField['recaptcha_version'])) {
+            $params = (array) $params;
+            $params['recaptcha_version'] = $captchaField['recaptcha_version'];
         }
 
         // Allow plugins to modify the validation parameters
@@ -86,7 +97,7 @@ class CaptchaManager
 
         // Validate using the provider
         try {
-            $result = $provider->validate($form->value()->toArray(), $params);
+            $result = $provider->validate($form->value(), $params);
 
             if (!$result['success']) {
                 $logDetails = $result['details'] ?? [];
@@ -96,6 +107,7 @@ class CaptchaManager
                 Grav::instance()->fireEvent('onFormValidationError', new Event([
                     'form' => $form,
                     'message' => $errorMessage,
+                    'messages' => array_merge($form->messages ?? [], [$captchaFieldName => [$errorMessage]]),
                     'provider' => $providerName
                 ]));
 
@@ -127,6 +139,7 @@ class CaptchaManager
             Grav::instance()->fireEvent('onFormValidationError', new Event([
                 'form' => $form,
                 'message' => $errorMessage,
+                'messages' => array_merge($form->messages ?? [], [$captchaFieldName => [$errorMessage]]),
                 'provider' => $providerName,
                 'exception' => $e
             ]));
@@ -147,9 +160,14 @@ class CaptchaManager
     {
         $grav = Grav::instance();
 
-        // First check for specific message in field definition
+        // First check for specific message in field definition. `captcha_not_validated`
+        // is the canonical key; `recaptcha_not_validated` is the legacy key kept for
+        // backward compatibility with older form definitions.
         if (isset($field['captcha_not_validated'])) {
             return $field['captcha_not_validated'];
+        }
+        if (isset($field['recaptcha_not_validated'])) {
+            return $field['recaptcha_not_validated'];
         }
 
         // Then check for specific error code message

@@ -1,20 +1,23 @@
 name: Sitemap
 type: plugin
 slug: sitemap
-version: 5.1.0
+version: 5.3.1
 description: "Provide automatically generated **XML sitemaps** with this very useful, as a simple to configure Grav plugin."
 icon: map-marker
 author:
   name: Team Grav
   email: devs@getgrav.org
-  url: http://getgrav.org
+  url: https://getgrav.org
 homepage: https://github.com/getgrav/grav-plugin-sitemap
 keywords: sitemap, plugin, xml, map, index
 bugs: https://github.com/getgrav/grav-plugin-sitemap/issues
 license: MIT
 
+compatibility:
+  grav: ['1.7', '2.0']
+
 dependencies:
-    - { name: grav, version: '>=1.6.0' }
+    - { name: grav, version: '>=1.7.0' }
 
 form:
   validation: strict
@@ -36,7 +39,7 @@ form:
       label: PLUGIN_SITEMAP.ROUTE
       placeholder: /sitemap
       validate:
-        pattern: "/([a-z-_]+/?)+"
+        pattern: "/([a-z_-]+/?)+"
 
     multilang_enabled:
       type: toggle
@@ -109,6 +112,37 @@ form:
         0: PLUGIN_ADMIN.DISABLED
       validate:
         type: bool
+
+    llms_section:
+      type: section
+      title: PLUGIN_SITEMAP.LLMS_SECTION
+      underline: true
+
+      fields:
+
+        llms_txt:
+          type: toggle
+          label: PLUGIN_SITEMAP.LLMS_TXT
+          help: PLUGIN_SITEMAP.LLMS_TXT_HELP
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        llms_full_txt:
+          type: toggle
+          label: PLUGIN_SITEMAP.LLMS_FULL_TXT
+          help: PLUGIN_SITEMAP.LLMS_FULL_TXT_HELP
+          highlight: 1
+          default: 0
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
 
     ignores:
       type: array

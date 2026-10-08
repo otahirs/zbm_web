@@ -1,0 +1,70 @@
+<?php
+namespace Thunder\Shortcode\Event;
+
+use Thunder\Shortcode\Shortcode\ParsedShortcodeInterface;
+use Thunder\Shortcode\Shortcode\ProcessedShortcode;
+
+/**
+ * This event is called immediately after receiving shortcodes from parser to
+ * make changes before processing with registered handler. Result of this event
+ * is used directly in processor.
+ *
+ * @author Tomasz Kowalczyk <tomasz@kowalczyk.cc>
+ * @psalm-suppress ClassMustBeFinal
+ */
+class FilterShortcodesEvent
+{
+    /** @var ProcessedShortcode|null */
+    private $parent;
+    /** @var ParsedShortcodeInterface[] */
+    private $shortcodes = array();
+
+    /**
+     * @param ParsedShortcodeInterface[] $shortcodes
+     * @param ProcessedShortcode|null $parent
+     */
+    public function __construct(array $shortcodes, $parent = null)
+    {
+        if(null !== $parent && false === $parent instanceof ProcessedShortcode) {
+            throw new \LogicException('Parameter $parent must be an instance of ProcessedShortcode.');
+        }
+
+        $this->parent = $parent;
+        $this->setShortcodes($shortcodes);
+    }
+
+    /** @return ParsedShortcodeInterface[] */
+    public function getShortcodes()
+    {
+        return $this->shortcodes;
+    }
+
+    /** @return ProcessedShortcode|null */
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * @param ParsedShortcodeInterface[] $shortcodes
+     *
+     * @return void
+     */
+    public function setShortcodes(array $shortcodes)
+    {
+        $this->shortcodes = array();
+        foreach($shortcodes as $shortcode) {
+            $this->addShortcode($shortcode);
+        }
+    }
+
+    /**
+     * @param ParsedShortcodeInterface $shortcode
+     *
+     * @return void
+     */
+    private function addShortcode(ParsedShortcodeInterface $shortcode)
+    {
+        $this->shortcodes[] = $shortcode;
+    }
+}

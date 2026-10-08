@@ -25,11 +25,8 @@ form:
 
         - name: token
           type: hidden
-
-process:
-    twig: true
 ---
 
-# Password Reset
+# [translate=PLUGIN_LOGIN.RESET_PAGE_HEADING /]
 
-### Username: {{uri.param('user')}}
+## [translate=PLUGIN_LOGIN.USERNAME /]: [uri param="user" /]

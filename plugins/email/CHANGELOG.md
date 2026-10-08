@@ -1,3 +1,101 @@
+# v5.3.0
+## 09/24/2026
+
+1. [](#new)
+    * **Inbound mail.** A plugin that wants to read mail sent *to* a site — a helpdesk turning replies into ticket updates, a forum taking posts by email — now has one place to ask. `Providers\Inbound\InboundGateway::receive()` takes a receiver key, the request and that receiver's config, and runs the same four steps for every provider in the same order: find the receiver (404), check the size against the receiver's limit and the caller's (413, before any verification work), verify (401), and parse, which never throws. What comes back is an `InboundResult` holding the verdict, the HTTP status to answer with, and the messages. Each message is an `InboundMessage` with every field a consumer needs already normalised: message ids without brackets and lower-cased, the envelope recipient kept apart from the visible `To` so a `support+token@` address survives, the receiving server's SPF, DKIM and DMARC verdicts read from `Authentication-Results`, and attachments with their inline `cid:` ids. Ask `Email::supportsFeature('inbound')` first; it is true on PHP 8.1 and later, like the rest of the provider contract
+    * **A provider plugin receives mail by implementing `InboundCapable` on the provider class it already registers.** It is a separate interface rather than a new method on `Provider`, because every transport plugin implements `Provider` today and a new method there would be a fatal error in each one not updated in the same release. The rules are the delivery-report rules — authenticate before acting, over the raw bytes wherever the scheme signs raw bytes; `parse()` never throws and does no network I/O — plus `fetch()` for providers that send only metadata, which a consumer runs later from its own worker. Written up in `docs/providers.md`, which also refines the delivery-report rule to the same wording, since SNS and Mailgun sign inside the payload rather than over it
+    * **Two receivers that need no provider account at all.** `cloudflare` takes each message from a free Cloudflare Email Routing Worker, byte for byte, signed end to end with an HMAC over the raw body, a timestamp and a 300-second window. `generic` is the same scheme for a Postfix pipe, a forwarder or a cron job. `docs/inbound-cloudflare.md` has the Worker source, the dashboard steps (including the Subaddressing setting that plus addresses need), Cloudflare's size and CPU limits, and a shell and a PHP sender, all checked against the real verifier
+    * **An IMAP client that does not need ext/imap**, which left PHP core in 8.4 and was never on most hosts anyway. `Inbound\Imap\ImapMailbox` connects over implicit TLS or STARTTLS (never falling back to plain text), logs in, finds new mail by UID with `UIDVALIDITY` tracking, downloads it without marking it read, and marks it `\Seen` and moves it once the caller has stored it — with `UID MOVE` where the server has it and copy, delete and expunge where it does not. Messages over a size limit are reported without being downloaded, and every failure says whether it was the credentials, the network or the server. For Gmail with an app password and most hosting mailboxes; `AUTHENTICATE XOAUTH2` has its place reserved for later
+    * **A MIME parser with no dependencies.** Every maintained MIME library for PHP brings packages Grav core also ships at its own version (`guzzlehttp/psr7`, `pimple/pimple`, `psr/container`) or a dependency-injection container, and Grav loads every plugin's autoloader into one process. `Providers\Inbound\MimeParser` reads what received mail needs — encoded-word headers, nested multiparts, quoted-printable and base64, charsets (ISO-8859-1 read as Windows-1252, the way mail clients do), RFC 2231 filenames, inline images, forwarded messages kept whole as attachments, delivery reports — and never throws. Tested against Gmail, Outlook (with a `winmail.dat`) and Apple Mail replies, Latin-1 and Windows-1252 mail, a bounce, an out-of-office and a forward
+
+# v5.2.1
+## 09/15/2026
+
+1. [](#bugfix)
+    * **A form that drops every one of its recipients no longer does it in silence.** An address the plugin cannot parse is discarded, and when the `to` parameter produced nothing at all, `buildMessage()` skipped the call that sets the To header entirely — so the message left with no recipients, the form told the visitor it had been sent, and not one line was written to any log. Every discarded address is now reported to both `logs/email.log` and `logs/grav.log`, naming the parameter it came from, the value that could not be read (truncated, so a mailing list cannot fill the log) and whether anything usable was left. The report also names the cause, because in practice there is only one: a `Name <address>` value that has been through Twig's escape filter, written as `|e` or applied by autoescape, arrives as `John Doe &lt;john@example.com&gt;`, which is not an email address by any reading. Address parameters want `|raw`. Addresses that do parse are handled exactly as before, including a partial failure — those go out to whoever was left, and are logged too, since half a send is every bit as quiet as none of one. Reported by @thekenshow ([grav#3905](https://github.com/getgrav/grav/issues/3905))
+    * **A form whose email could not be sent stops reading the mail server's refusal out to the visitor.** What went on the page was the transport's own words with a stop emoji in front of them, which is written for whoever set up the mail account and not for whoever filled in the contact form — it routinely names the server, names the account, and explains precisely why the credentials were rejected, to an anonymous stranger. The transport's text now goes to the Grav log, where the site owner will actually look for it, and the visitor is shown something a site can configure: an `error_message` on the email action, or the new **Form send failure message** setting in the plugin's Email Defaults, or failing both a translated "Your message could not be sent right now. Please try again in a few minutes." With Grav's debugger switched on the transport's text is appended to it anyway, on the grounds that anybody looking at the form with the debugger running is the person configuring it. Reported by @pboguslawski ([form#567](https://github.com/getgrav/grav-plugin-form/issues/567))
+
+# v5.2.0
+## 09/08/2026
+
+1. [](#new)
+    * **`bin/plugin email test-email` says why a send failed, and what the provider called it when one worked.** It answered "Problem sending email..." and nothing else, which is the least useful thing it could say about the one kind of failure only the provider can explain — an unverified sender, a token for the wrong server, an account still pending approval. It now prints the transport's own words and the HTTP response body beneath them, and on a successful send prints the provider's id for the message
+    * **An SMTP send gets an id too, read off the transcript.** Symfony's `SmtpTransport` asks the server to take the message, reads the answer — `250 Message queued as 68bf1ca9e0d2f` — checks the response code and drops the line, so an SMTP store had no provider id at all. It also appends the whole conversation to the `SentMessage`, so the answer was still there to be read, and it is now. On a provider's own relay that id is the provider's: MailerSend documents the id in this line as the same one their webhooks report events under, and since their webhooks carry no headers, no metadata and not the `Message-ID` either, it is the only handle a store sending through them over SMTP will ever get. SMTP2GO and SendGrid answer the same way, and an Exim relay spells it `id=`. Only the final `250` is read, because the ones before it are answers about an address rather than about the message, and a server that accepts without naming — plain `250 2.0.0 Ok` — still answers null rather than having something invented from the line
+    * The send log line carries the provider's id for the message, which is the first thing worth knowing when a delivery webhook cannot be matched to the message it is about
+    * **`getLastSendId()` answers the provider's own id for the message just sent.** Every API transport already hands one back — Symfony's Resend, Postmark, SES, SendGrid, Mailgun and MailerSend transports all call `SentMessage::setMessageId()` with whatever their API returned — and this plugin was collecting it and dropping it on the floor, keeping only the debug string beside it. It matters because it is the same id that provider then names in its delivery webhooks, so it is the one string both ends are certain to agree on. Anything storing it can join a bounce or a delivery report back to the message it is about without needing the provider to echo a custom header, and without needing the `Message-ID` the message left with to survive the trip — which it often does not: a provider running on Amazon SES mints its own on the way out and reports that one. Null on a failed send and on a transport that answers no id at all
+
+1. [](#bugfix)
+    * **A transport that answers a send with the message's own id no longer has that recorded as the provider's id.** `Message-ID` is an identification header and Symfony answers those with a list of ids rather than a string, so the guard meant to catch this was casting an array and comparing an id against the word "Array" — it had never once fired. Mailgun's API answers a send with the id the message already had, in its wire form with the angle brackets on, so a store on Mailgun recorded its own `Message-ID` as Mailgun's id for the message; the delivery event that arrived then named a third string again, and the rung of the correlation ladder meant to be the most reliable matched nothing. Both halves are fixed: the header is read as the list it is, and the two ids are compared without the brackets, which are a transport's habit rather than a difference in the id. `getLastSendId()` answers null on a transport that only echoes, which is the honest answer and lets the match fall to the `Message-ID` rung that does work
+    * **A transport that cannot be built no longer takes the whole site down with it.** The mailer is built on `onPluginsInitialized`, on every request, long before anything has decided whether this request sends an email — so a provider plugin that throws while naming its DSN does not produce a failed send, it produces a white screen on every page of the site. Including the admin, including the settings form where the missing field would have been filled in, leaving hand-editing YAML over SSH as the only way back. Found by saving the Mailgun settings with the domain still empty, which is an ordinary thing to do on the way to configuring it. Building the transport is now guarded: the reason goes to the Grav log, the site stays up, and the store gets an `UnusableTransport` that refuses messages with that reason attached. Deliberately not `null://`, which accepts everything and delivers nothing — a store whose transport is broken has to be told, because silently swallowing a customer's order confirmation is the worse of the two failures by a distance
+
+# v5.1.0
+## 09/05/2026
+
+1. [](#new)
+    * Email actions and plugins can now set custom headers on a message with a `headers` parameter, a map of header name to value, applied after everything else. The pair this was added for is `List-Unsubscribe` and `List-Unsubscribe-Post`, which together are RFC 8058 one-click unsubscribe: the unsubscribe button next to the sender name in Gmail and Outlook, and the thing a bulk sender is now expected to have. Setting a header that is already there replaces it, a value may be a list for a header that is allowed to repeat, and a name or value that cannot be written is skipped and logged rather than failing the whole send. Plugins building their own message can pass the same list to `applyHeaders()`, and can ask `Email::supportsParameter('headers')` first instead of comparing version numbers
+    * A test suite, run with `tests/vendor/bin/phpunit` after `composer install` inside `tests/`. It installs into `tests/vendor` from its own `tests/composer.json`, so the `vendor` directory the plugin ships stays free of development packages
+    * A provider contract under `classes/Providers/`, so that everything a mail provider knows about itself — how its delivery webhooks are verified and read, how a webhook is created from a pasted API key, what a sending domain's DNS has to say, and what its transport does to custom headers on the way out — lives in that provider's own `grav-plugin-email-<provider>` plugin rather than in whatever add-on happened to need the answer first. A transport plugin implements `Providers\Provider` and registers itself on the new `onEmailProviders` event; `Email::providers()` answers the registry, `Email::providerFor($engine)` and `Email::providerByKey($key)` find one, and a caller asks `Email::supportsFeature('providers')` first rather than comparing version numbers. A transport with no delivery API registers nothing, which is a complete answer: a store can then say plainly that the transport cannot report deliveries instead of showing a webhook address nothing will ever post to. Written up for plugin authors in `docs/providers.md`
+    * `Email::buildMailerFor($engine)` builds a Symfony mailer for a named engine rather than only for the one the site is configured with, through the same transport builder, the same `onEmailTransportDsn` event and the same DSNs as before. Nothing sends through it yet; it is there so that a site which one day wants some of its mail to leave through a second provider has somewhere to ask for that mailer, without that day being the day the transport builder gets rewritten
+    * `Providers\Event::$hard` now has a documented second meaning on a `dropped` event, which is the difference between a subscriber who is gone and one who happened to be on the list the morning the store ran out of quota. `hard = true` means the provider refused the address — it is on that provider's suppression list, or bounced, complained or unsubscribed there — and a store may treat it as permanent. `hard = false` or null means the provider refused this one message: a daily quota, a virus scan, content it did not like. The address is fine. `Event::isRefusedAddress()` is the question a suppression list should be asking, and `docs/providers.md` sets out which of each provider's refusals is which
+    * `Providers\SendHeader` names the header a store stamps its send id into, so that every provider answers the same one and nothing has to hard-code a name. It is `X-Grav-Send-Id` unless the site sets `providers.send_header` in the Email plugin's configuration, or an add-on calls `SendHeader::override()` to name it for the request. The reading of it lives there too — out of a map of custom args or user variables, a `{name, value}` header list, or SES's message tags — because seven transport plugins were each about to keep their own copy of the same twenty lines. `SendHeader::metadataHeader()` is the Postmark twin, which is the same value under the `X-PM-Metadata-` prefix that is the only way metadata reaches a Postmark webhook
+
+# v5.0.8
+## 09/04/2026
+
+1. [](#bugfix)
+    * The help text under the From, To, CC, BCC and Reply-to fields showed the name-addr example as "Your Name `" in the new admin, which renders help as sanitised HTML and dropped `<email@address.org>` as an unknown tag. The example's angle brackets are now written as entities so the format the field accepts is actually shown
+
+# v5.0.7
+## 08/28/2026
+
+1. [](#improved)
+    * The Spanish translation now covers every string, up from two, and the messages asking you to configure a 'to' or 'from' address no longer name the opposite one. Thanks to @pmoreno-rodriguez
+
+# v5.0.6
+## 08/17/2026
+
+1. [](#bugfix)
+    * Email addresses with a stray space around them are no longer thrown away, so a `from`, `to`, `cc`, `bcc` or `reply_to` setting that ends in a space keeps working instead of failing with a confusing "An email must have a From or a Sender header" error.
+    * An address setting containing nothing but spaces now tells you that address needs configuring, rather than failing later with that same confusing error.
+
+# v5.0.5
+## 08/05/2026
+
+1. [](#bugfix)
+    * [security] On Grav 2.0, email settings can no longer read your site, system or theme configuration directly, which was a way around the restriction added in 5.0.4 that already stopped them reading it through `config` ([GHSA-p597-crqc-m349](https://github.com/getgrav/grav/security/advisories/GHSA-p597-crqc-m349)). Requires Grav 2.0.16 or later, which is also where the underlying protection for email settings lives.
+
+# v5.0.4
+## 08/04/2026
+
+1. [](#bugfix)
+    * [security] On Grav 2.0, Twig in a form's email settings now runs under Grav's content sandbox, so someone who can only edit pages can no longer use an email action to run commands on the server ([GHSA-gh8j-q67c-j53f](https://github.com/getgrav/grav/security/advisories/GHSA-gh8j-q67c-j53f)). Requires Grav 2.0.16 or later.
+    * Email settings can still read your site configuration and this plugin's own address settings, so `{{ config.site.emails.sales }}` and `{{ config.plugins.email.to }}` keep working, but they can no longer read your mail server password or any other plugin's settings.
+    * Grav 1.7 has no Twig content sandbox, so email settings behave there exactly as they did before, and the plugin still runs on the PHP versions that line supports.
+
+# v5.0.3
+## 06/14/2026
+
+1. [](#improved)
+    * Email templates that fail to render (a Twig syntax error, or an unresolved include or extends) are now logged to the email and Grav logs instead of failing silently, so a broken template is much easier to track down.
+
+# v5.0.2
+## 06/08/2026
+
+1. [](#improved)
+    * Button links in HTML emails now keep their white text in email clients that force their own link color, by targeting the `a.btn-primary` and `a.btn-secondary` selectors with `!important`.
+
+# v5.0.1
+## 04/17/2026
+
+1. [](improved)
+    * Fixed compatiblity
+
+# v5.0.0
+## 04/17/2026
+
+1. [](#new)
+    * Added Grav 2.0 / Admin 2.0 support
+
 # v4.2.2
 ## 12/10/2025
 

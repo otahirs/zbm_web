@@ -1,6 +1,6 @@
 # Grav Login Plugin
 
-The **login plugin** for [Grav](http://github.com/getgrav/grav) adds login, basic ACL, and session wide messages to Grav.  It is designed to provide a way to secure front-end and admin content throughout Grav.
+The **login plugin** for [Grav](https://github.com/getgrav/grav) adds login, basic ACL, and session wide messages to Grav.  It is designed to provide a way to secure front-end and admin content throughout Grav.
 
 # Installation
 
@@ -99,6 +99,12 @@ The simplest way to create a new user is to simply run the `bin/plugin login new
 |`change-pass`||Changes password of the specified user (User file must exist)
 || [ -u, --user=USER ]               | The username.                                                   |
 || [ -p, --password=PASSWORD ]       | The new password. Ensure the password respects Grav's password policy. **Note that this option is not recommended because the password will be visible by users listing the processes.** |
+|||
+|`unlock-user`||Clears the temporary lockout applied after too many failed logins (see [Login Lockouts](#login-lockouts))
+|| [ -l, --list ]                    | List the lockouts currently in effect and exit.                 |
+|| [ -u, --user=USER ]               | Unlock this username, along with the IP counters it tripped.    |
+|| [ -i, --ip=IP ]                   | Unlock this IP address.                                         |
+|| [ -a, --all ]                     | Clear every lockout on the site.                                |
 
 
 ### CLI Example
@@ -150,6 +156,53 @@ access:
 
 >> Note: the username is based on the name of the YAML file.
 
+# Login Lockouts
+
+After `max_login_count` failed login attempts, the plugin temporarily blocks further attempts for `max_login_interval` minutes. Two counters are kept: one against the username and one against the IP address the attempts came from, and either one being over the limit is enough to block a login. Both live in the cache, under `cache/login/`, so nothing on the account itself records that it is locked.
+
+Lockouts expire on their own, but you can clear one early either from the admin or from the command line. The command line is the way in when the lockout is keeping *you* out of the site.
+
+### Seeing who is locked out
+
+```
+> bin/plugin login unlock-user --list
+
+login_attempts
+--------------
+
+ ------------------- ---------- --------------------- -------------------
+  Locked              Attempts   Last attempt          Accounts tried
+ ------------------- ---------- --------------------- -------------------
+  IP (df2c0757…)      8          2026-07-30 10:24:49   joeuser
+  joeuser             8          2026-07-30 10:24:49   -
+ ------------------- ---------- --------------------- -------------------
+```
+
+IP addresses are stored hashed rather than in the clear, so the listing shows a short fingerprint plus the accounts that were tried from it. Pass the real address to `--ip` and the command will hash it for you.
+
+### Clearing a lockout
+
+```
+> bin/plugin login unlock-user -u joeuser
+ [OK] Unlocked "joeuser" (cleared 2 counters).
+```
+
+Unlocking by username also clears the IP counters that account tripped, which is normally what you want: clearing the username alone leaves the IP counter in place and the user still blocked. To clear an address on its own, use `-i`:
+
+```
+> bin/plugin login unlock-user -i 203.0.113.4
+```
+
+And to wipe every lockout on the site, across failed logins, password resets and magic-link requests:
+
+```
+> bin/plugin login unlock-user --all
+```
+
+### From the admin
+
+In Grav 2.0's admin, the Users list (table view) has a **Lockout** column marking any account that is currently blocked, and a padlock button in the row's actions to clear it. Clearing a lockout requires the `api.users.write` permission.
+
 # Default Configuration
 
 ```yaml
@@ -172,7 +225,7 @@ route_unauthorized: '/user_unauthorized'    # Route for a page to display if use
 twofa_enabled: false                        # Two factor authentication enabled
 dynamic_page_visibility: false              # Integrate access into page visibility so things can be shown or hidden in the menu
 parent_acl: false                           # Look to parent `access` rules for access requirements
-protect_protected_page_media: false         # Take `access` rules into account when directly accessing a page's media
+protect_protected_page_media: false         # Apply `access` rules to page media requested through the page route. Route only: a direct request to user/pages/<folder>/<file> is served by the web server without invoking Grav and cannot be blocked from PHP
 
 site_host:                                  # Optionally used in password reset and activation emails, to avoid "password poisoning attacks", this should be the URL of your site including the protocol.  e.g. https://foo.com
 
@@ -186,6 +239,13 @@ max_pw_resets_interval: 60                  # Time in minutes to track password 
 max_login_count: 5                          # Number of failed login attempts in a specific time frame (0 = unlimited)
 max_login_interval: 10                      # Time in minutes to track login attempts
 ipv6_subnet_size: 64                        # Size of IPv6 block to track login attempts
+
+magic_link:
+  enabled: false                            # Enable Magic Link (passwordless) login
+  ttl: 10                                   # Link expiry in minutes (default: 10)
+  redirect_after_request:                   # Route to redirect to after requesting a link (default: route_after_login)
+  max_requests_count: 5                     # Max magic link requests per interval (0 = unlimited)
+  max_requests_interval: 15                 # Time in minutes to track magic link requests
 
 user_registration:
   enabled: false                            # Enable User Registration Process
@@ -238,6 +298,43 @@ Because the admin user contains an `admin.login: true` reference he will be able
 
 Enabling the setting "Use parent access rules" (`parent_acl` in login.yaml) allows you to create private areas where you set the access level on the parent page, and all the subpages inherit that requirement.
 
+## Checking the logged-in user in Twig
+
+The plugin registers an `authenticated()` Twig function so you can show or hide parts of a page depending on whether the visitor is logged in, and optionally on their permissions or groups:
+
+```twig
+{% if authenticated() %}
+    Welcome back!
+{% else %}
+    Please <a href="/login">log in</a>.
+{% endif %}
+```
+
+Pass a permission as the first argument to also require that the user is authorized for it, or a group with the `group` named argument to require membership. Each accepts a single value or a list and matches if the user satisfies any one of them; pass both to require both:
+
+```twig
+{% if authenticated('admin.super') %} ... {% endif %}
+{% if authenticated(['admin.login', 'admin.pages']) %} ... {% endif %}
+{% if authenticated(group='editors') %} ... {% endif %}
+{% if authenticated('admin.pages', group='editors') %} ... {% endif %}
+```
+
+Unlike reading `grav.user` directly, `authenticated()` works inside page content on Grav 2, where the Twig content sandbox blocks the `grav.user` object. For pure permission checks you can also use Grav's built-in [`authorize()`](https://learn.getgrav.org/themes/twig-tags#authorize) function, which is allowed in the sandbox as well.
+
+### Shortcode equivalents
+
+If the [Shortcode Core](https://github.com/getgrav/grav-plugin-shortcode-core) plugin is installed, the same checks are available as shortcodes, which is handy when Twig in content is left disabled:
+
+```
+[authenticated]Only logged-in visitors see this.[/authenticated]
+[authenticated=admin.super]Supers only.[/authenticated]
+[authenticated permission="admin.login,admin.pages"]...[/authenticated]
+[authenticated group="editors"]...[/authenticated]
+[guest]Please [log in](/login).[/guest]
+```
+
+`[authenticated]` shows its content only when the checks pass, and `[guest]` is the inverse, shown only when no one is logged in. The `permission` and `group` parameters accept a single value or a comma-separated list and match any one of them; pass both to require both. These shortcodes are registered only when Shortcode Core is present, so the Login plugin does not depend on it.
+
 # Login Page
 
 >> Note: the **frontend site** and **admin plugin** use different sessions so you need to explicitly provide a login on the frontend.
@@ -269,6 +366,61 @@ redirect_after_login: '/profile'
 ```
 
 This will always take you to the `/profile` route after a successful login.
+
+# Magic Link Login
+
+Magic Link login (also known as passwordless login) allows users to sign in via a one-time link sent to their email, without entering a password.
+
+## Enabling Magic Link
+
+Add the following to your `user/config/plugins/login.yaml`:
+
+```yaml
+magic_link:
+  enabled: true
+  ttl: 10                    # Link expiry in minutes
+  max_requests_count: 5      # Max requests per IP per interval
+  max_requests_interval: 15  # Interval in minutes
+```
+
+The email plugin must also be installed and configured with a valid `from` address.
+
+Two additional routes control the magic link flow:
+
+```yaml
+route_magic: '/magic_login'       # Page with the email request form
+route_magic_login: '/magic_link'  # Callback URL embedded in the sent email
+```
+
+## How it works
+
+1. User visits the magic link request page (`route_magic`) and enters their email.
+2. If an account exists and is activated, a one-time login link containing a random token is emailed to them.
+3. Clicking the link logs the user in immediately — no password required.
+4. The link is invalidated on first use or when it expires.
+
+A "Login by link" button is automatically shown on the standard login page when `magic_link.enabled: true`.
+
+## Security
+
+- Tokens are cryptographically random (`random_bytes(32)`) — only their SHA-256 hash is stored.
+- Links expire after `ttl` minutes (default: 10).
+- Links are strictly one-time — the token is deleted before the login pipeline runs.
+- The request flow uses neutral responses for unknown or invalid emails.
+- Rate limiting applies per IP and per user account. When the limit is exceeded, an explicit "wait N minutes" message is shown.
+- If multiple accounts share the same email address, magic-link sign-in is blocked for that email and the user is asked to contact an administrator.
+- 2FA is respected if `twofa_enabled: true` in the plugin configuration.
+- `remember_me` is never set via magic link login.
+
+## Customizing the request page
+
+The plugin provides a default request page served at `route_magic`. To customize its content create a page in your site matching that route:
+
+```
+user/pages/magic_login/magic_login.md
+```
+
+Set `template: magic` in the frontmatter so the plugin's template and form are used. Any body content you add will be rendered above the email form.
 
 # Logout
 
@@ -556,6 +708,147 @@ login:
 ```
 
 This will ensure the `access:` options on the page are satisfied in order for this page to be `visible` and therefore displayed in the menu structure.
+
+# User Invitations
+
+Added in **v3.6.0**, the invitation system allows administrators to invite users to register on the site via email. This is particularly useful when public user registration is disabled — invited users can still register through a unique, time-limited invitation link.
+
+## How It Works
+
+1. An admin submits an invitation form with one or more email addresses
+2. The system generates a unique token for each email and stores it in `user/data/accounts/invites.yaml`
+3. An invitation email is sent to each address with a registration link
+4. The recipient clicks the link and is taken to the registration page with their email pre-filled
+5. Once registered, the invitation token is consumed and deleted
+6. The new user account is created with the permissions defined in the invitation
+
+## Setting Up an Invitation Form
+
+To use invitations, you need to create a page with a form that triggers the `login.invite` task. Create a page (e.g., `invite/form.md`) with the following content:
+
+```yaml
+---
+title: Invite Users
+access:
+  admin.users: true
+
+form:
+  name: invite-form
+
+  meta:
+    invite:
+      expiration: 86400       # Token expiration in seconds (default: 86400 = 24 hours)
+      account:                # Default permissions for invited users
+        access:
+          site:
+            login: true
+
+  fields:
+    emails:
+      type: textarea
+      label: Email Addresses
+      help: Enter email addresses separated by commas, semicolons, or new lines
+      validate:
+        required: true
+
+    message:
+      type: textarea
+      label: Personal Message
+      help: Optional message to include in the invitation email
+
+  buttons:
+    - type: submit
+      value: Send Invitations
+
+  process:
+    - message: "Invitations sent successfully!"
+    - reset: true
+---
+
+# Invite Users
+
+Use this form to invite new users to register on the site.
+```
+
+> **Important:** Only a signed-in user who manages accounts (`admin.users` or `api.users.write`, or a super user) can send invitations, whatever the page's own `access` says. Only a super user can invite someone into super access or into groups; for anyone else those are removed from the invitation.
+
+> **Important:** The `form.meta.invite` section controls invitation behavior. The `expiration` sets how long the token remains valid (in seconds), and `account` defines the default access permissions applied to the new user upon registration.
+
+The form requires two key fields:
+- **`emails`**: A text/textarea field where the admin enters email addresses (separated by commas, semicolons, or spaces)
+- **`message`** *(optional)*: A custom message to include in the invitation email
+
+The form must trigger the `login.invite` task, which happens automatically when the form is submitted with `task: login.invite` as the action, or you can configure your form button accordingly.
+
+## Invitation Email
+
+The invitation email includes:
+- A subject line: "You have been invited to join [Site Name]"
+- The optional custom message from the admin
+- A "Create Your Account Now" button linking to the registration page
+- The name of the admin who sent the invitation
+
+The email template is located at `templates/emails/login/invite.html.twig` and can be overridden in your theme.
+
+## Registration via Invitation
+
+When a user clicks the invitation link:
+
+- They are directed to the registration route (default: `/user_register`) with the invitation token
+- The email field is pre-filled and the user fills in the remaining fields (username, password, etc.)
+- Registration is permitted **even if `user_registration.enabled` is set to `false`** — a valid invitation token bypasses this setting
+- Upon successful registration, the invitation's `account` permissions are applied to the new user
+- The invitation token is deleted (single-use)
+
+## Configuration Options
+
+Invitation behavior is configured in the form blueprint's `meta.invite` section:
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `expiration` | `86400` (24 hours) | How long the invitation token remains valid, in seconds |
+| `account.access` | `site.login: true` | Default access permissions granted to the invited user |
+
+You can customize the account permissions to grant different access levels:
+
+```yaml
+form:
+  meta:
+    invite:
+      expiration: 604800      # 7 days
+      account:
+        access:
+          site:
+            login: true
+            premium: true
+        groups:
+          - members
+```
+
+## Data Storage
+
+Active invitations are stored in `user/data/accounts/invites.yaml`. Each invitation entry contains:
+
+```yaml
+<unique-token>:
+  email: user@example.com
+  created_by: admin@example.com
+  created_timestamp: 1634000000
+  expiration_timestamp: 1634086400
+  account:
+    access:
+      site:
+        login: true
+```
+
+## Important Notes
+
+- The **Email plugin** must be installed and properly configured for invitation emails to be sent
+- Re-inviting the same email address **replaces** any existing pending invitation for that address
+- Expired invitations are automatically rejected when a user tries to use them
+- Invitations are **single-use** — the token is deleted once the user completes registration
+- There are no CLI commands for managing invitations; they are managed via form submission or by editing the `invites.yaml` file directly
+- The `route_register` login plugin setting determines the base URL for invitation links
 
 # Known issues
 

@@ -240,12 +240,16 @@ class Form implements FormInterface, ArrayAccess
                 if ($file) {
                     $imagePath = $original->getTmpFile();
                     $thumbPath = $file->getTmpFile();
+                    // Filenames may contain '#' or '?' which would otherwise be
+                    // treated as URL fragment/query delimiters by the browser.
+                    $imageRel = str_replace(['#', '?'], ['%23', '%3F'], Folder::getRelativePath($imagePath));
+                    $thumbRel = str_replace(['#', '?'], ['%23', '%3F'], Folder::getRelativePath($thumbPath));
                     $list[$basename] = [
                         'name' => $file->getClientFilename(),
                         'type' => $file->getClientMediaType(),
                         'size' => $file->getSize(),
-                        'image_url' => $url->rootUrl() . '/' . Folder::getRelativePath($imagePath) . '?' . filemtime($imagePath),
-                        'thumb_url' => $url->rootUrl() . '/' . Folder::getRelativePath($thumbPath) . '?' . filemtime($thumbPath),
+                        'image_url' => $url->rootUrl() . '/' . $imageRel . '?' . filemtime($imagePath),
+                        'thumb_url' => $url->rootUrl() . '/' . $thumbRel . '?' . filemtime($thumbPath),
                         'cropData' => $original->getMetaData()['crop'] ?? []
                     ];
                 }
@@ -462,7 +466,12 @@ class Form implements FormInterface, ArrayAccess
     public function value($name = null, $fallback = false)
     {
         if (!$name) {
-            return $this->data;
+            // Return the values as a plain array rather than the Data object.
+            // Twig resolves `form.value.<field>` as native array access, which
+            // the content sandbox does not gate — a Data object would trip the
+            // sandbox on the sub-key (regression #4207) and, more broadly, this
+            // is the safer "get all values" contract to hand a template.
+            return $this->data ? $this->data->toArray() : [];
         }
 
         if (isset($this->data[$name])) {
@@ -580,7 +589,11 @@ class Form implements FormInterface, ArrayAccess
         $grav->fireEvent('onFormUploadSettings', new Event(['settings' => &$settings, 'post' => $post]));
 
         $upload = json_decode(json_encode($this->normalizeFiles($_FILES['data'], $settings->name)), true);
-        $filename = $post['filename'] ?? $upload['file']['name'];
+        // Strip any path component from the POST-supplied filename. The admin
+        // controllers already do this; the public form path historically did
+        // not, which let an attacker collide the upload with files outside
+        // the intended destination.
+        $filename = Utils::basename((string) ($post['filename'] ?? $upload['file']['name']));
         $field = $upload['field'];
 
         // Handle errors and breaks without proceeding further
@@ -602,6 +615,21 @@ class Form implements FormInterface, ArrayAccess
                 'status'  => 'error',
                 'message' => sprintf($language->translate('PLUGIN_FORM.FILEUPLOAD_UNABLE_TO_UPLOAD', null),
                     $filename, 'Bad filename')
+            ];
+        }
+
+        // Hard-block page-content extensions regardless of the configurable
+        // dangerous-extensions list. With destination: self@ (the default),
+        // an upload lands in the page directory, and a permissive accept
+        // policy would otherwise let an unauthenticated user overwrite the
+        // page's own .md/.yaml — turning a file upload into arbitrary
+        // page-content takeover (GHSA-w4rc-p66m-x6qq).
+        $extension = strtolower((string) pathinfo($filename, PATHINFO_EXTENSION));
+        if (in_array($extension, ['md', 'yaml', 'yml', 'json', 'twig', 'ini'], true)) {
+            return [
+                'status'  => 'error',
+                'message' => sprintf($language->translate('PLUGIN_FORM.FILEUPLOAD_UNABLE_TO_UPLOAD', null),
+                    $filename, 'File type not allowed')
             ];
         }
 
@@ -631,7 +659,7 @@ class Form implements FormInterface, ArrayAccess
                 break;
             }
 
-            $isMime = strstr($type, '/');
+            $isMime = strstr((string) $type, '/');
             $find   = str_replace(['.', '*', '+'], ['\.', '.*', '\+'], $type);
 
             if ($isMime) {

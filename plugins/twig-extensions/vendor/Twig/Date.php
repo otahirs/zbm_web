@@ -30,7 +30,7 @@ class Twig_Extensions_Extension_Date extends Twig_Extension
      */
     private $translator;
 
-    public function __construct(TranslatorInterface $translator = null)
+    public function __construct(?TranslatorInterface $translator = null)
     {
         // Ignore the IdentityTranslator, otherwise the parameters won't be replaced properly
         if ($translator instanceof IdentityTranslator) {
@@ -53,13 +53,13 @@ class Twig_Extensions_Extension_Date extends Twig_Extension
     /**
      * Filter for converting dates to a time ago string like Facebook and Twitter has.
      *
-     * @param Twig_Environment $env  a Twig_Environment instance
+     * @param TwigEnvironment $env  a TwigEnvironment instance
      * @param string|DateTime  $date a string or DateTime object to convert
      * @param string|DateTime  $now  A string or DateTime object to compare with. If none given, the current time will be used.
      *
      * @return string the converted time
      */
-    public function diff(Twig_Environment $env, $date, $now = null)
+    public function diff(Grav\Common\Twig\TwigEnvironment $env, $date, $now = null)
     {
         // Convert both dates to DateTime instances.
         $date = twig_date_converter($env, $date);

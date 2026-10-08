@@ -12,7 +12,6 @@ namespace Grav\Plugin\Admin\Controllers\Login;
 use Grav\Common\Debugger;
 use Grav\Common\Grav;
 use Grav\Common\Page\Pages;
-use Grav\Common\Uri;
 use Grav\Common\User\Interfaces\UserCollectionInterface;
 use Grav\Common\User\Interfaces\UserInterface;
 use Grav\Common\Utils;
@@ -146,21 +145,12 @@ class LoginController extends AdminController
         $config = $this->getConfig();
 
         $userKey = (string)($credentials['username'] ?? '');
-        // Pseudonymization of the IP.
-        $ipKey = sha1(Uri::ip() . $config->get('security.salt'));
 
-        $rateLimiter = $login->getRateLimiter('login_attempts');
-
-        // Check if the current IP has been used in failed login attempts.
-        $attempts = count($rateLimiter->getAttempts($ipKey, 'ip'));
-
-        $rateLimiter->registerRateLimitedAction($ipKey, 'ip')->registerRateLimitedAction($userKey);
-
-        // Check rate limit for both IP and user, but allow each IP a single try even if user is already rate limited.
-        if ($rateLimiter->isRateLimited($ipKey, 'ip') || ($attempts && $rateLimiter->isRateLimited($userKey))) {
+        // Same IP + username check the frontend and API logins use.
+        if ($interval = $login->checkLoginRateLimit($userKey)) {
             Admin::DEBUG && Admin::addDebugMessage('Admin login: rate limit, redirecting', $credentials);
 
-            $this->setMessage($this->translate('PLUGIN_LOGIN.TOO_MANY_LOGIN_ATTEMPTS', $rateLimiter->getInterval()), 'error');
+            $this->setMessage($this->translate('PLUGIN_LOGIN.TOO_MANY_LOGIN_ATTEMPTS_RETRY', $interval), 'error');
 
             $this->form->reset();
 
@@ -186,7 +176,7 @@ class LoginController extends AdminController
         $redirect = (string)$this->getRequest()->getUri();
 
         if ($user->authenticated) {
-            $rateLimiter->resetRateLimit($ipKey, 'ip')->resetRateLimit($userKey);
+            $login->resetLoginRateLimit($userKey);
             if ($user->authorized) {
                 $event->defMessage('PLUGIN_ADMIN.LOGIN_LOGGED_IN', 'info');
             }
@@ -263,6 +253,23 @@ class LoginController extends AdminController
         }
 
 
+        $username = (string)$user->get('username');
+
+        // Rate-limit 2FA verification attempts so a stolen password cannot be
+        // paired with brute-forcing the 6-digit code. (GHSA-9j6w-2q6c-q3q8)
+        $rateLimiter = $login->getRateLimiter('twofa_attempts');
+        if ($rateLimiter->isRateLimited($username)) {
+            Admin::DEBUG && Admin::addDebugMessage('Admin login: too many 2FA attempts, log out!');
+
+            $login->logout(['admin' => true]);
+
+            $this->grav['session']->setFlashCookieObject(Admin::TMP_COOKIE_NAME, ['message' => $this->translate('PLUGIN_LOGIN.TOO_MANY_2FA_ATTEMPTS', $rateLimiter->getInterval()), 'status' => 'error']);
+
+            $this->form->reset();
+
+            return $this->createRedirectResponse((string)$this->getRequest()->getUri());
+        }
+
         $post = $this->getPost();
         $data = $post['data'] ?? [];
 
@@ -278,6 +285,8 @@ class LoginController extends AdminController
 
         $code = $data['2fa_code'] ?? '';
         $secret = $user->twofa_secret ?? '';
+        // Strip any whitespace from secret (fixes corrupted secrets)
+        $secret = preg_replace('/\s+/', '', $secret);
         $twofa_valid = $twoFa->verifyCode($secret, $code);
 
         $yubikey_otp = $data['yubikey_otp'] ?? '';
@@ -288,6 +297,8 @@ class LoginController extends AdminController
 
         if (null === $twoFa || !$user->authenticated || (!$twofa_valid && !$yubikey_valid) ) {
             Admin::DEBUG && Admin::addDebugMessage('Admin login: 2FA check failed, log out!');
+
+            $rateLimiter->registerRateLimitedAction($username);
 
             // Failed 2FA auth, logout and redirect to the current page.
             $login->logout(['admin' => true]);
@@ -300,6 +311,7 @@ class LoginController extends AdminController
         }
 
         // Successful 2FA, authorize user and redirect.
+        $rateLimiter->resetRateLimit($username);
         Grav::instance()['user']->authorized = true;
 
         Admin::DEBUG && Admin::addDebugMessage('Admin login: 2FA check succeeded, authorize user and redirect');

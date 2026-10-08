@@ -89,7 +89,7 @@ sitemap:
 
 ## Multi-Language Support
 
-The latest Sitemap `v3.0` includes all new multi-language support utilizing the latest [Google Search SEO Recomendations](https://developers.google.com/search/docs/advanced/crawling/localized-versions?hl=en&visit_id=637468720624267418-280936473&rd=2) which creates bi-directional `hreflang` entries for each language available.
+The latest Sitemap `v3.0` includes all new multi-language support utilizing the latest [Google Search SEO Recommendations](https://developers.google.com/search/docs/advanced/crawling/localized-versions?hl=en&visit_id=637468720624267418-280936473&rd=2) which creates bi-directional `hreflang` entries for each language available.
 
 This is handled automatically based on your Grav multi-language System configuration.
 
@@ -138,6 +138,14 @@ If you want your sitemap to only be accessible via `sitemap.xml` for example, se
 As of Sitemap version `3.0.1` you can enable `html_support` in the configuration and then when you go to `/sitemap` or `/sitemap.html` you will view an HTML version of the sitemap per the `templates/sitemap.html.twig` template.  
 
 You can copy and extend this Twig template in your theme to customize it for your needs.
+
+## Markdown for AI agents: `llms.txt`
+
+Grav 2.1 can serve any page as Markdown by adding `.md` to its URL. This plugin adds the index that goes with it: `/llms.txt` lists every page in the sitemap as a Markdown link, grouped by section, with each page's metadata description where it has one. It follows the [llms.txt convention](https://llmstxt.org) that AI agents look for, and the same `ignores`, `ignore_protected` and per-page `sitemap: ignore: true` rules as the XML sitemap apply. It is on by default and can be switched off with `llms_txt: false`.
+
+An optional `/llms-full.txt` joins every page's full Markdown into one document. It is off by default (`llms_full_txt: true` turns it on), built once and cached, and on a large site it is a large file.
+
+On a Grav 2.0 site the two files are still served, as plain text, but each link points at a `.md` URL only Grav 2.1 answers.
 
 ## Manually add pages to the sitemap
 

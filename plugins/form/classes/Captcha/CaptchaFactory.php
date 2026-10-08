@@ -78,6 +78,11 @@ class CaptchaFactory
         self::registerProvider('turnstile', new TurnstileProvider());
         self::registerProvider('basic-captcha', new BasicCaptchaProvider());
 
+        // Cap provider depends on trilbymedia/cap-php which requires PHP 8.1+
+        if (PHP_VERSION_ID >= 80100) {
+            self::registerProvider('cap', new CapProvider());
+        }
+
         // Log the registration
 //        Grav::instance()['log']->debug('Registered default captcha providers');
     }

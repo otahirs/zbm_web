@@ -1,8 +1,10 @@
 # Twig Extensions Plugin
 
-The **Twig Extensions** plugin is for [Grav CMS](http://github.com/getgrav/grav). It pulls in a subset of the official [Twig Extensions](https://github.com/twigphp/Twig-extensions) and adds some customizations.
+The **Twig Extensions** plugin is for [Grav CMS](http://github.com/getgrav/grav). It pulls in a subset of the archived official [Twig Extensions](https://github.com/twigphp/Twig-extensions) (Twig 1/2) and adds some customizations.
 
 This is also the new home of the [abandoned plugin by Aaron Dalton](https://github.com/Perlkonig/grav-plugin-twig-extensions).
+
+For support of the [Twig Intl Extension](https://github.com/twigphp/intl-extra) (Twig 3) use the official Grav [Intl Plugin](https://github.com/getgrav/grav-plugin-intl).  
 
 ## Installation
 
@@ -43,7 +45,7 @@ Add the following to your `.dependecies` file:
 
 Below is the default configuration. An explanation of the various fields follows. To customize, first copy `twig-extensions.yaml` to your `user/config/plugins` folder and edit that copy.
 
-```
+```yaml
 enabled: true
 modules: [array, intl, date]
 in_admin: false
@@ -69,7 +71,7 @@ Simply enable the plugin to use these Twig filters. There are three modules avai
   * **Note:** This code was slightly modified to allow shuffling associative arrays. Simply pass `true` to enable this feature: `{{ myArray | shuffle(true) }}`.
 
 The `Date` module:
-  * `time_diff` dispays the delta between two dates in a human readable form (e.g., `2 days ago`).
+  * `time_diff` displays the delta between two dates in a human-readable form (e.g., `2 days ago`).
 
 For more information, read [the documentation of the original extensions](https://github.com/twigphp/Twig-extensions/tree/master/doc).
 

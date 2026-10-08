@@ -1,3 +1,34 @@
+# v1.10.4
+## 09/29/2026
+
+1. [](#new)
+    * Added the `onFeedItemContent` event, fired for every item in the RSS, Atom and JSON feeds, so a plugin can change what a feed prints for a page (for example an excerpt instead of a members-only article)
+
+# v1.10.3
+## 09/17/2026
+
+1. [](#bugfix)
+    * RSS and Atom feeds now keep page content inside its own feed entry when it contains a CDATA terminator. Thanks @AlpetGexha
+
+# v1.10.2
+## 09/10/2026
+
+1. [](#bugfix)
+    * The `Content-Type` charset is no longer added twice on Grav 2.1's Markdown output, which already carries one
+
+# v1.10.1
+## 05/01/2026
+
+1. [](#improved)
+    * Added 1.7|2.0 compatibility flags
+
+# v1.11.0
+## mm/dd/2023
+
+1. [](#new)
+   * Added new `onFeedCollectionProcessed()` event to modify the collection as needed.
+   * Added ability to use custom `feed: template:` in YAML frontmatter configuration without a collection defined
+
 # v1.10.0
 ## 09/26/2023
 

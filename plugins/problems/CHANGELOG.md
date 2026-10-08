@@ -1,3 +1,15 @@
+# v3.0.1
+## 07/21/2026
+
+1. [](#improved)
+    * Stopped committing a developer build lockfile that raised dependency vulnerability alerts in projects tracking the plugin; the running site is unaffected.
+
+# v3.0.0
+## 04/17/2026
+
+1. [](#new)
+    * Added Grav 2.0 / Admin 2.0 support
+
 # v2.2.3
 ## 10/29/2025
 

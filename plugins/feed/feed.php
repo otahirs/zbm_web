@@ -7,7 +7,9 @@ use Grav\Common\Page\Collection;
 use Grav\Common\Page\Interfaces\PageInterface;
 use Grav\Common\Plugin;
 use Grav\Common\Uri;
+use Grav\Common\Utils;
 use RocketTheme\Toolbox\Event\Event;
+use Twig\TwigFunction;
 
 class FeedPlugin extends Plugin
 {
@@ -81,6 +83,7 @@ class FeedPlugin extends Plugin
             $this->enable([
                 'onPageInitialized' => ['onPageInitialized', 0],
                 'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
+                'onTwigExtensions' => ['onTwigExtensions', 0],
             ]);
         }
     }
@@ -93,27 +96,28 @@ class FeedPlugin extends Plugin
         $page = $this->grav['page'];
 
         // Overwrite regular content with feed config, so you can influence the collection processing with feed config
-        if (property_exists($page->header(), 'content')) {
+        if (property_exists($page->header(), 'content') || property_exists($page->header(), 'feed')) {
             // Set default template.
             $template = "feed";
 
-            if (isset($page->header()->feed)) {
+            if (property_exists($page->header(), 'feed')) {
                 $this->feed_config = array_merge($this->feed_config, $page->header()->feed);
-
                 // Look for feed type override,
-                if (isset($this->feed_config['template']) && isset($this->feed_config['template'][$this->type])) {
+                if (isset($this->feed_config['template'][$this->type])) {
                     $template = $this->feed_config['template'][$this->type];
                 }
             }
 
-            $page->header()->content = array_merge($page->header()->content, $this->feed_config);
+            if (property_exists($page->header(), 'content')) {
+                $page->header()->content = array_merge($page->header()->content ?? [], $this->feed_config);
+                $this->enable([
+                    'onCollectionProcessed' => ['onCollectionProcessed', 0],
+                ]);
+            }
 
             // Set page template.
             $this->grav['twig']->template = $template . "." . $this->type . '.twig';
 
-            $this->enable([
-                'onCollectionProcessed' => ['onCollectionProcessed', 0],
-            ]);
         }
     }
 
@@ -127,12 +131,48 @@ class FeedPlugin extends Plugin
         /** @var Collection $collection */
         $collection = $event['collection']->nonModular();
 
-        foreach ($collection as $slug => $page) {
+        foreach ($collection as $page) {
             $header = $page->header();
             if (isset($header->feed) && !empty($header->feed['skip'])) {
                 $collection->remove($page);
             }
         }
+
+        $this->grav->fireEvent('onFeedCollectionProcessed', $event);
+    }
+
+    /**
+     * Give the feed templates the `feed_item_content()` function.
+     */
+    public function onTwigExtensions()
+    {
+        $this->grav['twig']->twig()->addFunction(new TwigFunction('feed_item_content', [$this, 'feedItemContent']));
+    }
+
+    /**
+     * Fire `onFeedItemContent` for one feed item and return the HTML to print.
+     *
+     * Listeners get the item's full content and may replace it. The content is cut to the
+     * feed's length afterwards, unless a listener set `truncate` to false.
+     *
+     * @param PageInterface $page
+     * @param string $format 'rss', 'atom' or 'json'
+     * @param int|null $length
+     * @return string
+     */
+    public function feedItemContent(PageInterface $page, string $format, $length = null)
+    {
+        $event = new Event([
+            'page' => $page,
+            'content' => (string) $page->content(),
+            'format' => $format,
+            'truncate' => true,
+        ]);
+        $this->grav->fireEvent('onFeedItemContent', $event);
+
+        $content = (string) $event['content'];
+
+        return $event['truncate'] ? Utils::safeTruncateHtml($content, $length) : $content;
     }
 
     /**
@@ -178,7 +218,9 @@ class FeedPlugin extends Plugin
     {
         $headers = $e['headers'];
         $content_type = $headers->{'Content-Type'} ?? null;
-        if ($content_type) {
+        // Grav 2.1 already sends a charset on its Markdown output, and a site can
+        // set one in media.yaml, so only add it when the header has none.
+        if ($content_type && stripos((string)$content_type, 'charset=') === false) {
             $headers->{'Content-Type'} = "$content_type; charset=utf-8";
         }
     }

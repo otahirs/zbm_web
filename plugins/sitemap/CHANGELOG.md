@@ -1,3 +1,46 @@
+# v5.3.1
+## 09/13/2026
+
+1. [](#new)
+    * The plugin is now fully translated into Spanish. Thanks @pmoreno-rodriguez [#122](https://github.com/getgrav/grav-plugin-sitemap/pull/122)
+
+# v5.3.0
+## 09/10/2026
+
+1. [](#new)
+    * The plugin now serves `/llms.txt`, an index of every page in the sitemap as a Markdown link with its description, in the format AI agents look for. Each link points at the page's Markdown version from Grav 2.1's Markdown output, and the same ignore rules as the XML sitemap apply
+    * An optional `/llms-full.txt` joins every page's full Markdown into one document. It is off by default and cached once built
+
+# v5.2.3
+## 08/31/2026
+
+1. [](#bugfix)
+    * Fixed the sitemap cache never being read, so every request rebuilt the entire sitemap from scratch
+    * Fixed sitemap settings changes not taking effect until a page was edited
+
+# v5.2.2
+## 08/11/2026
+
+1. [](#bugfix)
+    * Fixed the page-level `Sitemap Last Modified` field being saved with the current date even when it was never set [#121](https://github.com/getgrav/grav-plugin-sitemap/issues/121)
+
+# v5.2.1
+## 05/01/2026
+
+1. [](#improved)
+    * Added 1.7|2.0 compatibility flags
+
+# v5.2.0
+## 04/10/26
+
+1. [](#improved)
+   * Bumped minimum requirements to PHP 7.4 and Grav 1.7 [#119](https://github.com/getgrav/grav-plugin-sitemap/pull/119)
+   * Switched `getgrav.org` references to HTTPS [#117](https://github.com/getgrav/grav-plugin-sitemap/pull/117)
+   * Fixed typo in README.md [#118](https://github.com/getgrav/grav-plugin-sitemap/pull/118)
+1. [](#bugfix)
+   * Fixed HTML pattern character class escaping for `v` flag compatibility in admin blueprint [#120](https://github.com/getgrav/grav-plugin-sitemap/pull/120)
+   * Cast page `timestamp` to integer in sitemap data to avoid type issues with non-int date values
+
 # v5.1.0
 ## 06/17/24
 

@@ -7,12 +7,14 @@ form:
 
   fields:
     fullname:
+      id: fullname
       type: text
       validate:
         required: true
 
 
     username:
+      id: username
       type: text
       validate:
         required: true
@@ -20,12 +22,14 @@ form:
         config-pattern@: system.username_regex
 
     email:
+      id: email
       type: email
       validate:
         required: true
         message: PLUGIN_LOGIN.EMAIL_VALIDATION_MESSAGE
 
     password1:
+      id: password1
       type: password
       label: PLUGIN_LOGIN.ENTER_PASSWORD
       validate:
@@ -34,6 +38,7 @@ form:
         config-pattern@: system.pwd_regex
 
     password2:
+      id: password2
       type: password
       label: PLUGIN_LOGIN.ENTER_PASSWORD_AGAIN
       validate:
@@ -55,6 +60,6 @@ form:
       reset: true
 ---
 
-# Register
+# [translate=PLUGIN_LOGIN.REGISTER_PAGE_HEADING /]
 
-Create a new user account by entering all the required fields below:
+[translate=PLUGIN_LOGIN.REGISTER_PAGE_DESC /]

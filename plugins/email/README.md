@@ -8,7 +8,7 @@ The **email plugin** for [Grav](http://github.com/getgrav/grav) adds the ability
 
 The email plugin is easy to install with GPM.
 
-```
+```bash
 $ bin/gpm install email
 ```
 
@@ -16,7 +16,7 @@ $ bin/gpm install email
 
 The plugin uses `sendmail` binary as the default mail engine.
 
-```
+```yaml
 enabled: true
 from:
 to:
@@ -78,7 +78,7 @@ As Gmail no longer supports the "allow less secure apps" option, you now need to
 
 Then configure the Email plugin:
 
-```
+```yaml
 mailer:
   engine: smtp
   smtp:
@@ -96,7 +96,7 @@ A good way to test emails is to use a SMTP server service that's built for testi
 
 Setup the Email plugin to use that SMTP server with the fake inbox data. For example enter this configuration in `user/config/plugins/email.yaml` or through the Admin panel:
 
-```
+```yaml
 mailer:
   engine: smtp
   smtp:
@@ -113,9 +113,9 @@ You can try and fine tune the emails there while testing.
 
 ### Sparkpost
 
-Generous email sending limits even in the free tier, and simple setup, make [Sparkpost](https://www.sparkpost.com) a great option for email sending. You just need to create an account, then setup a verified sending domain.  Sparkpost does a nice job of making this process very easy and undertandable. Then just click on the SMTP Relay option to get your details for the configuration:
+Generous email sending limits even in the free tier, and simple setup, make [Sparkpost](https://www.sparkpost.com) a great option for email sending. You just need to create an account, then setup a verified sending domain.  Sparkpost does a nice job of making this process very easy and understandable. Then just click on the SMTP Relay option to get your details for the configuration:
 
-```
+```yaml
 mailer:
   engine: smtp
   smtp:
@@ -129,9 +129,9 @@ Then try sending a test email...
 
 ### Sendgrid
 
-[Sendgrid](https://sendgrid.com) offers a very easy-to-setup serivce with 100 emails/day for free.  The next level allows you to send 40k/email a day for just $10/month. Configuration is pretty simple, just create an account, then click SMTP integration and click the button to create an API key.  The configuration is as follows:
+[Sendgrid](https://sendgrid.com) offers a very easy-to-setup service with 100 emails/day for free.  The next level allows you to send 40k/email a day for just $10/month. Configuration is pretty simple, just create an account, then click SMTP integration and click the button to create an API key.  The configuration is as follows:
 
-```
+```yaml
 mailer:
   engine: smtp
   smtp:
@@ -145,7 +145,7 @@ mailer:
 
 [Mailgun is a great service](https://www.mailgun.com/) that offers 10k/emails per month for free.  Setup does require SPIF domain verification so that means you need to add at least a TXT entry in your DNS.  This is pretty standard for SMTP sending services and does provide verification for remote email servers and makes your email sending more reliable.  The Mailgun site, walks you through this process however, and the verification process is simple and fast.
 
-```
+```yaml
 mailer:
   engine: smtp
   smtp:
@@ -161,7 +161,7 @@ Adjust these configurations for your account.
 
 Mailjet is another great service that is easy to quickly setup and get started sending email.  The free account gives you 200 emails/day or 600 emails/month.  Just signup and setup your SPF and DKIM entries for your domain.  Then click on the SMTP settings and use those to configure the email plugin:
 
-```
+```yaml
 mailer:
   engine: smtp
   smtp:
@@ -179,7 +179,7 @@ In order to get ZOHO working with Grav, you need to send email via a user accoun
 
 NOTE: The SMTP host required can be found in `Settings -> Mail - > Mail Accounts -> POP/IMAP -> SMTP`.  This will provide the SMTP server for this account (it may not be `imap.zoho.com` depending on what region you are in)
 
-```
+```yaml
 mailer:
   engine: smtp
   smtp:
@@ -193,7 +193,7 @@ mailer:
 
 Although not as reliable as SMTP not providing as much debug information, sendmail is a simple option as long as your hosting provider is not blocking the default SMTP port `25`:
 
-```
+```yaml
 mailer:
   engine: sendmail
   sendmail:
@@ -218,13 +218,13 @@ If you are still unsure why should be using one in the first place, check out th
 
 You can test your email configuration with the following CLI Command:
 
-```
+```bash
 $ bin/plugin email test-email -t test@email.com
 ```
 
 You can also pass in a configuration environment:
 
-```
+```bash
 $ bin/plugin email test-email -t test@email.com --env=mysite.com
 ```
 
@@ -253,7 +253,7 @@ Add this code in your plugins:
 
 When executing email actions during form processing, action parameters are inherited from the global configuration but may also be overridden on a per-action basis.
 
-```
+```yaml
 title: Custom form
 
 form:
@@ -276,7 +276,7 @@ form:
 
 You can send multiple emails by creating an array of emails under the `process: email:` option in the form:
 
-```
+```yaml
 title: Custom form
 
 form:
@@ -341,7 +341,7 @@ You can specify a Twig template for HTML rendering, else Grav will use the defau
 You can add file inputs to your form, and send those files via Email.
 Just add an `attachments` field and list the file input fields names. You can have multiple file fields, and this will send all the files as attachments. Example:
 
-```
+```yaml
 form:
   name: custom_form
   fields:
@@ -372,6 +372,47 @@ To have more control over your generated email, you may also use the following a
 * `reply_to`: Set one or more addresses that should be used to reply to the message.
 * `cc` _(Carbon copy)_: Add one or more addresses to the delivery list. Many email clients will mark email in one's inbox differently depending on whether they are in the `To:` or `Cc:` list.
 * `bcc` _(Blind carbon copy)_: Add one or more addresses to the delivery list that should (usually) not be listed in the message data, remaining invisible to other recipients.
+* `tags`: One or more strings the API-based sending services (Postmark, Mailgun, SendGrid, Mailjet and friends) group and report on. Ignored by plain SMTP.
+* `metadata`: A map of name to string value that those same services carry alongside the message and hand back on their webhooks.
+* `headers`: A map of header name to value, written onto the message itself. See below.
+* `error_message`: What to show the visitor if this email cannot be sent. Without it the plugin uses the **Form send failure message** setting, and without that a translated default. The mail server's own explanation of the failure always goes to the Grav log rather than onto the page, and is only added to the visitor's message when Grav's debugger is enabled.
+
+### Custom headers
+
+`headers` puts headers on the message that this plugin has no parameter of its own for. It takes a map of header name to value:
+
+```yaml
+form:
+  name: newsletter
+  process:
+    email:
+      subject: 'This month at Example'
+      body: '{% include "forms/data.html.twig" %}'
+      headers:
+        List-Unsubscribe: '<mailto:leave@example.com>, <https://example.com/newsletter/u/{{ form.value.token }}>'
+        List-Unsubscribe-Post: 'List-Unsubscribe=One-Click'
+        Precedence: 'bulk'
+```
+
+That pair is the reason the parameter exists. Together they are RFC 8058 one-click unsubscribe, which is what puts the unsubscribe button next to your name in Gmail and Outlook, and bulk senders are now expected to have it. Without a button to press, the thing people reach for instead is the spam button, which costs you every other message you send.
+
+A few details worth knowing:
+
+* Values are rendered as Twig with the same variables as every other email parameter, so a per-recipient token can be built inline as above.
+* Setting a header that is already on the message replaces it rather than adding a second one.
+* A value may be a list, which writes the header once per entry. Only headers that are allowed to repeat will take that; `Subject` or `Message-ID` will not.
+* Headers are applied last, after the addresses, the subject, the tags and the metadata, so a header you set by name is the one that goes out.
+* A name that is not a valid header name, or a value the header in question will not take, is skipped and written to `logs/email.log` and to Grav's own log. The rest of the email still goes.
+
+Plugins building a message in PHP can pass the same thing to `buildMessage()`, or hand a list of headers to `applyHeaders()` on a message built with `message()`. A plugin that has to work on older releases too can ask first rather than comparing version numbers:
+
+```php
+$email = $this->grav['Email'];
+
+if (method_exists($email, 'supportsParameter') && $email::supportsParameter('headers')) {
+    $email->applyHeaders($message, ['List-Unsubscribe-Post' => 'List-Unsubscribe=One-Click']);
+}
+```
 
 ### Specifying email addresses
 
@@ -379,19 +420,19 @@ Email-related parameters (`from`, `to`, `reply_to`, `cc`and `bcc`) allow differe
 
 #### Single email address string
 
-```
+```yaml
 to: mail@example.com
 ```
 
 #### `name-addr` RFC822 Formatted string
 
-```
+```yaml
 to: Joe Bloggs <maiil@example.com>
 ```
 
 ####  Multiple email address strings
 
-```
+```yaml
 to:
   - mail@example.com
   - mail+1@example.com
@@ -400,7 +441,7 @@ to:
 
 or in `name-addr` format:
 
-```
+```yaml
 to:
   - Joe Bloggs <mail@example.com>
   - Jane Doe <mail+1@example.com>
@@ -409,13 +450,13 @@ to:
 
 #### Simple array format with names
 
-```
-to: [mail@exmaple.com, Joe Bloggs]
+```yaml
+to: [mail@example.com, Joe Bloggs]
 ```
 
 #### Formatted email address with names
 
-```
+```yaml
 to:
   email: mail@example.com
   name: Joe Bloggs
@@ -423,19 +464,19 @@ to:
 
 or inline:
 
-```
+```yaml
 to: {email: 'mail@example.com', name: 'Joe Bloggs'}
 ```
 
 #### Multiple email addresses (with and without names)
 
-```
+```yaml
 to:
   - [mail@example.com, Joe Bloggs]
   - [mail+2@example.com, Jane Doe]
 ```
 
-```
+```yaml
 to:
   -
     email: mail@example.com
@@ -447,7 +488,7 @@ to:
 
 or inline:
 
-```
+```yaml
 to:
   - {email: 'mail@example.com', name: 'Joe Bloggs'}
   - {email: 'mail+2@example.com', name: 'Jane Doe'}
@@ -457,7 +498,7 @@ to:
 
 Apart from a simple string, an email body may contain different MIME parts (e.g. HTML body with plain text fallback):
 
-```
+```yaml
 body:
   -
     content_type: 'text/html'
@@ -468,6 +509,17 @@ body:
 
 ```
 
+# Receiving email
+
+The plugin can also read mail sent *to* a site, for plugins that need it (a helpdesk turning replies into ticket updates, for example). It does nothing on its own: another plugin calls it. What it provides, on PHP 8.1 and later:
+
+- `InboundGateway`, the one class a plugin calls to verify and read an inbound webhook request, whichever provider it came from.
+- Two built-in receivers that need no provider account: `cloudflare`, for a free Cloudflare Email Routing Worker, and `generic`, for any script or mail server that can sign and post a raw message. [docs/inbound-cloudflare.md](docs/inbound-cloudflare.md) has the Worker source and a ready-made shell sender.
+- Receivers from provider plugins (Postmark, Mailgun, SendGrid, Amazon SES and others) as those plugins add them.
+- A small IMAP client, for mailboxes with no webhook (Gmail with an app password, most hosting mailboxes). It doesn't need PHP's imap extension.
+
+Plugin authors will find the details in [docs/providers.md](docs/providers.md#receiving-mail).
+
 # Troubleshooting
 
 ## Emails are not sent
@@ -476,11 +528,17 @@ body:
 
 The first step in determining why emails are not sent is to enable debugging.  This can be done via the `user/config/email.yaml` file or via the plugin settings in the admin.  Just enable this and then try sending an email again.  Then inspect the `logs/email.log` file for potential problems.
 
+#### An email arrives with no recipients, or never arrives at all
+
+An address the plugin cannot parse is dropped, and if every address in a parameter is dropped the message goes out with that header missing entirely. Look in `logs/email.log` or `logs/grav.log` for a line beginning `plugin-email:` that names the parameter and the value it could not read.
+
+Nearly always the value has been HTML-escaped on the way in. `to: "{{ form.value.recipient|e }}"` turns `John Doe <john@example.com>` into `John Doe &lt;john@example.com&gt;`, which is not an email address, and Twig autoescape does the same thing without being asked. Use `|raw` on address parameters.
+
 #### ISP Port 25 blocking
 
-By default, when sending via PHP or Sendmail the machine running the webserver will attempt to send mail using the SMTP protocol.  This uses port `25` which is often blocked by ISPs to protected against spamming.  You can determine if this port is blocked by running this command in your temrinal (mac/linux only):
+By default, when sending via PHP or Sendmail the machine running the webserver will attempt to send mail using the SMTP protocol.  This uses port `25` which is often blocked by ISPs to protected against spamming.  You can determine if this port is blocked by running this command in your terminal (mac/linux only):
 
-```
+```bash
 (echo >/dev/tcp/localhost/25) &>/dev/null && echo "TCP port 25 opened" || echo "TCP port 25 closed"
 ```
 
@@ -491,7 +549,7 @@ If it's blocked there are ways to configure relays to different ports, but the s
 
 If you get an exception when sending email but you cannot see what the error is, you need to enable more verbose exception messages. In the `user/config/system.yaml` file ensure your have the following configuration:
 
-```
+```yaml
 errors:
   display: 1
   log: true
@@ -502,3 +560,46 @@ errors:
 As explained above in the Configuration section, if you're using the default settings, set the Plugin configuration to use a SMTP server. It can be [Gmail](https://www.digitalocean.com/community/tutorials/how-to-use-google-s-smtp-server) or another SMTP server you have at your disposal.
 
 This is the first thing to check. The reason is that PHP Mail, the default system used by the Plugin, is not 100% reliable and emails might not arrive.
+
+## REST API Integration
+
+When the [Grav API plugin](https://github.com/getgrav/grav-plugin-api) is installed and enabled, the email plugin automatically registers two API endpoints:
+
+### POST /api/v1/email/send
+
+Send an ad-hoc email. Requires `api.system.write` permission.
+
+```bash
+curl -X POST "https://yoursite.com/api/v1/email/send" \
+  -H "X-API-Key: grav_your_key" \
+  -H "X-Grav-Environment: localhost" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "to": "recipient@example.com",
+    "subject": "Hello from Grav API",
+    "body": "<h1>Hello</h1><p>Sent via the Grav API.</p>",
+    "content_type": "text/html"
+  }'
+```
+
+**Required fields**: `to`, `subject`, `body`
+
+**Optional fields**: `from` (defaults to plugin config), `cc`, `bcc`, `reply_to`, `content_type` (default: `text/html`)
+
+### POST /api/v1/email/test
+
+Send a test email to verify your email configuration.
+
+```bash
+curl -X POST "https://yoursite.com/api/v1/email/test" \
+  -H "X-API-Key: grav_your_key" \
+  -H "X-Grav-Environment: localhost" \
+  -H "Content-Type: application/json" \
+  -d '{"to": "your@email.com"}'
+```
+
+**Optional fields**: `to` (defaults to plugin's configured recipient)
+
+### API Documentation Pages
+
+Helios-compatible API documentation pages are included in the `api-docs/` directory. Copy them into your Grav Learn site's API reference section to include them in your documentation.
