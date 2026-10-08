@@ -50,3 +50,5 @@ user_registration:
     manually_enable: false
     send_notification_email: false
     send_welcome_email: false
+site_host: 'https://zabiny.club'      # email links (password reset, activation) always point here
+require_trusted_host: true
