@@ -14,3 +14,17 @@
 **/.revs
 **/.revs/*
 **/.DS_Store
+
+# BEGIN Grav GitSync
+/*
+!/pages
+!/themes
+!/plugins
+**/.revs
+**/.revs/*
+/plugins/git-sync
+/plugins/git-sync/*
+# END Grav GitSync# per-host config (Grav environment folders, e.g. zabiny.club/): never commit secrets
+/*/config/security.yaml
+/*/config/plugins/git-sync.yaml
+/*/config/plugins/email.yaml
