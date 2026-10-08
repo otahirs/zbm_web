@@ -26,7 +26,7 @@ transport: "Společná busem, autobus stojí u kampusu přímo u zastávky 8.\r\
 accomodation: ''
 food: ''
 leader: Jenda
-note: '**Ubytování** - sportovní hala Dobříš (vlastní karimatky a spacáky) - [https://mapy.com/s/panobasaba]'
+note: '**Ubytování** - [sportovní hala Dobříš](https://mapy.com/s/panobasaba) (vlastní karimatky a spacáky)'
 return: ''
 price: ''
 program: ''
@@ -35,7 +35,7 @@ signups: ''
 gps: '49.64831, 13.90191'
 ---
 
-**Ubytování** - sportovní hala Dobříš (vlastní karimatky a spacáky) - [https://mapy.com/s/panobasaba]
+**Ubytování** - [sportovní hala Dobříš](https://mapy.com/s/panobasaba) (vlastní karimatky a spacáky)
 * **sraz**: 17:25 Kampus
 * **doprava**: Společná busem, autobus stojí u kampusu přímo u zastávky 8.
 Cca 9:15 - odjezd v sobotu ráno z haly do centra závodu.
