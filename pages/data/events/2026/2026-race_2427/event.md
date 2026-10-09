@@ -23,10 +23,10 @@ import:
     time: 1772394005
 meetTime: ''
 meetPlace: ''
-eventTypeDescription: ''
-startTime: ''
-map: ''
-terrain: ''
+eventTypeDescription: 'Krátká trať'
+startTime: '10:30'
+map: Březina
+terrain: kras
 transport: ''
 accomodation: ''
 food: ''
@@ -37,6 +37,7 @@ price: ''
 program: ''
 thingsToTake: ''
 signups: ''
+gps: '49.28228, 16.75090'
 ---
 
 Závod jako workshop! Přijďte si vyzkoušet i rodičové a kdo další vás napadne sport, co dělají vaše děti! Poznejte orienťáckou atmosféru, lesní rauš a buchotvý bufet.

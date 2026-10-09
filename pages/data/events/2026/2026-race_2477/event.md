@@ -19,5 +19,26 @@ date: '2026-06-22'
 import:
     type: members
     time: 1782154205
+meetTime: '7:30'
+meetPlace: ZŠ
+link: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+transport: 'Viz tabulka'
+accomodation: ''
+food: ''
+leader: 'Vojta Koča'
+note: 'Info v týdnu před závodem.'
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.28228, 16.75090'
 ---
 
+Info v týdnu před závodem.
+* **sraz**: 7:30 ZŠ
+* **doprava**: Viz tabulka

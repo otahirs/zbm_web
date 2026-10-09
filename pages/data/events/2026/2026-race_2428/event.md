@@ -21,5 +21,23 @@ date: '2026-03-01'
 import:
     type: members
     time: 1772394005
+meetTime: ''
+meetPlace: Odranec
+eventTypeDescription: 'Dlouhá trať'
+startTime: '10:30'
+map: 'Bohdalec, nově zmapovaný prostor, mapoval Petr Hranička, stav léto 2026'
+terrain: ''
+transport: ''
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.61384, 16.13785'
 ---
 
+* **sraz**: Odranec
