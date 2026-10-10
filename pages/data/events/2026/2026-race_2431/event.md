@@ -33,6 +33,7 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.64831, 13.90191'
+hasResults: true
 ---
 
 **Ubytování** - [sportovní hala Dobříš](https://mapy.com/s/panobasaba) (vlastní karimatky a spacáky)
