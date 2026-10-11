@@ -10,23 +10,19 @@ process:
 plan:
     thisWeek:
         monday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Atletické posilko + fotbálek'
                 time: '17:00'
                 place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/madenopesa'
-            1:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-            1790918227102:
-                name: ''
-                time: ''
-                place: ''
         wednesday:
             -
                 group:
@@ -35,35 +31,27 @@ plan:
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
         thursday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '16:50'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            1:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            2:
+            -
                 group:
                     - pulci1
                     - pulci2
                 name: 'Běžecký trénink'
                 time: '16:00 – 17:30'
                 place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
-            1790918227102:
-                name: ''
-                time: ''
-                place: ''
         friday:
-            1790918225534:
-                name: ''
-                time: ''
-                place: ''
             1790918227102:
                 name: ''
                 time: ''
@@ -77,12 +65,6 @@ plan:
                 place: samostatně
     nextWeek:
         monday:
-            0:
-                group:
-                    - dorost
-                name: 'Atletické posilko + fotbálek'
-                time: '17:00'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/madenopesa'
             1:
                 group:
                     - zaci1
@@ -90,10 +72,12 @@ plan:
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-            1790918227102:
-                name: ''
-                time: ''
-                place: ''
+            1791738519059:
+                group:
+                    - dorost
+                name: Posilovna
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
         tuesday:
             -
                 group:
@@ -102,46 +86,34 @@ plan:
                 time: '17:00'
                 place: Anthropos
         wednesday:
-            0:
+            -
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
-            1790918235313:
-                name: ''
-                time: ''
-                place: ''
         thursday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '16:50'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            1:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            2:
+            -
                 group:
                     - pulci1
                     - pulci2
                 name: 'Běžecký trénink'
                 time: '16:00 – 17:30'
                 place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
-            1790918227103:
-                name: ''
-                time: ''
-                place: ''
         friday:
-            1790918225536:
-                name: ''
-                time: ''
-                place: ''
             1790918227103:
                 name: ''
                 time: ''
@@ -155,12 +127,6 @@ plan:
                 place: samostatně
     next2Week:
         monday:
-            0:
-                group:
-                    - dorost
-                name: 'Atletické posilko + fotbálek'
-                time: '17:00'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/madenopesa'
             1:
                 group:
                     - zaci1
@@ -168,62 +134,48 @@ plan:
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
-            1790918227103:
-                name: ''
-                time: ''
-                place: ''
-        tuesday:
-            0:
-                group:
-                    - dorost
-                name: 'Běh dle plánu'
-                time: '17:00'
-                place: Anthropos
-            1790918227103:
-                name: ''
-                time: ''
-                place: ''
-        wednesday:
-            0:
+            1791738543413:
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
-            1790918237528:
-                name: ''
-                time: ''
-                place: ''
+        tuesday:
+            -
+                group:
+                    - dorost
+                name: 'Běh dle plánu'
+                time: '17:00'
+                place: Anthropos
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
         thursday:
-            0:
+            -
                 group:
                     - dorost
                 name: 'Běžecký trénink'
                 time: '16:50'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            1:
+            -
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:00 – 18:00'
                 place: 'Areál VUT, Stadion pod Palackého vrchem'
-            2:
+            -
                 group:
                     - pulci1
                     - pulci2
                 name: 'Běžecký trénink'
                 time: '16:00 – 17:30'
                 place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
-            1790918227103:
-                name: ''
-                time: ''
-                place: ''
         friday:
-            1790918225538:
-                name: ''
-                time: ''
-                place: ''
             1790918227103:
                 name: ''
                 time: ''
@@ -235,26 +187,21 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-        sunday:
-            1790918227103:
-                name: ''
-                time: ''
-                place: ''
     next3Week:
         monday:
-            -
-                group:
-                    - dorost
-                name: 'Atletické posilko + fotbálek'
-                time: '17:00'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/madenopesa'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
+            1791738563721:
+                group:
+                    - dorost
+                name: Posilovna
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
         tuesday:
             -
                 group:
@@ -296,11 +243,6 @@ plan:
                 name: 'Běžecký trénink'
                 time: '16:00 – 17:30'
                 place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
-        friday:
-            -
-                name: ''
-                time: ''
-                place: ''
         saturday:
             -
                 group:
@@ -308,11 +250,6 @@ plan:
                 name: 'Běh dle plánu'
                 time: ''
                 place: samostatně
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
 ---
 
 <div class="row justify-content-between"> 

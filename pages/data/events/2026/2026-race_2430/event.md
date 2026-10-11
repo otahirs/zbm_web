@@ -33,6 +33,7 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.64829, 13.90195'
+hasResults: true
 ---
 
 Návrat ke Kampusu, Bohémě.
