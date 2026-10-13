@@ -21,16 +21,16 @@ date: '2026-03-01'
 import:
     type: members
     time: 1772394005
-meetTime: ''
-meetPlace: Odranec
+meetTime: '8:00'
+meetPlace: 'Kr. Pole nádraží'
 eventTypeDescription: 'Dlouhá trať'
 startTime: '10:30'
 map: 'Bohdalec, nově zmapovaný prostor, mapoval Petr Hranička, stav léto 2026'
 terrain: ''
-transport: ''
+transport: "Auty Verča, Míra a Adam Válek.\r\nSraz v 8:00."
 accomodation: ''
 food: ''
-leader: ''
+leader: 'Verča Křístková'
 note: ''
 return: ''
 price: ''
@@ -40,4 +40,6 @@ signups: ''
 gps: '49.61384, 16.13785'
 ---
 
-* **sraz**: Odranec
+* **sraz**: 8:00 Kr. Pole nádraží
+* **doprava**: Auty Verča, Míra a Adam Válek.
+Sraz v 8:00.

@@ -20,5 +20,25 @@ date: '2026-03-01'
 import:
     type: members
     time: 1772394005
+place: Líšeň
+meetTime: ''
+meetPlace: Líšeň
+eventTypeDescription: ''
+startTime: '10:30'
+map: 'střední trať'
+terrain: ''
+transport: 'MHD, bus č. 58 do Staré Líšně, 78 na Velká Klajdovku a dojít cca kilometr pěšky.'
+accomodation: ''
+food: ''
+leader: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.21754, 16.69505'
 ---
 
+* **sraz**: Líšeň
+* **doprava**: MHD, bus č. 58 do Staré Líšně, 78 na Velká Klajdovku a dojít cca kilometr pěšky.

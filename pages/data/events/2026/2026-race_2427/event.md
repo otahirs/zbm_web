@@ -21,24 +21,28 @@ date: '2026-03-01'
 import:
     type: members
     time: 1772394005
-meetTime: ''
-meetPlace: ''
+meetTime: '9:00 - 9:30'
+meetPlace: shromaždiště
 eventTypeDescription: 'Krátká trať'
 startTime: '10:30'
 map: Březina
 terrain: kras
-transport: ''
+transport: "**společná MHD bus 201**\r\nsraz Konečného náměstí u stánku s pečivem v 7:40\r\nsraz Stará Osada v 8:10"
 accomodation: ''
 food: ''
-leader: ''
+leader: 'Květa Dohnalová'
 note: "Závod jako workshop! Přijďte si vyzkoušet i rodičové a kdo další vás napadne sport, co dělají vaše děti! Poznejte orienťáckou atmosféru, lesní rauš a buchotvý bufet.\r\nBudeme na Vás nachystaní, ukážeme, vysvětlíme, vše potřebné půjčíme, doprovodíme! Přijďte blíže poznat trenéry Vašich dětí a zeptat se na vše, co vás o našem klubu a orienťáku obecně zajímá! ![https://drive.google.com/file/d/1He7bpxQWcpXK6Jad1P1S5jz8GQKg1uQU/view]"
 return: ''
 price: ''
 program: ''
 thingsToTake: ''
 signups: ''
-gps: '49.28228, 16.75090'
+gps: '49.28228, 16.7509'
 ---
 
 Závod jako workshop! Přijďte si vyzkoušet i rodičové a kdo další vás napadne sport, co dělají vaše děti! Poznejte orienťáckou atmosféru, lesní rauš a buchotvý bufet.
 Budeme na Vás nachystaní, ukážeme, vysvětlíme, vše potřebné půjčíme, doprovodíme! Přijďte blíže poznat trenéry Vašich dětí a zeptat se na vše, co vás o našem klubu a orienťáku obecně zajímá! ![https://drive.google.com/file/d/1He7bpxQWcpXK6Jad1P1S5jz8GQKg1uQU/view]
+* **sraz**: 9:00 - 9:30 shromaždiště
+* **doprava**: **společná MHD bus 201**
+sraz Konečného náměstí u stánku s pečivem v 7:40
+sraz Stará Osada v 8:10
