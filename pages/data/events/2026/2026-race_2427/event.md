@@ -38,6 +38,7 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.28228, 16.7509'
+hasStartlist: true
 ---
 
 Závod jako workshop! Přijďte si vyzkoušet i rodičové a kdo další vás napadne sport, co dělají vaše děti! Poznejte orienťáckou atmosféru, lesní rauš a buchotvý bufet.
