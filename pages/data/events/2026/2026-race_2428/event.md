@@ -38,6 +38,7 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.61384, 16.13785'
+hasStartlist: true
 ---
 
 * **sraz**: 8:00 Kr. Pole nádraží
