@@ -24,7 +24,14 @@ program: ''
 thingsToTake: ''
 signups: ''
 taxonomy:
-    skupina: {  }
+    skupina:
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - dorost
+        - hobby
 gps: '49.21793, 16.50722'
 ---
 

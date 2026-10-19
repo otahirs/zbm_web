@@ -7,16 +7,16 @@ access:
 process:
     markdown: false
 cache_enable: false
-defaultTemplate: Letní
+defaultTemplate: Zimní
 templates:
     plan:
         monday:
             -
                 group:
                     - dorost
-                name: 'Atletické posilko + fotbálek'
-                time: '17:00'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/madenopesa'
+                name: Posilovna
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
             -
                 group:
                     - zaci1
@@ -25,12 +25,28 @@ templates:
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
         tuesday:
-            -
+            0:
                 group:
                     - dorost
-                name: 'Běh dle plánu'
-                time: '17:00'
-                place: Anthropos
+                name: 'Běžecký trénink'
+                time: '16:30'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
+            1792408206351:
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                name: 'Mapový trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
+            1792408232300:
+                group:
+                    - zaci2
+                    - hobby
+                name: 'Běžecký trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
         wednesday:
             -
                 group:
@@ -48,35 +64,33 @@ templates:
             -
                 group:
                     - dorost
-                name: 'Běžecký trénink'
+                name: 'Běžecký trénink (světlo, hladké boty)'
                 time: '16:50'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
+                place: Rosnička
             -
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
-                time: '16:00 – 18:00'
-                place: 'Areál VUT, Stadion pod Palackého vrchem'
+                time: '16:30 – 18:00'
+                place: Rosnička
             -
                 group:
                     - pulci1
                     - pulci2
-                name: 'Běžecký trénink'
-                time: '16:00 – 17:30'
-                place: 'Areál VUT - Kopečky https://mapy.com/s/fobofupumo'
+                name: Tělocvična
+                time: '16:00 – 17:00'
+                place: 'ZŠ Sirotkova'
         friday:
             -
                 name: ''
                 time: ''
                 place: ''
         saturday:
-            -
-                group:
-                    - zaci2
-                name: 'Běh dle plánu'
+            1792408310751:
+                name: ''
                 time: ''
-                place: samostatně
+                place: ''
         sunday:
             -
                 name: ''
