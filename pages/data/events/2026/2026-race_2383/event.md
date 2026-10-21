@@ -19,7 +19,7 @@ date: '2026-01-15'
 import:
     type: members
     time: 1768459205
-meetTime: ''
+meetTime: '16:00'
 meetPlace: 'parkoviště Královo pole nádraží'
 link: ''
 eventTypeDescription: ''
@@ -34,7 +34,7 @@ note: "- nikým nerušný pobyt na hraničním hřebeni, přímo načervené zna
 return: ''
 price: ''
 program: ''
-thingsToTake: "* Turistidké oblečení do každého počasí\r\n* Nezapomeňte plavky s sebou"
+thingsToTake: "* Turistické oblečení do každého počasí\r\n* Nezapomeňte plavky s sebou\r\n* ručník nebo osuška s sebou (nebo oboje)"
 signups: ''
 gps: '49.47457, 18.543'
 ---
@@ -44,7 +44,7 @@ gps: '49.47457, 18.543'
 -  koupání v bazénu
 -  uzpůsobeno všem věkovým kategoriím
 ![](http://www.dorotanka.cz/images/gallery/9-photo-2026-01-14-09-05-01-323.jpg)
-* **sraz**: parkoviště Královo pole nádraží
+* **sraz**: 16:00 parkoviště Královo pole nádraží
 * **doprava**: Hromadně auty a dodávkami. Čas odjezdu ladíme.
 Příjezd na chatu je omezen. Pokud jste nebyly osloveni jako řidiči na společnou dopravu, tak případnou svoji dopravu řešte s Mírou co nejdříve, nejlépe do 21.10.
 * **ubytování**: Spí se na postelích s povlečením
