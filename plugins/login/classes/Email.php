@@ -38,21 +38,14 @@ class Email
                 throw new \RuntimeException('User activation route does not exist!');
             }
 
-            $site_host = $config->get('plugins.login.site_host');
-            if (!empty($site_host)) {
-                $activationRoute = rtrim($site_host, '/') . '/' . ltrim($activationRoute, '/');
-            }
-
             if (static::refuseIfUntrustedHost('account activation')) {
                 return;
             }
 
             static::warnIfUntrustedHost('account activation');
 
-            $activationLink = Utils::url(
-                $activationRoute . '/token' . $param_sep . $token . '/username' . $param_sep . $user->username,
-                null,
-                true
+            $activationLink = static::siteUrl(
+                $activationRoute . '/token' . $param_sep . $token . '/username' . $param_sep . $user->username
             );
 
             $context = [
@@ -72,6 +65,98 @@ class Email
         }
     }
 
+
+    /**
+     * Mail the confirmation link for a waiting email change to the new address.
+     *
+     * @param UserInterface $user
+     * @param UserInterface|null $actor
+     * @return void
+     * @throws \Exception
+     */
+    public static function sendEmailChangeEmail(UserInterface $user, ?UserInterface $actor = null): void
+    {
+        $email = (string)$user->get('email_pending', '');
+        $token = (string)$user->get('email_change_token', '');
+
+        if (!$email || !str_contains($token, '::')) {
+            return;
+        }
+
+        [$token, $expire] = explode('::', $token, 2);
+
+        try {
+            $config = static::getConfig();
+
+            $param_sep = $config->get('system.param_sep', ':');
+            $confirmRoute = static::getLogin()->getRoute('confirm_email');
+            if (!$confirmRoute) {
+                throw new \RuntimeException('Email change confirmation route does not exist!');
+            }
+
+            if (static::refuseIfUntrustedHost('email change')) {
+                return;
+            }
+
+            static::warnIfUntrustedHost('email change');
+
+            $confirmLink = static::siteUrl(
+                $confirmRoute . '/token' . $param_sep . $token . '/username' . $param_sep . $user->username
+            );
+
+            $context = [
+                'confirm_link' => $confirmLink,
+                'new_email' => $email,
+                'expire' => $expire,
+            ];
+
+            $params = [
+                'to' => $email,
+            ];
+
+            static::sendEmail('email-change', $context, $params, $user, $actor);
+        } catch (\Exception $e) {
+            static::getLogger()->error($e->getMessage());
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Tell the old address that the account's email address has changed.
+     *
+     * @param UserInterface $user
+     * @param string $oldEmail
+     * @param UserInterface|null $actor
+     * @return void
+     * @throws \Exception
+     */
+    public static function sendEmailChangedNotice(UserInterface $user, string $oldEmail, ?UserInterface $actor = null): void
+    {
+        if ($oldEmail === '') {
+            return;
+        }
+
+        try {
+            // No token in this mail, so it only warns about an untrusted host.
+            static::warnIfUntrustedHost('email changed notice');
+
+            $context = [
+                'old_email' => $oldEmail,
+                'new_email' => (string)$user->get('email', ''),
+            ];
+
+            $params = [
+                'to' => $oldEmail,
+            ];
+
+            static::sendEmail('email-changed', $context, $params, $user, $actor);
+        } catch (\Exception $e) {
+            static::getLogger()->error($e->getMessage());
+
+            throw $e;
+        }
+    }
 
     /**
      * @param UserInterface $user
@@ -97,21 +182,14 @@ class Email
                 throw new \RuntimeException('Password reset route does not exist!');
             }
 
-            $site_host = static::getConfig()->get('plugins.login.site_host');
-            if (!empty($site_host)) {
-                $resetRoute = rtrim($site_host, '/') . '/' . ltrim($resetRoute, '/');
-            }
-
             if (static::refuseIfUntrustedHost('password reset')) {
                 return;
             }
 
             static::warnIfUntrustedHost('password reset');
 
-            $resetLink = Utils::url(
-                "{$resetRoute}/task{$param_sep}login.reset/token{$param_sep}{$token}/user{$param_sep}{$user->username}/nonce{$param_sep}" . Utils::getNonce('reset-form'),
-                true,
-                true
+            $resetLink = static::siteUrl(
+                "{$resetRoute}/task{$param_sep}login.reset/token{$param_sep}{$token}/user{$param_sep}{$user->username}/nonce{$param_sep}" . Utils::getNonce('reset-form')
             );
 
             $context = [
@@ -152,11 +230,6 @@ class Email
         try {
             $forgotRoute = static::getLogin()->getRoute('forgot') ?: '/';
 
-            $site_host = static::getConfig()->get('plugins.login.site_host');
-            if (!empty($site_host)) {
-                $forgotRoute = rtrim($site_host, '/') . '/' . ltrim($forgotRoute, '/');
-            }
-
             // Warn only, deliberately no refuseIfUntrustedHost() here. This mail
             // carries no token, and not sending it would make registration behave
             // differently for a taken address, which is the enumeration this whole
@@ -164,7 +237,7 @@ class Email
             static::warnIfUntrustedHost('already registered notice');
 
             $context = [
-                'forgot_link' => Utils::url($forgotRoute, null, true),
+                'forgot_link' => static::siteUrl($forgotRoute),
             ];
 
             $params = [
@@ -255,16 +328,6 @@ class Email
                 throw new \RuntimeException('User registration route does not exist!');
             }
 
-            // Pin the link to the configured host, the same way the other flows do.
-            // Without this the route stays relative and Utils::url() resolves it
-            // against the Host-derived rootUrl(), so setting site_host had no effect
-            // on invitation links at all while isTrustedHostConfigured() still
-            // reported the site as protected. (GHSA-69vf-mjxw-x79j)
-            $site_host = $config->get('plugins.login.site_host');
-            if (!empty($site_host)) {
-                $inviteRoute = rtrim($site_host, '/') . '/' . ltrim($inviteRoute, '/');
-            }
-
             // An invitation is sent by an authenticated actor, so unlike a password
             // reset there is no account to enumerate and refusing quietly would just
             // look like a silent failure. Throw instead: Login::sendInviteEmail()
@@ -275,7 +338,12 @@ class Email
 
             static::warnIfUntrustedHost('invitation');
 
-            $invitationLink = Utils::url("{$inviteRoute}/{$param_sep}{$invitation->token}", true, true);
+            // siteUrl() pins the link to site_host, the same way the other flows do.
+            // Before it did, the route stayed relative and Utils::url() resolved it
+            // against the Host-derived rootUrl(), so setting site_host had no effect
+            // on invitation links at all while isTrustedHostConfigured() still
+            // reported the site as protected. (GHSA-69vf-mjxw-x79j)
+            $invitationLink = static::siteUrl("{$inviteRoute}/{$param_sep}{$invitation->token}");
 
             $context = [
                 'invitation_link' => $invitationLink,
@@ -316,21 +384,14 @@ class Email
                 throw new \RuntimeException('Magic login route does not exist!');
             }
 
-            $site_host = $config->get('plugins.login.site_host');
-            if (!empty($site_host)) {
-                $magicRoute = rtrim($site_host, '/') . '/' . ltrim($magicRoute, '/');
-            }
-
             if (static::refuseIfUntrustedHost('magic login')) {
                 return;
             }
 
             static::warnIfUntrustedHost('magic login');
 
-            $loginLink = Utils::url(
-                "{$magicRoute}/token{$param_sep}{$token}/username{$param_sep}{$user->username}",
-                true,
-                true
+            $loginLink = static::siteUrl(
+                "{$magicRoute}/token{$param_sep}{$token}/username{$param_sep}{$user->username}"
             );
 
             $context = [
@@ -347,6 +408,35 @@ class Email
 
             throw $e;
         }
+    }
+
+    /**
+     * Build the absolute URL for an email link.
+     *
+     * With `site_host` set the link is pinned to it. Without it, the multisite
+     * sub-directory base (`$pages->base()`, set in setup.php) is added, since
+     * Utils::url() only adds it for a path that resolves to a page. The page
+     * check runs on the whole path, the same lookup Utils::url() makes, so a
+     * link carrying params (`/reset_password/token:...`) gets the base even when
+     * a page exists at its bare route. (#241)
+     */
+    protected static function siteUrl(string $path): string
+    {
+        $site_host = static::getConfig()->get('plugins.login.site_host');
+        if (!empty($site_host)) {
+            $path = rtrim($site_host, '/') . '/' . ltrim($path, '/');
+        } else {
+            $pages = Grav::instance()['pages'];
+            $base = (string)$pages->base();
+            if ($base !== '') {
+                $page = $pages->find(substr($path, 0, strcspn($path, '?#')), true);
+                if (!$page || !$page->routable()) {
+                    $path = rtrim($base, '/') . '/' . ltrim($path, '/');
+                }
+            }
+        }
+
+        return Utils::url($path, true, true);
     }
 
     protected static function sendEmail(string $template, array $context, array $params, ?UserInterface $user = null, ?UserInterface $actor = null): void

@@ -48,6 +48,8 @@ interface Provider
 }
 ```
 
+One more method is optional and is not on the interface: `testRecipient()`, below.
+
 `engines()` is a list because a provider that has offered its transport under more than one name over the years should answer for all of them. `key()` is separate from the engine because it is what a route and a config block are addressed by, and only one of those can exist per provider however many engines there are.
 
 ### `capabilities()`
@@ -64,6 +66,8 @@ new Capabilities(
 ```
 
 A store sets `List-Unsubscribe`, an API transport turns the message into a JSON body and drops every header it does not recognise, the mail goes out looking perfectly fine, and a year later Gmail is filing it as spam because a bulk sender with no unsubscribe button is what a spammer looks like. Nothing on any screen would say so. Answering `unsubscribeHeaders: false` honestly is what lets a screen say so.
+
+`transactionalOnly` is optional too. Set it when the provider's terms allow transactional mail (receipts, password resets, notifications) and not newsletters or other bulk mail, as Cloudflare Email Service's do. A newsletter add-on reads it and refuses to send a campaign through your transport. It arrived in Email 5.3.3, and a named argument an older `Capabilities` does not know is a fatal error, so pass it only after `property_exists(Capabilities::class, 'transactionalOnly')`.
 
 `signsWebhooks` is optional and almost always left out: a screen works out whether you sign from `verificationKeys()`, and only a provider that signs with a published certificate and asks the merchant for no key, like SES, needs to say `signsWebhooks: true` itself. `echoNote` is where you say what a merchant has to do for `echoesHeaders` to be true — register the header in a dashboard, or press your setup button — in plain words, because "configure header passthrough" is not instructions.
 
@@ -172,6 +176,31 @@ new DomainFacts(
 The selector itself is deliberately not here. Selectors are per domain and per account — one provider uses `s` plus the account's numeric id, another generates three random tokens, a third uses a date — so there is nothing to guess and no way to walk a zone to find one. What is here is the convention: the zone a selector points into, which is enough to tell a real selector from a name that happens to resolve, and enough to spot the store that changed provider and left last year's record behind.
 
 `lookup` is the way out of that when your API will say. It is handed a domain and answers `['selectors' => [...], 'return_paths' => [...]]`, either key absent meaning "could not say". It must never throw and it must have a short timeout: a provider's API being slow is an unanswered question, not a broken settings screen. Callers cache the answer.
+
+### `testRecipient()`, optional
+
+An address your provider documents for testing: one its API accepts, that is delivered to nobody, and that it reports back as delivered through the same webhook as real mail. A store sends its "is the webhook working?" test there, so the test reaches no real inbox and still produces the event it is waiting for. Without one, the store sends the test to its own From address instead.
+
+```php
+/**
+ * Resend's own test address: accepted, delivered to nobody, reported as delivered.
+ * https://resend.com/docs/dashboard/emails/send-test-emails
+ */
+public function testRecipient(): ?string
+{
+    return 'delivered@resend.dev';
+}
+```
+
+It is a method on your provider class, not on the `Provider` interface, and it is optional both ways round. A new method on the interface would be a fatal error in every transport plugin not updated in the same release, so it is not there: a consumer asks `method_exists($provider, 'testRecipient')` and treats anything other than one valid address as no answer. That means a driver that has it still loads beside an Email plugin from before it existed (the method is just a method), and a driver from before it existed simply has no test address.
+
+The rules:
+
+- **Only an address the provider's own documentation names**, and only one it says produces a delivery event. Do not invent one, and do not answer an address that bounces or is suppressed on purpose: the test is waiting for a delivery. Put the link to the page in the docblock.
+- **A constant, with no I/O.** It is read every time a settings screen is drawn, like `capabilities()`.
+- **Null when there is none.** Most providers have none, or have only bounce and complaint addresses, and null is the honest answer.
+
+Today: Resend answers `delivered@resend.dev` and Amazon SES answers `success@simulator.amazonses.com` (the mailbox simulator). Postmark, Mailgun, SendGrid, MailerSend and SMTP2GO document no address that is delivered and reported as delivered, so they have none.
 
 ### A transport with no delivery API
 
@@ -370,3 +399,19 @@ Against the provider's own documented sample payloads, saved as fixtures, parsed
 For signatures, compute them in the test rather than pasting one, then break them: change a byte of the body, replace the signature, replay an old timestamp, point a certificate URL at a host that merely ends with the provider's domain. Every one of those is a real attack and every one is three lines of test.
 
 `WebhookRequest` is built directly in a test — a method, a path, a headers array, a body string — so none of this needs Grav, a route, or a running site.
+
+## Newsletter mail through its own engine
+
+A site can send its own mail (order confirmations, password resets, form notifications) through one provider and its newsletters through another. The Email plugin's `mailer.engine` is the site's engine and `mailer.marketing_engine` the newsletters'; when the second is empty, newsletters use the first.
+
+A newsletter add-on marks what it sends:
+
+```php
+$message = $grav['Email']->message($subject, $html, 'text/html')->to($address);
+if (method_exists($message, 'marketing')) {
+    $message->marketing();   // Email 5.3.3 and later
+}
+$grav['Email']->send($message);
+```
+
+and asks `Email::marketingEngine()` (or `Email::marketingEngineIn($mailerConfig)`) which engine that is, for its own health checks and provider screens. A transport plugin needs to do nothing: its engine is asked for by name either way.
