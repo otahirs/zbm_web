@@ -38,6 +38,7 @@ program: ''
 thingsToTake: ''
 signups: ''
 gps: '49.21754, 16.69505'
+hasStartlist: true
 ---
 
 * **sraz**: Líšeň
