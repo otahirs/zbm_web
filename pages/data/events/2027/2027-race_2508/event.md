@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - dorost
 id: 2027-race_2508
 start: '2027-04-02'
 end: '2027-04-04'
