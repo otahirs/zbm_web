@@ -115,8 +115,8 @@ plan:
                     - pulci1
                     - pulci2
                 name: Tělocvična
-                time: '16:00 – 17:00'
-                place: 'ZŠ Sirotkova'
+                time: '17:00 - 18:30'
+                place: Rosnička
         friday:
             -
                 name: ''
@@ -202,19 +202,9 @@ plan:
                     - pulci1
                     - pulci2
                 name: Tělocvična
-                time: '16:00 – 17:00'
-                place: 'ZŠ Sirotkova'
+                time: '17:00 - 18:30'
+                place: Rosnička
         friday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            1792408310751:
-                name: ''
-                time: ''
-                place: ''
-        sunday:
             -
                 name: ''
                 time: ''
@@ -289,8 +279,8 @@ plan:
                     - pulci1
                     - pulci2
                 name: Tělocvična
-                time: '16:00 – 17:00'
-                place: 'ZŠ Sirotkova'
+                time: '17:00 - 18:30'
+                place: Rosnička
         friday:
             -
                 name: ''
