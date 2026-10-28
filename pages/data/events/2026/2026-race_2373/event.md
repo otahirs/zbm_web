@@ -1,6 +1,7 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - dorost
 id: 2026-race_2373
 start: '2026-12-10'
 end: '2026-12-13'

@@ -1,6 +1,8 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - zaci2
+        - dorost
 id: 2027-race_2507
 start: '2027-03-24'
 end: '2027-03-29'

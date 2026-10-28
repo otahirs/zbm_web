@@ -1,6 +1,13 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - zabicky
+        - pulci1
+        - pulci2
+        - zaci1
+        - zaci2
+        - dorost
+        - hobby
 id: 2026-race_2525
 start: '2026-12-06'
 end: '2026-12-06'
