@@ -1,6 +1,8 @@
 ---
 taxonomy:
-    skupina: {  }
+    skupina:
+        - zaci2
+        - dorost
 id: 2026-race_2517
 start: '2026-12-04'
 end: '2026-12-04'
