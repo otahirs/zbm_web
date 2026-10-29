@@ -43,6 +43,13 @@ access:
             <h2>Mapová teorie</h2>
         </a>
     </div>
+{% if grav.user.authorize('site.dotace') %}
+    <div class="col-sm-6 col-md-4">
+        <a href="/auth/dotace">
+            <h2>Podklady pro dotace</h2>
+        </a>
+    </div>
+{% endif %}
     <div class="col-sm-6 col-md-4">
         <a href="/user_profile">
             <h2>Můj účet</h2>

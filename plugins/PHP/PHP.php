@@ -40,6 +40,9 @@ class PHPPlugin extends Plugin
 
         require_once(__DIR__ . '/twig/CalendarExport.php');
         $this->grav['twig']->twig->addExtension(new CalendarExport());
+
+        require_once(__DIR__ . '/twig/Dotace.php');
+        $this->grav['twig']->twig->addExtension(new Dotace());
     }
 
     /*************/
