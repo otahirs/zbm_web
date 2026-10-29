@@ -7,6 +7,7 @@ test('birth year', function () {
     eq(Seznam::birthYear('2601', 2026), 2026);
     eq(Seznam::birthYear('12', 2026), null);
     eq(Seznam::birthYear(null, 2026), null);
+    eq(Seznam::birthYear("1001\n", 2026), null);
 });
 test('rows czech sort and numbering', function () {
     $rows = Seznam::rows([

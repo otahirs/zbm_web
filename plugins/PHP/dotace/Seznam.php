@@ -5,7 +5,7 @@ class Seznam
 {
     public static function birthYear(?string $reg, int $currentYear): ?int
     {
-        if ($reg === null || !preg_match('/^\d{4}$/', $reg)) return null;
+        if ($reg === null || !preg_match('/^\d{4}\z/', $reg)) return null;
         $yy = (int) substr($reg, 0, 2);
         return $yy > $currentYear % 100 ? 1900 + $yy : 2000 + $yy;
     }
