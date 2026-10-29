@@ -12,19 +12,35 @@
         <a href="/kontakty#{{page.header.group}}">Kontakty na trenéry</a>
     {% endif %}
     <hr>
+    {# mapove teorie za posledni rok - zalozka se zobrazi jen kdyz je co ukazat #}
+    {% set mapt_page = page.find('/data/maptheory') %}
+    {% set mapt_all = attribute(mapt_page.header.maptheory, page.header.group)|default([]) %}
+    {% if "today"|date("m") >= 11 %}
+        {% set mapt_deadline = "today -90 days"|date("Y-m-d") %}
+    {% else %}
+        {% set mapt_deadline = "today -360 days"|date("Y-m-d") %}
+    {% endif %}
+    {% set mapt_items = [] %}
+    {% for item in mapt_all if item[:10] > mapt_deadline %}
+        {% set mapt_items = mapt_items|merge([item]) %}
+    {% endfor %}
         <ul class="tabs">
             <li data-tab="plan" class="tab-link group-base group-plan current">Plán na tento týden</li>
         
             <li data-tab="soustredeni" class="tab-link group-text">Soustředění</li>
             <li data-tab="routes" class="tab-link group-text">Postupy</li>
             <li data-tab="results" class="tab-link group-text">Výsledky</li>
+            {% if mapt_items|length %}
             <li data-tab="mapt" class="tab-link group-text">Mapová teorie</li>
+            {% endif %}
         </ul>
         <ul class="tabs">
             <li data-tab="soustredeni" class="tab-link group-icon"><i class="fa fa-users" aria-hidden="true"></i></li>
             <li data-tab="routes" class="tab-link group-icon"><i class="fa fa-location-arrow" aria-hidden="true"></i></li>
             <li data-tab="results" class="tab-link group-icon"><i class="fa fa-list-ol" aria-hidden="true"></i></li>
+            {% if mapt_items|length %}
             <li data-tab="mapt" class="tab-link group-icon"><i class="fa fa-map" aria-hidden="true"></i></li>
+            {% endif %}
         </ul>
 
     {% set collection_group = taxonomy.findTaxonomy({'skupina':page.header.group})  %} 
@@ -215,7 +231,13 @@
         </div>
 
         <div id="routes" class="tab-content">
-            {% for p in collection.order('header.start','desc') if p.header.routes|length %}
+            <p>
+                Postupy z klubových tréninků a závodů najdete na
+                <a href="https://www.livelox.com/?tab=allEvents&timePeriod=pastMonth&country=CZE&q=sk%20brno%20%C5%BEabov%C5%99esky&sorting=time" target="_blank">Liveloxu</a>.
+                Připravujeme přechod na OResults (Aftershow), odkaz doplníme. Starší postupy jsou v <a href="/archiv/postupy">archivu</a>.
+            </p>
+            {% set routes_deadline = "today -360 days"|date("Y-m-d") %}
+            {% for p in collection.order('header.start','desc') if p.header.routes|length and p.header.start >= routes_deadline %}
                 <h4>
                     {{ p.header.title }}&nbsp;|&nbsp;
                     {# pokud neni stejny mesic - format 6. cerven - 2. cervenec #}
@@ -260,23 +282,18 @@
             {% endfor %}
         </div>
 
+        {% if mapt_items|length %}
         <div id="mapt" class="tab-content">
-            {% set p = page.find('/data/maptheory') %}
-            {% set group = attribute(p.header.maptheory, page.header.group) %}
-            {% if "today"|date("m") >= 11 %}
-                {% set deadline = "today -90 days"|date("Y-m-d") %}
-            {% else %}
-                {% set deadline = "today -360 days"|date("Y-m-d") %}
-            {% endif %}
             <ul>
-            {% for item in group if item[:10] > deadline %}                  
-                <li>            
-                    <a href="{{base_url_absolute}}/data/maptheory/{{page.header.group}}/{{item}}" target="_blank"> {{item[:10]|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM Y')}} </a> 
+            {% for item in mapt_items %}
+                <li>
+                    <a href="{{base_url_absolute}}/data/maptheory/{{page.header.group}}/{{item}}" target="_blank"> {{item[:10]|localizeddate('medium', 'none', 'cs','Europe/Prague', 'd. MMMM Y')}} </a>
                 </li>
             {% endfor %}
             </ul>
-            <em>Zobrazují se mapové teorie za poslední rok, starší záznamy naleznete v archivu.</em>
+            <em>Zobrazují se mapové teorie za poslední rok, starší jsou pro členy klubu k dispozici na vyžádání u trenérů.</em>
         </div>
+        {% endif %}
   
 
 

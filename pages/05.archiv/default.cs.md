@@ -6,8 +6,8 @@ date: '2019-05-20'
 Zde naleznete veškeré starší informace, které se již nedostaly na hlavní stránky:
 * <a href="archiv/akce">události</a>  
 * <a href="archiv/novinky">novinky</a> - stahuje větší množstní dat!
-* postupy  - _bude_
-* mapová teorie  - _bude_
+* <a href="archiv/postupy">postupy</a>
+* mapová teorie - pro členy klubu na vyžádání u trenérů, viz <a href="/kontakty">kontakty</a>
 
 ---
 #### Vývoj webových stránek
