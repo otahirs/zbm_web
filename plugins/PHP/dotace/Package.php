@@ -8,7 +8,7 @@ class Package
      *
      * @param list<array{id:string,event:array,title:string}> $camps
      * @param list<string> $docs variant keys plus 'seznam'; unknown keys are ignored
-     * @param array<string,array{label:string,line:string}> $variants
+     * @param array<string,array{label:string,line:string,logo?:string}> $variants
      * @param callable $markdown fn(string): string
      * @param callable $pdf fn(string $html): string
      * @return list<string>
@@ -55,7 +55,7 @@ class Package
 
             $rozpis = Rozpis::build($camp['event'], $race, $defaults, $title);
             foreach ($chosenVariants as $key) {
-                $html = Rozpis::html($rozpis, $variants[$key]['line'], $markdown);
+                $html = Rozpis::html($rozpis, $variants[$key], $markdown);
                 $files[$id . '_rozpis_' . $key . '.pdf'] = $pdf($html);
             }
 

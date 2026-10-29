@@ -13,9 +13,11 @@ dotace_variants:
     brno:
         label: 'Rozpis Brno (PDF)'
         line: 'Soustředění bude podpořeno z dotace Magistrátu města Brna – vrcholový sport.'
+        logo: logo-brno.png
     kraj:
         label: 'Rozpis Kraj (PDF)'
         line: 'Soustředění bude podpořeno z dotace Jihomoravského kraje - Podpora sportu'
+        logo: logo-jmk.jpg
 dotace_defaults:
     meetPlace: 'Kr. Pole nádraží'
     transport: auty

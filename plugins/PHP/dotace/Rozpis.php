@@ -31,29 +31,52 @@ class Rozpis
         return $value;
     }
 
-    public static function program(string $start, ?string $end): string
+    /** @return list<array{day:string,items:list<string>}> one entry per day, two-letter uppercase Czech weekday */
+    public static function programDays(string $start, ?string $end): array
     {
         $s = DateTimeImmutable::createFromFormat('!Y-m-d', $start);
         $e = self::filled($end) ? DateTimeImmutable::createFromFormat('!Y-m-d', trim($end)) : $s;
-        if ($e < $s) {
+        if ($e === false || $e < $s) {
             $e = $s;
         }
         $count = (int)$s->diff($e)->days + 1;
-        $lines = [];
+        $days = [];
         for ($i = 0; $i < $count; $i++) {
-            $label = self::SHORT_DAYS[(int)$s->modify("+$i days")->format('w')];
+            $label = mb_strtoupper(self::SHORT_DAYS[(int)$s->modify("+$i days")->format('w')], 'UTF-8');
             if ($count === 1) {
-                $text = 'trénink';
+                $items = ['trénink'];
             } elseif ($i === 0) {
-                $text = 'dopoledne cesta, odpoledne první trénink';
+                $items = ['dopo: cesta', 'odpo: první trénink'];
             } elseif ($i === $count - 1) {
-                $text = 'dopoledne mapová fáze, odpoledne cesta zpět';
+                $items = ['dopo: mapová fáze', 'odpo: cesta zpět'];
+            } elseif ($i % 2 === 1) {
+                $items = ['dopo: mapová fáze', 'odpo: mapová fáze'];
             } else {
-                $text = ($i % 2 === 1 ? '2×' : '1×') . ' mapová fáze';
+                $items = ['dopo: mapová fáze'];
             }
-            $lines[] = "$label: $text";
+            $days[] = ['day' => $label, 'items' => $items];
         }
-        return implode("  \n", $lines);
+        return $days;
+    }
+
+    /** Generated programme as a nested markdown list. */
+    public static function program(string $start, ?string $end): string
+    {
+        $lines = [];
+        foreach (self::programDays($start, $end) as $d) {
+            $lines[] = '- ' . $d['day'];
+            foreach ($d['items'] as $item) {
+                $lines[] = '    - ' . $item;
+            }
+        }
+        return implode("\n", $lines);
+    }
+
+    /** "a, b, c" -> markdown bullet list */
+    private static function bulletList(string $csv): string
+    {
+        $items = array_filter(array_map('trim', explode(',', $csv)), fn($i) => $i !== '');
+        return implode("\n", array_map(fn($i) => '- ' . $i, $items));
     }
 
     public static function build(array $event, ?array $race, array $defaults, string $title): array
@@ -63,7 +86,12 @@ class Rozpis
 
         $place = self::pick($event, $defaults, 'meetPlace');
         $sraz = self::filled($event['meetTime'] ?? null) ? trim($event['meetTime']) . ', ' . $place : $place;
-        $program = self::filled($event['program'] ?? null) ? trim($event['program']) : self::program($start, $end);
+        $programSection = self::filled($event['program'] ?? null)
+            ? ['label' => 'Program', 'value' => trim($event['program'])]
+            : ['label' => 'Program', 'value' => self::program($start, $end), 'days' => self::programDays($start, $end)];
+        $things = self::filled($event['thingsToTake'] ?? null)
+            ? trim($event['thingsToTake'])
+            : self::bulletList((string)($defaults['thingsToTake'] ?? ''));
 
         $entry = $race['entries'][0] ?? null;
         $deadline = self::validDeadline($entry, $start) ?? Format::defaultDeadline($start);
@@ -78,28 +106,88 @@ class Rozpis
                 ['label' => 'Ubytování', 'value' => self::pick($event, $defaults, 'accomodation')],
                 ['label' => 'Jídlo', 'value' => self::pick($event, $defaults, 'food')],
                 ['label' => 'Návrat', 'value' => self::pick($event, $defaults, 'return')],
-                ['label' => 'Program', 'value' => $program],
-                ['label' => 'S sebou', 'value' => self::pick($event, $defaults, 'thingsToTake')],
+                $programSection,
+                ['label' => 'S sebou', 'value' => $things],
             ],
         ];
     }
 
-    public static function html(array $rozpis, string $subsidyLine, callable $markdown): string
+    private const CLUB_LOGO = 'logo-zbm.png';
+
+    /** Image file from assets/ as a data URI, or null if missing. Only the base name is used. */
+    public static function logoDataUri(?string $file): ?string
+    {
+        if ($file === null || trim($file) === '') {
+            return null;
+        }
+        $path = __DIR__ . '/assets/' . basename($file);
+        if (!is_file($path)) {
+            return null;
+        }
+        $mime = str_ends_with(strtolower($path), '.png') ? 'image/png' : 'image/jpeg';
+        return 'data:' . $mime . ';base64,' . base64_encode((string)file_get_contents($path));
+    }
+
+    /**
+     * Layout follows the club's Word templates: logos, centred title, bold labels with indented values,
+     * two-column generated programme, subsidy line at the page bottom.
+     *
+     * @param array{line:string,logo?:string} $variant
+     */
+    public static function html(array $rozpis, array $variant, callable $markdown): string
     {
         $e = fn(string $s) => htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
-        $rows = '';
+        $img = fn(?string $uri, string $class) => $uri === null ? '' : '<img class="' . $class . '" src="' . $uri . '">';
+
+        $sections = '';
         foreach ($rozpis['sections'] as $section) {
-            $rows .= '<tr><td class="label">' . $e($section['label']) . '</td><td>' . $markdown($section['value']) . "</td></tr>\n";
+            $value = isset($section['days']) ? self::daysHtml($section['days'], $e) : $markdown($section['value']);
+            $sections .= '<div class="section"><div class="label">' . $e($section['label']) . '</div>'
+                . '<div class="value">' . $value . "</div></div>\n";
         }
-        return '<!DOCTYPE html><html><head><meta charset="utf-8">'
-            . '<style>body{font-family:"DejaVu Sans",sans-serif;font-size:11pt}'
-            . 'table{border-collapse:collapse;width:100%}td{vertical-align:top;padding:4px 8px}'
-            . 'td.label{font-weight:bold;width:25%}p{margin:0}</style></head><body>'
+
+        return '<!DOCTYPE html><html><head><meta charset="utf-8"><style>'
+            . '@page{margin:1.5cm 2cm 2.5cm 2cm}'
+            . 'body{font-family:"DejaVu Sans",sans-serif;font-size:10.5pt}'
+            . 'table.head{width:100%;border-collapse:collapse}table.head td{vertical-align:middle;padding:0}'
+            . 'img.club{height:1.3cm}img.partner{height:1.15cm}'
+            . 'h1{text-align:center;font-size:19pt;margin:0.5cm 0 0.6cm 0}'
+            . 'p{margin:0}.meta{margin-bottom:0.45cm}'
+            . '.section{margin-top:0.3cm;page-break-inside:avoid}.label{font-weight:bold}.value{margin-left:1cm}'
+            . 'ul{margin:0;padding-left:0.6cm}ul ul{list-style-type:circle}'
+            . 'table.days{width:100%;border-collapse:collapse}table.days td{width:50%;vertical-align:top;padding:0}'
+            . '#footer{position:fixed;bottom:-1.3cm;left:0;right:0;text-align:center}'
+            . '</style></head><body>'
+            . '<div id="footer">' . $e($variant['line']) . '</div>'
+            . '<table class="head"><tr><td>' . $img(self::logoDataUri(self::CLUB_LOGO), 'club') . '</td>'
+            . '<td style="text-align:right">' . $img(self::logoDataUri($variant['logo'] ?? null), 'partner') . '</td></tr></table>'
             . '<h1>' . $e($rozpis['title']) . '</h1>'
-            . '<p>' . $e($rozpis['dates']) . '</p>'
-            . '<p>Přihlášky do ' . $e($rozpis['deadline']) . '</p>'
-            . "<table>\n" . $rows . "</table>\n"
-            . '<p>' . $e($subsidyLine) . '</p>'
+            . '<p class="meta">' . $e($rozpis['dates']) . '</p>'
+            . '<p class="meta">Přihlášky do ' . $e($rozpis['deadline']) . '</p>'
+            . $sections
             . '</body></html>';
+    }
+
+    /** Generated programme: day bullets with sub-bullets, split into two columns (left gets the extra day). */
+    private static function daysHtml(array $days, callable $e): string
+    {
+        $cols = array_chunk($days, max(1, (int)ceil(count($days) / 2)));
+        $html = '<table class="days"><tr>';
+        foreach ([0, 1] as $c) {
+            $html .= '<td>';
+            if (!empty($cols[$c])) {
+                $html .= '<ul>';
+                foreach ($cols[$c] as $d) {
+                    $html .= '<li>' . $e($d['day']) . '<ul>';
+                    foreach ($d['items'] as $item) {
+                        $html .= '<li>' . $e($item) . '</li>';
+                    }
+                    $html .= '</ul></li>';
+                }
+                $html .= '</ul>';
+            }
+            $html .= '</td>';
+        }
+        return $html . '</tr></table>';
     }
 }
