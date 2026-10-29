@@ -109,7 +109,6 @@ primaryImage: {  }
     <div class="divOuter col-lg-6" id="zaci2">
        <div class="contact--divInner">
         <h3>Žáci 2 - od 12 let</h3>
-            {% include 'partials/trainer.html.twig' with {name: 'Julie Finstrlová', email: 'julie.finstrlova@zabiny.club', phone: '+420 702 244 733'} %}
             {% include 'partials/trainer.html.twig' with {name: 'Pavel Rotek', email: 'pavel.rotek@zabiny.club', phone: '+420 603 884 000'} %}
             {% include 'partials/trainer.html.twig' with {name: 'Štěpán Zimmermann', email: 'stepan.zimmermann@zabiny.club', photo: 'stepan-zimmermann-1'} %}
         </div>
