@@ -1,0 +1,17 @@
+{# odkazy na systemy s postupy (Livelox, OResults...), spravuji se v hlavicce stranky /archiv/postupy #}
+{% set routes_links = links_page.header.routes_links|default([]) %}
+{% if routes_links|length or links_page.header.routes_note %}
+<div class="routes-links">
+    {% if routes_links|length %}
+    Postupy najdete na:
+    <ul>
+        {% for l in routes_links %}
+        <li><a href="{{ l.link }}" target="_blank">{{ l.name }}</a>{% if l.note %} – {{ l.note }}{% endif %}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if links_page.header.routes_note %}
+    {{ links_page.header.routes_note }}
+    {% endif %}
+</div>
+{% endif %}
