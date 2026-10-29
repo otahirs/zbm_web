@@ -66,7 +66,7 @@ dotace_defaults:
                 <td><input type="checkbox" name="camps[]" value="{{ camp.id|e('html_attr') }}" checked></td>
                 <td>{{ camp.title|e }}</td>
                 <td>{{ camp.start|e }}{% if camp.end %} – {{ camp.end|e }}{% endif %}</td>
-                <td><input type="text" name="titles[{{ camp.id|e('html_attr') }}]" value="{{ camp.defaultTitle|e('html_attr') }}" size="50"></td>
+                <td><input type="text" name="titles[{{ camp.id|e('html_attr') }}]" value="{{ camp.defaultTitle|e('html_attr') }}" size="50">{% if not camp.fromMembers %}<br><small>bez seznamu (akce není z members)</small>{% endif %}</td>
             </tr>
         {% endfor %}
         </tbody>

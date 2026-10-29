@@ -7,7 +7,6 @@ use Grav\Plugin\Dotace\Package;
 use Grav\Plugin\Dotace\PdfRenderer;
 
 require_once(__DIR__ . "/Utils.php");
-require_once(__DIR__ . "/../dotace/bootstrap.php");
 
 class Dotace extends \Grav\Common\Twig\TwigExtension
 {
@@ -35,14 +34,15 @@ class Dotace extends \Grav\Common\Twig\TwigExtension
 
     /**
      * Camps (template soustredeni) overlapping the period, sorted by start.
-     * @return list<array{id:string,title:string,start:string,end:string,defaultTitle:string,event:array}>
+     * @return list<array{id:string,title:string,start:string,end:string,defaultTitle:string,fromMembers:bool,event:array}>
      */
     public static function camps($from, $to): array
     {
+        require_once(__DIR__ . "/../dotace/bootstrap.php");
         $from = (string)$from;
         $to = (string)$to;
         $page = Grav::instance()['page'];
-        $collection = $page->evaluate(['@page.descendants' => self::EVENTS_URL]);
+        $collection = $page->evaluate(['@page.descendants' => self::EVENTS_URL])->routable();
 
         $result = [];
         foreach ($collection as $event) {
@@ -59,6 +59,7 @@ class Dotace extends \Grav\Common\Twig\TwigExtension
 
             $title = (string)($header['title'] ?? '');
             $place = (string)($header['place'] ?? '');
+            if (trim($place, " \t\n\r\0\x0B?") === '') $place = '';
             $defaultTitle = trim(preg_replace('/\s+/', ' ', $title . ' ' . $place . ' ' . substr($start, 0, 4)));
 
             $result[] = [
@@ -67,6 +68,7 @@ class Dotace extends \Grav\Common\Twig\TwigExtension
                 'start' => $start,
                 'end' => (string)($header['end'] ?? ''),
                 'defaultTitle' => $defaultTitle,
+                'fromMembers' => MembersClient::raceIdFromEventId($id) !== null,
                 'event' => $header,
             ];
         }
@@ -77,6 +79,8 @@ class Dotace extends \Grav\Common\Twig\TwigExtension
     public static function generate()
     {
         if ($_SERVER["REQUEST_METHOD"] !== "POST") return;
+        require_once(__DIR__ . "/../dotace/bootstrap.php");
+        @set_time_limit(120);
 
         $grav = Grav::instance();
         if (!$grav['user']->authorize('site.dotace')) {
@@ -135,7 +139,7 @@ class Dotace extends \Grav\Common\Twig\TwigExtension
             Utils::return_ERROR($e->getMessage());
         } catch (\Throwable $e) {
             @unlink($zip);
-            $grav['log']->error('Dotace | generation failed | ' . get_class($e));
+            $grav['log']->error('Dotace | generation failed | ' . get_class($e) . ': ' . $e->getMessage() . ' @ ' . basename($e->getFile()) . ':' . $e->getLine());
             Utils::return_ERROR('Generování se nezdařilo.');
         }
     }

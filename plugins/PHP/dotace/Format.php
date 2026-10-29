@@ -10,7 +10,11 @@ class Format
 
     private static function parse(string $ymd): DateTimeImmutable
     {
-        return DateTimeImmutable::createFromFormat('!Y-m-d', $ymd);
+        $d = DateTimeImmutable::createFromFormat('!Y-m-d', $ymd);
+        if ($d === false) {
+            throw new \InvalidArgumentException('Neplatné datum: ' . $ymd);
+        }
+        return $d;
     }
 
     public static function longDate(string $ymd): string

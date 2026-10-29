@@ -12,6 +12,8 @@ class PdfRenderer
         $options->set('defaultFont', 'DejaVu Sans');
         $options->set('isRemoteEnabled', false);
         $options->set('isPhpEnabled', false);
+        // Keep generated *.ufm.json out of the GitSync-tracked vendor directory.
+        $options->setFontCache(sys_get_temp_dir());
 
         $dompdf = new Dompdf($options);
         $dompdf->loadHtml($html, 'UTF-8');

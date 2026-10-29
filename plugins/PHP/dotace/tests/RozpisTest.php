@@ -61,3 +61,9 @@ test('html escapes and ends with subsidy line', function () {
     ok(strpos($html, '<md>auty</md>') !== false);
     ok(strrpos($html, 'LINE') > strrpos($html, 'S sebou'));
 });
+
+test('malformed date throws InvalidArgumentException', function () {
+    $threw = false;
+    try { Format::longDate('nonsense'); } catch (\InvalidArgumentException $e) { $threw = str_contains($e->getMessage(), 'nonsense'); }
+    ok($threw, 'expected InvalidArgumentException');
+});
