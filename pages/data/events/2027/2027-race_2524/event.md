@@ -14,5 +14,7 @@ date: '2026-10-16'
 import:
     type: members
     time: 1792152605
+transport: 'auty dle přihláškového systému'
 ---
 
+* **doprava**: auty dle přihláškového systému

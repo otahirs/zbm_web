@@ -20,8 +20,8 @@ eventTypeDescription: ''
 startTime: ''
 map: ''
 terrain: ''
-transport: ''
-accomodation: ''
+transport: 'auty dle přihláškového systému'
+accomodation: 'společné ubytování'
 food: ''
 leader: ''
 note: ''
@@ -32,3 +32,5 @@ thingsToTake: ''
 signups: ''
 ---
 
+* **doprava**: auty dle přihláškového systému
+* **ubytování**: společné ubytování

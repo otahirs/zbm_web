@@ -13,5 +13,9 @@ date: '2026-09-29'
 import:
     type: members
     time: 1790685606
+transport: 'společná doprava'
+accomodation: 'společné ubytování'
 ---
 
+* **doprava**: společná doprava
+* **ubytování**: společné ubytování

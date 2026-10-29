@@ -13,5 +13,9 @@ date: '2026-09-29'
 import:
     type: members
     time: 1790685606
+transport: 'auty dle přihláškového systému'
+accomodation: 'společné ubytování'
 ---
 
+* **doprava**: auty dle přihláškového systému
+* **ubytování**: společné ubytování

@@ -1,0 +1,11 @@
+{
+    "name": "zbm/php-plugin",
+    "require": {
+        "dompdf/dompdf": "^3.1"
+    },
+    "config": {
+        "platform": {
+            "php": "8.3.0"
+        }
+    }
+}
