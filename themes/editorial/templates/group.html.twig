@@ -231,11 +231,8 @@
         </div>
 
         <div id="routes" class="tab-content">
-            <p>
-                Postupy z klubových tréninků a závodů najdete na
-                <a href="https://www.livelox.com/?tab=allEvents&timePeriod=pastMonth&country=CZE&q=sk%20brno%20%C5%BEabov%C5%99esky&sorting=time" target="_blank">Liveloxu</a>.
-                Připravujeme přechod na OResults (Aftershow), odkaz doplníme. Starší postupy jsou v <a href="/archiv/postupy">archivu</a>.
-            </p>
+            {% include 'partials/routes_links.html.twig' with {'links_page': page.find('/archiv/postupy')} %}
+            <p>Starší postupy jsou v <a href="/archiv/postupy">archivu</a>.</p>
             {% set routes_deadline = "today -360 days"|date("Y-m-d") %}
             {% for p in collection.order('header.start','desc') if p.header.routes|length and p.header.start >= routes_deadline %}
                 <h4>

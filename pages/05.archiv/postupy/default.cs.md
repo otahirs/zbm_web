@@ -3,6 +3,14 @@ title: 'Archiv postupů'
 process:
     twig: true
     markdown: false
+# Odkazy na systémy s postupy - zobrazují se zde i v záložce "Postupy" na stránkách skupin.
+# Pro změnu stačí upravit tento seznam (admin: stránka Archiv postupů -> Expert).
+routes_links:
+    -
+        name: Livelox
+        link: 'https://www.livelox.com/?tab=allEvents&timePeriod=pastMonth&country=CZE&q=sk%20brno%20%C5%BEabov%C5%99esky&sorting=time'
+        note: 'klubové tréninky a závody od roku 2024'
+routes_note: 'Připravujeme přechod na OResults (Aftershow), odkaz doplníme.'
 content:
     items:
         '@page.descendants': /data/events
@@ -13,11 +21,7 @@ content:
         dir: desc
 ---
 
-<p>
-    Postupy z klubových tréninků a závodů od roku 2024 najdete na
-    <a href="https://www.livelox.com/?tab=allEvents&timePeriod=pastMonth&country=CZE&q=sk%20brno%20%C5%BEabov%C5%99esky&sorting=time" target="_blank">Liveloxu</a>.
-    Připravujeme přechod na OResults (Aftershow), odkaz doplníme.
-</p>
+{% include 'partials/routes_links.html.twig' with {'links_page': page} %}
 <p>Starší postupy uložené u jednotlivých akcí:</p>
 
 {% for p in page.collection() if p.header.routes|length %}
