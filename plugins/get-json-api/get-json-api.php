@@ -26,18 +26,13 @@ class GetJSONAPIPlugin extends Plugin
 	return json_decode($body, true);
     }
 
+    // entry deadlines by date, from members_api v3 /races
     public function getRemoteJsonZBM($url) {
-        $body = Response::get($url);
-        $data = json_decode($body, true);
-
-        foreach( $data["Data"] as $event){
-            if (array_key_exists("Entry1", $event) && $event["Cancelled"] == "0" ) {
-                $entries[$event["Entry1"]][] = [
-                    "name" => $event["Name"],
-                    "date" => $event["Date1"]
-                ];
-            }
+        require_once(__DIR__ . '/../PHP/members/MembersRaces.php');
+        $races = json_decode(Response::get($url), true);
+        if (!is_array($races) || !array_is_list($races)) {
+            throw new \RuntimeException('Unexpected members response');
         }
-        return $entries;
-        }
+        return \Grav\Plugin\Members\MembersRaces::entriesByDate($races);
+    }
 }

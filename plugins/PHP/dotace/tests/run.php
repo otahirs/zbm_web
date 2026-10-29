@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/../bootstrap.php';
+require __DIR__ . '/../../members/MembersRaces.php';
 
 $GLOBALS['tests'] = [];
 
@@ -13,7 +14,7 @@ function ok(bool $cond, string $msg = ''): void {
     if (!$cond) throw new Exception($msg ?: 'assertion failed');
 }
 
-foreach (glob(__DIR__ . '/*Test.php') as $file) require $file;
+foreach (array_merge(glob(__DIR__ . '/*Test.php'), glob(__DIR__ . '/../../members/tests/*Test.php')) as $file) require $file;
 
 $failed = 0;
 foreach ($GLOBALS['tests'] as [$name, $fn]) {

@@ -185,7 +185,7 @@ news:
         
         {# try to get entries from members.zbm.eob #}
         {% try %}
-            {% set entries = "https://members.eob.cz/zbm/api_racelist.php"|getJsonZbmEntries %}
+            {% set entries = "https://members.eob.cz/api/3/zbm/races"|getJsonZbmEntries %}
         {% catch %}
           <div class="notices red">
             <p>Chyba připojení na přihláškov systém, nejsou zobrazeny blížící se přihlášky.</p>
