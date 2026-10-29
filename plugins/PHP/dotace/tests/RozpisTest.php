@@ -48,9 +48,16 @@ test('build uses event and members values', function () {
 });
 test('meetTime kept with default place', fn() =>
     eq(Rozpis::build(['start' => '2025-04-17', 'meetTime' => '8:00'], null, DEFAULTS, 'T')['sections'][0]['value'], '8:00, Kr. Pole nádraží'));
+test('invalid members deadline falls back to default', function () {
+    foreach ([['1970-01-01'], ['2025-03-01 12:00'], ['2025-05-01'], []] as $entries) {
+        $r = Rozpis::build(['start' => '2025-04-17'], ['entries' => $entries], DEFAULTS, 'T');
+        eq($r['deadline'], '17. března 2025', json_encode($entries));
+    }
+});
 test('html escapes and ends with subsidy line', function () {
-    $html = Rozpis::html(Rozpis::build(['start' => '2025-04-17'], null, DEFAULTS, 'TK <A&B>'), 'LINE', fn($m) => $m);
-    ok(strpos($html, 'TK &lt;A&amp;B&gt;') !== false);
+    $html = Rozpis::html(Rozpis::build(['start' => '2025-04-17'], null, DEFAULTS, 'TK <A&B> "q"'), 'LINE', fn($m) => "<md>$m</md>");
+    ok(strpos($html, 'TK &lt;A&amp;B&gt; &quot;q&quot;') !== false);
     ok(strpos($html, '<A&B>') === false);
+    ok(strpos($html, '<md>auty</md>') !== false);
     ok(strrpos($html, 'LINE') > strrpos($html, 'S sebou'));
 });

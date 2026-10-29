@@ -17,6 +17,20 @@ class Rozpis
         return self::filled($event[$key] ?? null) ? trim($event[$key]) : trim((string)($defaults[$key] ?? ''));
     }
 
+    /** Members deadline if strict Y-m-d, after 1970-01-01 and not after event start; else null. */
+    private static function validDeadline($value, string $start): ?string
+    {
+        if (!is_string($value)) {
+            return null;
+        }
+        $value = trim($value);
+        $d = DateTimeImmutable::createFromFormat('!Y-m-d', $value);
+        if ($d === false || $d->format('Y-m-d') !== $value || $value <= '1970-01-01' || $value > $start) {
+            return null;
+        }
+        return $value;
+    }
+
     public static function program(string $start, ?string $end): string
     {
         $s = DateTimeImmutable::createFromFormat('!Y-m-d', $start);
@@ -52,7 +66,7 @@ class Rozpis
         $program = self::filled($event['program'] ?? null) ? trim($event['program']) : self::program($start, $end);
 
         $entry = $race['entries'][0] ?? null;
-        $deadline = self::filled($entry) ? trim($entry) : Format::defaultDeadline($start);
+        $deadline = self::validDeadline($entry, $start) ?? Format::defaultDeadline($start);
 
         return [
             'title' => $title,
