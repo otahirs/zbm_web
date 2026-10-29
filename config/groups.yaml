@@ -179,3 +179,13 @@ maptheory:
     admin: {  }
     admin-addon-user-manager: {  }
 
+dotace:
+  groupname: dotace
+  readableName: 'Podklady pro dotace'
+  description: 'Může generovat rozpisy a seznamy účastníků soustředění pro dotace'
+  access:
+    site:
+      login: 'true'
+      dotace: 'true'
+    admin: {  }
+    admin-addon-user-manager: {  }
