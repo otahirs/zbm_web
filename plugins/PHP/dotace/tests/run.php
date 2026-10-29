@@ -20,5 +20,5 @@ foreach ($GLOBALS['tests'] as [$name, $fn]) {
     try { $fn(); echo "PASS $name\n"; }
     catch (Throwable $e) { $failed++; echo "FAIL $name: " . $e->getMessage() . "\n"; }
 }
-echo count($GLOBALS['tests']) - $failed . '/' . count($GLOBALS['tests']) . " passed\n";
+echo (count($GLOBALS['tests']) - $failed) . '/' . count($GLOBALS['tests']) . " passed\n";
 exit($failed ? 1 : 0);
