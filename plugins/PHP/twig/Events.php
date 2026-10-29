@@ -161,10 +161,15 @@ class Events extends \Grav\Common\Twig\TwigExtension
             }
             //$event_list[$num][""] = $event["Rank21"];
             $event_list[$num]["note"] = $event["Note"];
-            if (array_key_exists("Transport", $event) && strpos($event["Transport"], "Ano") !== false) {   
+            // api_racelist.php values: "No", "Yes", "Auto Yes", "Sdílená" (transport only)
+            $transport = array_key_exists("Transport", $event) ? $event["Transport"] : "";
+            if ($transport == "Sdílená") {
+                $event_list[$num]["transport"] = "auty dle přihláškového systému";
+            }
+            else if (in_array($transport, ["Yes", "Auto Yes"])) {
                 $event_list[$num]["transport"] = "společná doprava";
             }
-            if (array_key_exists("Accomodation", $event) && strpos($event["Accomodation"], "Ano") !== false) {   
+            if (array_key_exists("Accomodation", $event) && in_array($event["Accomodation"], ["Yes", "Auto Yes"])) {
                 $event_list[$num]["accomodation"] = "společné ubytování";
             }
             $num++;
@@ -250,7 +255,23 @@ class Events extends \Grav\Common\Twig\TwigExtension
                     }
                 }
             }
-            
+            else if ($type == "members" && !empty($frontmatter['import']['type']) && $frontmatter['import']['type'] == "members") {
+                // members is source of truth for dates
+                foreach(["start", "end"] as $key){
+                    if(!empty($event[$key]) && (empty($frontmatter[$key]) || $frontmatter[$key] != $event[$key])){
+                        $frontmatter[$key] = $event[$key];
+                        $changed = true;
+                    }
+                }
+                // fill transport/accomodation only if not set manually on web
+                foreach(["transport", "accomodation"] as $key){
+                    if(!empty($event[$key]) && empty($frontmatter[$key])){
+                        $frontmatter[$key] = $event[$key];
+                        $changed = true;
+                    }
+                }
+            }
+
             if(!empty($event["gps"])){
                 $gps = self::normalize_GPS($event["gps"]);
                 if($gps){
