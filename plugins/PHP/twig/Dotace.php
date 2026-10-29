@@ -130,7 +130,7 @@ class Dotace extends \Grav\Common\Twig\TwigExtension
             @unlink($zip);
             Utils::log("Dotace | generated | " . count($camps) . " camps");
             exit;
-        } catch (\InvalidArgumentException $e) {
+        } catch (\Grav\Plugin\Dotace\SelectionException $e) {
             @unlink($zip);
             Utils::return_ERROR($e->getMessage());
         } catch (\Throwable $e) {

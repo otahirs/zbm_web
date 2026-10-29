@@ -28,8 +28,10 @@ dotace_defaults:
 {% set year = "now"|date("Y") %}
 {% set qfrom = uri.query('from') %}
 {% set qto = uri.query('to') %}
-{% set from = (qfrom matches '/^\\d{4}-\\d{2}-\\d{2}$/') ? qfrom : year ~ '-01-01' %}
-{% set to = (qto matches '/^\\d{4}-\\d{2}-\\d{2}$/') ? qto : year ~ '-12-31' %}
+{% set dfrom = year ~ '-01-01' %}
+{% set dto = year ~ '-12-31' %}
+{% set from = (not (qfrom is iterable or qfrom is null) and qfrom matches '/^\\d{4}-\\d{2}-\\d{2}$/') ? qfrom : dfrom %}
+{% set to = (not (qto is iterable or qto is null) and qto matches '/^\\d{4}-\\d{2}-\\d{2}$/') ? qto : dto %}
 {% set camps = phpDotaceCamps(from, to) %}
 
 <form method="get" action="/auth/dotace">

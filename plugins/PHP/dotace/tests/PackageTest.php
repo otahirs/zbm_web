@@ -90,7 +90,7 @@ test('empty selection throws, no zip', function () {
         $thrown = false;
         try {
             Package::build($camps, $docs, pkgVariants(), pkgDefaults(), $members, fn($s) => $s, fn($h) => $h, $path, 2025);
-        } catch (\InvalidArgumentException $e) { $thrown = true; }
+        } catch (\InvalidArgumentException $e) { $thrown = true; ok($e instanceof \Grav\Plugin\Dotace\SelectionException); }
         ok($thrown);
         clearstatcache();
         eq(filesize($path), 0);

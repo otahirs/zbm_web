@@ -25,12 +25,12 @@ class Package
         int $currentYear
     ): array {
         if ($camps === []) {
-            throw new \InvalidArgumentException('Nevybrali jste žádnou akci.');
+            throw new SelectionException('Nevybrali jste žádnou akci.');
         }
         $chosenVariants = array_values(array_filter(array_keys($variants), fn($k) => in_array($k, $docs, true)));
         $wantSeznam = in_array('seznam', $docs, true);
         if ($chosenVariants === [] && !$wantSeznam) {
-            throw new \InvalidArgumentException('Nevybrali jste žádný dokument.');
+            throw new SelectionException('Nevybrali jste žádný dokument.');
         }
 
         $files = [];
