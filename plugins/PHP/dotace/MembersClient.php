@@ -8,7 +8,7 @@ class MembersClient
 
     public function __construct(
         callable $httpGet,
-        private ?string $token = null,
+        private ?MembersAuth $auth = null,
         private string $baseUrl = 'https://members.eob.cz/api/3/zbm'
     ) {
         $this->httpGet = $httpGet;
@@ -19,13 +19,14 @@ class MembersClient
         return preg_match('/^\d{4}-race_(\d+)\z/', $eventId, $m) ? (int) $m[1] : null;
     }
 
+    /** Race detail incl. `everyone`; with an auth, a 401 renews the token and retries once. */
     public function race(int $raceId): array
     {
-        $headers = ['Accept: application/json'];
-        if ($this->token !== null && $this->token !== '') {
-            $headers[] = 'Authorization: Bearer ' . $this->token;
+        $url = rtrim($this->baseUrl, '/') . '/race/' . $raceId;
+        $res = ($this->httpGet)($url, $this->headers(false));
+        if ((int)($res['status'] ?? 0) === 401 && $this->auth !== null) {
+            $res = ($this->httpGet)($url, $this->headers(true));
         }
-        $res = ($this->httpGet)(rtrim($this->baseUrl, '/') . '/race/' . $raceId, $headers);
         $status = (int) ($res['status'] ?? 0);
         if ($status !== 200) {
             throw new \RuntimeException('members: HTTP ' . $status);
@@ -35,6 +36,15 @@ class MembersClient
             throw new \RuntimeException('members: neplatná odpověď');
         }
         return $data;
+    }
+
+    private function headers(bool $renewToken): array
+    {
+        $headers = ['Accept: application/json'];
+        if ($this->auth !== null) {
+            $headers[] = 'Authorization: Bearer ' . $this->auth->token($renewToken);
+        }
+        return $headers;
     }
 
     /** Real transport via Grav's HTTP client (needs Grav; not unit-tested). */

@@ -8,6 +8,7 @@ use Grav\Common\Filesystem\Folder;
 use Grav\Common\GPM\Response;
 
 require_once(__DIR__ . "/Utils.php");
+require_once(__DIR__ . "/../members/MembersRaces.php");
 
 class Events extends \Grav\Common\Twig\TwigExtension
 {    
@@ -96,83 +97,22 @@ class Events extends \Grav\Common\Twig\TwigExtension
 
     public static function importRacesFromMembers() {
         Grav::instance()['twig']->init(); // fix function crash if runned from scheduler
-        $body = Response::get("https://members.eob.cz/zbm/api_racelist.php");
-        $data = json_decode($body, true);
-        if(!array_key_exists("Status", $data) || !array_key_exists("Data", $data) || $data["Status"] != "OK") {
-            //mail("otakar.hirs@egmail.com","JSON error zbmob.cz", "Nacteni dat z clenske sekce pres JSON neskoncilo OK, mel bys to asi zkontrolovat. \n Ota - 2018");
+        $races = json_decode(Response::get(\Grav\Plugin\Members\MembersRaces::RACES_URL), true);
+        if (!is_array($races) || !array_is_list($races)) {
             Utils::return_ERROR("Cannot fetch API data from members");
         }
-        $num = 0;
+        $event_list = [];
         $seen_ids = [];
-        foreach( $data["Data"] as $id => $event) {
-            if (!in_array($event["Type"], ["Z", "S", "T", "V"])) // zavod, soustredeni, trenink, vysetreni
+        foreach ($races as $race) {
+            if (!is_array($race) || !\Grav\Plugin\Members\MembersRaces::isImported($race))
                 continue;
-            $event_id = date_format(date_create($event["Date1"]), "Y") . "-" . strtolower($id);
+            $event_id = \Grav\Plugin\Members\MembersRaces::eventId($race);
             $seen_ids[$event_id] = true;
-            if ($event["Cancelled"] == "1") {
+            if (!empty($race["cancelled"])) {
                 self::trashEvent($event_id);
                 continue;
             }
-            $event_list[$num]["id"] = $event_id;
-            $event_list[$num]["start"] = $event["Date1"];
-            $event_list[$num]["end"] = array_key_exists("Date2", $event) ? $event["Date2"] : $event["Date1"];
-            $event_list[$num]["title"] = $event["Name"];
-            //$event_list[$num][""] = $event["Club"];
-            $link = $event["Link"];
-            if (!empty($link) && !Utils::startsWith($link, "http")) {
-                $link = "https://" . $link;
-            }
-            $event_list[$num]["link"] = $link;
-            if(Utils::startsWith($link, "https://oris.ceskyorientak.cz/Zavod?id=" )) {
-                $event_list[$num]["orisid"] = substr($link, strlen("https://oris.ceskyorientak.cz/Zavod?id="));
-            }
-            $event_list[$num]["place"] = $event["Place"];
-            $event_list[$num]["type"] = $event["Type"];
-            //$event_list[$num][""] = $event["Sport"];
-            $rank = (int)$event["Rankings"];
-            /* 
-            "1": "Celostátní",
-            "2": "Morava",
-            "4": "Čechy",
-            "8": "Oblastní",
-            "16": "Mistrovství",
-            "32": "Štafety",
-            "128": "Veřejný"         
-            */
-
-            if ($rank & 1 || $rank & 2 || $rank & 8 || $rank & 16 || $rank & 32) {
-                $event_list[$num]["dorost"] = "1";
-                $event_list[$num]["hobby"] = "1";
-            }
-
-            if ($rank & 2 || $rank & 8 || $rank & 32) {
-                $event_list[$num]["zaci2"] = "1";
-                $event_list[$num]["zaci1"] = "1";
-            }
-
-            if ($rank & 8) {
-                $event_list[$num]["pulci2"] = "1";
-                $event_list[$num]["pulci1"] = "1";
-                $event_list[$num]["zabicky"] = "1";
-            }
-
-            if (str_contains($event["Name"], "D+")) {
-                $event_list[$num]["dorost"] = "1";
-            }
-            //$event_list[$num][""] = $event["Rank21"];
-            $event_list[$num]["note"] = $event["Note"];
-            // api_racelist.php values: "No", "Yes", "Auto Yes", "Sdílená" (transport only)
-            $transport = array_key_exists("Transport", $event) ? $event["Transport"] : "";
-            if ($transport == "Sdílená") {
-                $event_list[$num]["transport"] = "auty dle přihláškového systému";
-            }
-            else if (in_array($transport, ["Yes", "Auto Yes"])) {
-                $event_list[$num]["transport"] = "společná doprava";
-            }
-            if (array_key_exists("Accomodation", $event) && in_array($event["Accomodation"], ["Yes", "Auto Yes"])) {
-                $event_list[$num]["accomodation"] = "společné ubytování";
-            }
-            $num++;
+            $event_list[] = \Grav\Plugin\Members\MembersRaces::toEvent($race);
         }
         //print_r($event_list);
         self::ImportEvents($event_list, "members");
@@ -182,7 +122,7 @@ class Events extends \Grav\Common\Twig\TwigExtension
     // races imported from members that no longer appear in the feed at all
     // (hard-deleted in members, not just cancelled) - trash them too.
     // Only considers events whose end date hasn't passed yet, since
-    // api_racelist.php itself only returns races with datum(2) >= today,
+    // members_api v3 /races itself only returns races with datum(2) >= today,
     // so past events are legitimately absent from $seen_ids.
     public static function trashOrphanedMembersRaces($seen_ids) {
         $page = Grav::instance()['page'];
