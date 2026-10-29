@@ -5,6 +5,7 @@ require __DIR__ . '/Format.php';
 require __DIR__ . '/Rozpis.php';
 require __DIR__ . '/Seznam.php';
 require __DIR__ . '/OdsWriter.php';
+require __DIR__ . '/MembersAuth.php';
 require __DIR__ . '/MembersClient.php';
 require __DIR__ . '/SelectionException.php';
 require __DIR__ . '/Package.php';

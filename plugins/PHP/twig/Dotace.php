@@ -3,6 +3,7 @@ namespace Grav\Plugin;
 use Grav\Common\Grav;
 use Grav\Plugin\Utils;
 use Grav\Plugin\Dotace\MembersClient;
+use Grav\Plugin\Dotace\MembersAuth;
 use Grav\Plugin\Dotace\Package;
 use Grav\Plugin\Dotace\PdfRenderer;
 
@@ -114,8 +115,16 @@ class Dotace extends \Grav\Common\Twig\TwigExtension
             ];
         }
 
-        $token = $grav['config']->get('plugins.PHP.dotace.members_token');
-        $members = new MembersClient(MembersClient::gravHttpGet(), $token ? (string)$token : null);
+        // service account for members_api (race detail needs login); set only in the
+        // gitignored host config zabiny.club/config/plugins/PHP.yaml, never in git
+        $login = (string)$grav['config']->get('plugins.PHP.dotace.members_login', '');
+        $password = (string)$grav['config']->get('plugins.PHP.dotace.members_password', '');
+        $auth = null;
+        if ($login !== '' && $password !== '') {
+            $tokenFile = $grav['locator']->findResource('user-data://', true, true) . '/dotace/members-token.json';
+            $auth = new MembersAuth(MembersAuth::curlPost(), $login, $password, $tokenFile);
+        }
+        $members = new MembersClient(MembersClient::gravHttpGet(), $auth);
         $markdown = fn($md) => (new \Parsedown())->text($md);
         $pdf = fn($html) => PdfRenderer::render($html);
 
