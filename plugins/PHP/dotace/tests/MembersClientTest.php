@@ -4,6 +4,7 @@ use Grav\Plugin\Dotace\MembersClient;
 test('race id from event id', function () {
     eq(MembersClient::raceIdFromEventId('2025-race_2148'), 2148);
     eq(MembersClient::raceIdFromEventId('2025-tk-podzim'), null);
+    eq(MembersClient::raceIdFromEventId("2025-race_2148\n"), null);
 });
 test('sends bearer only with token', function () {
     $seen = [];

@@ -16,7 +16,7 @@ class MembersClient
 
     public static function raceIdFromEventId(string $eventId): ?int
     {
-        return preg_match('/^\d{4}-race_(\d+)$/', $eventId, $m) ? (int) $m[1] : null;
+        return preg_match('/^\d{4}-race_(\d+)\z/', $eventId, $m) ? (int) $m[1] : null;
     }
 
     public function race(int $raceId): array
