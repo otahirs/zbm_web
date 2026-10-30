@@ -81,6 +81,10 @@ class MembersRaces
         if ((int)($race['accommodation'] ?? 0) > 0) {
             $event['accomodation'] = 'společné ubytování';
         }
+        $leader = trim(($race['leader']['name'] ?? '') . ' ' . ($race['leader']['surname'] ?? ''));
+        if ($leader !== '') {
+            $event['leader'] = $leader;
+        }
         return $event;
     }
 

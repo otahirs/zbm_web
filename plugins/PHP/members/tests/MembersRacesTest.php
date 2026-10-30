@@ -24,6 +24,11 @@ test('single day race ends on start, no transport/accommodation, null note', fun
     eq([$e['start'], $e['end'], $e['note'], $e['link']], ['2026-05-01', '2026-05-01', '', '']);
     ok(!isset($e['transport']) && !isset($e['accomodation']) && !isset($e['orisid']));
 });
+test('leader name from members, none when not set', function () {
+    eq(MembersRaces::toEvent(v3race(['leader' => ['user_id' => 273, 'name' => 'Jan', 'surname' => 'Zháňal']]))['leader'], 'Jan Zháňal');
+    ok(!isset(MembersRaces::toEvent(v3race(['leader' => null]))['leader']));
+    ok(!isset(MembersRaces::toEvent(v3race())['leader']));
+});
 test('transport yes / auto yes is shared transport', function () {
     eq(MembersRaces::toEvent(v3race(['transport' => 1]))['transport'], 'společná doprava');
     eq(MembersRaces::toEvent(v3race(['transport' => 2]))['transport'], 'společná doprava');
