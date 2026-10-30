@@ -203,8 +203,8 @@ class Events extends \Grav\Common\Twig\TwigExtension
                         $changed = true;
                     }
                 }
-                // fill transport/accomodation only if not set manually on web
-                foreach(["transport", "accomodation"] as $key){
+                // fill transport/accomodation/leader only if not set manually on web
+                foreach(["transport", "accomodation", "leader"] as $key){
                     if(!empty($event[$key]) && empty($frontmatter[$key])){
                         $frontmatter[$key] = $event[$key];
                         $changed = true;
