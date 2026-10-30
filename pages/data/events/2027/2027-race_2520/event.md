@@ -4,8 +4,8 @@ taxonomy:
         - zaci2
         - dorost
 id: 2027-race_2520
-start: '2027-01-22'
-end: '2027-01-22'
+start: '2027-01-23'
+end: '2027-01-23'
 title: 'NOB 05 – Buzola'
 place: Olomoučany
 type: T

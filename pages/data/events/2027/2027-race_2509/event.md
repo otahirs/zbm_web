@@ -3,8 +3,8 @@ taxonomy:
     skupina:
         - dorost
 id: 2027-race_2509
-start: '2027-05-23'
-end: '2027-05-25'
+start: '2027-04-23'
+end: '2027-04-25'
 title: 'TK sprintové soustředění'
 place: '???'
 type: S

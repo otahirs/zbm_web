@@ -4,7 +4,7 @@ taxonomy:
         - dorost
 id: 2027-race_2510
 start: '2027-07-23'
-end: '2027-07-31'
+end: '2027-08-01'
 title: 'TK Finsko'
 place: 'mezi jezery'
 type: S
