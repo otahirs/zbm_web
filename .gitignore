@@ -24,7 +24,11 @@
 **/.revs/*
 /plugins/git-sync
 /plugins/git-sync/*
-# END Grav GitSync# per-host config (Grav environment folders, e.g. zabiny.club/): never commit secrets
+# END Grav GitSync
+# local test environment (see README)
+!/docker
+!/docker-compose.yml
+# per-host config (Grav environment folders, e.g. zabiny.club/): never commit secrets
 /*/config/security.yaml
 /*/config/plugins/git-sync.yaml
 /*/config/plugins/email.yaml
