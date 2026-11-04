@@ -78,7 +78,7 @@ primaryImage: {  }
         <div class="contact--divInner">
         <h3>Žabičky - do 6 let</h3>
             {% include 'partials/trainer.html.twig' with {name: 'Veronika Křístková', email: 'fricco@seznam.cz', photo: 'veronika-kristkova-1'} %}
-            {% include 'partials/trainer.html.twig' with {name: 'Stachoňová Barbara', email: 'bara.stachonova@zabiny.club', photo: 'barbara-stachonova-1'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Stachoňová Barbara', email: 'bara.stachonova@zabiny.club', phone: '732 887 932', photo: 'barbara-stachonova-1'} %}
         </div>
     </div>
     <div class="divOuter col-lg-6" id="pulci1">
@@ -110,7 +110,7 @@ primaryImage: {  }
        <div class="contact--divInner">
         <h3>Žáci 2 - od 12 let</h3>
             {% include 'partials/trainer.html.twig' with {name: 'Pavel Rotek', email: 'pavel.rotek@zabiny.club', phone: '+420 603 884 000'} %}
-            {% include 'partials/trainer.html.twig' with {name: 'Štěpán Zimmermann', email: 'stepan.zimmermann@zabiny.club', photo: 'stepan-zimmermann-1'} %}
+            {% include 'partials/trainer.html.twig' with {name: 'Štěpán Zimmermann', email: 'stepan.zimmermann@zabiny.club', phone: '721 062 310', photo: 'stepan-zimmermann-1'} %}
         </div>
     </div>
     <div class="divOuter col-lg-6" id="dorost">
