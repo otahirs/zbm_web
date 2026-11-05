@@ -2,7 +2,7 @@
 id: 20261129-8e361221
 template: zavod
 type: BZL
-title: '1. Sportega BZL: Adamna cup'
+title: 'BZL: Adamna cup'
 start: '2026-11-29'
 end: '2026-11-29'
 place: MZA
