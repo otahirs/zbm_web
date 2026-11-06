@@ -123,15 +123,15 @@ plan:
                     - pulci1
                     - pulci2
                     - zaci1
-                name: 'Mapový trénink + teorie'
-                time: '16:00 – 18:00'
+                name: 'Mapový trénink, pouze venku'
+                time: '16:00 – 17:30'
                 place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
             1792408232300:
                 group:
                     - zaci2
                     - hobby
-                name: 'Běžecký trénink + teorie'
-                time: '16:00 – 18:00'
+                name: 'Běžecký trénink, pouze venku'
+                time: '16:00 – 17:30'
                 place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
         wednesday:
             -
