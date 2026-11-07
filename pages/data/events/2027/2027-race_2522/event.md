@@ -15,6 +15,7 @@ import:
     type: members
     time: 1792152605
 transport: 'auty dle přihláškového systému'
+leader: 'Jan Zháňal'
 ---
 
 * **doprava**: auty dle přihláškového systému

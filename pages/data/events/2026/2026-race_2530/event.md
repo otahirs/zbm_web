@@ -13,5 +13,6 @@ date: '2026-10-30'
 import:
     type: members
     time: 1793376607
+leader: 'Jan Zháňal'
 ---
 

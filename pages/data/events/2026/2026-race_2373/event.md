@@ -15,6 +15,7 @@ import:
     time: 1765491006
 transport: 'auty dle přihláškového systému'
 accomodation: 'společné ubytování'
+leader: 'Jan Zháňal'
 ---
 
 * **doprava**: auty dle přihláškového systému

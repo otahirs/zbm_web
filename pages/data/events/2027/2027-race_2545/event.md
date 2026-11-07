@@ -12,6 +12,7 @@ date: '2026-10-30'
 import:
     type: members
     time: 1793376607
+leader: 'Věra Nováčková Obelczová'
 ---
 
 * **doprava**: auty dle přihláškového systému
