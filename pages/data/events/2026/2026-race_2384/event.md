@@ -27,7 +27,7 @@ startTime: ''
 map: ''
 terrain: ''
 transport: "Sraz v 7:30 na nádraží, kdo chce společný lístek. 7:45 odchod k vlaku. \r\nVlakem 7:58: hl. nádraží - Babice nad Svitavou.\r\nVede Verča Křístková.\r\n\r\nKdo přijde až na odjezd vlaku, tak ať si koupí a cvaknu svůj lístek. (Pokud máte šalinkartu, tak stačí lístek na 1 zónu.)\r\n\r\nJede se do zastávka Babice nad Svitavou a pak pěšky do kopce.\r\nPokud nemusíte, nejezděte autem! (A pokud už přijedete, parkujte slušně.) Díky"
-accomodation: 'Sokolovna Babice: spacák + karimatku s sebou (špunty do uší. polštářek...).'
+accomodation: "Sokolovna Babice: spacák + karimatku s sebou (špunty do uší. polštářek...).\r\nPřezůvky s sebou do sokolovny!"
 food: 'Sobotní oběd, večeře, nedělní snídaně, nedělní oběd.'
 leader: 'Jan Drábek'
 note: "Oddílový přebor je závod o nejlepšího závodníka našeho oddílu, po roce se vracíme na místo MED 2025 v Babicích, kde poměřovali síly nejlepší dorostenci nejen z Evropy! Bulík si tu vyběhl zlatou medailu! Přijeďte poměřit síly s nejlepšími členy oddílu a třeba je i porazit! A když se nepodaří v sobotu, tak v neděli určitě jo!\r\n\r\nLetošní oddílový přebor má i své téma! A protože Babice leží od Rosničky přesně za sedmero horami, devatero řekami a třemi jezery, tak oddíláč se bude odehrávat v kouzelné zemi... tudíž se nabízá téma **pohádkové postavy**!\r\nPokud zakopnete o pařez a on na vás promluví, tak se tedy nedivte. :-)\r\n[Vojta málem králem](https://eu.zonerama.com/SKBrnoZabovresky/Photo/16180008/663643147/)\r\n\r\nPro nováčky, co je oddílový přebor najdete [zde](https://docs.google.com/document/d/1qg6ZjK03kwQIZuk9OaSEAH1rIA3cb7xsvBflPrWOxDs/edit?usp=sharing).\r\nKategorie:\r\nVM - Velká Mistrovská: H18 - H40\r\nMM - Malá Mistrovská: D16 - D40, H16\r\nVP - Veteránský pohár: DH40+\r\nZN - Závod nadějí: DH12, DH14\r\nNK - Nováčkovský kufr: DH10, HDR\r\n\r\nSobotní startovku najdete na [orisu](https://oris.ceskyorientak.cz/Zavod?id=10247)."
@@ -64,4 +64,5 @@ Kdo přijde až na odjezd vlaku, tak ať si koupí a cvaknu svůj lístek. (Poku
 Jede se do zastávka Babice nad Svitavou a pak pěšky do kopce.
 Pokud nemusíte, nejezděte autem! (A pokud už přijedete, parkujte slušně.) Díky
 * **ubytování**: Sokolovna Babice: spacák + karimatku s sebou (špunty do uší. polštářek...).
+Přezůvky s sebou do sokolovny!
 * **strava**: Sobotní oběd, večeře, nedělní snídaně, nedělní oběd.
