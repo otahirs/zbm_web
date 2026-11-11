@@ -10,19 +10,23 @@ process:
 plan:
     thisWeek:
         monday:
-            -
+            0:
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
+            1794388446592:
+                name: ''
+                time: ''
+                place: ''
         tuesday:
             0:
                 group:
@@ -47,53 +51,74 @@ plan:
                 time: '16:00 – 17:30'
                 place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
         wednesday:
-            -
+            0:
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
+            1794388446592:
+                name: ''
+                time: ''
+                place: ''
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Běžecký trénink (světlo, hladké boty)'
                 time: '16:50'
                 place: Rosnička
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:30 – 18:00'
                 place: Rosnička
-            -
+            2:
                 group:
                     - pulci1
                     - pulci2
                 name: Tělocvična
                 time: '17:00 - 18:30'
                 place: 'Rosnička, sraz 16:50 u vrátnice'
+            1794388446592:
+                name: ''
+                time: ''
+                place: ''
         friday:
             1793561802300:
                 name: ''
                 time: ''
                 place: ''
+            1794388446593:
+                name: ''
+                time: ''
+                place: ''
+        sunday:
+            1794388446593:
+                name: ''
+                time: ''
+                place: ''
     nextWeek:
         monday:
-            -
+            0:
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
+            1794388446593:
+                name: ''
+                time: ''
+                place: ''
         tuesday:
             0:
                 group:
@@ -124,35 +149,37 @@ plan:
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
-            -
-                group:
-                    - hobby
-                name: 'Online teorie'
-                time: '20:00'
-                place: meet.google.com/rwz-ugkn-kgu
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Běžecký trénink (světlo, hladké boty)'
                 time: '16:50'
                 place: Rosnička
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:30 – 18:00'
                 place: Rosnička
-            -
+            2:
                 group:
                     - pulci1
                     - pulci2
                 name: Tělocvična
                 time: '17:00 - 18:30'
                 place: 'Rosnička, sraz 16:50 u vrátnice'
+            1794388446593:
+                name: ''
+                time: ''
+                place: ''
         friday:
             1793561802303:
+                name: ''
+                time: ''
+                place: ''
+            1794388446594:
                 name: ''
                 time: ''
                 place: ''
@@ -161,26 +188,38 @@ plan:
                 name: ''
                 time: ''
                 place: ''
+            1794388446594:
+                name: ''
+                time: ''
+                place: ''
         sunday:
             1793561802303:
                 name: ''
                 time: ''
                 place: ''
+            1794388446594:
+                name: ''
+                time: ''
+                place: ''
     next2Week:
         monday:
-            -
+            0:
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
+            1794388446594:
+                name: ''
+                time: ''
+                place: ''
         tuesday:
             0:
                 group:
@@ -218,41 +257,59 @@ plan:
                 time: '20:00'
                 place: meet.google.com/rwz-ugkn-kgu
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Běžecký trénink (světlo, hladké boty)'
                 time: '16:50'
                 place: Rosnička
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:30 – 18:00'
                 place: 'Rosnička, sraz 16:50 u vrátnice'
-            -
+            2:
                 group:
                     - pulci1
                     - pulci2
                 name: Tělocvična
                 time: '16:00 – 17:00'
                 place: 'ZŠ Sirotkova'
+            1794388446595:
+                name: ''
+                time: ''
+                place: ''
+        friday:
+            1794388446595:
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            1794388446595:
+                name: ''
+                time: ''
+                place: ''
     next3Week:
         monday:
-            -
+            0:
                 group:
                     - dorost
                 name: Posilovna
                 time: '17:00 a 18:00'
                 place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: Tělocvična
                 time: '17:00 – 18:30'
                 place: 'hala Rosnička'
+            1794388446595:
+                name: ''
+                time: ''
+                place: ''
         tuesday:
             0:
                 group:
@@ -290,28 +347,32 @@ plan:
                 time: '20:00'
                 place: meet.google.com/rwz-ugkn-kgu
         thursday:
-            -
+            0:
                 group:
                     - dorost
                 name: 'Běžecký trénink (světlo, hladké boty)'
                 time: '16:50'
                 place: Rosnička
-            -
+            1:
                 group:
                     - zaci1
                     - zaci2
                 name: 'Běžecký trénink'
                 time: '16:30 – 18:00'
                 place: Rosnička
-            -
+            2:
                 group:
                     - pulci1
                     - pulci2
                 name: Tělocvična
                 time: '16:00 – 17:00'
                 place: 'ZŠ Sirotkova'
+            1794388446595:
+                name: ''
+                time: ''
+                place: ''
         friday:
-            -
+            1794388446595:
                 name: ''
                 time: ''
                 place: ''
@@ -320,8 +381,7 @@ plan:
                 name: ''
                 time: ''
                 place: ''
-        sunday:
-            -
+            1794388446596:
                 name: ''
                 time: ''
                 place: ''
