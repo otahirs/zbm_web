@@ -9,8 +9,11 @@ routes_links:
     -
         name: Livelox
         link: 'https://www.livelox.com/?tab=allEvents&timePeriod=pastMonth&country=CZE&q=sk%20brno%20%C5%BEabov%C5%99esky&sorting=time'
-        note: 'klubové tréninky a závody od roku 2024'
-routes_note: 'Připravujeme přechod na OResults (Aftershow), odkaz doplníme.'
+        note: 'klubové tréninky a závody 2024 – 10. 11. 2026'
+    -
+        name: OResults
+        link: 'https://oresults.eu/events?org=zbm'
+        note: 'klubové tréninky a závody od 10. 11. 2026'
 content:
     items:
         '@page.descendants': /data/events
