@@ -1,3 +1,101 @@
+# v3.13.3
+## 11/17/2026
+
+1. [](#new)
+    * **Remember every sign-in** (`rememberme.always`): keeps people signed in after every sign-in on the site, by password, passkey, magic link or a sign-in service, without a "Remember Me" checkbox, which the login form then hides. Useful for a sign-in form that has no checkbox, such as a store's. Admin sign-ins aren't affected. Off by default
+
+# v3.13.2
+## 11/16/2026
+
+1. [](#bugfix)
+    * A login no longer gets a "remember me" cookie while "Remember me" is off. Before, a request that asked for one, or a login through a plugin such as Login OAuth2, still got it, and the cookie worked once "Remember me" was turned on again
+    * Signing in with a passkey with "Remember me" ticked now keeps you signed in, as signing in with a password does. The box was ignored, so a passkey sign-in was never remembered
+
+# v3.13.1
+## 11/09/2026
+
+1. [](#bugfix)
+    * Failed logins sent at the same moment are now all counted, and no more get through than `max_login_count` allows. Before, a burst of simultaneous wrong passwords could get past the limit and most of them were never recorded, so the account wasn't locked
+    * Wrong 2FA codes and passkey requests sent at the same moment are limited the same way
+1. [](#improved)
+    * For other plugins: `RateLimiter::attempt()` checks the limit and records an attempt in one step, and `RateLimiter::synchronized()` runs code holding the limiter's lock
+
+# v3.13.0
+## 11/07/2026
+
+1. [](#new)
+    * **Sign out everywhere**: you can now sign a user out of all their browsers and Admin2 at once, including yourself to end your other sessions. Their account, password and API keys stay as they are. Find it in Admin2's Users list, in the plugin settings (for all users) or as `bin/plugin login sign-out`
+    * For other plugins: `Login::signOutEverywhere()`, `signOutAccounts()`, `signOutEveryone()` and `getAccounts()`; `Login::sessionSignOutReason()` says why a session has to sign in again, and `Login::endOtherSessions()` takes the reason as its third argument
+1. [](#bugfix)
+    * A password change while "Remember me" is off now also deletes the account's "remember me" cookies, so turning it on again doesn't bring them back
+    * A browser signed out for another reason than a password change (e.g. an email change, or its account disabled through the API) is no longer told that its password was changed
+    * Changing your own password from a browser with a "remember me" cookie no longer brings back the other browsers' "remember me" cookies
+
+# v3.12.1
+## 11/03/2026
+
+1. [](#new)
+    * New **Show Password Form** setting (`show_password_form`) to hide the username and password form on the site login page, to offer only other login options such as single sign-on buttons. It only hides the form; password logins still work, and the "Sign in with a passkey" button stays
+1. [](#improved)
+    * The "Login by link" button shows only while the Email plugin can send the link
+    * The plugin settings are grouped into sections by topic. Settings that moved:
+        * **Redirect to login** and **Redirect after login**: Options → Routes › Login
+        * **Redirect after logout**: Options → Routes › Logout
+        * **Magic-link TTL**: Security › Magic Link → Options › Login Methods
+        * **Max magic-link requests count** and **interval**: Security › Magic Link → Security › Rate Limits
+        * **Failed passkey attempts** and **Failed passkey attempts window**: Security › Passkeys → Security › Rate Limits
+        * **Max registration attempts count** and **interval**: User Registration → Security › Rate Limits
+        * **Validate double entered password**: User Registration › Options → User Registration › Registration fields
+        * **Set the user as disabled**, **Send activation email**, **Manually Enable** and **Login the user after registration**: User Registration › Options → User Registration › Account Activation
+        * **Send notification email** and **Send welcome email**: User Registration › Options → User Registration › Emails
+
+# v3.12.0
+## 11/03/2026
+
+1. [](#new)
+    * Passkeys (Grav 2 only, off by default: `passkeys.enabled`). An account adds passkeys on its profile page and signs in with one, from 1Password, iCloud Keychain, Google Password Manager, Windows Hello or a security key, without its password. A passkey is both steps at once, so it skips the 2-Factor Authentication code, and at the 2FA step after a password it can stand in for the code. Passkeys are stored on the account, so the same passkey signs in to the site and to Admin2
+    * The login form offers passkeys in the username field's autofill and as a "Sign in with a passkey" button, shown only in browsers that can use one (HTTPS)
+    * Adding or removing a passkey asks for the current password (or, for an account without one, the current 2FA code), and `passkeys`/`webauthn_id` can't be set through the profile form
+    * New settings: `passkeys.rp_id` and `passkeys.origin` for sites behind a proxy or sharing passkeys across subdomains, and per-IP limits for failed and started passkey ceremonies (`passkey_attempts`, `passkey_options`)
+    * `Login::passkeys()` gives other plugins the passkey service, and the `onUserPasskeyAdded` / `onUserPasskeyRemoved` events fire on changes
+1. [](#improved)
+    * Ships lbuchs/webauthn for the passkey checks. It is only loaded on Grav 2 with PHP 8, so the plugin still installs and runs on Grav 1.7 and PHP 7.3
+
+# v3.11.2
+## 10/31/2026
+
+1. [](#bugfix)
+    * [security] The security fixes below were found by Anthropic's OSS Scanner
+    * [security] The 2-Factor Authentication secret and QR code now show only on a member's own account
+    * [security] Different spellings of one account name, such as capital letters or its email address, now share one sign-in attempt limit
+    * [security] Email addresses containing template code are no longer accepted when registering, saving a profile or changing an email address
+    * [security] Protected page media is now checked against the page that file is served from
+
+# v3.11.1
+## 10/29/2026
+
+1. [](#improved)
+    * [security] The profile page asks for your current password before a new email address, the same way it does before a new password, while an account with no password yet (one made by a sign-in service or a magic link) can still change its email without one. A site with its own profile form needs the `current_password` field for this, as it does for password changes
+    * [security] Asking for a new email address now sends the old address a notice with the new one partly hidden (`an***@example.com`) and a link that cancels the change. The link works once, stops the confirm link working too, and signs the account out everywhere else, since "this wasn't me" means someone else may be signed in. Sent only when `profile.verify_email_change` is on
+2. [](#bugfix)
+    * [security] Confirming an email change now signs the account out of every other browser, API token and remember-me cookie, so a session someone else took over ends once the owner confirms. The browser that opened the link stays signed in when it's the owner's
+
+# v3.11.0
+## 10/23/2026
+
+1. [](#improved)
+    * The profile page asks for your current password before a new one, and for the new one twice, while an account with no password yet (one made by a sign-in service) can set its first without one
+    * [security] Wrong current passwords on the profile page count toward the same lockout as failed sign-ins, so the form can't be used to guess a password
+    * Changing or resetting your password signs your account out of every other browser, API token and remember-me cookie, and the browser you changed it in stays signed in
+    * A site with its own profile form needs a `current_password` field (type `current_password`) for its members to keep changing their password, and gets the check on a repeated password by adding `password_confirm`
+    * [security] Turning off 2-Factor Authentication on the profile page, or regenerating its secret while it is on, now takes the current code from your authenticator app, so a signed-in session alone can't remove or replace it
+    * A site with its own profile form adds a `twofa_code` field (type `twofa_code`) to its 2-Factor Authentication section so members can still turn it off or regenerate it
+2. [](#bugfix)
+    * The profile page shows 2-Factor Authentication as it is stored after it was turned on or off in the admin or another browser, instead of writing the old setting back on the next save
+    * [security] An account that has set up 2-Factor Authentication is now asked for its code at the site login, by a remember-me cookie and by a magic link even when the global 2-Factor Authentication setting is off, matching the Admin sign-in. The setting now only decides whether the profile page offers the setup
+    * Turning 2-Factor Authentication on from the profile page without a saved secret now asks you to press Regenerate first, instead of saving an account that is never asked for a code
+    * [security] An invitation link can only create one account, even when several registrations arrive at the same moment. Thanks @yssoe
+
 # v3.10.1
 ## 10/16/2026
 

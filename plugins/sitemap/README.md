@@ -52,6 +52,7 @@ html_support: false
 urlset: 'http://www.sitemaps.org/schemas/sitemap/0.9'
 urlnewsset: 'http://www.google.com/schemas/sitemap-news/0.9'
 short_date_format: true
+date_type: last_modified    # last_modified | page_date
 include_changefreq: true
 changefreq: daily
 include_priority: true
@@ -145,7 +146,7 @@ Grav 2.1 can serve any page as Markdown by adding `.md` to its URL. This plugin 
 
 An optional `/llms-full.txt` joins every page's full Markdown into one document. It is off by default (`llms_full_txt: true` turns it on), built once and cached, and on a large site it is a large file.
 
-On a Grav 2.0 site the two files are still served, as plain text, but each link points at a `.md` URL only Grav 2.1 answers.
+Both need Grav 2.1 or later, whose Markdown output the links point at. On a Grav 2.0 site the plugin still answers `/llms.txt`, but with no Markdown output to link to it lists no pages. The full documentation is on [Learn](https://learn.getgrav.org/2/content/markdown-output#llms-txt).
 
 ## Manually add pages to the sitemap
 

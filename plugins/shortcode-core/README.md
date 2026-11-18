@@ -282,6 +282,12 @@ This is **important** highlighted text
 [/span]
 ```
 
+`span`, `div`, `h1` to `h6`, `figure`, `mark` and `details` also take a `lang` attribute, so screen readers and browsers know when a passage is in another language:
+
+```
+This is English, [span lang="fr"]mais ceci est en français[/span].
+```
+
 #### Columns
 
 Take advantage of powerful CSS columns support by using this shortcode
@@ -405,13 +411,15 @@ Your **Markdown** text that will appear in the notice
 [/notice]
 ```
 
-You can also specifically choose from `note`, `info`, `warning`, `tip` types which provide unique color options:
+You can also specifically choose from `info` (the default), `note`, `tip` and `warning` types which provide unique color options:
 
 ```
-[notice=warning]
+[notice type="warning"]
 Danger Will Robinson! Danger, Will Robinson!
 [/notice]
 ```
+
+The short form `[notice=warning]` works too.
 #### Figure
 
 Figure elements are the recommended way to add self-contained units of flow content, i.e. images, charts and other visual elements that can be moved away from the main flow of the document without affecting the document's meaning. Figures may include captions through the `caption` attribute. Both `id` and `class` attributes are also available.

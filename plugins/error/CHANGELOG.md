@@ -1,3 +1,9 @@
+# v2.0.5
+## 11/03/2026
+
+1. [](#bugfix)
+    * An unpublished custom error page is no longer served, with a 200 status, in place of the built-in one: the plugin now falls back to the built-in error page when the configured page isn't published ([#51](https://github.com/getgrav/grav-plugin-error/pull/51), [grav#4287](https://github.com/getgrav/grav/issues/4287)). Thanks @arpitjain099
+
 # v2.0.4
 ## 08/28/2026
 

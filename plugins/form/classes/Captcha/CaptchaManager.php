@@ -29,9 +29,10 @@ class CaptchaManager
      *
      * @param Form $form The form to validate
      * @param array|null $params Optional parameters
+     * @param string|null $action The process action that asked for the check
      * @return bool True if validation succeeded
      */
-    public static function validateCaptcha(Form $form, $params = null): bool
+    public static function validateCaptcha(Form $form, $params = null, ?string $action = null): bool
     {
         // Handle case where $params is a boolean (backward compatibility)
         if (!is_array($params)) {
@@ -39,40 +40,36 @@ class CaptchaManager
         }
 
         // --- 1. Find the captcha field in the form ---
-        $captchaField = null;
-        $providerName = null;
+        $found = self::findCaptchaField($form);
+        if ($found === null) {
+            // A `cap` action needs the Cap field to mint its token, so without one the
+            // check could never pass: refuse the form rather than let everything
+            // through. Other actions keep passing, as older forms rely on that.
+            if ($action === 'cap') {
+                Grav::instance()['log']->error("Form Captcha: form '{$form->getName()}' has a cap action but no Cap field");
+                $errorMessage = Grav::instance()['language']->translate('PLUGIN_FORM.ERROR_VALIDATING_CAPTCHA');
+                Grav::instance()->fireEvent('onFormValidationError', new Event([
+                    'form' => $form,
+                    'message' => $errorMessage,
+                    'messages' => $form->messages ?? [],
+                    'provider' => 'cap'
+                ]));
 
-        $formFields = $form->getBlueprint()->get('form/fields');
-        foreach ($formFields as $fieldName => $fieldDef) {
-            $fieldType = $fieldDef['type'] ?? null;
-
-            // Check for modern captcha type with provider
-            if ($fieldType === 'captcha') {
-                $captchaField = $fieldDef;
-                $providerName = $fieldDef['provider'] ?? 'recaptcha';
-                break;
+                return false;
             }
 
-            // Check for legacy type-based providers (like basic-captcha and turnstile)
-            // This is for backward compatibility
-            elseif ($fieldType && CaptchaFactory::hasProvider($fieldType)) {
-                $captchaField = $fieldDef;
-                $providerName = $fieldType;
-                break;
-            }
-        }
-
-        if (!$captchaField || !$providerName) {
             // No captcha field found or no provider specified
             return true;
         }
+        [$fieldName, $captchaField, $providerName] = $found;
 
         $captchaFieldName = $captchaField['name'] ?? $fieldName;
 
         // --- 2. Get provider and validate ---
         $provider = CaptchaFactory::getProvider($providerName);
         if (!$provider) {
-            Grav::instance()['log']->error("Form Captcha: Unknown provider '{$providerName}' requested");
+            $reason = $providerName === 'cap' && PHP_VERSION_ID < 80100 ? ' (Cap needs PHP 8.1 or newer)' : '';
+            Grav::instance()['log']->error("Form Captcha: Unknown provider '{$providerName}' requested{$reason}");
             return false;
         }
 
@@ -84,6 +81,12 @@ class CaptchaManager
             $params = (array) $params;
             $params['recaptcha_version'] = $captchaField['recaptcha_version'];
         }
+
+        // The form being submitted, so a provider can tie its token to this form (Cap does).
+        $params['form_name'] = $form->getName();
+        // The captcha field's name, so a provider that reads its answer from the
+        // posted data (basic-captcha does) finds it whatever the field is called.
+        $params['field_name'] = $fieldName;
 
         // Allow plugins to modify the validation parameters
         $validationEvent = new Event([
@@ -149,6 +152,87 @@ class CaptchaManager
     }
 
     /**
+     * Process actions that validate a captcha. They all end up in validateCaptcha().
+     */
+    public const PROCESS_ACTIONS = ['captcha', 'cap', 'turnstile', 'basic-captcha'];
+
+    /**
+     * Find the form's captcha field, including one nested in columns, fieldsets, tabs
+     * or any other field that holds `fields`.
+     *
+     * @param Form $form
+     * @return array|null [field name, field definition, provider name], or null when the form has no captcha
+     */
+    public static function findCaptchaField(Form $form): ?array
+    {
+        $fields = $form->getBlueprint()->get('form/fields');
+
+        return is_array($fields) ? self::searchFields($fields) : null;
+    }
+
+    /**
+     * @param array $fields
+     * @return array|null
+     */
+    protected static function searchFields(array $fields): ?array
+    {
+        foreach ($fields as $fieldName => $fieldDef) {
+            if (!is_array($fieldDef)) {
+                continue;
+            }
+            $fieldType = $fieldDef['type'] ?? null;
+
+            // Modern captcha type with provider
+            if ($fieldType === 'captcha') {
+                return [$fieldName, $fieldDef, $fieldDef['provider'] ?? 'recaptcha'];
+            }
+
+            // Legacy type-based providers (like basic-captcha and turnstile), kept for
+            // backward compatibility. A `cap` field still counts when its provider isn't
+            // registered (PHP < 8.1), so the form is refused instead of skipping the captcha.
+            if ($fieldType && (CaptchaFactory::hasProvider($fieldType) || $fieldType === 'cap')) {
+                return [$fieldName, $fieldDef, $fieldType];
+            }
+
+            if (isset($fieldDef['fields']) && is_array($fieldDef['fields'])) {
+                $found = self::searchFields($fieldDef['fields']);
+                if ($found !== null) {
+                    return $found;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Whether a form's `process` list already has a captcha action, including an
+     * explicit `captcha: false`, which turns the check off on purpose.
+     *
+     * @param array $process
+     * @return bool
+     */
+    public static function hasProcessAction(array $process): bool
+    {
+        foreach ($process as $action => $data) {
+            if (is_numeric($action)) {
+                if (is_string($data)) {
+                    $action = $data;
+                } elseif (is_array($data)) {
+                    $action = key($data);
+                } else {
+                    continue;
+                }
+            }
+            if (in_array($action, self::PROCESS_ACTIONS, true)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * Get appropriate error message based on error code and field definition
      *
      * @param array $field Field definition
@@ -159,6 +243,12 @@ class CaptchaManager
     protected static function getErrorMessage(array $field, string $errorCode, string $provider): string
     {
         $grav = Grav::instance();
+
+        // Sent before the form could have been read: say so, whatever the field's own message is,
+        // since the fix is simply to send it again.
+        if ($errorCode === 'submitted-too-fast') {
+            return $grav['language']->translate('PLUGIN_FORM.ERROR_CAPTCHA_TOO_FAST');
+        }
 
         // First check for specific message in field definition. `captcha_not_validated`
         // is the canonical key; `recaptcha_not_validated` is the legacy key kept for

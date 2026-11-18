@@ -1,3 +1,28 @@
+# v1.10.63
+## 11/10/2026
+
+1. [](#new)
+    * Labels for Grav 2.2.29's log rotation settings (Configuration → System → Error handler)
+    * Labels for Grav 2.2.29's "Unpublish child pages too" page option and its site default (Configuration → System → Content)
+    * Labels for the Page IDs option and the GFM and table Markdown options in Configuration → System, which Grav 2.2.29 now gives translation keys
+1. [](#bugfix)
+    * The Debugger Token field (Configuration → System → Debugger) has a proper label and help text instead of showing its language key
+
+# v1.10.62
+## 11/07/2026
+
+1. [](#bugfix)
+    * [security] The forgot-password form answers the same way for every username: an unknown or blocked account, one that has asked for too many resets, and one that was sent an email all get the same message and the same page, and the rate-limit message no longer shows the account's email address. A site whose email isn't set up says so before looking up the account
+
+# v1.10.61
+## 11/05/2026
+
+1. [](#bugfix)
+    * [security] Page saving now checks the folder name in every page action, and Save As only writes next to the page it was opened from. Thanks @rng70
+    * [security] A page route containing `.` or `..` segments no longer resolves to a page, so page saving and media uploads and deletions stay inside the pages folder
+    * [security] The parent-page picker only lists folders inside the pages folder. Thanks @rng70
+    * [security] Uploaded SVG files are sanitized whatever their last extension, in page media and in file fields
+
 # v1.10.60
 ## 09/28/2026
 

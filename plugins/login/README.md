@@ -105,6 +105,11 @@ The simplest way to create a new user is to simply run the `bin/plugin login new
 || [ -u, --user=USER ]               | Unlock this username, along with the IP counters it tripped.    |
 || [ -i, --ip=IP ]                   | Unlock this IP address.                                         |
 || [ -a, --all ]                     | Clear every lockout on the site.                                |
+|||
+|`sign-out`||Signs accounts out everywhere: browser sessions, "remember me" cookies and API tokens; API keys keep working (see [Signing Users Out](#signing-users-out))
+|| [ -u, --user=USER ]               | Sign out this account. Repeat for several.                      |
+|| [ -a, --all ]                     | Sign out every account. Asks first. Not with `--user`.          |
+|| [ -y, --yes ]                     | With `--all`: don't ask (needed when not run interactively).    |
 
 
 ### CLI Example
@@ -203,11 +208,39 @@ And to wipe every lockout on the site, across failed logins, password resets and
 
 In Grav 2.0's admin, the Users list (table view) has a **Lockout** column marking any account that is currently blocked, and a padlock button in the row's actions to clear it. Clearing a lockout requires the `api.users.write` permission.
 
+# Signing Users Out
+
+Signing an account out ends its sessions everywhere, as a password change by an administrator does: its browser sessions end on their next request, telling the user they were signed out everywhere, its "remember me" cookies stop working, and its API tokens (Admin2) are refused. The account and its password stay as they are; the user can log in again right away. Use it after changing who may log in or how, for example after turning on a login requirement, or when a device may be in the wrong hands.
+
+API keys are not affected: they keep working until you revoke them in Admin2 (the user's page, API Keys).
+
+```
+> bin/plugin login sign-out -u joeuser
+  Signed out "joeuser"
+ [OK] Signed 1 account out everywhere.
+ ! [NOTE] API keys keep working: revoke them in Admin2 if needed.
+
+> bin/plugin login sign-out --all
+Sign out every account and every session on this site? [y/N]
+```
+
+`--all` signs out every account, and every session of users without an account file. In scripts, add `--yes`. `--user` and `--all` can't be combined. An account that can't be saved is reported and doesn't stop the others; the command then ends with exit code 1.
+
+In Grav 2.0's admin:
+
+* **One account**: the **Sign out everywhere** button on the user's page, and its icon in the Users list (in each row of the table view, and next to Delete when you open a user in the cards view). Requires `api.users.write`; only super admins can sign out a super admin. On your own account it ends your other sessions, e.g. to kick out a browser you forgot to log out of: only your front-end login in the browser you click it from stays, and Admin2 asks you to log in again.
+* **Every account**: Plugins → Login → Options → Sessions → **Sign out all users**. Super admins only. Your own account is signed out too: only the browser session you click it from stays, and Admin2 asks you to log in again. Accounts that can't be saved are named in the result and in the Grav log; the others are signed out. Each account is saved separately, and with Flex accounts Grav reads its account index again after every save, so on a site with many accounts this takes a while: the request keeps running when the browser stops waiting, but `bin/plugin login sign-out --all` is the better choice there.
+
+Users who log in without an account file, e.g. with OAuth2 while the OAuth2 plugin doesn't save Grav users, can't be signed out one by one: they have no account to name, and Admin2's Users list doesn't show them. **Sign out all users** and `--all` reach them too: once every account is done, every session that logged in before then ends on its next request (except the one you click the button from, when it is signed in as you), so someone who logged in while it ran has to log in once more. The time is kept in `user/data/login/sign-out-all.yaml`; if that file can't be read, it signs no session out, and the error is logged once. If it can't be written, the accounts are still signed out, and the result says the other sessions weren't ended. A session that doesn't know when it logged in (from before this version, or signed in by a plugin that sets the session's user itself instead of logging in through the Login plugin) counts as older while the sign-out is younger than the session timeout (`system.session.timeout`), and after that from its next request on.
+
+Each sign-out is written to the Grav log with who did it and where, e.g. `Login: signed "joeuser" out everywhere (by "admin" through the API)` or `(from the command line)`; signing out everyone logs one line with the number of accounts, e.g. `Login: signed everyone out: every session that logged in before now, and 12 accounts (by "admin" through the API)`, and each account only at debug level. "Remember me" cookies are deleted even while "Remember me" is turned off, so turning it on again doesn't bring them back; the same holds for a password change. Times are stored in whole seconds: an API token issued in the same second as a sign-out keeps working, while a browser session that logged in during the same second as **Sign out all users** finished has to log in again.
+
 # Default Configuration
 
 ```yaml
 enabled: true                               # Enable the plugin
 built_in_css: true                          # Use built-in CSS
+show_password_form: true                    # Show the username and password form on the site login page; plugins can turn it off (e.g. Login OAuth2's 'Enforce OAuth2'). Shown anyway while no other login option is offered
 redirect_to_login: false                    # If you try to access a page you don't have access to, should you redirect to login route
 redirect_after_login: true                  # Path to redirect to after a successful login
 redirect_after_logout: true                 # Path to redirect to after a successful logout
@@ -234,6 +267,7 @@ rememberme:
   enabled: true                             # Enable 'remember me' functionality
   timeout: 604800                           # Timeout in seconds. Defaults to 1 week
   name: grav-rememberme                     # Name prefix of the session cookie
+  always: false                             # Remember every sign-in on the site (password, passkey, magic link, sign-in services) without asking; the login form's checkbox is hidden. Admin sign-ins aren't affected
 
 max_pw_resets_count: 2                      # Number of password resets in a specific time frame (0 = unlimited)
 max_pw_resets_interval: 60                  # Time in minutes to track password resets
@@ -354,6 +388,12 @@ route: /user-login
 
 You would then need to provide a suitable login form, probably based on the one that is provided with the plugin.
 
+## Showing only other login options
+
+Turn off `show_password_form` to hide the username and password form, so the login page offers only other login options, such as single sign-on buttons or Login by link. The form still shows while none of them is offered (Login by link counts only once the Email plugin can send its link). Hiding the form doesn't block password logins. It applies to the site login page only: Admin2's login screen has its own setting in the API plugin (`login.show_password_form`).
+
+If your theme overrides `partials/login-form.html.twig`, show the password fields only while `grav.login.showPasswordForm()` is true. It holds the whole rule, including the fallback.
+
 ## Redirection after Login
 
 By default Grav will redirect to the prior page visited before entering the login process.  Any page is fair game unless you manually set:
@@ -415,7 +455,7 @@ A "Login by link" button is automatically shown on the standard login page when 
 - Rate limiting applies per IP and per user account. When the limit is exceeded, an explicit "wait N minutes" message is shown.
 - If multiple accounts share the same email address, magic-link sign-in is blocked for that email and the user is asked to contact an administrator.
 - 2FA is respected if `twofa_enabled: true` in the plugin configuration.
-- `remember_me` is never set via magic link login.
+- A magic link sign-in isn't remembered, unless `rememberme.always` is on.
 
 ## Customizing the request page
 
@@ -427,15 +467,55 @@ user/pages/magic_login/magic_login.md
 
 Set `template: magic` in the frontmatter so the plugin's template and form are used. Any body content you add will be rendered above the email form.
 
+# Passkeys
+
+A passkey signs someone in with their fingerprint, face or device PIN instead of a password. It lives in a password manager (1Password, iCloud Keychain, Google Password Manager, Bitwarden and others), in Windows Hello, or on a security key. Passkeys need **Grav 2** and HTTPS, and they are off until you switch them on.
+
+## Enabling passkeys
+
+```yaml
+passkeys:
+  enabled: true
+```
+
+With them on:
+
+- The profile page gets a **Passkeys** section where a signed-in member adds, renames and removes their passkeys. Adding or removing one asks for the current password (or, for an account that has no password, the current 2FA code). A site with its own profile form adds a field of `type: passkeys` to get it.
+- The login form shows **Sign in with a passkey**, and browsers that support it offer passkeys in the username field's autofill. A passkey counts as both steps, so an account with 2-Factor Authentication isn't asked for its code.
+- At the 2-Factor Authentication step after a password, an account with a passkey can use it instead of typing the code.
+- Admin2 (with the API plugin 1.1.10 or later) offers the same: passkey sign-in on its login screen and a Passkeys section on the user page. Passkeys are stored on the account, so one passkey works for the site and for Admin2.
+
+On Grav 1.7 the setting does nothing: the plugin still installs there, but none of the passkey code runs.
+
+## Domains and proxies
+
+A passkey belongs to one host. By default that's the host in `system.custom_base_url`, or else the host of the request. Two settings change it:
+
+```yaml
+passkeys:
+  rp_id: example.com            # let passkeys work on example.com and its subdomains
+  origin: https://example.com   # the address browsers use, when a proxy changes the scheme or port
+```
+
+## Limits
+
+Failed passkey answers are limited per IP (`passkeys.max_attempts_count` in `passkeys.max_attempts_interval` minutes, default 10 in 10), and so are passkey sign-ins and additions started (`passkeys.max_options_count`, default 60 in 10 minutes). A failed passkey at the 2FA step also counts against the account's 2FA limit.
+
+## For developers
+
+`$grav['login']->passkeys()` returns the passkey service, or `null` when passkeys are off or unsupported. The `onUserPasskeyAdded` and `onUserPasskeyRemoved` events fire when a member changes their passkeys on the site. The account fields `passkeys` and `webauthn_id` are written only by that service: never accept them from a form.
+
 # Changing Your Email Address
 
 When a signed-in user changes their email on the profile page, the new address doesn't replace the old one straight away. The plugin keeps it as a waiting change, mails a confirmation link to the new address, and only switches the account over once that link is opened. It then sends a short notice to the old address to say the email has changed.
+
+The profile page asks for the current password before it takes a new address, the same way it does before a new password. An account with no password yet (one made by a sign-in service or a magic link) isn't asked. When the change is asked for, the old address gets a notice too, with the new address partly hidden (`an***@example.com`) and a link that cancels the change, so the owner can stop someone who got into their account. The cancel link works once, and the confirm link stops working with it. When the change is confirmed, every other browser, API token and remember-me cookie of the account is signed out, and the browser that opened the link stays signed in if it's the account's own.
 
 Until the link is opened, the account keeps its old address and the profile page says which address is waiting, with buttons to send the link again or cancel the change. The link works for 24 hours. Opening it works whether or not the user is signed in, and changing the email a second time replaces the first waiting change, so only the newest link works.
 
 If the new address already belongs to another account, the profile form answers the same way the registration form does. With `user_registration.options.send_activation_email` turned on, it doesn't say the address is taken: the change shows as waiting and no link is sent.
 
-This is on by default. To save a new address straight away, as older versions did, turn it off:
+This is on by default. To save a new address straight away, as older versions did, turn it off. The current password is still asked for, but no notices or links are sent:
 
 ```yaml
 profile:

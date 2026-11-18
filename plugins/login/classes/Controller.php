@@ -17,7 +17,6 @@ use Grav\Common\Page\Pages;
 use Grav\Common\Uri;
 use Grav\Common\User\Interfaces\UserCollectionInterface;
 use Grav\Common\User\Interfaces\UserInterface;
-use Grav\Common\Utils;
 use Grav\Plugin\Email\Utils as EmailUtils;
 use Grav\Plugin\Form\Forms;
 use Grav\Plugin\Login\Events\UserLoginEvent;
@@ -135,11 +134,10 @@ class Controller
         // Remove login nonce from the form.
         $form = array_diff_key($this->post, ['login-form-nonce' => true]);
 
-        // Is twofa enabled?
-        $twofa = $this->grav['config']->get('plugins.login.twofa_enabled', false);
-
-        // Fire Login process.
-        $event = $this->login->login($form, ['rate_limit' => true, 'remember_me' => true, 'twofa' => $twofa], ['return_event' => true]);
+        // An account that has set up two-factor is always asked for its code.
+        // `plugins.login.twofa_enabled` only decides whether the profile page
+        // offers the setup, the same rule the API sign-in follows.
+        $event = $this->login->login($form, ['rate_limit' => true, 'remember_me' => true, 'twofa' => true], ['return_event' => true]);
         $user = $event->getUser();
 
         $login_redirect = $this->login->getRoute('after_login');
@@ -190,11 +188,6 @@ class Controller
 
         /** @var Message $messages */
         $messages = $this->grav['messages'];
-        if (!$config->get('plugins.login.twofa_enabled', false)) {
-            $messages->add($t->translate('PLUGIN_LOGIN.2FA_FAILED'),  'error');
-
-            return true;
-        }
 
         $twoFa = $this->login->twoFactorAuth();
         $user = $this->grav['user'];
@@ -207,8 +200,10 @@ class Controller
         // one is cleared as soon as the password verifies, and re-doing the
         // password to obtain a fresh challenge is exactly what an attacker
         // guessing the code does on every cycle (GHSA-9j6w-2q6c-q3q8).
+        // The attempt is counted before the code is checked, so codes sent at the same
+        // moment can't all get past the limit; a right code clears the count again.
         $rateLimiter = $this->login->getRateLimiter('twofa_attempts');
-        if ($rateLimiter->isRateLimited($username)) {
+        if (!$rateLimiter->attempt($username)) {
             $messages->add($t->translate(['PLUGIN_LOGIN.TOO_MANY_2FA_ATTEMPTS', $rateLimiter->getInterval()]), 'error');
 
             $user->authenticated = false;
@@ -230,8 +225,6 @@ class Controller
         $event->setUser($user);
 
         if (!$code || !$secret || !$twoFa->verifyCode($secret, $code)) {
-            $rateLimiter->registerRateLimitedAction($username);
-
             $event->setStatus(UserLoginEvent::AUTHENTICATION_FAILURE | UserLoginEvent::AUTHORIZATION_CHALLENGE);
             $event->setMessage($t->translate('PLUGIN_LOGIN.2FA_FAILED'),  'error');
 
@@ -294,11 +287,6 @@ class Controller
 
         /** @var Message $messages */
         $messages = $this->grav['messages'];
-        if (!$config->get('plugins.login.twofa_enabled', false)) {
-            $messages->add($t->translate('PLUGIN_LOGIN.2FA_FAILED'),  'error');
-
-            return true;
-        }
 
         $user = $this->grav['user'];
         $eventOptions = [
@@ -488,14 +476,13 @@ class Controller
             return true;
         }
 
-        if (!isset($this->grav['Email']) || !$config->get('plugins.email.from')) {
+        // The same check that lets the login page count Login by link as a login option.
+        if (!$this->login->isMagicLinkAvailable()) {
             $messages->add($language->translate('PLUGIN_LOGIN.MAGIC_LINK_EMAIL_NOT_CONFIGURED'), 'error');
             $this->setRedirect($this->login->getRoute('magic') ?? '/');
             return true;
         }
 
-        /** @var UserCollectionInterface $users */
-        $users = $this->grav['accounts'];
         $email = $data['email'] ?? '';
 
         // Sanitize $email
@@ -517,7 +504,7 @@ class Controller
             return true;
         }
 
-        $matchedUsers = $this->findUsersByEmail($users, $email);
+        $matchedUsers = $this->findUsersByEmail($email);
         if (count($matchedUsers) > 1) {
             $this->grav['log']->warning(sprintf(
                 'plugin.login: magic-link request blocked: duplicate email "%s" matches users [%s]',
@@ -583,11 +570,12 @@ class Controller
     }
 
     /**
-     * Find all users matching email, across legacy and flex collections.
+     * Find all users matching email, across legacy and flex collections
+     * (Login::getAccounts()).
      *
      * @return array<string,UserInterface> Keyed by username.
      */
-    private function findUsersByEmail(UserCollectionInterface $users, string $email): array
+    private function findUsersByEmail(string $email): array
     {
         $needle = mb_strtolower(trim($email));
         if ($needle === '') {
@@ -595,42 +583,7 @@ class Controller
         }
 
         $matches = [];
-
-        // Flex collections/indexes are iterable; this catches modern installs efficiently.
-        if (is_iterable($users)) {
-            foreach ($users as $candidate) {
-                if (!$candidate instanceof UserInterface || !$candidate->exists()) {
-                    continue;
-                }
-
-                $candidateEmail = mb_strtolower((string)$candidate->get('email'));
-                if ($candidateEmail !== '' && $candidateEmail === $needle) {
-                    $matches[(string)$candidate->get('username')] = $candidate;
-                }
-            }
-
-            return $matches;
-        }
-
-        // Legacy DataUser collection is not iterable; scan account files and load users.
-        $locator = $this->grav['locator'];
-        $accountDir = $locator->findResource('account://');
-        if (!is_string($accountDir)) {
-            return [];
-        }
-
-        $files = array_diff(scandir($accountDir) ?: [], ['.', '..']);
-        foreach ($files as $file) {
-            if (!Utils::endsWith($file, YAML_EXT)) {
-                continue;
-            }
-
-            $username = trim(Utils::pathinfo($file, PATHINFO_FILENAME));
-            $candidate = $users->load($username);
-            if (!$candidate->exists()) {
-                continue;
-            }
-
+        foreach ($this->login->getAccounts() as $candidate) {
             $candidateEmail = mb_strtolower((string)$candidate->get('email'));
             if ($candidateEmail !== '' && $candidateEmail === $needle) {
                 $matches[(string)$candidate->get('username')] = $candidate;
@@ -761,6 +714,8 @@ class Controller
 
                     unset($user->hashed_password, $user->reset);
                     $user->password = $password;
+                    // Whoever knew the old password is signed out everywhere.
+                    $this->login->endOtherSessions($user);
                     $user->save();
 
                     $messages->add($language->translate('PLUGIN_LOGIN.RESET_PASSWORD_RESET'), 'info');
@@ -811,6 +766,18 @@ class Controller
             // profile page where the user is fully logged in (authorized=true),
             // so that flow still passes this gate.
             if ($user->exists() && $user->authorized === true) {
+                // Replacing an active second factor takes a current code, so a
+                // signed-in session alone can't swap in a secret of its own.
+                // First-time setup (2FA not on yet) needs none.
+                if ($this->login->hasActiveTwoFactor($user)) {
+                    $error = $this->login->twoFactorCodeError($user, $this->post['twofa_code'] ?? null);
+                    if ($error !== null) {
+                        header('Content-Type: application/json');
+                        echo json_encode(['status' => 'error', 'message' => $error]);
+                        exit;
+                    }
+                }
+
                 /** @var TwoFactorAuth $twoFa */
                 $twoFa = $this->grav['login']->twoFactorAuth();
                 $secret = $twoFa->createSecret();

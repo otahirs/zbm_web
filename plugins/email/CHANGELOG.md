@@ -1,3 +1,20 @@
+# v5.3.5
+## 11/04/2026
+
+1. [](#bugfix)
+    * Grav 1.7 sites on PHP 7.3 load again. Email 5.3.4 added a PHP 7.4 arrow function to a class that loads on every request, which stopped the whole site with a syntax error [#197](https://github.com/getgrav/grav-plugin-email/issues/197)
+    * A mail transport that can't be set up now reports why on PHP 7.3 too, instead of failing with a syntax error
+    * A new test fails when a file that loads on PHP 7.3 uses newer syntax. Only the provider and inbound classes may, since they are never loaded below PHP 8.1
+
+# v5.3.4
+## 10/31/2026
+
+1. [](#bugfix)
+    * [security] The security fixes below were found by Anthropic's OSS Scanner
+    * [security] A form value longer than 64 KiB is now cut to that length before an email body is converted with `process_markdown`
+    * [security] The Date header of an inbound email is now ignored when it is longer than 256 bytes, and the message is read as having no date
+    * [security] Addresses that plugins pass to the email plugin are used as plain text, while the addresses in a form's `email` action and in the plugin settings can still use Twig such as `{{ config.plugins.email.to }}`
+
 # v5.3.3
 ## 10/21/2026
 

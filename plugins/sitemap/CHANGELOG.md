@@ -1,3 +1,22 @@
+# v5.3.4
+## 11/10/2026
+
+1. [](#improved)
+    * The HTML sitemap at `/sitemap.html` has a new look: a heading with the page count and a link to the XML version, each page listed with its address underneath, child pages indented under their parents, and a layout that follows the theme's colors in light and dark mode and fits on phones
+    * The XSL stylesheet for the XML sitemap is now off by default, because browsers are dropping XSLT support and Chrome already shows a warning on sitemaps that use it. Search engines never used it, and `/sitemap.html` is the readable version for people
+
+# v5.3.3
+## 11/10/2026
+
+1. [](#improved)
+    * Change frequency and priority are now off by default, since Google and Bing ignore them. Sites that want them can turn them back on in the plugin settings [#125](https://github.com/getgrav/grav-plugin-sitemap/issues/125)
+
+# v5.3.2
+## 10/26/2026
+
+1. [](#bugfix)
+    * The Date Type setting now works: Page Date lists each page's frontmatter date as its last modified date in the sitemap [#124](https://github.com/getgrav/grav-plugin-sitemap/issues/124)
+
 # v5.3.1
 ## 09/13/2026
 
