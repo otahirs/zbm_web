@@ -32,7 +32,7 @@ ps: se zbm web deploymentem se v gitu synchronizuji pouze slozky `pages`, `theme
 
 #### testovací prostředí vs. produkce
 Prostředí (`docker-compose.yml`, `docker/`) odpovídá produkci na zabiny.club:
-nginx → php-fpm 8.3 → Grav 1.7.53.6, cron `bin/grav scheduler` (služba `scheduler`), odesílání pošty přes `sendmail`.
+nginx → php-fpm 8.3 → Grav 1.7.53.10, cron `bin/grav scheduler` (služba `scheduler`), odesílání pošty přes `sendmail`.
 Při aktualizaci PHP nebo Gravu na serveru je potřeba změnit `PHP_VERSION` / `GRAV_VERSION` v `docker/php/Dockerfile`.
 
 Rozdíly:
