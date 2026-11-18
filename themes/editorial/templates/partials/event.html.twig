@@ -83,7 +83,12 @@
                 <li><a href="{{ r.link }}">{{ r.name }}</a></li>
               {% endfor %}
           {% endif %}
+          {# od 10. 11. 2026 oddil prechazi z Liveloxu na OResults #}
+          {% if page.header.start|date('Y-m-d') >= '2026-11-10' %}
+                <li><a href="https://oresults.eu/events?org=zbm&from={{page.header.start|date('Y-m-d')}}">OResults oddílové akce od začátku události</a></li>
+          {% else %}
                 <li><a href="https://www.livelox.com/?tab=allEvents&timePeriod=customTimePeriod&from={{page.header.start}}&to={{page.header.end}}&q=sk%20brno%20%C5%BEabov%C5%99esky&sorting=time">Livelox oddílové akce v čase události</a></li>
+          {% endif %}
         </ul>
         {% endif %}
             <hr>
