@@ -2,8 +2,8 @@
 taxonomy:
     skupina: {  }
 id: 2027-race_2542
-start: '2027-02-06'
-end: '2027-02-06'
+start: '2027-02-13'
+end: '2027-02-13'
 title: '4. Zimní mapový výjezd – ALL'
 type: T
 transport: 'auty dle přihláškového systému'
