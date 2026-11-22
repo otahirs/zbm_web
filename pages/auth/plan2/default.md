@@ -158,9 +158,9 @@ plan:
                 group:
                     - pulci1
                     - pulci2
-                name: Tělocvična
-                time: '16:00 – 17:00'
-                place: 'ZŠ Sirotkova'
+                name: 'Tělocvična Rosnička'
+                time: '17:00 – 18:30'
+                place: 'Rosnička, sraz 16:50 u vrátnice'
     next2Week:
         monday:
             -
@@ -230,9 +230,9 @@ plan:
                 group:
                     - pulci1
                     - pulci2
-                name: Tělocvična
-                time: '16:00 – 17:00'
-                place: 'ZŠ Sirotkova'
+                name: 'Tělocvična Rosnička'
+                time: '17:00 - 18:30'
+                place: 'Rosnička, sraz 16:50 u vrátnice'
         saturday:
             1794388446596:
                 name: ''
@@ -266,7 +266,7 @@ plan:
                     - pulci1
                     - pulci2
                     - zaci1
-                name: 'Mapový trénink + teorie'
+                name: 'MIKULÁŠSKÝ Mapový trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
             1792408232300:
@@ -307,24 +307,9 @@ plan:
                 group:
                     - pulci1
                     - pulci2
-                name: Tělocvična
-                time: '16:00 – 17:00'
-                place: 'ZŠ Sirotkova'
-        friday:
-            -
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            1792408310751:
-                name: ''
-                time: ''
-                place: ''
-        sunday:
-            -
-                name: ''
-                time: ''
-                place: ''
+                name: 'Tělocvična Rosnička'
+                time: '17:00 – 18:30'
+                place: 'Rosnička, sraz 16:50 u vrátnice'
 ---
 
 <div class="row justify-content-between"> 
