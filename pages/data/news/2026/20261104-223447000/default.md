@@ -13,4 +13,4 @@ Již příjezdem na chatu, která se nachází úplně přímo na hraničním h�
 Ubytování bylo báječné, s velkou kuchyní, šipkami, fotbálkem, ping pongem..  
 Počasí nám přálo dokonale, zažili jsme neskutečné výhledy v jednom na Tatry a Malou Fatru a do mlhy. Teda mlha byla jiný den. Zdolali jsme druhou nejvyšší horu Beskyd, zjistili jsme že Šance není od šance, ale od die Schanze, byli jsme ve skanzenu, v neskutečně našlapaném bazénu - nejrychlejší tobogán, co jsem jela. Pochvalovali si ho i děti. Při výletech jsme soutěžili o žetonky...  
 Děkuji kulturnímu referentu Tomovi Šáchovi, mistru nákupčímu a kuchyně Mírovi a všem Beránkům, řidičům, kuchtíkům. Bylo to opět báječné, intenzívní.  
-Foto zde:[https://eu.zonerama.com/SKBrnoZabovresky/Album/17168964](/data/news/2026/20261104-223447000/)
+[Fotky zde](https://eu.zonerama.com/SKBrnoZabovresky/Album/17168964)
