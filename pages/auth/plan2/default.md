@@ -36,87 +36,6 @@ plan:
                     - pulci1
                     - pulci2
                     - zaci1
-                name: 'NENÍ - STÁTNÍ SVÁTEK'
-                time: '-'
-                place: '-'
-            1792408232300:
-                group:
-                    - zaci2
-                    - hobby
-                name: 'NENÍ - STÁTNÍ SVÁTEK'
-                time: '-'
-                place: '-'
-        wednesday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
-        thursday:
-            -
-                group:
-                    - dorost
-                name: 'Běžecký trénink (světlo, hladké boty)'
-                time: '16:50'
-                place: Rosnička
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: 'Běžecký trénink'
-                time: '16:30 – 18:00'
-                place: Rosnička
-            -
-                group:
-                    - pulci1
-                    - pulci2
-                name: Tělocvična
-                time: '17:00 - 18:30'
-                place: 'Rosnička, sraz 16:50 u vrátnice'
-        friday:
-            1794388446594:
-                name: ''
-                time: ''
-                place: ''
-        saturday:
-            1794388446594:
-                name: ''
-                time: ''
-                place: ''
-        sunday:
-            1794388446594:
-                name: ''
-                time: ''
-                place: ''
-    nextWeek:
-        monday:
-            -
-                group:
-                    - dorost
-                name: Posilovna
-                time: '17:00 a 18:00'
-                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
-            -
-                group:
-                    - zaci1
-                    - zaci2
-                name: Tělocvična
-                time: '17:00 – 18:30'
-                place: 'hala Rosnička'
-        tuesday:
-            0:
-                group:
-                    - dorost
-                name: 'Běžecký trénink'
-                time: '16:30'
-                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
-            1792408206351:
-                group:
-                    - zabicky
-                    - pulci1
-                    - pulci2
-                    - zaci1
                 name: 'Mapový trénink + teorie'
                 time: '16:00 – 18:00'
                 place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
@@ -161,7 +80,7 @@ plan:
                 name: 'Tělocvična Rosnička'
                 time: '17:00 – 18:30'
                 place: 'Rosnička, sraz 16:50 u vrátnice'
-    next2Week:
+    nextWeek:
         monday:
             -
                 group:
@@ -238,7 +157,7 @@ plan:
                 name: ''
                 time: ''
                 place: ''
-    next3Week:
+    next2Week:
         monday:
             -
                 group:
@@ -310,6 +229,93 @@ plan:
                 name: 'Tělocvična Rosnička'
                 time: '17:00 – 18:30'
                 place: 'Rosnička, sraz 16:50 u vrátnice'
+    next3Week:
+        monday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Jaroška, https://mapy.com/s/losesugahu'
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: Tělocvična
+                time: '17:00 – 18:30'
+                place: 'hala Rosnička'
+        tuesday:
+            0:
+                group:
+                    - dorost
+                name: 'Běžecký trénink'
+                time: '16:30'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
+            1792408206351:
+                group:
+                    - zabicky
+                    - pulci1
+                    - pulci2
+                    - zaci1
+                name: 'Mapový trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
+            1792408232300:
+                group:
+                    - zaci2
+                    - hobby
+                name: 'Běžecký trénink + teorie'
+                time: '16:00 – 18:00'
+                place: 'ZŠ náměstí Svornosti 7, https://mapy.com/s/mozefojego'
+        wednesday:
+            -
+                group:
+                    - dorost
+                name: Posilovna
+                time: '17:00 a 18:00'
+                place: 'Gymnázium Brno, Třída kpt. Jaroše, https://mapy.com/s/gavukeveka'
+            -
+                group:
+                    - hobby
+                name: 'Online teorie'
+                time: '20:00'
+                place: meet.google.com/rwz-ugkn-kgu
+        thursday:
+            -
+                group:
+                    - dorost
+                name: 'Běžecký trénink (světlo, hladké boty)'
+                time: '16:50'
+                place: Rosnička
+            -
+                group:
+                    - zaci1
+                    - zaci2
+                name: 'Běžecký trénink'
+                time: '16:30 – 18:00'
+                place: Rosnička
+            -
+                group:
+                    - pulci1
+                    - pulci2
+                name: Tělocvična
+                time: '16:00 – 17:00'
+                place: 'ZŠ Sirotkova'
+        friday:
+            -
+                name: ''
+                time: ''
+                place: ''
+        saturday:
+            1792408310751:
+                name: ''
+                time: ''
+                place: ''
+        sunday:
+            -
+                name: ''
+                time: ''
+                place: ''
 ---
 
 <div class="row justify-content-between"> 
