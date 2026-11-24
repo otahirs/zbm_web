@@ -6,9 +6,9 @@ id: '20261123-120000000'
 user: 'Jan Zháňal'
 pictures:
     - name: 'anketa2026-bulicka.png'
-      ratio: '6'
+      ratio: '3'
     - name: 'anketa2026-kucera.png'
-      ratio: '6'
+      ratio: '3'
 ---
 V sobotu 21. listopadu se v Jablonci nad Nisou vyhlašovaly výsledky ankety o nejlepší orientační sportovce roku 2026 a dvakrát při tom zaznělo i jméno našeho oddílu.
 
