@@ -14,8 +14,25 @@ date: '2026-10-16'
 import:
     type: members
     time: 1792152605
-transport: 'auty dle přihláškového systému'
+transport: samostatně
 leader: 'Jan Zháňal'
+meetTime: '17:00'
+meetPlace: 'Kohoutovice, Pavlovská'
+link: ''
+eventTypeDescription: ''
+startTime: ''
+map: ''
+terrain: ''
+accomodation: ''
+food: ''
+note: ''
+return: ''
+price: ''
+program: ''
+thingsToTake: ''
+signups: ''
+gps: '49.18990, 16.52760'
 ---
 
-* **doprava**: auty dle přihláškového systému
+* **sraz**: 17:00 Kohoutovice, Pavlovská
+* **doprava**: samostatně
