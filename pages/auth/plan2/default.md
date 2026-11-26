@@ -345,23 +345,39 @@ plan:
 {# inicializace poli urcujiciho den v tydnu #}
 {% set collection = page.collection({'items': {'@page.descendants': '/data/events'}, 'filter': {'routable': 'true'},'order': {'by': 'default', 'dir': 'asc'}}) %}
 
-<form autocomplete="off" id="program"> 
-{% set plan = page.header.plan %}
-{% for week, weekAr in {"thisWeek": plan.thisWeek, "nextWeek" : plan.nextWeek, "next2Week" : plan.next2Week, "next3Week" : plan.next3Week} %}
-    {% if week == "thisWeek" %}
-        {% set start_day = date("monday this week") %}
-        <h4>Aktuální týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
-    {% elseif week == "nextWeek" %}
-        {% set start_day = date("monday this week +1 week") %}
-        <h4>Příští týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
-    {% elseif week == "next2Week" %}
-        {% set start_day = date("monday this week +2 week") %}
-        <h4>Týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
-    {% else %}
-        {% set start_day = date("monday this week +3 week") %}
-        <h4>Týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
-    {% endif %}
-    
+{% set this_monday = date("monday this week")|date("Y-m-d") %}
+{% set from = uri.query('od') ?: this_monday %}
+{% set weeks = phpPlanWeeks(from, 4) %}
+{% set prev_from = weeks[0].monday|date_modify("-4 weeks")|date("Y-m-d") %}
+{% set next_from = weeks[0].monday|date_modify("+4 weeks")|date("Y-m-d") %}
+<p>
+    <a href="{{ page.url }}?od={{ prev_from }}">&larr; předchozí týdny</a>
+    {% if weeks[0].monday != this_monday %} &middot; <a href="{{ page.url }}">tento týden</a>{% endif %}
+    &middot; <a href="{{ page.url }}?od={{ next_from }}">další týdny &rarr;</a>
+</p>
+<p><small>Týdny se skládají z <a href="/auth/plan2/templates">kalendáře režimů a šablon</a>. Co tady změníte a uložíte, platí jen pro daný týden (výjimka). Týden, který se po úpravě shoduje se šablonou, se zase řídí šablonou.</small></p>
+
+<form autocomplete="off" id="program">
+{% for w in weeks %}
+    {% set week = w.monday %}
+    {% set weekAr = w.days %}
+    {% set start_day = w.monday %}
+    {% set range = start_day|date("j.m.") ~ " – " ~ w.sunday|date("j.m.") %}
+    <h4 class="plan-week__header">
+        {% if week == this_monday %}Aktuální týden{% elseif week == this_monday|date_modify("+1 week")|date("Y-m-d") %}Příští týden{% else %}Týden{% endif %}
+        {{ range }}
+        &nbsp;<small class="plan-week__mode">
+        {% if w.override %}
+            upraveno ručně{% if w.template %} (podle kalendáře: {{ w.template }}){% endif %}
+            &nbsp;<a href="#" class="plan-week__reset" data-week="{{ week }}" data-range="{{ range }}">vrátit na šablonu</a>
+        {% elseif w.template %}
+            šablona {{ w.template }}
+        {% else %}
+            bez šablony &ndash; doplňte <a href="/auth/plan2/templates">kalendář</a>
+        {% endif %}
+        </small>
+    </h4>
+
     <table class="edit-plan">
         {# inicializace promene urcujici jestli uz je v tabulce zapsany den v tydnu #}
         
@@ -443,36 +459,36 @@ plan:
 {% endfor %}
 </form>
 
-<a href="/auth/plan2/templates" class="button">Spravovat šablony <i class="fa fa-th" aria-hidden="true"></i></a>
-<button type="button" id="plan--load-template">Načíst ze šablony <i class="fa fa-upload" aria-hidden="true"></i></button> 
+<a href="/auth/plan2/templates" class="button">Kalendář režimů a šablony <i class="fa fa-th" aria-hidden="true"></i></a>
+<button type="button" id="plan--load-template">Nastavit týden podle šablony <i class="fa fa-upload" aria-hidden="true"></i></button> 
 
 <div style="min-height: 8em;">&nbsp; <!-- prevents group selection dialog overflow --> </div>
 
 <div id="NewsModal" class="news--modal">
     <div id="NewsModalContent" class="news--modal-content">
-      <h2 id="News--header">Načíst plán ze šablony</h2>
+      <h2 id="News--header">Nastavit týden podle šablony</h2>
       <form id="News--form" method="post" action="/php/plan/loadfromtemplate">
         <div>
-            <p>Pozor! Data ze šablony nahradí všechny aktivity v daném týdnu pro všechny tréninkové skupiny. Veškeré změny budou ztraceny. Události zobrazované v kalendáři zůstávají zachovány.</p>
+            <p>Vybraný týden se nastaví podle šablony pro všechny tréninkové skupiny, ruční úpravy v něm budou ztraceny. Události zobrazované v kalendáři zůstávají zachovány.</p>
             <p>Dojde k obnovení stránky, neuložené změny v plánu budou ztraceny.</p>
 
-            <label for="week">nahradit</label>
+            <label for="week">týden</label>
             <select name="week" id="week">
-                <option value="thisWeek">tento týden</option>
-                <option value="nextWeek">příští týden</option>
-                <option value="next2Week">příští příští týden</option>
-                <option value="next3Week">příští příští příští týden</option>
+                {% for w in weeks %}
+                    <option value="{{ w.monday }}">{{ w.monday|date("j.m.") ~ " – " ~ w.sunday|date("j.m.") }}{% if w.override %} (upraveno){% endif %}</option>
+                {% endfor %}
             </select>
-            <label for="template">šablonou</label>
+            <label for="template">nastavit podle</label>
             <select name="template" id="template">
-                {% set template_page = page.find('/auth/plan2/templates').header%}
-                {% for template_name, _ in template_page.templates %} 
-                    <option value="{{template_name}}" {% if "plan" == template_name %} selected {% endif %}>{{template_name}}</option>
+                <option value="" selected>kalendáře režimů (zrušit ruční úpravy)</option>
+                {% set template_page = page.find('/auth/plan2/templates').header %}
+                {% for template_name, _ in template_page.templates %}
+                    <option value="{{template_name}}">šablony {{template_name}}</option>
                 {% endfor %}
             </select>
         </div>
         <hr>
-        <button type="button" class="special edit-plan-modal__submit-button">Nahradit</button>
+        <button type="button" class="special edit-plan-modal__submit-button">Nastavit</button>
         <button type="button" class="edit-plan-modal__close-button">Zrušit</button>
       </form>
     </div> <!-- modal content -->
@@ -544,8 +560,8 @@ plan:
             document.querySelectorAll(".day").forEach(e => e.parentNode.removeChild(e));
             const CZdays = ["pondělí", "úterý", "středa", "čtvrtek", "pátek", "sobota", "neděle"];
             const days = ['monday','tuesday','wednesday','thursday','friday','saturday', 'sunday'];
-            const weeks = ["thisWeek", "nextWeek", "next2Week", "next3Week"];
-            const rows = document.querySelectorAll("tr");
+            const weeks = [...new Set(Array.from(document.querySelectorAll("table.edit-plan tr[data-week]")).map(r => r.dataset.week))];
+            const rows = document.querySelectorAll("table.edit-plan tr");
             let currDay = 0;
             let currWeek = 0;
             rows.forEach(function(tr, i) {
@@ -579,7 +595,7 @@ plan:
 
         // cleanup table
         function removeEmptyRows() {
-            const rows = document.querySelectorAll("tr");
+            const rows = document.querySelectorAll("table.edit-plan tr");
             rows.forEach(row => {
                 let week = row.dataset.week;
                 let day = row.dataset.day;
@@ -623,7 +639,7 @@ plan:
         let filter_all = document.querySelector("#filter-all");        
 
         function filter() {
-            const rows = document.querySelectorAll("tr");
+            const rows = document.querySelectorAll("table.edit-plan tr");
             filter_all.checked = false;
                 rows.forEach((row) => {
                     const selected = row.querySelectorAll('option:checked');
@@ -650,7 +666,7 @@ plan:
 
         
         filter_all.addEventListener("change", () => {
-            const rows = document.querySelectorAll("tr");
+            const rows = document.querySelectorAll("table.edit-plan tr");
             filters.forEach((f)=> {
                 f.checked = false;
             })
@@ -673,6 +689,7 @@ plan:
                 contentType: false,
                 success: function (){ 
                     notyf.success("Plán uložen!");
+                    setTimeout(() => window.location.replace(location.href), 1200);
                 },
                 error: function (xhr, desc, err){
                     notyf.error("Neočekávaná chyba");
@@ -682,6 +699,29 @@ plan:
                 }
             });
         })
+
+        // reset one week to its calendar template
+        document.querySelectorAll(".plan-week__reset").forEach(a => a.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (!confirm(`Vrátit týden ${a.dataset.range} na šablonu? Ruční úpravy v tomto týdnu budou ztraceny.`)) return;
+            const data = new FormData();
+            data.append("week", a.dataset.week);
+            data.append("template", "");
+            $.ajax({
+                url: "/php/plan/loadfromtemplate",
+                type: "POST",
+                data: data,
+                processData: false,
+                contentType: false,
+                success: function () {
+                    notyf.success("Týden vrácen na šablonu.<br>Stránka se obnoví.");
+                    setTimeout(() => window.location.replace(location.href), 1000);
+                },
+                error: function () {
+                    notyf.error("Neočekávaná chyba");
+                }
+            });
+        }));
 
         // modal
         var modal = document.querySelector(".news--modal");
@@ -704,7 +744,7 @@ plan:
                 processData: false,
                 contentType: false,
                 success: function (){ 
-                    notyf.success("Šablona načtena!<br>Stránka se obnoví.");
+                    notyf.success("Týden nastaven!<br>Stránka se obnoví.");
                     modal.style.display = "none";
                     setTimeout(() => window.location.replace(location.href), 1000);
                 },
