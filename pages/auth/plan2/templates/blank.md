@@ -402,27 +402,9 @@ templates:
 
 <a href="/auth/plan2" id="back-btn" class="button small"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> týdenní plán</a> <br> <br>
 
-<div class="row justify-content-between"> 
+<div class="row justify-content-end">
     <div class="col-auto">
-        <input type="checkbox" value="all"  id="filter-all" checked />
-        <label for="filter-all">Vše</label>
-        <input class="filter" type="checkbox" value="zabicky" id="filter-zabicky" />
-        <label for="filter-zabicky">Žabičky</label>
-        <input class="filter" type="checkbox" value="pulci1" id="filter-pulci1" />
-        <label for="filter-pulci1">Pulci 1</label>
-        <input class="filter" type="checkbox" value="pulci2" id="filter-pulci2" />
-        <label for="filter-pulci2">Pulci 2</label>
-        <input class="filter" type="checkbox" value="zaci1" id="filter-zaci1" />
-        <label for="filter-zaci1">Žáci 1</label>
-        <input class="filter" type="checkbox" value="zaci2" id="filter-zaci2" />
-        <label for="filter-zaci2">Žáci 2</label>
-        <input class="filter" type="checkbox" value="dorost" id="filter-dorost" />
-        <label for="filter-dorost">Dorost+</label>
-        <input class="filter" type="checkbox" value="hobby" id="filter-hobby" />
-        <label for="filter-hobby">Hobby</label>
-    </div>
-    <div class="col-auto">
-        <button id="edit-plan__submit" type="button" class="button special">Uložit</button>
+        <button type="button" class="button special edit-plan__submit">Uložit</button>
     </div>
 </div>
 <br>
@@ -493,6 +475,26 @@ templates:
         </div>
     </div>
     <br/>
+    <div class="row plan-template__filters">
+        <div class="col">
+            <input type="checkbox" value="all"  id="filter-all" checked />
+            <label for="filter-all">Vše</label>
+            <input class="filter" type="checkbox" value="zabicky" id="filter-zabicky" />
+            <label for="filter-zabicky">Žabičky</label>
+            <input class="filter" type="checkbox" value="pulci1" id="filter-pulci1" />
+            <label for="filter-pulci1">Pulci 1</label>
+            <input class="filter" type="checkbox" value="pulci2" id="filter-pulci2" />
+            <label for="filter-pulci2">Pulci 2</label>
+            <input class="filter" type="checkbox" value="zaci1" id="filter-zaci1" />
+            <label for="filter-zaci1">Žáci 1</label>
+            <input class="filter" type="checkbox" value="zaci2" id="filter-zaci2" />
+            <label for="filter-zaci2">Žáci 2</label>
+            <input class="filter" type="checkbox" value="dorost" id="filter-dorost" />
+            <label for="filter-dorost">Dorost+</label>
+            <input class="filter" type="checkbox" value="hobby" id="filter-hobby" />
+            <label for="filter-hobby">Hobby</label>
+        </div>
+    </div>
     {% for template_name, template in page.header.templates %}
     <table class="edit-plan template" style="display: {% if loop.index != 1 %} none {% endif %}" data-template="{{template_name}}">
         {# inicializace promene urcujici jestli uz je v tabulce zapsany den v tydnu #}
@@ -549,6 +551,11 @@ templates:
         {% endfor %}
     </table>
     {% endfor %}
+    <div class="row justify-content-end">
+        <div class="col-auto">
+            <button type="button" class="button special edit-plan__submit">Uložit</button>
+        </div>
+    </div>
 </form>
 <hr>
 
@@ -739,9 +746,7 @@ templates:
         }
         
         // submit form
-        const submitButton = document.getElementById("edit-plan__submit");
-        
-        submitButton.addEventListener("click", (e) => {
+        document.querySelectorAll(".edit-plan__submit").forEach(b => b.addEventListener("click", (e) => {
             e.preventDefault();
             sortCalendar();
             $.ajax({
@@ -760,7 +765,7 @@ templates:
                     console.log(err);
                 }
             });
-        })
+        }));
 
         document.querySelector(".create-new-template__button").addEventListener("click", (e) => {
             if (!confirm("Neuložené změny v současné šabloně budou ztraceny, chcete pokračovat?")) {
