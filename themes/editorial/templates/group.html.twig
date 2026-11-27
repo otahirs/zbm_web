@@ -52,14 +52,14 @@
             {# inicializace poli urcujiciho den v tydnu #}
             {% set ENGweek = ['monday','tuesday','wednesday','thursday','friday','saturday', 'sunday'] %}
             {% set CZweek = [ 'PO', 'UT', 'ST', 'CT', 'PA', 'SO', 'NE'] %}
-            {% set plan = page.find('/auth/plan2').header.plan %}
-            {% for week, weekAr in [plan.thisWeek, plan.nextWeek] %}
+            {# týdny = ruční úpravy (výjimky), jinak šablona podle kalendáře režimů, viz WeeklyPlan.php #}
+            {% for week, w in phpPlanWeeks(null, 2) %}
+                {% set weekAr = w.days %}
+                {% set start_day = w.monday %}
                 {% if week == 0 %}
-                    {% set start_day = date("monday this week") %}
-                    <h4>Aktuální týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
+                    <h4>Aktuální týden {{ start_day|date("j.m.") ~ " – " ~ w.sunday|date("j.m.") }}</h4>
                 {% else %}
-                    {% set start_day = date("monday next week")%}
-                    <h4>Příští týden {{ start_day|date("j.m.") ~ " – " ~ start_day|date_modify("+6 day")|date("j.m.") }}</h4>
+                    <h4>Příští týden {{ start_day|date("j.m.") ~ " – " ~ w.sunday|date("j.m.") }}</h4>
                 {% endif %}
                 
                 <table class="plan">

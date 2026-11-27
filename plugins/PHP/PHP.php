@@ -74,10 +74,6 @@ class PHPPlugin extends Plugin
         require_once(__DIR__ . '/twig/Events.php');
         $scheduler = $e['scheduler'];
 
-        // shift plan to next week every monday at 00:00
-        $job = $scheduler->addFunction('\Grav\Plugin\PHPPlugin::shiftPlan2', [], 'shift-plan2-for-this-week');
-        $job->at('0 0 * * 1'); 
-
         // import events from members.eob.cz/zbm/ every 10min
         $job = $scheduler->addFunction('\Grav\Plugin\Events::importRacesFromMembers', [], 'import-races-from-members');
 	    $job->at('*/10 * * * *'); 
@@ -88,34 +84,6 @@ class PHPPlugin extends Plugin
     }
 
 
-    /*************/
-    /* Next week */
-    /*************/
-    public static function shiftPlan2(){
-        require_once(__DIR__ . '/twig/WeeklyPlan.php');
-
-        $pages = Grav::instance()['pages'];
-        $pages->init();
-        $page = $pages->find(WeeklyPlan::PLAN_URL);
-        $plan_frontmatter = (array)$page->header();
-        $template_frontmatter = (array)$page->find(WeeklyPlan::PLAN_TEMPLATES_URL)->header();
-
-        $plan_frontmatter["plan"]["thisWeek"] = $plan_frontmatter["plan"]["nextWeek"];
-        $plan_frontmatter["plan"]["nextWeek"] = $plan_frontmatter["plan"]["next2Week"];
-        $plan_frontmatter["plan"]["next2Week"] = $plan_frontmatter["plan"]["next3Week"];
-        $plan_frontmatter["plan"]["next3Week"] = $template_frontmatter["templates"]["plan"];
-
-        $page->header($plan_frontmatter);
-        $page->save();
-
-        Grav::instance()['log']->info("Plan2 shifted");
-
-        Cache::clearCache('cache-only');
-    }
-
-
-
-    
 
 }
 ?>
