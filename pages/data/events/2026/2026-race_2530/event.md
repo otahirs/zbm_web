@@ -2,6 +2,7 @@
 taxonomy:
     skupina:
         - dorost
+        - hobby
 id: 2026-race_2530
 start: '2026-11-28'
 end: '2026-11-28'
@@ -24,7 +25,7 @@ terrain: ''
 transport: "MHD: zastávky V Újezdech, Medlánky nebo Řečkovice\r\nAuto: parkovat se dá v okolí, podle volných míst."
 accomodation: ''
 food: ''
-note: ''
+note: 'Máme u domluveno místo na věci a převlečení u Bulíka. Doporučuju neoprenky.'
 return: ''
 price: ''
 program: ''
@@ -33,6 +34,7 @@ signups: ''
 gps: '49.24341, 16.57329'
 ---
 
+Máme u domluveno místo na věci a převlečení u Bulíka. Doporučuju neoprenky.
 * **sraz**: 10:00 Medlánky
 * **doprava**: MHD: zastávky V Újezdech, Medlánky nebo Řečkovice
 Auto: parkovat se dá v okolí, podle volných míst.
